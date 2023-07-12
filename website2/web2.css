@@ -3,6 +3,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Belanosima&display=swap");
 
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 .apply-btn {
     width: fit-content;
     align-self: center;
@@ -56,7 +66,7 @@
 
 .hero-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     padding: 2rem 4rem;
     background: url("./assets/landingBG.png") no-repeat bottom / cover;
 }
@@ -184,8 +194,8 @@
 .card-section .cards {
     display: grid;
     padding: 4rem;
-    gap: 4rem;
-    grid-template-columns: repeat(auto-fill, minmax(365px, 1fr));
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
 .card-section .cards .card {
@@ -339,6 +349,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
+    list-style: none;
+    padding: 0;
 }
 
 /* Testimonial Section */
@@ -420,7 +432,7 @@
     display: grid;
     padding: 5rem 4rem;
     gap: 4rem;
-    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .masterclass .left-part {
@@ -444,19 +456,18 @@
     border-radius: 1rem;
     justify-self: center;
     width: 100%;
-    height: 340px;
+    height: fit-content;
 }
 
 .masterclass .right-part iframe {
     border-radius: 1rem 1rem 0 0;
     width: 100%;
-    height: 85%;
+    height: 290px;
 }
 
 .masterclass .right-part .text {
     color: #183556;
     text-align: center;
-    padding-top: 0.5rem;
     font-size: 1.2rem;
     font-weight: 600;
     font-family: "Varela Round", sans-serif;
@@ -542,4 +553,203 @@
     list-style: none;
     font-size: 0.9rem;
     font-family: "Ysabeau SC", sans-serif;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 990px) {
+    .hero-section {
+        gap: 2.5rem;
+    }
+
+    .hero {
+        padding: 0 5rem 0 0;
+    }
+
+    .masterclass {
+        padding: 3rem 2rem;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+    }
+
+    .masterclass .right-part {
+        width: 50%;
+    }
+
+    .masterclass .right-part .text {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .hero-section {
+        padding: 1rem 2rem;
+    }
+
+    .curriculum {
+        padding: 2rem 3rem;
+    }
+
+    .testimonial {
+        padding: 3rem;
+    }
+
+    .masterclass .left-part {
+        gap: 0.5rem;
+    }
+
+    .masterclass .left-part h1 {
+        font-size: 2rem;
+    }
+
+    .masterclass .left-part p {
+        font-size: 1rem;
+    }
+
+    .masterclass .right-part {
+        width: 72%;
+    }
+
+    .faq {
+        padding: 2rem 3rem;
+        gap: 1.5rem;
+    }
+
+    .footer {
+        gap: 2rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-section .hero-tag {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-section .program-card .card-1 .card-middle,
+    .hero-section .program-card .card-2 .card-middle {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-section .program-card .card-1 .card-middle .left .tag-1,
+    .hero-section .program-card .card-2 .card-middle .left .tag-1,
+    .hero-section .program-card .card-1 .card-middle .left .tag-2,
+    .hero-section .program-card .card-2 .card-middle .left .tag-2 {
+        font-size: 0.9rem;
+    }
+
+    .card-section {
+        margin-block: 2rem;
+    }
+
+    .card-section .cards {
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .pitch-section h3,
+    .curriculum h3 {
+        font-size: 1.3rem;
+    }
+
+    .pitch-section .cards {
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .pitch-section .cards .head span,
+    .curriculum h5,
+    .pitch-section h4 {
+        font-size: 1rem;
+        text-align: center;
+        padding-inline: 2rem;
+    }
+
+    .pitch-section .cards .para p {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .curriculum {
+        padding: 2rem 2rem;
+    }
+
+    .curriculum .top {
+        gap: 0;
+    }
+
+    .curriculum .weeks-section {
+        gap: 2rem;
+    }
+
+    .curriculum .weeks-section h4 {
+        font-size: 1.2rem;
+    }
+
+    .curriculum .week ul {
+        gap: 0.5rem;
+    }
+
+    .masterclass .right-part iframe {
+        height: 230px;
+    }
+
+    .faq {
+        padding: 2rem 2rem;
+        gap: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .card-section .heading {
+        padding-inline: 2rem;
+        font-size: 1.3rem;
+    }
+
+    .card-section .cards .card .head h4 {
+        font-size: 0.7rem;
+    }
+
+    .card-section .card .para p {
+        margin-top: 0.9rem;
+        font-size: 1rem;
+    }
+
+    .masterclass {
+        padding: 2rem;
+    }
+
+    .masterclass .right-part {
+        width: 100%;
+    }
+
+    .masterclass .right-part iframe {
+        height: 200px;
+    }
+
+    .faq h2 {
+        text-align: center;
+    }
+
+    .footer {
+        gap: 1.5rem;
+    }
+
+    .footer .column {
+        gap: 0;
+    }
 }
