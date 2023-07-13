@@ -310,6 +310,7 @@ body {
 
 .curriculum h5 {
     font-size: 1.3rem;
+    font-weight: 400;
 }
 
 .curriculum .top {
@@ -349,7 +350,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
-    list-style: none;
+    list-style: auto;
+    list-style-position: inside;
     padding: 0;
 }
 
