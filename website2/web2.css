@@ -195,7 +195,7 @@ body {
     display: grid;
     padding: 4rem;
     gap: 3rem;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .card-section .cards .card {
@@ -372,6 +372,7 @@ body {
 
 .fade-carousel .carousel-item .quote {
     display: flex;
+    gap: 1rem;
     flex-direction: column;
 }
 
@@ -379,6 +380,7 @@ body {
     text-align: center;
     color: #5e5e5e;
     padding-inline: 1rem;
+    margin: 0;
 }
 
 .fade-carousel .carousel-item .name {
@@ -568,6 +570,10 @@ body {
         padding: 0 5rem 0 0;
     }
 
+    .card-section .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .masterclass {
         padding: 3rem 2rem;
         gap: 2rem;
@@ -661,6 +667,7 @@ body {
     .card-section .cards {
         padding: 2rem;
         gap: 2rem;
+        grid-template-columns: 1fr;
     }
 
     .pitch-section h3,
@@ -674,7 +681,6 @@ body {
     }
 
     .pitch-section .cards .head span,
-    .curriculum h5,
     .pitch-section h4 {
         font-size: 1rem;
         text-align: center;
@@ -688,6 +694,11 @@ body {
 
     .curriculum {
         padding: 2rem 2rem;
+    }
+
+    .curriculum h5 {
+        font-size: 1rem;
+        padding-inline: 2rem;
     }
 
     .curriculum .top {
@@ -704,6 +715,14 @@ body {
 
     .curriculum .week ul {
         gap: 0.5rem;
+    }
+
+    .fade-carousel .carousel-item .quote {
+        gap: 0.5rem;
+    }
+
+    .fade-carousel .carousel-item img {
+        width: 10%;
     }
 
     .masterclass .right-part iframe {
