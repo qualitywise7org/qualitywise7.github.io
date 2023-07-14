@@ -16,6 +16,7 @@ body {
 .apply-btn {
     width: fit-content;
     align-self: center;
+    text-align: center;
     font-weight: 600;
     color: white;
     border-radius: 0.3rem;
@@ -350,7 +351,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
-    list-style: auto;
+    list-style: square;
     list-style-position: inside;
     padding: 0;
 }
@@ -604,6 +605,12 @@ body {
         padding: 1rem 2rem;
     }
 
+    .card-section .cards {
+        padding: 2rem;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+    }
+
     .curriculum {
         padding: 2rem 3rem;
     }
@@ -662,12 +669,6 @@ body {
 
     .card-section {
         margin-block: 2rem;
-    }
-
-    .card-section .cards {
-        padding: 2rem;
-        gap: 2rem;
-        grid-template-columns: 1fr;
     }
 
     .pitch-section h3,
