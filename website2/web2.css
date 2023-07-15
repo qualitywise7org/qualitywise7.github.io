@@ -56,6 +56,12 @@ body {
 
 .navbar-nav {
     gap: 2rem;
+    margin-top: 1rem;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none !important;
 }
 
 .navbar-nav .nav-item a {
@@ -457,7 +463,7 @@ body {
 }
 
 .masterclass .right-part {
-    background-color: white;
+    background-color: #202124;
     border-radius: 1rem;
     justify-self: center;
     width: 100%;
@@ -471,9 +477,9 @@ body {
 }
 
 .masterclass .right-part .text {
-    color: #183556;
+    color: white;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     font-family: "Varela Round", sans-serif;
 }
@@ -560,6 +566,15 @@ body {
     font-family: "Ysabeau SC", sans-serif;
 }
 
+.footer li a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer li a:hover {
+    text-decoration: underline;
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 990px) {
@@ -591,6 +606,10 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
+    .navbar-nav {
+        align-items: center;
+    }
+
     .hero-section {
         grid-template-columns: 1fr;
     }
