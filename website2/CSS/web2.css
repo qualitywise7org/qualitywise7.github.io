@@ -783,6 +783,10 @@ body {
 }
 
 @media only screen and (max-width: 450px) {
+    .hero-section .program-card .card-2 .card-middle .left .tag-2 {
+        width: min-content;
+    }
+
     .card-section .heading {
         padding-inline: 2rem;
         font-size: 1.3rem;
