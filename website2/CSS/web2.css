@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Belanosima&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 
 html {
     scroll-behavior: smooth;
@@ -27,12 +30,12 @@ body {
     padding: 0.5rem 0.7rem;
     cursor: pointer;
     font-size: 1.2rem;
-    background-color: #3592db;
+    background-color: #5c3d84;
     font-family: "Ysabeau SC", sans-serif;
 }
 
 .apply-btn:hover {
-    background-color: #226da6;
+    background-color: #492b6e;
 }
 
 /* Navbar */
@@ -44,6 +47,16 @@ body {
 
 .container-fluid {
     padding-inline: 2rem;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.navbar .logo img {
+    width: 18%;
 }
 
 .brand {
@@ -107,10 +120,17 @@ body {
     font-size: 2.5rem;
     font-weight: 600;
     color: #575757;
+    font-family: "Lato", sans-serif;
+}
+
+.hero-section .card {
+    border: none;
+    box-shadow: 0px 0px 14px 5px rgb(0 0 0 / 8%);
 }
 
 .hero-section .card-title {
     color: #575757;
+    font-family: "Roboto Slab", serif;
 }
 
 .hero-section .program-card .card-1 .card-middle {
@@ -126,17 +146,12 @@ body {
     gap: 0.8rem;
 }
 
-.hero-section .program-card .card-1 .card-middle .left .tag-1 {
-    background: #7fffd48c;
-    color: #12a775;
-    font-weight: 500;
-    padding: 0px 8px;
-    border-radius: 0.3rem;
-}
-
-.hero-section .program-card .card-1 .card-middle .left .tag-2 {
-    background: #ffc67f8c;
-    color: #a76512;
+.hero-section .program-card .card-1 .card-middle .left .tag-1,
+.hero-section .program-card .card-1 .card-middle .left .tag-2,
+.hero-section .program-card .card-2 .card-middle .left .tag-1,
+.hero-section .program-card .card-2 .card-middle .left .tag-2 {
+    background: #2a2a2a;
+    color: #ffffff;
     font-weight: 500;
     padding: 0px 8px;
     border-radius: 0.3rem;
@@ -155,22 +170,6 @@ body {
     gap: 0.8rem;
 }
 
-.hero-section .program-card .card-2 .card-middle .left .tag-1 {
-    background: #7fbeff8c;
-    color: #124ea7;
-    font-weight: 500;
-    padding: 0px 8px;
-    border-radius: 0.3rem;
-}
-
-.hero-section .program-card .card-2 .card-middle .left .tag-2 {
-    background: #aa7fff8c;
-    color: #540faf;
-    font-weight: 500;
-    padding: 0px 8px;
-    border-radius: 0.3rem;
-}
-
 .hero-section .program-card .card-text {
     font-weight: 500;
     color: #5a5a5a;
@@ -181,13 +180,13 @@ body {
 }
 
 .hero-section .program-card .btn {
-    background-color: #6cc727;
+    background-color: #3c7dd7;
     color: white;
     border: 1px solid;
 }
 
 .hero-section .program-card .btn:hover {
-    background-color: #55a319;
+    background-color: #2b69c1;
 }
 
 /* Card Section */
@@ -200,6 +199,7 @@ body {
 
 .card-section .heading {
     text-align: center;
+    font-family: "Roboto Slab", serif;
 }
 
 .card-section .cards {
@@ -253,7 +253,7 @@ body {
 /* Pitch  section */
 
 .pitch-section {
-    background-color: currentColor;
+    background-color: #293c66;
     padding-block: 2rem;
     display: flex;
     flex-direction: column;
@@ -268,11 +268,13 @@ body {
 
 .pitch-section h3 {
     color: white;
+    font-family: "Roboto Slab", serif;
 }
 
 .pitch-section h4 {
     color: white;
     font-size: 1.3rem;
+    font-weight: 400;
 }
 
 .pitch-section .cards {
@@ -322,6 +324,7 @@ body {
 .curriculum h5 {
     font-size: 1.3rem;
     font-weight: 400;
+    font-family: "Varela Round", sans-serif;
 }
 
 .curriculum .top {
@@ -330,6 +333,10 @@ body {
     gap: 1rem;
     margin-bottom: 2rem;
     align-items: center;
+}
+
+.curriculum .top h3 {
+    font-family: "Pacifico", cursive;
 }
 
 .curriculum .weeks-section {
@@ -345,7 +352,7 @@ body {
     flex-direction: column;
     gap: 1.1rem;
     border-radius: 0.4rem;
-    background-color: #08122c;
+    background-color: #6279b3;
 }
 
 .curriculum .week h3 {
@@ -355,6 +362,11 @@ body {
     color: #08122c;
     padding: 0.2rem 0.6rem;
     border-radius: 0.4rem;
+    font-family: "Pacifico", cursive;
+}
+
+.curriculum .week h4 {
+    font-family: "Roboto Slab", serif;
 }
 
 .curriculum .week ul {
@@ -443,7 +455,7 @@ body {
 
 .masterclass {
     color: white;
-    background-color: #183556;
+    background-color: #686ee2;
     display: grid;
     padding: 5rem 4rem;
     gap: 4rem;
@@ -467,7 +479,7 @@ body {
 }
 
 .masterclass .right-part {
-    background-color: #202124;
+    background-color: #293c66;
     border-radius: 1rem;
     justify-self: center;
     width: 100%;
@@ -484,7 +496,6 @@ body {
     color: white;
     text-align: center;
     font-size: 1.1rem;
-    font-weight: 600;
     font-family: "Varela Round", sans-serif;
 }
 
@@ -525,7 +536,7 @@ body {
 /* Footer */
 
 .footer-container {
-    background-color: #1e3161;
+    background-color: #000000;
 }
 
 .footer-container p {
@@ -545,7 +556,6 @@ body {
 }
 
 .footer .column {
-    justify-self: center;
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
@@ -612,6 +622,10 @@ body {
 @media only screen and (max-width: 800px) {
     .navbar-nav {
         align-items: center;
+    }
+
+    .navbar .logo img {
+        width: 15%;
     }
 
     .hero-section {
@@ -690,6 +704,10 @@ body {
         font-size: 0.9rem;
     }
 
+    .brand {
+        font-size: 1rem;
+    }
+
     .card-section {
         margin-block: 2rem;
     }
@@ -756,6 +774,11 @@ body {
     .faq {
         padding: 2rem 2rem;
         gap: 1.3rem;
+    }
+
+    .footer .column {
+        width: 50%;
+        justify-self: center;
     }
 }
 
