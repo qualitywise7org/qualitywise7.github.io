@@ -3,6 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Belanosima&display=swap");
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -75,7 +79,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 2rem 4rem;
-    background: url("./assets/landingBG.png") no-repeat bottom / cover;
+    background: url("../assets/landingBG.png") no-repeat bottom / cover;
 }
 
 .hero {
