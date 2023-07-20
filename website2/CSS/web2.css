@@ -34,6 +34,11 @@ body {
     font-family: "Ysabeau SC", sans-serif;
 }
 
+.apply-btn a {
+    text-decoration: none;
+    color: white;
+}
+
 .apply-btn:hover {
     background-color: #492b6e;
 }

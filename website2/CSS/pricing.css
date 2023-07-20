@@ -22,3 +22,14 @@ h2 {
     color: white;
     text-decoration: none;
 }
+
+@media only screen and (max-width: 600px) {
+    .pricing {
+        padding: 2rem;
+    }
+
+    .price-head {
+        font-size: 1.5rem;
+        padding: 0.2rem 0.5rem;
+    }
+}
