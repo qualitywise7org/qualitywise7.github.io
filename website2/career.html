@@ -12,6 +12,24 @@
             integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
             crossorigin="anonymous"
         />
+        <script
+            src="https://kit.fontawesome.com/f6b356be29.js"
+            crossorigin="anonymous"
+        ></script>
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-1JQVXS3B5L");
+        </script>
     </head>
     <body>
         <!-- Navbar -->
@@ -19,8 +37,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <div class="logo">
-                    <img src="./assets/mpIcon.png" alt="Icon" />
-                    <a class="brand" href="web2.html">Minded-Planet</a>
+                    <a class="brand" href="web2.html">360&deg; Jobs Door</a>
                 </div>
                 <button
                     class="navbar-toggler"
@@ -43,9 +60,7 @@
                                 >Home</a
                             >
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Courses</a>
-                        </li>
+
                         <li class="nav-item dropdown">
                             <a
                                 class="nav-link dropdown-toggle"
@@ -73,8 +88,18 @@
                             <a class="nav-link" href="demo.html">Demo</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="career.html"
                                 >Internships/Careers</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="https://api.whatsapp.com/send?phone=918319349660&text="
+                                >Contact us</a
                             >
                         </li>
                     </ul>
@@ -87,21 +112,6 @@
         <section>
             <div class="career-container">
                 <h1>Career Opportunities</h1>
-
-                <div class="internship">
-                    <h2 class="internship-title">
-                        Product Manager Intern - Position 1
-                    </h2>
-                    <ul class="internship-details">
-                        <li>You will be working on all projects</li>
-                        <li>Stipend: Rs.5000 per month</li>
-                        <li>
-                            Office Timing: 9:30 AM to 6:30 PM, Wednesday to
-                            Sunday (Monday/Tuesday Holiday)
-                        </li>
-                        <li>Office timing can be changed after discussion</li>
-                    </ul>
-                </div>
 
                 <div class="internship">
                     <h2 class="internship-title">
@@ -146,7 +156,7 @@
             <div class="footer-container">
                 <div class="footer">
                     <div class="column">
-                        <h3>Minded-Planet</h3>
+                        <h3>360&deg; Jobs Door</h3>
                         <ul>
                             <li>
                                 Introducing the 21-Week Full Stack Developer
@@ -157,24 +167,34 @@
                     <div class="column">
                         <h3>Quick-Links</h3>
                         <ul>
-                            <li><a href="./web2.html">Home</a></li>
-                            <li><a href="./web2.html#programs">Programs</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                            <li>
-                                <a href="./web2.html#refund">Refund Policy</a>
-                            </li>
-                            <li>
-                                <a href="./web2.html#curriculum">Curriculum</a>
-                            </li>
+                            <li><a href="web2.html">Home</a></li>
+                            <li><a href="#programs">Programs</a></li>
+                            <li><a href="./pricing.html">Pricing</a></li>
+                            <li><a href="#refund">Refund Policy</a></li>
+                            <li><a href="#curriculum">Curriculum</a></li>
                         </ul>
                     </div>
                     <div class="column">
                         <h3>Courses</h3>
                         <ul>
-                            <li><a href="#">Basic of Computer</a></li>
-                            <li><a href="#">Advance Computer</a></li>
-                            <li><a href="#">Programming</a></li>
-                            <li><a href="#">English Communication</a></li>
+                            <li>
+                                <a href="web2.html#web-dev">Web Development</a>
+                            </li>
+                            <li>
+                                <a href="web2.html#full-stack"
+                                    >MERN-Stack Development</a
+                                >
+                            </li>
+                            <li>
+                                <a href="web2.html#backend-dev"
+                                    >Backend Development</a
+                                >
+                            </li>
+                            <li>
+                                <a href="web2.html#full-stack"
+                                    >Full-Stack Development</a
+                                >
+                            </li>
                         </ul>
                     </div>
                     <div class="column">
@@ -183,8 +203,26 @@
                             <li>
                                 <a
                                     href="https://api.whatsapp.com/send?phone=918319349660&text="
+                                    target="_blank"
                                     >Connect with Us</a
                                 >
+                            </li>
+                            <li class="contact-icons">
+                                <a href="#" class="fb-icon">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="#" class="linkedin-icon">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="twitter-icon">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" class="insta-icon">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="youtube-icon">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
                             </li>
                         </ul>
                     </div>
