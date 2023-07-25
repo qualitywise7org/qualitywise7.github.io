@@ -1,35 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            Quality Wise - Job oriented software development/programming
-            training, consultancy and internship
-        </title>
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Demo</title>
+        <link rel="stylesheet" href="./CSS/demo.css" />
+        <link rel="stylesheet" href="./CSS/web2.css" />
         <link
-            href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
             rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous"
         />
-
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-
-        <link rel="stylesheet" href="css/animate.css" />
-
-        <link rel="stylesheet" href="css/owl.carousel.min.css" />
-        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-        <link rel="stylesheet" href="css/magnific-popup.css" />
-
-        <link rel="stylesheet" href="css/flaticon.css" />
-        <link rel="stylesheet" href="css/style.css" />
+        <script
+            src="https://kit.fontawesome.com/f6b356be29.js"
+            crossorigin="anonymous"
+        ></script>
         <!-- Google tag (gtag.js) -->
         <script
             async
@@ -46,88 +32,178 @@
         </script>
     </head>
     <body>
-        <div class="wrap">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col">
-                        <p class="mb-0 phone">
-                            <span class="fa fa-phone"></span>
-                            <a href="#">83193 49660</a>
-                        </p>
-                    </div>
-                    <div class="col d-flex justify-content-end">
-                        <!-- <div class="social-media">
-				    		<p class="mb-0 d-flex">
-				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
-				    		</p>
-			        </div> -->
-                    </div>
+        <!-- Navbar -->
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <div class="logo">
+                    <a class="brand" href="index.html">360&deg; Jobs Door</a>
                 </div>
-            </div>
-        </div>
-        <nav
-            class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
-            id="ftco-navbar"
-        >
-            <div class="container">
-                <a class="navbar-brand" href="index.html"
-                    >Qualitywise - IT Industry<span>coach</span></a
-                >
-                <!-- <form action="#" class="searchform order-sm-start order-lg-last">
-              <div class="form-group d-flex">
-                <input type="text" class="form-control pl-3" placeholder="Search">
-                <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
-              </div>
-            </form> -->
                 <button
                     class="navbar-toggler"
                     type="button"
-                    data-toggle="collapse"
-                    data-target="#ftco-nav"
-                    aria-controls="ftco-nav"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                 >
-                    <span class="fa fa-bars"></span> Menu
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="ftco-nav">
-                    <ul class="navbar-nav m-auto">
-                        <li class="nav-item active">
-                            <a href="index.html" class="nav-link">Home</a>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="index.html"
+                                >Home</a
+                            >
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Programs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#programs"
+                                        >Graduates Program</a
+                                    >
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#programs"
+                                        >Undergraductes Program</a
+                                    >
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="courses.html" class="nav-link">Courses</a>
+                            <a class="nav-link" href="demo.html">Demo</a>
                         </li>
                         <li class="nav-item">
-                            <a href="cv-making.html" class="nav-link"
-                                >CV making</a
+                            <a class="nav-link" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="career.html"
+                                >Internships/Careers</a
                             >
                         </li>
                         <li class="nav-item">
-                            <a href="jobs.html" class="nav-link">Jobs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="career.html" class="nav-link"
-                                >Internship/Careers</a
+                            <a
+                                class="nav-link"
+                                href="https://api.whatsapp.com/send?phone=918319349660&text="
+                                >Contact us</a
                             >
                         </li>
-                        <!-- <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> -->
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- END nav -->
-        <div class="demo">
-            <h1>Quality wise job oriented software learning demo class</h1>
-            <p>Every Saturday</p>
-            <p>Timings: 10:00 AM to 11:00 AM</p>
-            <p id="timer">15</p>
-            <button id="joinBtn">Join Now</button>
-        </div>
 
-        <script src="js/demo.js"></script>
+        <!-- Demo -->
+        <section>
+            <div class="demo">
+                <h1>Quality wise job oriented software learning demo class</h1>
+                <p>Every Saturday</p>
+                <p>Timings: 10:00 AM to 11:00 AM</p>
+                <p id="timer">15</p>
+                <button id="joinBtn">Join Now</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer">
+                    <div class="column">
+                        <h3>360&deg; Jobs Door</h3>
+                        <ul>
+                            <li>
+                                Introducing the 21-Week Full Stack Developer
+                                Bootcamp and Career Guidance Program!
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Quick-Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#programs">Programs</a></li>
+                            <li><a href="./pricing.html">Pricing</a></li>
+                            <li><a href="#refund">Refund Policy</a></li>
+                            <li><a href="#curriculum">Curriculum</a></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Courses</h3>
+                        <ul>
+                            <li>
+                                <a href="index.html#web-dev">Web Development</a>
+                            </li>
+                            <li>
+                                <a href="index.html#full-stack"
+                                    >MERN-Stack Development</a
+                                >
+                            </li>
+                            <li>
+                                <a href="index.html#backend-dev"
+                                    >Backend Development</a
+                                >
+                            </li>
+                            <li>
+                                <a href="index.html#full-stack"
+                                    >Full-Stack Development</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://api.whatsapp.com/send?phone=918319349660&text="
+                                    target="_blank"
+                                    >Connect with Us</a
+                                >
+                            </li>
+                            <li class="contact-icons">
+                                <a href="#" class="fb-icon">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="#" class="linkedin-icon">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="twitter-icon">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" class="insta-icon">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="youtube-icon">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p>Copyright TheJobsDoor © 2023. All rights reserved</p>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./js/demo.js"></script>
     </body>
 </html>
