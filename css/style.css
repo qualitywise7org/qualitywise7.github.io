@@ -114,14 +114,14 @@ body {
 
 .hero ul li {
     font-size: 1.3rem;
-    color: #8b8b8b;
+    color: #6c6c6c;
     margin: 0;
     font-family: "Montserrat", sans-serif;
 }
 
 .hero span {
     font-weight: 700;
-    color: #727272;
+    color: #000000;
     font-family: "Varela Round", sans-serif;
     margin-block: 0.6rem;
 }
@@ -152,7 +152,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.8rem;
 }
 
@@ -176,7 +176,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.8rem;
 }
 
@@ -412,9 +412,10 @@ body {
 
 .company-container .company-logo {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
-    width: 50%;
+    align-items: center;
+    width: 75%;
 }
 
 .company-container img {
@@ -442,7 +443,7 @@ body {
     flex-direction: column;
 }
 
-.fade-carousel .carousel-item .quote h1 {
+.fade-carousel .carousel-item .quote h2 {
     text-align: center;
     color: #5e5e5e;
     padding-inline: 1rem;
@@ -512,7 +513,7 @@ body {
     font-family: "Belanosima", sans-serif;
 }
 
-.masterclass .left-part h1 {
+.masterclass .left-part h3 {
     font-size: 3rem;
 }
 
@@ -667,6 +668,14 @@ body {
 /* Media Queries */
 
 @media only screen and (max-width: 990px) {
+    .navbar-nav {
+        align-items: center;
+    }
+
+    .navbar-nav .dropdown .show {
+        text-align: center;
+    }
+
     .hero-section {
         gap: 2.5rem;
     }
@@ -677,10 +686,6 @@ body {
 
     .card-section .cards {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .company-container .company-logo {
-        width: 65%;
     }
 
     .masterclass {
@@ -736,7 +741,8 @@ body {
     }
 
     .company-container .company-logo {
-        width: 82%;
+        width: 85%;
+        gap: 1.5rem;
     }
 
     .testimonial {
@@ -747,7 +753,7 @@ body {
         gap: 0.5rem;
     }
 
-    .masterclass .left-part h1 {
+    .masterclass .left-part h3 {
         font-size: 2rem;
     }
 
@@ -915,7 +921,7 @@ body {
     }
 
     .company-container .company-logo {
-        width: 905;
+        width: 100%;
     }
 
     .masterclass {
