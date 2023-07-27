@@ -178,14 +178,24 @@ body {
     width: 70%;
 }
 
-.hero-section .program-card .btn {
+.hero-section .program-btn .demoBtn {
     background-color: #3c7dd7;
     color: white;
     border: 1px solid;
 }
 
-.hero-section .program-card .btn:hover {
+.hero-section .program-btn .demoBtn:hover {
     background-color: #2b69c1;
+}
+
+.hero-section .program-btn .curriculum-btn {
+    background-color: #6279b3;
+    color: white;
+    border: 1px solid;
+}
+
+.hero-section .program-btn .curriculum-btn:hover {
+    background-color: #546596;
 }
 
 /* Card Section */
