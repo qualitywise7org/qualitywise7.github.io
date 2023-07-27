@@ -47,3 +47,46 @@
 #joinBtn:hover {
     background-color: rgb(57, 62, 209);
 }
+
+@media only screen and (max-width: 990px) {
+    .demo h1 {
+        padding: 0 7rem;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .demo h1 {
+        padding: 0 5rem;
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .demo h1 {
+        padding: 0 2rem;
+    }
+
+    #timer {
+        font-size: 50px;
+    }
+
+    #joinBtn {
+        font-size: 14px;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .demo h1 {
+        padding: 0 1rem;
+        font-size: 18px;
+    }
+
+    .demo p {
+        font-size: 15px;
+    }
+
+    #timer {
+        margin-top: 18px;
+    }
+}

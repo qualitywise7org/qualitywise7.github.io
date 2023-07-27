@@ -54,22 +54,12 @@ body {
     padding-inline: 2rem;
 }
 
-.navbar .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.navbar .logo img {
-    width: 18%;
-}
-
 .brand {
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-family: "Ysabeau SC", sans-serif;
-    text-transform: uppercase;
+    padding-left: 1rem;
+}
+
+.brand img {
+    width: 150px;
 }
 
 .navbar-collapse {
@@ -175,7 +165,7 @@ body {
 .hero-section .program-card .card-2 .card-middle .left {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-start;
     gap: 0.8rem;
 }
@@ -776,6 +766,10 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+    .brand img {
+        width: 108px;
+    }
+
     .hero-section .hero-tag {
         font-size: 1.5rem;
     }
@@ -890,7 +884,7 @@ body {
 
 @media only screen and (max-width: 450px) {
     .hero ul li {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
 
     .hero-section .program-card .card-2 .card-middle .left .tag-2 {

@@ -91,6 +91,10 @@ h2 {
         font-size: 12px;
     }
 
+    .project-item {
+        margin-bottom: 6px;
+    }
+
     .project-title {
         font-size: 14px;
         margin-bottom: 3px;
