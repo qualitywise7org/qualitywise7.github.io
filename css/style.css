@@ -59,7 +59,7 @@ body {
 }
 
 .brand img {
-    width: 150px;
+    width: 200px;
 }
 
 .navbar-collapse {
@@ -118,9 +118,8 @@ body {
 
 .hero-section .hero-tag {
     font-size: 1.8rem;
-    font-weight: 600;
     color: #575757;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto Slab", serif;
 }
 
 .hero-section .card {
@@ -767,7 +766,7 @@ body {
 
 @media only screen and (max-width: 600px) {
     .brand img {
-        width: 108px;
+        width: 185px;
     }
 
     .hero-section .hero-tag {
@@ -883,10 +882,6 @@ body {
 }
 
 @media only screen and (max-width: 450px) {
-    .hero ul li {
-        font-size: 0.85rem;
-    }
-
     .hero-section .program-card .card-2 .card-middle .left .tag-2 {
         width: min-content;
     }

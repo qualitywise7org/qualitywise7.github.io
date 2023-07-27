@@ -15,6 +15,7 @@ h1 {
     text-align: center;
     color: #333333;
     margin-bottom: 30px;
+    font-family: "Ysabeau SC";
 }
 
 h2 {
@@ -23,21 +24,21 @@ h2 {
 }
 
 .internship {
-    margin-bottom: 30px;
+    margin-block: 30px;
     background-color: #ffffff;
-    padding: 20px;
     border-radius: 8px;
 }
 
 .internship-title {
-    font-size: 18px;
     font-weight: bold;
+    font-size: 20px;
     color: #333333;
     margin-bottom: 10px;
+    font-family: "Roboto Slab", serif;
 }
 
 .internship-details {
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -47,56 +48,25 @@ h2 {
     padding-left: 20px;
 }
 
-.projects {
-    margin-top: 40px;
+.projects h2 {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 10px;
+    font-family: "Roboto Slab", serif;
 }
 
 .project-item {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #666666;
+    margin-bottom: 0;
+    list-style-type: disc;
+    padding-left: 20px;
     margin-bottom: 20px;
 }
 
-.project-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333333;
-    margin-bottom: 5px;
-}
-
 @media screen and (max-width: 600px) {
-    .career-container {
-        max-width: 100%;
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    h2 {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-    .internship {
-        padding: 15px;
-    }
-
-    .internship-title {
-        font-size: 16px;
-        margin-bottom: 8px;
-    }
-
-    .internship-details {
-        font-size: 12px;
-    }
-
-    .project-item {
-        margin-bottom: 6px;
-    }
-
-    .project-title {
-        font-size: 14px;
-        margin-bottom: 3px;
-    }
 }
