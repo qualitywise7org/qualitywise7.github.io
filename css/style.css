@@ -542,6 +542,32 @@ body {
     font-family: "Varela Round", sans-serif;
 }
 
+/* News Section */
+
+.news {
+    display: flex;
+    flex-direction: column;
+    padding-block: 2rem;
+    gap: 2rem;
+    align-items: center;
+    background-color: #5092d3;
+}
+
+.news h2 {
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding-block: 0.8rem;
+    background: #00376c;
+    font-family: "Roboto Slab", serif;
+}
+
+.news iframe {
+    width: 50%;
+    height: 310px;
+    border-radius: 1rem;
+}
+
 /* FAQ section */
 
 .faq {
@@ -642,13 +668,19 @@ body {
     font-size: 1rem;
 }
 
-/* Whatsapp Chat Button */
+/* Whatsapp Chat Button and back to top */
 
-.whatsapp-chat {
+.chat-back-to-top {
     position: fixed;
     bottom: 40px;
-    right: 40px;
+    right: 35px;
     z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.whatsapp-chat {
     background-color: #25d366;
     width: 60px;
     height: 60px;
@@ -662,6 +694,15 @@ body {
 .whatsapp-chat a {
     color: #fff;
     font-size: 2rem;
+}
+
+.back-to-top-btn {
+    display: none;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    background-color: #c5c5c5;
 }
 
 /* Media Queries */
@@ -699,6 +740,10 @@ body {
 
     .masterclass .right-part .text {
         font-size: 1rem;
+    }
+
+    .news iframe {
+        width: 70%;
     }
 }
 
@@ -880,6 +925,16 @@ body {
         height: 230px;
     }
 
+    .news h2 {
+        font-size: 1.3rem;
+        padding-inline: 0.5rem;
+        padding-block: 0.5rem;
+    }
+
+    .news iframe {
+        height: 250px;
+    }
+
     .faq {
         padding: 2rem 2rem;
         gap: 1.3rem;
@@ -888,6 +943,12 @@ body {
     .footer .column {
         width: 50%;
         justify-self: center;
+    }
+
+    .chat-back-to-top {
+        gap: 0.4rem;
+        bottom: 20px;
+        right: 20px;
     }
 }
 
@@ -937,6 +998,10 @@ body {
 
     .masterclass .right-part iframe {
         height: 200px;
+    }
+
+    .news iframe {
+        width: 85%;
     }
 
     .faq h2 {

@@ -100,6 +100,31 @@
                                 >Internships/Careers</a
                             >
                         </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Blogs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="./careeroptions"
+                                        >Career Options</a
+                                    >
+                                </li>
+                                <!-- <li>
+                                    <a class="dropdown-item" href="#programs"
+                                        >Biographies</a
+                                    >
+                                </li> -->
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a
                                 class="nav-link"
@@ -623,6 +648,22 @@
             </div>
         </section>
 
+        <!-- News Section -->
+
+        <section>
+            <div class="news">
+                <h2>"College and industry knowledge gap in news"</h2>
+                <iframe
+                    src="https://www.linkedin.com/embed/feed/update/urn:li:share:7089869348319727618"
+                    height="undefined"
+                    width="504"
+                    frameborder="0"
+                    allowfullscreen=""
+                    title="Embedded post"
+                ></iframe>
+            </div>
+        </section>
+
         <!-- FAQ Section -->
 
         <section>
@@ -673,7 +714,7 @@
                             data-bs-parent="#accordionExample"
                         >
                             <div class="accordion-body">
-                                Every Saturday, 8-9 Am for Undergradutes program
+                                Every Saturday, 8-9 AM for Undergradutes program
                                 and 9-10 AM for Graduates program.
                             </div>
                         </div>
@@ -722,6 +763,13 @@
                     </div>
                     <div class="column">
                         <h3>Quick-Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#programs">Programs</a></li>
+                            <li><a href="./pricing.html">Pricing</a></li>
+                            <li><a href="#refund">Refund Policy</a></li>
+                            <li><a href="#curriculum">Curriculum</a></li>
+                        </ul>
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="#programs">Programs</a></li>
@@ -793,13 +841,22 @@
         </footer>
 
         <!-- WhatsApp Chat Button -->
-        <div class="whatsapp-chat">
-            <a
-                href="https://api.whatsapp.com/send?phone=918319349660&text="
-                target="_blank"
+        <div class="chat-back-to-top">
+            <div class="whatsapp-chat">
+                <a
+                    href="https://api.whatsapp.com/send?phone=918319349660&text="
+                    target="_blank"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <button
+                id="backToTopBtn"
+                class="back-to-top-btn"
+                onclick="scrollToTop()"
             >
-                <i class="fab fa-whatsapp"></i>
-            </a>
+                <i class="fa-solid fa-chevron-up"></i>
+            </button>
         </div>
 
         <script
@@ -807,5 +864,6 @@
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"
         ></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
