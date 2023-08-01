@@ -1,0 +1,42 @@
+.plan-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.plans {
+    padding: 20px;
+}
+
+.plans .single-plan {
+    margin-bottom: 30px;
+}
+
+.plans h2,
+.aside h2 {
+    text-align: center;
+    font-family: math;
+}
+
+.aside {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.aside img {
+    width: 50%;
+}
+
+@media only screen and (max-width: 1120px) {
+    .aside img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .plan-container {
+        grid-template-columns: 1fr;
+    }
+}
