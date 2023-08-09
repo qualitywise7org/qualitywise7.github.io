@@ -28,7 +28,7 @@ loginForm.addEventListener("submit", async (e) => {
 
     try {
         await loginUser(email, password);
-        window.location.href = "../index.html";
+        window.location.href = "../myaccount/";
     } catch (error) {
         alert("Error logging in: " + error.message);
     }
