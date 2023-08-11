@@ -5,8 +5,6 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
 <url>
   <loc>https://jobsdoor360.in/</loc>
   <lastmod>2023-07-25T05:26:58+00:00</lastmod>
@@ -47,6 +45,14 @@
   <lastmod>2023-07-25T05:26:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-
-
+<url>
+  <loc>https://jobsdoor360.in/motivation/</loc>
+  <lastmod>2023-07-25T05:26:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/privacy/</loc>
+  <lastmod>2023-07-25T05:26:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 </urlset>
