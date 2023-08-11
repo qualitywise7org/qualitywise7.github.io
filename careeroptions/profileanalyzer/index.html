@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Profile Analyzer</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <h1>Profile Analyzer</h1>
+        <form id="profileForm">
+            <label for="jobType">Job Type:</label>
+            <select id="jobType" name="jobType">
+                <option value="private">Private</option>
+                <option value="govt">Government</option></select
+            ><br /><br />
+
+            <label for="industry">Industry:</label>
+            <select id="industry" name="industry">
+                <option value="cs">CS/IT</option>
+                <option value="civil">Civil</option>
+                <option value="mechanical">Mechanical</option>
+                <!-- Add more options as needed --></select
+            ><br /><br />
+
+            <label for="workProfile">Work Profile:</label>
+            <select id="workProfile" name="workProfile">
+                <option value="javaDeveloper">Java Developer</option>
+                <option value="pythonDeveloper">Python Developer</option>
+                <option value="webDeveloper">Web Developer</option>
+                <option value="backendDeveloper">Backend Developer</option>
+                <option value="qa">QA</option>
+                <option value="bsc">BSC</option>
+                <option value="bca">BCA</option>
+                <option value="mca">MCA</option>
+                <!-- Add more options as needed --></select
+            ><br /><br />
+
+            <button type="button" id="submitButton">Submit</button>
+        </form>
+
+        <div id="results">
+            <!-- Results will be displayed here -->
+        </div>
+
+        <script>
+            // TODO: Add JavaScript code to handle form submission and query database/Firestore
+            // You'll need to include Firebase SDK for Firestore integration
+            // Initialize Firebase and set up Firestore queries
+            // Add event listener to the submit button to trigger the database query
+        </script>
+    </body>
+</html>
