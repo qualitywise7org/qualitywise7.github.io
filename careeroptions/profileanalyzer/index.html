@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Profile Analyzer</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/profileanalyzer.css" />
+    </head>
+    <body>
+        <section class="profile_analyzer">
+            <h1>Profile Analyzer</h1>
+            <form id="profileForm" class="profileForm">
+                <label for="jobType">Job Type:</label>
+                <select id="jobType" name="jobType"></select>
+
+                <label for="industry">Industry:</label>
+                <select id="industry" name="industry"></select>
+
+                <label for="profile">Work Profile:</label>
+                <select id="profile" name="profile"></select>
+
+                <button type="button" id="submitButton">Submit</button>
+            </form>
+
+            <div id="results" class="results">
+                <!-- Results will be displayed here -->
+            </div>
+        </section>
+
+        <script type="module" src="js/profileanalyzer.js"></script>
+    </body>
+</html>
