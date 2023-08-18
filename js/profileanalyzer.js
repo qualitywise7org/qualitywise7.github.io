@@ -1,11 +1,9 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
 import {
     getFirestore,
     collection,
-    getDoc,
-    doc,
     getDocs,
-} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
@@ -39,7 +37,7 @@ async function populateSelectOptions(collectionName, selectElement) {
         // Add a default "Select" option
         const defaultOption = document.createElement("option");
         defaultOption.value = "";
-        defaultOption.textContent = `Select ${collectionName}`;
+        defaultOption.textContent = `Select`;
         selectElement.appendChild(defaultOption);
 
         snapshot.forEach((doc) => {
@@ -56,9 +54,9 @@ async function populateSelectOptions(collectionName, selectElement) {
 
 // Call the function to populate select options when the page is loaded
 window.addEventListener("load", () => {
-    populateSelectOptions("jobtype", jobTypeSelect);
-    populateSelectOptions("industry", industrySelect);
-    populateSelectOptions("profile", profileSelect);
+    populateSelectOptions("masterdata_jobtype", jobTypeSelect);
+    populateSelectOptions("industry_masterdata ", industrySelect);
+    populateSelectOptions("profile_masterdata ", profileSelect);
 });
 
 // Function to display results based on user selections
@@ -72,26 +70,26 @@ submitButton.addEventListener("click", async () => {
     resultsContainer.classList.add("results-visible");
 
     try {
-        const profileCollectionRef = collection(db, "profile");
-        const profileSnapshot = await getDocs(profileCollectionRef);
+        const postCollectionRef = collection(db, "freejobalert_posts");
+        const postSnapshot = await getDocs(postCollectionRef);
 
-        let foundProfileData = null;
+        let foundPostData = null;
 
-        profileSnapshot.forEach((doc) => {
-            const profileData = doc.data();
+        postSnapshot.forEach((doc) => {
+            const postData = doc.data();
 
             if (
                 (selectedJobType === "" ||
-                    profileData.type_code === selectedJobType) &&
-                profileData.industry_code === selectedIndustry &&
-                profileData.code === selectedProfile
+                    postData.jobtype_masterdata_code === selectedJobType) &&
+                postData.industry_masterdata_code === selectedIndustry &&
+                postData.profile_masterdata_code === selectedProfile
             ) {
-                foundProfileData = profileData;
+                foundPostData = postData;
             }
         });
 
-        if (foundProfileData) {
-            displayResults(foundProfileData, selectedProfile);
+        if (foundPostData) {
+            displayResults(selectedProfile);
         } else {
             resultsContainer.textContent = "No results found.";
         }
@@ -101,59 +99,53 @@ submitButton.addEventListener("click", async () => {
 });
 
 // Function to display results in the resultsContainer
-async function displayResults(profileData, selectedProfile) {
-    const requiredProfile = profileData.required_profile.map(
-        (profile) => profile
-    );
-    const handsOnSkills = profileData.minimum_hands_on_skills.map(
-        (skill) => skill
-    );
-
+async function displayResults(selectedProfile) {
     const resultsContainer = document.getElementById("results");
 
-    // Clear previous results
-    resultsContainer.innerHTML = "";
-
-    // Create and append div for required profile
-    const requiredProfileDiv = document.createElement("div");
-    requiredProfileDiv.classList.add("result-field");
-    requiredProfileDiv.innerHTML = `
-        <h2>Required Profile:</h2>
-        <p>${requiredProfile.join(", ")}</p>
-    `;
-    resultsContainer.appendChild(requiredProfileDiv);
-
-    // Create and append div for minimum hands-on skills
-    const handsOnSkillsDiv = document.createElement("div");
-    handsOnSkillsDiv.classList.add("result-field");
-    handsOnSkillsDiv.innerHTML = `
-        <h2>Minimum Hands-On Skills:</h2>
-        <p>${handsOnSkills.join(", ")}</p>
-    `;
-    resultsContainer.appendChild(handsOnSkillsDiv);
-
     // Check for companies hiring for this role
-    const jobsCollectionRef = collection(db, "jobs");
+    const jobsCollectionRef = collection(db, "freejobalert_jobs");
     const jobsQuerySnapshot = await getDocs(jobsCollectionRef);
 
-    const companiesHiring = [];
+    const jobs = [];
 
     jobsQuerySnapshot.forEach((doc) => {
-        const jobData = doc.data();
+        const jobsData = doc.data();
 
-        if (jobData.profile_code === selectedProfile) {
-            companiesHiring.push(jobData.company_name);
+        // Split the lines of jobsData.post_code and check for a match
+        const postCodes = jobsData.profile_masterdata_code.split("\n");
+
+        if (
+            postCodes.some(
+                (postCode) =>
+                    postCode.trim().toLowerCase() ===
+                    selectedProfile.trim().toLowerCase()
+            )
+        ) {
+            const job = {
+                postName: jobsData.post_name,
+                qualificationEligibility: jobsData.qualification_eligibility,
+            };
+            jobs.push(job);
         }
     });
 
-    if (companiesHiring.length > 0) {
-        // Create and append div for companies hiring
-        const companiesHiringDiv = document.createElement("div");
-        companiesHiringDiv.classList.add("result-field");
-        companiesHiringDiv.innerHTML = `
-            <h2>Companies hiring for this role:</h2>
-            <p>${companiesHiring.join(", ")}</p>
+    if (jobs.length > 0) {
+        const jobsDiv = document.createElement("div");
+        jobsDiv.classList.add("result-field");
+        jobsDiv.innerHTML = `
+            <h2>Jobs for you</h2>
         `;
-        resultsContainer.appendChild(companiesHiringDiv);
+
+        jobs.forEach((job) => {
+            const jobDiv = document.createElement("div");
+            jobDiv.classList.add("job-info");
+            jobDiv.innerHTML = `
+                <h3>Job Post: ${job.postName}</h3>
+                <p>Qualification Eligibility: ${job.qualificationEligibility}</p>
+            `;
+            jobsDiv.appendChild(jobDiv);
+        });
+
+        resultsContainer.appendChild(jobsDiv);
     }
 }
