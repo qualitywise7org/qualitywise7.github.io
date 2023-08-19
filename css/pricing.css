@@ -16,18 +16,13 @@
     font-family: ui-sans-serif;
 }
 
-.course-head {
-    display: flex;
-    gap: 1rem;
-}
-
-.course-head a {
-    align-self: flex-end;
+.buy-now-btn {
+    align-self: center;
     margin-bottom: 0.5rem;
     text-decoration: none;
     border: none;
     color: white;
-    background-color: black;
+    background-color: #45a1c6;
     padding: 4px 8px;
     border-radius: 4px;
     text-transform: uppercase;
