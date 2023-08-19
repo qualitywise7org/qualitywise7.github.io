@@ -22,7 +22,7 @@
             src="https://kit.fontawesome.com/f6b356be29.js"
             crossorigin="anonymous"
         ></script>
-        <!-- Google tag (gtag.js) -->
+        <!-- Google tag (gtag.js) and Button Click Tracking -->
         <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"
@@ -35,6 +35,13 @@
             gtag("js", new Date());
 
             gtag("config", "G-1JQVXS3B5L");
+
+            function trackBuyButtonClick(buttonName) {
+                gtag("event", "click", {
+                    event_category: "Buy Now Click",
+                    event_label: buttonName,
+                });
+            }
         </script>
     </head>
     <body>
@@ -223,7 +230,12 @@
                     </tbody>
                 </table>
 
-                <a class="buy-now-btn" href="#buy">Buy Now</a>
+                <a
+                    class="buy-now-btn"
+                    href="#buy"
+                    onclick="trackBuyButtonClick('Buy Now - Courses')"
+                    >Buy Now</a
+                >
 
                 <h2 class="mt-4">Chargeable Internships</h2>
                 <table class="table table-dark table-striped">
@@ -245,7 +257,12 @@
                     </tbody>
                 </table>
 
-                <a class="buy-now-btn" href="#buy">Buy Now</a>
+                <a
+                    class="buy-now-btn"
+                    href="#buy"
+                    onclick="trackBuyButtonClick('Buy Now - Internship')"
+                    >Buy Now</a
+                >
 
                 <h2 class="mt-4">Mock Interviews</h2>
                 <table class="table table-dark table-striped">
@@ -270,7 +287,12 @@
                     </tbody>
                 </table>
 
-                <a class="buy-now-btn" href="#buy">Buy Now</a>
+                <a
+                    class="buy-now-btn"
+                    href="#buy"
+                    onclick="trackBuyButtonClick('Buy Now - Mock Interviews')"
+                    >Buy Now</a
+                >
 
                 <h2 class="mt-4">Career Consultancy</h2>
                 <table class="table table-dark table-striped">
