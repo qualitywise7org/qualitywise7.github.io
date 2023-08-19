@@ -342,7 +342,8 @@ body {
     font-family: "Varela Round", sans-serif;
 }
 
-.curriculum .top {
+.curriculum .top,
+.curriculum .course-internship {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -350,8 +351,9 @@ body {
     align-items: center;
 }
 
-.curriculum .top h3 {
+.curriculum h3 {
     font-family: "Pacifico", cursive;
+    text-align: center;
 }
 
 .curriculum .weeks-section {
@@ -359,6 +361,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+}
+
+.curriculum .courses {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 1rem;
 }
 
 .curriculum .week {
@@ -370,7 +380,17 @@ body {
     background-color: #6279b3;
 }
 
-.curriculum .week h3 {
+.curriculum .course {
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 1.1rem;
+    border-radius: 0.4rem;
+    background-color: #887b48;
+}
+
+.curriculum .week h3,
+.curriculum .course h3 {
     background: white;
     width: fit-content;
     align-self: center;
@@ -380,11 +400,13 @@ body {
     font-family: "Pacifico", cursive;
 }
 
-.curriculum .week h4 {
+.curriculum .week h4,
+.curriculum .course h4 {
     font-family: "Roboto Slab", serif;
 }
 
-.curriculum .week ul {
+.curriculum .week ul,
+.curriculum .course ul {
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
@@ -558,7 +580,7 @@ body {
     text-align: center;
     width: 100%;
     padding-block: 0.8rem;
-    background: #00376c;
+    background: #a8c4df;
     font-family: "Roboto Slab", serif;
 }
 
