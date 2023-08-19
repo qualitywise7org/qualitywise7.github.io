@@ -102,7 +102,6 @@ submitButton.addEventListener("click", async () => {
 async function displayResults(selectedProfile) {
     const resultsContainer = document.getElementById("results");
 
-    // Check for companies hiring for this role
     const jobsCollectionRef = collection(db, "freejobalert_jobs");
     const jobsQuerySnapshot = await getDocs(jobsCollectionRef);
 
