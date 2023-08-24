@@ -11,6 +11,8 @@ import {
     getDoc,
     doc,
     updateDoc,
+    where,
+    query,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -44,7 +46,7 @@ onAuthStateChanged(auth, async (user) => {
             if (userDocSnapshot.exists()) {
                 userData = userDocSnapshot.data();
 
-                populateUserDetails();
+                fetchAndUseNames();
             }
         } catch (error) {
             console.error("Error fetching user details:", error);
@@ -55,7 +57,12 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 // Function to populate user details
-function populateUserDetails() {
+function populateUserDetails(
+    twelfthDetails,
+    diplomaDetails,
+    graduationDetails,
+    pgDetails
+) {
     const fullNameElement = document.getElementById("fullName");
     const emailElement = document.getElementById("email");
     const twelfthDetailsElement = document.getElementById("twelfthDetails");
@@ -69,22 +76,81 @@ function populateUserDetails() {
     emailElement.textContent = userData.email || "";
 
     // Populate education details
-    twelfthDetailsElement.textContent = `${userData.twelfthSubject || ""} - ${
-        userData.twelfthPercentage || ""
-    }`;
-    diplomaDetailsElement.textContent = `${userData.diplomaStream || ""} - ${
-        userData.diplomaName || ""
-    }`;
-    graduationDetailsElement.textContent = `${
-        userData.graduationStream || ""
-    } - ${userData.graduationDegree || ""} - ${
-        userData.graduationPercentage || ""
-    }`;
-    pgDetailsElement.textContent = `${userData.pgStream || ""} - ${
-        userData.pgDegree || ""
-    } - ${userData.pgPercentage || ""}`;
+    twelfthDetailsElement.textContent = twelfthDetails;
+    diplomaDetailsElement.textContent = diplomaDetails;
+    graduationDetailsElement.textContent = graduationDetails;
+    pgDetailsElement.textContent = pgDetails;
 }
 
+// Function to get the name from collection based on code
+async function getNameFromCollection(collectionName, code) {
+    const querySnapshot = await getDocs(
+        query(collection(db, collectionName), where("code", "==", code))
+    );
+
+    return querySnapshot.empty ? "" : querySnapshot.docs[0].data().name || "";
+}
+
+async function fetchAndUseNames() {
+    const twelfthSubjectCode = userData.twelfthSubject || "";
+    const diplomaStreamCode = userData.diplomaStream || "";
+    const diplomaNameCode = userData.diplomaName || "";
+    const graduationStreamCode = userData.graduationStream || "";
+    const graduationDegreeCode = userData.graduationDegree || "";
+    const pgStreamCode = userData.pgStream || "";
+    const pgDegreeCode = userData.pgDegree || "";
+
+    const twelfthSubjectName = await getNameFromCollection(
+        "subject_masterdata",
+        twelfthSubjectCode
+    );
+    const diplomaStreamName = await getNameFromCollection(
+        "branch_masterdata ",
+        diplomaStreamCode
+    );
+    const diplomaName = await getNameFromCollection(
+        "diploma_masterdata",
+        diplomaNameCode
+    );
+    const graduationStreamName = await getNameFromCollection(
+        "branch_masterdata ",
+        graduationStreamCode
+    );
+    const graduationDegreeName = await getNameFromCollection(
+        "degree_masterdata ",
+        graduationDegreeCode
+    );
+    const pgStreamName = await getNameFromCollection(
+        "branch_masterdata ",
+        pgStreamCode
+    );
+    const pgDegreeName = await getNameFromCollection(
+        "degree_masterdata ",
+        pgDegreeCode
+    );
+
+    // Hide the loading element
+    const loadingElement = document.getElementById("overlay");
+    loadingElement.style.display = "none";
+
+    const twelfthDetails = `${twelfthSubjectName || ""} - ${
+        userData.twelfthPercentage || ""
+    }`;
+    const diplomaDetails = `${diplomaStreamName || ""} - ${diplomaName || ""}`;
+    const graduationDetails = `${graduationStreamName || ""} - ${
+        graduationDegreeName || ""
+    } - ${userData.graduationPercentage || ""}`;
+    const pgDetails = `${pgStreamName || ""} - ${pgDegreeName || ""} - ${
+        userData.pgPercentage || ""
+    }`;
+
+    populateUserDetails(
+        twelfthDetails,
+        diplomaDetails,
+        graduationDetails,
+        pgDetails
+    );
+}
 const logoutButton = document.getElementById("logout-btn");
 
 if (logoutButton) {
@@ -130,7 +196,7 @@ async function populateSelectOptions(collectionName, selectElement) {
 
         snapshot.forEach((doc) => {
             const data = doc.data();
-            selectElement.innerHTML += `<option value="${data.name}">${data.name}</option>`;
+            selectElement.innerHTML += `<option value="${data.code}">${data.name}</option>`;
         });
     } catch (error) {
         console.error(`Error fetching ${collectionName} options:`, error);
@@ -175,7 +241,7 @@ async function populateDegreeOptions(degreeSelectId, level) {
         snapshot.forEach((doc) => {
             const data = doc.data();
             if (data.level === level) {
-                degreeSelect.innerHTML += `<option value="${data.name}">${data.name}</option>`;
+                degreeSelect.innerHTML += `<option value="${data.code}">${data.name}</option>`;
             }
         });
     } catch (error) {
