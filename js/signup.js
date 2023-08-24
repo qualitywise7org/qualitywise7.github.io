@@ -3,7 +3,14 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
     updateProfile,
+    sendEmailVerification,
+    onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+import {
+    getFirestore,
+    setDoc,
+    doc,
+} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
@@ -18,6 +25,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 const signupForm = document.getElementById("signup-form");
 
@@ -29,20 +37,34 @@ signupForm.addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value;
 
     try {
-        await signUpUser(username, email, password);
-        alert("Signed up successfully!");
+        const userCredential = await signUpUser(username, email, password);
 
         document.getElementById("username").value = "";
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";
+
+        await saveUserDataToFirestore(userCredential.user.uid, username, email);
+
+        await sendEmailVerification(userCredential.user);
+
+        alert("Signed up successfully! A verification email has been sent.");
     } catch (error) {
         alert("Error signing up: " + error.message);
     }
 });
 
-async function signUpUser(username, email, password) {
-    const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        if (user.emailVerified) {
+            window.location.href = "/myaccount/";
+        } else {
+            alert("Please verify your email!");
+        }
+    } else {
+    }
+});
 
+async function signUpUser(username, email, password) {
     const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -50,4 +72,16 @@ async function signUpUser(username, email, password) {
     );
 
     await updateProfile(userCredential.user, { displayName: username });
+
+    return userCredential;
+}
+
+async function saveUserDataToFirestore(userId, username, email) {
+    const db = getFirestore();
+    const userDocRef = doc(db, "users", userId);
+
+    await setDoc(userDocRef, {
+        full_name: username,
+        email: email,
+    });
 }
