@@ -161,12 +161,299 @@
 
         <!-- User details Section -->
 
-        <div class="user-details">
-            <h1>Upload Your Resume</h1>
-            <input type="file" id="resumeInput" accept=".pdf" />
-            <label for="resumeInput" id="fileLabel">Choose File</label>
-            <div id="selectedFile"></div>
-            <button id="uploadButton">Upload</button>
+        <!-- User Details -->
+
+        <div class="container mt-5 mb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div
+                            class="card-header d-flex justify-content-between align-items-center"
+                        >
+                            <h4 class="card-title">My Account</h4>
+                            <a
+                                href="#"
+                                class="btn btn-secondary"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#optionsOffcanvas"
+                                >Menu</a
+                            >
+                        </div>
+                        <div class="card-body">
+                            <!-- Personal Information Section -->
+                            <h5>Personal Information</h5>
+                            <p>
+                                <strong>Name:</strong>
+                                <span id="fullName"></span>
+                            </p>
+                            <p>
+                                <strong>Email:</strong> <span id="email"></span>
+                            </p>
+
+                            <!-- Education Details Section -->
+                            <h5>Education Details</h5>
+                            <p>
+                                <strong>12th:</strong>
+                                <span id="twelfthDetails"></span>
+                            </p>
+                            <p>
+                                <strong>Diploma:</strong>
+                                <span id="diplomaDetails"></span>
+                            </p>
+                            <p>
+                                <strong>Graduation:</strong>
+                                <span id="graduationDetails"></span>
+                            </p>
+                            <p>
+                                <strong>Post Graduation:</strong>
+                                <span id="pgDetails"></span>
+                            </p>
+
+                            <button
+                                id="openModalButton"
+                                class="btn btn-primary mt-3"
+                            >
+                                Update details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="overlay" class="overlay">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+        <!-- Offcanvas -->
+        <div
+            class="offcanvas offcanvas-start"
+            tabindex="-1"
+            id="optionsOffcanvas"
+        >
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">My Account</h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="offcanvas-body">
+                <a
+                    href="/careeroptions/profileanalyzer/"
+                    class="btn btn-secondary d-block mb-3"
+                    >Profile Analyzer</a
+                >
+                <a href="jobsforyou/" class="btn btn-secondary d-block mb-3"
+                    >Jobs for you</a
+                >
+                <a id="logout-btn" class="btn btn-danger d-block">Logout</a>
+            </div>
+        </div>
+
+        <!-- Modal structure -->
+        <div
+            class="modal fade"
+            id="myModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div
+                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+            >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Education Details
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <!-- 12th -->
+                            <div class="mb-3">
+                                <h3>12th*</h3>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label
+                                            for="twelfthSubject"
+                                            class="form-label"
+                                            >Subject</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="twelfthSubject"
+                                        ></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label
+                                            for="twelfthPercentage"
+                                            class="form-label"
+                                            >Percentage</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="twelfthPercentage"
+                                            placeholder="e.g. 70%"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Diploma -->
+                            <div class="mb-3">
+                                <h3>Diploma</h3>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label
+                                            for="diplomaStream"
+                                            class="form-label"
+                                            >Stream</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="diplomaStream"
+                                        ></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label
+                                            for="diplomaName"
+                                            class="form-label"
+                                            >Diploma Name</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="diplomaName"
+                                        ></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Graduation -->
+                            <div class="mb-3">
+                                <h3>Graduation</h3>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label
+                                            for="graduationStream"
+                                            class="form-label"
+                                            >Stream</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="graduationStream"
+                                        ></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label
+                                            for="graduationDegree"
+                                            class="form-label"
+                                            >Degree</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="graduationDegree"
+                                        ></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label
+                                            for="graduationPercentage"
+                                            class="form-label"
+                                            >Percentage</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="graduationPercentage"
+                                            placeholder="e.g. 80%"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post Graduation -->
+                            <div class="mb-3">
+                                <h3>Post Graduation</h3>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="pgStream" class="form-label"
+                                            >Stream</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="pgStream"
+                                        ></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="pgDegree" class="form-label"
+                                            >Degree</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="pgDegree"
+                                        ></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label
+                                            for="pgPercentage"
+                                            class="form-label"
+                                            >Percentage</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="pgPercentage"
+                                            placeholder="e.g. 75%"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Upload Your Resume Section -->
+                            <div class="user-details">
+                                <h1>Upload Your Resume</h1>
+                                <input
+                                    type="file"
+                                    id="resumeInput"
+                                    accept=".pdf"
+                                />
+                                <label for="resumeInput" id="fileLabel"
+                                    >Choose File</label
+                                >
+                                <div id="selectedFile"></div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        <button
+                            type="submit"
+                            id="saveDetails"
+                            class="btn btn-primary"
+                        >
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -278,6 +565,6 @@
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"
         ></script>
-        <script src="../js/myaccount.js"></script>
+        <script type="module" src="../js/myaccount.js"></script>
     </body>
 </html>

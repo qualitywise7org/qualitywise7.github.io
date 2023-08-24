@@ -1,6 +1,7 @@
 import {
     getAuth,
     signInWithEmailAndPassword,
+    onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
 
@@ -17,6 +18,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 const loginForm = document.getElementById("login-form");
 
@@ -28,9 +30,20 @@ loginForm.addEventListener("submit", async (e) => {
 
     try {
         await loginUser(email, password);
-        window.location.href = "../myaccount/";
+        window.location.href = "/myaccount/";
     } catch (error) {
         alert("Error logging in: " + error.message);
+    }
+});
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        if (user.emailVerified) {
+            window.location.href = "/myaccount/";
+        } else {
+            alert("Please verify your email!");
+        }
+    } else {
     }
 });
 
