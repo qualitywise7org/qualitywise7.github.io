@@ -9,7 +9,6 @@ import {
     getDocs,
     getDoc,
     doc,
-    updateDoc,
     where,
     query,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
@@ -181,3 +180,11 @@ async function displayJobs(jobs) {
 
     resultsContainer.appendChild(jobsDiv);
 }
+
+// JavaScript to trigger the modal
+document
+    .getElementById("openModalButton")
+    .addEventListener("click", function () {
+        var myModal = new bootstrap.Modal(document.getElementById("myModal"));
+        myModal.show();
+    });
