@@ -7,10 +7,10 @@
         <link rel="stylesheet" href="../css/signup.css" />
     </head>
     <body>
-        <div class="container">
-            <h2>Sign Up</h2>
+        <div class="signup-container">
+            <h2 class="signup-head">Sign Up</h2>
             <form id="signup-form">
-                <label for="username">Username:</label>
+                <label for="username">Full Name:</label>
                 <input type="text" id="username" name="username" required />
 
                 <label for="email">Email:</label>
@@ -21,6 +21,17 @@
 
                 <button type="submit">Sign Up</button>
             </form>
+
+            <div class="lines-text">
+                <span>OR</span>
+            </div>
+
+            <p class="bottom-heading">
+                Already have an account?
+                <span>
+                    <a href="/login/">log In</a>
+                </span>
+            </p>
         </div>
 
         <script type="module" src="../js/signup.js"></script>

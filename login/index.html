@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="../css/login.css" />
     </head>
     <body>
-        <div class="container">
-            <h2>Login</h2>
+        <div class="login-container">
+            <h2 class="login-head">Login</h2>
             <form id="login-form">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required />
@@ -18,6 +18,17 @@
 
                 <button type="submit">Login</button>
             </form>
+
+            <div class="lines-text">
+                <span>OR</span>
+            </div>
+
+            <p class="bottom-heading">
+                Do not have an account?
+                <span>
+                    <a href="/signup/">Sign Up</a>
+                </span>
+            </p>
         </div>
 
         <script type="module" src="../js/login.js"></script>
