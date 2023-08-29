@@ -75,7 +75,7 @@ async function fetchAndUseJobs() {
         pgDegreeCode
     );
 
-    const jobCollectionRef = collection(db, "freejobalert_jobs");
+    const jobCollectionRef = collection(db, "jobs");
     const jobQuerySnapshot = await getDocs(jobCollectionRef);
 
     const jobsToShow = [];
@@ -180,11 +180,3 @@ async function displayJobs(jobs) {
 
     resultsContainer.appendChild(jobsDiv);
 }
-
-// JavaScript to trigger the modal
-document
-    .getElementById("openModalButton")
-    .addEventListener("click", function () {
-        var myModal = new bootstrap.Modal(document.getElementById("myModal"));
-        myModal.show();
-    });

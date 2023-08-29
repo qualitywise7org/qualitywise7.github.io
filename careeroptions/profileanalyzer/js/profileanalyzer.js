@@ -54,7 +54,7 @@ async function populateSelectOptions(collectionName, selectElement) {
 
 // Call the function to populate select options when the page is loaded
 window.addEventListener("load", () => {
-    populateSelectOptions("masterdata_jobtype", jobTypeSelect);
+    populateSelectOptions("jobtype_masterdata", jobTypeSelect);
     populateSelectOptions("industry_masterdata ", industrySelect);
     populateSelectOptions("profile_masterdata ", profileSelect);
 });
@@ -70,7 +70,7 @@ submitButton.addEventListener("click", async () => {
     resultsContainer.classList.add("results-visible");
 
     try {
-        const postCollectionRef = collection(db, "freejobalert_posts");
+        const postCollectionRef = collection(db, "posts");
         const postSnapshot = await getDocs(postCollectionRef);
 
         let foundPostData = null;
@@ -102,7 +102,7 @@ submitButton.addEventListener("click", async () => {
 async function displayResults(selectedProfile) {
     const resultsContainer = document.getElementById("results");
 
-    const jobsCollectionRef = collection(db, "freejobalert_jobs");
+    const jobsCollectionRef = collection(db, "jobs");
     const jobsQuerySnapshot = await getDocs(jobsCollectionRef);
 
     const jobs = [];
