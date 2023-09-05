@@ -28,6 +28,10 @@ section {
     text-align: center;
 }
 
+.filter-form {
+    width: 50%;
+}
+
 .loading {
     display: block;
     font-size: 2rem;
