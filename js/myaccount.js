@@ -70,6 +70,8 @@ function populateUserDetails(
     const graduationDetailsElement =
         document.getElementById("graduationDetails");
     const pgDetailsElement = document.getElementById("pgDetails");
+    const categoryElement = document.getElementById("category");
+    const dobElement = document.getElementById("dob");
 
     // Populate personal information
     fullNameElement.textContent = userData.full_name || "";
@@ -80,6 +82,10 @@ function populateUserDetails(
     diplomaDetailsElement.textContent = diplomaDetails;
     graduationDetailsElement.textContent = graduationDetails;
     pgDetailsElement.textContent = pgDetails;
+
+    // Populate additional information
+    categoryElement.textContent = userData.category || "";
+    dobElement.textContent = userData.dob || "";
 }
 
 // Function to get the name from collection based on code
@@ -265,6 +271,8 @@ saveButton.addEventListener("click", async () => {
     const pgStream = document.getElementById("pgStream").value;
     const pgDegree = document.getElementById("pgDegree").value;
     const pgPercentage = document.getElementById("pgPercentage").value;
+    const category = document.getElementById("category").value;
+    const dob = document.getElementById("dob").value;
 
     try {
         await updateUserData(userId, {
@@ -278,6 +286,8 @@ saveButton.addEventListener("click", async () => {
             pgStream,
             pgDegree,
             pgPercentage,
+            category,
+            dob,
         });
         alert("Data saved successfully.");
     } catch (error) {

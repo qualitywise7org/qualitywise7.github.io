@@ -212,6 +212,17 @@
                                     <span id="pgDetails"></span>
                                 </p>
 
+                                <!-- Additional Information Section -->
+                                <h5>Additional Information</h5>
+                                <p>
+                                    <strong>Category:</strong>
+                                    <span id="category"></span>
+                                </p>
+                                <p>
+                                    <strong>Date of Birth:</strong>
+                                    <span id="dob"></span>
+                                </p>
+
                                 <button
                                     id="openModalButton"
                                     class="btn btn-primary mt-3"
@@ -427,8 +438,53 @@
                                     </div>
                                 </div>
 
+                                <!-- Additional Information  -->
+                                <div class="mb-3">
+                                    <h3>Additional Information</h3>
+
+                                    <!-- Category -->
+                                    <div class="mb-3">
+                                        <label for="category" class="form-label"
+                                            >Category</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="category"
+                                            name="category"
+                                        >
+                                            <option value="" disabled selected>
+                                                Select
+                                            </option>
+                                            <option value="General">
+                                                General
+                                            </option>
+                                            <option value="OBC (NCL)">
+                                                OBC (NCL)
+                                            </option>
+                                            <option value="OBC (CL)">
+                                                OBC (CL)
+                                            </option>
+                                            <option value="SC">SC</option>
+                                            <option value="ST">ST</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Date of Birth -->
+                                    <div class="mb-3">
+                                        <label for="dob" class="form-label"
+                                            >Date of Birth</label
+                                        >
+                                        <input
+                                            type="date"
+                                            class="form-control"
+                                            id="dob"
+                                            name="dob"
+                                        />
+                                    </div>
+                                </div>
+
                                 <!-- Upload Your Resume Section -->
-                                <div class="user-details">
+                                <!-- <div class="user-details">
                                     <h1>Upload Your Resume</h1>
                                     <input
                                         type="file"
@@ -439,7 +495,7 @@
                                         >Choose File</label
                                     >
                                     <div id="selectedFile"></div>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
 
