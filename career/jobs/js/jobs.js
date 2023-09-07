@@ -26,162 +26,32 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 const db = getFirestore();
 
 const resultsContainer = document.getElementById("results");
-const qualificationFilter = document.getElementById("qualificationFilter");
 
-// Get the authenticated user's ID
-let userId = null;
-let userData = {};
-let graduationDegreeName = "";
-let pgDegreeName = "";
-let jobsToShow = []; // Define jobsToShow in a higher scope
-
-onAuthStateChanged(auth, async (user) => {
-    userId = user.uid;
-
-    try {
-        const userDocRef = doc(db, "users", userId);
-        const userDocSnapshot = await getDoc(userDocRef);
-
-        if (userDocSnapshot.exists()) {
-            userData = userDocSnapshot.data();
-
-            graduationDegreeName = await getNameFromCollection(
-                "degree_masterdata ",
-                userData.graduationDegree || ""
-            );
-
-            pgDegreeName = await getNameFromCollection(
-                "degree_masterdata ",
-                userData.pgDegree || ""
-            );
-
-            fetchAndUseJobs();
-            addQualificationOptions();
-        }
-    } catch (error) {
-        console.error("Error fetching user details:", error);
-    }
-});
-
-// Function to get the name from collection based on code
-async function getNameFromCollection(collectionName, code) {
-    const querySnapshot = await getDocs(
-        query(collection(db, collectionName), where("code", "==", code))
-    );
-
-    return querySnapshot.empty ? "" : querySnapshot.docs[0].data().name || "";
-}
-
-// Function to dynamically add options to the select element
-function addQualificationOptions() {
-    const selectElement = document.getElementById("qualificationFilter");
-
-    // Clear existing options
-    selectElement.innerHTML = "";
-
-    // Add "12th" option
-    const option12th = document.createElement("option");
-    option12th.value = "12th";
-    option12th.textContent = "12th";
-    selectElement.appendChild(option12th);
-
-    // Add "graduationDegreeName" option if available
-    if (graduationDegreeName) {
-        const optionGraduation = document.createElement("option");
-        optionGraduation.value = graduationDegreeName;
-        optionGraduation.textContent = graduationDegreeName;
-        selectElement.appendChild(optionGraduation);
-    }
-
-    // Add "pgDegreeName" option if available
-    if (userData.pgDegree && pgDegreeName) {
-        const optionPG = document.createElement("option");
-        optionPG.value = pgDegreeName;
-        optionPG.textContent = pgDegreeName;
-        selectElement.appendChild(optionPG);
-    }
-}
-
-async function fetchAndUseJobs() {
+// Function to fetch all jobs from Firestore
+async function fetchAllJobs() {
     const jobCollectionRef = collection(db, "jobs");
     const jobQuerySnapshot = await getDocs(jobCollectionRef);
 
-    jobsToShow = []; // Clear jobsToShow before populating it
+    const jobs = [];
 
     jobQuerySnapshot.forEach((doc) => {
         const jobData = doc.data();
-        const qualificationEligibility =
-            jobData.qualification_eligibility.toLowerCase();
-
-        const includesGraduation =
-            graduationDegreeName &&
-            qualificationEligibility.includes(
-                graduationDegreeName.toLowerCase()
-            );
-
-        const includesPG =
-            pgDegreeName &&
-            qualificationEligibility.includes(pgDegreeName.toLowerCase());
-
-        if (
-            qualificationEligibility.includes("12th") ||
-            qualificationEligibility.includes("10+2") ||
-            includesGraduation ||
-            includesPG
-        ) {
-            jobsToShow.push({
-                postName: jobData.post_name,
-                qualificationEligibility: qualificationEligibility,
-            });
-        }
+        jobs.push({
+            postName: jobData.post_name,
+            qualificationEligibility: jobData.qualification_eligibility,
+        });
     });
 
-    displayJobs(jobsToShow);
+    return jobs;
 }
 
-// Add an event listener to the qualification filter select element
-qualificationFilter.addEventListener("change", () => {
-    // Get the selected option
-    const selectedOption = qualificationFilter.value;
+// Function to display paginated jobs
+async function displayJobs() {
+    const jobs = await fetchAllJobs();
 
-    // Filter jobs based on the selected option
-    const filteredJobs = jobsToShow.filter((job) => {
-        const qualificationEligibility =
-            job.qualificationEligibility.toLowerCase(); // Define qualificationEligibility here
-
-        const includesGraduation =
-            graduationDegreeName &&
-            qualificationEligibility.includes(
-                graduationDegreeName.toLowerCase()
-            );
-
-        const includesPG =
-            pgDegreeName &&
-            qualificationEligibility.includes(pgDegreeName.toLowerCase());
-
-        if (selectedOption === "12th") {
-            return (
-                qualificationEligibility.includes("12th") ||
-                qualificationEligibility.includes("10+2")
-            );
-        } else if (selectedOption === graduationDegreeName) {
-            return includesGraduation;
-        } else if (selectedOption === pgDegreeName) {
-            return includesPG;
-        }
-    });
-
-    // Display the filtered jobs
-    displayJobs(filteredJobs);
-});
-
-// Function to display results in the resultsContainer
-
-async function displayJobs(jobs) {
     // Clear existing content in resultsContainer
     resultsContainer.innerHTML = "";
 
@@ -280,3 +150,6 @@ async function displayJobs(jobs) {
 
     resultsContainer.appendChild(jobsDiv);
 }
+
+// Call the displayJobs function when the page loads
+displayJobs();
