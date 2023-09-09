@@ -1,16 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-import {
-    getAuth,
-    onAuthStateChanged,
-} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
 import {
     getFirestore,
     collection,
     getDocs,
-    getDoc,
-    doc,
-    where,
-    query,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 const firebaseConfig = {

@@ -28,80 +28,273 @@ const profileSelect = document.getElementById("profile");
 const submitButton = document.getElementById("submitButton");
 const resultsContainer = document.getElementById("results");
 
-// Function to populate select options
-async function populateSelectOptions(collectionName, selectElement) {
+// Function to fetch data from Firestore and store it in local storage
+async function fetchDataFromFirestoreAndStore(collectionName, localStorageKey) {
     try {
         const collectionRef = collection(db, collectionName);
         const snapshot = await getDocs(collectionRef);
 
-        // Add a default "Select" option
-        const defaultOption = document.createElement("option");
-        defaultOption.value = "";
-        defaultOption.textContent = `Select`;
-        selectElement.appendChild(defaultOption);
-
+        const data = [];
         snapshot.forEach((doc) => {
-            const data = doc.data();
+            data.push(doc.data());
+        });
+
+        // Store the data in local storage as JSON
+        localStorage.setItem(localStorageKey, JSON.stringify(data));
+    } catch (error) {
+        console.error(
+            `Error fetching and storing ${collectionName} data:`,
+            error
+        );
+    }
+}
+
+// Function to populate select options from local storage
+function populateSelectOptionsFromLocalStorage(localStorageKey, selectElement) {
+    const data = JSON.parse(localStorage.getItem(localStorageKey));
+
+    if (data) {
+        // Add an "All" option
+        const allOption = document.createElement("option");
+        allOption.value = "All";
+        allOption.textContent = `All`;
+        selectElement.appendChild(allOption);
+
+        data.forEach((item) => {
             const option = document.createElement("option");
-            option.value = data.code;
-            option.textContent = data.name;
+            option.value = item.code;
+            option.textContent = item.name;
             selectElement.appendChild(option);
         });
-    } catch (error) {
-        console.error(`Error fetching ${collectionName} options:`, error);
     }
+}
+
+// Call the function to fetch and store data if not already in local storage
+const jobTypeLocalStorageKey = "jobTypeData";
+if (!localStorage.getItem(jobTypeLocalStorageKey)) {
+    fetchDataFromFirestoreAndStore(
+        "jobtype_masterdata",
+        jobTypeLocalStorageKey
+    );
+}
+
+const industryLocalStorageKey = "industryData";
+if (!localStorage.getItem(industryLocalStorageKey)) {
+    fetchDataFromFirestoreAndStore(
+        "industry_masterdata ",
+        industryLocalStorageKey
+    );
+}
+
+const profileLocalStorageKey = "profileData";
+if (!localStorage.getItem(profileLocalStorageKey)) {
+    fetchDataFromFirestoreAndStore(
+        "profile_masterdata ",
+        profileLocalStorageKey
+    );
 }
 
 // Call the function to populate select options when the page is loaded
 window.addEventListener("load", () => {
-    populateSelectOptions("jobtype_masterdata", jobTypeSelect);
-    populateSelectOptions("industry_masterdata ", industrySelect);
-    populateSelectOptions("profile_masterdata ", profileSelect);
+    // Call the function to populate select options from local storage
+    populateSelectOptionsFromLocalStorage(
+        jobTypeLocalStorageKey,
+        jobTypeSelect
+    );
+    populateSelectOptionsFromLocalStorage(
+        industryLocalStorageKey,
+        industrySelect
+    );
+    populateSelectOptionsFromLocalStorage(
+        profileLocalStorageKey,
+        profileSelect
+    );
+
+    // Check if URL parameters are present and apply them
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const currentPage = parseInt(urlSearchParams.get("page")) || 1;
+
+    const urlJobType = urlSearchParams.get("jobType");
+    const urlIndustry = urlSearchParams.get("industry");
+    const urlProfile = urlSearchParams.get("profile");
+
+    setTimeout(() => {
+        if (urlJobType) {
+            jobTypeSelect.value = urlJobType;
+        }
+        if (urlIndustry) {
+            industrySelect.value = urlIndustry;
+        }
+        if (urlProfile) {
+            profileSelect.value = urlProfile;
+        }
+
+        if (urlJobType || urlIndustry || urlProfile) {
+            displayResults(urlProfile, currentPage);
+        } else {
+            displayJobs(currentPage);
+        }
+    }, 1000);
+
+    displayJobs();
 });
 
-// Function to display results based on user selections
-submitButton.addEventListener("click", async () => {
+// Function to fetch all jobs from Firestore
+async function fetchAllJobs() {
+    const jobCollectionRef = collection(db, "jobs");
+    const jobQuerySnapshot = await getDocs(jobCollectionRef);
+
+    const jobs = [];
+
+    jobQuerySnapshot.forEach((doc) => {
+        const jobData = doc.data();
+        jobs.push({
+            postName: jobData.post_name,
+            qualificationEligibility: jobData.qualification_eligibility,
+        });
+    });
+
+    return jobs;
+}
+
+// Function to render paginated jobs and generate pagination controls
+function renderPaginatedJobsAndControls(jobs, currentPage) {
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "";
+
+    const jobsPerPage = 5;
+    const numPages = Math.ceil(jobs.length / jobsPerPage);
+
+    const startIndex = (currentPage - 1) * jobsPerPage;
+    const endIndex = startIndex + jobsPerPage;
+
+    const paginatedJobs = jobs.slice(startIndex, endIndex);
+
+    const jobsDiv = document.createElement("div");
+    jobsDiv.classList.add("row");
+
+    // Hide the loading element
+    const loadingElement = document.getElementById("loading");
+    loadingElement.style.display = "none";
+
+    // Display paginated jobs
+    if (paginatedJobs.length > 0) {
+        paginatedJobs.forEach((job) => {
+            const jobDiv = document.createElement("div");
+            jobDiv.classList.add("mb-3");
+
+            jobDiv.innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">${job.postName}</h5>
+                        <p class="card-text"><strong>Eligibility: </strong>${job.qualificationEligibility}</p>
+                    </div>
+                </div>
+            `;
+
+            jobsDiv.appendChild(jobDiv);
+        });
+
+        // Generate pagination controls
+        const paginationContainer = document.createElement("nav");
+        paginationContainer.classList.add("d-flex", "justify-content-center");
+
+        const paginationUl = document.createElement("ul");
+        paginationUl.classList.add("pagination");
+
+        // Create "Previous" button
+        const prevPageLi = document.createElement("li");
+        prevPageLi.classList.add("page-item");
+        if (currentPage === 1) {
+            prevPageLi.classList.add("disabled");
+        }
+        const prevPageLink = document.createElement("a");
+        prevPageLink.classList.add("page-link");
+        prevPageLink.href = `?page=${currentPage - 1}${getSearchParams()}`;
+        prevPageLink.textContent = "Previous";
+        prevPageLi.appendChild(prevPageLink);
+        paginationUl.appendChild(prevPageLi);
+
+        // Create page number buttons
+        const startPage = Math.max(1, currentPage - 1);
+        const endPage = Math.min(numPages, currentPage + 1);
+        for (let i = startPage; i <= endPage; i++) {
+            const pageLi = document.createElement("li");
+            pageLi.classList.add("page-item");
+            if (i === currentPage) {
+                pageLi.classList.add("active");
+            }
+            const pageLink = document.createElement("a");
+            pageLink.classList.add("page-link");
+            pageLink.href = `?page=${i}${getSearchParams()}`;
+            pageLink.textContent = i;
+            pageLi.appendChild(pageLink);
+            paginationUl.appendChild(pageLi);
+        }
+
+        // Create "Next" button
+        const nextPageLi = document.createElement("li");
+        nextPageLi.classList.add("page-item");
+        if (currentPage === numPages) {
+            nextPageLi.classList.add("disabled");
+        }
+        const nextPageLink = document.createElement("a");
+        nextPageLink.classList.add("page-link");
+        nextPageLink.href = `?page=${currentPage + 1}${getSearchParams()}`;
+        nextPageLink.textContent = "Next";
+        nextPageLi.appendChild(nextPageLink);
+        paginationUl.appendChild(nextPageLi);
+
+        paginationContainer.appendChild(paginationUl);
+        jobsDiv.appendChild(paginationContainer);
+    } else {
+        jobsDiv.innerHTML = `<p class="text-center">No jobs found.</p>`;
+    }
+
+    resultsContainer.appendChild(jobsDiv);
+}
+
+// Function to get the current URL search parameters
+function getSearchParams() {
+    const urlSearchParams = new URLSearchParams(window.location.search);
     const selectedJobType = jobTypeSelect.value;
     const selectedIndustry = industrySelect.value;
     const selectedProfile = profileSelect.value;
 
-    // Clear previous results
-    resultsContainer.textContent = "";
-    resultsContainer.classList.add("results-visible");
+    // Remove existing "page" parameter if it exists
+    urlSearchParams.delete("page");
 
-    try {
-        const postCollectionRef = collection(db, "posts");
-        const postSnapshot = await getDocs(postCollectionRef);
-
-        let foundPostData = null;
-
-        postSnapshot.forEach((doc) => {
-            const postData = doc.data();
-
-            if (
-                (selectedJobType === "" ||
-                    postData.jobtype_masterdata_code === selectedJobType) &&
-                postData.industry_masterdata_code === selectedIndustry &&
-                postData.profile_masterdata_code === selectedProfile
-            ) {
-                foundPostData = postData;
-            }
-        });
-
-        if (foundPostData) {
-            displayResults(selectedProfile);
-        } else {
-            resultsContainer.textContent = "No results found.";
-        }
-    } catch (error) {
-        console.error("Error fetching profile data:", error);
+    // Include selected options in the URL when they are not "All"
+    if (selectedJobType !== "All") {
+        urlSearchParams.set("jobType", selectedJobType);
+    } else {
+        urlSearchParams.delete("jobType");
     }
-});
+    if (selectedIndustry !== "All") {
+        urlSearchParams.set("industry", selectedIndustry);
+    } else {
+        urlSearchParams.delete("industry");
+    }
+    if (selectedProfile !== "All") {
+        urlSearchParams.set("profile", selectedProfile);
+    } else {
+        urlSearchParams.delete("profile");
+    }
+
+    // Return the formatted search parameters
+    return `&${urlSearchParams.toString()}`;
+}
+
+// Function to display paginated jobs
+async function displayJobs(page) {
+    const jobs = await fetchAllJobs();
+
+    // Render paginated jobs and generate pagination controls
+    renderPaginatedJobsAndControls(jobs, page);
+}
 
 // Function to display results in the resultsContainer
-async function displayResults(selectedProfile) {
-    const resultsContainer = document.getElementById("results");
-
+async function displayResults(selectedProfile, page) {
     const jobsCollectionRef = collection(db, "jobs");
     const jobsQuerySnapshot = await getDocs(jobsCollectionRef);
 
@@ -110,7 +303,7 @@ async function displayResults(selectedProfile) {
     jobsQuerySnapshot.forEach((doc) => {
         const jobsData = doc.data();
 
-        // Split the lines of jobsData.post_code and check for a match
+        // Split the lines of jobsData.profile_masterdata_code and check for a match
         const postCodes = jobsData.profile_masterdata_code.split("\n");
 
         if (
@@ -128,23 +321,68 @@ async function displayResults(selectedProfile) {
         }
     });
 
-    if (jobs.length > 0) {
-        const jobsDiv = document.createElement("div");
-        jobsDiv.classList.add("result-field");
-        jobsDiv.innerHTML = `
-            <h2>Jobs for you</h2>
-        `;
-
-        jobs.forEach((job) => {
-            const jobDiv = document.createElement("div");
-            jobDiv.classList.add("job-info");
-            jobDiv.innerHTML = `
-                <h3>Job Post: ${job.postName}</h3>
-                <p>Qualification Eligibility: ${job.qualificationEligibility}</p>
-            `;
-            jobsDiv.appendChild(jobDiv);
-        });
-
-        resultsContainer.appendChild(jobsDiv);
-    }
+    // Render paginated jobs and generate pagination controls
+    renderPaginatedJobsAndControls(jobs, page);
 }
+
+// Function to display results based on user selections
+submitButton.addEventListener("click", async () => {
+    const selectedJobType = jobTypeSelect.value;
+    const selectedIndustry = industrySelect.value;
+    const selectedProfile = profileSelect.value;
+
+    // Reset the page parameter to 1 in the URL
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    urlSearchParams.set("page", "1");
+
+    // Clear previous results
+    resultsContainer.textContent = "";
+    resultsContainer.classList.add("results-visible");
+
+    if (
+        selectedJobType === "All" &&
+        selectedIndustry === "All" &&
+        selectedProfile === "All"
+    ) {
+        // If "All" is selected in all three options, use js code 2
+        await displayJobs(1);
+    } else {
+        try {
+            const postCollectionRef = collection(db, "posts");
+            const postSnapshot = await getDocs(postCollectionRef);
+
+            let foundPostData = null;
+
+            postSnapshot.forEach((doc) => {
+                const postData = doc.data();
+
+                if (
+                    (selectedJobType === "" ||
+                        postData.jobtype_masterdata_code === selectedJobType) &&
+                    postData.industry_masterdata_code === selectedIndustry &&
+                    postData.profile_masterdata_code === selectedProfile
+                ) {
+                    foundPostData = postData;
+                }
+            });
+
+            if (foundPostData) {
+                displayResults(selectedProfile, 1);
+            } else {
+                resultsContainer.textContent = "No results found.";
+            }
+
+            // Update URL parameters
+
+            // Set the parameters for jobType, industry, and profile
+            urlSearchParams.set("jobType", selectedJobType);
+            urlSearchParams.set("industry", selectedIndustry);
+            urlSearchParams.set("profile", selectedProfile);
+
+            // Update the URL with the new parameters
+            window.history.pushState({}, "", `?${urlSearchParams.toString()}`);
+        } catch (error) {
+            console.error("Error fetching profile data:", error);
+        }
+    }
+});
