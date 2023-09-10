@@ -162,7 +162,7 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
     const resultsContainer = document.getElementById("results");
     resultsContainer.innerHTML = "";
 
-    const jobsPerPage = 5;
+    const jobsPerPage = 10;
     const numPages = Math.ceil(jobs.length / jobsPerPage);
 
     const startIndex = (currentPage - 1) * jobsPerPage;
@@ -357,7 +357,7 @@ submitButton.addEventListener("click", async () => {
                 const postData = doc.data();
 
                 if (
-                    (selectedJobType === "" ||
+                    (selectedJobType === "All" ||
                         postData.jobtype_masterdata_code === selectedJobType) &&
                     postData.industry_masterdata_code === selectedIndustry &&
                     postData.profile_masterdata_code === selectedProfile

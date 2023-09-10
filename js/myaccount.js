@@ -303,7 +303,7 @@ async function updateUserData(userId, data) {
     const updatedData = {};
 
     for (const [key, value] of Object.entries(data)) {
-        if (value !== "") {
+        if (value !== undefined && value !== null && value !== "") {
             updatedData[key] = value;
         }
     }
