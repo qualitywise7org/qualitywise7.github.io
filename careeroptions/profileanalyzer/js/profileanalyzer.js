@@ -112,11 +112,12 @@ window.addEventListener("load", () => {
 
     // Check if URL parameters are present and apply them
     const urlSearchParams = new URLSearchParams(window.location.search);
-    const currentPage = parseInt(urlSearchParams.get("page")) || 1;
 
     const urlJobType = urlSearchParams.get("jobType");
     const urlIndustry = urlSearchParams.get("industry");
     const urlProfile = urlSearchParams.get("profile");
+
+    const currentPage = parseInt(urlSearchParams.get("page")) || 1;
 
     setTimeout(() => {
         if (urlJobType) {
@@ -136,7 +137,9 @@ window.addEventListener("load", () => {
         }
     }, 1000);
 
-    displayJobs();
+    if (!urlJobType && !urlIndustry && !urlProfile) {
+        displayJobs();
+    }
 });
 
 // Function to fetch all jobs from Firestore
@@ -151,6 +154,9 @@ async function fetchAllJobs() {
         jobs.push({
             postName: jobData.post_name,
             qualificationEligibility: jobData.qualification_eligibility,
+            postDate: jobData.post_date,
+            lastDate: jobData.last_date,
+            jobCode: jobData.job_code,
         });
     });
 
@@ -184,12 +190,28 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
             jobDiv.classList.add("mb-3");
 
             jobDiv.innerHTML = `
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">${job.postName}</h5>
-                        <p class="card-text"><strong>Eligibility: </strong>${job.qualificationEligibility}</p>
-                    </div>
-                </div>
+            <div class="card">
+            <a href="/careeroptions/singlejob/?jobCode=${
+                job.jobCode
+            }&postDate=${job.postDate}", target="_blank">
+            <div class="card-body">
+                <h5 class="card-title">${job.postName}</h5>
+                ${
+                    job.postDate
+                        ? `<p><strong>Post Date: </strong>${job.postDate}</p>`
+                        : ""
+                }
+                ${
+                    job.lastDate
+                        ? `<p><strong>Last Date: </strong>${job.lastDate}</p>`
+                        : ""
+                }
+                <p><strong>Eligibility: </strong>${
+                    job.qualificationEligibility
+                }</p>
+            </div>
+            </a>
+        </div>
             `;
 
             jobsDiv.appendChild(jobDiv);
@@ -210,7 +232,7 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
         }
         const prevPageLink = document.createElement("a");
         prevPageLink.classList.add("page-link");
-        prevPageLink.href = `?page=${currentPage - 1}${getSearchParams()}`;
+        prevPageLink.href = `?${getSearchParams()}&page=${currentPage - 1}`;
         prevPageLink.textContent = "Previous";
         prevPageLi.appendChild(prevPageLink);
         paginationUl.appendChild(prevPageLi);
@@ -226,7 +248,7 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
             }
             const pageLink = document.createElement("a");
             pageLink.classList.add("page-link");
-            pageLink.href = `?page=${i}${getSearchParams()}`;
+            pageLink.href = `?${getSearchParams()}&page=${i}`;
             pageLink.textContent = i;
             pageLi.appendChild(pageLink);
             paginationUl.appendChild(pageLi);
@@ -240,7 +262,7 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
         }
         const nextPageLink = document.createElement("a");
         nextPageLink.classList.add("page-link");
-        nextPageLink.href = `?page=${currentPage + 1}${getSearchParams()}`;
+        nextPageLink.href = `?${getSearchParams()}&page=${currentPage + 1}`;
         nextPageLink.textContent = "Next";
         nextPageLi.appendChild(nextPageLink);
         paginationUl.appendChild(nextPageLi);
@@ -316,6 +338,9 @@ async function displayResults(selectedProfile, page) {
             const job = {
                 postName: jobsData.post_name,
                 qualificationEligibility: jobsData.qualification_eligibility,
+                postDate: jobsData.post_date,
+                lastDate: jobsData.last_date,
+                jobCode: jobsData.job_code,
             };
             jobs.push(job);
         }
@@ -333,7 +358,6 @@ submitButton.addEventListener("click", async () => {
 
     // Reset the page parameter to 1 in the URL
     const urlSearchParams = new URLSearchParams(window.location.search);
-    urlSearchParams.set("page", "1");
 
     // Clear previous results
     resultsContainer.textContent = "";
@@ -344,7 +368,6 @@ submitButton.addEventListener("click", async () => {
         selectedIndustry === "All" &&
         selectedProfile === "All"
     ) {
-        // If "All" is selected in all three options, use js code 2
         await displayJobs(1);
     } else {
         try {
@@ -359,8 +382,11 @@ submitButton.addEventListener("click", async () => {
                 if (
                     (selectedJobType === "All" ||
                         postData.jobtype_masterdata_code === selectedJobType) &&
-                    postData.industry_masterdata_code === selectedIndustry &&
-                    postData.profile_masterdata_code === selectedProfile
+                    (selectedIndustry === "All" ||
+                        postData.industry_masterdata_code ===
+                            selectedIndustry) &&
+                    (selectedProfile === "All" ||
+                        postData.profile_masterdata_code === selectedProfile)
                 ) {
                     foundPostData = postData;
                 }
@@ -378,6 +404,7 @@ submitButton.addEventListener("click", async () => {
             urlSearchParams.set("jobType", selectedJobType);
             urlSearchParams.set("industry", selectedIndustry);
             urlSearchParams.set("profile", selectedProfile);
+            urlSearchParams.set("page", "1");
 
             // Update the URL with the new parameters
             window.history.pushState({}, "", `?${urlSearchParams.toString()}`);
