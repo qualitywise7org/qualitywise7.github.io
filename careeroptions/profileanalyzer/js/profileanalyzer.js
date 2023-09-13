@@ -1,8 +1,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
 import {
     getFirestore,
-    collection,
     getDocs,
+    where,
+    collection,
+    query,
 } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -29,7 +31,11 @@ const submitButton = document.getElementById("submitButton");
 const resultsContainer = document.getElementById("results");
 
 // Function to fetch data from Firestore and store it in local storage
-async function fetchDataFromFirestoreAndStore(collectionName, localStorageKey) {
+async function fetchDataFromFirestoreAndStore(
+    collectionName,
+    localStorageKey,
+    selectElement
+) {
     try {
         const collectionRef = collection(db, collectionName);
         const snapshot = await getDocs(collectionRef);
@@ -41,6 +47,8 @@ async function fetchDataFromFirestoreAndStore(collectionName, localStorageKey) {
 
         // Store the data in local storage as JSON
         localStorage.setItem(localStorageKey, JSON.stringify(data));
+
+        populateSelectOptionsFromLocalStorage(localStorageKey, selectElement);
     } catch (error) {
         console.error(
             `Error fetching and storing ${collectionName} data:`,
@@ -50,8 +58,11 @@ async function fetchDataFromFirestoreAndStore(collectionName, localStorageKey) {
 }
 
 // Function to populate select options from local storage
-function populateSelectOptionsFromLocalStorage(localStorageKey, selectElement) {
-    const data = JSON.parse(localStorage.getItem(localStorageKey));
+async function populateSelectOptionsFromLocalStorage(
+    localStorageKey,
+    selectElement
+) {
+    const data = await JSON.parse(localStorage.getItem(localStorageKey));
 
     if (data) {
         // Add an "All" option
@@ -62,7 +73,7 @@ function populateSelectOptionsFromLocalStorage(localStorageKey, selectElement) {
 
         data.forEach((item) => {
             const option = document.createElement("option");
-            option.value = item.code;
+            option.value = item.name;
             option.textContent = item.name;
             selectElement.appendChild(option);
         });
@@ -74,7 +85,8 @@ const jobTypeLocalStorageKey = "jobTypeData";
 if (!localStorage.getItem(jobTypeLocalStorageKey)) {
     fetchDataFromFirestoreAndStore(
         "jobtype_masterdata",
-        jobTypeLocalStorageKey
+        jobTypeLocalStorageKey,
+        jobTypeSelect
     );
 }
 
@@ -82,7 +94,8 @@ const industryLocalStorageKey = "industryData";
 if (!localStorage.getItem(industryLocalStorageKey)) {
     fetchDataFromFirestoreAndStore(
         "industry_masterdata ",
-        industryLocalStorageKey
+        industryLocalStorageKey,
+        industrySelect
     );
 }
 
@@ -90,12 +103,13 @@ const profileLocalStorageKey = "profileData";
 if (!localStorage.getItem(profileLocalStorageKey)) {
     fetchDataFromFirestoreAndStore(
         "profile_masterdata ",
-        profileLocalStorageKey
+        profileLocalStorageKey,
+        profileSelect
     );
 }
 
 // Call the function to populate select options when the page is loaded
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
     // Call the function to populate select options from local storage
     populateSelectOptionsFromLocalStorage(
         jobTypeLocalStorageKey,
@@ -131,36 +145,136 @@ window.addEventListener("load", () => {
         }
 
         if (urlJobType || urlIndustry || urlProfile) {
-            displayResults(urlProfile, currentPage);
+            displayResults(urlJobType, urlIndustry, urlProfile, currentPage);
         } else {
             displayJobs(currentPage);
         }
     }, 1000);
 
     if (!urlJobType && !urlIndustry && !urlProfile) {
-        displayJobs();
+        displayJobs(1);
     }
 });
 
+async function fetchJobDocument(postName) {
+    try {
+        if (postName) {
+            // Fetch the "posts" document using "post_name"
+            const postQuerySnapshot = await getDocs(
+                query(
+                    collection(db, "posts"),
+                    where("post_name", "==", postName)
+                )
+            );
+
+            if (!postQuerySnapshot.empty) {
+                const postData = postQuerySnapshot.docs[0].data();
+
+                // Fetch "industry_masterdata", "jobtype_masterdata", and "profile_masterdata"
+                const industryCode = postData.industry_masterdata_code;
+                const jobTypeCode = postData.jobtype_masterdata_code;
+                const profileCode = postData.profile_masterdata_code;
+
+                // Fetch data from "industry_masterdata"
+                const industryQuerySnapshot = await getDocs(
+                    query(
+                        collection(db, "industry_masterdata "),
+                        where("code", "==", industryCode)
+                    )
+                );
+
+                const industry =
+                    industryQuerySnapshot.docs[0]?.data()?.name || "";
+
+                // Fetch data from "jobtype_masterdata"
+                const jobTypeQuerySnapshot = await getDocs(
+                    query(
+                        collection(db, "jobtype_masterdata"),
+                        where("code", "==", jobTypeCode)
+                    )
+                );
+
+                const jobType =
+                    jobTypeQuerySnapshot.docs[0]?.data()?.name || "";
+
+                // Fetch data from "profile_masterdata"
+                const profileQuerySnapshot = await getDocs(
+                    query(
+                        collection(db, "profile_masterdata "),
+                        where("code", "==", profileCode)
+                    )
+                );
+
+                const profile =
+                    profileQuerySnapshot.docs[0]?.data()?.name || "";
+
+                // Return the combined data
+                return {
+                    industry,
+                    jobType,
+                    profile,
+                };
+            } else {
+                console.error(
+                    "No matching document found in 'posts' collection."
+                );
+                return null;
+            }
+        } else {
+            console.error("No matching document found for postName:");
+            return null;
+        }
+    } catch (error) {
+        console.error("Error fetching job document:", error);
+        return null;
+    }
+}
+
 // Function to fetch all jobs from Firestore
 async function fetchAllJobs() {
-    const jobCollectionRef = collection(db, "jobs");
-    const jobQuerySnapshot = await getDocs(jobCollectionRef);
+    // Check if jobs data is available in local storage
+    const jobsDataFromLocalStorage = localStorage.getItem("jobsData");
 
-    const jobs = [];
+    if (jobsDataFromLocalStorage) {
+        return JSON.parse(jobsDataFromLocalStorage);
+    } else {
+        // If data is not available in local storage, fetch it from Firestore
+        const jobCollectionRef = collection(db, "jobs");
+        const jobQuerySnapshot = await getDocs(jobCollectionRef);
 
-    jobQuerySnapshot.forEach((doc) => {
-        const jobData = doc.data();
-        jobs.push({
-            postName: jobData.post_name,
-            qualificationEligibility: jobData.qualification_eligibility,
-            postDate: jobData.post_date,
-            lastDate: jobData.last_date,
-            jobCode: jobData.job_code,
-        });
-    });
+        const jobs = [];
 
-    return jobs;
+        for (const doc of jobQuerySnapshot.docs) {
+            const jobData = doc.data();
+            const job = {
+                postName: jobData.post_name,
+                qualificationEligibility: jobData.qualification_eligibility,
+                postDate: jobData.post_date,
+                lastDate: jobData.last_date,
+                jobCode: encodeURIComponent(jobData.job_code),
+                briefInfo: jobData.brief_info,
+                minAge: jobData.minimum_age,
+                maxAge: jobData.maximum_age,
+                recruitmentBoard: jobData.recruitment_board,
+                jobLink: jobData.job_link,
+            };
+
+            // Call fetchJobDocument for additional fields
+            const additionalData = await fetchJobDocument(jobData.post_name);
+
+            if (additionalData) {
+                job.industry = additionalData.industry;
+                job.jobType = additionalData.jobType;
+                job.profile = additionalData.profile;
+            }
+
+            jobs.push(job);
+        }
+
+        // Store jobs data in local storage
+        localStorage.setItem("jobsData", JSON.stringify(jobs));
+        return jobs;
+    }
 }
 
 // Function to render paginated jobs and generate pagination controls
@@ -169,12 +283,12 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
     resultsContainer.innerHTML = "";
 
     const jobsPerPage = 10;
-    const numPages = Math.ceil(jobs.length / jobsPerPage);
+    const numPages = Math.ceil(jobs?.length / jobsPerPage);
 
     const startIndex = (currentPage - 1) * jobsPerPage;
     const endIndex = startIndex + jobsPerPage;
 
-    const paginatedJobs = jobs.slice(startIndex, endIndex);
+    const paginatedJobs = jobs?.slice(startIndex, endIndex);
 
     const jobsDiv = document.createElement("div");
     jobsDiv.classList.add("row");
@@ -184,8 +298,8 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
     loadingElement.style.display = "none";
 
     // Display paginated jobs
-    if (paginatedJobs.length > 0) {
-        paginatedJobs.forEach((job) => {
+    if (paginatedJobs?.length > 0) {
+        paginatedJobs?.forEach((job) => {
             const jobDiv = document.createElement("div");
             jobDiv.classList.add("mb-3");
 
@@ -197,12 +311,18 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
             <div class="card-body">
                 <h5 class="card-title">${job.postName}</h5>
                 ${
-                    job.postDate
-                        ? `<p><strong>Post Date: </strong>${job.postDate}</p>`
+                    job.industry && job.jobType && job.profile
+                        ? `<p><strong>Job Type: </strong>${job.jobType} | <strong>Industry: </strong>${job.industry} | <strong>Profile: </strong>${job.profile}</p>`
+                        : job.jobType
+                        ? `<p><strong>Job Type: </strong>${job.jobType}</p>`
                         : ""
                 }
                 ${
-                    job.lastDate
+                    job.postDate && job.lastDate
+                        ? `<p><strong>Post Date: </strong>${job.postDate} | <strong>Last Date: </strong>${job.lastDate}</p>`
+                        : job.postDate
+                        ? `<p><strong>Post Date: </strong>${job.postDate}</p>`
+                        : job.lastDate
                         ? `<p><strong>Last Date: </strong>${job.lastDate}</p>`
                         : ""
                 }
@@ -316,35 +436,33 @@ async function displayJobs(page) {
 }
 
 // Function to display results in the resultsContainer
-async function displayResults(selectedProfile, page) {
-    const jobsCollectionRef = collection(db, "jobs");
-    const jobsQuerySnapshot = await getDocs(jobsCollectionRef);
+async function displayResults(
+    selectedJobType,
+    selectedIndustry,
+    selectedProfile,
+    page
+) {
+    // Fetch jobs data from local storage
+    const jobsDataFromLocalStorage = await JSON.parse(
+        localStorage.getItem("jobsData")
+    );
+
+    if (!jobsDataFromLocalStorage) {
+        console.error("Jobs data not found in local storage.");
+        return;
+    }
 
     const jobs = [];
 
-    jobsQuerySnapshot.forEach((doc) => {
-        const jobsData = doc.data();
-
-        // Split the lines of jobsData.profile_masterdata_code and check for a match
-        const postCodes = jobsData.profile_masterdata_code.split("\n");
-
+    for (const job of jobsDataFromLocalStorage) {
         if (
-            postCodes.some(
-                (postCode) =>
-                    postCode.trim().toLowerCase() ===
-                    selectedProfile.trim().toLowerCase()
-            )
+            (selectedJobType === "All" || job.jobType === selectedJobType) &&
+            (selectedIndustry === "All" || job.industry === selectedIndustry) &&
+            (selectedProfile === "All" || job.profile === selectedProfile)
         ) {
-            const job = {
-                postName: jobsData.post_name,
-                qualificationEligibility: jobsData.qualification_eligibility,
-                postDate: jobsData.post_date,
-                lastDate: jobsData.last_date,
-                jobCode: jobsData.job_code,
-            };
             jobs.push(job);
         }
-    });
+    }
 
     // Render paginated jobs and generate pagination controls
     renderPaginatedJobsAndControls(jobs, page);
@@ -363,53 +481,14 @@ submitButton.addEventListener("click", async () => {
     resultsContainer.textContent = "";
     resultsContainer.classList.add("results-visible");
 
-    if (
-        selectedJobType === "All" &&
-        selectedIndustry === "All" &&
-        selectedProfile === "All"
-    ) {
-        await displayJobs(1);
-    } else {
-        try {
-            const postCollectionRef = collection(db, "posts");
-            const postSnapshot = await getDocs(postCollectionRef);
+    displayResults(selectedJobType, selectedIndustry, selectedProfile, 1);
 
-            let foundPostData = null;
+    // Set the parameters for jobType, industry, and profile
+    urlSearchParams.set("jobType", selectedJobType);
+    urlSearchParams.set("industry", selectedIndustry);
+    urlSearchParams.set("profile", selectedProfile);
+    urlSearchParams.set("page", "1");
 
-            postSnapshot.forEach((doc) => {
-                const postData = doc.data();
-
-                if (
-                    (selectedJobType === "All" ||
-                        postData.jobtype_masterdata_code === selectedJobType) &&
-                    (selectedIndustry === "All" ||
-                        postData.industry_masterdata_code ===
-                            selectedIndustry) &&
-                    (selectedProfile === "All" ||
-                        postData.profile_masterdata_code === selectedProfile)
-                ) {
-                    foundPostData = postData;
-                }
-            });
-
-            if (foundPostData) {
-                displayResults(selectedProfile, 1);
-            } else {
-                resultsContainer.textContent = "No results found.";
-            }
-
-            // Update URL parameters
-
-            // Set the parameters for jobType, industry, and profile
-            urlSearchParams.set("jobType", selectedJobType);
-            urlSearchParams.set("industry", selectedIndustry);
-            urlSearchParams.set("profile", selectedProfile);
-            urlSearchParams.set("page", "1");
-
-            // Update the URL with the new parameters
-            window.history.pushState({}, "", `?${urlSearchParams.toString()}`);
-        } catch (error) {
-            console.error("Error fetching profile data:", error);
-        }
-    }
+    // Update the URL with the new parameters
+    window.history.pushState({}, "", `?${urlSearchParams.toString()}`);
 });
