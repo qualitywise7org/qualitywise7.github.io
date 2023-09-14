@@ -1,0 +1,1 @@
+# This is read master data.js file and insert data into database
