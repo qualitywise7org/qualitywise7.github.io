@@ -282,13 +282,20 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
     const resultsContainer = document.getElementById("results");
     resultsContainer.innerHTML = "";
 
-    const jobsPerPage = 10;
+    const profileCardStyles = {
+        width: "fit-content",
+        margin: "0 auto",
+    };
+
+    const groupedJobs = groupJobsByProfile(jobs);
+
+    const jobsPerPage = 2;
     const numPages = Math.ceil(jobs?.length / jobsPerPage);
 
     const startIndex = (currentPage - 1) * jobsPerPage;
     const endIndex = startIndex + jobsPerPage;
 
-    const paginatedJobs = jobs?.slice(startIndex, endIndex);
+    const paginatedJobs = groupedJobs?.slice(startIndex, endIndex);
 
     const jobsDiv = document.createElement("div");
     jobsDiv.classList.add("row");
@@ -299,43 +306,87 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
 
     // Display paginated jobs
     if (paginatedJobs?.length > 0) {
-        paginatedJobs?.forEach((job) => {
-            const jobDiv = document.createElement("div");
-            jobDiv.classList.add("mb-3");
+        paginatedJobs.forEach((profileJobs) => {
+            const profileCard = document.createElement("div");
+            profileCard.classList.add("card", "mb-3");
 
-            jobDiv.innerHTML = `
-            <div class="card">
-            <a href="/careeroptions/singlejob/?jobCode=${
-                job.jobCode
-            }&postDate=${job.postDate}", target="_blank">
-            <div class="card-body">
-                <h5 class="card-title">${job.postName}</h5>
-                ${
-                    job.industry && job.jobType && job.profile
-                        ? `<p><strong>Job Type: </strong>${job.jobType} | <strong>Industry: </strong>${job.industry} | <strong>Profile: </strong>${job.profile}</p>`
-                        : job.jobType
-                        ? `<p><strong>Job Type: </strong>${job.jobType}</p>`
-                        : ""
-                }
-                ${
-                    job.postDate && job.lastDate
-                        ? `<p><strong>Post Date: </strong>${job.postDate} | <strong>Last Date: </strong>${job.lastDate}</p>`
-                        : job.postDate
-                        ? `<p><strong>Post Date: </strong>${job.postDate}</p>`
-                        : job.lastDate
-                        ? `<p><strong>Last Date: </strong>${job.lastDate}</p>`
-                        : ""
-                }
-                <p><strong>Eligibility: </strong>${
-                    job.qualificationEligibility
-                }</p>
-            </div>
-            </a>
-        </div>
+            Object.keys(profileCardStyles).forEach((styleKey) => {
+                profileCard.style[styleKey] = profileCardStyles[styleKey];
+            });
+
+            profileCard.innerHTML = `
+                <div class="card-body">
+                    <h5 class="card-title" style="color:white; background-color:#4f92ef; padding:5px;">${
+                        profileJobs[0]?.profile
+                            ? profileJobs[0].profile
+                            : "Other"
+                    }</h5>
+                    <p><strong>Job Type: </strong>${
+                        profileJobs[0]?.jobType
+                    } | <strong>Industry: </strong>${
+                profileJobs[0]?.industry
+            }</p>
+                </div>
             `;
 
-            jobsDiv.appendChild(jobDiv);
+            jobsDiv.appendChild(profileCard);
+
+            profileJobs.forEach((job) => {
+                const jobDiv = document.createElement("div");
+                jobDiv.classList.add("mb-3", "card");
+                jobDiv.style.backgroundColor = "rgb(244 242 255)";
+
+                jobDiv.innerHTML = `
+                    <a href="/careeroptions/singlejob/?jobCode=${job.jobCode}&postDate=${job.postDate}" target="_blank">
+                        <div class="card-body">
+                            <h5 class="card-title">${job.postName}</h5>
+                            <p><strong>Post Date: </strong>${job.postDate} | <strong>Last Date: </strong>${job.lastDate}</p>
+                            <p><strong>Eligibility: </strong>${job.qualificationEligibility}</p>
+                        </div>
+                    </a>
+                `;
+
+                jobsDiv.appendChild(jobDiv);
+            });
         });
+
+        // paginatedJobs?.forEach((job) => {
+        //     const jobDiv = document.createElement("div");
+        //     jobDiv.classList.add("mb-3");
+
+        //     jobDiv.innerHTML = `
+        //     <div class="card">
+        //     <a href="/careeroptions/singlejob/?jobCode=${
+        //         job.jobCode
+        //     }&postDate=${job.postDate}", target="_blank">
+        //     <div class="card-body">
+        //         <h5 class="card-title">${job.postName}</h5>
+        //         ${
+        //             job.industry && job.jobType && job.profile
+        //                 ? `<p><strong>Job Type: </strong>${job.jobType} | <strong>Industry: </strong>${job.industry} | <strong>Profile: </strong>${job.profile}</p>`
+        //                 : job.jobType
+        //                 ? `<p><strong>Job Type: </strong>${job.jobType}</p>`
+        //                 : ""
+        //         }
+        //         ${
+        //             job.postDate && job.lastDate
+        //                 ? `<p><strong>Post Date: </strong>${job.postDate} | <strong>Last Date: </strong>${job.lastDate}</p>`
+        //                 : job.postDate
+        //                 ? `<p><strong>Post Date: </strong>${job.postDate}</p>`
+        //                 : job.lastDate
+        //                 ? `<p><strong>Last Date: </strong>${job.lastDate}</p>`
+        //                 : ""
+        //         }
+        //         <p><strong>Eligibility: </strong>${
+        //             job.qualificationEligibility
+        //         }</p>
+        //     </div>
+        //     </a>
+        // </div>
+        //     `;
+
+        //     jobsDiv.appendChild(jobDiv);
+        // });
 
         // Generate pagination controls
         const paginationContainer = document.createElement("nav");
@@ -396,6 +447,32 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
     resultsContainer.appendChild(jobsDiv);
 }
 
+function groupJobsByProfile(jobs) {
+    const groupedJobs = [];
+
+    // Separate jobs with a profile and jobs without a profile
+    const jobsWithProfile = jobs.filter((job) => job.profile);
+    const jobsWithoutProfile = jobs.filter((job) => !job.profile);
+
+    // Group jobs with the same profile together
+    const uniqueProfiles = [
+        ...new Set(jobsWithProfile.map((job) => job.profile)),
+    ];
+    uniqueProfiles.forEach((profile) => {
+        const profileJobs = jobsWithProfile.filter(
+            (job) => job.profile === profile
+        );
+        groupedJobs.push(profileJobs);
+    });
+
+    // Add jobs without a profile to the end
+    if (jobsWithoutProfile != "") {
+        groupedJobs.push(jobsWithoutProfile);
+    }
+
+    return groupedJobs;
+}
+
 // Function to get the current URL search parameters
 function getSearchParams() {
     const urlSearchParams = new URLSearchParams(window.location.search);
@@ -406,22 +483,11 @@ function getSearchParams() {
     // Remove existing "page" parameter if it exists
     urlSearchParams.delete("page");
 
-    // Include selected options in the URL when they are not "All"
-    if (selectedJobType !== "All") {
-        urlSearchParams.set("jobType", selectedJobType);
-    } else {
-        urlSearchParams.delete("jobType");
-    }
-    if (selectedIndustry !== "All") {
-        urlSearchParams.set("industry", selectedIndustry);
-    } else {
-        urlSearchParams.delete("industry");
-    }
-    if (selectedProfile !== "All") {
-        urlSearchParams.set("profile", selectedProfile);
-    } else {
-        urlSearchParams.delete("profile");
-    }
+    urlSearchParams.set("jobType", selectedJobType);
+
+    urlSearchParams.set("industry", selectedIndustry);
+
+    urlSearchParams.set("profile", selectedProfile);
 
     // Return the formatted search parameters
     return `&${urlSearchParams.toString()}`;
