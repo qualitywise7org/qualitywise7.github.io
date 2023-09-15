@@ -337,7 +337,7 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
                 jobDiv.style.backgroundColor = "rgb(244 242 255)";
 
                 jobDiv.innerHTML = `
-                    <a href="/careeroptions/singlejob/?jobCode=${job.jobCode}&postDate=${job.postDate}" target="_blank">
+                    <a href="/careeroptions/jobdetails/?jobCode=${job.jobCode}&postDate=${job.postDate}" target="_blank">
                         <div class="card-body">
                             <h5 class="card-title">${job.postName}</h5>
                             <p><strong>Post Date: </strong>${job.postDate} | <strong>Last Date: </strong>${job.lastDate}</p>
@@ -356,7 +356,7 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
 
         //     jobDiv.innerHTML = `
         //     <div class="card">
-        //     <a href="/careeroptions/singlejob/?jobCode=${
+        //     <a href="/careeroptions/jobdetails/?jobCode=${
         //         job.jobCode
         //     }&postDate=${job.postDate}", target="_blank">
         //     <div class="card-body">
