@@ -6,11 +6,6 @@ import {
     collection,
     query,
 } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js";
-import {
-    jobtype_masterdata,
-    industry_masterdata,
-    profile_masterdata,
-} from "../master-data/master-data";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
