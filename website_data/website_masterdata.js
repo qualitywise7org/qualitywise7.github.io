@@ -1,3 +1,4 @@
+
 const jobtype_masterdata = [
     { code: "private", name: "Private" },
     { code: "government", name: "Government" },
@@ -33,3 +34,4 @@ const profile_masterdata = [
 ];
 
 export { jobtype_masterdata, industry_masterdata, profile_masterdata };
+
