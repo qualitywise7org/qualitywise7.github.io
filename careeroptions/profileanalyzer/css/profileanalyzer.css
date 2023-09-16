@@ -27,7 +27,6 @@ label {
 
 select,
 button {
-    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -35,14 +34,15 @@ button {
     color: #333;
 }
 
-button {
+#submitButton {
+    width: 100%;
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-button:hover {
+#submitButton:hover {
     background-color: #0056b3;
 }
 
@@ -87,7 +87,6 @@ section {
 
 .card a {
     text-decoration: none;
-    color: black;
 }
 
 .card-body {
