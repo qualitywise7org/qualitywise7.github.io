@@ -542,8 +542,11 @@ const jobs_data=[
       },
       "profile_masterdata": {
         "code": "teacher",
-        "name": "Teacher",
-        "minimum_skills_required": "B.Ed",
+        "name": "School Teacher",
+        "minimum_skills_required": "GK, math, reasoning, english, Hindi",
+        "minimum_qualifications": "D.Ed, B.Ed",
+        "preferred_streams": "Any",
+        "entrance_exam": "",
         "life_style": [
           {
             "title": "",
@@ -791,8 +794,11 @@ const jobs_data=[
       },
       "profile_masterdata": {
         "code": "teacher",
-        "name": "Teacher",
-        "minimum_skills_required": "B.Ed",
+        "name": "School Teacher",
+        "minimum_skills_required": "GK, math, reasoning, english, Hindi",
+        "minimum_qualifications": "D.Ed, B.Ed",
+        "preferred_streams": "Any",
+        "entrance_exam": "",
         "life_style": [
           {
             "title": "",
@@ -860,6 +866,9 @@ const jobs_data=[
         "code": "medical_officer",
         "name": "Medical Officer",
         "minimum_skills_required": "",
+        "minimum_qualifications": "MBBS",
+        "preferred_streams": "Any",
+        "entrance_exam": "",
         "life_style": [
           {
             "title": "",
@@ -1009,6 +1018,9 @@ const jobs_data=[
         "code": "medical_officer",
         "name": "Medical Officer",
         "minimum_skills_required": "",
+        "minimum_qualifications": "MBBS",
+        "preferred_streams": "Any",
+        "entrance_exam": "",
         "life_style": [
           {
             "title": "",
@@ -1578,6 +1590,9 @@ const jobs_data=[
         "code": "medical_officer",
         "name": "Medical Officer",
         "minimum_skills_required": "",
+        "minimum_qualifications": "MBBS",
+        "preferred_streams": "Any",
+        "entrance_exam": "",
         "life_style": [
           {
             "title": "",
@@ -1619,6 +1634,9 @@ const jobs_data=[
         "code": "medical_officer",
         "name": "Medical Officer",
         "minimum_skills_required": "",
+        "minimum_qualifications": "MBBS",
+        "preferred_streams": "Any",
+        "entrance_exam": "",
         "life_style": [
           {
             "title": "",
@@ -1788,8 +1806,11 @@ const jobs_data=[
       },
       "profile_masterdata": {
         "code": "teacher",
-        "name": "Teacher",
-        "minimum_skills_required": "B.Ed",
+        "name": "School Teacher",
+        "minimum_skills_required": "GK, math, reasoning, english, Hindi",
+        "minimum_qualifications": "D.Ed, B.Ed",
+        "preferred_streams": "Any",
+        "entrance_exam": "",
         "life_style": [
           {
             "title": "",
@@ -1831,6 +1852,9 @@ const jobs_data=[
         "code": "medical_officer",
         "name": "Medical Officer",
         "minimum_skills_required": "",
+        "minimum_qualifications": "MBBS",
+        "preferred_streams": "Any",
+        "entrance_exam": "",
         "life_style": [
           {
             "title": "",
@@ -2053,7 +2077,10 @@ const jobs_data=[
       "profile_masterdata": {
         "code": "librarian",
         "name": "Librarian",
-        "minimum_skills_required": "",
+        "minimum_skills_required": "Ways to arrange book, Publihsers",
+        "minimum_qualifications": "BLIB",
+        "preferred_streams": "Any",
+        "entrance_exam": "",
         "life_style": [
           {
             "title": "",
