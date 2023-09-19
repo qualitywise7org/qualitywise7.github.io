@@ -62,6 +62,9 @@
     "code": "web_developer",
     "name": "Web Developer(Reactjs, html, css, js etc)",
     "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO",
+    "minimum_qualifications": "Graduation",
+    "preferred_streams": "Any",
+    "entrance_exam": "Interview",
     "life_style": [
       {
         "title": "A Day in the Life of a Remote Web developer",
@@ -77,6 +80,9 @@
     "code": "lawyer",
     "name": "Lawyer",
     "minimum_skills_required": "LLB",
+    "minimum_qualifications": "BALLB",
+    "preferred_streams": "Any",
+    "entrance_exam": "BCI",
     "life_style": [
       {
         "title": "Corporate Lawyer Salary and Lifestyle || In India|| Income || Advocate lifestyle",
@@ -92,6 +98,9 @@
     "code": "medical_officer",
     "name": "Medical Officer",
     "minimum_skills_required": "",
+    "minimum_qualifications": "MBBS",
+    "preferred_streams": "Any",
+    "entrance_exam": "",
     "life_style": [
       {
         "title": "",
@@ -101,8 +110,25 @@
   },
   {
     "code": "teacher",
-    "name": "Teacher",
-    "minimum_skills_required": "B.Ed",
+    "name": "School Teacher",
+    "minimum_skills_required": "GK, math, reasoning, english, Hindi",
+    "minimum_qualifications": "D.Ed, B.Ed",
+    "preferred_streams": "Any",
+    "entrance_exam": "",
+    "life_style": [
+      {
+        "title": "",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "code": "driver",
+    "name": "Driver",
+    "minimum_skills_required": "Driving",
+    "minimum_qualifications": "10th",
+    "preferred_streams": "Any",
+    "entrance_exam": "",
     "life_style": [
       {
         "title": "",
@@ -113,7 +139,10 @@
   {
     "code": "librarian",
     "name": "Librarian",
-    "minimum_skills_required": "",
+    "minimum_skills_required": "Ways to arrange book, Publihsers",
+    "minimum_qualifications": "BLIB",
+    "preferred_streams": "Any",
+    "entrance_exam": "",
     "life_style": [
       {
         "title": "",

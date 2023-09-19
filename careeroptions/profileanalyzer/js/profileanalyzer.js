@@ -9,7 +9,7 @@ const resultsContainer = document.getElementById("results");
 async function populateSelectOptions(optionsMasterData, selectElement) {
     // Add an "All" option
     const allOption = document.createElement("option");
-    allOption.value = "All";
+    allOption.value = "all";
     allOption.textContent = `All`;
     selectElement.appendChild(allOption);
 
@@ -110,30 +110,46 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
                     } | <strong>Industry: </strong>${
                 profileJobs[0]?.posts_data?.industry_masterdata?.name
             }</p>
-            ${
-                profileJobs[0]?.posts_data?.profile_masterdata
-                    ?.minimum_skills_required ||
-                profileJobs[0]?.posts_data?.life_style?.length
-                    ? `<p>
-                        ${
+            <p>
+                        <strong>Minimum Skills Required: </strong>${
                             profileJobs[0]?.posts_data?.profile_masterdata
                                 ?.minimum_skills_required
-                                ? `<strong>Minimum Skills Required: </strong>${profileJobs[0]?.posts_data?.profile_masterdata?.minimum_skills_required} | `
+                                ? profileJobs[0]?.posts_data?.profile_masterdata
+                                      ?.minimum_skills_required
+                                : ""
+                        } | 
+                        <strong>Minimum Qualifications: </strong>${
+                            profileJobs[0]?.posts_data?.profile_masterdata
+                                ?.minimum_qualifications
+                                ? profileJobs[0]?.posts_data?.profile_masterdata
+                                      ?.minimum_qualifications
+                                : ""
+                        } | 
+                        <strong>Preferred Streams: </strong>${
+                            profileJobs[0]?.posts_data?.profile_masterdata
+                                ?.preferred_streams
+                                ? profileJobs[0]?.posts_data?.profile_masterdata
+                                      ?.preferred_streams
+                                : ""
+                        } | 
+                        <strong>Entrance Exam: </strong>${
+                            profileJobs[0]?.posts_data?.profile_masterdata
+                                ?.entrance_exam
+                                ? profileJobs[0]?.posts_data?.profile_masterdata
+                                      ?.entrance_exam
                                 : ""
                         }
-                        ${
-                            profileJobs[0]?.posts_data?.life_style?.length
-                                ? `<strong>Videos: </strong>${profileJobs[0]?.posts_data?.life_style
-                                      .map(
-                                          (video) =>
-                                              `<a href="${video.url}">${video.title}</a>`
-                                      )
-                                      .join(" ")}`
-                                : ""
-                        }
-                    </p>`
-                    : ""
-            }
+                    </p>
+                    <p><strong>Lifestyle: </strong>${
+                        profileJobs[0]?.posts_data?.life_style
+                            ? profileJobs[0]?.posts_data?.life_style
+                                  .map(
+                                      (video) =>
+                                          `<a href="${video.url}">${video.title}</a>`
+                                  )
+                                  .join(" ")
+                            : ""
+                    }</p>
                 </div>
             `;
 
@@ -149,6 +165,8 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
                             <h5 class="card-title">${job?.posts_data?.post_name}</h5>
                             <p><strong>Post Date: </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>
                             <p><strong>Eligibility: </strong>${job?.qualification_eligibility}</p>
+                            <p><strong>Recruitment Board:</strong> ${job?.recruitment_board}</p>
+                            <p><strong>Minimum Age:</strong> ${job?.minimum_age} | <strong>Maximum Age:</strong> ${job?.maximum_age}</p>
                             <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code}" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
                         </div>
                 `;
@@ -234,10 +252,22 @@ function groupJobsByProfile(jobs) {
             )
         ),
     ];
+
+    // Sort the unique profile codes alphabetically
+    uniqueProfiles.sort();
+
     uniqueProfiles.forEach((profile) => {
-        const profileJobs = jobsWithProfile.filter(
-            (job) => job?.posts_data?.profile_masterdata?.code === profile
-        );
+        const profileJobs = jobsWithProfile
+            .filter(
+                (job) => job?.posts_data?.profile_masterdata?.code === profile
+            )
+            .sort((a, b) => {
+                const dateA = parseDate(a?.post_date);
+                const dateB = parseDate(b?.post_date);
+
+                return dateB - dateA;
+            });
+
         groupedJobs.push(profileJobs);
     });
 
@@ -247,6 +277,14 @@ function groupJobsByProfile(jobs) {
     }
 
     return groupedJobs;
+}
+
+function parseDate(dateString) {
+    const parts = dateString.split("/");
+    const year = parseInt(parts[2], 10);
+    const month = parseInt(parts[1], 10) - 1;
+    const day = parseInt(parts[0], 10);
+    return new Date(year, month, day);
 }
 
 // Function to get the current URL search parameters
@@ -287,12 +325,12 @@ async function displayResults(
 
     for (const job of jobs_data) {
         if (
-            (selectedJobType === "All" ||
+            (selectedJobType === "all" ||
                 job.posts_data?.jobtype_masterdata?.code === selectedJobType) &&
-            (selectedIndustry === "All" ||
+            (selectedIndustry === "all" ||
                 job.posts_data?.industry_masterdata?.code ===
                     selectedIndustry) &&
-            (selectedProfile === "All" ||
+            (selectedProfile === "all" ||
                 job.posts_data?.profile_masterdata?.code === selectedProfile)
         ) {
             jobs.push(job);

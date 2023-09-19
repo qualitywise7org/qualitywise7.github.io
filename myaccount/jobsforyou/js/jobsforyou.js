@@ -67,6 +67,13 @@ onAuthStateChanged(auth, async (user) => {
     }
 });
 
+function calculateAge(dob) {
+    const dobDate = new Date(dob);
+    const currentDate = new Date();
+    const age = currentDate.getFullYear() - dobDate.getFullYear();
+    return age;
+}
+
 // Function to get the name from collection based on code
 async function getNameFromCollection(collectionName, code) {
     const querySnapshot = await getDocs(
@@ -117,6 +124,20 @@ async function fetchAndUseJobs() {
         const qualificationEligibility =
             jobData.qualification_eligibility.toLowerCase();
 
+        // Calculate user's age
+        const userAge = calculateAge(userData.dob);
+
+        // Adjust maximum age based on category
+        let maxAge = jobData.maximum_age;
+        if (
+            userData.category === "OBC (NCL)" ||
+            userData.category === "OBC (CL)"
+        ) {
+            maxAge += 3;
+        } else if (userData.category === "SC" || userData.category === "ST") {
+            maxAge += 5;
+        }
+
         const includesGraduation =
             graduationDegreeName &&
             qualificationEligibility.includes(
@@ -128,11 +149,14 @@ async function fetchAndUseJobs() {
             qualificationEligibility.includes(pgDegreeName.toLowerCase());
 
         if (
-            qualificationEligibility.includes("12th") ||
-            qualificationEligibility.includes("10+2") ||
-            includesGraduation ||
-            includesPG
+            userAge >= jobData.minimum_age &&
+            userAge <= maxAge &&
+            (qualificationEligibility.includes("12th") ||
+                qualificationEligibility.includes("10+2") ||
+                includesGraduation ||
+                includesPG)
         ) {
+            console.log(jobData);
             jobsToShow.push({
                 postName: jobData.post_name,
                 qualificationEligibility: qualificationEligibility,

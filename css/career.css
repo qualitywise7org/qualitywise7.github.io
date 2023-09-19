@@ -24,12 +24,13 @@ h2 {
 }
 
 .internship {
-    margin-block: 30px;
+    margin-bottom: 30px;
     background-color: #ffffff;
     border-radius: 8px;
 }
 
 .internship-title {
+    margin-top: 25px;
     font-weight: bold;
     font-size: 20px;
     color: #333333;
