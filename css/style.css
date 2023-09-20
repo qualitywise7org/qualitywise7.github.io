@@ -695,7 +695,10 @@ body {
 
 .chat-back-to-top {
     position: fixed;
+    background-color: #a787cf;
     bottom: 40px;
+    border-radius: 28px;
+    padding: 4px 12px;
     right: 35px;
     z-index: 999;
     display: flex;
@@ -703,10 +706,40 @@ body {
     gap: 0.8rem;
 }
 
+#like-button,
+#dislike-button {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: rgb(222, 222, 222);
+}
+
+#like-button.clicked {
+    color: #6bed6b;
+    animation: pop 0.6s ease-out;
+}
+
+#dislike-button.clicked {
+    color: #ed6f6f;
+    animation: pop 0.6s ease-out;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .whatsapp-chat {
     background-color: #25d366;
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
