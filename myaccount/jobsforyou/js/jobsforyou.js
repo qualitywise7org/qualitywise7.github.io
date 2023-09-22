@@ -29,7 +29,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore();
 
-const resultsContainer = document.getElementById("results");
 const qualificationFilter = document.getElementById("qualificationFilter");
 
 // Get the authenticated user's ID
@@ -50,12 +49,12 @@ onAuthStateChanged(auth, async (user) => {
             userData = userDocSnapshot.data();
 
             graduationDegreeName = await getNameFromCollection(
-                "degree_masterdata ",
+                qualification_masterdata,
                 userData.graduationDegree || ""
             );
 
             pgDegreeName = await getNameFromCollection(
-                "degree_masterdata ",
+                qualification_masterdata,
                 userData.pgDegree || ""
             );
 
@@ -75,12 +74,9 @@ function calculateAge(dob) {
 }
 
 // Function to get the name from collection based on code
-async function getNameFromCollection(collectionName, code) {
-    const querySnapshot = await getDocs(
-        query(collection(db, collectionName), where("code", "==", code))
-    );
-
-    return querySnapshot.empty ? "" : querySnapshot.docs[0].data().name || "";
+function getNameFromCollection(collection, code) {
+    const foundItem = collection.find((item) => item.code === code);
+    return foundItem ? foundItem.name : "";
 }
 
 // Function to dynamically add options to the select element
@@ -114,21 +110,19 @@ function addQualificationOptions() {
 }
 
 async function fetchAndUseJobs() {
-    const jobCollectionRef = collection(db, "jobs");
-    const jobQuerySnapshot = await getDocs(jobCollectionRef);
+    const jobs = jobs_data;
 
     jobsToShow = []; // Clear jobsToShow before populating it
 
-    jobQuerySnapshot.forEach((doc) => {
-        const jobData = doc.data();
+    jobs?.forEach((job) => {
         const qualificationEligibility =
-            jobData.qualification_eligibility.toLowerCase();
+            job.qualification_eligibility.toLowerCase();
 
         // Calculate user's age
         const userAge = calculateAge(userData.dob);
 
         // Adjust maximum age based on category
-        let maxAge = jobData.maximum_age;
+        let maxAge = job.maximum_age;
         if (
             userData.category === "OBC (NCL)" ||
             userData.category === "OBC (CL)"
@@ -149,21 +143,16 @@ async function fetchAndUseJobs() {
             qualificationEligibility.includes(pgDegreeName.toLowerCase());
 
         if (
-            userAge >= jobData.minimum_age &&
+            userAge >= job.minimum_age &&
             userAge <= maxAge &&
             (qualificationEligibility.includes("12th") ||
                 qualificationEligibility.includes("10+2") ||
                 includesGraduation ||
                 includesPG)
         ) {
-            console.log(jobData);
-            jobsToShow.push({
-                postName: jobData.post_name,
-                qualificationEligibility: qualificationEligibility,
-            });
+            jobsToShow.push(job);
         }
     });
-
     displayJobs(jobsToShow);
 }
 
@@ -175,7 +164,7 @@ qualificationFilter.addEventListener("change", () => {
     // Filter jobs based on the selected option
     const filteredJobs = jobsToShow.filter((job) => {
         const qualificationEligibility =
-            job.qualificationEligibility.toLowerCase(); // Define qualificationEligibility here
+            job.qualification_eligibility.toLowerCase(); // Define qualificationEligibility here
 
         const includesGraduation =
             graduationDegreeName &&
@@ -206,11 +195,18 @@ qualificationFilter.addEventListener("change", () => {
 // Function to display results in the resultsContainer
 
 async function displayJobs(jobs) {
-    // Clear existing content in resultsContainer
+    const resultsContainer = document.getElementById("results");
     resultsContainer.innerHTML = "";
 
-    const jobsPerPage = 5;
-    const numPages = Math.ceil(jobs.length / jobsPerPage);
+    const profileCardStyles = {
+        width: "fit-content",
+        margin: "0 auto",
+    };
+
+    const groupedJobs = groupJobsByProfile(jobs);
+
+    const jobsPerPage = 2;
+    const numPages = Math.ceil(jobs?.length / jobsPerPage);
 
     // Get the current page number from URL query parameters (if available)
     const urlSearchParams = new URLSearchParams(window.location.search);
@@ -219,7 +215,7 @@ async function displayJobs(jobs) {
     const startIndex = (currentPage - 1) * jobsPerPage;
     const endIndex = startIndex + jobsPerPage;
 
-    const paginatedJobs = jobs.slice(startIndex, endIndex);
+    const paginatedJobs = groupedJobs?.slice(startIndex, endIndex);
 
     const jobsDiv = document.createElement("div");
     jobsDiv.classList.add("row");
@@ -229,21 +225,96 @@ async function displayJobs(jobs) {
     loadingElement.style.display = "none";
 
     // Display paginated jobs
-    if (paginatedJobs.length > 0) {
-        paginatedJobs.forEach((job) => {
-            const jobDiv = document.createElement("div");
-            jobDiv.classList.add("mb-3");
+    if (paginatedJobs?.length > 0) {
+        paginatedJobs.forEach((profileJobs) => {
+            const profileCard = document.createElement("div");
+            profileCard.classList.add("card", "mb-3");
 
-            jobDiv.innerHTML = `
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">${job.postName}</h5>
-                        <p class="card-text"><strong>Eligibility: </strong>${job.qualificationEligibility}</p>
-                    </div>
+            Object.keys(profileCardStyles).forEach((styleKey) => {
+                profileCard.style[styleKey] = profileCardStyles[styleKey];
+            });
+
+            profileCard.innerHTML = `
+                <div class="card-body">
+                    <h5 class="card-title" style="color:white; background-color:#4f92ef; padding:5px;">${
+                        profileJobs[0]?.posts_data?.profile_masterdata?.name
+                            ? profileJobs[0]?.posts_data?.profile_masterdata
+                                  ?.name
+                            : "Other"
+                    }</h5>
+                    <p><strong>Job Type: </strong>${
+                        profileJobs[0]?.posts_data?.jobtype_masterdata?.name
+                    } | <strong>Industry: </strong>${
+                profileJobs[0]?.posts_data?.industry_masterdata?.name
+            }</p>
+            <p>
+                        <strong>Minimum Skills Required: </strong>${
+                            profileJobs[0]?.posts_data?.profile_masterdata
+                                ?.minimum_skills_required
+                                ? profileJobs[0]?.posts_data?.profile_masterdata
+                                      ?.minimum_skills_required
+                                : ""
+                        } | 
+                        <strong>Minimum Qualifications: </strong>${
+                            profileJobs[0]?.posts_data?.profile_masterdata
+                                ?.minimum_qualifications
+                                ? profileJobs[0]?.posts_data?.profile_masterdata?.minimum_qualifications
+                                      ?.map((elem) => `${elem}`)
+                                      .join(",")
+                                : ""
+                        } | 
+                        <strong>Preferred Streams: </strong>${
+                            profileJobs[0]?.posts_data?.profile_masterdata
+                                ?.preferred_streams
+                                ? profileJobs[0]?.posts_data?.profile_masterdata
+                                      ?.preferred_streams ||
+                                  profileJobs[0]?.posts_data?.profile_masterdata?.preferred_streams
+                                      ?.map((elem) => `${elem}`)
+                                      .join(",")
+                                : ""
+                        } | 
+                        <strong>Entrance Exam: </strong>${
+                            profileJobs[0]?.posts_data?.profile_masterdata
+                                ?.entrance_exam
+                                ? profileJobs[0]?.posts_data?.profile_masterdata?.entrance_exam
+                                      ?.map((elem) => `${elem}`)
+                                      .join(",")
+                                : ""
+                        }
+                    </p>
+                    <p><strong>Lifestyle: </strong>${
+                        profileJobs[0]?.posts_data?.life_style
+                            ? profileJobs[0]?.posts_data?.life_style
+                                  .map(
+                                      (video) =>
+                                          `<a href="${video.url}">${video.title}</a>`
+                                  )
+                                  .join(" ")
+                            : ""
+                    }</p>
                 </div>
             `;
 
-            jobsDiv.appendChild(jobDiv);
+            jobsDiv.appendChild(profileCard);
+
+            profileJobs.forEach((job) => {
+                const jobDiv = document.createElement("div");
+                jobDiv.classList.add("mb-3", "card");
+                jobDiv.style.backgroundColor = "rgb(244 242 255)";
+
+                jobDiv.innerHTML = `
+                        <div class="card-body">
+                            <h5 class="card-title">${job?.posts_data?.post_name}</h5>
+                            <p><strong>Post Date: </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>
+                            <p><strong>Eligibility: </strong>${job?.qualification_eligibility}</p>
+                            <p><strong>Recruitment Board:</strong> ${job?.recruitment_board}</p>
+                            <p><strong>Minimum Age:</strong> ${job?.minimum_age} | <strong>Maximum Age:</strong> ${job?.maximum_age}</p>
+                            <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code}" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
+                        </div>
+                `;
+
+                jobsDiv.appendChild(jobDiv);
+            });
         });
 
         // Create a container for the Bootstrap pagination
@@ -303,4 +374,58 @@ async function displayJobs(jobs) {
     }
 
     resultsContainer.appendChild(jobsDiv);
+}
+
+function groupJobsByProfile(jobs) {
+    const groupedJobs = [];
+
+    // Separate jobs with a profile and jobs without a profile
+    const jobsWithProfile = jobs.filter(
+        (job) => job?.posts_data?.profile_masterdata?.code
+    );
+    const jobsWithoutProfile = jobs.filter(
+        (job) => !job?.posts_data?.profile_masterdata?.code
+    );
+
+    // Group jobs with the same profile together
+    const uniqueProfiles = [
+        ...new Set(
+            jobsWithProfile.map(
+                (job) => job?.posts_data?.profile_masterdata?.code
+            )
+        ),
+    ];
+
+    // Sort the unique profile codes alphabetically
+    uniqueProfiles.sort();
+
+    uniqueProfiles.forEach((profile) => {
+        const profileJobs = jobsWithProfile
+            .filter(
+                (job) => job?.posts_data?.profile_masterdata?.code === profile
+            )
+            .sort((a, b) => {
+                const dateA = parseDate(a?.post_date);
+                const dateB = parseDate(b?.post_date);
+
+                return dateB - dateA;
+            });
+
+        groupedJobs.push(profileJobs);
+    });
+
+    // Add jobs without a profile to the end
+    if (jobsWithoutProfile != "") {
+        groupedJobs.push(jobsWithoutProfile);
+    }
+
+    return groupedJobs;
+}
+
+function parseDate(dateString) {
+    const parts = dateString.split("/");
+    const year = parseInt(parts[2], 10);
+    const month = parseInt(parts[1], 10) - 1;
+    const day = parseInt(parts[0], 10);
+    return new Date(year, month, day);
 }

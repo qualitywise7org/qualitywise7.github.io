@@ -5,7 +5,6 @@ function getParameterByName(name) {
 }
 
 // Extract the 'jobCode' from URL params
-// const jobCode = decodeURIComponent(getParameterByName("jobCode"));
 const jobCode = getParameterByName("jobCode");
 
 let job = null;
