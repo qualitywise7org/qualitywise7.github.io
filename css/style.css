@@ -93,7 +93,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 0 10rem 0 0;
+    padding: 0 0rem 0 5rem;
 }
 
 .hero ul {
