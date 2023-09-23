@@ -19,12 +19,12 @@ section {
 
 .jobs-header {
     font-size: 24px;
-    color: white;
-    background: #8978e5;
+    color: black;
+    border-bottom: 2px solid;
     font-family: math;
+    width: 100vw;
     padding: 0.5rem;
     margin-bottom: 20px;
-    width: fit-content;
     text-align: center;
 }
 
@@ -55,6 +55,10 @@ section {
 .card-title {
     font-size: 18px;
     margin: 0;
+    background: #504387;
+    color: white !important;
+    border-radius: 5px;
+    padding: 1px 5px;
 }
 
 .card-text {

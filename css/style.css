@@ -708,6 +708,7 @@ body {
 
 #like-button,
 #dislike-button {
+    padding: 0;
     font-size: 2rem;
     background: none;
     border: none;

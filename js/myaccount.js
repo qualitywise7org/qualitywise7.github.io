@@ -35,6 +35,7 @@ const db = getFirestore();
 // Get the authenticated user's ID
 let userId = null;
 let userData = {};
+
 onAuthStateChanged(auth, async (user) => {
     if (user) {
         userId = user.uid;
@@ -61,7 +62,8 @@ function populateUserDetails(
     twelfthDetails,
     diplomaDetails,
     graduationDetails,
-    pgDetails
+    pgDetails,
+    categoryDetails
 ) {
     const fullNameElement = document.getElementById("fullName");
     const emailElement = document.getElementById("email");
@@ -84,17 +86,14 @@ function populateUserDetails(
     pgDetailsElement.textContent = pgDetails;
 
     // Populate additional information
-    categoryElement.textContent = userData.category || "";
+    categoryElement.textContent = categoryDetails;
     dobElement.textContent = userData.dob || "";
 }
 
 // Function to get the name from collection based on code
-async function getNameFromCollection(collectionName, code) {
-    const querySnapshot = await getDocs(
-        query(collection(db, collectionName), where("code", "==", code))
-    );
-
-    return querySnapshot.empty ? "" : querySnapshot.docs[0].data().name || "";
+function getNameFromCollection(collection, code) {
+    const foundItem = collection.find((item) => item.code === code);
+    return foundItem ? foundItem.name : "";
 }
 
 async function fetchAndUseNames() {
@@ -105,34 +104,39 @@ async function fetchAndUseNames() {
     const graduationDegreeCode = userData.graduationDegree || "";
     const pgStreamCode = userData.pgStream || "";
     const pgDegreeCode = userData.pgDegree || "";
+    const categoryCode = userData.category || "";
 
     const twelfthSubjectName = await getNameFromCollection(
-        "subject_masterdata",
+        subject_masterdata,
         twelfthSubjectCode
     );
     const diplomaStreamName = await getNameFromCollection(
-        "branch_masterdata ",
+        stream_masterdata,
         diplomaStreamCode
     );
     const diplomaName = await getNameFromCollection(
-        "diploma_masterdata",
+        qualification_masterdata,
         diplomaNameCode
     );
     const graduationStreamName = await getNameFromCollection(
-        "branch_masterdata ",
+        stream_masterdata,
         graduationStreamCode
     );
     const graduationDegreeName = await getNameFromCollection(
-        "degree_masterdata ",
+        qualification_masterdata,
         graduationDegreeCode
     );
     const pgStreamName = await getNameFromCollection(
-        "branch_masterdata ",
+        stream_masterdata,
         pgStreamCode
     );
     const pgDegreeName = await getNameFromCollection(
-        "degree_masterdata ",
+        qualification_masterdata,
         pgDegreeCode
+    );
+    const categoryName = await getNameFromCollection(
+        category_masterdata,
+        categoryCode
     );
 
     // Hide the loading element
@@ -149,12 +153,14 @@ async function fetchAndUseNames() {
     const pgDetails = `${pgStreamName || ""} - ${pgDegreeName || ""} - ${
         userData.pgPercentage || ""
     }`;
+    const categoryDetails = `${categoryName || ""}`;
 
     populateUserDetails(
         twelfthDetails,
         diplomaDetails,
         graduationDetails,
-        pgDetails
+        pgDetails,
+        categoryDetails
     );
 }
 const logoutButton = document.getElementById("logout-btn");
@@ -185,52 +191,70 @@ if (logoutButton) {
 //     });
 // });
 
-// JavaScript to trigger the modal
+// JavaScript to trigger the modal and populate form fields
 document
     .getElementById("openModalButton")
-    .addEventListener("click", function () {
-        var myModal = new bootstrap.Modal(document.getElementById("myModal"));
+    .addEventListener("click", async () => {
+        document.getElementById("twelfthSubject").value =
+            userData.twelfthSubject || "";
+        document.getElementById("twelfthPercentage").value =
+            userData.twelfthPercentage || "";
+        document.getElementById("diplomaStream").value =
+            userData.diplomaStream || "";
+        document.getElementById("diplomaName").value =
+            userData.diplomaName || "";
+        document.getElementById("graduationStream").value =
+            userData.graduationStream || "";
+        document.getElementById("graduationDegree").value =
+            userData.graduationDegree || "";
+        document.getElementById("graduationPercentage").value =
+            userData.graduationPercentage || "";
+        document.getElementById("pgStream").value = userData.pgStream || "";
+        document.getElementById("pgDegree").value = userData.pgDegree || "";
+        document.getElementById("pgPercentage").value =
+            userData.pgPercentage || "";
+        document.getElementById("categories").value = userData.category || "";
+        document.getElementById("user-dob").value = userData.dob || "";
+
+        let myModal = new bootstrap.Modal(document.getElementById("myModal"));
         myModal.show();
     });
 
-async function populateSelectOptions(collectionName, selectElement) {
+async function populateSelectOptions(collection, selectElement) {
     try {
-        const collectionRef = collection(db, collectionName);
-        const snapshot = await getDocs(collectionRef);
+        selectElement.innerHTML = `<option value="" selected >Select</option>`;
 
-        selectElement.innerHTML = `<option value="" disabled selected>Select</option>`;
-
-        snapshot.forEach((doc) => {
-            const data = doc.data();
-            selectElement.innerHTML += `<option value="${data.code}">${data.name}</option>`;
+        collection?.forEach((elem) => {
+            selectElement.innerHTML += `<option value="${elem.code}">${elem.name}</option>`;
         });
     } catch (error) {
-        console.error(`Error fetching ${collectionName} options:`, error);
+        console.error(`Error fetching options:`, error);
     }
 }
 
 // Populate options on page load
 window.addEventListener("DOMContentLoaded", () => {
     populateSelectOptions(
-        "subject_masterdata",
+        subject_masterdata,
         document.getElementById("twelfthSubject")
     );
     populateSelectOptions(
-        "branch_masterdata ",
+        stream_masterdata,
         document.getElementById("diplomaStream")
     );
     populateSelectOptions(
-        "branch_masterdata ",
+        stream_masterdata,
         document.getElementById("graduationStream")
     );
     populateSelectOptions(
-        "branch_masterdata ",
+        stream_masterdata,
         document.getElementById("pgStream")
     );
     populateSelectOptions(
-        "diploma_masterdata",
-        document.getElementById("diplomaName")
+        category_masterdata,
+        document.getElementById("categories")
     );
+    populateDegreeOptions("diplomaName", "diploma");
     populateDegreeOptions("graduationDegree", "graduation");
     populateDegreeOptions("pgDegree", "post_graduation");
 });
@@ -239,15 +263,11 @@ async function populateDegreeOptions(degreeSelectId, level) {
     const degreeSelect = document.getElementById(degreeSelectId);
 
     try {
-        const collectionRef = collection(db, "degree_masterdata ");
-        const snapshot = await getDocs(collectionRef);
+        degreeSelect.innerHTML = `<option value="" selected >Select</option>`;
 
-        degreeSelect.innerHTML = `<option value="" disabled selected>Select Degree</option>`;
-
-        snapshot.forEach((doc) => {
-            const data = doc.data();
-            if (data.level === level) {
-                degreeSelect.innerHTML += `<option value="${data.code}">${data.name}</option>`;
+        qualification_masterdata?.forEach((elem) => {
+            if (elem.level === level) {
+                degreeSelect.innerHTML += `<option value="${elem.code}">${elem.name}</option>`;
             }
         });
     } catch (error) {
@@ -271,28 +291,50 @@ saveButton.addEventListener("click", async () => {
     const pgStream = document.getElementById("pgStream").value;
     const pgDegree = document.getElementById("pgDegree").value;
     const pgPercentage = document.getElementById("pgPercentage").value;
-    const category = document.getElementById("category").value;
-    const dob = document.getElementById("dob").value;
+    const category = document.getElementById("categories").value;
+    const dob = document.getElementById("user-dob").value;
 
-    try {
-        await updateUserData(userId, {
-            twelfthSubject,
-            twelfthPercentage,
-            diplomaStream,
-            diplomaName,
-            graduationStream,
-            graduationDegree,
-            graduationPercentage,
-            pgStream,
-            pgDegree,
-            pgPercentage,
-            category,
-            dob,
-        });
-        alert("Data saved successfully.");
-    } catch (error) {
-        console.log(error);
-        alert("Error saving data:", error);
+    // Check if any changes have been made
+    if (
+        twelfthSubject !== userData.twelfthSubject ||
+        twelfthPercentage !== userData.twelfthPercentage ||
+        diplomaStream !== userData.diplomaStream ||
+        diplomaName !== userData.diplomaName ||
+        graduationStream !== userData.graduationStream ||
+        graduationDegree !== userData.graduationDegree ||
+        graduationPercentage !== userData.graduationPercentage ||
+        pgStream !== userData.pgStream ||
+        pgDegree !== userData.pgDegree ||
+        pgPercentage !== userData.pgPercentage ||
+        category !== userData.category ||
+        dob !== userData.dob
+    ) {
+        try {
+            await updateUserData(userId, {
+                twelfthSubject,
+                twelfthPercentage,
+                diplomaStream,
+                diplomaName,
+                graduationStream,
+                graduationDegree,
+                graduationPercentage,
+                pgStream,
+                pgDegree,
+                pgPercentage,
+                category,
+                dob,
+            });
+
+            let myModal = new bootstrap.Modal(
+                document.getElementById("myModal")
+            );
+            myModal.hide();
+            window.location.reload();
+            alert("Data saved successfully.");
+        } catch (error) {
+            console.log(error);
+            alert("Error saving data:", error);
+        }
     }
 });
 

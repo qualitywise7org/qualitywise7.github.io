@@ -26,6 +26,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
+const currentPageUrl = window.location.pathname;
+let docRefrencePage = currentPageUrl.replace(/\//g, "_");
+
+if (currentPageUrl === "/") {
+    docRefrencePage = "_home_";
+}
+
 const modal = new bootstrap.Modal(document.getElementById("myModal"));
 const closeModal = document.getElementById("closeModal");
 const feedbackInput = document.getElementById("feedback");
@@ -177,25 +184,34 @@ function openModal() {
     modal.show();
 }
 
-async function updateFeedbackCounts(likeCount, dislikeCount) {
+async function updateFeedbackCounts(likeCount, dislikeCount, pageIdentifier) {
     try {
-        const feedbackDocRef = doc(db, "user_feedback", "a5uhEqWYKfElgJ74R87m");
+        const feedbackDocRef = doc(db, "page_feedback", pageIdentifier);
+
         await setDoc(feedbackDocRef, {
             like_count: likeCount,
             dislike_count: dislikeCount,
         });
+
+        console.log(`Feedback counts updated for ${docRefrencePage}`);
     } catch (error) {
-        console.error("Error updating feedback counts:", error);
+        console.error(
+            `Error updating feedback counts for ${docRefrencePage}:`,
+            error
+        );
     }
 }
 
 document.getElementById("like-button").addEventListener("click", async () => {
-    const feedbackDocRef = doc(db, "user_feedback", "a5uhEqWYKfElgJ74R87m");
+    const feedbackDocRef = doc(db, "page_feedback", docRefrencePage);
     const feedbackDocSnapshot = await getDoc(feedbackDocRef);
-    const newLikeCount = (feedbackDocSnapshot.data().like_count || 0) + 1;
+
+    const newLikeCount = (feedbackDocSnapshot.data()?.like_count || 0) + 1;
+
     await updateFeedbackCounts(
         newLikeCount,
-        feedbackDocSnapshot.data().dislike_count || 0
+        feedbackDocSnapshot.data()?.dislike_count || 0,
+        docRefrencePage
     );
 });
 
@@ -203,13 +219,17 @@ document
     .getElementById("dislike-button")
     .addEventListener("click", async () => {
         openModal();
-        const feedbackDocRef = doc(db, "user_feedback", "a5uhEqWYKfElgJ74R87m");
+
+        const feedbackDocRef = doc(db, "page_feedback", docRefrencePage);
         const feedbackDocSnapshot = await getDoc(feedbackDocRef);
+
         const newDislikeCount =
-            (feedbackDocSnapshot.data().dislike_count || 0) + 1;
+            (feedbackDocSnapshot.data()?.dislike_count || 0) + 1;
+
         await updateFeedbackCounts(
-            feedbackDocSnapshot.data().like_count || 0,
-            newDislikeCount
+            feedbackDocSnapshot.data()?.like_count || 0,
+            newDislikeCount,
+            docRefrencePage
         );
     });
 
@@ -220,6 +240,7 @@ submitButton.addEventListener("click", async () => {
     const feedbackData = {
         phoneNumber: phoneNumber,
         feedback: feedback,
+        webPage: docRefrencePage,
     };
 
     try {
@@ -241,6 +262,6 @@ submitButton.addEventListener("click", async () => {
     phoneNumberInput.value = "";
 });
 
-closeModal.addEventListener("click", async () => {
+closeModal?.addEventListener("click", async () => {
     modal.hide();
 });
