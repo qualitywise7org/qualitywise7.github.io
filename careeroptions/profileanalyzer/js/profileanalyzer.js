@@ -66,8 +66,8 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
     resultsContainer.innerHTML = "";
 
     const profileCardStyles = {
-        width: "fit-content",
-        margin: "0 auto",
+        // width: "fit-content",
+        // margin: "0 auto",
     };
 
     const groupedJobs = groupJobsByProfile(jobs);
@@ -81,7 +81,7 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
     const paginatedJobs = groupedJobs?.slice(startIndex, endIndex);
 
     const jobsDiv = document.createElement("div");
-    jobsDiv.classList.add("row");
+    jobsDiv.classList.add("row" , 'g-3');
 
     // Hide the loading element
     const loadingElement = document.getElementById("loading");
@@ -91,7 +91,7 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
     if (paginatedJobs?.length > 0) {
         paginatedJobs.forEach((profileJobs) => {
             const profileCard = document.createElement("div");
-            profileCard.classList.add("card", "mb-3");
+            profileCard.classList.add("card","col-12");
 
             Object.keys(profileCardStyles).forEach((styleKey) => {
                 profileCard.style[styleKey] = profileCardStyles[styleKey];
@@ -162,18 +162,19 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
 
             profileJobs.forEach((job) => {
                 const jobDiv = document.createElement("div");
-                jobDiv.classList.add("mb-3", "card");
-                jobDiv.style.backgroundColor = "rgb(244 242 255)";
+                jobDiv.classList.add("col-md-4", "col-12"); 
 
                 jobDiv.innerHTML = `
-                        <div class="card-body">
-                            <h5 class="card-title">${job?.posts_data?.post_name}</h5>
+                    <div class="card h-100">
+                        <div class="card-body" style=" background-color:rgb(244 242 255)">
+                            <h5 class="card-title text-center">${job?.posts_data?.post_name}</h5>
                             <p><strong>Post Date: </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>
                             <p><strong>Eligibility: </strong>${job?.qualification_eligibility}</p>
                             <p><strong>Recruitment Board:</strong> ${job?.recruitment_board}</p>
                             <p><strong>Minimum Age:</strong> ${job?.minimum_age} | <strong>Maximum Age:</strong> ${job?.maximum_age}</p>
                             <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code}" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
                         </div>
+                    </div>    
                 `;
 
                 jobsDiv.appendChild(jobDiv);
