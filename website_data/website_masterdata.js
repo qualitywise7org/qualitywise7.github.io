@@ -351,71 +351,6 @@ const qualification_masterdata = [
     "preferred_streams": "NA"
   },
   {
-    "code": "professor",
-    "name": "Professor/Faculty",
-    "minimum_skills_required": "master of subject, teaching skill, communication, english",
-    "minimum_qualifications": [
-      "postgraduation"
-    ],
-    "preferred_streams": [
-      "any"
-    ]
-  },
-  {
-    "code": "driver",
-    "name": "Driver",
-    "minimum_skills_required": "driving",
-    "minimum_qualifications": [
-      "10"
-    ],
-    "preferred_streams": [
-      "any"
-    ]
-  },
-  {
-    "code": "clerk",
-    "name": "Clerk",
-    "minimum_skills_required": "writing skill, computer skill",
-    "minimum_qualifications": [
-      "10"
-    ],
-    "preferred_streams": [
-      "any"
-    ]
-  },
-  {
-    "code": "store_keeper",
-    "name": "Store Keeper",
-    "minimum_skills_required": "clerk",
-    "minimum_qualifications": [
-      "10"
-    ],
-    "preferred_streams": [
-      "any"
-    ]
-  },
-  {
-    "code": "apprentice",
-    "name": "Apprentice",
-    "minimum_qualifications": [
-      "graduation"
-    ],
-    "preferred_streams": [
-      "any"
-    ]
-  },
-  {
-    "code": "helper",
-    "name": "Helper",
-    "minimum_skills_required": "good nature",
-    "minimum_qualifications": [
-      "10"
-    ],
-    "preferred_streams": [
-      "any"
-    ]
-  },
-  {
     "code": "fellow",
     "name": "Fellow",
     "minimum_qualifications": [
@@ -460,18 +395,6 @@ const qualification_masterdata = [
     ]
   },
   {
-    "code": "technician",
-    "name": "Technician"
-  },
-  {
-    "code": "consultant",
-    "name": "Consultant"
-  },
-  {
-    "code": "supervisor",
-    "name": "Supervisor"
-  },
-  {
     "code": "teacher",
     "name": "School Teacher",
     "keywords": [
@@ -486,105 +409,11 @@ const qualification_masterdata = [
     ]
   },
   {
-    "code": "officer",
-    "name": "Officer"
-  },
-  {
-    "code": "fireman",
-    "name": "Fireman"
-  },
-  {
     "code": "assistant",
     "name": "Assistant"
   },
   {
-    "code": "inspector",
-    "name": "Inspector",
-    "minimum_skills_required": "GK, math, reasoning, english, Hindi",
-    "minimum_qualifications": [
-      "graduation"
-    ],
-    "preferred_streams": [
-      "any"
-    ],
-    "entrance_exam": [
-      "SI"
-    ]
-  },
-  {
-    "code": "constable",
-    "name": "Constable",
-    "minimum_skills_required": "GK, math, reasoning, english",
-    "minimum_qualifications": [
-      "graduation"
-    ],
-    "preferred_streams": [
-      "any"
-    ]
-  },
-  {
-    "code": "stenographer",
-    "name": "Stenographer",
-    "minimum_skills_required": "steno, GK, math, reasoning, english",
-    "minimum_qualifications": [
-      "graduation"
-    ]
-  },
-  {
-    "code": "law_officer",
-    "name": "Law Officer",
-    "keywords": [
-      "law officer"
-    ],
-    "minimum_qualifications": [
-      "graduation"
-    ]
-  },
-  {
-    "code": "operator",
-    "name": "Operator"
-  },
-  {
-    "code": "manager",
-    "name": "Manager"
-  },
-  {
-    "code": "director",
-    "name": "Director"
-  },
-  {
-    "code": "lab",
-    "name": "Lab"
-  },
-  {
-    "code": "doctor",
-    "name": "Doctor"
-  },
-  {
     "code": "all",
     "name": "All"
-  },
-  {
-    "code": "lawyer",
-    "name": "Lawyer",
-    "minimum_qualifications": [
-      "ballb"
-    ],
-    "preferred_streams": [
-      "any"
-    ],
-    "entrance_exam": [
-      "bci"
-    ],
-    "life_style": [
-      {
-        "title": "Corporate Lawyer Salary and Lifestyle || In India|| Income || Advocate lifestyle",
-        "url": "https://www.youtube.com/watch?v=4vGbCY-llTI"
-      },
-      {
-        "title": "The reality of being a lawyer in India",
-        "url": "https://www.youtube.com/watch?v=PT3ALd_ENjE"
-      }
-    ]
   }
 ];
