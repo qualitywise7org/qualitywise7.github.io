@@ -141,16 +141,28 @@
         <section class="profile_analyzer">
             <h1 style="font-family: serif">Profile Analyzer</h1>
             <form id="profileForm" class="profileForm">
-                <label for="jobType">Job Type:</label>
-                <select id="jobType" name="jobType"></select>
+                <div class="main-user-info">
+                    
+                  <div class="user-input-box">
+                    <label for="jobType">Job Type:</label>
+                    <select type="text" id="jobType" name="jobType" ></select>
+                  </div>
 
-                <label for="industry">Industry:</label>
-                <select id="industry" name="industry"></select>
+                  <div class="user-input-box">
+                    <label for="industry">Industry:</label>
+                    <select type="text" id="industry" name="industry"  ></select>
+                  </div>
 
-                <label for="profile">Work Profile:</label>
-                <select id="profile" name="profile"></select>
+                  <div class="user-input-box">
+                    <label for="profile">Work Profile:</label>
+                    <select type="text" id="profile" name="profile"  ></select>
+                  </div>
 
-                <button type="button" id="submitButton">Submit</button>
+                  
+                </div>
+                  <div class="form-submit-btn">
+                    <input type="submit" id="submitButton">
+                  </div>     
             </form>
 
             <div class="container mt-3 mr-4 ml-4">
