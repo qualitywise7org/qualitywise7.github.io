@@ -89,6 +89,10 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
 
     // Display paginated jobs
     if (paginatedJobs?.length > 0) {
+
+        // about pagination button
+
+
         paginatedJobs.forEach((profileJobs) => {
             const profileCard = document.createElement("div");
             profileCard.classList.add("card","col-12");
@@ -166,12 +170,33 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
 
                 jobDiv.innerHTML = `
                     <div class="card h-100">
-                        <div class="card-body" style=" background-color:rgb(244 242 255)">
+                        <div class="card-body " style=" background-color:rgb(244 242 255)">
                             <h5 class="card-title text-center">${job?.posts_data?.post_name}</h5>
-                            <p><strong>Post Date: </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>
-                            <p><strong>Eligibility: </strong>${job?.qualification_eligibility}</p>
-                            <p><strong>Recruitment Board:</strong> ${job?.recruitment_board}</p>
-                            <p><strong>Minimum Age:</strong> ${job?.minimum_age} | <strong>Maximum Age:</strong> ${job?.maximum_age}</p>
+
+                            ${job.last_date ?`
+                            <p><strong>Post Date : </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>  
+                            ` : `
+                            <p><strong>Post Date : </strong>${job?.post_date}</p>
+                            `}
+
+                            <p><strong>Eligibility : </strong>${job?.qualification_eligibility}</p>
+
+                            ${job?.recruitment_board ?
+                            `
+                            <p><strong>Recruitment Board :</strong> ${job?.recruitment_board}</p>
+                            ` : `
+                            <p><strong>Location :</strong> ${job?.location}</p>
+                            `}
+
+                            ${job?.minimum_age || job?.maximum_age ?
+                                `<p><strong>Minimum Age :</strong> ${job?.minimum_age} | <strong>Maximum Age :</strong> ${job?.maximum_age}</p>`
+                                :
+                                (job?.company_name ?
+                                    `<p><strong>Company Name : </strong>${job?.company_name}</p>`
+                                    :
+                                    ``
+                                )
+                            }
                             <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code}" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
                         </div>
                     </div>    
