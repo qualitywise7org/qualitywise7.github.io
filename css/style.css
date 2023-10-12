@@ -178,7 +178,7 @@ body {
     width: 70%;
 }
 
-.hero-section .program-btn .demoBtn {
+.hero-section .program-btn .demoBtn{
     background-color: #3c7dd7;
     color: white;
     border: 1px solid;
@@ -196,6 +196,14 @@ body {
 
 .hero-section .program-btn .curriculum-btn:hover {
     background-color: #546596;
+}
+.hero-section .program-btn .benefits-btn {
+    background-color: #3c7dd7;
+    color: white;
+    border: 1px solid;
+}
+.hero-section .program-btn .benefits-btn:hover {
+    background-color: #2b69c1;
 }
 
 /* Card Section */
@@ -413,6 +421,17 @@ body {
     list-style: square;
     list-style-position: inside;
     padding: 0;
+}
+
+.accordion-body{
+    /* background-color: #8d8686; */
+    background-color: #212529;
+    color: white;
+}
+
+.accordion-body li{
+    
+    font-size: 1.2rem;
 }
 
 /* Company Section */
