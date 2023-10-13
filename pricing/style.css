@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main_container{
+    text-align: center;
+    margin: 0.5rem;
+}
+h1{
+   padding: 1rem; 
+}
+.main_paragraph{
+    background-color: #212529;  
+    color: white;
+    margin: 0.5rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: start;
+}
+li, p:nth-child(2n){
+    margin: 0.5rem;
+}
+.heading{
+    font-family: "Pacifico", cursive;
+    text-align: center;
+    font-size: 3rem;
+    margin: 2rem;
+}
+.course{
+    border: 2px solid gray;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #887B48;
+    color: white;
+}
+.course h3{
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Pacifico", cursive;
+}
+.course > ul > li{
+    font-size: 1.2rem;
+}
+.apply{
+    margin: 2rem auto;
+
+}
