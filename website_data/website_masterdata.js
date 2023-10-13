@@ -413,6 +413,17 @@ const qualification_masterdata = [
     "name": "Assistant"
   },
   {
+    "code": "professor",
+    "name": "Professor/Faculty",
+    "minimum_skills_required": "master of subject, teaching skill, communication, english",
+    "minimum_qualifications": [
+      "postgraduation"
+    ],
+    "preferred_streams": [
+      "any"
+    ]
+  },
+  {
     "code": "all",
     "name": "All"
   }

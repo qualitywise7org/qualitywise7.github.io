@@ -7,16 +7,24 @@
     text-align: center;
     margin: 0.5rem;
 }
-h1{
-   padding: 1rem; 
+.main_container h1{
+    font-family: "Pacifico", cursive;
+    font-size: 3rem;
+    padding: 1rem; 
+}
+
+.line{
+    margin-top: 2rem;
+    border-bottom: 2px solid gray;
 }
 .main_paragraph{
-    background-color: #212529;  
+    background-color: #6279b3;
     color: white;
     margin: 0.5rem;
     padding: 1rem;
     font-size: 1.2rem;
     text-align: start;
+    border-radius: 1rem;
 }
 li, p:nth-child(2n){
     margin: 0.5rem;
@@ -47,3 +55,29 @@ li, p:nth-child(2n){
     margin: 2rem auto;
 
 }
+
+.header{
+   background-color: #4b22d1; 
+}
+table{
+    border: 2px solid ;
+    overflow: hidden;
+}
+.linked{
+    color: #8e76df;
+    font-weight: 600;
+}
+.linked:hover{
+    color: #4b22d1;
+}
+.btn1{
+    
+    font-size: 1.2rem;
+    color: white;
+    text-transform: capitalize;
+}
+
+.btn1:hover{
+    color: rgb(87, 17, 239);
+}
+

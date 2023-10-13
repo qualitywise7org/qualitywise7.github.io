@@ -169,7 +169,7 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
                 jobDiv.classList.add("col-md-4", "col-12"); 
 
                 jobDiv.innerHTML = `
-                    <div class="card h-100">
+                    <div class="card h-100 overflow-hidden">
                         <div class="card-body " style=" background-color:rgb(244 242 255)">
                             <h5 class="card-title text-center">${job?.posts_data?.post_name}</h5>
 
