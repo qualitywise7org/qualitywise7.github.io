@@ -2004,7 +2004,7 @@ const jobs_data=[
     "qualification_eligibility": "MD/ MS/ DNB/ MSc (Medical) degree",
     "job_link": "https://www.freejobalert.com/esic/759484/#Resident-Sr",
     "salary": "",
-    "last_date": "05 & 06-10-2023",
+    "last_date": "05 & 06-10-2023 Walk in",
     "skills": "",
     "brief_info": "Employees’ State Insurance Corporation (ESIC), Tamil Nadu has given a notification for the recruitment of Senior Resident Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Walk in.",
     "minimum_age": 18,
@@ -2037,7 +2037,7 @@ const jobs_data=[
     "qualification_eligibility": "PG Degree (MD/ MS/ DNB/ DM)",
     "job_link": "https://www.freejobalert.com/directorate-of-medical-education/13117/#Professor",
     "salary": "",
-    "last_date": "21-09-2023",
+    "last_date": "21-09-2023 Walk in",
     "skills": "",
     "brief_info": "Govt of Andhra Pradesh, Directorate of Medical Education, Andhra Pradesh has given a notification for the recruitment of Assistant Professor Vacancy on Contract Basis. Eligible Candidates who are interested in the Vacancy details & completed all eligibility criteria can read the notification & Apply Online.",
     "minimum_age": null,
@@ -2057,13 +2057,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -13923,20 +13926,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 0,
+      "post_id": 2,
       "post_name": "Assistant Professor - Psychology",
       "post_code": "assistant_professor_psychology",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -13965,13 +13971,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14000,13 +14009,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14035,13 +14047,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14070,13 +14085,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14098,20 +14116,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 5,
+      "post_id": 1,
       "post_name": "Assistant Professor/Associate Professor/Professor - Design",
       "post_code": "assistant_professor_associate_professor_professor_design",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14140,13 +14161,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14175,13 +14199,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14203,20 +14230,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 8,
+      "post_id": 14,
       "post_name": "Application invited for YOGA Faculty Position",
       "post_code": "application_invited_for_yoga_faculty_position",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14245,13 +14275,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14273,20 +14306,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 10,
+      "post_id": 17,
       "post_name": "Assistant Professor(cse,I.T ,comm $ mgmt)",
       "post_code": "assistant_professor_cse_i_t_comm_mgmt_",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14315,13 +14351,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14350,13 +14389,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14378,20 +14420,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 13,
+      "post_id": 21,
       "post_name": "Assistant Professor of Analytics",
       "post_code": "assistant_professor_of_analytics",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14413,20 +14458,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 14,
+      "post_id": 15,
       "post_name": "Assistant Professor/Associate Professor/Professor - Psychology",
       "post_code": "assistant_professor_associate_professor_professor_psychology",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14448,20 +14496,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 15,
+      "post_id": 22,
       "post_name": "Computer Science Faculty",
       "post_code": "computer_science_faculty",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14483,20 +14534,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 23,
+      "post_id": 24,
       "post_name": "Management Faculty",
       "post_code": "management_faculty",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14560,13 +14614,16 @@ const jobs_data=[
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14588,20 +14645,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 23,
+      "post_id": 24,
       "post_name": "Management Faculty",
       "post_code": "management_faculty",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14623,20 +14683,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 23,
+      "post_id": 24,
       "post_name": "Management Faculty",
       "post_code": "management_faculty",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14658,20 +14721,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 23,
+      "post_id": 24,
       "post_name": "Management Faculty",
       "post_code": "management_faculty",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -14728,20 +14794,23 @@ const jobs_data=[
     "recruitment_board": "",
     "expectation": "",
     "posts_data": {
-      "post_id": 23,
+      "post_id": 24,
       "post_name": "Management Faculty",
       "post_code": "management_faculty",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant"
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
       }
     }
   },
@@ -17605,6 +17674,962 @@ const jobs_data=[
         "name": "Pharmacist",
         "minimum_qualifications": [
           "bphrama"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/applications-invited-for-assistant-professor-associate-professor-at-amity-university-3735640142?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=%2B2JnpuKAWfqy1GwApn8U1A%3D%3D&position=1&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Applications invited for Assistant Professor  Associate Professor at Amity Center for Nanomedicine  06122022 Advertisement date  03122020 Ref No  AdvAUUPHR20018 AMITY UNIVERSITY Inviting Applications for Assistant  Associate Professor We are looking for experienced competent and committed individuals for the position of Assistant Professor Associate Professor and Professor in the department of Amity Centre for Nanomedicine ACN for its Noida campus Applications are invited for faculty positions in from candidates who meet following criteria MSc in Nanobiotechnology Molecular Biology Biomedical Science Nanomedicine Computational Chemistry in Molecule interaction Nanobioinformatics Drug discovery Bioimaging Nucleic Acid Nanotechnology Molecular Nanomedicine from a reputed Institution  University PhD Mandatory degree in above mentioned specialization from reputed University At least 05 publications in SCIScopus indexed journals Should have guided Research Scholars in related area Minimum of 3 years teaching experience for Assistant Professor 8 years for Associate Professor in relevant discipline Kindly send your resume through an online format for which please visit wwwamityeducareers Apply Now This job is provided by Shinecom",
+    "minimum_age": "",
+    "post_date": "2023-09-22",
+    "post_code": "applications_invited_for_assistant_professor_associate_professor",
+    "company_name": "Amity University",
+    "location": "Noida Uttar Pradesh India",
+    "job_code": "applications_invited_for_assistant_professor_associate_professor_postdate_2023-09-22",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 0,
+      "post_name": "Applications invited for Assistant Professor / Associate Professor",
+      "post_code": "applications_invited_for_assistant_professor_associate_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-associate-professor-professor-design-at-alliance-university-3731836072?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=ldTONCjrd4twPDgiC5hULw%3D%3D&position=2&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "and abilities whenever reasonably required   Profile Demonstrated interest and competence in establishing courses and teaching at the undergraduate and graduate levels A strong desire to publish in prestigious journals with the possibility to get outside funding for research initiatives PhD in Design or related areas from a topnotch institution Demonstrated experience  proven track record in teachingto contribute to the PGUG courses in Design including the supervision of bachelors and masters theses Great interpersonal",
+    "brief_info": "Assistant Professor  Associate Professor  Professor  Design   Institution Profile Alliance University is a Private University established in Karnataka State by Act No 34 of the year 2010 The University is recognized by the University Grants Commission UGC New Delhi    Alliance University with its vibrant and picturesque campus in Bangalore India offers multidisciplinary undergraduate and postgraduate majors to students from diverse backgrounds Alliance Education defined by excellence through an agile and marketdriven approach in the faculties of Management Studies  Commerce Science  Technology Humanities Liberal Arts  Social Sciences is guided by the core values of the University   As a topranked university Alliance University offers programs in Business Management Engineering Design Liberal Arts Economics Science and Applied Mathematics   For more details visit  wwwallianceeduin Alliance University invites applications for its Alliance School of Liberal Arts from highly accomplished professionals for the position of Assistant Professor  Associate Professor  Professor  in Design The applicant must have a strong academic background and at least ten years of experience in teaching and research at a reputed institution Job Title  Assistant Professor  Associate Professor  Professor    Design Roles and Responsibilities Continuously enrich the deliverables on learning aims of the curriculum for undergraduate and postgraduate programs Guide lead and mentor students in research projects Evaluate monitor and mentor students academic progress Create innovate and implement careerenhancement programs and activities Assess review and evaluate student activities and progress Be instrumental in helping students secure career opportunities in areas of Design Be instrumental in challenging the way students think learn and develop their understanding of academic disciplines Develop core curriculum and deliver course material effectively Publishing research attending conferences and delivering presentations to build a strong research network Make the best use of tools and technologies to facilitate understanding of students To undertake research either as an individual or with colleagues of a level and quality that will result in regular publication in topranked international journals Writing proposals to secure research funding Organizing seminars and events to interact with established industry professionals Review methods and teaching materials to make recommendations for improvement Note  The roles and responsibilities outlined above are not meant to be an exhaustive list of tasks The need for flexibility is required and the job holder is expected to carry out any other related duties that are within the employees skills and abilities whenever reasonably required   Profile Demonstrated interest and competence in establishing courses and teaching at the undergraduate and graduate levels A strong desire to publish in prestigious journals with the possibility to get outside funding for research initiatives PhD in Design or related areas from a topnotch institution Demonstrated experience  proven track record in teachingto contribute to the PGUG courses in Design including the supervision of bachelors and masters theses Great interpersonal skills with an effective understanding of pedagogical tools and processes to work in teams Qualification and Eligibility  Assistant Professor Doctoral degree in Design or related areas from a topnotch institution with strong research and academic background Bachelors and Masters degrees in Design are mandatory   Associate Professor Minimum 8 years of teaching and research experience with renowned institutions as an Assistant Professor in higher learning Minimum 7 research publications inhighly reputed journals   Professor Minimum 10 years of teaching and research experience with renowned institutions as a fulltime faculty Minimum 10 research publications in highly reputedjournals   Vacancy  Multiple vacancies in the Alliance School of Design Priority would be given to candidates available to join immediately Role  Teaching  Research Compensation  Benefits  Alliance University offers competitive salaries commensurate with an applicants qualifications and experience The University supports research through grants and incentives for publications Additionally the University offers subsidized campus housing food transport insurance and other benefits Industry  Education  Training Functional Area  Teaching training and research Employment Type  Full Time Key Skills  Creative teaching presentation communication innovative research people engagement and networking skills   Application Apply to the open position by sending your updated CV and Cover Letter highlighting your achievements career goals and ways in which you can contribute to Alliance University to  careersallianceeduin Quote AUREC2023APASPPDESIGN as a reference in your email subject line",
+    "minimum_age": "",
+    "post_date": "2023-10-06",
+    "post_code": "assistant_professor_associate_professor_professor_design",
+    "company_name": "",
+    "location": "Bengaluru Karnataka India",
+    "job_code": "assistant_professor_associate_professor_professor_design_postdate_2023-10-06",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_name": "Assistant Professor/Associate Professor/Professor - Design",
+      "post_code": "assistant_professor_associate_professor_professor_design",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-psychology-at-amity-university-3674647559?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=J%2Fm%2Fw2cm1dnky0cRPrVS0g%3D%3D&position=3&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Exp 03 years We are looking for experienced competent and committed individuals for the position of Assistant Professor in the department of Amity Institute of Psychology and Allied Sciences AIPS for its Noida campus Applications are invited for faculty positions in Psychology from candidates who meet following criteria Candidates must have a PhD PostGraduation and Graduation from leading International Indian Institutions Candidates studying at International Universities will be given preference PhD Thesis submitted candidates can also apply Preferably UGC NET Qualified Strong research track record with good number of Publications in Scopus Indexed journals Prior teaching experience at University Level will be an added advantage Candidates having industry experience may also apply Excellent communication skills",
+    "minimum_age": "",
+    "post_date": "2023-07-15",
+    "post_code": "assistant_professor_psychology",
+    "company_name": "Amity University",
+    "location": "Gautam Buddha Nagar Uttar Pradesh India",
+    "job_code": "assistant_professor_psychology_postdate_2023-07-15",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 2,
+      "post_name": "Assistant Professor - Psychology",
+      "post_code": "assistant_professor_psychology",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-at-amity-university-3626773344?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=A0KB5I7ir34ZPoU0VFfv%2Bw%3D%3D&position=4&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "₹50,000 - ₹90,000",
+    "last_date": "",
+    "skills": "A good record of attending conferences and academic events Excellent research writing and interpersonal",
+    "brief_info": "We are searching for a wellorganized trustworthy assistant professor to join our excellent faculty The assistant professors responsibilities include teaching a requisite number of classes providing guidance and supervision to graduate students participating in departmental meetings and providing academic support to Professors and other faculty members You should be able to pace your lessons and publish articles regularly To be successful as an assistant professor you should thrive in a fastpaced highly competitive environment and be able to respond to criticism maturely Outstanding candidates are able to learn from senior staff as well as students and are constantly expanding their subject knowledge Assisting with various departmental duties and providing academic support to Professors and other staff Recruiting training and mentoring new TAs and other junior staff Conducting research and publishing papers in academic journals Representing the university at conferences and delivering presentations when necessary Teaching and supervising undergraduate and graduate students Providing demonstrations and supervising experiments and investigations Answering questions in class or via email or telephone Providing Professors and Department Heads with feedback on student progress Writing proposals to secure funding for research Attending faculty and departmental meetings and voicing concerns or providing suggestions for improvement PhD in the relevant academic discipline Teaching experience in a university setting Published works would be advantageous Strong analytical observational and problemsolving skills A good record of attending conferences and academic events Excellent research writing and interpersonal skills A passion for teaching and engaging with students Patience understanding and willingness to help",
+    "minimum_age": "",
+    "post_date": "2023-05-16",
+    "post_code": "assistant_professor",
+    "company_name": "Amity University",
+    "location": "Greater Kolkata Area",
+    "job_code": "assistant_professor_postdate_2023-05-16",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Assistant Professor",
+      "post_code": "assistant_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-at-amity-university-3635645874?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=09teZK0SPApmnrpYvOu5Ww%3D%3D&position=5&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "₹35,000 - ₹45,000",
+    "last_date": "",
+    "skills": "A good record of attending conferences and academic events Excellent research writing and interpersonal",
+    "brief_info": "We are searching for a wellorganized trustworthy assistant professor to join our excellent faculty The assistant professors responsibilities include teaching a requisite number of classes providing guidance and supervision to graduate students participating in departmental meetings and providing academic support to Professors and other faculty members You should be able to pace your lessons and publish articles regularly To be successful as an assistant professor you should thrive in a fastpaced highly competitive environment and be able to respond to criticism maturely Outstanding candidates are able to learn from senior staff as well as students and are constantly expanding their subject knowledge Assisting with various departmental duties and providing academic support to Professors and other staff Recruiting training and mentoring new TAs and other junior staff Conducting research and publishing papers in academic journals Representing the university at conferences and delivering presentations when necessary Teaching and supervising undergraduate and graduate students Providing demonstrations and supervising experiments and investigations Answering questions in class or via email or telephone Providing Professors and Department Heads with feedback on student progress Writing proposals to secure funding for research Attending faculty and departmental meetings and voicing concerns or providing suggestions for improvement PhD in the relevant academic discipline Teaching experience in a university setting Published works would be advantageous Strong analytical observational and problemsolving skills A good record of attending conferences and academic events Excellent research writing and interpersonal skills A passion for teaching and engaging with students Patience understanding and willingness to help",
+    "minimum_age": "",
+    "post_date": "2023-07-15",
+    "post_code": "assistant_professor",
+    "company_name": "Amity University",
+    "location": "Ranchi Jharkhand India",
+    "job_code": "assistant_professor_postdate_2023-07-15",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Assistant Professor",
+      "post_code": "assistant_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-at-amity-university-3683548433?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=oMKFRbCkw%2F5OUMEvWizYMA%3D%3D&position=6&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "₹480,000 - ₹600,000",
+    "last_date": "",
+    "skills": "A good record of attending conferences and academic events Excellent research writing and interpersonal",
+    "brief_info": "We are searching for a wellorganized trustworthy assistant professor to join our excellent faculty The assistant professors responsibilities include teaching a requisite number of classes providing guidance and supervision to graduate students participating in departmental meetings and providing academic support to Professors and other faculty members You should be able to pace your lessons and publish articles regularly To be successful as an assistant professor you should thrive in a fastpaced highly competitive environment and be able to respond to criticism maturely Outstanding candidates are able to learn from senior staff as well as students and are constantly expanding their subject knowledge Assisting with various departmental duties and providing academic support to Professors and other staff Recruiting training and mentoring new TAs and other junior staff Conducting research and publishing papers in academic journals Representing the university at conferences and delivering presentations when necessary Teaching and supervising undergraduate and graduate students Providing demonstrations and supervising experiments and investigations Answering questions in class or via email or telephone Providing Professors and Department Heads with feedback on student progress Writing proposals to secure funding for research Attending faculty and departmental meetings and voicing concerns or providing suggestions for improvement PhD in the relevant academic discipline Teaching experience in a university setting Published works would be advantageous Strong analytical observational and problemsolving skills A good record of attending conferences and academic events Excellent research writing and interpersonal skills A passion for teaching and engaging with students Patience understanding and willingness to help",
+    "minimum_age": "",
+    "post_date": "2023-07-15",
+    "post_code": "assistant_professor",
+    "company_name": "Amity University",
+    "location": "Ranchi Jharkhand India",
+    "job_code": "assistant_professor_postdate_2023-07-15",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Assistant Professor",
+      "post_code": "assistant_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-at-amity-university-3683544755?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=9gQxMqQpcGnH9s6w6pQgkA%3D%3D&position=7&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "₹0 - ₹0",
+    "last_date": "",
+    "skills": "A good record of attending conferences and academic events Excellent research writing and interpersonal",
+    "brief_info": "We are searching for a wellorganized trustworthy assistant professor to join our excellent faculty The assistant professors responsibilities include teaching a requisite number of classes providing guidance and supervision to graduate students participating in departmental meetings and providing academic support to Professors and other faculty members You should be able to pace your lessons and publish articles regularly To be successful as an assistant professor you should thrive in a fastpaced highly competitive environment and be able to respond to criticism maturely Outstanding candidates are able to learn from senior staff as well as students and are constantly expanding their subject knowledge Assisting with various departmental duties and providing academic support to Professors and other staff Recruiting training and mentoring new TAs and other junior staff Conducting research and publishing papers in academic journals Representing the university at conferences and delivering presentations when necessary Teaching and supervising undergraduate and graduate students Providing demonstrations and supervising experiments and investigations Answering questions in class or via email or telephone Providing Professors and Department Heads with feedback on student progress Writing proposals to secure funding for research Attending faculty and departmental meetings and voicing concerns or providing suggestions for improvement PhD in the relevant academic discipline Teaching experience in a university setting Published works would be advantageous Strong analytical observational and problemsolving skills A good record of attending conferences and academic events Excellent research writing and interpersonal skills A passion for teaching and engaging with students Patience understanding and willingness to help",
+    "minimum_age": "",
+    "post_date": "2023-07-15",
+    "post_code": "assistant_professor",
+    "company_name": "Amity University",
+    "location": "Ranchi Jharkhand India",
+    "job_code": "assistant_professor_postdate_2023-07-15",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Assistant Professor",
+      "post_code": "assistant_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-at-amity-university-3683542928?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=Q4Gl5sdoGLl1RFCOIoKk7Q%3D%3D&position=8&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "₹600,000 - ₹900,000",
+    "last_date": "",
+    "skills": "A good record of attending conferences and academic events Excellent research writing and interpersonal",
+    "brief_info": "We are searching for a wellorganized trustworthy assistant professor to join our excellent faculty The assistant professors responsibilities include teaching a requisite number of classes providing guidance and supervision to graduate students participating in departmental meetings and providing academic support to Professors and other faculty members You should be able to pace your lessons and publish articles regularly To be successful as an assistant professor you should thrive in a fastpaced highly competitive environment and be able to respond to criticism maturely Outstanding candidates are able to learn from senior staff as well as students and are constantly expanding their subject knowledge Assisting with various departmental duties and providing academic support to Professors and other staff Recruiting training and mentoring new TAs and other junior staff Conducting research and publishing papers in academic journals Representing the university at conferences and delivering presentations when necessary Teaching and supervising undergraduate and graduate students Providing demonstrations and supervising experiments and investigations Answering questions in class or via email or telephone Providing Professors and Department Heads with feedback on student progress Writing proposals to secure funding for research Attending faculty and departmental meetings and voicing concerns or providing suggestions for improvement PhD in the relevant academic discipline Teaching experience in a university setting Published works would be advantageous Strong analytical observational and problemsolving skills A good record of attending conferences and academic events Excellent research writing and interpersonal skills A passion for teaching and engaging with students Patience understanding and willingness to help",
+    "minimum_age": "",
+    "post_date": "2023-07-15",
+    "post_code": "assistant_professor",
+    "company_name": "Amity University",
+    "location": "Ranchi Jharkhand India",
+    "job_code": "assistant_professor_postdate_2023-07-15",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Assistant Professor",
+      "post_code": "assistant_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-at-amity-university-3655353454?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=zlfZqCA8tsXM3HCnM%2Fcelg%3D%3D&position=9&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "₹0 - ₹0",
+    "last_date": "",
+    "skills": "A good record of attending conferences and academic events Excellent research writing and interpersonal",
+    "brief_info": "We are searching for a wellorganized trustworthy assistant professor to join our excellent faculty The assistant professors responsibilities include teaching a requisite number of classes providing guidance and supervision to graduate students participating in departmental meetings and providing academic support to Professors and other faculty members You should be able to pace your lessons and publish articles regularly To be successful as an assistant professor you should thrive in a fastpaced highly competitive environment and be able to respond to criticism maturely Outstanding candidates are able to learn from senior staff as well as students and are constantly expanding their subject knowledge Assisting with various departmental duties and providing academic support to Professors and other staff Recruiting training and mentoring new TAs and other junior staff Conducting research and publishing papers in academic journals Representing the university at conferences and delivering presentations when necessary Teaching and supervising undergraduate and graduate students Providing demonstrations and supervising experiments and investigations Answering questions in class or via email or telephone Providing Professors and Department Heads with feedback on student progress Writing proposals to secure funding for research Attending faculty and departmental meetings and voicing concerns or providing suggestions for improvement PhD in the relevant academic discipline Teaching experience in a university setting Published works would be advantageous Strong analytical observational and problemsolving skills A good record of attending conferences and academic events Excellent research writing and interpersonal skills A passion for teaching and engaging with students Patience understanding and willingness to help",
+    "minimum_age": "",
+    "post_date": "2023-06-15",
+    "post_code": "assistant_professor",
+    "company_name": "Amity University",
+    "location": "Hyderabad Telangana India",
+    "job_code": "assistant_professor_postdate_2023-06-15",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Assistant Professor",
+      "post_code": "assistant_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-at-aims-institutes-3678572961?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=GXx2a8JSavXhwn1oEFLWtw%3D%3D&position=10&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "Strong communication and interpersonal abilities A commitment to excellence in teaching and research Perks and Benefits Salary and benefits will be commensurate with qualifications and experience Skills good communicationteachingreasearch",
+    "brief_info": "Responsibilities We are seeking a highly organized and trustworthy individual to join our outstanding faculty as an Assistant Professor The successful candidate will be responsible for Teaching a requisite number of classes Providing guidance and supervision to graduate students Participating in departmental meetings Providing academic support to professors and faculty members Pacing lessons and regularly publishing articles Company Overview Provide a brief summary of the company here Roles and Responsibilities Teach a specified number of classes per semester Provide guidance and supervision to graduate students Participate in departmental meetings and committees Provide academic support to professors and other members of faculty Research write and publish articles on a regular basis Desired Candidate Profile The Ideal Candidate Should Possess A PhD or equivalent degree in their field Prior experience in teaching or research Excellent organizational and time management skills Strong communication and interpersonal abilities A commitment to excellence in teaching and research Perks and Benefits Salary and benefits will be commensurate with qualifications and experience Skills good communicationteachingreasearch",
+    "minimum_age": "",
+    "post_date": "2023-07-15",
+    "post_code": "assistant_professor",
+    "company_name": "AIMS Institutes",
+    "location": "Bengaluru North Karnataka India",
+    "job_code": "assistant_professor_postdate_2023-07-15",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Assistant Professor",
+      "post_code": "assistant_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/requirement-for-assistant-professor-at-amity-university-3735635626?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=2CjP8fc1qw4Cl0eRouyC8w%3D%3D&position=11&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "Kindly send your resume within 15 days on avanvariamityedu or through an online format for which please visit wwwamityeducareers This job is provided by Shinecom",
+    "brief_info": "Applications invited for Assistant Professor  Psychology at Amity Institute of Psychology and Allied Sciences AIPS 26042023 AMITY UNIVERSITY Inviting Applications for Assistant Professor We are looking for experienced competent and committed individuals for the position of Assistant Professor in the department of Amity Institute of Psychology and Allied Sciences AIPS for its Noida campus Applications are invited for faculty positions in Psychology from candidates who meet following criteria Candidates must have a PhD PostGraduation and Graduation from leading International Indian Institutions Candidates studying at International Universities will be given preference PhD Thesis submitted candidates can also apply Preferably UGC NET Qualified Strong research track record with good number of Publications in Scopus Indexed journals Prior teaching experience at University Level will be an added advantage Candidates having industry experience may also apply Excellent communication skills Kindly send your resume within 15 days on avanvariamityedu or through an online format for which please visit wwwamityeducareers This job is provided by Shinecom",
+    "minimum_age": "",
+    "post_date": "2023-09-22",
+    "post_code": "requirement_for_assistant_professor",
+    "company_name": "Amity University",
+    "location": "Noida Uttar Pradesh India",
+    "job_code": "requirement_for_assistant_professor_postdate_2023-09-22",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 10,
+      "post_name": "Requirement for Assistant Professor",
+      "post_code": "requirement_for_assistant_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-associate-professor-professor-%E2%80%93-law-at-alliance-university-3736495080?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=79fF%2FcpBb19ckQ4LI6MtRw%3D%3D&position=12&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "and abilities whenever reasonably required Profile  Demonstrated interest and competence in establishing courses and teaching at the undergraduate and graduate levels  A strong desire to publish in prestigious journals with the possibility to get outside funding for research initiatives  PhD in Law or related areas from a topnotch institution  Demonstrated experience  proven track record in teaching to contribute to the PGUG courses in Law including the supervision of bachelors and masters theses  Great interpersonal",
+    "brief_info": "Alliance University is a Private University established in Karnataka State by Act No 34 of the year 2010 The University is recognized by the University Grants Commission UGC New Delhi Alliance University with its vibrant and picturesque campus in Bangalore India offers multidisciplinary undergraduate and postgraduate majors to students from diverse backgrounds Alliance Education defined by excellence through an agile and marketdriven approach in the faculties of Management Studies  Commerce Science  Technology Humanities Liberal Arts  Social Sciences is guided by the core values of the University As a topranked university Alliance University offers programs in Business Management Engineering Law Liberal Arts Economics Science and Applied Mathematics Alliance University invites applications for its Alliance School of Law from highly accomplished professionals for the position of Assistant Professor  Associate Professor  Professor in Law The applicant must have a strong academic background and at least ten years of experience in teaching and research at a reputed institution Job Title Assistant Professor  Associate Professor  Professor  Law Roles and Responsibilities  Continuously enrich the deliverables on learning aims of the curriculum for undergraduate and postgraduate programs  Guide lead and mentor students in research projects  Evaluate monitor and mentor students academic progress  Create innovate and implement careerenhancement programs and activities  Assess review and evaluate student activities and progress  Be instrumental in helping students secure career opportunities in areas of Law  Be instrumental in challenging the way students think learn and develop their understanding of academic disciplines  Develop core curriculum and deliver course material effectively  Publishing research attending conferences and delivering presentations to build a strong research network  Make the best use of tools and technologies to facilitate understanding of students  To undertake research either as an individual or with colleagues of a level and quality that will result in regular publication in topranked international journals  Writing proposals to secure research funding  Organizing seminars and events to interact with established industry professionals  Review methods and teaching materials to make recommendations for improvement Note The roles and responsibilities outlined above are not meant to be an exhaustive list of tasks The need for flexibility is required and the job holder is expected to carry out any other related duties that are within the employees skills and abilities whenever reasonably required Profile  Demonstrated interest and competence in establishing courses and teaching at the undergraduate and graduate levels  A strong desire to publish in prestigious journals with the possibility to get outside funding for research initiatives  PhD in Law or related areas from a topnotch institution  Demonstrated experience  proven track record in teaching to contribute to the PGUG courses in Law including the supervision of bachelors and masters theses  Great interpersonal skills with an effective understanding of pedagogical tools and processes Ability to work in teams Qualification and Eligibility Assistant Professor  Doctoral degree in Law or related areas from a topnotch institution with strong research and academic background  Bachelors and Masters degrees in Law are mandatory Associate Professor  Minimum 8 years of teaching and research experience with renowned institutions as an Assistant Professor in higher learning  Minimum 7 research publications in highly reputed journals Professor  Minimum 10 years of teaching and research experience with renowned institutions as a fulltime faculty  Minimum 10 research publications in highly reputed journals Vacancy Multiple vacancies in the Alliance School of Law Priority would be given to candidates available to join immediately Role Teaching  Research Compensation  Benefits Alliance University offers competitive salaries commensurate with an applicants qualifications and experience The University supports research through grants and incentives for publications Additionally the University offers subsidized campus housing food transport insurance and other benefits Key Skills Creative teaching presentation communication innovative research people engagement and networking skills",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "assistant_professor_associate_professor_professor_law",
+    "company_name": "",
+    "location": "Bengaluru Karnataka India",
+    "job_code": "assistant_professor_associate_professor_professor_law_postdate_2023-10-10",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 11,
+      "post_name": "Assistant Professor / Associate Professor / Professor – Law",
+      "post_code": "assistant_professor_associate_professor_professor_law",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-associate-professor-professor-media-studies-at-alliance-university-3731833903?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=Q9Au0jatdLQEWDbMV76urQ%3D%3D&position=13&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "and abilities whenever reasonably required   Profile Demonstrated interest and competence in establishing courses and teaching at the undergraduate and graduate levels A strong desire to publish in prestigious journals with the possibility to get outside funding for research initiatives PhD in Media Studies or related areas from a topnotch institution Demonstrated experience  proven track record in teachingto contribute to the PGUG courses in Media Studies including the supervision of bachelors and masters theses Great interpersonal",
+    "brief_info": "Assistant Professor  Associate Professor  Professor  Media Studies   Institution Profile Alliance University is a Private University established in Karnataka State by Act No 34 of the year 2010 The University is recognized by the University Grants Commission UGC New Delhi    Alliance University with its vibrant and picturesque campus in Bangalore India offers multidisciplinary undergraduate and postgraduate majors to students from diverse backgrounds Alliance Education defined by excellence through an agile and marketdriven approach in the faculties of Management Studies  Commerce Science  Technology Humanities Liberal Arts  Social Sciences is guided by the core values of the University   As a topranked university Alliance University offers programs in Business Management Engineering Media Studies Liberal Arts Economics Science and Applied Mathematics   For more details visit  wwwallianceeduin Alliance University invites applications for its Alliance School of Liberal Arts from highly accomplished professionals for the position of Assistant Professor  Associate Professor  Professor  in Media Studies The applicant must have a strong academic background and at least ten years of experience in teaching and research at a reputed institution Job Title  Assistant Professor  Associate Professor  Professor    Media Studies Roles and Responsibilities Continuously enrich the deliverables on learning aims of the curriculum for undergraduate and postgraduate programs Guide lead and mentor students in research projects Evaluate monitor and mentor students academic progress Create innovate and implement careerenhancement programs and activities Assess review and evaluate student activities and progress Be instrumental in helping students secure career opportunities in areas of Media Studies Be instrumental in challenging the way students think learn and develop their understanding of academic disciplines Develop core curriculum and deliver course material effectively Publishing research attending conferences and delivering presentations to build a strong research network Make the best use of tools and technologies to facilitate understanding of students To undertake research either as an individual or with colleagues of a level and quality that will result in regular publication in topranked international journals Writing proposals to secure research funding Organizing seminars and events to interact with established industry professionals Review methods and teaching materials to make recommendations for improvement Note  The roles and responsibilities outlined above are not meant to be an exhaustive list of tasks The need for flexibility is required and the job holder is expected to carry out any other related duties that are within the employees skills and abilities whenever reasonably required   Profile Demonstrated interest and competence in establishing courses and teaching at the undergraduate and graduate levels A strong desire to publish in prestigious journals with the possibility to get outside funding for research initiatives PhD in Media Studies or related areas from a topnotch institution Demonstrated experience  proven track record in teachingto contribute to the PGUG courses in Media Studies including the supervision of bachelors and masters theses Great interpersonal skills with an effective understanding of pedagogical tools and processes to work in teams Qualification and Eligibility  Assistant Professor Doctoral degree in Media Studies or related areas from a topnotch institution with strong research and academic background Bachelors and Masters degrees in Media Studies are mandatory   Associate Professor Minimum 8 years of teaching and research experience with renowned institutions as an Assistant Professor in higher learning Minimum 7 research publications inhighly reputed journals   Professor Minimum 10 years of teaching and research experience with renowned institutions as a fulltime faculty Minimum 10 research publications in highly reputedjournals   Vacancy  Multiple vacancies in the Alliance School of Media Studies Priority would be given to candidates available to join immediately Role  Teaching  Research Compensation  Benefits  Alliance University offers competitive salaries commensurate with an applicants qualifications and experience The University supports research through grants and incentives for publications Additionally the University offers subsidized campus housing food transport insurance and other benefits Industry  Education  Training Functional Area  Teaching training and research Employment Type  Full Time Key Skills  Creative teaching presentation communication innovative research people engagement and networking skills   Application Apply to the open position by sending your updated CV and Cover Letter highlighting your achievements career goals and ways in which you can contribute to Alliance University to  careersallianceeduin Quote AUREC2023APASPPMEDIA STUDIES as a reference in your email subject line",
+    "minimum_age": "",
+    "post_date": "2023-10-06",
+    "post_code": "assistant_professor_associate_professor_professor_media_studies",
+    "company_name": "",
+    "location": "Bengaluru Karnataka India",
+    "job_code": "assistant_professor_associate_professor_professor_media_studies_postdate_2023-10-06",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 12,
+      "post_name": "Assistant Professor/Associate Professor/Professor - Media Studies",
+      "post_code": "assistant_professor_associate_professor_professor_media_studies",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/faculty-amity-institute-of-travel-and-tourism-at-amity-university-3735635641?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=ESkE2CHE9z5%2F8rMX6HECBw%3D%3D&position=14&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "master of subject teaching skill communication english",
+    "brief_info": "Faculty  Amity Institute of Travel and Tourism Amity University Noida  06122022 Amity Institute of Travel and Tourism Amity University Noida Invites applications from suitable candidates for the position of Assistant Professor Candidates who have completed Masters in Tourism Management AND PhD have got research pape rs in journals of repute and relevant work experience may kindly forward applications for review for faculty position Candidates who have submitted PhD thesis may also forward applications for consideration Vacancies exist in the following areas travel agency destination planning and management quantitative research hospitality management Applicant must have attained qualification s from institution of national international repute Applicants who are willing for consideration for Amity University Tashkent may also kindly forward application and mention the location in the subject line CVs may kindly be forwarded to careersamityedu by 3 1 st December 20 22 the latest AND PhD have got research pape rs in journals of repute and relevant work experience may kindly forward applications for review for This job is provided by Shinecom",
+    "minimum_age": "",
+    "post_date": "2023-09-22",
+    "post_code": "faculty_amity_institute_of_travel_and_tourism",
+    "company_name": "Amity University",
+    "location": "Noida Uttar Pradesh India",
+    "job_code": "faculty_amity_institute_of_travel_and_tourism_postdate_2023-09-22",
+    "possible_degree": [
+      "postgraduation"
+    ],
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 13,
+      "post_name": "Faculty - Amity Institute of Travel and Tourism",
+      "post_code": "faculty_amity_institute_of_travel_and_tourism",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/application-invited-for-yoga-faculty-position-at-amity-university-3675185834?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=VtVkruoZpm2sgy1Xq6JLzA%3D%3D&position=15&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "proficient in teaching as well as practical classes National Eligibility Test NET in subject Yoga conducted by UGCCSIR Knowledge of computer operation Kindly send your resume within 15 days on sushils amityedu or through an online format for which please visit wwwamityeducareers This job is provided by Shinecom",
+    "brief_info": "Application invited for YOGA Faculty Position at Amity Institute of Indian System of Medicine  06012023  AdvAUUPHR23205 Advertisement Date  06 012023 AdvAUUPHR23205 Amity Institute of Indian System of Medicine Invites Applications for Assistant Professor We are looking for experienced competent and committed individuals for the position of Assistant Professor in the department of Amity Institute of Indian System of Medicine for its Noida campus Applications are invited for faculty positions in Yoga from candidates who meet following criteria Post graduate degree in Yoga with a minimum of 55 marks from a recognized PhD in Yoga education or topic related to Yoga and actively engaged in Yoga research with evidence of published work Practical ability to perform Yogic practices Excellent English speaking and writing clear communication skills proficient in teaching as well as practical classes National Eligibility Test NET in subject Yoga conducted by UGCCSIR Knowledge of computer operation Kindly send your resume within 15 days on sushils amityedu or through an online format for which please visit wwwamityeducareers This job is provided by Shinecom",
+    "minimum_age": "",
+    "post_date": "2023-08-14",
+    "post_code": "application_invited_for_yoga_faculty_position",
+    "company_name": "Amity University",
+    "location": "Noida Uttar Pradesh India",
+    "job_code": "application_invited_for_yoga_faculty_position_postdate_2023-08-14",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 14,
+      "post_name": "Application invited for YOGA Faculty Position",
+      "post_code": "application_invited_for_yoga_faculty_position",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-associate-professor-professor-psychology-at-alliance-university-3731832639?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=uZsEm1QC4kTcsadVRlk57Q%3D%3D&position=16&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "and abilities whenever reasonably required   Profile Demonstrated interest and competence in establishing courses and teaching at the undergraduate and graduate levels A strong desire to publish in prestigious journals with the possibility to get outside funding for research initiatives PhD in Psychology or related areas from a topnotch institution Demonstrated experience  proven track record in teachingto contribute to the PGUG courses in Psychology including the supervision of bachelors and masters theses Great interpersonal",
+    "brief_info": "Assistant Professor  Associate Professor  Professor  Psychology Institution Profile Alliance University is a Private University established in Karnataka State by Act No 34 of the year 2010 The University is recognized by the University Grants Commission UGC New Delhi Alliance University with its vibrant and picturesque campus in Bangalore India offers multidisciplinary undergraduate and postgraduate majors to students from diverse backgrounds Alliance Education defined by excellence through an agile and marketdriven approach in the faculties of Management Studies  Commerce Science  Technology Humanities Liberal Arts  Social Sciences is guided by the core values of the University As a topranked university Alliance University offers programs in Business Management Engineering Psychology Liberal Arts Economics Science and Applied Mathematics For more details visit wwwallianceeduin Alliance University invites applications for its Alliance School of Liberal Arts from highly accomplished professionals for the position of  Assistant Professor  Associate Professor  Professor  in Psychology The applicant must have a strong academic background and at least ten years of experience in teaching and research at a reputed institution Job Title  Assistant Professor  Associate Professor  Professor    Psychology Roles and Responsibilities Continuously enrich the deliverables on learning aims of the curriculum for undergraduate and postgraduate programs Guide lead and mentor students in research projects Evaluate monitor and mentor students academic progress Create innovate and implement careerenhancement programs and activities Assess review and evaluate student activities and progress Be instrumental in helping students secure career opportunities in areas of Psychology Be instrumental in challenging the way students think learn and develop their understanding of academic disciplines Develop core curriculum and deliver course material effectively Publishing research attending conferences and delivering presentations to build a strong research network Make the best use of tools and technologies to facilitate understanding of students To undertake research either as an individual or with colleagues of a level and quality that will result in regular publication in topranked international journals Writing proposals to secure research funding Organizing seminars and events to interact with established industry professionals Review methods and teaching materials to make recommendations for improvement Note  The roles and responsibilities outlined above are not meant to be an exhaustive list of tasks The need for flexibility is required and the job holder is expected to carry out any other related duties that are within the employees skills and abilities whenever reasonably required   Profile Demonstrated interest and competence in establishing courses and teaching at the undergraduate and graduate levels A strong desire to publish in prestigious journals with the possibility to get outside funding for research initiatives PhD in Psychology or related areas from a topnotch institution Demonstrated experience  proven track record in teachingto contribute to the PGUG courses in Psychology including the supervision of bachelors and masters theses Great interpersonal skills with an effective understanding of pedagogical tools and processes to work in teams Qualification and Eligibility  Assistant Professor Doctoral degree in Psychology or related areas from a topnotch institution with strong research and academic background Bachelors and Masters degrees in Psychology are mandatory   Associate Professor Minimum 8 years of teaching and research experience with renowned institutions as an Assistant Professor in higher learning Minimum 7 research publications in highly reputed journals   Professor Minimum 10 years of teaching and research experience with renowned institutions as a fulltime faculty Minimum 10 research publications in highly reputed journals   Vacancy  Multiple vacancies in the Alliance School of Psychology Priority would be given to candidates available to join immediately Role  Teaching  Research Compensation  Benefits  Alliance University offers competitive salaries commensurate with an applicants qualifications and experience The University supports research through grants and incentives for publications Additionally the University offers subsidized campus housing food transport insurance and other benefits Industry  Education  Training Functional Area  Teaching training and research Employment Type  Full Time Key Skills  Creative teaching presentation communication innovative research people engagement and networking skills   Application Apply to the open position by sending your updated CV and Cover Letter highlighting your achievements career goals and ways in which you can contribute to Alliance University to careersallianceeduin Quote AUREC2023APASPPPSYCHOLOGY as a reference in your email subject line",
+    "minimum_age": "",
+    "post_date": "2023-10-06",
+    "post_code": "assistant_professor_associate_professor_professor_psychology",
+    "company_name": "",
+    "location": "Bengaluru Karnataka India",
+    "job_code": "assistant_professor_associate_professor_professor_psychology_postdate_2023-10-06",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 15,
+      "post_name": "Assistant Professor/Associate Professor/Professor - Psychology",
+      "post_code": "assistant_professor_associate_professor_professor_psychology",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-at-rk-hr-management-private-limited-3679283413?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=qWGs6uoPPL%2FMB%2BX0XJsIsA%3D%3D&position=17&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "₹500,000 - ₹1,200,000",
+    "last_date": "",
+    "skills": "A good record of attending conferences and academic events Excellent research writing and interpersonal",
+    "brief_info": "We are searching for a wellorganized trustworthy assistant professor to join our excellent faculty The assistant professors responsibilities include teaching a requisite number of classes providing guidance and supervision to graduate students participating in departmental meetings and providing academic support to Professors and other faculty members You should be able to pace your lessons and publish articles regularly To be successful as an assistant professor you should thrive in a fastpaced highly competitive environment and be able to respond to criticism maturely Outstanding candidates are able to learn from senior staff as well as students and are constantly expanding their subject knowledge Assisting with various departmental duties and providing academic support to Professors and other staff Recruiting training and mentoring new TAs and other junior staff Conducting research and publishing papers in academic journals Representing the university at conferences and delivering presentations when necessary Teaching and supervising undergraduate and graduate students Providing demonstrations and supervising experiments and investigations Answering questions in class or via email or telephone Providing Professors and Department Heads with feedback on student progress Writing proposals to secure funding for research Attending faculty and departmental meetings and voicing concerns or providing suggestions for improvement PhD in the relevant academic discipline Teaching experience in a university setting Published works would be advantageous Strong analytical observational and problemsolving skills A good record of attending conferences and academic events Excellent research writing and interpersonal skills A passion for teaching and engaging with students Patience understanding and willingness to help",
+    "minimum_age": "",
+    "post_date": "2023-07-15",
+    "post_code": "assistant_professor",
+    "company_name": "RK HR Management Private Limited",
+    "location": "Rajkot Gujarat India",
+    "job_code": "assistant_professor_postdate_2023-07-15",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Assistant Professor",
+      "post_code": "assistant_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-cse-i-t-comm-%24-mgmt-at-kalinga-university-raipur-3678400498?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=ZADAz1khd3UyhfYrCgl7Kw%3D%3D&position=18&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "₹25,000 - ₹40,000",
+    "last_date": "",
+    "skills": "A good record of attending conferences and academic events Excellent research writing and interpersonal",
+    "brief_info": "We are searching for a wellorganized trustworthy assistant professor to join our excellent faculty The assistant professors responsibilities include teaching a requisite number of classes providing guidance and supervision to graduate students participating in departmental meetings and providing academic support to Professors and other faculty members You should be able to pace your lessons and publish articles regularly To be successful as an assistant professor you should thrive in a fastpaced highly competitive environment and be able to respond to criticism maturely Outstanding candidates are able to learn from senior staff as well as students and are constantly expanding their subject knowledge Assisting with various departmental duties and providing academic support to Professors and other staff Recruiting training and mentoring new TAs and other junior staff Conducting research and publishing papers in academic journals Representing the university at conferences and delivering presentations when necessary Teaching and supervising undergraduate and graduate students Providing demonstrations and supervising experiments and investigations Answering questions in class or via email or telephone Providing Professors and Department Heads with feedback on student progress Writing proposals to secure funding for research Attending faculty and departmental meetings and voicing concerns or providing suggestions for improvement PhD in the relevant academic discipline Teaching experience in a university setting Published works would be advantageous Strong analytical observational and problemsolving skills A good record of attending conferences and academic events Excellent research writing and interpersonal skills A passion for teaching and engaging with students Patience understanding and willingness to help INTERESTED CAN CALL ME ON 9109199708 OR DROP CV AT sapnabawankarkalingauniversityacin",
+    "minimum_age": "",
+    "post_date": "2023-07-15",
+    "post_code": "assistant_professor_cse_i_t_comm_mgmt_",
+    "company_name": "Kalinga University Raipur",
+    "location": "Raipur Chhattisgarh India",
+    "job_code": "assistant_professor_cse_i_t_comm_mgmt__postdate_2023-07-15",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 17,
+      "post_name": "Assistant Professor(cse,I.T ,comm $ mgmt)",
+      "post_code": "assistant_professor_cse_i_t_comm_mgmt_",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-at-rk-hr-management-private-limited-3679285158?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=C77cnNx15XfCeRprduFTiQ%3D%3D&position=19&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "₹300,000 - ₹700,000",
+    "last_date": "",
+    "skills": "A good record of attending conferences and academic events Excellent research writing and interpersonal",
+    "brief_info": "We are searching for a wellorganized trustworthy assistant professor to join our excellent faculty The assistant professors responsibilities include teaching a requisite number of classes providing guidance and supervision to graduate students participating in departmental meetings and providing academic support to Professors and other faculty members You should be able to pace your lessons and publish articles regularly To be successful as an assistant professor you should thrive in a fastpaced highly competitive environment and be able to respond to criticism maturely Outstanding candidates are able to learn from senior staff as well as students and are constantly expanding their subject knowledge Assisting with various departmental duties and providing academic support to Professors and other staff Recruiting training and mentoring new TAs and other junior staff Conducting research and publishing papers in academic journals Representing the university at conferences and delivering presentations when necessary Teaching and supervising undergraduate and graduate students Providing demonstrations and supervising experiments and investigations Answering questions in class or via email or telephone Providing Professors and Department Heads with feedback on student progress Writing proposals to secure funding for research Attending faculty and departmental meetings and voicing concerns or providing suggestions for improvement PhD in the relevant academic discipline Teaching experience in a university setting Published works would be advantageous Strong analytical observational and problemsolving skills A good record of attending conferences and academic events Excellent research writing and interpersonal skills A passion for teaching and engaging with students Patience understanding and willingness to help",
+    "minimum_age": "",
+    "post_date": "2023-07-15",
+    "post_code": "assistant_professor",
+    "company_name": "RK HR Management Private Limited",
+    "location": "Nadiad Gujarat India",
+    "job_code": "assistant_professor_postdate_2023-07-15",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Assistant Professor",
+      "post_code": "assistant_professor",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/faculty-recruitment-for-the-big-data-analytics-bda-department-at-goa-institute-of-management-gim-3729377383?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=3oarLlHvUuxQitJG6YHDvw%3D%3D&position=20&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "master of subject teaching skill communication english",
+    "brief_info": "The Goa Institute of Management GIM established in 1993 is one among the top few business schools of India The institute is looking for bright persons with interests in teaching scholarship and research and networking with industry GIM currently offers 5 PGDM programs  the PGDM core program PGDM Health Care Management program PGDM Big Data Analytics program PGDM in Management  Banking Insurance  Financial Services newly launched first of its kind and a weekend parttime PGDM program for working executives GIM invites applications for Faculty Positions at all levels in the Big Data Analytics BDA department The eligibility criteria and desired specialisations are as described below Required qualification and experience a A ssistant Professor  PhD with First Class or equivalent in terms of grades etc at the preceding degree with a very good academic record throughout and at least one A A publication or 2 B publications in the last 2 years Individuals who have just completed their PhDs awarded from Reputed institutions such as IIMs and IITs may also be considered b  Associate Professor  PhD with a First Class or equivalent in terms of grades etc at the preceding degree with a very good academic record throughout at least two A A publication or one AA plus 2 B publications in the last 2 years and a minimum of five years in teaching research industry experience of which at least three years should be at the level of Assistant Professor c  Professor  PhD with a First Class or equivalent in terms of grades etc at the preceding degree with a very good academic record throughout and minimum of ten years in teaching research industrial experience of which at least five years should be at the level of Associate Professor d  Professor of Practice  Senior industry professional with at least 10 years experience in industry at the level of a Vice President or CEO MD While a PhD is desirable it is not mandatory for consideration as a Professor of Practice The candidate must be an MBA or a relevant Masters degree holder with a first class a good academic record throughout and minimum of twenty years in industry research teaching experience e  Senior Professor  PhD with first class or equivalent with a minimum of 18 years of teaching in a wellestablished institution and whose research or publications have achieved wide recognition Desirable specialisations by areas are  Applied Statistics  Data Visualisation Power BITableauNode JS  Natural Language Processing NLP  Deep Learning Technologies  Block Chain Technologies  Data Engineering and Data Warehousing  Data Mining applications  Analytics Project Management  Project implementation using Rest API  Artificial intelligence Applicants interested are required to visit our web page wwwgimacincareersjobapplicationform thereby sending in the job application as per defined process The last date of application is 22nd October 2023 An updated detailed curriculum vitae in the specified CV format only along with a statement of teaching philosophy and interests and a statement of their research interests and their research agenda for the next 5 years are the mandatory three documents to be uploaded Faculty will be shortlisted for the faculty recruitment process on the basis of predefined criterion Thereafter the shortlisted candidates will be called in to take a research seminar followed by personal round of interview Only applicants who have completed their PhD the degree has been awarded are eligible for open recruitment as Assistant Professor Associate Professor Professor or Senior Professor Young applicants who are yet to complete their PhD may be recruited only at the Senior Lecturer grade or as Research Associates Senior Faculty members between the age of 6570 are also most welcome to apply The Institute reserves the right to change the above conditions without notice Incomplete applications will not be processed  rejected by the system automatically and only shortlisted candidates will be contacted for the hiring process",
+    "minimum_age": "",
+    "post_date": "2023-10-07",
+    "post_code": "faculty_recruitment_for_the_big_data_analytics_bda_department",
+    "company_name": "Goa Institute of Management GIM",
+    "location": "North Goa Goa India",
+    "job_code": "faculty_recruitment_for_the_big_data_analytics_bda_department_postdate_2023-10-07",
+    "possible_degree": [
+      "postgraduation"
+    ],
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 19,
+      "post_name": "Faculty Recruitment for the Big Data Analytics (BDA) department",
+      "post_code": "faculty_recruitment_for_the_big_data_analytics_bda_department",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/faculty-recruitment-for-the-accounting-area-at-goa-institute-of-management-gim-3729384884?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=MuDEAEfqAgRx7iwLmfZaGw%3D%3D&position=21&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "master of subject teaching skill communication english",
+    "brief_info": "The Goa Institute of Management GIM established in 1993 is one among the top few business schools of India The institute is looking for bright persons with interests in teaching scholarship and research and networking with industry GIM currently offers 5 PGDM programs  the PGDM core program PGDM Health Care Management program PGDM Big Data Analytics program PGDM in Management  Banking Insurance  Financial Services newly launched first of its kind and a weekend parttime PGDM program for working executives GIM invites applications for Faculty Positions at all levels in the Accounting Area The eligibility criteria and desired specialisations are as described below Required qualification and experience a A ssistant Professor  PhD with First Class or equivalent in terms of grades etc at the preceding degree with a very good academic record throughout and at least one A A publication or 2 B publications in the last 2 years Individuals who have just completed their PhDs awarded from Reputed institutions such as IIMs and IITs may also be considered b  Associate Professor  PhD with a First Class or equivalent in terms of grades etc at the preceding degree with a very good academic record throughout at least two A A publication or one AA plus 2 B publications in the last 2 years and a minimum of five years in teaching research industry experience of which at least three years should be at the level of Assistant Professor c  Professor  PhD with a First Class or equivalent in terms of grades etc at the preceding degree with a very good academic record throughout and minimum of ten years in teaching research industrial experience of which at least five years should be at the level of Associate Professor d  Professor of Practice  Senior industry professional with at least 10 years experience in industry at the level of a Vice President or CEO MD While a PhD is desirable it is not mandatory for consideration as a Professor of Practice The candidate must be an MBA or a relevant Masters degree holder with a first class a good academic record throughout and minimum of twenty years in industry research teaching experience e  Senior Professor  PhD with first class or equivalent with a minimum of 18 years of teaching in a wellestablished institution and whose research or publications have achieved wide recognition Applicants interested are required to visit our web page wwwgimacincareersjobapplicationform thereby sending in the job application as per defined process The last date of application is 22nd October 2023 An updated detailed curriculum vitae in the specified CV format only along with a statement of teaching philosophy and interests and a statement of their research interests and their research agenda for the next 5 years are the mandatory three documents to be uploaded Faculty will be shortlisted for the faculty recruitment process on the basis of predefined criterion Thereafter the shortlisted candidates will be called in to take a research seminar followed by personal round of interview Only applicants who have completed their PhD the degree has been awarded are eligible for open recruitment as Assistant Professor Associate Professor Professor or Senior Professor Young applicants who are yet to complete their PhD may be recruited only at the Senior Lecturer grade or as Research Associates Senior Faculty members between the age of 6570 are also most welcome to apply The Institute reserves the right to change the above conditions without notice Incomplete applications will not be processed  rejected by the system automatically and only shortlisted candidates will be contacted for the hiring process",
+    "minimum_age": "",
+    "post_date": "2023-10-07",
+    "post_code": "faculty_recruitment_for_the_accounting_area",
+    "company_name": "Goa Institute of Management GIM",
+    "location": "North Goa Goa India",
+    "job_code": "faculty_recruitment_for_the_accounting_area_postdate_2023-10-07",
+    "possible_degree": [
+      "postgraduation"
+    ],
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 20,
+      "post_name": "Faculty Recruitment for the Accounting Area",
+      "post_code": "faculty_recruitment_for_the_accounting_area",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-of-analytics-at-stony-brook-university-3737213221?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=TWWfRqoMtewYHa9xeGd3ng%3D%3D&position=22&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Stony Brook University Provost Office College of Business   Location  West Campus  College of Business  Open Date  Sep 27 2023  Deadline  Nov 15 2023 at 1159 PM Eastern Time Description  Description  The College of Business at Stony Brook University SBU invites applications for a  tenuretrack  faculty position at the rank of  Assistant Professor in Analytics  starting in Fall 2024 The  Operations and Decision Analytics area  the home area at the College of Business includes faculty with diverse research interests and backgrounds We value a collegial environment and encourage interdisciplinary research For more information about the Operations and Decision Analytics area please visit httpswwwstonybrookeducommcmsbusinessfacultyresearch_researchopresearchanalyticsphp  Stony Brook one of Americas most dynamic public universities is New Yorks flagship university and No 1 public university In 2022 Stony Brook was named the anchor institution for the Governors Island Trust and will play a vital role towards researching climate change solutions Stony Brook is part of the State University of New York SUNY system a center of academic excellence and an internationally recognized research institution that offers all students a worldclass education Responsibilities And Requirements Maintain an active research agenda that results in publications in toptier academic journals and other intellectual contributions eg conference presentations and grants Develop and teach business analytics and machine learning courses at both the undergraduate and graduate levels we are especially interested in candidates whose teaching can contribute to our graduate program in Decision Analytics Participate in the administrative and committee assignments eg assurance of learning and AACSB accreditation organizing research seminars etc and contribute to the SBU community Qualifications  Qualifications  Required Qualifications PhD from an accredited program in an analyticsrelated field Operations Management Industrial Engineering Operations Research Information Systems or other related fields with at least 12 years of postgraduate experience for example as an assistant professor or a postdoc A track record of andor potential to publish in the FT50 business analytics and operations management journals Management Science Operations Management Manufacturing  Operations Management Production and Operations Management and in toptier journals across other disciplines eg management marketing etc Demonstrated or clear potential for excellent teaching in undergraduate and graduate business analytics courses Preferred Qualifications A track record of andor potential to publish in toptier business journals in the use of analytics in but not limited to service and manufacturing healthcare sustainable and socially responsible operations supply chains and other business applications of optimization machine learning artificial intelligence or econometric modeling Expertise in emerging analytical methodologies is highly desirable Experience teaching business analytics machine learning and related courses Awareness of and commitment to the principles of diversity and inclusion across all spectrums  Application Instructions  Interested applicants should send a cover letter curriculum vitae teaching statement to include available student evaluations research statement diversity statement and representative publications In addition please arrange to have three letters of professional recommendation submitted on your behalf Electronic submission via Interfolio is required To guarantee thorough review of your application please make sure to submit all required materials by  November 15 2023 Special Notes  This is a tenuretrack position FLSA Exempt position not eligible for the overtime provisions of the FLSA Internal and external searches to occur simultaneously Anticipated Start Date Fall 2024 The selected candidate must successfully clear a background investigation The selected candidate must successfully clear a background investigation In accordance with the Title II Crime Awareness and Security Act a copy of our crime statistics is available upon request by calling 631 632 6350 It can also be viewed online at the University Police website at httpwwwstonybrookedupolice",
+    "minimum_age": "",
+    "post_date": "2023-09-29",
+    "post_code": "assistant_professor_of_analytics",
+    "company_name": "Stony Brook University",
+    "location": "Coimbatore North Tamil Nadu India",
+    "job_code": "assistant_professor_of_analytics_postdate_2023-09-29",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 21,
+      "post_name": "Assistant Professor of Analytics",
+      "post_code": "assistant_professor_of_analytics",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/computer-science-faculty-at-ace-online-3598183079?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=XYbnFeplNQ0hxAlDwK33fQ%3D%3D&position=23&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Assistant professor required B Tech  CSE M Tech  CSE both are 60 Mandatory Passionate about Teaching and who want to continue their career as a teacher As a faculty member of ACE you will be responsible for the success of the students in your cohort Therefore you will be expected to understand the strengths and weaknesses of your cohort and adjust the pace of teaching accordingly Timely delivery of lectures  conducting tutorialstraining sessions by the program schedule Need to take the classes based on the schedule and should involve in all the academic operationsLabs Exams Question paper creation",
+    "minimum_age": "",
+    "post_date": "2023-05-16",
+    "post_code": "computer_science_faculty",
+    "company_name": "ACE Online",
+    "location": "Hyderabad Telangana India",
+    "job_code": "computer_science_faculty_postdate_2023-05-16",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 22,
+      "post_name": "Computer Science Faculty",
+      "post_code": "computer_science_faculty",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/management-faculty-at-garima-interprises-3713083634?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=bVVAq%2BPsMtd%2Fzoe4Mn0dBA%3D%3D&position=24&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "Excellent presentation and written and verbal communication",
+    "brief_info": "We are looking for a wellorganized resourceful professor to join our excellent faculty The professors responsibilities include but are not limited to teaching a requisite number of graduate classes assisting with the development of course material supervising postgraduate students regularly publishing journal articles serving on committees attending conferences writing proposals for grants delivering presentations and handling other administrative duties To be successful as a professor you should be able to balance teaching and research responsibilities Outstanding professors are able to conduct independent research accurately allocate resources and provide subjectrelated and management advice to the faculty Professor Responsibilities  Developing curricula and delivering course material  Conducting research fieldwork and investigations and writing up reports  Publishing research attending conferences delivering presentations and networking with others in the field  Traveling to other universities or academic settings to participate in learning opportunities and gain experience  Participating in committee departmental and faculty meetings  Providing training and mentoring to teaching assistants and junior lecturers  Reviewing methods and teaching materials and making recommendations for improvement  Assisting with student recruitment interviews and academic counseling sessions  Contributing to the creation of an environment that promotes growth equality and freedom of speech Professor Requirements  A PhD in the relevant field  310 years of experience teaching in an academic setting  Published articles and proven experience as an academic  Strong teaching and mentoring skills  Excellent presentation and written and verbal communication skills  A sound understanding of and passion for subject matter  Willingness to work long hours and travel frequently  A growth mindset and excellent networking abilities This job is provided by Shinecom",
+    "minimum_age": "",
+    "post_date": "2023-09-13",
+    "post_code": "management_faculty",
+    "company_name": "",
+    "location": "Noida Uttar Pradesh India",
+    "job_code": "management_faculty_postdate_2023-09-13",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 24,
+      "post_name": "Management Faculty",
+      "post_code": "management_faculty",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "postgraduation",
+    "job_link": "https://in.linkedin.com/jobs/view/management-faculty-at-garima-interprises-3713089004?refId=gK3Qs0t1XMw0dTTb2J98rQ%3D%3D&trackingId=4MFSwMjbcgkGqmhCed%2Bfpw%3D%3D&position=25&pageNum=0&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "last_date": "",
+    "skills": "Excellent presentation and written and verbal communication",
+    "brief_info": "We are looking for a wellorganized resourceful professor to join our excellent faculty The professors responsibilities include but are not limited to teaching a requisite number of graduate classes assisting with the development of course material supervising postgraduate students regularly publishing journal articles serving on committees attending conferences writing proposals for grants delivering presentations and handling other administrative duties To be successful as a professor you should be able to balance teaching and research responsibilities Outstanding professors are able to conduct independent research accurately allocate resources and provide subjectrelated and management advice to the faculty Professor Responsibilities  Developing curricula and delivering course material  Conducting research fieldwork and investigations and writing up reports  Publishing research attending conferences delivering presentations and networking with others in the field  Traveling to other universities or academic settings to participate in learning opportunities and gain experience  Participating in committee departmental and faculty meetings  Providing training and mentoring to teaching assistants and junior lecturers  Reviewing methods and teaching materials and making recommendations for improvement  Assisting with student recruitment interviews and academic counseling sessions  Contributing to the creation of an environment that promotes growth equality and freedom of speech Professor Requirements  A PhD in the relevant field  310 years of experience teaching in an academic setting  Published articles and proven experience as an academic  Strong teaching and mentoring skills  Excellent presentation and written and verbal communication skills  A sound understanding of and passion for subject matter  Willingness to work long hours and travel frequently  A growth mindset and excellent networking abilities This job is provided by Shinecom",
+    "minimum_age": "",
+    "post_date": "2023-09-13",
+    "post_code": "management_faculty",
+    "company_name": "",
+    "location": "Gurugram Haryana India",
+    "job_code": "management_faculty_postdate_2023-09-13",
+    "possible_degree": "",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "",
+    "posts_data": {
+      "post_id": 24,
+      "post_name": "Management Faculty",
+      "post_code": "management_faculty",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "professor",
+        "name": "Professor/Faculty",
+        "minimum_skills_required": "master of subject, teaching skill, communication, english",
+        "minimum_qualifications": [
+          "postgraduation"
         ],
         "preferred_streams": [
           "any"
