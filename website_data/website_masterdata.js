@@ -238,6 +238,16 @@ const qualification_masterdata = [
     ],
     "entrance_exam": [
       "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Remote java developer",
+        "url": "https://www.youtube.com/watch?v=aCP4tDSpjGQ&ab_channel=LearnwithPhil"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Fresher Developer",
+        "url": "https://www.youtube.com/watch?v=3hoFiGx8ti0&ab_channel=GenieAshwani"
+      }
     ]
   },
   {
@@ -252,6 +262,16 @@ const qualification_masterdata = [
     ],
     "entrance_exam": [
       "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Remote python developer",
+        "url": "https://www.youtube.com/watch?v=2QByYtPEGIs&ab_channel=CleverProgrammer"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Fresher Developer",
+        "url": "https://www.youtube.com/watch?v=QiJ20NDOpSc&ab_channel=Simplilearn"
+      }
     ]
   },
   {
@@ -266,6 +286,16 @@ const qualification_masterdata = [
     ],
     "entrance_exam": [
       "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Remote Administrator developer",
+        "url": "https://www.youtube.com/watch?v=EANvxcWwZ4Q&ab_channel=TrainWithShubham"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Fresher Developer",
+        "url": "https://www.youtube.com/watch?v=EiAZVCBsx30&ab_channel=PandeyGuruji"
+      }
     ]
   },
   {
@@ -280,6 +310,16 @@ const qualification_masterdata = [
     ],
     "entrance_exam": [
       "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Remote Nodejs developer",
+        "url": "https://www.youtube.com/watch?v=hq-A3dBciio&ab_channel=AlphaProgr"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Fresher Developer",
+        "url": "https://www.youtube.com/shorts/6A-Cl0GhX0o"
+      }
     ]
   },
   {
@@ -294,6 +334,16 @@ const qualification_masterdata = [
     ],
     "entrance_exam": [
       "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Remote Full Stack developer",
+        "url": "https://www.youtube.com/shorts/1l7crR4wi2U"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Fresher Developer",
+        "url": "https://www.youtube.com/shorts/qm5sJsy3dBE"
+      }
     ]
   },
   {
@@ -308,6 +358,16 @@ const qualification_masterdata = [
     ],
     "entrance_exam": [
       "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Remote Quality Assurance",
+        "url": "https://www.youtube.com/watch?v=BPcbisSxxzQ&ab_channel=TheTestLead"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Fresher Quality Assurance",
+        "url": "https://www.youtube.com/shorts/f2Nu_lHMi8M"
+      }
     ]
   },
   {
@@ -322,6 +382,16 @@ const qualification_masterdata = [
     ],
     "entrance_exam": [
       "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Remote Program Manager",
+        "url": "https://www.youtube.com/watch?v=Dhc1bd2StTM&ab_channel=GoogleCareerCertificates"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Fresher Program manager",
+        "url": "https://www.youtube.com/watch?v=39QgN5XB_JE&ab_channel=TheUrbanFight"
+      }
     ]
   },
   {
@@ -336,6 +406,16 @@ const qualification_masterdata = [
     ],
     "entrance_exam": [
       "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Remote Product Manager",
+        "url": "https://www.youtube.com/shorts/eyOIXtmf-gI"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Fresher Product manager",
+        "url": "https://www.youtube.com/shorts/ycMqZTYhgvc"
+      }
     ]
   },
   {
@@ -348,7 +428,17 @@ const qualification_masterdata = [
     "minimum_qualifications": [
       "blib"
     ],
-    "preferred_streams": "NA"
+    "preferred_streams": "NA",
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Librarian",
+        "url": "https://www.youtube.com/watch?v=kJZptgIkgTs&ab_channel=LibraryDoctors"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Librarian",
+        "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
+      }
+    ]
   },
   {
     "code": "fellow",
@@ -358,6 +448,16 @@ const qualification_masterdata = [
     ],
     "preferred_streams": [
       "any"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a fellow",
+        "url": "https://www.youtube.com/shorts/FIq4Bq60lek"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Fresher Fellow",
+        "url": "https://www.youtube.com/watch?v=KSDToclQPss&ab_channel=HSESTUDYGUIDE"
+      }
     ]
   },
   {
@@ -369,6 +469,16 @@ const qualification_masterdata = [
     ],
     "preferred_streams": [
       "any"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a nurse",
+        "url": "https://www.youtube.com/shorts/sQqNsElZ118"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Fresher nurse",
+        "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
+      }
     ]
   },
   {
@@ -382,6 +492,16 @@ const qualification_masterdata = [
     ],
     "preferred_streams": [
       "any"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Medical Officer",
+        "url": "https://www.youtube.com/watch?v=LYDOfrbg8kU&ab_channel=DrChandrashekharVerma"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Medical Officer",
+        "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
+      }
     ]
   },
   {
@@ -392,6 +512,16 @@ const qualification_masterdata = [
     ],
     "preferred_streams": [
       "any"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Pharmacist",
+        "url": "https://www.youtube.com/watch?v=Q1huljUYuiM&ab_channel=AquibWood"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Pharmacist",
+        "url": "https://www.youtube.com/shorts/ptR3zD14Wa0"
+      }
     ]
   },
   {
@@ -406,11 +536,31 @@ const qualification_masterdata = [
     ],
     "preferred_streams": [
       "any"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a School Teacher",
+        "url": "https://www.youtube.com/shorts/SFBtpO14WI8"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A School Teacher",
+        "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
+      }
     ]
   },
   {
     "code": "assistant",
-    "name": "Assistant"
+    "name": "Assistant",
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Assistant",
+        "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Assistant",
+        "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
+      }
+    ]
   },
   {
     "code": "professor",
@@ -421,6 +571,16 @@ const qualification_masterdata = [
     ],
     "preferred_streams": [
       "any"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Professor",
+        "url": "https://www.youtube.com/watch?v=o6xFo4mWPXs&ab_channel=CareerSetting"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Professor",
+        "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
+      }
     ]
   },
   {
