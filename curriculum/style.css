@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.courses{
+    border-bottom: 2px solid black;
+}
+.course_details h1{
+    margin: 1.5rem;
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    font-size: 3rem;
+}
+.fundamental h2{
+    margin: 1.5rem;
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    font-size: 5vmin;  
+}
+.links{
+    color: rgb(34, 6, 244);
+    text-decoration: none;
+}
+
+.main_body{
+    background-color: #6279b3;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    color: white;
+}
+.main_body h5{
+    font-size: 2.1rem;
+}
+.main_body h3{
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    font-family: "Pacifico", cursive;
+}
+ li{
+    font-size: 1.4rem;
+    color: white;
+    list-style: none;
+}
+
+
+.frontend{
+    background-color:#887B48 ;
+}
