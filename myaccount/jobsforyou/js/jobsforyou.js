@@ -52,7 +52,6 @@ onAuthStateChanged(auth, async (user) => {
                 qualification_masterdata,
                 userData.graduationDegree || ""
             );
-
             pgDegreeName = await getNameFromCollection(
                 qualification_masterdata,
                 userData.pgDegree || ""
@@ -109,6 +108,9 @@ function addQualificationOptions() {
     }
 }
 
+// previously shown jobs
+let previousJobs = [];
+
 async function fetchAndUseJobs() {
     const jobs = jobs_data;
 
@@ -142,18 +144,28 @@ async function fetchAndUseJobs() {
             pgDegreeName &&
             qualificationEligibility.includes(pgDegreeName.toLowerCase());
 
-        if (
-            userAge >= job.minimum_age &&
-            userAge <= maxAge &&
-            (qualificationEligibility.includes("12th") ||
-                qualificationEligibility.includes("10+2") ||
-                includesGraduation ||
-                includesPG)
-        ) {
+        if ( userAge >= job.minimum_age && userAge <= maxAge && (qualificationEligibility.includes("12th") || qualificationEligibility.includes("10+2") || includesGraduation || includesPG)) {
+            jobsToShow.push(job);
+        }
+       else if( qualificationEligibility.includes("graduate")  || includesGraduation || includesPG){
             jobsToShow.push(job);
         }
     });
-    displayJobs(jobsToShow);
+
+     // Find new jobs
+     const newJobs = jobsToShow.filter((job) => !previousJobs.includes(job));
+    // Update the previously shown jobs
+    previousJobs = jobsToShow;
+
+    // Display the new jobs
+    displayJobs(newJobs);
+
+    // Show an alert if new jobs are found
+    // if (newJobs.length > 0) {
+    //     alert('New jobs matching your profile are available!');
+    // }
+
+ // displayJobs(jobsToShow);
 }
 
 // Add an event listener to the qualification filter select element
@@ -167,10 +179,7 @@ qualificationFilter.addEventListener("change", () => {
             job.qualification_eligibility.toLowerCase(); // Define qualificationEligibility here
 
         const includesGraduation =
-            graduationDegreeName &&
-            qualificationEligibility.includes(
-                graduationDegreeName.toLowerCase()
-            );
+            graduationDegreeName && qualificationEligibility.includes(graduationDegreeName.toLowerCase()) || qualificationEligibility.includes("graduate");
 
         const includesPG =
             pgDegreeName &&
@@ -181,7 +190,7 @@ qualificationFilter.addEventListener("change", () => {
                 qualificationEligibility.includes("12th") ||
                 qualificationEligibility.includes("10+2")
             );
-        } else if (selectedOption === graduationDegreeName) {
+        }else if (selectedOption === graduationDegreeName) {
             return includesGraduation;
         } else if (selectedOption === pgDegreeName) {
             return includesPG;
@@ -199,8 +208,8 @@ async function displayJobs(jobs) {
     resultsContainer.innerHTML = "";
 
     const profileCardStyles = {
-        width: "fit-content",
-        margin: "0 auto",
+        // width: "fit-content",
+        // margin: "0 auto",
     };
 
     const groupedJobs = groupJobsByProfile(jobs);
@@ -218,7 +227,7 @@ async function displayJobs(jobs) {
     const paginatedJobs = groupedJobs?.slice(startIndex, endIndex);
 
     const jobsDiv = document.createElement("div");
-    jobsDiv.classList.add("row");
+    jobsDiv.classList.add("row", 'g-3');
 
     // Hide the loading element
     const loadingElement = document.getElementById("loading");
@@ -228,7 +237,7 @@ async function displayJobs(jobs) {
     if (paginatedJobs?.length > 0) {
         paginatedJobs.forEach((profileJobs) => {
             const profileCard = document.createElement("div");
-            profileCard.classList.add("card", "mb-3");
+            profileCard.classList.add("card", "col-12");
 
             Object.keys(profileCardStyles).forEach((styleKey) => {
                 profileCard.style[styleKey] = profileCardStyles[styleKey];
@@ -283,11 +292,11 @@ async function displayJobs(jobs) {
                         }
                     </p>
                     <p><strong>Lifestyle: </strong>${
-                        profileJobs[0]?.posts_data?.life_style
-                            ? profileJobs[0]?.posts_data?.life_style
+                        profileJobs[0]?.posts_data?.profile_masterdata
+                            ? profileJobs[0]?.posts_data?.profile_masterdata?.life_style
                                   .map(
                                       (video) =>
-                                          `<a href="${video.url}">${video.title}</a>`
+                                        `<div> 👉 <a href="${video.url}"> ${video.title}</a></div>`
                                   )
                                   .join(" ")
                             : ""
@@ -299,18 +308,41 @@ async function displayJobs(jobs) {
 
             profileJobs.forEach((job) => {
                 const jobDiv = document.createElement("div");
-                jobDiv.classList.add("mb-3", "card");
-                jobDiv.style.backgroundColor = "rgb(244 242 255)";
+                jobDiv.classList.add("col-md-4", "col-12");
+                // jobDiv.style.backgroundColor = "rgb(244 242 255)";
 
                 jobDiv.innerHTML = `
-                        <div class="card-body">
-                            <h5 class="card-title">${job?.posts_data?.post_name}</h5>
-                            <p><strong>Post Date: </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>
-                            <p><strong>Eligibility: </strong>${job?.qualification_eligibility}</p>
-                            <p><strong>Recruitment Board:</strong> ${job?.recruitment_board}</p>
-                            <p><strong>Minimum Age:</strong> ${job?.minimum_age} | <strong>Maximum Age:</strong> ${job?.maximum_age}</p>
-                            <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code}" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
-                        </div>
+                <div class="card h-100 overflow-hidden">
+                <div class="card-body " style=" background-color:rgb(244 242 255)">
+                    <h5 class="card-title text-center">${job?.posts_data?.post_name}</h5>
+
+                    ${job.last_date ?`
+                    <p><strong>Post Date : </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>  
+                    ` : `
+                    <p><strong>Post Date : </strong>${job?.post_date}</p>
+                    `}
+
+                    <p><strong>Eligibility : </strong>${job?.qualification_eligibility}</p>
+
+                    ${job?.recruitment_board ?
+                    `
+                    <p><strong>Recruitment Board :</strong> ${job?.recruitment_board}</p>
+                    ` : `
+                    <p><strong>Location :</strong> ${job?.location}</p>
+                    `}
+
+                    ${job?.minimum_age || job?.maximum_age ?
+                        `<p><strong>Minimum Age :</strong> ${job?.minimum_age} | <strong>Maximum Age :</strong> ${job?.maximum_age}</p>`
+                        :
+                        (job?.company_name ?
+                            `<p><strong>Company Name : </strong>${job?.company_name}</p>`
+                            :
+                            ``
+                        )
+                    }
+                    <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code}" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
+                </div>
+            </div>  
                 `;
 
                 jobsDiv.appendChild(jobDiv);
