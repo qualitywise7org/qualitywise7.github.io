@@ -1,0 +1,29 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+.header{
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    padding: 1.2rem;
+    border-bottom: 0.2rem solid gray;
+}
+.content{
+    font-size: 1.1rem;
+}
+.card-text{
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+.hero .imgs{
+    padding: 1.3rem;
+    justify-content: center;
+}
+.hero img{
+    justify-content: center;
+    width: 70%;
+}

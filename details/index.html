@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Code</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Explore our Courses: Web Development, Backend Development, and Full Stack Development. Mock Interviews and Career Consultancy Services. Affordable Pricing and Expert Guidance. Contact us on WhatsApp to Buy Now!" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pricing.css" />
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <link rel="stylesheet" href="../paymentoptions/webdevelopment.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) and Button Click Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-1JQVXS3B5L");
+
+        function trackBuyButtonClick(buttonName) {
+            gtag("event", "click", {
+                event_category: "Buy Now Click",
+                event_label: buttonName,
+            });
+        }
+        function showjobsforyou() {
+            window.location.href = "/myaccount";
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="brand" href="/">
+                <img src="../assets/Jobsdoor360 -logos__black.png" alt="logo" />
+            </a>
+
+            <div class="selected">
+                <select id="courseSelect" class="form-select selection">
+                    <option selected>Select the course Details</option>
+                    <option value="webdevelopment">Web Development</option>
+                    <option value="backendjava">Backend Java</option>
+                    <option value="fullstack">FullStack Development</option>
+                    <option value="cvcreation">CV Creation</option>
+                    <option value="videoprofile">Video Profile</option>
+                    <option value="mockinterview">Mock Interviews</option>
+                    <option value="jobsforyou">Jobs For You</option>
+                    <option value="chargeableinternship">Chargeable Internship</option>
+                    <option value="freeinternship">Free internship</option>
+                    <option value="paidinternship">Paid Internship</option>
+                </select>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <!-- main Body -->
+    <!-- <div style="display: block;" id="para">
+       <div class="body_content">
+        <h1>Get The Best Online Courses</h1>
+        <p>Build Skills with course, Certificates, and degrees online from world-class.</p>
+       </div>
+    </div> -->
+
+
+    <!-- selected elements -->
+
+    <!-- webdevelopment course -->
+    <div class="card text-center container" id="webdevelopment" style="display: none;">
+        <!-- <h1>Enroll in Our Web Development Course</h1> -->
+        <p>Learn the skills you need to become a web development pro.</p>
+
+        <div class="card_details">
+            <div class="left">
+                <ul>
+                    <li ><a href="../curriculum/?productcode=webdevelopment" id="linkbutton" >Go the details about our courses</a></li>
+                    <li>You will get a T-shirt.</li>
+                    <li>Includes major project development.</li>
+                    <li>CV making</li>
+                    <li><strong>Price: ₹</strong>1000 Per/month</li>
+                    <li><strong>Duration :</strong> 9 months</li>
+                </ul>
+            </div>
+            <div class="right">
+                <img src="/assets/qrscanner.jpg" alt="qr_scanner">
+                <h6>Buy now by making payment on this QR code</h6>
+            </div>
+        </div>
+    </div>
+
+    <!-- backend java -->
+    <div class="card text-center container" id="backendjava" style="display: none;">
+        <!-- <h1>Enroll in Our Backend Java Course</h1> -->
+        <p>Learn the skills you need to become a Backend Java pro.</p>
+        <div class="card_details">
+            <div class="left">
+                <ul>
+                    <li><a href="../curriculum/?productcode=backendjava">Go the details about our courses</a></li>
+                    <li>You will get a T-shirt.</li>
+                    <li>Includes major project development.</li>
+                    <li>Hands-on projects and practical experience.</li>
+                    <li><strong>Price: ₹</strong>1000 Per/month</li>
+                    <li><strong>Duration :</strong> 9 months</li>
+                </ul>
+            </div>
+
+            <div class="right">
+                <div class="text-center p-3">
+                    <img src="/assets/qrscanner.jpg" alt="qr_scanner">
+                    <h6>Buy now by making payment on this QR code</h6>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- fullstack development -->
+    <div class="card text-center container" id="fullstack" style="display: none;">
+        <!-- <h1>Enroll in Full Stack Development</h1> -->
+        <p>Learn the skills you need to become a Full Stack development pro.</p>
+
+        <div class="card_details">
+            <div class="left">
+                <ul>
+                    <li><a href="../curriculum/?productcode=fullstack">Go the details about our courses</a></li>
+                    <li>Learn the full stack, from front-end (React) to back-end (Node.js and Express) and the database
+                        (MongoDB), making you a versatile developer.</li>
+                    <li> Full Stack/MERN developers are in high demand, making it a valuable skill in the job market.
+                    </li>
+                    <li><strong>Price: ₹</strong>1000 Per/month</li>
+                    <li><strong>Duration :</strong> 11 months</li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="tex-center p-3">
+
+                    <img src="/assets/qrscanner.jpg" alt="qr_scanner">
+                    <h6>Buy now by making payment on this QR code</h6>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- CV creation -->
+    <div class="card text-center container" id="cvcreation" style="display: none;">
+        <!-- <h1>Enroll in Cv Creation</h1> -->
+        <p>Learn the skills you need to become a Cv Creation pro.</p>
+
+        <div class="card_details">
+            <div class="left">
+                <ul>
+                    <li><a href="../pricing/?productcode=cvcreation">Go the details about our courses</a></li>
+                    <li> Provide an outline of the course curriculum, including modules or lessons.</li>
+                    <li> Host live or recorded webinars where you provide insights into CV creation and interact
+                        directly with
+                        potential students.</li>
+                    <li><strong>Price: ₹</strong>1000 Per/month</li>
+                    <li><strong>Duration :</strong> 1 month</li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="tex-center p-3">
+                    <img src="/assets/qrscanner.jpg" alt="qr_scanner">
+                    <h6>Buy now by making payment on this QR code</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Videocreation -->
+    <div class="card text-center container" id="videoprofile" style="display: none;">
+        <!-- <h1>Enroll in Videos Creation</h1> -->
+        <p>Learn the skills you need to become a Videos Profile Creation pro.</p>
+
+        <div class="card_details">
+            <div class="left">
+                <ul>
+                    <li><a href="../pricing/?productcode=videocreation">Go the details about our courses</a></li>
+                    <li>Create an informative and visually appealing course website, providing essential details about
+                        the
+                        course, such as its content, instructors, and pricing.</li>
+                    <li>Create a sense of urgency by offering time-limited discounts or exclusive bonuses for early
+                        enrollees,
+                        encouraging potential students to take action.</li>
+                    <li><strong>Price: ₹</strong>1000 Per/month</li>
+                    <li><strong>Duration :</strong> 6 months</li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="tex-center p-3">
+                    <img src="/assets/qrscanner.jpg" alt="qr_scanner">
+                    <h6>Buy now by making payment on this QR code</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- mockinterview -->
+    <div class="card text-center container" id="mockinterview" style="display: none;">
+        <!-- <h1>Enroll in mock Interview</h1> -->
+        <p>Learn the skills you need to become a mock interview pro.</p>
+
+        <div class="card_details">
+            <div class="left">
+                <ul>
+                    <li><a href="../pricing/?productcode=mockinterview">Go the details about our courses</a></li>
+                    <li> Your course improves interview skills, boosts confidence, and prepares students for real
+                        interviews.
+                    </li>
+                    <li>Feature authentic testimonials from students who have benefited from your course, showcasing
+                        real-world
+                        success stories.</li>
+                    <li><strong>Price: ₹</strong>1000 Per/month</li>
+                    <li><strong>Duration :</strong> 2-3 months</li>
+                </ul>
+            </div>
+
+            <div class="right">
+                <div class="tex-center p-3">
+                    <img src="/assets/qrscanner.jpg" alt="qr_scanner">
+                    <h6>Buy now by making payment on this QR code</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jobsforyou -->
+    <div class="card text-center container" id="jobsforyou" style="display: none;">
+        <!-- <h1>Enroll in Jobs For You</h1> -->
+        <p>Search for jobs related to specific Qualification</p>
+
+        <ul>
+            <li>Clearly communicate the value of your course in helping students secure suitable job positions.
+                Emphasize how it addresses their specific career needs and goals.</li>
+            <li> Identify and define your course's ideal audience. Understand their job search challenges and tailor
+                your marketing to address their unique needs.</li>
+            <li>Highlight the expertise of your instructors or career coaches. Showcase their qualifications and
+                experience to build trust.</li>
+            <li>Craft persuasive course descriptions that detail how the course improves job search skills, including
+                resume building, interview preparation, and networking strategies.</li>
+            <li>Feature authentic testimonials and success stories from students who have successfully landed jobs after
+                taking your course. These provide social proof and build credibility.</li>
+        </ul>
+
+        <div class="text-center p-2">
+            <h6>I want to search for jobs related to a specific domain. Please provide me with information on how to do
+                that.</h6>
+            <button type="button" class="btn btn-primary" onclick="showjobsforyou()">jobs for You</button>
+        </div>
+    </div>
+
+    <!-- chargeableinternship -->
+    <div class="card text-center container" id="chargeableinternship" style="display: none;">
+        <!-- <h1>Enroll in Chargeable Internship</h1> -->
+        <p>Learn the skills you need to become a Chargeable Internship pro.</p>
+
+        <div class="card_details">
+            <div class="left">
+                <ul>
+                    <li><a href="../pricing/?productcode=chargeableinternship">Go the details about our courses</a></li>
+                    <li>Define your ideal participants, such as students or early career professionals, and tailor your
+                        marketing to address their specific career goals and needs.</li>
+                    <li>Emphasize the quality of the internship program, including the companies or organizations
+                        involved, the
+                        responsibilities, and the potential for networking and skill development.</li>
+                    <li>Be transparent about the cost of the internship and provide flexible payment options. Justify
+                        the price
+                        by highlighting the benefits and opportunities provided.</li>
+                    <li><strong>Price: ₹</strong>2000 Per/month</li>
+                    <li><strong>Duration :</strong> 3-6 months</li>
+                </ul>
+            </div>
+
+            <div class="right">
+                <div class="tex-center p-3">
+                    <img src="/assets/qrscanner.jpg" alt="qr_scanner">
+                    <h6>Buy now by making payment on this QR code</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- freeinternship -->
+    <div class="card text-center container" id="freeinternship" style="display: none;">
+        <!-- <h1>Enroll in Free Internship</h1> -->
+        <p>Learn the skills you need to become a Free Internship pro.</p>
+
+        <div class="card_details">
+            <div class="left">
+                <ul>
+                    <li><a href="../pricing/?productcode=freeinternship">Go the details about our courses</a></li>
+                    <li>Clearly state the value and benefits of your course, emphasizing the real-world experience and
+                        skills
+                        students will gain through the internship.</li>
+                    <li> Define the specific group of students or professionals who would benefit most from your
+                        internship
+                        program. Tailor your marketing efforts to address their unique needs and goals.</li>
+                    <li>Highlight the expertise and qualifications of the instructors or mentors overseeing the
+                        internship
+                        program. This adds credibility and trustworthiness to your offering</li>
+                    <li><strong>Price: ₹</strong> 0 Per/month</li>
+                    <li><strong>Duration :</strong> 4-6 months</li>
+                </ul>
+            </div>
+            <div class="right">
+
+                <div class="tex-center p-3">
+                    <img src="/assets/qrscanner.jpg" alt="qr_scanner">
+                    <h6>Buy now by making payment on this QR code</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- paid internship -->
+    <div class="card text-center container" id="paidinternship" style="display: none;">
+        <!-- <h1>Enroll in Paid Internship</h1> -->
+        <p>Learn the skills you need to Paid Internship </p>
+
+        <div class="card_details">
+            <div class="left">
+                <ul>
+                    <li><a href="../pricing/?productcode=paidinternship">Go the details about our courses</a></li>
+                    <li>Clearly communicate the value of your course in helping students secure paid internships.</li>
+                    <li>Define your ideal audience, such as students, recent graduates, or career changers seeking
+                        valuable
+                        internship opportunities.</li>
+                    <li>Showcase the qualifications and experience of your course instructors, who can offer valuable
+                        insights
+                        into the internship application process and guide students to success.</li>
+                    <li><strong>Price: ₹</strong> 3000 Per/month</li>
+                    <li><strong>Duration :</strong> 2-4 months</li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="tex-center p-3">
+                    <img src="/assets/qrscanner.jpg" alt="qr_scanner">
+                    <h6>Buy now by making payment on this QR code</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <script>
+
+        function showjobsforyou  (){
+            window.location.href = "https://jobsdoor360.in/myaccount";
+        }
+        const courseSelect = document.getElementById("courseSelect");
+        
+
+        courseSelect.addEventListener("change", function () {
+            const selectedValue = courseSelect.value;
+            console.log("Selected Value: " + selectedValue);
+
+            const webDevelopmentDiv = document.getElementById("webdevelopment");
+            const backendJavaDiv = document.getElementById("backendjava");
+            const fullstackDiv = document.getElementById("fullstack");
+            const cvcreationDiv = document.getElementById("cvcreation");
+            const videocreationDiv = document.getElementById("videocreation");
+            const mockinterviewDiv = document.getElementById("mockinterview");
+            const jobforyouDiv = document.getElementById("jobsforyou");
+            const chargeableinternshipDiv = document.getElementById("chargebaleinternship");
+            const freeinternshipDiv = document.getElementById("freeinternship");
+            const paidinternshipDiv = document.getElementById("paidinternship");
+
+            const para = document.getElementById("para");
+
+
+              // Hide all course divs
+              webDevelopmentDiv.style.display = "none";
+              backendJavaDiv.style.display = "none";
+              fullstackDiv.style.display = "none";
+              cvcreationDiv.style.display = "none";
+              videocreationDiv.style.display = "none";
+              mockinterviewDiv.style.display = "none";
+              jobforyouDiv.style.display = "none";
+              chargeableinternshipDiv.style.display = "none";
+              freeinternshipDiv.style.display = "none";
+              paidinternshipDiv.style.display = "none";
+
+            // Show the selected course div
+            if (selectedValue === "webdevelopment") {
+                console.log("Displaying webdevelopment div");
+                webDevelopmentDiv.style.display = "block";
+                para.style.display = "none";
+                window.location.href = `/details/?productcode=${selectedValue}`;
+               
+            } else if (selectedValue === "backendjava") {
+                backendJavaDiv.style.display = "block";
+                para.style.display = "none";
+                window.location.href = `/details/?productcode=${selectedValue}`;
+            
+            } else if (selectedValue === "fullstack") {
+                fullstackDiv.style.display = "block";
+                para.style.display = "none";
+            }
+            else if (selectedValue === "cvcreation") {
+                cvcreationDiv.style.display = "block";
+                para.style.display = "none"; 
+                
+            }
+            else if(selectedValue === "videoprofile"){
+                videocreationDiv.style.display = "block";
+                para.style.display = "none";
+              
+            }
+            else if ( selectedValue === "mockinterview"){
+                mockinterviewDiv.style.display = "block";
+                para.style.display = "none";  
+            
+            }
+            else if ( selectedValue === "jobsforyou") {
+                jobforyouDiv.style.display = "block";
+                para.style.display = "none";  
+            
+            }
+            else if( selectedValue === "chargeableinternship"){
+                chargeableinternshipDiv.style.display = "block";
+                para.style.display = "none";  
+            
+            }
+            else if ( selectedValue === "freeinternship"){
+                freeinternshipDiv.style.display = "block";
+                para.style.display = "none";
+                 
+            }
+            else if (selectedValue === "paidinternship"){
+                paidinternshipDiv.style.display = "block";
+                para.style.display = "none"; 
+             
+            }
+        });
+    </script> -->
+
+
+
+    <script>
+        // fetch the query parameter  
+
+
+        const courseSelect = document.getElementById("courseSelect");
+
+        courseSelect.addEventListener("change", function () {
+            const selectedValue = courseSelect.value;
+
+
+            window.location.href = `/details/?productcode=${selectedValue}`;
+
+        });
+
+
+        const searchParams = new URLSearchParams(window.location.search);
+
+        var selectedProductcode = searchParams.get("productcode");
+        courseSelect.value = selectedProductcode;
+        document.getElementById(selectedProductcode).style.display = "block";
+      
+
+
+    </script>
+
+</body>
+
+</html>

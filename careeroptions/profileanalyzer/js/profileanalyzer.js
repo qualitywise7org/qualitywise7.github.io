@@ -150,11 +150,11 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
                         }
                     </p>
                     <p><strong>Lifestyle: </strong>${
-                        profileJobs[0]?.posts_data?.life_style
-                            ? profileJobs[0]?.posts_data?.life_style
+                        profileJobs[0]?.posts_data?.profile_masterdata
+                            ? profileJobs[0]?.posts_data?.profile_masterdata?.life_style
                                   .map(
                                       (video) =>
-                                          `<a href="${video.url}">${video.title}</a>`
+                                        `<div><a href="${video.url}">👉 ${video.title}</a></div>`
                                   )
                                   .join(" ")
                             : ""
