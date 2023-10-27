@@ -32,7 +32,7 @@
     color: white;
 }
 .main_body h5{
-    font-size: 2.1rem;
+    font-size: 5vmin;
 }
 .main_body h3{
     text-align: center;
@@ -41,7 +41,7 @@
     font-family: "Pacifico", cursive;
 }
  li{
-    font-size: 1.4rem;
+    font-size: 3vmin;
     color: white;
     list-style: none;
 }
