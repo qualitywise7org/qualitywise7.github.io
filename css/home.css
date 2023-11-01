@@ -26,3 +26,9 @@
     justify-content: center;
     width: 70%;
 }
+.hero .apply-btn{
+    margin-left: 30%;
+}
+.list ul li{
+    font-size: 17px;
+}
