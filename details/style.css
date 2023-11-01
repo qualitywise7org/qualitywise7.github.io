@@ -66,6 +66,7 @@ h5{
     text-decoration: none;
 }
 
+
 @media screen and (min-width: 670px) {
 
     .container{
@@ -96,7 +97,7 @@ h5{
         flex-direction: column;
     } */
     .card_details{
-        height: 400px;
+        height: auto;
         display: flex;
         justify-content: space-evenly;
     }

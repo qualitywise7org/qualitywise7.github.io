@@ -46,20 +46,20 @@
             <a class="brand" href="/">
                 <img src="../assets/Jobsdoor360 -logos__black.png" alt="logo" />
             </a>
-
+            
             <div class="selected">
-                <select id="courseSelect" class="form-select selection">
-                    <option selected>Select the course Details</option>
+                <select id="courseSelect" class="form-select selection" >     
+                    <option selected  disabled hidden>Select the course Details</option>
                     <option value="webdevelopment">Web Development</option>
                     <option value="backendjava">Backend Java</option>
                     <option value="fullstack">FullStack Development</option>
-                    <option value="cvcreation">CV Creation</option>
+                    <!-- <option value="cvcreation">CV Creation</option>
                     <option value="videoprofile">Video Profile</option>
                     <option value="mockinterview">Mock Interviews</option>
                     <option value="jobsforyou">Jobs For You</option>
                     <option value="chargeableinternship">Chargeable Internship</option>
                     <option value="freeinternship">Free internship</option>
-                    <option value="paidinternship">Paid Internship</option>
+                    <option value="paidinternship">Paid Internship</option> -->
                 </select>
             </div>
 
@@ -169,8 +169,8 @@
                     <li> Host live or recorded webinars where you provide insights into CV creation and interact
                         directly with
                         potential students.</li>
-                    <li><strong>Price: ₹</strong>1000 Per/month</li>
-                    <li><strong>Duration :</strong> 1 month</li>
+                    <li><strong>Price: ₹</strong>500</li>
+                    <li><strong>Duration :</strong> 1 Day</li>
                 </ul>
             </div>
             <div class="right">
@@ -197,8 +197,8 @@
                     <li>Create a sense of urgency by offering time-limited discounts or exclusive bonuses for early
                         enrollees,
                         encouraging potential students to take action.</li>
-                    <li><strong>Price: ₹</strong>1000 Per/month</li>
-                    <li><strong>Duration :</strong> 6 months</li>
+                    <li><strong>Price: ₹</strong>1000 </li>
+                    <li><strong>Duration :</strong> 1 Day</li>
                 </ul>
             </div>
             <div class="right">
@@ -225,8 +225,11 @@
                     <li>Feature authentic testimonials from students who have benefited from your course, showcasing
                         real-world
                         success stories.</li>
-                    <li><strong>Price: ₹</strong>1000 Per/month</li>
-                    <li><strong>Duration :</strong> 2-3 months</li>
+                    <li><strong>Price: ₹</strong>500</li>
+                    <li><strong>Duration :</strong> 1 Day</li>
+                    <li>When you purchase 10 mock interview sessions with us, you can enjoy a discount of up to ₹4000.</li>
+                    <li><strong>Price: ₹</strong> 5000 for 10 mock interviews, and also the duration will be one day for each interview.</li>
+                    
                 </ul>
             </div>
 
@@ -240,11 +243,11 @@
     </div>
 
     <!-- jobsforyou -->
-    <div class="card text-center container" id="jobsforyou" style="display: none;">
+    <div class="card text-center container" id="jobsforyou" style="display: none; padding:50px; ">
         <!-- <h1>Enroll in Jobs For You</h1> -->
-        <p>Search for jobs related to specific Qualification</p>
+        <h2>Search for jobs related to specific Qualification</h2>
 
-        <ul>
+        <!-- <ul>
             <li>Clearly communicate the value of your course in helping students secure suitable job positions.
                 Emphasize how it addresses their specific career needs and goals.</li>
             <li> Identify and define your course's ideal audience. Understand their job search challenges and tailor
@@ -255,12 +258,12 @@
                 resume building, interview preparation, and networking strategies.</li>
             <li>Feature authentic testimonials and success stories from students who have successfully landed jobs after
                 taking your course. These provide social proof and build credibility.</li>
-        </ul>
+        </ul> -->
 
         <div class="text-center p-2">
-            <h6>I want to search for jobs related to a specific domain. Please provide me with information on how to do
-                that.</h6>
-            <button type="button" class="btn btn-primary" onclick="showjobsforyou()">jobs for You</button>
+            <h4>I want to search for jobs related to a specific domain. Please provide me with information on how to do
+                that.</h4>
+            <button type="button" class="btn btn-primary" onclick="showjobsforyou()">Login</button>
         </div>
     </div>
 
@@ -273,14 +276,12 @@
             <div class="left">
                 <ul>
                     <!-- <li><a href="../pricing/?productcode=chargeableinternship">Go the details about our courses</a></li> -->
-                    <li>Define your ideal participants, such as students or early career professionals, and tailor your
-                        marketing to address their specific career goals and needs.</li>
-                    <li>Emphasize the quality of the internship program, including the companies or organizations
-                        involved, the
-                        responsibilities, and the potential for networking and skill development.</li>
-                    <li>Be transparent about the cost of the internship and provide flexible payment options. Justify
-                        the price
-                        by highlighting the benefits and opportunities provided.</li>
+                    <li>Define your ideal participants, such as students or early career professionals.</li>
+                    <li> Your marketing to address their specific career goals and needs.</li>
+                    <!-- <li>Emphasize the quality of the internship program, including the companies.</li>
+                    <li>Be transparent about the cost of the internship and provide flexible payment options.</li> -->
+                    <li> Justify the price by highlighting the benefits and opportunities provided.</li>
+                    <li>Student will be paying for the internship</li>
                     <li><strong>Price: ₹</strong>2000 Per/month</li>
                     <li><strong>Duration :</strong> 3-6 months</li>
                 </ul>
@@ -301,29 +302,26 @@
         <p>Learn the skills you need to become a Free Internship pro.</p>
 
         <div class="card_details">
-            <div class="left">
+            <div class="left " style="width: 100%;">
                 <ul>
                     <!-- <li><a href="../pricing/?productcode=freeinternship">Go the details about our courses</a></li> -->
-                    <li>Clearly state the value and benefits of your course, emphasizing the real-world experience and
-                        skills
-                        students will gain through the internship.</li>
-                    <li> Define the specific group of students or professionals who would benefit most from your
+                    <li>Clearly state the value and benefits of your course, emphasizing the real-world experience andskills.</li>
+                    <li> Define the specific group of students or professionals who would benefit most from your internship program.</li>
+                    <!-- <li>Highlight the expertise and qualifications of the instructors or mentors overseeing the
                         internship
-                        program. Tailor your marketing efforts to address their unique needs and goals.</li>
-                    <li>Highlight the expertise and qualifications of the instructors or mentors overseeing the
-                        internship
-                        program. This adds credibility and trustworthiness to your offering</li>
+                        program. This adds credibility and trustworthiness to your offering</li> -->
+                        <li>The apply option that is available on the homepage.</li>
                     <li><strong>Price: ₹</strong> 0 Per/month</li>
                     <li><strong>Duration :</strong> 4-6 months</li>
                 </ul>
             </div>
-            <div class="right">
+            <!-- <div class="right">
 
                 <div class="tex-center p-3">
                     <img src="/assets/qrscanner.jpg" alt="qr_scanner">
                     <h6>Buy now by making payment on this QR code</h6>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -337,12 +335,8 @@
                 <ul>
                     <li><a href="../career/?productcode=paidinternship">Go the details about our courses</a></li>
                     <li>Clearly communicate the value of your course in helping students secure paid internships.</li>
-                    <li>Define your ideal audience, such as students, recent graduates, or career changers seeking
-                        valuable
-                        internship opportunities.</li>
-                    <li>Showcase the qualifications and experience of your course instructors, who can offer valuable
-                        insights
-                        into the internship application process and guide students to success.</li>
+                    <li>Define your ideal audience, such as students, recent graduates.</li>
+                    <!-- <li>Showcase the qualifications and experience of your course instructors, who can offer valuable insights into the internship.</li> -->
                     <li><strong>Price: ₹</strong> 3000 Per/month</li>
                     <li><strong>Duration :</strong> 2-4 months</li>
                 </ul>

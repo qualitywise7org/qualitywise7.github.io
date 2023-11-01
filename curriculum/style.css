@@ -12,6 +12,11 @@
     font-family: "Pacifico", cursive;
     font-size: 3rem;
 }
+.course_details h2{
+    margin: 25px;
+    text-align: center;
+    font-family: "Pacifico", cursive;
+}
 .fundamental h2{
     margin: 1.5rem;
     text-align: center;
