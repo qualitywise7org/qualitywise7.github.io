@@ -586,5 +586,47 @@ const qualification_masterdata = [
   {
     "code": "all",
     "name": "All"
+  },
+  {
+    "code": "helper",
+    "name": "Helper",
+    "minimum_skills_required": "good nature",
+    "minimum_qualifications": [
+      "10"
+    ],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a helper",
+        "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+      },
+      {
+        "title": "How Much Salary Should You Expect As a helper",
+        "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+      }
+    ]
+  },
+  {
+    "code": "store_keeper",
+    "name": "Store Keeper",
+    "minimum_skills_required": "clerk",
+    "minimum_qualifications": [
+      "10"
+    ],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a stoker Keeper",
+        "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+      },
+      {
+        "title": "How Much Salary Should You Expect As a Store Keeper",
+        "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+      }
+    ]
   }
 ];

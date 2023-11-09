@@ -22006,5 +22006,3845 @@ const jobs_data=[
         ]
       }
     }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-unique-engineers-angul-odisha-0-to-1-years-130723008644",
+    "salary": "1.5-1.75 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Role  responsibilities   Store keeping inventory management stock management Preferred candidate profile   Graduate Perks and benefits   Accomodation conveyence",
+    "minimum_age": "",
+    "post_date": "2023-10-20",
+    "post_code": "store_keeper",
+    "company_name": "Unique Engineers",
+    "location": "Angul,Odisha",
+    "job_code": "store_keeper_postdate_2023-10-20",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-rohan-builders-developers-dahej-bharuch-pune-industrial-1-to-5-years-311023502518",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Rohan Builders  Developers is looking for Store Keeper to join our dynamic team and embark on a rewarding career journey   The Store Keeper is responsible for maintaining accurate inventory records overseeing the receipt and storage of goods and ensuring that materials are available when needed   Receive and inspect incoming goods and ensure that they conform to the purchase order or other specifications   Maintain accurate inventory records including tracking stock levels documenting stock movements and conducting regular physical inventory counts     Maintain a clean and organized warehouse or storeroom ensuring that all materials are stored in a safe and accessible manner",
+    "minimum_age": "",
+    "post_date": "2023-10-31",
+    "post_code": "store_keeper",
+    "company_name": "Rohan Builders  Developers",
+    "location": "Industrial",
+    "job_code": "store_keeper_postdate_2023-10-31",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-inventory-executive-only-male-candidate-sea-linkers-rabale-navi-mumbai-1-to-2-years-101222004012",
+    "salary": "2.25-3 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities     Procedure for adding stock in system  1 Taking stock of Material 2 Updating consumption of those items using JC on everyday basis 3 Updating fresh entry into system of new received items along with cost JD for Store keeper  1 Implementation of 5S procedure on shop floor 2 Understanding material along with counting quality specification  its availability 3 Material stacking book keeping making Bin cards for racks 4 Taking daily consumption on issue slip from workers  keeparrange material in order to be found quickly 5 Act as a point of contact to resolve queries of sales team  Directors 6 Ensure complete process of inventory ie receive stacking consumption sale Daily routine  1 Putting consumption in issue slip by seeing JC  later on in Bin card 2 Keeping material at its desired place to be found quickly with its location 3 Material segregation sorting  set in order on daily basis 4 Acting as point of contact to Solve production and inventory queries 5 Tagging or making stickers for racks along with its specification Required Candidate profile  1 12 years of experience as a Store Keeper or Inventory Executive 2 Qualification  Any graduate 3 Candidate preferably from Navi Mumbai 4  Should have knowledge of using Measuring tools like Vaniar Caliper Measuring tape etc  Job Location  Rabale Navi Mumbai Salary  Rs 19000 to 25000 Salary may vary as per the experience current salary and interview",
+    "minimum_age": "",
+    "post_date": "2023-10-23",
+    "post_code": "store_keeper_inventory_executive_only_male_candidate_",
+    "company_name": "Sea Linkers",
+    "location": "Rabale,Navi Mumbai",
+    "job_code": "store_keeper_inventory_executive_only_male_candidate__postdate_2023-10-23",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 2,
+      "post_name": "Store Keeper / Inventory Executive - (Only Male Candidate)",
+      "post_code": "store_keeper_inventory_executive_only_male_candidate_",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-thompsons-hr-consulting-llp-thiruvallur-tamil-nadu-0-to-0-years-301023004698",
+    "salary": "1.5-2 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-10-30",
+    "post_code": "store_keeper",
+    "company_name": "Thompsons Hr Consulting Llp",
+    "location": "Thiruvallur,Tamil Nadu",
+    "job_code": "store_keeper_postdate_2023-10-30",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: B.Com in Commerce",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-avian-infrastructure-and-energy-pvt-ltd-pune-maharashtra-raigad-maharashtra-4-to-7-years-271023012287",
+    "salary": "2.5-3.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Responsibilities Qualification and other Requirement Preferred candidate profile   From Civil Construction Company and Male candidate only Perks and benefits   Bachelor Accommodation Vehicle Facility Paid Leave Mess Facility",
+    "minimum_age": "",
+    "post_date": "2023-10-27",
+    "post_code": "store_keeper",
+    "company_name": "Avian Infrastructure And Energy Pvt Ltd",
+    "location": "Raigad,Maharashtra",
+    "job_code": "store_keeper_postdate_2023-10-27",
+    "possible_degree": "UG: B.Com in Commerce",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: B.Com in Commerce",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-michigan-engineers-mumbai-all-areas-2-to-5-years-261023007265",
+    "salary": "2-3 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Key Responsibilities Qualifications",
+    "minimum_age": "",
+    "post_date": "2023-10-26",
+    "post_code": "store_keeper",
+    "company_name": "Michigan Engineers",
+    "location": "Mumbai (All Areas)",
+    "job_code": "store_keeper_postdate_2023-10-26",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-openings-in-gulf-dubai-uae-thugil-technologies-chennai-dubai-uae-1-to-5-years-031123003830",
+    "salary": "3-4 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Required Candidate profile Perks and benefits",
+    "minimum_age": "",
+    "post_date": "2023-11-03",
+    "post_code": "store_keeper_job_openings_in_gulf_dubai_uae",
+    "company_name": "Thugil Technologies",
+    "location": "UAE",
+    "job_code": "store_keeper_job_openings_in_gulf_dubai_uae_postdate_2023-11-03",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 6,
+      "post_name": "Store Keeper Job Openings in Gulf  | Dubai | UAE",
+      "post_code": "store_keeper_job_openings_in_gulf_dubai_uae",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: B.Com in Any Specialization",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-vishvas-management-consultants-mumbai-all-areas-5-to-6-years-031123009309",
+    "salary": "3-4 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-03",
+    "post_code": "store_keeper",
+    "company_name": "Vishvas Management Consultants",
+    "location": "Mumbai (All Areas)( Ambernath )",
+    "job_code": "store_keeper_postdate_2023-11-03",
+    "possible_degree": "UG: B.Com in Any Specialization",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: B.Com in Any Specialization",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-malabar-group-new-delhi-1-to-2-years-050822502253",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "store_keeper",
+    "company_name": "Malabar Group",
+    "location": "New Delhi",
+    "job_code": "store_keeper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-urgent-hiring-for-store-keeper-gurgaon-sr-jobs-solutions-gurgaon-gurugram-haryana-3-to-8-years-261023004966",
+    "salary": "2-5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-10-26",
+    "post_code": "urgent_hiring_for_store_keeper_gurgaon_",
+    "company_name": "Sr Jobs Solutions",
+    "location": "Gurgaon/ Gurugram,Haryana",
+    "job_code": "urgent_hiring_for_store_keeper_gurgaon__postdate_2023-10-26",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 9,
+      "post_name": "Urgent hiring For Store Keeper (Gurgaon)",
+      "post_code": "urgent_hiring_for_store_keeper_gurgaon_",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-hotel-green-castle-dehradun-uttarakhand-1-to-3-years-301023003177",
+    "salary": "1-1.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-10-30",
+    "post_code": "store_keeper",
+    "company_name": "Hotel Green Castle",
+    "location": "Dehradun,Uttarakhand",
+    "job_code": "store_keeper_postdate_2023-10-30",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-mumbai-maharashtra-pune-maharashtra-mumbai-all-areas-3-to-8-years-101023010443",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge_",
+    "company_name": "The Global Zone",
+    "location": "Mumbai (All Areas)",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge__postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 11,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge/",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge_",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-haridwar-uttarakhand-dehradun-uttarakhand-rishikesh-uttarakhand-3-to-8-years-101023010801",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Rishikesh,Uttarakhand",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-south-goa-goa-panaji-panjim-goa-north-goa-goa-3-to-8-years-101023010785",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "North Goa,Goa",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-medak-telangana-wanaparthy-telangana-hyderabad-secunderabad-telangana-3-to-8-years-101023010763",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Hyderabad/ Secunderabad,Telangana",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-patna-bihar-jamshedpur-jharkhand-ranchi-jharkhand-3-to-8-years-101023010736",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Ranchi,Jharkhand",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-ambala-haryana-hissar-hisar-haryana-karnal-haryana-3-to-8-years-101023010721",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Karnal,Haryana",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-kanpur-uttar-pradesh-lucknow-uttar-pradesh-meerut-uttar-pradesh-3-to-8-years-101023010712",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Meerut,Uttar Pradesh",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-mohali-punjab-chandigarh-chandigarh-panchkula-haryana-3-to-8-years-101023010704",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Panchkula,Haryana",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-gandhinagar-gujarat-surat-gujarat-vadodara-baroda-gujarat-3-to-8-years-101023010683",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Vadodara/ Baroda,Gujarat",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-bhopal-madhya-pradesh-gwalior-madhya-pradesh-indore-madhya-pradesh-3-to-8-years-101023010668",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Indore,Madhya Pradesh",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-mangaluru-mangalore-karnataka-chennai-tamil-nadu-bangalore-bengaluru-karnataka-3-to-8-years-101023010638",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Bangalore/ Bengaluru,Karnataka",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-kochi-cochin-kerala-visakhapatnam-vizag-andhra-pradesh-coimbatore-tamil-nadu-3-to-8-years-101023010594",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Coimbatore,Tamil Nadu",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-panipat-haryana-rewari-haryana-sonipat-sonepat-haryana-3-to-8-years-101023010558",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Sonipat/ Sonepat,Haryana",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-manager-store-keeper-store-supervisor-store-in-charge-the-global-zone-guwahati-assam-bhubaneswar-odisha-kolkata-west-bengal-3-to-8-years-101023010540",
+    "salary": "2.75-7.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities  Managing in Planning  Execution of dayday Operations Ensure clients are properly greeted upon their arrival Ensuring and providing flawless upscale professional and high class guest service experiences Analysing customer feedback and providing strategic direction to continuously improve overall rating Responding to guests needs and anticipating their unstated ones Roaster Planning Weekoff scheduling Contributing to the development of customer satisfaction programs Ensure that the financial procedures such as Cash deposit DSR Daily Sales Report are updated on daily basis Motivate the store staff and ensure the growth of the store staff in terms of Skill and position Continuous communication with the store staff thru store briefing training on the offers and promotions daily sales Customer grievance Ensure that the customer appointments are scheduled accordingly Responsible for the achievement of the store targets Able to handle customer complaints and grievances Ensure the optimum mix of sales through services and membership sales Ensuring that the SOP is adhered at the store  WhatsApp   CV  7303444101 only CV submit Note Chat and Call facility is not available on this number",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+    "company_name": "The Global Zone",
+    "location": "Kolkata,West Bengal",
+    "job_code": "store_manager_store_keeper_store_supervisor_store_in_charge_postdate_2023-10-10",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Store Manager/ Store Keeper/ Store Supervisor/ Store In-charge",
+      "post_code": "store_manager_store_keeper_store_supervisor_store_in_charge",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-mining-industry-loc-kinshasa-dr-congo-exponent-jobs-kinshasa-4-to-9-years-011123007028",
+    "salary": "6-6.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Required Candidate profile",
+    "minimum_age": "",
+    "post_date": "2023-11-01",
+    "post_code": "store_keeper_mining_industry_loc_kinshasa_dr_congo",
+    "company_name": "Exponent Jobs",
+    "location": "Kinshasa",
+    "job_code": "store_keeper_mining_industry_loc_kinshasa_dr_congo_postdate_2023-11-01",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 5,
+      "post_name": "Store Keeper (Mining Industry): Loc- Kinshasa DR Congo",
+      "post_code": "store_keeper_mining_industry_loc_kinshasa_dr_congo",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-openings-in-dubai-uae-gulf-thugil-technologies-chennai-dubai-uae-1-to-5-years-011123004191",
+    "salary": "3-4 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Required Candidate profile Perks and benefits",
+    "minimum_age": "",
+    "post_date": "2023-11-01",
+    "post_code": "store_keeper_job_openings_in_dubai_uae_gulf",
+    "company_name": "Thugil Technologies",
+    "location": "UAE",
+    "job_code": "store_keeper_job_openings_in_dubai_uae_gulf_postdate_2023-11-01",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 6,
+      "post_name": "Store Keeper Job Openings in Dubai | UAE | Gulf",
+      "post_code": "store_keeper_job_openings_in_dubai_uae_gulf",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-pallikaranai-leading-restaurant-sanvi-business-solutions-chennai-tamil-nadu-3-to-5-years-261023004388",
+    "salary": "2-2.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Required Candidate profile",
+    "minimum_age": "",
+    "post_date": "2023-10-30",
+    "post_code": "store_keeper_pallikaranai_leading_restaurant",
+    "company_name": "Sanvi Business Solutions",
+    "location": "Chennai,Tamil Nadu( Pallikaranai )",
+    "job_code": "store_keeper_pallikaranai_leading_restaurant_postdate_2023-10-30",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 7,
+      "post_name": "Store Keeper - Pallikaranai - Leading Restaurant",
+      "post_code": "store_keeper_pallikaranai_leading_restaurant",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-ghd-infra-panaji-panjim-0-to-1-years-220623500962",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "store_keeper",
+    "company_name": "GHD Infra",
+    "location": "Panaji/Panjim",
+    "job_code": "store_keeper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-dc-consultants-mumbai-navi-mumbai-0-to-4-years-270422500105",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "We have an urgent opening for the position of    Store Keeper    for a reputed company for their Taloja branch     Job Profile       Candidate s Profile",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "store_keeper",
+    "company_name": "DC Consultants",
+    "location": "Navi Mumbai",
+    "job_code": "store_keeper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-dc-consultants-bhiwandi-0-to-3-years-270422500104",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "We have an urgent opening for the position of    Store Keeper    for a reputed company Importers of Office Furniture for their Bhiwandi branch     Candidate s Profile       Job Profile",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "store_keeper",
+    "company_name": "DC Consultants",
+    "location": "Bhiwandi",
+    "job_code": "store_keeper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-sharman-udyog-pvt-ltd-sonipat-0-to-2-years-201120501188",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Material recording clerks keep track of information in order to keep businesses and supply chains on schedule They ensure proper scheduling recordkeeping and inventory control        Skills",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "store_keeper",
+    "company_name": "Sharman Udyog",
+    "location": "Sonipat",
+    "job_code": "store_keeper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-sharman-udyog-pvt-ltd-sonipat-sonepat-0-to-2-years-020322501088",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Material recording clerks keep track of information in order to keep businesses and supply chains on schedule They ensure proper scheduling recordkeeping and inventory control",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "store_keeper",
+    "company_name": "Sharman Udyog",
+    "location": "Sonipat/Sonepat",
+    "job_code": "store_keeper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-needion-solutions-chennai-tamil-nadu-0-to-1-years-101023008922",
+    "salary": "50,000-1 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Company Name  THE BROWNIE STUDIO Company Details   A Bakery which supplies Cakes around Chennai We are in Industry for 5 Years We are 47 rated for all our stores with 3000 reviews for our main branch We are also a growing company which respects talented people and promises a good growth for good performing candidates We have 3 Stores main manufacturing unit is in Shenoy Nagar 1 Besant Nagar 2 NH45  3 Kosmo One Ambattur 4 Direct Delivery also happens from Shenoy Nagar  5 Valasaravaakkam 6 Adambakkam 7 Mannady the work load will be high if you want to relax pls dont apply Submission of Original document is must Its only for your to serve the notice period Well be 100 times more careful about your proof Contact person Shalini Reference Gayathri Address The brownie studio  77 Pillaiyar koil street  Shenoy Nagar Chennai 600030",
+    "minimum_age": "",
+    "post_date": "2023-10-10",
+    "post_code": "store_keeper",
+    "company_name": "Needion Solutions",
+    "location": "Chennai,Tamil Nadu( Egattur, Aminjikarai, Madhavaram )",
+    "job_code": "store_keeper_postdate_2023-10-10",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Diploma in Any Specialization, Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-pipecare-group-noida-greater-noida-3-to-6-years-010923501011",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "The Store Keeper is responsible for maintaining the store in proper order to ensure that company requirements are available at all times                      Key Responsibilities  Authorities                        General responsibilities                        Competency Requirements                                                    SkillsExperience",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "store_keeper",
+    "company_name": "Pipecare Group",
+    "location": "Greater Noida",
+    "job_code": "store_keeper_postdate_2023-11-04",
+    "possible_degree": "UG: Diploma in Any Specialization, Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Diploma in Any Specialization, Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: B.Com in CommercePG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-store-keepers-amrutha-constructions-private-limited-kolkata-mumbai-new-delhi-hyderabad-secunderabad-pune-chennai-bangalore-bengaluru-1-to-5-years-200519500011",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "store_keepers",
+    "company_name": "Amrutha Constructions",
+    "location": "Bangalore/Bengaluru",
+    "job_code": "store_keepers_postdate_2023-11-04",
+    "possible_degree": "UG: B.Com in CommercePG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: B.Com in CommercePG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 15,
+      "post_name": "Store Keepers",
+      "post_code": "store_keepers",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-kasana-builders-pvt-ltd-noida-2-to-5-years-110319500199",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "store_keeper",
+    "company_name": "Kasana Builders",
+    "location": "Noida",
+    "job_code": "store_keeper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-malabar-gold-and-diamonds-trivandrum-thiruvananthapuram-2-to-3-years-220622500463",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "store_keeper",
+    "company_name": "Malabar Group",
+    "location": "Trivandrum/Thiruvananthapuram",
+    "job_code": "store_keeper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-store-keeper-sandu-developers-private-limited-mumbai-all-areas-2-to-7-years-201023005189",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-10-20",
+    "post_code": "store_keeper",
+    "company_name": "Sandu Developers",
+    "location": "Mumbai (All Areas)( Chembur )",
+    "job_code": "store_keeper_postdate_2023-10-20",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Store Keeper",
+      "post_code": "store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-material-manager-store-keeper-mycitypune-pune-4-to-8-years-080819502070",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "material_manager_store_keeper",
+    "company_name": "Mycitypune",
+    "location": "Pune",
+    "job_code": "material_manager_store_keeper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 19,
+      "post_name": "Material Manager/Store Keeper",
+      "post_code": "material_manager_store_keeper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "store_keeper",
+        "name": "Store Keeper",
+        "minimum_skills_required": "clerk",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a stoker Keeper",
+            "url": "https://www.youtube.com/shorts/AzP4_KWS-tc"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a Store Keeper",
+            "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-hiring-4-cook-2-helpers-for-cafe-at-noida-extension-daily-chai-cafe-noida-ghaziabad-uttar-pradesh-greater-noida-0-to-3-years-221023002012",
+    "salary": "1-4 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Youstrong is Urgently Hiring  for Client  Cafe  4  Experienced Cook and  2 helpers For Cafe at Noida Extension Roles    Desired Candidate Profile   Trainee chef cooking chef fresher can also work  Perks and Benefits   Best as per industry    cafe jobs jobsearch cafemanager hospitality chef  hotelmanagement instagood chefjob cleanerjob  jobseeker  food restaurantjob restaurants hospoapp restauarant hospitalityjob  hospitalityjobs CloudKitchen  NoidaExtention",
+    "minimum_age": "",
+    "post_date": "2023-10-22",
+    "post_code": "hiring_4_cook_2_helpers_for_cafe_at_noida_extension_",
+    "company_name": "Daily Chai Cafe",
+    "location": "Greater Noida",
+    "job_code": "hiring_4_cook_2_helpers_for_cafe_at_noida_extension__postdate_2023-10-22",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 0,
+      "post_name": "Hiring 4 Cook& 2 helpers For Cafe at Noida Extension.",
+      "post_code": "hiring_4_cook_2_helpers_for_cafe_at_noida_extension_",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-helpers-gachibowli-hyderabad-olx-people-hyderabad-secunderabad-telangana-0-to-2-years-290923004059",
+    "salary": "1.25-1.75 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "The biggest departmental store is looking for a Helpers  Picking and Packing Loading and Unloaders Job Location Gachibowli Salary Net Take Home Upto 13000 Age Below 28 Shifts Rotational Shifts Week offs Rotational Week offs Qualification 10th  Documents Aadhaar Name and 10th Certificate must be same  Pan Card  Bank  Photo Interested candidates call on  93727 18914 or WhatsApp",
+    "minimum_age": "",
+    "post_date": "2023-10-26",
+    "post_code": "helpers_gachibowli_hyderabad_",
+    "company_name": "Olx People",
+    "location": "Hyderabad/ Secunderabad,Telangana( Gachibowli )",
+    "job_code": "helpers_gachibowli_hyderabad__postdate_2023-10-26",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 1,
+      "post_name": "Helpers - Gachibowli (Hyderabad)",
+      "post_code": "helpers_gachibowli_hyderabad_",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Diploma in Any Specialization",
+    "job_link": "https://www.naukri.com/job-listings-mep-helper-maldives-swagatham-resource-management-india-maldives-0-to-3-years-291023001863",
+    "salary": "3.5-4 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Designation   MEP Helper Salary  USD 300  OT Rps25024 Fresher also ok Required Candidate profile 1 Resume 2 Original Passport 3 Passport Size Photo2 4 Educational document copy 5 Self introduction videos Perks and benefits Free Transport  Free food Accommodation  Interested visit our office  Swagatham Resource Management India Pvt Ltd No 14 Sarathy Nagar 1st main road Velachery Chennai  600 042 Time  9am  All working days   Contact HR  Swetha 7305457998Sowmiya 7845228682    Feel free to call  whatsapp us for any clarification 9am to 6pm only",
+    "minimum_age": "",
+    "post_date": "2023-10-29",
+    "post_code": "mep_helper_maldives",
+    "company_name": "Swagatham Resource Management India",
+    "location": "Maldives",
+    "job_code": "mep_helper_maldives_postdate_2023-10-29",
+    "possible_degree": "UG: Diploma in Any Specialization",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Diploma in Any Specialization",
+    "posts_data": {
+      "post_id": 2,
+      "post_name": "MEP Helper- Maldives",
+      "post_code": "mep_helper_maldives",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any PostgraduateDoctorate: Doctorate Not Required",
+    "job_link": "https://www.naukri.com/job-listings-industrial-helper-srak-prestek-hyderabad-secunderabad-0-to-1-years-271023908276",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Industrial Helper 2 Sheet Metal Fitter 3 Welder 4Stamping machine operator The candidate WelderFitter should have experience in sheet metal fabrication Fitter should be able to understand mechanical drawings Helper should be determined to work hard Power press operator works on Pnematic Power press Machines",
+    "minimum_age": "",
+    "post_date": "2023-10-27",
+    "post_code": "industrial_helper",
+    "company_name": "Srak Prestek",
+    "location": "Hyderabad/Secunderabad",
+    "job_code": "industrial_helper_postdate_2023-10-27",
+    "possible_degree": "UG: Any GraduatePG: Any PostgraduateDoctorate: Doctorate Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any PostgraduateDoctorate: Doctorate Not Required",
+    "posts_data": {
+      "post_id": 3,
+      "post_name": "Industrial Helper",
+      "post_code": "industrial_helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-supermarket-helper-openings-in-dubai-uae-thugil-technologies-chennai-dubai-uae-0-to-5-years-011123004256",
+    "salary": "2.5-4 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Required Candidate profile Perks and benefits",
+    "minimum_age": "",
+    "post_date": "2023-11-01",
+    "post_code": "supermarket_helper_job_openings_in_dubai_uae",
+    "company_name": "Thugil Technologies",
+    "location": "UAE",
+    "job_code": "supermarket_helper_job_openings_in_dubai_uae_postdate_2023-11-01",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Supermarket Helper Job Openings in Dubai | UAE",
+      "post_code": "supermarket_helper_job_openings_in_dubai_uae",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-ot-helper-educohire-new-delhi-0-to-2-years-181023501955",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-10-18",
+    "post_code": "ot_helper",
+    "company_name": "Educohire",
+    "location": "New Delhi",
+    "job_code": "ot_helper_postdate_2023-10-18",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 5,
+      "post_name": "OT Helper",
+      "post_code": "ot_helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Diploma in Civil, Mechanical, Electrical, Electronics/Telecommunication, Engineering",
+    "job_link": "https://www.naukri.com/job-listings-iti-electrician-diploma-electricals-and-10th-helper-required-in-assam-teamlease-services-limited-tinsukia-assam-nagaon-assam-barpeta-assam-0-to-5-years-091023003048",
+    "salary": "1.75-2.75 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Free Job in Assam Locations NagaonTinsukiaKalapahar Garbhanga Barpeta Road Jagiroad Morigaon Chandmari Company IntelliSmart Electric Meter Profiles Technician ITI ElectricianDiploma Electrical Helpers 10th Pass Work Smart Electric Meter Installation Area Servay Wiring Meter Fittingetc Fresher or 1 Year Experience required in Electrician Salary 12500rs to 19200rs in Hand PF ESI Insurance Bike Must CallWhatsApp 9999391397 Raju Chaudhary Free Job no any charges Share this Message with your friends",
+    "minimum_age": "",
+    "post_date": "2023-10-09",
+    "post_code": "iti_electrician_diploma_electricals_and_10th_helper_required_in_assam",
+    "company_name": "Teamlease Services Limited",
+    "location": "Barpeta,Assam",
+    "job_code": "iti_electrician_diploma_electricals_and_10th_helper_required_in_assam_postdate_2023-10-09",
+    "possible_degree": "UG: Diploma in Civil, Mechanical, Electrical, Electronics/Telecommunication, Engineering",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Diploma in Civil, Mechanical, Electrical, Electronics/Telecommunication, Engineering",
+    "posts_data": {
+      "post_id": 6,
+      "post_name": "ITI Electrician/Diploma Electricals and 10th Helper Required in Assam",
+      "post_code": "iti_electrician_diploma_electricals_and_10th_helper_required_in_assam",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-helper-mangatrai-jewellers-hyderabad-secunderabad-telangana-0-to-2-years-181023010776",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "The renowned jewellery store is looking for a Helper picking  packing billingsupport  Job Location Punjagutta Salary Net Take Home Upto 14000 Age Below 28 Week offs Rotational one Week off Qualification 10th Documents Aadhaar Name Pan Card  Bank  Photo Prerequisites Roles  Responsibilities",
+    "minimum_age": "",
+    "post_date": "2023-10-18",
+    "post_code": "helper",
+    "company_name": "Mangatrai Jewellers",
+    "location": "Hyderabad/ Secunderabad,Telangana( Punjagutta )",
+    "job_code": "helper_postdate_2023-10-18",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 13,
+      "post_name": "Helper",
+      "post_code": "helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-kictchen-helper-swagatham-resource-management-india-maldives-1-to-3-years-291023001301",
+    "salary": "3.5-4 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Kitchen Helper Salary  350USD  OT Rs29000OT No of vacancy  10 Food Accommodation  transportation medical provided by the company Work location  Maldives Employment visa Age limit below 38 years   Roles and Responsibilities Interested visit our office with original passport and refer your know persons also Interview address  Swagatham Resource Management India Pvt Ltd No 14 Sarathy Nagar 1st main road Velachery Chennai  600 042 Interview date  9am to 5pm  All working days  Contact Swetha  Sowmiya  7845228682  Swetha  7305457998   Call time 9 am to 6pm Monday to Saturday",
+    "minimum_age": "",
+    "post_date": "2023-10-29",
+    "post_code": "kictchen_helper",
+    "company_name": "Swagatham Resource Management India",
+    "location": "Maldives",
+    "job_code": "kictchen_helper_postdate_2023-10-29",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 8,
+      "post_name": "Kictchen Helper",
+      "post_code": "kictchen_helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-helper-radcorps-fire-amp-amp-safety-pvt-ltd-mumbai-0-to-3-years-211222500190",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "helper",
+    "company_name": "Radcorps Fire ampamp Safety Pvt Ltd",
+    "location": "Mumbai",
+    "job_code": "helper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 13,
+      "post_name": "Helper",
+      "post_code": "helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-helper-mk-co-new-delhi-delhi-1-to-2-years-211023006064",
+    "salary": "1.5-2 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Required Candidate profile",
+    "minimum_age": "",
+    "post_date": "2023-10-21",
+    "post_code": "helper",
+    "company_name": "MK  Co",
+    "location": "New Delhi,Delhi( Gandhi Nagar )",
+    "job_code": "helper_postdate_2023-10-21",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 13,
+      "post_name": "Helper",
+      "post_code": "helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-helper-operator-d-source-nashik-0-to-1-years-261120500140",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Responsibilities    Skills",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "helper_operator",
+    "company_name": "Dsource",
+    "location": "nashik",
+    "job_code": "helper_operator_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 11,
+      "post_name": "Helper & Operator",
+      "post_code": "helper_operator",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-helper-iducc-project-st-johns-research-institute-bangalore-bengaluru-0-to-2-years-241121501643",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "IDU lab has many projects running simultaneously the helper would be involved in assisting in the new activities of these projects                 Key Skills                 Ability to understand basic instructions given by the PIs Supervisors technologists and Secretary A good attitude and willingness to work cooperative nature to run the errands in the lab                 Core Responsibilities                                    Specific Activities",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "helper_iducc_project",
+    "company_name": "St Johns Research Institute",
+    "location": "Bangalore/Bengaluru",
+    "job_code": "helper_iducc_project_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 12,
+      "post_name": "Helper - IDUCC Project",
+      "post_code": "helper_iducc_project",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-helper-d-source-nashik-0-to-2-years-241020500192",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Responsibilities    Skills    Academic Skills",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "helper",
+    "company_name": "D Source",
+    "location": "nashik",
+    "job_code": "helper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 13,
+      "post_name": "Helper",
+      "post_code": "helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-office-boy-helper-office-assistant-mark-creations-pimpri-chinchwad-maharashtra-0-to-1-years-041023008272",
+    "salary": "90,000-1 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "office_boy_helper_office_assistant",
+    "company_name": "Mark Creations",
+    "location": "Pimpri-Chinchwad,Maharashtra",
+    "job_code": "office_boy_helper_office_assistant_postdate_2023-11-04",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 14,
+      "post_name": "Office Boy/Helper/Office Assistant",
+      "post_code": "office_boy_helper_office_assistant",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-female-office-peon-helper-experteye-consulting-noida-ghaziabad-new-delhi-0-to-4-years-220423003272",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Required Candidate profile",
+    "minimum_age": "",
+    "post_date": "2023-11-01",
+    "post_code": "female_office_peon_helper",
+    "company_name": "Experteye Consulting",
+    "location": "New Delhi",
+    "job_code": "female_office_peon_helper_postdate_2023-11-01",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 15,
+      "post_name": "Female Office Peon / Helper",
+      "post_code": "female_office_peon_helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-skilled-helper-for-dubai-excel-placement-services-dubai-1-to-5-years-271023008677",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-10-27",
+    "post_code": "skilled_helper_for_dubai",
+    "company_name": "Excel Placement Services",
+    "location": "Dubai",
+    "job_code": "skilled_helper_for_dubai_postdate_2023-10-27",
+    "possible_degree": "UG: Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not Required",
+    "posts_data": {
+      "post_id": 16,
+      "post_name": "Skilled Helper For Dubai",
+      "post_code": "skilled_helper_for_dubai",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Diploma in Mechanical, B.Tech/B.E. in Mechanical",
+    "job_link": "https://www.naukri.com/job-listings-mep-helper-openings-in-uae-dubai-thugil-technologies-chennai-tamil-nadu-dubai-uae-0-to-3-years-091023005653",
+    "salary": "3.5-4.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Required Candidate profile Perks and benefits",
+    "minimum_age": "",
+    "post_date": "2023-10-09",
+    "post_code": "mep_helper_job_openings_in_uae_dubai",
+    "company_name": "Thugil Technologies",
+    "location": "UAE",
+    "job_code": "mep_helper_job_openings_in_uae_dubai_postdate_2023-10-09",
+    "possible_degree": "UG: Diploma in Mechanical, B.Tech/B.E. in Mechanical",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Diploma in Mechanical, B.Tech/B.E. in Mechanical",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "MEP Helper Job Openings in UAE | Dubai",
+      "post_code": "mep_helper_job_openings_in_uae_dubai",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: B.Tech/B.E. in Mechanical, Diploma in Mechanical",
+    "job_link": "https://www.naukri.com/job-listings-mep-helper-openings-in-uae-dubai-thugil-technologies-chennai-tamil-nadu-dubai-uae-0-to-3-years-071023006295",
+    "salary": "4-5.5 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Required Candidate profile Perks and benefits",
+    "minimum_age": "",
+    "post_date": "2023-10-07",
+    "post_code": "mep_helper_job_openings_in_uae_dubai",
+    "company_name": "Thugil Technologies",
+    "location": "UAE",
+    "job_code": "mep_helper_job_openings_in_uae_dubai_postdate_2023-10-07",
+    "possible_degree": "UG: B.Tech/B.E. in Mechanical, Diploma in Mechanical",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: B.Tech/B.E. in Mechanical, Diploma in Mechanical",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "MEP Helper Job Openings in UAE | Dubai",
+      "post_code": "mep_helper_job_openings_in_uae_dubai",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-front-office-executive-marriott-new-delhi-0-to-2-years-171023500069",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Process all guest checkins verifying guest identity form of payment assigning room and activatingissuing room key",
+    "minimum_age": "",
+    "post_date": "2023-10-17",
+    "post_code": "front_office_executive",
+    "company_name": "Marriott",
+    "location": "New Delhi",
+    "job_code": "front_office_executive_postdate_2023-10-17",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Front Office Executive",
+      "post_code": "front_office_executive",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Diploma in MechanicalPG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-fitters-turners-machinists-and-helpers-techno-electronics-limited-coimbatore-1-to-5-years-310119502133",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "fitters_turners_machinists_and_helpers",
+    "company_name": "Techno Electronics",
+    "location": "Coimbatore",
+    "job_code": "fitters_turners_machinists_and_helpers_postdate_2023-11-04",
+    "possible_degree": "UG: Diploma in MechanicalPG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Diploma in MechanicalPG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 0,
+      "post_name": "Fitters,Turners,Machinists and Helpers",
+      "post_code": "fitters_turners_machinists_and_helpers",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-office-asst-helper-d-source-nashik-0-to-2-years-101220500197",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Responsibilities       Skills",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "office_asst_helper",
+    "company_name": "Dsource",
+    "location": "nashik",
+    "job_code": "office_asst_helper_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 1,
+      "post_name": "Office Asst / Helper",
+      "post_code": "office_asst_helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-fresher-banking-back-office-executive-mis-executive-ungently-hiring-next-business-services-india-noida-uttar-pradesh-ghaziabad-uttar-pradesh-dehradun-uttarakhand-haldwani-uttarakhand-gurgaon-gurugram-haryana-delhi-0-to-4-years-110623000888",
+    "salary": "2.25-3.75 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-10-27",
+    "post_code": "fresher_banking_back_office_executive_mis_executive_ungently_hiring",
+    "company_name": "Next Business Services India",
+    "location": "Delhi / NCR",
+    "job_code": "fresher_banking_back_office_executive_mis_executive_ungently_hiring_postdate_2023-10-27",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 2,
+      "post_name": "Fresher/Banking/Back Office Executive/Mis Executive Ungently Hiring",
+      "post_code": "fresher_banking_back_office_executive_mis_executive_ungently_hiring",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-hiring-freshers-international-voice-work-from-office-night-shift-ntt-data-information-processing-services-noida-uttar-pradesh-0-to-5-years-111023010447",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Dear Candidates Greeting from NTT DATA We are happy to take your profile for a wonderful career with NTT DATA Job Title   Customer Care  Voice Experience 05 years Shift   US Shift Night Shift Work Location   Noida sector 144 Mode of Interview   Online Video Call Interview Virtual Interview Mode of Work   Work from Office Positions General Duties and Tasks In these roles you will be responsible for Requirements for this role include Regards Sejal Agarwal  Talent Acquisition",
+    "minimum_age": "",
+    "post_date": "2023-10-27",
+    "post_code": "hiring_freshers_international_voice_work_from_office_night_shift",
+    "company_name": "NTT DATA INFORMATION PROCESSING SERVICES",
+    "location": "Noida,Uttar Pradesh",
+    "job_code": "hiring_freshers_international_voice_work_from_office_night_shift_postdate_2023-10-27",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 3,
+      "post_name": "Hiring - Freshers -International Voice - Work From Office- Night Shift",
+      "post_code": "hiring_freshers_international_voice_work_from_office_night_shift",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-helper-male-only-d-source-nashik-3-to-5-years-211120500204",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Responsibilities       Skills",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "helper_male_only_",
+    "company_name": "Dsource",
+    "location": "nashik",
+    "job_code": "helper_male_only__postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 4,
+      "post_name": "Helper ( Male Only )",
+      "post_code": "helper_male_only_",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Diploma in Any SpecializationPG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-jr-ac-technician-helper-mycitypune-pune-3-to-7-years-080819502798",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "jr_ac_technician_helper",
+    "company_name": "Mycitypune",
+    "location": "Pune",
+    "job_code": "jr_ac_technician_helper_postdate_2023-11-04",
+    "possible_degree": "UG: Diploma in Any SpecializationPG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Diploma in Any SpecializationPG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 5,
+      "post_name": "Jr.AC Technician/Helper",
+      "post_code": "jr_ac_technician_helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-front-office-executive-receptionist-assistant-arch-concept-gurgaon-gurugram-0-to-5-years-210922004758",
+    "salary": "2-4 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Roles and Responsibilities",
+    "minimum_age": "",
+    "post_date": "2023-10-11",
+    "post_code": "front_office_executive_receptionist_cum_assistant",
+    "company_name": "Arch Concept",
+    "location": "Gurgaon/Gurugram",
+    "job_code": "front_office_executive_receptionist_cum_assistant_postdate_2023-10-11",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 6,
+      "post_name": "Front Office Executive / Receptionist cum Assistant",
+      "post_code": "front_office_executive_receptionist_cum_assistant",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Graduation Not RequiredPG: Post Graduation Not RequiredDoctorate: Doctorate Not Required",
+    "job_link": "https://www.naukri.com/job-listings-helper-theoriat-services-pune-1-to-3-years-061023905722",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Key Responsibilities Assistance with Loading and Unloading Help in the loading and unloading of goods and materials from trucks and containers Inventory Management Assist in counting and checking inventory to ensure accuracy and proper organization Material Handling Safely and efficiently move materials and products within the warehouse using appropriate equipment and tools Packaging and Labeling Assist in packaging and labeling products for shipment or storage Cleaning and Maintenance Maintain a clean and organized warehouse by sweeping mopping and performing general cleaning duties Supporting Team Members Collaborate with warehouse staff and team members to complete tasks and meet daily operational goals Education 7th to 10 Pass Hardworking Active Warehouse hepler Helper",
+    "minimum_age": "",
+    "post_date": "2023-10-06",
+    "post_code": "helper",
+    "company_name": "Theoriat Services",
+    "location": "Pune",
+    "job_code": "helper_postdate_2023-10-06",
+    "possible_degree": "UG: Graduation Not RequiredPG: Post Graduation Not RequiredDoctorate: Doctorate Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Graduation Not RequiredPG: Post Graduation Not RequiredDoctorate: Doctorate Not Required",
+    "posts_data": {
+      "post_id": 13,
+      "post_name": "Helper",
+      "post_code": "helper",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Diploma in Any SpecializationPG: CA in Second AttemptDoctorate: Doctorate Not Required",
+    "job_link": "https://www.naukri.com/job-listings-office-boy-bharatrohan-gurgaon-gurugram-0-to-1-years-271023907540",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "Excellent organizational and time management",
+    "brief_info": "Ensuring the cleanliness and tidiness of the office premises including the kitchen washrooms and other common areas Receiving and distributing incoming mail and packages Serve tea coffee and other refreshments to staff and visitors as required Maintain inventory of office supplies such as stationery pantry items and cleaning products Running errands as required such as purchasing office supplies delivering documents and picking up lunch orders Assisting with basic clerical duties such as photocopying scanning and filing Assisting with the preparation of meeting rooms and ensuring that they are clean and tidy before and after meetings Helping to set up and maintain office equipment and ensuring that it is in good working order Assist in photocopying printing and scanning documents Performing other administrative and office support duties as required Requirements High school diploma or equivalent Prior experience in a similar role would be an advantage Good communication and interpersonal skills Excellent organizational and time management skills Ability to work independently and as part of a team Ability to handle multiple tasks and prioritize effectively Physical ability to lift and move heavy items",
+    "minimum_age": "",
+    "post_date": "2023-10-27",
+    "post_code": "office_boy",
+    "company_name": "Bharatrohan",
+    "location": "Gurgaon/Gurugram",
+    "job_code": "office_boy_postdate_2023-10-27",
+    "possible_degree": "UG: Diploma in Any SpecializationPG: CA in Second AttemptDoctorate: Doctorate Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Diploma in Any SpecializationPG: CA in Second AttemptDoctorate: Doctorate Not Required",
+    "posts_data": {
+      "post_id": 8,
+      "post_name": "Office Boy",
+      "post_code": "office_boy",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Post Graduation Not Required",
+    "job_link": "https://www.naukri.com/job-listings-front-office-executive-sakhi-delhi-ncr-head-office-delhi-0-to-1-years-310118501756",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-04",
+    "post_code": "front_office_executive",
+    "company_name": "Sakhi Recruiters DelhiNCR Head Office",
+    "location": "Delhi",
+    "job_code": "front_office_executive_postdate_2023-11-04",
+    "possible_degree": "UG: Any GraduatePG: Post Graduation Not Required",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Post Graduation Not Required",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Front Office Executive",
+      "post_code": "front_office_executive",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-fresher-hiring-branch-banking-back-office-in-leading-banks-next-business-services-india-noida-kashipur-ghaziabad-dehradun-rudrapur-haldwani-faridabad-gurgaon-gurugram-delhi-ncr-0-to-4-years-150423002892",
+    "salary": "2.25-3.25 Lacs PA",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-03",
+    "post_code": "fresher_hiring_branch_banking_back_office_job_in_leading_banks",
+    "company_name": "Next Business Services India",
+    "location": "Delhi / NCR",
+    "job_code": "fresher_hiring_branch_banking_back_office_job_in_leading_banks_postdate_2023-11-03",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 10,
+      "post_name": "Fresher Hiring Branch Banking ( Back Office ) | Job In Leading Banks",
+      "post_code": "fresher_hiring_branch_banking_back_office_job_in_leading_banks",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-accountant-office-assistant-jingle-infotech-limited-new-delhi-0-to-2-years-031123501392",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "post_date": "2023-11-03",
+    "post_code": "accountant_cum_office_assistant",
+    "company_name": "Jingle Infotech",
+    "location": "New Delhi",
+    "job_code": "accountant_cum_office_assistant_postdate_2023-11-03",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 11,
+      "post_name": "Accountant cum Office Assistant",
+      "post_code": "accountant_cum_office_assistant",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-front-office-executive-graphic-designer-north-delhi-pathology-clinic-new-delhi-delhi-0-to-5-years-311023004077",
+    "salary": "2.5-3.75 Lacs PA",
+    "last_date": "",
+    "skills": "to understand the requirements of patients  Generating accurate laboratory reports on the computer with a good typing speed about 30 wpm Essential Proficiency in English",
+    "brief_info": "Role  responsibilities Graduate with good communication skills to understand the requirements of patients  Generating accurate laboratory reports on the computer with a good typing speed about 30 wpm Essential Proficiency in English",
+    "minimum_age": "",
+    "post_date": "2023-10-31",
+    "post_code": "front_office_executive_cum_graphic_designer",
+    "company_name": "North Delhi Pathology Clinic",
+    "location": "New Delhi,Delhi( Shakti Nagar )",
+    "job_code": "front_office_executive_cum_graphic_designer_postdate_2023-10-31",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 12,
+      "post_name": "Front Office Executive cum Graphic Designer",
+      "post_code": "front_office_executive_cum_graphic_designer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-front-office-executive-marriott-mumbai-0-to-2-years-191023501323",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Process all guest checkins verifying guest identity form of payment assigning room and activatingissuing room key Set up accurate accounts for each guest according to their requirements Enter Marriott Rewards information Ensure rates match market codes document exceptions Secure payment prior to issuing room key verifyadjust billing Compile and review daily reportslogscontingency lists Complete cashier and closing reports Supply guests with directions and property information Accommodate guest requests contacting appropriate staff if necessary    Follow up to ensure requests have been met Process all payment types vouchers paidouts and charges Balance and drop receipts Count and secure bank at beginning and end of shift Obtain manual authorizations and follow all Accounting procedures Notify Loss PreventionSecurity of any guest reports of theft     Assist management in training evaluating counseling motivating and coaching employees serve as a role model and first point of contact of the Guarantee of Fair TreatmentOpen Door Policy process Developmaintain positive working relationships support team to reach common goals listen and respond appropriately to employee concerns    Follow company policies and procedures report accidents injuries and unsafe work conditions to manager complete safety training and certifications ensure personal appearance is clean and professional maintain confidentiality of proprietary information protect company assets    Welcome and acknowledge guests anticipate and address guests service needs assist individuals with disabilities thank guests with genuine appreciation Speak using clear and professional language prepare and review written documents accurately and completely answer telephones using appropriate etiquette Ensure adherence to quality standards Enter and locate information using computersPOS systems Stand sit or walk for an extended period of time",
+    "minimum_age": "",
+    "post_date": "2023-10-19",
+    "post_code": "front_office_executive",
+    "company_name": "Marriott",
+    "location": "Mumbai",
+    "job_code": "front_office_executive_postdate_2023-10-19",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Front Office Executive",
+      "post_code": "front_office_executive",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-front-office-executive-marriott-mumbai-0-to-2-years-161023501610",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Process all guest checkins verifying guest identity form of payment assigning room and activatingissuing room key",
+    "minimum_age": "",
+    "post_date": "2023-10-16",
+    "post_code": "front_office_executive",
+    "company_name": "Marriott",
+    "location": "Mumbai",
+    "job_code": "front_office_executive_postdate_2023-10-16",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Front Office Executive",
+      "post_code": "front_office_executive",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-sodexo-is-hiring-for-front-office-executive-female-sodexo-hyderabad-secunderabad-0-to-5-years-141122010946",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "Excellent communication",
+    "brief_info": "Greetings from Sodexo India We have an immediate opening for  Front Office Executive Female   Hyderabad Role   Description Responsible for coordinating all work requests coming in through email phone or any other form of communication regarding the services provided to the client by Sodexo Key Responsibilities Collaborate with other members of the Sodexo onsite team to dispatch as well as collect the work orders established after receiving a request through mailphonepaper   Collect all closed work orders to close the calls   Produce reports based on the data collected through produced work orders for Sodexho and the Client   Receive and answer all incoming callsmailspapers reporting complaints or work requests   Log in the call through the software which in term generates work orders  Set up reports with all collected data coming from the work orders for the Client as well as for Sodexo for controlling transparency and information purposes  Maintain the helpdesk work area and equipment in a clean and orderly condition following all prescribed regulations  Maintain the confidentiality and security of all data and information relating to the facility  Maintain professional appearance at all times  Qualification    HSCequivalent or Diploma holder or Graduate  Minimum 1 year experience in any facility management company or in a hospitality industry  Excellent knowledge of Word and Excel  Excellent customer service skills  Excellent communication skills  Ability to deal with various types of people  Effective time management skills Gender Female   Interested candidates can forward their resume to SrivallimeghanaGantasodexocom WhatsApp  8688982224",
+    "minimum_age": "",
+    "post_date": "2023-11-02",
+    "post_code": "sodexo_is_hiring_for_front_office_executive_female",
+    "company_name": "Sodexo",
+    "location": "Hyderabad/Secunderabad",
+    "job_code": "sodexo_is_hiring_for_front_office_executive_female_postdate_2023-11-02",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 15,
+      "post_name": "Sodexo is hiring For Front Office Executive - Female",
+      "post_code": "sodexo_is_hiring_for_front_office_executive_female",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-front-office-executive-marriott-hyderabad-secunderabad-0-to-2-years-031123501336",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Process all guest checkins verifying guest identity form of payment assigning room and activatingissuing room key Set up accurate accounts for each guest according to their requirements Enter Marriott Rewards information Ensure rates match market codes document exceptions Secure payment prior to issuing room key verifyadjust billing Compile and review daily reportslogscontingency lists Complete cashier and closing reports Supply guests with directions and property information Accommodate guest requests contacting appropriate staff if necessary    Follow up to ensure requests have been met Process all payment types vouchers paidouts and charges Balance and drop receipts Count and secure bank at beginning and end of shift Obtain manual authorizations and follow all Accounting procedures Notify Loss PreventionSecurity of any guest reports of theft     Assist management in training evaluating counseling motivating and coaching employees serve as a role model and first point of contact of the Guarantee of Fair TreatmentOpen Door Policy process Developmaintain positive working relationships support team to reach common goals listen and respond appropriately to employee concerns    Follow company policies and procedures report accidents injuries and unsafe work conditions to manager complete safety training and certifications ensure personal appearance is clean and professional maintain confidentiality of proprietary information protect company assets    Welcome and acknowledge guests anticipate and address guests service needs assist individuals with disabilities thank guests with genuine appreciation Speak using clear and professional language prepare and review written documents accurately and completely answer telephones using appropriate etiquette Ensure adherence to quality standards Enter and locate information using computersPOS systems Stand sit or walk for an extended period of time",
+    "minimum_age": "",
+    "post_date": "2023-11-03",
+    "post_code": "front_office_executive",
+    "company_name": "Marriott",
+    "location": "Hyderabad/Secunderabad",
+    "job_code": "front_office_executive_postdate_2023-11-03",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Front Office Executive",
+      "post_code": "front_office_executive",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-front-office-executive-marriott-panaji-panjim-0-to-2-years-021123500411",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Assist staff with expediting problem payments eg problems processing credit card",
+    "minimum_age": "",
+    "post_date": "2023-11-02",
+    "post_code": "front_office_executive",
+    "company_name": "Marriott",
+    "location": "Panaji/Panjim",
+    "job_code": "front_office_executive_postdate_2023-11-02",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Front Office Executive",
+      "post_code": "front_office_executive",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
+    "job_link": "https://www.naukri.com/job-listings-front-office-executive-marriott-jaipur-0-to-2-years-021123500082",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Process all guest checkins verifying guest identity form of payment assigning room and activatingissuing room key Set up accurate accounts for each guest according to their requirements Enter Marriott Rewards information Ensure rates match market codes document exceptions Secure payment prior to issuing room key verifyadjust billing    Compile and review daily reportslogscontingency lists Complete cashier and closing reports Supply guests with directions and property information Accommodate guest requests contacting appropriate staff if necessary Follow up to ensure requests have been met Process all payment types vouchers paidouts and charges Balance and drop receipts Count and secure bank at beginning and end of shift Obtain manual authorizations and follow all Accounting procedures Notify Loss PreventionSecurity of any guest reports of theft     Assist management in training evaluating counseling motivating and coaching employees serve as a role model and first point of contact of the Guarantee of Fair TreatmentOpen Door Policy process Developmaintain positive working relationships support team to reach common goals listen and respond appropriately to employee concerns    Follow company policies and procedures report accidents injuries and unsafe work conditions to manager complete safety training and certifications ensure personal appearance is clean and professional maintain confidentiality of proprietary information protect company assets    Welcome and acknowledge guests anticipate and address guests service needs assist individuals with disabilities thank guests with genuine appreciation Speak using clear and professional language prepare and review written documents accurately and completely answer telephones using appropriate etiquette Ensure adherence to quality standards Enter and locate information using computersPOS systems Stand sit or walk for an extended period of time",
+    "minimum_age": "",
+    "post_date": "2023-11-02",
+    "post_code": "front_office_executive",
+    "company_name": "Marriott",
+    "location": "Jaipur",
+    "job_code": "front_office_executive_postdate_2023-11-02",
+    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any GraduatePG: Any Postgraduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Front Office Executive",
+      "post_code": "front_office_executive",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "qualification_eligibility": "UG: Any Graduate",
+    "job_link": "https://www.naukri.com/job-listings-front-office-executive-utsav-yoga-gurgaon-gurugram-haryana-0-to-2-years-011123004896",
+    "salary": "Not disclosed",
+    "last_date": "",
+    "skills": "",
+    "brief_info": "Responsibilities",
+    "minimum_age": "",
+    "post_date": "2023-11-01",
+    "post_code": "front_office_executive",
+    "company_name": "Utsav yoga",
+    "location": "Gurgaon/ Gurugram,Haryana",
+    "job_code": "front_office_executive_postdate_2023-11-01",
+    "possible_degree": "UG: Any Graduate",
+    "maximum_age": "",
+    "recruitment_board": "",
+    "expectation": "UG: Any Graduate",
+    "posts_data": {
+      "post_id": 18,
+      "post_name": "Front Office Executive",
+      "post_code": "front_office_executive",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "helper",
+        "name": "Helper",
+        "minimum_skills_required": "good nature",
+        "minimum_qualifications": [
+          "10"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a helper",
+            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
+          },
+          {
+            "title": "How Much Salary Should You Expect As a helper",
+            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
+          }
+        ]
+      }
+    }
   }
 ];
