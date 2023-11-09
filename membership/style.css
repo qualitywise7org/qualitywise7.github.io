@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* background: linear-gradient(to right, #008380, #00B4DB); */
+    color: #514B64;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rounded-lg{
+    border-radius: 1rem !important;
+}
+.text-small{
+    font-size: 1.2rem;
+}
+.custom-seperator{
+    width: 5rem;
+    height: 6px;
+    border-radius: 1rem;
+}
+.text-uppercase{
+    letter-spacing: 0.2rem;
+}
+ul li{
+    text-align: start;
+}
+.image{
+    text-align: center;
+    width: 150px;
+    height: 150px;
+}
