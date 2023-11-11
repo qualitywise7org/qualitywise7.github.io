@@ -461,3 +461,9 @@ function parseDate(dateString) {
     const day = parseInt(parts[0], 10);
     return new Date(year, month, day);
 }
+
+// JavaScript to trigger the modal and populate form fields
+document.getElementById("openModalButton") .addEventListener("click", async () => {
+    let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+    myModal.show();
+});
