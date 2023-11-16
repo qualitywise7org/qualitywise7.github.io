@@ -37,13 +37,13 @@
 }
 /* .language{
     position: relative;
-    
+    width: 160px !important;
     margin-left: 8px;
     padding: 8px;
 
 } */
 .gtranslate_wrapper {
     position: absolute;
-    top: 60px; /* Adjust this value to set the top position */
-    right: 10px; /* Adjust this value to set the right position */
+    top: 60px; 
+    right: 10px;    
 }
