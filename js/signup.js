@@ -53,16 +53,16 @@ signupForm.addEventListener("submit", async (e) => {
     }
 });
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        if (user.emailVerified) {
-            window.location.href = "/myaccount/";
-        } else {
-            alert("Please verify your email!");
-        }
-    } else {
-    }
-});
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//         if (user.emailVerified) {
+//             window.location.href = "/myaccount/";
+//         } else {
+//             alert("Please verify your email!");
+//         }
+//     } else {
+//     }
+// });
 
 async function signUpUser(username, email, password) {
     const userCredential = await createUserWithEmailAndPassword(

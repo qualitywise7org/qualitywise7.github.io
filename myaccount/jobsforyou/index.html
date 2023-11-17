@@ -2,9 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Jobs for you</title>
+        <title>My Account</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" />
+        <meta
+            name="description"
+            content="Unlock remarkable opportunities with JobsDoor360's seamless resume upload. Elevate your career journey by submitting your comprehensive CV, and stay ahead as we expand to accommodate additional details. Join us on the path to success with streamlined job applications and personalized career development."
+        />
         <link rel="stylesheet" href="../../css/style.css" />
         <link rel="stylesheet" href="css/jobsforyou.css" />
         <link
@@ -17,9 +20,6 @@
             src="https://kit.fontawesome.com/f6b356be29.js"
             crossorigin="anonymous"
         ></script>
-        <!-- Bootstrap 5 JS (Popper.js and Bootstrap JS) -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
         <!-- Google tag (gtag.js) -->
         <script
             async
@@ -133,316 +133,332 @@
                                 >Contact us</a
                             >
                         </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="/login"
+                                >Login</a
+                            >
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Jobs for User Section -->
+    <!-- Jobs for User Section -->
 
-        <section>
-            <a
-                href="#"
-                class="menu-btn btn btn-secondary"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#optionsOffcanvas"
-                >My Account</a
-            >
+    <section>
+        <a
+            href="#"
+            class="menu-btn btn btn-secondary"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#optionsOffcanvas"
+            >My Account</a
+        >
+        <!-- <span id="username">
+        </span> -->
 
-            <div class="container mt-3 mr-4 ml-4">
-                <button
-                    id="openModalButton"
-                    class="btn btn-primary mt-3"
-                >Change Qualification</button>
+        <div class="container mt-3 mr-4 ml-4">
+            <button
+                id="openModalButton"
+                class="btn btn-primary mt-3"
+            >Change Qualification</button>
 
-                <div class="row justify-content-center">
-                    <div class="col job-head">
-                        <h2 class="jobs-header text-center">Jobs for You</h2>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <!-- <label for="qualificationFilter"
-                            >Filter by Qualification:</label
-                        > -->
-                        <!-- <select
-                            id="qualificationFilter"
-                            class="form-control"
-                            style="width: 150px"
-                        > -->
-                        <!-- Options will be dynamically added using JavaScript -->
-                        <!-- </select>  -->
-                    </div>
-                </div>
-                <div id="loading" class="loading">getting jobs for you...</div>
-                <div class="row">
-                    <div class="col">
-                        <div id="results" class="result-field"></div>
-                    </div>
+            <div class="row justify-content-center">
+                <div class="col job-head">
+                    <h2 class="jobs-header text-center">Jobs for You</h2>
                 </div>
             </div>
-
-            <!-- Offcanvas -->
-            <div
-                class="offcanvas offcanvas-start"
-                tabindex="-1"
-                id="optionsOffcanvas"
-            >
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title">My Account</h5>
-                    <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="offcanvas"
-                        aria-label="Close"
-                    ></button>
-                </div>
-                <div class="offcanvas-body">
-                    <a href="/myaccount/" class="btn btn-secondary d-block mb-3"
-                        >User Details</a
-                    >
-                    <a href="jobsforyou/" class="btn btn-secondary d-block mb-3"
-                        >Jobs for you</a
-                    >
-                    <a
-                        href="/careeroptions/profileanalyzer/"
-                        target="_blank"
-                        class="btn btn-secondary d-block mb-3"
-                        >Profile Analyzer</a
-                    >
-                    <a id="logout-btn" class="btn btn-danger d-block">Logout</a>
+            <div class="row mb-3">
+                <div class="col">
+                    <!-- <label for="qualificationFilter"
+                        >Filter by Qualification:</label
+                    > -->
+                    <!-- <select
+                        id="qualificationFilter"
+                        class="form-control"
+                        style="width: 150px"
+                    > -->
+                    <!-- Options will be dynamically added using JavaScript -->
+                    <!-- </select>  -->
                 </div>
             </div>
-        </section>
-        <!-- Footer -->
-
-        <!-- Modal structure -->
-        <div class="modal fade"id="myModal"tabindex="-1"aria-labelledby="exampleModalLabel"aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                            Education Details
-                        </h5>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <!-- 12th -->
-                            <div class="mb-3">
-                                <h3>12th*</h3>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label
-                                            for="twelfthSubject"
-                                            class="form-label"
-                                            >Subject</label
-                                        >
-                                        <select
-                                            class="form-select"
-                                            id="twelfthSubject"
-                                        ></select>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label
-                                            for="twelfthPercentage"
-                                            class="form-label"
-                                            >Percentage</label
-                                        >
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            id="twelfthPercentage"
-                                            placeholder="e.g. 70%"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Diploma -->
-                            <div class="mb-3">
-                                <h3>Diploma</h3>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label
-                                            for="diplomaStream"
-                                            class="form-label"
-                                            >Stream</label
-                                        >
-                                        <select
-                                            class="form-select"
-                                            id="diplomaStream"
-                                        ></select>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label
-                                            for="diplomaName"
-                                            class="form-label"
-                                            >Diploma Name</label
-                                        >
-                                        <select
-                                            class="form-select"
-                                            id="diplomaName"
-                                        ></select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Graduation -->
-                            <div class="mb-3">
-                                <h3>Graduation</h3>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label
-                                            for="graduationStream"
-                                            class="form-label"
-                                            >Stream</label
-                                        >
-                                        <select
-                                            class="form-select"
-                                            id="graduationStream"
-                                        ></select>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label
-                                            for="graduationDegree"
-                                            class="form-label"
-                                            >Degree</label
-                                        >
-                                        <select
-                                            class="form-select"
-                                            id="graduationDegree"
-                                        ></select>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label
-                                            for="graduationPercentage"
-                                            class="form-label"
-                                            >Percentage</label
-                                        >
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            id="graduationPercentage"
-                                            placeholder="e.g. 80%"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Post Graduation -->
-                            <div class="mb-3">
-                                <h3>Post Graduation</h3>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label
-                                            for="pgStream"
-                                            class="form-label"
-                                            >Stream</label
-                                        >
-                                        <select
-                                            class="form-select"
-                                            id="pgStream"
-                                        ></select>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label
-                                            for="pgDegree"
-                                            class="form-label"
-                                            >Degree</label
-                                        >
-                                        <select
-                                            class="form-select"
-                                            id="pgDegree"
-                                        ></select>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label
-                                            for="pgPercentage"
-                                            class="form-label"
-                                            >Percentage</label
-                                        >
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            id="pgPercentage"
-                                            placeholder="e.g. 75%"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Additional Information  -->
-                            <div class="mb-3">
-                                <h3>Additional Information</h3>
-
-                                <!-- Category -->
-                                <div class="mb-3">
-                                    <label
-                                        for="categories"
-                                        class="form-label"
-                                        >Category</label
-                                    >
-                                    <select
-                                        class="form-select"
-                                        id="categories"
-                                    ></select>
-                                </div>
-
-                                <!-- Date of Birth -->
-                                <div class="mb-3">
-                                    <label for="user-dob" class="form-label"
-                                        >Date of Birth</label
-                                    >
-                                    <input
-                                        type="date"
-                                        class="form-control"
-                                        id="user-dob"
-                                    />
-                                </div>
-                            </div>
-
-                            <!-- Upload Your Resume Section -->
-                            <!-- <div class="user-details">
-                                <h1>Upload Your Resume</h1>
-                                <input
-                                    type="file"
-                                    id="resumeInput"
-                                    accept=".pdf"
-                                />
-                                <label for="resumeInput" id="fileLabel"
-                                    >Choose File</label
-                                >
-                                <div id="selectedFile"></div>
-                            </div> -->
-                        </form>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                        >
-                            Close
-                        </button>
-                        <button
-                            type="submit"
-                            id="saveDetails"
-                            class="btn btn-primary"
-                        >
-                            Search Jobs
-                        </button>
-                    </div>
+            <div id="loading" class="loading">getting jobs for you...</div>
+            <div class="row">
+                <div class="col">
+                    <div id="results" class="result-field"></div>
                 </div>
             </div>
         </div>
+
+        <!-- Offcanvas -->
+        <div
+            class="offcanvas offcanvas-start"
+            tabindex="-1"
+            id="optionsOffcanvas"
+        >
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">My Account</h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- <a href="/myaccount/" class="btn btn-secondary d-block mb-3"
+                    >User Details</a
+                > -->
+                <a href="/myaccount/jobsforyou/" class="btn btn-secondary d-block mb-3"
+                    >Jobs for you</a
+                >
+                <a
+                    href="/careeroptions/profileanalyzer/"
+                    target="_blank"
+                    class="btn btn-secondary d-block mb-3"
+                    >Profile Analyzer</a
+                >
+                <a id="logout-btn" class="btn btn-danger d-block">Logout</a>
+            </div>
+        </div>
+    </section>
+
+     <!-- Modal structure -->
+     <div class="modal fade"id="myModal"tabindex="-1"aria-labelledby="exampleModalLabel"aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Education Details
+                    </h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- 12th -->
+                        <div class="mb-3">
+                            <h3>12th*</h3>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label
+                                        for="twelfthSubject"
+                                        class="form-label"
+                                        >Subject</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="twelfthSubject"
+                                    ></select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label
+                                        for="twelfthPercentage"
+                                        class="form-label"
+                                        >Percentage</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="twelfthPercentage"
+                                        placeholder="e.g. 70"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Diploma -->
+                        <div class="mb-3">
+                            <h3>Diploma</h3>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label
+                                        for="diplomaStream"
+                                        class="form-label"
+                                        >Stream</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="diplomaStream"
+                                    ></select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label
+                                        for="diplomaName"
+                                        class="form-label"
+                                        >Diploma Name</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="diplomaName"
+                                    ></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Graduation -->
+                        <div class="mb-3">
+                            <h3>Graduation</h3>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label
+                                        for="graduationStream"
+                                        class="form-label"
+                                        >Stream</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="graduationStream"
+                                    ></select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label
+                                        for="graduationDegree"
+                                        class="form-label"
+                                        >Degree</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="graduationDegree"
+                                    ></select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label
+                                        for="graduationPercentage"
+                                        class="form-label"
+                                        >Percentage</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="graduationPercentage"
+                                        placeholder="e.g. 80"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post Graduation -->
+                        <div class="mb-3">
+                            <h3>Post Graduation</h3>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label
+                                        for="pgStream"
+                                        class="form-label"
+                                        >Stream</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="pgStream"
+                                    ></select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label
+                                        for="pgDegree"
+                                        class="form-label"
+                                        >Degree</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="pgDegree"
+                                    ></select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label
+                                        for="pgPercentage"
+                                        class="form-label"
+                                        >Percentage</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="pgPercentage"
+                                        placeholder="e.g. 75"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Information  -->
+                        <div class="mb-3">
+                            <h3>Additional Information</h3>
+
+                            <!-- Category -->
+                            <div class="mb-3">
+                                <label
+                                    for="categories"
+                                    class="form-label"
+                                    >Category</label
+                                >
+                                <select
+                                    class="form-select"
+                                    id="categories"
+                                ></select>
+                            </div>
+
+                            <!-- Date of Birth -->
+                            <div class="mb-3">
+                                <label for="user-dob" class="form-label"
+                                    >Date of Birth</label
+                                >
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    id="user-dob"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Upload Your Resume Section -->
+                        <!-- <div class="user-details">
+                            <h1>Upload Your Resume</h1>
+                            <input
+                                type="file"
+                                id="resumeInput"
+                                accept=".pdf"
+                            />
+                            <label for="resumeInput" id="fileLabel"
+                                >Choose File</label
+                            >
+                            <div id="selectedFile"></div>
+                        </div> -->
+                    </form>
+                </div>
+
+                <!-- Buttons -->
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                    >
+                        Close
+                    </button>
+                    <button
+                        type="submit"
+                        id="saveDetails"
+                        class="btn btn-primary"
+                    >
+                        Search Jobs
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+        <!-- Footer -->
 
         <footer>
             <div class="footer-container">
@@ -663,3 +679,4 @@
         <script type="module" src="../../js/script.js"></script>
     </body>
 </html>
++
