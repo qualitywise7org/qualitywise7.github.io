@@ -256,41 +256,7 @@ async function displayJobs(jobs) {
                     } | <strong>Industry: </strong>${
                 profileJobs[0]?.posts_data?.industry_masterdata?.name
             }</p>
-            <p>
-                        <strong>Minimum Skills Required: </strong>${
-                            profileJobs[0]?.posts_data?.profile_masterdata
-                                ?.minimum_skills_required
-                                ? profileJobs[0]?.posts_data?.profile_masterdata
-                                      ?.minimum_skills_required
-                                : ""
-                        } | 
-                        <strong>Minimum Qualifications: </strong>${
-                            profileJobs[0]?.posts_data?.profile_masterdata
-                                ?.minimum_qualifications
-                                ? profileJobs[0]?.posts_data?.profile_masterdata?.minimum_qualifications
-                                      ?.map((elem) => `${elem}`)
-                                      .join(",")
-                                : ""
-                        } | 
-                        <strong>Preferred Streams: </strong>${
-                            profileJobs[0]?.posts_data?.profile_masterdata
-                                ?.preferred_streams
-                                ? profileJobs[0]?.posts_data?.profile_masterdata
-                                      ?.preferred_streams ||
-                                  profileJobs[0]?.posts_data?.profile_masterdata?.preferred_streams
-                                      ?.map((elem) => `${elem}`)
-                                      .join(",")
-                                : ""
-                        } | 
-                        <strong>Entrance Exam: </strong>${
-                            profileJobs[0]?.posts_data?.profile_masterdata
-                                ?.entrance_exam
-                                ? profileJobs[0]?.posts_data?.profile_masterdata?.entrance_exam
-                                      ?.map((elem) => `${elem}`)
-                                      .join(",")
-                                : ""
-                        }
-                    </p>
+             
                     <p><strong>Lifestyle: </strong>${
                         profileJobs[0]?.posts_data?.profile_masterdata
                             ? profileJobs[0]?.posts_data?.profile_masterdata?.life_style
