@@ -47,6 +47,18 @@ signupForm.addEventListener("submit", async (e) => {
 
         await sendEmailVerification(userCredential.user);
 
+        
+        // Store user data in local storage
+        var user = {
+            id: userCredential.user.uid,
+            userName: username,
+            email: email,
+        };
+
+        var userJSON = JSON.stringify(user);
+        localStorage.setItem('user', userJSON);
+
+
         alert("Signed up successfully! A verification email has been sent.");
     } catch (error) {
         alert("Error signing up: " + error.message);

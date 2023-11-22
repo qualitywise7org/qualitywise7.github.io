@@ -133,7 +133,7 @@
                                 >Contact us</a
                             >
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item " id="login">
                             <a
                                 class="nav-link"
                                 href="/login"
@@ -148,15 +148,17 @@
     <!-- Jobs for User Section -->
 
     <section>
-        <a
+        <div class="userName">
+          <p>  <a
             href="#"
             class="menu-btn btn btn-secondary"
             data-bs-toggle="offcanvas"
             data-bs-target="#optionsOffcanvas"
             >My Account</a
-        >
-        <!-- <span id="username">
-        </span> -->
+        ></p>
+            <h5 id="userName1" class="name"></h5>
+        </div>
+       
 
         <div class="container mt-3 mr-4 ml-4">
             <button
@@ -675,8 +677,10 @@
         <script type="module" src="../../js/myaccount.js"></script>
         <script src="../../website_data/jobs_data.js"></script>
         <script src="../../website_data/website_masterdata.js"></script>
-        <script type="module" src="js/jobsforyou.js"></script>
+        <!-- <script type="module" src="js/jobsforyou.js"></script> -->
+        <script type="module" src="js/jobsforyoupractice.js"></script>
         <script type="module" src="../../js/script.js"></script>
+        <script src="../../js/usename.js"></script>
     </body>
 </html>
 +
