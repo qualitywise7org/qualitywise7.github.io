@@ -29,7 +29,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore();
 
-const qualificationFilter = document.getElementById("qualificationFilter");
 
 // Get the authenticated user's ID
 let userId = null;
@@ -38,32 +37,92 @@ let graduationDegreeName = "";
 let pgDegreeName = "";
 let jobsToShow = []; // Define jobsToShow in a higher scope
 
+// JavaScript to trigger the modal and populate form fields
+document.getElementById("openModalButton").addEventListener("click", async () => {
+        document.getElementById("twelfthSubject").value =
+            userData.twelfthSubject || "";
+        document.getElementById("twelfthPercentage").value =
+            userData.twelfthPercentage || "";
+        document.getElementById("diplomaStream").value =
+            userData.diplomaStream || "";
+        document.getElementById("diplomaName").value =
+            userData.diplomaName || "";
+        document.getElementById("graduationStream").value =
+            userData.graduationStream || "";
+        document.getElementById("graduationDegree").value =
+            userData.graduationDegree || "";
+        document.getElementById("graduationPercentage").value =
+            userData.graduationPercentage || "";
+        document.getElementById("pgStream").value = userData.pgStream || "";
+        document.getElementById("pgDegree").value = userData.pgDegree || "";
+        document.getElementById("pgPercentage").value =
+            userData.pgPercentage || "";
+        document.getElementById("categories").value = userData.category || "";
+        document.getElementById("user-dob").value = userData.dob || "";
+
+        let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+        myModal.show();
+    });
+
+    document.getElementById("saveDetails").addEventListener("click", () =>{
+        var twelfthSubject = document.getElementById("twelfthSubject").value;
+        var twelfthPercentage = document.getElementById("twelfthPercentage").value;
+        var diplomaStream = document.getElementById("diplomaStream").value;
+        var diplomaName = document.getElementById("diplomaName").value;
+        var graduationStream = document.getElementById("graduationStream").value;
+        var graduationDegree = document.getElementById("graduationDegree").value;
+        var graduationPercentage = document.getElementById("graduationPercentage").value;
+        var pgStream = document.getElementById("pgStream").value;
+        var pgDegree = document.getElementById("pgDegree").value;
+        var pgPercentage = document.getElementById("pgPercentage").value;
+        var categories = document.getElementById("categories").value;
+        var user_dob = document.getElementById("user-dob").value;
+       
+        // Store user data in local storage
+        var userDetails = {
+            twelfthSubject : twelfthSubject,
+            twelfthPercentage : twelfthPercentage,
+            diplomaStream : diplomaStream,
+            diplomaName : diplomaName,
+            graduationStream : graduationStream,
+            graduationDegree : graduationDegree,
+            graduationPercentage : graduationPercentage,
+            pgStream : pgStream,
+            pgDegree : pgDegree,
+            pgPercentage : pgPercentage,
+            categories : categories,
+            user_dob : user_dob,
+
+        };
+
+        var userJSON = JSON.stringify(userDetails);
+        localStorage.setItem('userDetails', userJSON);
+    })
+
+
 onAuthStateChanged(auth, async (user) => {
     userId = user.uid;
-
     try {
         const userDocRef = doc(db, "users", userId);
         const userDocSnapshot = await getDoc(userDocRef);
 
         if (userDocSnapshot.exists()) {
             userData = userDocSnapshot.data();
-
-            graduationDegreeName = await getNameFromCollection(
-                qualification_masterdata,
-                userData.graduationDegree || ""
-            );
-            pgDegreeName = await getNameFromCollection(
-                qualification_masterdata,
-                userData.pgDegree || ""
-            );
-
+            var storedUserJSON = localStorage.getItem('userDetails');
+            if(storedUserJSON)
+            {
+                var storedUser = JSON.parse(storedUserJSON);
+                graduationDegreeName = ( qualification_masterdata , storedUser.graduationDegree );
+                pgDegreeName = (qualification_masterdata, storedUser.pgDegree);
+                // console.log(graduationDegreeName, pgDegreeName)
+            }
             fetchAndUseJobs();
-            addQualificationOptions();
         }
     } catch (error) {
         console.error("Error fetching user details:", error);
     }
 });
+
 
 function calculateAge(dob) {
     const dobDate = new Date(dob);
@@ -78,36 +137,6 @@ function getNameFromCollection(collection, code) {
     return foundItem ? foundItem.name : "";
 }
 
-// Function to dynamically add options to the select element
-function addQualificationOptions() {
-    const selectElement = document.getElementById("qualificationFilter");
-
-    // Clear existing options
-    selectElement.innerHTML = "";
-
-    // Add "12th" option
-    const option12th = document.createElement("option");
-    option12th.value = "12th";
-    option12th.textContent = "12th";
-    selectElement.appendChild(option12th);
-
-    // Add "graduationDegreeName" option if available
-    if (graduationDegreeName) {
-        const optionGraduation = document.createElement("option");
-        optionGraduation.value = graduationDegreeName;
-        optionGraduation.textContent = graduationDegreeName;
-        selectElement.appendChild(optionGraduation);
-    }
-
-    // Add "pgDegreeName" option if available
-    if (userData.pgDegree && pgDegreeName) {
-        const optionPG = document.createElement("option");
-        optionPG.value = pgDegreeName;
-        optionPG.textContent = pgDegreeName;
-        selectElement.appendChild(optionPG);
-    }
-}
-
 // previously shown jobs
 let previousJobs = [];
 
@@ -120,34 +149,38 @@ async function fetchAndUseJobs() {
         const qualificationEligibility =
             job.qualification_eligibility.toLowerCase();
 
+            var storedUserJSON = localStorage.getItem('userDetails');
+            var storedUser = JSON.parse(storedUserJSON);
+            var twelveth = storedUser.twelfthSubject;
+            var graduation = storedUser.graduationDegree;
+            var diploma = storedUser.diplomaName;
+            var postgraduation = storedUser.pgDegree;
+
         // Calculate user's age
-        const userAge = calculateAge(userData.dob);
+        // const userAge = calculateAge(userData.dob);
+        const userAge = calculateAge(storedUser.user_dob);
 
         // Adjust maximum age based on category
         let maxAge = job.maximum_age;
         if (
-            userData.category === "OBC (NCL)" ||
-            userData.category === "OBC (CL)"
+            storedUser.category === "OBC (NCL)" ||
+            storedUser.category === "OBC (CL)"
         ) {
             maxAge += 3;
-        } else if (userData.category === "SC" || userData.category === "ST") {
+        } else if (storedUser.category === "SC" || storedUser.category === "ST") {
             maxAge += 5;
         }
-
-        const includesGraduation =
-            graduationDegreeName &&
-            qualificationEligibility.includes(
-                graduationDegreeName.toLowerCase()
-            );
-
-        const includesPG =
-            pgDegreeName &&
-            qualificationEligibility.includes(pgDegreeName.toLowerCase());
-
-        if ( userAge >= job.minimum_age && userAge <= maxAge && (qualificationEligibility.includes("12th") || qualificationEligibility.includes("10+2") || includesGraduation || includesPG)) {
+         if( (twelveth === "math" || twelveth === "science" || twelveth === "commerce" || twelveth === "biology") && ( (qualificationEligibility.includes("12th") || qualificationEligibility.includes("10+2"))) ){
             jobsToShow.push(job);
-        }
-       else if( qualificationEligibility.includes("graduate")  || includesGraduation || includesPG){
+         }
+
+        else if( (graduation === "btech" || graduation === "be" || graduation === "bsc" || graduation === "bca") || (qualificationEligibility.includes("12th")) && qualificationEligibility.includes("graduate")){
+            jobsToShow.push(job);
+         }
+         else if( (diploma === "diploma") && qualificationEligibility.includes("diploma")){
+            jobsToShow.push(job);
+         }
+        else if( (postgraduation === "mca" || postgraduation === "mtech" || postgraduation ==="msc" || postgraduation ==="phd") && (qualificationEligibility.includes("postgraduate"))){
             jobsToShow.push(job);
         }
     });
@@ -159,47 +192,37 @@ async function fetchAndUseJobs() {
 
     // Display the new jobs
     displayJobs(newJobs);
-
-    // Show an alert if new jobs are found
-    // if (newJobs.length > 0) {
-    //     alert('New jobs matching your profile are available!');
-    // }
-
- // displayJobs(jobsToShow);
 }
 
 // Add an event listener to the qualification filter select element
-qualificationFilter.addEventListener("change", () => {
-    // Get the selected option
-    const selectedOption = qualificationFilter.value;
+// qualificationFilter.addEventListener("change", () => {
+//     const selectedOption = qualificationFilter.value;
 
-    // Filter jobs based on the selected option
-    const filteredJobs = jobsToShow.filter((job) => {
-        const qualificationEligibility =
-            job.qualification_eligibility.toLowerCase(); // Define qualificationEligibility here
+//     const filteredJobs = jobsToShow.filter((job) => {
+//         const qualificationEligibility =
+//             job.qualification_eligibility.toLowerCase(); 
 
-        const includesGraduation =
-            graduationDegreeName && qualificationEligibility.includes(graduationDegreeName.toLowerCase()) || qualificationEligibility.includes("graduate");
+//         const includesGraduation =
+//             graduationDegreeName && qualificationEligibility.includes(graduationDegreeName.toLowerCase()) || qualificationEligibility.includes("graduate");
 
-        const includesPG =
-            pgDegreeName &&
-            qualificationEligibility.includes(pgDegreeName.toLowerCase());
+//         const includesPG =
+//             pgDegreeName &&
+//             qualificationEligibility.includes(pgDegreeName.toLowerCase());
 
-        if (selectedOption === "12th") {
-            return (
-                qualificationEligibility.includes("12th") ||
-                qualificationEligibility.includes("10+2")
-            );
-        }else if (selectedOption === graduationDegreeName) {
-            return includesGraduation;
-        } else if (selectedOption === pgDegreeName) {
-            return includesPG;
-        }
-    });
+//         if (selectedOption === "12th") {
+//             return (
+//                 qualificationEligibility.includes("12th") ||
+//                 qualificationEligibility.includes("10+2")
+//             );
+//         }else if (selectedOption === graduationDegreeName) {
+//             return includesGraduation;
+//         } else if (selectedOption === pgDegreeName) {
+//             return includesPG;
+//         }
+//     });
 
-    // Display the filtered jobs
-    displayJobs(filteredJobs);
-});
+//     displayJobs(filteredJobs);
+// });
 
 // Function to display results in the resultsContainer
 

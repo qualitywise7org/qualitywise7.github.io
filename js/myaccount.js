@@ -167,6 +167,8 @@ const logoutButton = document.getElementById("logout-btn");
 
 if (logoutButton) {
     logoutButton.addEventListener("click", () => {
+        // localStorage.removeItem('user');
+        localStorage.removeItem('userDetails');
         signOut(auth)
             .then(() => {
                 window.location.href = "/login/";
@@ -330,7 +332,7 @@ saveButton.addEventListener("click", async () => {
             );
             myModal.hide();
             window.location.reload();
-            alert("Data saved successfully.");
+            // alert("Data saved successfully.");
         } catch (error) {
             console.log(error);
             alert("Error saving data:", error);

@@ -58,39 +58,3 @@ async function loginUser(email, password) {
 
 
 
-
-// const database = getDatabase(app);
-
-// const loginForm = document.getElementById("login-form");
-
-// loginForm.addEventListener("submit", async (e) => {
-//     e.preventDefault();
-
-//     const email = document.getElementById("email").value;
-//     const password = document.getElementById("password").value;
-
-//     try {
-//         const user = await loginUser(email, password);
-//         if (user.emailVerified) {
-//             const userData = await fetchUserData(user.uid);
-//             localStorage.setItem('userData', JSON.stringify(userData));
-//             window.location.href = "/myaccount/jobsforyou/";
-//         } else {
-//             alert("Please verify your email!");
-//         }
-//     } catch (error) {
-//         alert("Error logging in: " + error.message);
-//     }
-// });
-
-// async function loginUser(email, password) {
-//     const auth = getAuth();
-//     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-//     return userCredential.user;
-// }
-
-// async function fetchUserData(uid) {
-//     const userRef = database.ref('users/' + uid);
-//     const snapshot = await userRef.once('value');
-//     return snapshot.val();
-// }
