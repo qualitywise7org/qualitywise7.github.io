@@ -454,5 +454,12 @@ function parseDate(dateString) {
 // JavaScript to trigger the modal and populate form fields
 document.getElementById("openModalButton") .addEventListener("click", async () => {
     let myModal = new bootstrap.Modal(document.getElementById("myModal"));
-    myModal.show();
+    myModal.show(); 
 });
+
+document.getElementById("closed1").addEventListener("click", () =>{
+    location.reload();
+})
+document.getElementById( "closed2").addEventListener("click", () =>{
+    location.reload();
+})
