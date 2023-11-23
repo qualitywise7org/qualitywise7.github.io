@@ -8375,51 +8375,6 @@ const jobs_data=[
   },
   {
     "qualification_eligibility": "Graduate",
-    "job_link": "https://in.linkedin.com/jobs/view/assistant-manager-dba-at-viacom18-media-private-limited-3725570528?refId=0KZclgQWM%2FTn2nc4CEuN5g%3D%3D&trackingId=E4nbaa8f57VzOR32efZMRw%3D%3D&position=11&pageNum=0&trk=public_jobs_jserp-result_search-card",
-    "salary": "",
-    "last_date": "",
-    "skills": "with our visionary outlook on the digital revolution will unleash an unprecedented level of sports enchantment What Youll Do  Ensure seamless Oracle Architecture implementation configuration and maintenance Lead installation configuration upgrades patching and maintenance tasks Skillfully manage RMAN Backup and Restore operations for data security Apply extensive Oracle RAC Administration expertise to optimize performance Facilitate Call logging Oracle Logging Monitoring and Data Shipping between DC and DR Configure Data Guard for robust disaster recovery Expertly install Oracle standby databases manage users tablespaces and privileges Demonstrate sharp technical troubleshooting",
-    "brief_info": "Are you ready to be a part of the sports revolution At Viacom18 Sports were not just a network we are a dynamic force fuelled by passion that delivers the excitement of international sports to your fingertips Since its inception JioCinema  Sports18 have been home to major sporting events worldwide such as IPL BWF tournaments LaLiga Ligue 1 Serie A FIFA U20 World Cup ATP World Tour MXGP and more Our commitment to delivering captivating live and nonlive sports programming is unwavering as we set out to redefine sports viewership in the nation Join us now and fuel the excitement on the actionpacked journey of Viacom18 Sports Combining your exceptional skills with our visionary outlook on the digital revolution will unleash an unprecedented level of sports enchantment What Youll Do  Ensure seamless Oracle Architecture implementation configuration and maintenance Lead installation configuration upgrades patching and maintenance tasks Skillfully manage RMAN Backup and Restore operations for data security Apply extensive Oracle RAC Administration expertise to optimize performance Facilitate Call logging Oracle Logging Monitoring and Data Shipping between DC and DR Configure Data Guard for robust disaster recovery Expertly install Oracle standby databases manage users tablespaces and privileges Demonstrate sharp technical troubleshooting skills to swiftly resolve challenges  Showcase a deep understanding of support processes ensuring effective assistance  Lead the resolution of escalated technical situations and develop actionable plans Who should apply  Proficiency in Oracle Architecture and a proven track record of successful implementation Experience in thriving within a 24X7 operational environment managing critical database operations Expertise in Oracle database installation configuration upgrades and patching Skill in RMAN Backup and Restore operations ensuring data security and recovery Extensive knowledge of Oracle RAC Administration driving highperformance clusters Familiarity with Call logging Oracle Logging Monitoring Data Shipping and proficiency in Configuring Data Guard for robust disaster recovery Competence in installing Oracle standby databases creating users tablespaces and managing privileges Sharp technical troubleshooting skills to efficiently resolve complex issues A clear understanding of support processes and the ability to provide effective assistance The capability to handle escalated technical situations and devise effective action plans Viacom18 Media Pvt Ltd is one of Indias fastestgrowing entertainment networks and a house of iconic brands that offers multiplatform multigenerational and multicultural brand experiences Viacom18 defines entertainment in India by touching the lives of people through its properties on air online on the ground in cinemas and merchandise Its portfolio of 38 channels across general entertainment movies sports youth music and kids genres delights consumers across the country with its eclectic mix of programming JioCinema Viacom18s OTT platform is one of Indias leading streaming services and most popular destination for live sports Viacom18 Studios has successfully produced and distributed iconic Hindi films and clutterbreaking regional films for over 13 years in India",
-    "minimum_age": "",
-    "post_date": "2023-09-28",
-    "post_code": "assistant_manager_dba",
-    "company_name": "Viacom18 Media Private Limited",
-    "location": "Mumbai Maharashtra India",
-    "job_code": "assistant_manager_dba_postdate_2023-09-28",
-    "possible_degree": "",
-    "maximum_age": "",
-    "recruitment_board": "",
-    "expectation": "",
-    "posts_data": {
-      "post_id": 10,
-      "post_name": "Assistant Manager - DBA",
-      "post_code": "assistant_manager_dba",
-      "jobtype_masterdata": {
-        "code": "private",
-        "name": "Private"
-      },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
-      "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant",
-        "life_style": [
-          {
-            "title": "A Day in the Life of a Assistant",
-            "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
-          },
-          {
-            "title": "How Much Salary Should You Expect As A Assistant",
-            "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "qualification_eligibility": "Graduate",
     "job_link": "https://in.linkedin.com/jobs/view/sql-dba-at-cn-solutions-3704556164?refId=0KZclgQWM%2FTn2nc4CEuN5g%3D%3D&trackingId=XxDIPXkUVZ9zf0dmtDlA9g%3D%3D&position=12&pageNum=0&trk=public_jobs_jserp-result_search-card",
     "salary": "₹0 - ₹0",
     "last_date": "",
@@ -16866,51 +16821,6 @@ const jobs_data=[
   },
   {
     "qualification_eligibility": "postgraduation",
-    "job_link": "https://in.linkedin.com/jobs/view/associate-professor-of-psychology-at-manav-rachna-educational-institutions-3693453137?refId=qTF1aO7Z88pcD8AUhtv%2FPA%3D%3D&trackingId=q%2BlOnG6B3vKOf5JQFrzipQ%3D%3D&position=18&pageNum=0&trk=public_jobs_jserp-result_search-card",
-    "salary": "",
-    "last_date": "",
-    "skills": "",
-    "brief_info": "About Us  Manav Rachna Educational Institutions is a visible symbol of knowledge  experience providing highquality education in various fields Institutions at MREI be it Manav Rachna University MRU Manav Rachna Dental College MRDC or Manav Rachna International Institute of Research  Studies MRIIRS  have the coveted NAAC A grade status catapulting MREI to the big leagues of higher education Position   Assistant  Associate Professor  Psychology Job responsibilities  The primary responsibility of the faculty member in Psychology is to teach undergraduate and postgraduates students Candidates will typically take classes in Clinical Psychology Job duties also include academic advising of students active participation in college committees working as a team member in the academic department or division the major resides in working collaboratively with other faculty and the college administration active involvement in recruiting activities for new students and participation in and contribution to the general college community Qualifications  Qualified Clinical Psychologist RCI registered For Associate Professor   Mphil PhD  5 years of teaching experience either as Lecturer  Assistant Professor  3 publications in indexed journal as first corresponding author For Additional Professor  Professor   Mphil PhD  9 years of teaching experience out of which 3 years as Associate Professor  5 research publications in indexed journal as first corresponding author",
-    "minimum_age": "",
-    "post_date": "2023-09-05",
-    "post_code": "associate_professor_of_psychology",
-    "company_name": "",
-    "location": "Faridabad Haryana India",
-    "job_code": "associate_professor_of_psychology_postdate_2023-09-05",
-    "possible_degree": "",
-    "maximum_age": "",
-    "recruitment_board": "",
-    "expectation": "",
-    "posts_data": {
-      "post_id": 17,
-      "post_name": "Associate / Professor Of Psychology",
-      "post_code": "associate_professor_of_psychology",
-      "jobtype_masterdata": {
-        "code": "private",
-        "name": "Private"
-      },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
-      "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant",
-        "life_style": [
-          {
-            "title": "A Day in the Life of a Assistant",
-            "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
-          },
-          {
-            "title": "How Much Salary Should You Expect As A Assistant",
-            "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "qualification_eligibility": "postgraduation",
     "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-at-garima-interprises-3716477939?refId=qTF1aO7Z88pcD8AUhtv%2FPA%3D%3D&trackingId=nidhS2WvxJ9gZ%2FXejqhwDw%3D%3D&position=19&pageNum=0&trk=public_jobs_jserp-result_search-card",
     "salary": "",
     "last_date": "",
@@ -17096,51 +17006,6 @@ const jobs_data=[
           {
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
-          }
-        ]
-      }
-    }
-  },
-  {
-    "qualification_eligibility": "postgraduation",
-    "job_link": "https://in.linkedin.com/jobs/view/assistant-professor-hospital-at-amity-university-3674649120?refId=qTF1aO7Z88pcD8AUhtv%2FPA%3D%3D&trackingId=tL6gcKkRCAJltDDA2mjsFg%3D%3D&position=23&pageNum=0&trk=public_jobs_jserp-result_search-card",
-    "salary": "",
-    "last_date": "",
-    "skills": "",
-    "brief_info": "Exp 03 years We are looking for experienced competent and committed individuals for the position of Assistant Professor in the department of Amity Institute of Public Health  Hospital Administration AIPHHA for its Noida campus Applications are invited for faculty positions in Hospital Administration from candidates who meet following criteria Candidates must have a PhD in Hospital Administration Masters in Hospital Administration MBA Hospital Administration and Graduation from leading International Indian Institutions Candidates studying at International Universities will be given preference Pursuing PhD PhD Thesis submitted candidates can also apply Preferably UGC NET Qualified Strong research track record with good number of Publications in Scopus Indexed journals Prior teaching experience at University Level will be an added advantage Candidates having industry experience may also apply Excellent communication skills",
-    "minimum_age": "",
-    "post_date": "2023-07-07",
-    "post_code": "assistant_professor_hospital",
-    "company_name": "Amity University",
-    "location": "Gautam Buddha Nagar Uttar Pradesh India",
-    "job_code": "assistant_professor_hospital_postdate_2023-07-07",
-    "possible_degree": "",
-    "maximum_age": "",
-    "recruitment_board": "",
-    "expectation": "",
-    "posts_data": {
-      "post_id": 22,
-      "post_name": "Assistant Professor Hospital",
-      "post_code": "assistant_professor_hospital",
-      "jobtype_masterdata": {
-        "code": "private",
-        "name": "Private"
-      },
-      "industry_masterdata": {
-        "code": "cs_it_engineering",
-        "name": "CS/IT"
-      },
-      "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant",
-        "life_style": [
-          {
-            "title": "A Day in the Life of a Assistant",
-            "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
-          },
-          {
-            "title": "How Much Salary Should You Expect As A Assistant",
-            "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
         ]
       }
@@ -25175,54 +25040,7 @@ const jobs_data=[
       }
     }
   },
-  {
-    "qualification_eligibility": "UG: Any Graduate",
-    "job_link": "https://www.naukri.com/job-listings-front-office-executive-receptionist-assistant-arch-concept-gurgaon-gurugram-0-to-5-years-210922004758",
-    "salary": "2-4 Lacs PA",
-    "last_date": "",
-    "skills": "",
-    "brief_info": "Roles and Responsibilities",
-    "minimum_age": "",
-    "post_date": "2023-10-11",
-    "post_code": "front_office_executive_receptionist_cum_assistant",
-    "company_name": "Arch Concept",
-    "location": "Gurgaon/Gurugram",
-    "job_code": "front_office_executive_receptionist_cum_assistant_postdate_2023-10-11",
-    "possible_degree": "UG: Any Graduate",
-    "maximum_age": "",
-    "recruitment_board": "",
-    "expectation": "UG: Any Graduate",
-    "posts_data": {
-      "post_id": 6,
-      "post_name": "Front Office Executive / Receptionist cum Assistant",
-      "post_code": "front_office_executive_receptionist_cum_assistant",
-      "jobtype_masterdata": {
-        "code": "private",
-        "name": "Private"
-      },
-      "profile_masterdata": {
-        "code": "helper",
-        "name": "Helper",
-        "minimum_skills_required": "good nature",
-        "minimum_qualifications": [
-          "10"
-        ],
-        "preferred_streams": [
-          "any"
-        ],
-        "life_style": [
-          {
-            "title": "A Day in the Life of a helper",
-            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
-          },
-          {
-            "title": "How Much Salary Should You Expect As a helper",
-            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
-          }
-        ]
-      }
-    }
-  },
+ 
   {
     "qualification_eligibility": "UG: Graduation Not RequiredPG: Post Graduation Not RequiredDoctorate: Doctorate Not Required",
     "job_link": "https://www.naukri.com/job-listings-helper-theoriat-services-pune-1-to-3-years-061023905722",
@@ -25415,54 +25233,7 @@ const jobs_data=[
       }
     }
   },
-  {
-    "qualification_eligibility": "UG: Any GraduatePG: Any Postgraduate",
-    "job_link": "https://www.naukri.com/job-listings-accountant-office-assistant-jingle-infotech-limited-new-delhi-0-to-2-years-031123501392",
-    "salary": "Not disclosed",
-    "last_date": "",
-    "skills": "",
-    "brief_info": "",
-    "minimum_age": "",
-    "post_date": "2023-11-03",
-    "post_code": "accountant_cum_office_assistant",
-    "company_name": "Jingle Infotech",
-    "location": "New Delhi",
-    "job_code": "accountant_cum_office_assistant_postdate_2023-11-03",
-    "possible_degree": "UG: Any GraduatePG: Any Postgraduate",
-    "maximum_age": "",
-    "recruitment_board": "",
-    "expectation": "UG: Any GraduatePG: Any Postgraduate",
-    "posts_data": {
-      "post_id": 11,
-      "post_name": "Accountant cum Office Assistant",
-      "post_code": "accountant_cum_office_assistant",
-      "jobtype_masterdata": {
-        "code": "private",
-        "name": "Private"
-      },
-      "profile_masterdata": {
-        "code": "helper",
-        "name": "Helper",
-        "minimum_skills_required": "good nature",
-        "minimum_qualifications": [
-          "10"
-        ],
-        "preferred_streams": [
-          "any"
-        ],
-        "life_style": [
-          {
-            "title": "A Day in the Life of a helper",
-            "url": "https://www.youtube.com/watch?v=7tTz_zFljVs"
-          },
-          {
-            "title": "How Much Salary Should You Expect As a helper",
-            "url": "https://www.youtube.com/watch?v=KSDToclQPss"
-          }
-        ]
-      }
-    }
-  },
+  
   {
     "qualification_eligibility": "UG: Any Graduate",
     "job_link": "https://www.naukri.com/job-listings-front-office-executive-graphic-designer-north-delhi-pathology-clinic-new-delhi-delhi-0-to-5-years-311023004077",
