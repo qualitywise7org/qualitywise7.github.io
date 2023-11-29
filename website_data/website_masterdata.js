@@ -548,20 +548,6 @@ const qualification_masterdata = [
       }
     ]
   },
-  // {
-  //   "code": "assistant",
-  //   "name": "Assistant",
-  //   "life_style": [
-  //     {
-  //       "title": "A Day in the Life of a Assistant",
-  //       "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
-  //     },
-  //     {
-  //       "title": "How Much Salary Should You Expect As A Assistant",
-  //       "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
-  //     }
-  //   ]
-  // },
   {
     "code": "professor",
     "name": "Professor/Faculty",
@@ -583,10 +569,10 @@ const qualification_masterdata = [
       }
     ]
   },
-  {
-    "code": "all",
-    "name": "All"
-  },
+  // {
+  //   "code": "all",
+  //   "name": "All"
+  // },
   {
     "code": "helper",
     "name": "Helper",
