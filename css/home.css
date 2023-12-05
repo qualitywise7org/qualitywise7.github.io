@@ -4,9 +4,9 @@
     box-sizing: border-box;
 } */
 .header{
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
-    padding: 1.2rem;
+    padding: 1rem;
     border-bottom: 0.2rem solid gray;
 }
 .content{

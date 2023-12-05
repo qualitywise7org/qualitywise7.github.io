@@ -843,7 +843,7 @@ body {
 
 @media only screen and (max-width: 740px) {
     .hero-section {
-        padding: 1rem 2rem;
+        padding: 0 2rem 1rem 2rem;
     }
 
     .card-section .cards {
