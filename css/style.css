@@ -85,7 +85,7 @@ body {
 .hero-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 2rem 4rem;
+    padding: 0 4rem 2rem 4rem;
     background: url("../assets/landingBG.png") no-repeat bottom / cover;
 }
 
