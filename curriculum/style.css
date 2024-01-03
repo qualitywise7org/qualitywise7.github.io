@@ -27,32 +27,42 @@
 }
 
 .links {
-  color: #33ff86;
+  color: #F23540;
   text-decoration: none;
 }
 
+.links:hover {
+  color: #F23540;
+  text-decoration: underline;
+}
+/* a {
+  color: #33ff86;
+  text-decoration: none;
+} */
+
 .main_body {
-  background-color: #6279b3;
+  background-color: #f9eee7;
   margin: 2rem;
   padding: 2rem;
   border-radius: 1.5rem;
-  color: white;
+  color: black;
 }
 .main_body h5 {
   font-size: 5vmin;
 }
 .main_body h3 {
   text-align: center;
-  color: white;
+  color: black;
   font-size: 2.5rem;
   /* font-family: "Pacifico", cursive; */
 }
 li {
   font-size: 3vmin;
-  color: white;
+  color: black;
   list-style: none;
 }
 
 .frontend {
-  background-color: #887b48;
+  /* background-color: #887b48; */
+  background-color: #d6c9b0;
 }
