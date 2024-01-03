@@ -45,6 +45,11 @@ body {
   background-color: #492b6e;
 }
 
+.apply-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Navbar */
 
 .navbar {
