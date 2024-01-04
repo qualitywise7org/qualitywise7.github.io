@@ -1,0 +1,145 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and general layout styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f0f0; /* Lighter background */
+  color: #333;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Headers and section titles */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+  color: #293c66; /* Blue color for headers */
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 30px; /* Increased margin for better spacing */
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin: 25px 0;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+/* Links */
+a {
+  color: #9b59b6; /* Purple color for links */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #8e44ad; /* Darker purple on hover */
+}
+
+/* Course details and fundamental sections */
+.course_details,
+.fundamental {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course_details h1,
+.course_details h2,
+.fundamental h2 {
+  font-size: 2.5rem; /* Consistent font size */
+  text-align: center;
+  margin: 25px 0;
+}
+
+/* Main Body Content - Card Effect */
+.main_body {
+  background-color: #f9f9f9; /* Slightly off-white background */
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  color: #444; /* Darker text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.main_body:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enlarged shadow on hover */
+  transform: translateY(-5px); /* Card elevation on hover */
+}
+
+.main_body h5 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #293c66; /* Blue color for headers */
+}
+
+/* List items in main body */
+.main_body li {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+
+/* Links within main body */
+.main_body a {
+  color: #9b59b6; /* Purple color for links */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.main_body a:hover {
+  color: #8e44ad; /* Darker purple on hover */
+}
+.main_body:nth-child(even) {
+  animation: slideInLeft 0.5s ease forwards;
+}
+
+/* Animation for cards from right */
+.main_body:nth-child(odd) {
+  animation: slideInRight 0.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

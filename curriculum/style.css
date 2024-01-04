@@ -27,12 +27,12 @@
 }
 
 .links {
-  color: #F23540;
+  color: #f23540;
   text-decoration: none;
 }
 
 .links:hover {
-  color: #F23540;
+  color: #f23540;
   text-decoration: underline;
 }
 /* a {
