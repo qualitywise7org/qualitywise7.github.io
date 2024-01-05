@@ -30,12 +30,13 @@ loginForm.addEventListener("submit", async (e) => {
 
   try {
     await loginUser(email, password);
-    const toast = new bootstrap.Toast(document.getElementById("loginToast"));
-    toast.show();
-    // window.location.href = "/myaccount/jobsforyou/";
-    setTimeout(() => {
-      window.location.href = "/myaccount/jobsforyou/";
-    }, 3000);
+    // const toast = new bootstrap.Toast(document.getElementById("loginToast"));
+    // toast.show();
+    window.location.href = "/myaccount/jobsforyou/";
+    alert("Logged in successfully!");
+    // setTimeout(() => {
+    //   window.location.href = "/myaccount/jobsforyou/";
+    // }, 3000);
   } catch (error) {
     alert("Error logging in: " + error.message);
   }

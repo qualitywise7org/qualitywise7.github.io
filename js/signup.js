@@ -55,9 +55,9 @@ signupForm.addEventListener("submit", async (e) => {
 
     var userJSON = JSON.stringify(user);
     localStorage.setItem("user", userJSON);
-    const toast = new bootstrap.Toast(document.getElementById("loginToast"));
-    toast.show();
-    // alert("Signed up successfully! ");
+    // const toast = new bootstrap.Toast(document.getElementById("loginToast"));
+    // toast.show();
+    alert("Signed up successfully! ");
     // showToast("Signed up successfully!");
   } catch (error) {
     alert("Error signing up: " + error.message);
