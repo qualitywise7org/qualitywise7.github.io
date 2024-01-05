@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sign Up</title>
-        <link rel="stylesheet" href="../css/signup.css" />
-    </head>
-    <body>
-        <div class="signup-container">
-            <h2 class="signup-head">Sign Up</h2>
-            <form id="signup-form">
-                <label for="username">Full Name:</label>
-                <input type="text" id="username" name="username" required />
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/signup.css" />
+</head>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required />
+<body>
+    <div class="toast" id="signupToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+        <div class="toast-header">
+            <strong class="me-auto">Sign up</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Signup successfull!!
+        </div>
+    </div>
+    <div class="signup-container">
+        <h2 class="signup-head">Sign Up</h2>
+        <form id="signup-form">
+            <label for="username">Full Name:</label>
+            <input type="text" id="username" name="username" required />
 
-                <button type="submit">Sign Up</button>
-            </form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
 
-            <div class="lines-text">
-                <span>OR</span>
-            </div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
 
-            <p class="bottom-heading">
-                Already have an account?
-                <span>
-                    <a href="/login/">log In</a>
-                </span>
-            </p>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="lines-text">
+            <span>OR</span>
         </div>
 
-        <script type="module" src="../js/signup.js"></script>
-    </body>
+        <p class="bottom-heading">
+            Already have an account?
+            <span>
+                <a href="/login/">log In</a>
+            </span>
+        </p>
+    </div>
+
+    <script type="module" src="../js/signup.js"></script>
+</body>
+
 </html>

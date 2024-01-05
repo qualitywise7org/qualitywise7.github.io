@@ -69,12 +69,24 @@ ul li {
   font-size: 1.3rem;
   text-align: start;
 }
-h5 {
-  /* font-family: "Pacifico", cursive; */
-}
+
 .curr a {
   list-style: none;
   text-decoration: none;
+}
+
+.back-container {
+  margin-right: 20px;
+}
+
+.back-btn {
+  border: 1px solid #586ba6;
+  background-color: #586ba6;
+  color: #fff;
+  padding: 0.3rem 1.5rem;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 670px) {
