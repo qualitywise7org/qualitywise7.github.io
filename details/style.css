@@ -81,12 +81,17 @@ ul li {
 
 .back-btn {
   border: 1px solid #586ba6;
+  padding: 0.2rem 0.6rem;
   background-color: #586ba6;
-  color: #fff;
-  padding: 0.3rem 1.5rem;
+  color: white;
+  font-size: large;
   text-decoration: none;
-  border-radius: 0.3rem;
-  font-size: 1rem;
+}
+
+.back-btn:hover {
+  background-color: #465684;
+  color: white;
+  transition: 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 670px) {
