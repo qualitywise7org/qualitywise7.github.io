@@ -224,6 +224,12 @@ const qualification_masterdata = [
         "title": "How Much Salary Should You Expect As A Fresher Developer",
         "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
       }
+    ],
+    "keywords": [
+      "web",
+      "frontend_developer",
+      "frontend",
+      "react"
     ]
   },
   {
@@ -443,6 +449,7 @@ const qualification_masterdata = [
   {
     "code": "fellow",
     "name": "Fellow",
+    "minimum_skills_required": "master of subject, teaching skill, communication, english",
     "minimum_qualifications": [
       "postgraduation"
     ],
@@ -487,6 +494,7 @@ const qualification_masterdata = [
     "keywords": [
       "medical officer"
     ],
+    "minimum_skills_required": "mbbs, assistant to doctor in medication",
     "minimum_qualifications": [
       "mbbs"
     ],
@@ -507,6 +515,7 @@ const qualification_masterdata = [
   {
     "code": "pharmacist",
     "name": "Pharmacist",
+    "minimum_skills_required": "bpharma, assistant to doctor in medication",
     "minimum_qualifications": [
       "bphrama"
     ],
@@ -532,7 +541,8 @@ const qualification_masterdata = [
     ],
     "minimum_skills_required": "GK, math, reasoning, english, Hindi",
     "minimum_qualifications": [
-      "ded\",\"bed"
+      "D.ed",
+      "B.ed"
     ],
     "preferred_streams": [
       "any"
@@ -545,6 +555,24 @@ const qualification_masterdata = [
       {
         "title": "How Much Salary Should You Expect As A School Teacher",
         "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
+      }
+    ]
+  },
+  {
+    "code": "assistant",
+    "name": "Assistant",
+    "minimum_skills_required": "assistant to manager",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Assistant",
+        "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Assistant",
+        "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
       }
     ]
   },
@@ -569,10 +597,10 @@ const qualification_masterdata = [
       }
     ]
   },
-  // {
-  //   "code": "all",
-  //   "name": "All"
-  // },
+  {
+    "code": "all",
+    "name": "All"
+  },
   {
     "code": "helper",
     "name": "Helper",
