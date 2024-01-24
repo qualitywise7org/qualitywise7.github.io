@@ -27,255 +27,286 @@
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .clamp-text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            max-height: 3em;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-gradient-to-r from-indigo-200">
+    <!-- Navbar -->
+    <bodymain class="bg-gradient-to-b from-indigo-200">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="brand" href="/">
+                    <img src="../assets/Jobsdoor360 -logos__black.png" alt="logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/demo/">Demo</a>
+                        </li>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="brand" href="/">
-                <img src="../assets/Jobsdoor360 -logos__black.png" alt="logo" />
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">Home</a>
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="demo">Demo</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="career">Internships/Careers</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Blogs
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="careeroptions">Career Options</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/jobs_analysis/">Jobs Analysis</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="businessplans">Business Plans</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="biographies">Biographies</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="motivation">Motivation</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contactus/" target="_blank">Contact us</a>
-                    </li>
-                    <li class="nav-item rounded-pill login-btn">
-                        <a class="nav-link" href="/login">Login/Register</a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/career/">Internships/Careers</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Blogs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/careeroptions/">Career Options</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/jobs_analysis/">Jobs Analysis</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/businessplans/">Business Plans</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/biographies/">Biographies</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/motivation/">Motivation</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../contactus/" target="_blank">Contact us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link rounded-pill login-btn" href="/login">Login/Register</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <section class="overflow-auto">
+        </nav>
+
+        <!-- Biographies Section -->
+
         <header>
             <h1>Inspiring Entrepreneur Biographies</h1>
         </header>
 
-        <main class="flex justify-center">
-            <div class="align-items-center">
-                <main class="pt-20">
-                    <div class="w-full bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="p-4 bg-blue-500 text-white rounded-t-md">
-                            <h2 class="text-white text-lg font-semibold">Just Dial Founder - VSS Mani</h2>
-                        </div>
-                        <div class="p-4">
-                            <p class="line-clamp-3 text-gray-700">
-                                VSS Mani is the visionary founder of Just Dial, an online local search engine that
-                                revolutionized the way
-                                people find and connect with businesses in India. He built Just Dial from scratch
-                                and
-                                transformed it into a
-                                multi-billion-dollar company. Mani's dedication and innovation in developing this
-                                platform
-                                have earned him
-                                immense recognition in the business world.
-                            </p>
-                            <a href="https://www.dnaindia.com/business/report-meet-vss-mani-who-built-rs-6575-crore-indian-google-mukesh-ambani-had-paid-rs-1332-crore-3048424"
-                                target="_blank"
-                                class="inline-block mt-2 bg-blue-500 text-white py-2 px-4 rounded transition hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue hover:no-underline">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
+        <section>
 
-                </main>
-                <main>
-                    <div class="w-full bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="p-4 bg-blue-500 text-white rounded-t-md">
-                            <h2 class="text-lg text-white font-semibold">Adda247 Founder - Anil Nagar</h2>
-                        </div>
-                        <div class="p-4">
-                            <p class="line-clamp-3 text-gray-700">
-                                Anil Nagar is the inspiring founder of Adda247, an e-learning platform that provides
-                                quality
-                                education and
-                                test preparation for various competitive exams. Starting from just Rs. 1 lakh and
-                                fueled by
-                                his determination
-                                and passion, Anil Nagar has grown Adda247 into a prominent company with a valuation
-                                of over
-                                Rs. 1400 crore. His
-                                journey from an IIT aspirant to a successful entrepreneur has motivated millions of
-                                students
-                                across the country.
-                            </p>
-                            <a href="https://www.dnaindia.com/business/report-anil-nagar-meet-coaching-owner-who-built-rs-1400-crore-firm-from-rs-1-lakh-iit-struggle-inspired-him-3048407"
-                                target="_blank"
-                                class="inline-block mt-2 bg-blue-500 text-white py-2 px-4 rounded transition hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue hover:no-underline">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
+            <div class="py-10 overflow-auto px-20 lg:px-40 overflow-auto">
+                <div class="w-full bg-white rounded shadow-md p-4 mb-4">
+                    <h2 class="text-xl font-semibold mb-2">Just Dial Founder - VSS Mani</h2>
+                    <p style="
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        -webkit-line-clamp: 3; /* Number of lines to display */
+                    " class="text-gray-600 mb-4">
+                        VSS Mani is the visionary founder of Just Dial, an online local search engine that
+                        revolutionized the way people find and connect with businesses in India. He built Just Dial from
+                        scratch and transformed it into a multi-billion-dollar company. Mani's dedication and innovation
+                        in developing this platform have earned him immense recognition in the business world.
+                    </p>
+                    <a class="mt-2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+                        href="https://www.dnaindia.com/business/report-meet-vss-mani-who-built-rs-6575-crore-indian-google-mukesh-ambani-had-paid-rs-1332-crore-3048424"
+                        target="_blank">Continue</a>
+                </div>
 
-                </main>
+                <div class="w-full bg-white rounded shadow-md p-4 mb-4">
+                    <h2 class="text-xl font-semibold mb-2">Adda247 Founder - Anil Nagar</h2>
+                    <p style="
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        -webkit-line-clamp: 3; /* Number of lines to display */
+                    " class="text-gray-600 mb-4">
+                        Anil Nagar is the inspiring founder of Adda247, an e-learning platform that provides quality
+                        education and test preparation for various competitive exams. Starting from just Rs. 1 lakh and
+                        fueled by his determination and passion, Anil Nagar has grown Adda247 into a prominent company
+                        with a valuation of over Rs. 1400 crore. His journey from an IIT aspirant to a successful
+                        entrepreneur has motivated millions of students across the country.
+                    </p>
+                    <a class="mt-2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+                        href="https://www.dnaindia.com/business/report-anil-nagar-meet-coaching-owner-who-built-rs-1400-crore-firm-from-rs-1-lakh-iit-struggle-inspired-him-3048407"
+                        target="_blank">Continue</a>
+                </div>
+                <div class="w-full bg-white rounded shadow-md p-4 mb-4">
+                    <h2 class="text-xl font-semibold mb-2">Swami Vivekanand</h2>
+                    <p style="
+                                        display: -webkit-box;
+                                        -webkit-box-orient: vertical;
+                                        overflow: hidden;
+                                        -webkit-line-clamp: 3; /* Number of lines to display */
+                                    " class="text-gray-600 mb-4">
+                        Swami Vivekananda was born on January 12, 1863, in Kolkata,
+                        India, His lifestyles modified into marked by way of a deep dedication to the
+                        religious path and the pursuit of expertise. Swami Vivekananda, a towering non
+                        secular and philosophical parent of the past due 19th and early 20th
+                        centuries,
+                        accomplished a pivotal role in introducing the philosophies of Vedanta and
+                        Yoga to the Western international. He was a key determine inside the
+                        renaissance of Hinduism and the creation of Indian philosophies to a
+                        international target market. Born as Narendranath Datta, he observed the
+                        decision Swami Vivekananda after turning into a monk.
+                    </p>
+                    <a class="mt-2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+                        href="./Swami.html">Continue</a>
+                </div>
+                <div class="w-full bg-white rounded shadow-md p-4 mb-4">
+                    <h2 class="text-xl font-semibold mb-2">Bill Gates</h2>
+                    <p style="
+                                        display: -webkit-box;
+                                        -webkit-box-orient: vertical;
+                                        overflow: hidden;
+                                        -webkit-line-clamp: 3; /* Number of lines to display */
+                                    " class="text-gray-600 mb-4">
+                        The world has been forever modified by bill Gates, a name that is synonymous with the tech
+                        revolution.
+                        His journey from co-founding Microsoft to becoming a distinguished philanthropist is pretty
+                        first rate. let's
+                        examine the specifics of his existence and the turning factors that molded one of the maximum
+                        full-size
+                        individuals in cutting-edge history...
+                    </p>
+                    <a class="mt-2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+                        href="./BillGates.html">Continue</a>
+                </div>
+
             </div>
-        </main>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
 
-    <footer class="pt-20">
-        <div class="footer-container">
-            <div class="footer">
-                <div class="column">
-                    <h3>Quick-Links</h3>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li>
-                            <a href="https://forms.gle/CNJokZdCvhCPzArj9" target="_blank">Feedback</a>
-                        </li>
-                        <li>
-                            <a href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
-                        </li>
-                        <li>
-                            <a href="/socialwork/index.html">Donate Books</a>
-                        </li>
-                        <li>
-                            <a href="/membership/index.html">Membership</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="column">
-                    <h3>Blogs</h3>
-                    <ul>
-                        <li><a href="/biographies/">Biographies</a></li>
-                        <li>
-                            <a href="/businessplans/">Business Plans</a>
-                        </li>
-                        <li>
-                            <a href="/careeroptions/">Career options</a>
-                        </li>
-                        <li><a href="/motivation/">Motivation</a></li>
-                        <li><a href="/jobs_analysis/">jobs Analysis</a></li>
-                    </ul>
-                </div>
-                <div class="column">
-                    <h3>Courses</h3>
-                    <ul>
-                        <li>
-                            <a href="/#web-dev">Web Development</a>
-                        </li>
-                        <li>
-                            <a href="/#full-stack">MERN-Stack Development</a>
-                        </li>
-                        <li>
-                            <a href="/#backend-dev">Backend Development</a>
-                        </li>
-                        <li>
-                            <a href="/#full-stack">Full-Stack Development</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- others Links start -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer">
+                    <div class="column">
+                        <h3>Quick-Links</h3>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li>
+                                <a href="https://forms.gle/CNJokZdCvhCPzArj9" target="_blank">Feedback</a>
+                            </li>
+                            <li>
+                                <a href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+                            </li>
+                            <li>
+                                <a href="/socialwork/index.html">Donate Books</a>
+                            </li>
+                            <li>
+                                <a href="/membership/index.html">Membership</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Blogs</h3>
+                        <ul>
+                            <li><a href="/biographies/">Biographies</a></li>
+                            <li>
+                                <a href="/businessplans/">Business Plans</a>
+                            </li>
+                            <li>
+                                <a href="/careeroptions/">Career options</a>
+                            </li>
+                            <li><a href="/motivation/">Motivation</a></li>
+                            <li><a href="/jobs_analysis/">jobs Analysis</a></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Courses</h3>
+                        <ul>
+                            <li>
+                                <a href="/#web-dev">Web Development</a>
+                            </li>
+                            <li>
+                                <a href="/#full-stack">MERN-Stack Development</a>
+                            </li>
+                            <li>
+                                <a href="/#backend-dev">Backend Development</a>
+                            </li>
+                            <li>
+                                <a href="/#full-stack">Full-Stack Development</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- others Links start -->
 
-                <div class="column">
-                    <h3>Other-Links</h3>
-                    <ul>
-                        <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund"
-                                target="_blank">Cancellation & Refund Policy</a></li>
-                        <li>
-                            <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms" target="_blank">Terms
-                                and Conditions
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping"
-                                target="_blank">Shipping & Delivery Policy</a>
-                        </li>
-                        <li>
-                            <a href="/privacy/">Privacy Policy </a>
-                        </li>
-                        <li>
-                            <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/contact_us"
-                                target="_blank">Contact us</a>
-                        </li>
-                    </ul>
+                    <div class="column">
+                        <h3>Other-Links</h3>
+                        <ul>
+                            <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund"
+                                    target="_blank">Cancellation & Refund Policy</a></li>
+                            <li>
+                                <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms"
+                                    target="_blank">Terms
+                                    and Conditions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping"
+                                    target="_blank">Shipping & Delivery Policy</a>
+                            </li>
+                            <li>
+                                <a href="/privacy/">Privacy Policy </a>
+                            </li>
+                            <li>
+                                <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/contact_us"
+                                    target="_blank">Contact us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- others Links end -->
+                    <div class="column">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li>
+                                <a href="../contactus/" target="_blank">Connect with Us</a>
+                            </li>
+                            <li class="contact-icons">
+                                <a href="https://www.facebook.com/profile.php?id=100093276582711" target="_blank"
+                                    class="fb-icon">
+                                    <img width="35" height="35" src="https://img.icons8.com/color/48/facebook-new.png"
+                                        alt="facebook-new" />
+                                </a>
+                                <a href="https://www.instagram.com/jobsdoor360/" target="_blank" class="insta-icon">
+                                    <img width="35" height="35"
+                                        src="https://img.icons8.com/color/48/instagram-new--v1.png"
+                                        alt="instagram-new--v1" />
+                                </a>
+                                <a href="https://www.linkedin.com/in/qualitywise-b05857275/" target="_blank"
+                                    class="linkedin-icon">
+                                    <img width="35" height="35" src="https://img.icons8.com/color/48/linkedin.png"
+                                        alt="linkedin" />
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ" target="_blank"
+                                    class="youtube-icon">
+                                    <img width="35" height="35" src="https://img.icons8.com/color/48/youtube-play.png"
+                                        alt="youtube-play" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- others Links end -->
-                <div class="column">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li>
-                            <a href="../contactus/" target="_blank">Connect with Us</a>
-                        </li>
-                        <li class="contact-icons">
-                            <a href="https://www.facebook.com/profile.php?id=100093276582711" target="_blank"
-                                class="fb-icon">
-                                <img width="35" height="35" src="https://img.icons8.com/color/48/facebook-new.png"
-                                    alt="facebook-new" />
-                            </a>
-                            <a href="https://www.instagram.com/jobsdoor360/" target="_blank" class="insta-icon">
-                                <img width="35" height="35" src="https://img.icons8.com/color/48/instagram-new--v1.png"
-                                    alt="instagram-new--v1" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/qualitywise-b05857275/" target="_blank"
-                                class="linkedin-icon">
-                                <img width="35" height="35" src="https://img.icons8.com/color/48/linkedin.png"
-                                    alt="linkedin" />
-                            </a>
-                            <a href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ" target="_blank"
-                                class="youtube-icon">
-                                <img width="35" height="35" src="https://img.icons8.com/color/48/youtube-play.png"
-                                    alt="youtube-play" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <p>Copyright Jobsdoor360 © 2024. All rights reserved</p>
             </div>
-            <p>Copyright Jobsdoor360 © 2024. All rights reserved</p>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
 
 </body>
 
