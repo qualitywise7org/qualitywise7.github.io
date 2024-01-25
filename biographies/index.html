@@ -28,7 +28,17 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
         crossorigin="anonymous"></script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-
+    <style>
+        .clamp-text {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          /* Set the number of lines you want to display */
+          -webkit-line-clamp: 3;
+          /* Fallback for browsers that do not support -webkit-line-clamp */
+          max-height: 3em;
+        }
+      </style>
 </head>
 
 <body class="bg-gradient-to-r from-indigo-200">
@@ -98,12 +108,13 @@
 
         <!-- Biographies Section -->
 
-        <section class="h-screen ">
-            <header>
-                <h1>Inspiring Entrepreneur Biographies</h1>
-            </header>
+        <header>
+            <h1>Inspiring Entrepreneur Biographies</h1>
+        </header>
 
-            <main class="pt-20">
+        <section style="overflow: auto;" class="h-screen ">
+
+            <!-- <main class="pt-20">
                 <div class="w-full ">
                     <div class="shadow-sm rounded py-2 align-middle">
                         <h2>Just Dial Founder - VSS Mani</h2>
@@ -148,7 +159,39 @@
                             <button class="continue-reading-btn ">Continue</button></a>
                     </div>
                 </div>
-            </main>
+            </main> -->
+            <div style="overflow: auto;" class="py-10 overflow-auto px-20 lg:px-40 overflow-auto">
+                <div class="w-full bg-white rounded shadow-md p-4 mb-4">
+                    <h2 class="text-xl font-semibold mb-2">Just Dial Founder - VSS Mani</h2>
+                    <p 
+                    style="
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        -webkit-line-clamp: 3; /* Number of lines to display */
+                    "
+                    class="text-gray-600 mb-4">
+                        VSS Mani is the visionary founder of Just Dial, an online local search engine that revolutionized the way people find and connect with businesses in India. He built Just Dial from scratch and transformed it into a multi-billion-dollar company. Mani's dedication and innovation in developing this platform have earned him immense recognition in the business world.
+                    </p>
+                    <a class="mt-2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue" href="https://www.dnaindia.com/business/report-meet-vss-mani-who-built-rs-6575-crore-indian-google-mukesh-ambani-had-paid-rs-1332-crore-3048424" href="https://www.dnaindia.com/business/report-meet-vss-mani-who-built-rs-6575-crore-indian-google-mukesh-ambani-had-paid-rs-1332-crore-3048424" target="_blank">Continue</a>
+                </div>
+                
+                <div class="w-full bg-white rounded shadow-md p-4 mb-4">
+                    <h2 class="text-xl font-semibold mb-2">Adda247 Founder - Anil Nagar</h2>
+                    <p 
+                    style="
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        -webkit-line-clamp: 3; /* Number of lines to display */
+                    "
+                    class="text-gray-600 mb-4">
+                        Anil Nagar is the inspiring founder of Adda247, an e-learning platform that provides quality education and test preparation for various competitive exams. Starting from just Rs. 1 lakh and fueled by his determination and passion, Anil Nagar has grown Adda247 into a prominent company with a valuation of over Rs. 1400 crore. His journey from an IIT aspirant to a successful entrepreneur has motivated millions of students across the country.
+                    </p>
+                    <a class="mt-2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue" href="https://www.dnaindia.com/business/report-meet-vss-mani-who-built-rs-6575-crore-indian-google-mukesh-ambani-had-paid-rs-1332-crore-3048424" target="_blank">Continue</a>
+                </div>
+                
+            </div>
         </section>
 
         <!-- Footer -->
@@ -277,5 +320,4 @@
             crossorigin="anonymous"></script>
     </bodymain>
 </body>
-
 </html>
