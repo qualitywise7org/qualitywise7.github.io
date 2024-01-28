@@ -90,9 +90,6 @@ document.getElementById("saveDetails").addEventListener("click", () => {
     categories: categories,
     user_dob: user_dob,
   };
-
-  var userJSON = JSON.stringify(userDetails);
-  localStorage.setItem("userDetails", userJSON);
 });
 
 onAuthStateChanged(auth, async (user) => {
@@ -114,7 +111,6 @@ onAuthStateChanged(auth, async (user) => {
           qualification_masterdata,
           storedUser.pgDegree
         );
-        // console.log(graduationDegreeName, pgDegreeName)
       }
       fetchAndUseJobs();
     }
@@ -146,7 +142,7 @@ async function fetchAndUseJobs() {
 
   const storedUserJSON = localStorage.getItem("userDetails");
   const storedUser = storedUserJSON ? JSON.parse(storedUserJSON) : {};
-  console.log(storedUser);
+  // console.log(storedUser);
 
   // Function to check eligibility based on qualifications
   function isEligibleForJob(job) {

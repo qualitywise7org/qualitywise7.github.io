@@ -42,6 +42,14 @@ onAuthStateChanged(auth, async (user) => {
 
       if (userDocSnapshot.exists()) {
         userData = userDocSnapshot.data();
+        var userJSON = JSON.stringify(userData);
+        localStorage.setItem("userDetails", userJSON);
+        const userName1 = document.getElementById("userName1");
+        const login = document.getElementById("login");
+
+        userName1.innerText = userData.full_name;
+        console.log(userData.full_name);
+        login.style.display = "none";
 
         fetchAndUseNames();
       }
@@ -174,20 +182,6 @@ if (logoutButton) {
   });
 }
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     const resumeInput = document.getElementById("resumeInput");
-//     const selectedFile = document.getElementById("selectedFile");
-
-//     resumeInput.addEventListener("change", function () {
-//         const file = this.files[0];
-//         if (file) {
-//             selectedFile.textContent = `Selected file: ${file.name}`;
-//         } else {
-//             selectedFile.textContent = "No file selected";
-//         }
-//     });
-// });
-
 // JavaScript to trigger the modal and populate form fields
 document
   .getElementById("openModalButton")
@@ -217,7 +211,7 @@ document
 
 async function populateSelectOptions(collection, selectElement) {
   try {
-    selectElement.innerHTML = `<option value="" selected >Select</option>`;
+    selectElement.innerHTML = `<option value="" selected >Not Applicable</option>`;
 
     collection?.forEach((elem) => {
       selectElement.innerHTML += `<option value="${elem.code}">${elem.name}</option>`;
@@ -255,7 +249,7 @@ async function populateDegreeOptions(degreeSelectId, level) {
   const degreeSelect = document.getElementById(degreeSelectId);
 
   try {
-    degreeSelect.innerHTML = `<option value="" selected >Select</option>`;
+    degreeSelect.innerHTML = `<option value="" selected >Not Applicable</option>`;
 
     qualification_masterdata?.forEach((elem) => {
       if (elem.level === level) {
@@ -334,7 +328,7 @@ async function updateUserData(userId, data) {
   const updatedData = {};
 
   for (const [key, value] of Object.entries(data)) {
-    if (value !== undefined && value !== null && value !== "") {
+    if (value !== undefined && value !== null) {
       updatedData[key] = value;
     }
   }
