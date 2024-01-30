@@ -1184,9 +1184,14 @@ body {
 
 .repeater-remove-btn{
   padding: 5px 10px;
+  margin: 10px 0;
   border-radius: 5px;
   background-color: rgb(241, 35, 35);
   color: white;
   font-weight: bold;
   width: 23%;
+}
+
+.navbar-nav{
+  align-items: center;
 }
