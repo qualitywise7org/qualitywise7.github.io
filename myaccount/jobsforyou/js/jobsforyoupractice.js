@@ -55,42 +55,9 @@ document
     document.getElementById("categories").value = userData.category || "";
     document.getElementById("user-dob").value = userData.dob || "";
 
-    let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+    let myModal = new bootstrap.Modal(document.getElementById("myModal1"));
     myModal.show();
   });
-
-document.getElementById("saveDetails").addEventListener("click", () => {
-  var twelfthSubject = document.getElementById("twelfthSubject").value;
-  var twelfthPercentage = document.getElementById("twelfthPercentage").value;
-  var diplomaStream = document.getElementById("diplomaStream").value;
-  var diplomaName = document.getElementById("diplomaName").value;
-  var graduationStream = document.getElementById("graduationStream").value;
-  var graduationDegree = document.getElementById("graduationDegree").value;
-  var graduationPercentage = document.getElementById(
-    "graduationPercentage"
-  ).value;
-  var pgStream = document.getElementById("pgStream").value;
-  var pgDegree = document.getElementById("pgDegree").value;
-  var pgPercentage = document.getElementById("pgPercentage").value;
-  var categories = document.getElementById("categories").value;
-  var user_dob = document.getElementById("user-dob").value;
-
-  // Store user data in local storage
-  var userDetails = {
-    twelfthSubject: twelfthSubject,
-    twelfthPercentage: twelfthPercentage,
-    diplomaStream: diplomaStream,
-    diplomaName: diplomaName,
-    graduationStream: graduationStream,
-    graduationDegree: graduationDegree,
-    graduationPercentage: graduationPercentage,
-    pgStream: pgStream,
-    pgDegree: pgDegree,
-    pgPercentage: pgPercentage,
-    categories: categories,
-    user_dob: user_dob,
-  };
-});
 
 onAuthStateChanged(auth, async (user) => {
   userId = user.uid;
@@ -441,7 +408,7 @@ function parseDate(dateString) {
 document
   .getElementById("openModalButton")
   .addEventListener("click", async () => {
-    let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+    let myModal = new bootstrap.Modal(document.getElementById("myModal1"));
     myModal.show();
   });
 

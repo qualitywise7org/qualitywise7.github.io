@@ -134,6 +134,41 @@ const jobtype_masterdata = [
   },
 ];
 
+const diplomaname_masterdata = [
+  {
+    code: "engineering",
+    name: "Engineering",
+  },
+  {
+    code: "pharmacy",
+    name: "Pharmacy",
+  },
+  {
+    code: "education",
+    name: "Education",
+  },
+  {
+    code: "business_administration",
+    name: "Business Administration",
+  },
+  {
+    code: "hotel_management",
+    name: "Hotel Management",
+  },
+  {
+    code: "fashion_designing",
+    name: "Fashion Designing",
+  },
+  {
+    code: "digital_marketing",
+    name: "Digital Marketing",
+  },
+  {
+    code: "financial_management",
+    name: "Financial Management",
+  },
+];
+
 const industry_masterdata = [
   {
     code: "cs_it_engineering",

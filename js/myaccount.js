@@ -50,8 +50,14 @@ onAuthStateChanged(auth, async (user) => {
         userName1.innerText = userData.full_name;
         console.log(userData.full_name);
         login.style.display = "none";
-
         fetchAndUseNames();
+        if (userData.firstLogin) {
+          let myModal = new bootstrap.Modal(
+            document.getElementById("myModal1")
+          );
+          myModal.show();
+          await updateDoc(userDocRef, { firstLogin: false });
+        }
       }
     } catch (error) {
       console.error("Error fetching user details:", error);
@@ -205,13 +211,13 @@ document
     document.getElementById("categories").value = userData.category || "";
     document.getElementById("user-dob").value = userData.dob || "";
 
-    let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+    let myModal = new bootstrap.Modal(document.getElementById("myModal1"));
     myModal.show();
   });
 
 async function populateSelectOptions(collection, selectElement) {
   try {
-    selectElement.innerHTML = `<option value="" selected >Not Applicable</option>`;
+    selectElement.innerHTML = `<option value="" selected >Select</option>`;
 
     collection?.forEach((elem) => {
       selectElement.innerHTML += `<option value="${elem.code}">${elem.name}</option>`;
@@ -240,16 +246,31 @@ window.addEventListener("DOMContentLoaded", () => {
     category_masterdata,
     document.getElementById("categories")
   );
-  populateDegreeOptions("diplomaName", "diploma");
+  // populateDegreeOptions("diplomaName", "diploma");
+  populateDiplomaOptions("diplomaName");
   populateDegreeOptions("graduationDegree", "graduation");
   populateDegreeOptions("pgDegree", "post_graduation");
 });
+
+async function populateDiplomaOptions(degreeSelectId) {
+  const degreeSelect = document.getElementById(degreeSelectId);
+
+  try {
+    degreeSelect.innerHTML = `<option value="" selected >Select</option>`;
+
+    diplomaname_masterdata?.forEach((elem) => {
+      degreeSelect.innerHTML += `<option value="${elem.code}">${elem.name}</option>`;
+    });
+  } catch (error) {
+    console.error(`Error fetching degree options:`, error);
+  }
+}
 
 async function populateDegreeOptions(degreeSelectId, level) {
   const degreeSelect = document.getElementById(degreeSelectId);
 
   try {
-    degreeSelect.innerHTML = `<option value="" selected >Not Applicable</option>`;
+    degreeSelect.innerHTML = `<option value="" selected >Select</option>`;
 
     qualification_masterdata?.forEach((elem) => {
       if (elem.level === level) {
@@ -310,7 +331,7 @@ saveButton.addEventListener("click", async () => {
         dob,
       });
 
-      let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+      let myModal = new bootstrap.Modal(document.getElementById("myModal1"));
       myModal.hide();
       window.location.reload();
       console.log("Data saved successfully.");

@@ -106,5 +106,6 @@ async function saveUserDataToFirestore(userId, username, email) {
   await setDoc(userDocRef, {
     full_name: username,
     email: email,
+    firstLogin: true,
   });
 }
