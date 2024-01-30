@@ -1172,3 +1172,22 @@ body {
 .dropdown{
   width: 100%;
 }
+
+.repeater-add-btn{
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgb(114, 192, 206);
+  color: white;
+  font-weight: bold;
+  width: 23%;
+
+}
+
+.repeater-remove-btn{
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgb(241, 35, 35);
+  color: white;
+  font-weight: bold;
+  width: 23%;
+}
