@@ -1170,6 +1170,8 @@ body {
 
 .dropdown{
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .repeater-add-btn{
@@ -1194,4 +1196,8 @@ body {
 
 .navbar-nav{
   align-items: center;
+}
+
+.print-btn-sc{
+  margin-top: 50px;
 }
