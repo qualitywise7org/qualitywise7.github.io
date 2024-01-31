@@ -42,8 +42,22 @@ onAuthStateChanged(auth, async (user) => {
 
       if (userDocSnapshot.exists()) {
         userData = userDocSnapshot.data();
+        var userJSON = JSON.stringify(userData);
+        localStorage.setItem("userDetails", userJSON);
+        const userName1 = document.getElementById("userName1");
+        const login = document.getElementById("login");
 
+        userName1.innerText = userData.full_name;
+        console.log(userData.full_name);
+        login.style.display = "none";
         fetchAndUseNames();
+        if (userData.firstLogin) {
+          let myModal = new bootstrap.Modal(
+            document.getElementById("myModal1")
+          );
+          myModal.show();
+          await updateDoc(userDocRef, { firstLogin: false });
+        }
       }
     } catch (error) {
       console.error("Error fetching user details:", error);
@@ -174,20 +188,6 @@ if (logoutButton) {
   });
 }
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     const resumeInput = document.getElementById("resumeInput");
-//     const selectedFile = document.getElementById("selectedFile");
-
-//     resumeInput.addEventListener("change", function () {
-//         const file = this.files[0];
-//         if (file) {
-//             selectedFile.textContent = `Selected file: ${file.name}`;
-//         } else {
-//             selectedFile.textContent = "No file selected";
-//         }
-//     });
-// });
-
 // JavaScript to trigger the modal and populate form fields
 document
   .getElementById("openModalButton")
@@ -211,7 +211,7 @@ document
     document.getElementById("categories").value = userData.category || "";
     document.getElementById("user-dob").value = userData.dob || "";
 
-    let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+    let myModal = new bootstrap.Modal(document.getElementById("myModal1"));
     myModal.show();
   });
 
@@ -246,10 +246,25 @@ window.addEventListener("DOMContentLoaded", () => {
     category_masterdata,
     document.getElementById("categories")
   );
-  populateDegreeOptions("diplomaName", "diploma");
+  // populateDegreeOptions("diplomaName", "diploma");
+  populateDiplomaOptions("diplomaName");
   populateDegreeOptions("graduationDegree", "graduation");
   populateDegreeOptions("pgDegree", "post_graduation");
 });
+
+async function populateDiplomaOptions(degreeSelectId) {
+  const degreeSelect = document.getElementById(degreeSelectId);
+
+  try {
+    degreeSelect.innerHTML = `<option value="" selected >Select</option>`;
+
+    diplomaname_masterdata?.forEach((elem) => {
+      degreeSelect.innerHTML += `<option value="${elem.code}">${elem.name}</option>`;
+    });
+  } catch (error) {
+    console.error(`Error fetching degree options:`, error);
+  }
+}
 
 async function populateDegreeOptions(degreeSelectId, level) {
   const degreeSelect = document.getElementById(degreeSelectId);
@@ -316,7 +331,7 @@ saveButton.addEventListener("click", async () => {
         dob,
       });
 
-      let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+      let myModal = new bootstrap.Modal(document.getElementById("myModal1"));
       myModal.hide();
       window.location.reload();
       console.log("Data saved successfully.");
@@ -334,7 +349,7 @@ async function updateUserData(userId, data) {
   const updatedData = {};
 
   for (const [key, value] of Object.entries(data)) {
-    if (value !== undefined && value !== null && value !== "") {
+    if (value !== undefined && value !== null) {
       updatedData[key] = value;
     }
   }

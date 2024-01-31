@@ -55,45 +55,9 @@ document
     document.getElementById("categories").value = userData.category || "";
     document.getElementById("user-dob").value = userData.dob || "";
 
-    let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+    let myModal = new bootstrap.Modal(document.getElementById("myModal1"));
     myModal.show();
   });
-
-document.getElementById("saveDetails").addEventListener("click", () => {
-  var twelfthSubject = document.getElementById("twelfthSubject").value;
-  var twelfthPercentage = document.getElementById("twelfthPercentage").value;
-  var diplomaStream = document.getElementById("diplomaStream").value;
-  var diplomaName = document.getElementById("diplomaName").value;
-  var graduationStream = document.getElementById("graduationStream").value;
-  var graduationDegree = document.getElementById("graduationDegree").value;
-  var graduationPercentage = document.getElementById(
-    "graduationPercentage"
-  ).value;
-  var pgStream = document.getElementById("pgStream").value;
-  var pgDegree = document.getElementById("pgDegree").value;
-  var pgPercentage = document.getElementById("pgPercentage").value;
-  var categories = document.getElementById("categories").value;
-  var user_dob = document.getElementById("user-dob").value;
-
-  // Store user data in local storage
-  var userDetails = {
-    twelfthSubject: twelfthSubject,
-    twelfthPercentage: twelfthPercentage,
-    diplomaStream: diplomaStream,
-    diplomaName: diplomaName,
-    graduationStream: graduationStream,
-    graduationDegree: graduationDegree,
-    graduationPercentage: graduationPercentage,
-    pgStream: pgStream,
-    pgDegree: pgDegree,
-    pgPercentage: pgPercentage,
-    categories: categories,
-    user_dob: user_dob,
-  };
-
-  var userJSON = JSON.stringify(userDetails);
-  localStorage.setItem("userDetails", userJSON);
-});
 
 onAuthStateChanged(auth, async (user) => {
   userId = user.uid;
@@ -114,7 +78,6 @@ onAuthStateChanged(auth, async (user) => {
           qualification_masterdata,
           storedUser.pgDegree
         );
-        // console.log(graduationDegreeName, pgDegreeName)
       }
       fetchAndUseJobs();
     }
@@ -146,7 +109,7 @@ async function fetchAndUseJobs() {
 
   const storedUserJSON = localStorage.getItem("userDetails");
   const storedUser = storedUserJSON ? JSON.parse(storedUserJSON) : {};
-  console.log(storedUser);
+  // console.log(storedUser);
 
   // Function to check eligibility based on qualifications
   function isEligibleForJob(job) {
@@ -445,7 +408,7 @@ function parseDate(dateString) {
 document
   .getElementById("openModalButton")
   .addEventListener("click", async () => {
-    let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+    let myModal = new bootstrap.Modal(document.getElementById("myModal1"));
     myModal.show();
   });
 
