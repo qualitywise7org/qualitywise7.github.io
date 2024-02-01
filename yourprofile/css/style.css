@@ -1199,5 +1199,11 @@ body {
 }
 
 .print-btn-sc{
-  margin-top: 50px;
+  margin-top: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.cv-form-row-skills{
+  margin-bottom: 20px;
 }
