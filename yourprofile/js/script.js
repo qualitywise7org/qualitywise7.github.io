@@ -15,94 +15,62 @@ $(document).ready(function () {
 })
 
 
-// const firstnameInput = document.getElementById('firstname');
 
-// firstnameInput.addEventListener('change', (e) => {
-//     const firstName = e.target.value; 
-// });
+function collectFormData() {
+    var formData = {}; // Initialize formData object
 
+    // Collect data for the "About" section
+    var aboutData = {};
+    aboutData.firstName = $('#firstname').val();
+    aboutData.middleName = $('#middlename').val();
+    aboutData.lastName = $('#lastname').val();
+    aboutData.image = $('#image').val();
+    aboutData.gender = $('#gender').val();
+    aboutData.category = $('#category').val();
+    aboutData.address = $('#address').val();
+    aboutData.email = $('#email').val();
+    aboutData.phoneNo = $('#phoneno').val();
+    aboutData.linkedin = $('#linkedin').val();
+    aboutData.github = $('#github').val();
 
-// const categoryInput = document.getElementById('category');
+    formData.about = aboutData;
 
-// categoryInput.addEventListener('change', (e) => {
-//     const category = e.target.value; 
-// });
-
-// const genderInput = document.getElementById('gender');
-
-// genderInput.addEventListener('change', (e) => {
-//     const gender = e.target.value; 
-// });
-
-// const imageInput = document.getElementById('image');
-
-// imageInput.addEventListener('change', (e) => {
-//     // previewImage();
-// });
-
-// const lastnameInput = document.getElementById('lastname');
-
-// lastnameInput.addEventListener('change', (e) => {
-//     const lastname = e.target.value; 
-// });
-
-// const middlenameInput = document.getElementById('middlename');
-
-// middlenameInput.addEventListener('change', (e) => {
-//     const middlename = e.target.value; 
-// });
-
-
-// const githubInput = document.getElementById('github');
-
-// githubInput.addEventListener('change', (e) => {
-//     const github = e.target.value;
-//     // Do something with the value of the github input
-// });
-
-// const linkedinInput = document.getElementById('linkedin');
-
-// linkedinInput.addEventListener('change', (e) => {
-//     const linkedin = e.target.value;
-//     // Do something with the value of the linkedin input
-// });
-
-// const phonenoInput = document.getElementById('phoneno');
-
-// phonenoInput.addEventListener('change', (e) => {
-//     const phoneno = e.target.value;
-//     // Do something with the value of the phoneno input
-// });
-
-// const emailInput = document.getElementById('email');
-
-// emailInput.addEventListener('change', (e) => {
-//     const email = e.target.value;
-// });
-
-// const addressInput = document.getElementById('address');
-
-// addressInput.addEventListener('change', (e) => {
-//     const address = e.target.value;
-// });
-
-// const schoolInputs = [...document.getElementsByClassName('school')];
-
-// schoolInputs.forEach((input) => {
-//     input.addEventListener('change', (e) => {
-//         const schoolValue = e.target.value;
-//         console.log(schoolValue);
-//     });
-// });
-
-const btn = document.getElementById('btn');
-btn.addEventListener('click', handleclick());
-
-function handleclick() {
-    const sch = document.getElementsByClassName('school');
-    sch.forEach(element => {
-        element.addEventListener('change', (e) => {
-            console.log(e);
-        })
+    // Collect data for the "Education" section
+    var education = [];
+    $('[data-repeater-list="group-education"]').find('[data-repeater-item]').each(function () {
+        var eduItem = {};
+        eduItem.school = $('#school', this).val();
+        eduItem.degree = $('#degree', this).val();
+        eduItem.start_date = $('#sdate', this).val();
+        eduItem.graduation_date = $('#edate', this).val();
+        eduItem.city = $('#city', this).val();
+        eduItem.percentage = $('#Percentage', this).val();
+        education.push(eduItem);
     });
+
+    formData.education = education;
+
+    // Collect data for the "Skills" section
+    var skills = [];
+    $('[data-repeater-list="group-skill"]').find('[data-repeater-item]').each(function () {
+        var skillValue = $(this).find('.skill').val().trim();
+        if (skillValue !== '') {
+            skills.push(skillValue);
+        }
+    });
+
+    formData.skills = skills;
+
+    return formData;
 }
+
+function saveFormDataToFile() {
+    var formData = collectFormData();
+    var jsonData = JSON.stringify(formData);
+
+    console.log(jsonData);
+}
+
+$('#btn').on('click', function () {
+    saveFormDataToFile();
+});
