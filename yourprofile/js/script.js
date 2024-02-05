@@ -32,6 +32,70 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 const storageRef = ref(storage);
 
+
+async function isUser() {
+  var email = localStorage.getItem('email'); 
+  const docRef = doc(db, "userProfile", email);
+  try {
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      var userData = docSnap.data();
+      $("#btn").val("Update Details");
+      // Update HTML input values for the "About" section
+      $("#firstname").val(userData.about.firstName);
+      $("#middlename").val(userData.about.middleName);
+      $("#lastname").val(userData.about.lastName);
+      // $("#image").val(userData.about.image);
+      $("#gender").val(userData.about.gender);
+      $("#category").val(userData.about.category);
+      $("#address").val(userData.about.address);
+      $("#email").val(userData.about.email);
+      $("#phoneno").val(userData.about.phoneNo);
+      $("#linkedin").val(userData.about.linkedin);
+      $("#github").val(userData.about.github);
+
+      // Update HTML input values for the "Education" section
+      $('[data-repeater-list="group-education"]')
+        .find("[data-repeater-item]")
+        .each(function(index) {
+          console.log(index);
+          if(index !== 0){
+            $('#addeducation').click();
+          }
+          var eduItem = userData.education[index];
+          if (eduItem) {
+            $(this).find("#school").val(eduItem.school || "");
+            $(this).find("#degree").val(eduItem.degree || "");
+            $(this).find("#sdate").val(eduItem.start_date || "");
+            $(this).find("#edate").val(eduItem.graduation_date || "");
+            $(this).find("#city").val(eduItem.city || "");
+            $(this).find("#Percentage").val(eduItem.percentage || "");
+          }
+        });
+
+      // Update HTML input values for the "Skills" section
+      $('[data-repeater-list="group-skill"]')
+        .find("[data-repeater-item]")
+        .each(function(index) {
+          var skillValue = userData.skills[index];
+          if (skillValue) {
+            $(this).find(".skill").val(skillValue);
+          }
+        });
+
+      console.log(userData);
+
+    } else {
+      console.log("User data is not present");
+    }
+  } catch (error) {
+    console.error("Error getting user data:", error);
+  }
+}
+
+isUser();
+
+
 $(document).ready(function () {
   $(".repeater").repeater({
     initEmpty: false,

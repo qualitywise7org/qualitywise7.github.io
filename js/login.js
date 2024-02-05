@@ -33,6 +33,8 @@ loginForm.addEventListener("submit", async (e) => {
     // const toast = new bootstrap.Toast(document.getElementById("loginToast"));
     // toast.show();
     window.location.href = "/myaccount/jobsforyou/";
+    localStorage.setItem("email", email);
+
     alert("Logged in successfully!");
     // setTimeout(() => {
     //   window.location.href = "/myaccount/jobsforyou/";

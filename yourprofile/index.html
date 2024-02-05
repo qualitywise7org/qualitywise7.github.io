@@ -125,7 +125,7 @@
                                             <div class="form-elem">
                                                 <label for="image" class="form-label">Your Image</label>
                                                 <input id="image" type="file" class="form-control image"
-                                                    accept="image/*" onchange="previewImage()">
+                                                    accept="image/*">
                                             </div>
                                             <div class="dropdown">
                                                 <label for="gender" class="form-label">Gender</label>
@@ -194,7 +194,7 @@
 
                                 <div class="row-separator repeater">
                                     <div class="repeater" data-repeater-list="group-education">
-                                        <div data-repeater-item>
+                                        <div data-repeater-item class="educations_box">
                                             <div class="cv-form-row cv-form-row-blk">
                                                 <div class="form-elem">
                                                     <label for="" class="form-label">School</label>
@@ -243,7 +243,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" data-repeater-create value="Add"
+                                    <button type="button" data-repeater-create value="Add" id="addeducation"
                                         class="repeater-add-btn">Add</button>
                                 </div>
                             </div>
@@ -268,9 +268,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <br />
-                                    <button type="button" data-repeater-create class="repeater-add-btn">Add</button>
                                 </div>
                             </div>
                         </form>
