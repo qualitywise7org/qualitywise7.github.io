@@ -8,6 +8,8 @@
     <meta name="description"
         content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!" />
     <meta name="google-adsense-account" content="ca-pub-2075086355753452">
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css" />
@@ -18,7 +20,8 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
     <script src="https://code.jquery.com/jquery.-3.6.0.min.js"></script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    
+
+
 </head>
 
 <body>
@@ -39,7 +42,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="demo">Demo</a>
-                    </li> 
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="career">Internships/Careers</a>
                     </li>
@@ -97,19 +100,22 @@
                                 <div class="cv-form-row cv-form-row-blk">
                                     <div class="single-row-data">
                                         <div class="form-elem">
-                                            <label for="" class="form-label">First Name</label>
-                                            <input id="firstname" type="text" class="form-control firstname"  placeholder="e.g. John" required>
+                                            <label for="firstname" class="form-label">First Name</label>
+                                            <input id="firstname" type="text" class="form-control firstname"
+                                                placeholder="e.g. John" required>
                                             <span class="form-text"></span>
                                         </div>
                                         <div class="form-elem">
-                                            <label for="" class="form-label">Middle Name <span
+                                            <label for="middlename" class="form-label">Middle Name <span
                                                     class="opt-text">(optional)</span></label>
-                                            <input id="middlename" type="text" class="form-control middlename"  placeholder="e.g. Herbert" required>
+                                            <input id="middlename" type="text" class="form-control middlename"
+                                                placeholder="e.g. Herbert">
                                             <span class="form-text"></span>
                                         </div>
                                         <div class="form-elem">
-                                            <label for="" class="form-label">Last Name</label>
-                                            <input id="lastname" type="text" class="form-control lastname"   placeholder="e.g. Doe" required>
+                                            <label for="lastname" class="form-label">Last Name</label>
+                                            <input id="lastname" type="text" class="form-control lastname"
+                                                placeholder="e.g. Doe" required>
                                             <span class="form-text"></span>
                                         </div>
                                     </div>
@@ -117,13 +123,13 @@
                                     <div class="form-elem">
                                         <div class="single-row-data">
                                             <div class="form-elem">
-                                                <label for="" class="form-label">Your Image</label>
-                                                <input id="image" type="file" class="form-control image" 
+                                                <label for="image" class="form-label">Your Image</label>
+                                                <input id="image" type="file" class="form-control image"
                                                     accept="image/*" onchange="previewImage()">
                                             </div>
                                             <div class="dropdown">
                                                 <label for="gender" class="form-label">Gender</label>
-                                                <select id="gender" name="gender">
+                                                <select id="gender" name="gender" required>
                                                     <option value="better not to say">None</option>
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
@@ -131,7 +137,7 @@
                                             </div>
                                             <div class="dropdown">
                                                 <label for="category" class="form-label">Category</label>
-                                                <select id="category" name="gender">
+                                                <select id="category" name="gender" required>
                                                     <option value="none">None</option>
                                                     <option value="General">General</option>
                                                     <option value="OBC">OBC</option>
@@ -142,40 +148,44 @@
                                         </div>
                                     </div>
                                     <div class="form-elem">
-                                        <label for="" class="form-label">Address</label>
-                                        <input id="address" type="text" class="form-control address" 
-                                             placeholder="e.g. Lake Street-23" required>
+                                        <label for="address" class="form-label">Address</label>
+                                        <input id="address" type="text" class="form-control address"
+                                            placeholder="e.g. Lake Street-23" required>
                                         <span class="form-text"></span>
                                     </div>
 
                                     <div class="single-row-data">
                                         <div class="form-elem">
-                                            <label for="" class="form-label">Email</label>
-                                            <input id="email" type="email" class="form-control email" 
-                                                 placeholder="e.g. johndoe@gmail.com" required>
+                                            <label for="email" class="form-label">Email</label>
+                                            <input id="email" type="email" class="form-control email"
+                                                placeholder="e.g. johndoe@gmail.com" required>
                                             <span class="form-text"></span>
                                         </div>
                                         <div class="form-elem">
-                                            <label for="" class="form-label">Phone No</label>
-                                            <input id="phoneno" type="number" class="form-control phoneno" 
-                                                 placeholder="e.g. 456-768-798, 567.654.002" required>
+                                            <label for="phoneno" class="form-label">Phone No</label>
+                                            <input id="phoneno" type="number" class="form-control phoneno"
+                                                placeholder="e.g. 456-768-798, 567.654.002" required>
                                             <span class="form-text"></span>
                                         </div>
                                     </div>
                                     <div class="form-elem">
-                                        <label for="" class="form-label">LinkedIn</label>
-                                        <input id="linkedin" type="text" class="form-control email" 
-                                             placeholder="e.g. xyx.linkedin.com" required>
+                                        <label for="linkedin" class="form-label">LinkedIn</label>
+                                        <input id="linkedin" type="text" class="form-control email"
+                                            placeholder="e.g. xyx.linkedin.com" required>
                                         <span class="form-text"></span>
                                     </div>
                                     <div class="form-elem">
-                                        <label for="" class="form-label">Github</label>
-                                        <input id="github" type="text" class="form-control email" 
-                                             placeholder="e.g. xyz.github.com" required>
+                                        <label for="github" class="form-label">Github</label>
+                                        <input id="github" type="text" class="form-control email"
+                                            placeholder="e.g. xyz.github.com" required>
                                         <span class="form-text"></span>
                                     </div>
                                 </div>
                             </div>
+                            <script>
+                                document.getElementById("firstname").focus(); 
+                            </script>
+
 
                             <div class="cv-form-blk">
                                 <div class="cv-form-row-title">
@@ -188,49 +198,48 @@
                                             <div class="cv-form-row cv-form-row-blk">
                                                 <div class="form-elem">
                                                     <label for="" class="form-label">School</label>
-                                                    <input name="school" type="text" class="form-control school" id="school"
-                                                          placeholder="Name of School">
+                                                    <input name="school" type="text" class="form-control school"
+                                                        id="school" placeholder="Name of School">
                                                     <span class="form-text"></span>
                                                 </div>
                                                 <div class="form-elem">
                                                     <label for="" class="form-label">Degree</label>
-                                                    <input name="edu_degree" type="text" class="form-control edu_degree" id="degree"
-                                                          placeholder="Degree">
+                                                    <input name="edu_degree" type="text" class="form-control edu_degree"
+                                                        id="degree" placeholder="Degree">
                                                     <span class="form-text"></span>
                                                 </div>
                                                 <div class="single-row-data">
                                                     <div class="form-elem">
                                                         <label for="" class="form-label">Start Date</label>
                                                         <input name="edu_start_date" type="date" id="sdate"
-                                                        class="form-control edu_start_date" 
-                                                        >
+                                                            class="form-control edu_start_date">
                                                         <span class="form-text"></span>
                                                     </div>
                                                     <div class="form-elem">
                                                         <label for="" class="form-label">End Date</label>
                                                         <input name="edu_graduation_date" type="date" id="edate"
-                                                        class="form-control edu_graduation_date" 
-                                                        >
+                                                            class="form-control edu_graduation_date">
                                                         <span class="form-text"></span>
                                                     </div>
                                                 </div>
                                                 <div class="single-row-data">
-                                                <div class="form-elem">
-                                                    <label for="" class="form-label">City</label>
-                                                    <input name="edu_city" type="text" class="form-control edu_city" id="city"
-                                                          placeholder="City Name">
-                                                    <span class="form-text"></span>
+                                                    <div class="form-elem">
+                                                        <label for="" class="form-label">City</label>
+                                                        <input name="edu_city" type="text" class="form-control edu_city"
+                                                            id="city" placeholder="City Name">
+                                                        <span class="form-text"></span>
+                                                    </div>
+                                                    <div class="form-elem">
+                                                        <label for="" class="form-label">Percentage/CGPA</label>
+                                                        <input name="percentage" type="text" id="Percentage"
+                                                            class="form-control edu_description">
+                                                        <span class="form-text"></span>
+                                                    </div>
                                                 </div>
-                                                <div class="form-elem">
-                                                    <label for="" class="form-label">Percentage/CGPA</label>
-                                                    <input name="percentage" type="text" id="Percentage"
-                                                        class="form-control edu_description" 
-                                                        >
-                                                    <span class="form-text"></span>
+                                                <div class="remove_button">
+                                                    <button data-repeater-delete type="button"
+                                                        class="repeater-remove-btn">Remove</button>
                                                 </div>
-                                            </div>
-                                                <button data-repeater-delete type="button"
-                                                    class="repeater-remove-btn">Remove</button>
                                             </div>
                                         </div>
                                     </div>
@@ -249,13 +258,13 @@
                                         <div data-repeater-item>
                                             <div class="cv-form-row cv-form-row-skills">
                                                 <div class="form-elem">
-                                                    <label for="" class="form-label">Skill</label>
-                                                    <input name="skill" type="text" class="form-control skill" 
-                                                        >
+                                                    <input name="skill" type="text" class="form-control skill">
                                                     <span class="form-text"></span>
                                                 </div>
-                                                <button data-repeater-delete type="button"
-                                                    class="repeater-remove-btn">Remove</button>
+                                                <div class="remove_button">
+                                                    <button data-repeater-delete type="button"
+                                                        class="repeater-remove-btn">Remove</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -473,7 +482,7 @@
         data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script> 
+    </script>
 </body>
 
 </html>

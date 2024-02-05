@@ -1205,5 +1205,13 @@ body {
 }
 
 .cv-form-row-skills{
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.remove_button{
+  text-align: right;
+}
+
+.reapeater{
+  margin: 100px;
 }

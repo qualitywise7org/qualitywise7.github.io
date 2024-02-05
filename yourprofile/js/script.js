@@ -1,4 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+// import { getStorage, ref, uploadBytes } from "firebase/storage";
+
+// const storage = getStorage();
+// const storageRef = ref(storage, 'images/');
+
 import {
   getFirestore,
   getDoc,
@@ -104,6 +109,3 @@ function saveFormDataToDatabase() {
 $('#btn').on('click', function () {
     saveFormDataToDatabase();
 });
-
-
-
