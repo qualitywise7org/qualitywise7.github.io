@@ -16,6 +16,8 @@ import {
   collection,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
   authDomain: "jobsdoor360-39b87.firebaseapp.com",
@@ -40,7 +42,7 @@ async function isUser() {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       var userData = docSnap.data();
-      $("#btn").val("Update Details");
+      $("#btn").html("Update Details");
       // Update HTML input values for the "About" section
       $("#firstname").val(userData.about.firstName);
       $("#middlename").val(userData.about.middleName);
@@ -58,10 +60,6 @@ async function isUser() {
       $('[data-repeater-list="group-education"]')
         .find("[data-repeater-item]")
         .each(function(index) {
-          console.log(index);
-          if(index !== 0){
-            $('#addeducation').click();
-          }
           var eduItem = userData.education[index];
           if (eduItem) {
             $(this).find("#school").val(eduItem.school || "");
@@ -82,7 +80,6 @@ async function isUser() {
             $(this).find(".skill").val(skillValue);
           }
         });
-
       console.log(userData);
 
     } else {
@@ -113,7 +110,7 @@ $(document).ready(function () {
 });
 
 function collectFormData() {
-  var formData = {}; // Initialize formData object
+  var formData = {};  
 
   // Collect data for the "About" section
   var aboutData = {};
@@ -186,7 +183,18 @@ async function saveFormDataToDatabase() {
 
   await setDoc(userProfileRef, formData)
     .then(() => {
-      console.log("Document successfully written!");
+        Toastify({
+            text: "Details Successfully Submitted",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", 
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+              background: "linear-gradient(to right, #0d6efd, #586ba6)",
+            }
+          }).showToast();
     })
     .catch((error) => {
       console.error("Error writing document: ", error);
