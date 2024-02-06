@@ -17,7 +17,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
   authDomain: "jobsdoor360-39b87.firebaseapp.com",
@@ -80,10 +79,34 @@ async function isUser() {
             $(this).find(".skill").val(skillValue);
           }
         });
-      console.log(userData);
+        Toastify({
+            text: "Fetching Details",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", 
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+              background: "linear-gradient(to right, #0d6efd, #586ba6)",
+              borderRadius: "10px"
+            }
+          }).showToast();
 
     } else {
-      console.log("User data is not present");
+        Toastify({
+            text: "No Previous Data Found",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", 
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+              background: "linear-gradient(to right, #0d6efd, #586ba6)",
+              borderRadius: "10px"
+            }
+          }).showToast();
     }
   } catch (error) {
     console.error("Error getting user data:", error);
