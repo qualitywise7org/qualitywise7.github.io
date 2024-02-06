@@ -193,6 +193,7 @@ async function saveFormDataToDatabase() {
             stopOnFocus: true, 
             style: {
               background: "linear-gradient(to right, #0d6efd, #586ba6)",
+              borderRadius: "10px"
             }
           }).showToast();
     })
