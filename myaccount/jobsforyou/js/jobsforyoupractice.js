@@ -59,7 +59,6 @@ document
     myModal.show();
   });
 
-// Function to fetch and use jobs
 onAuthStateChanged(auth, async (user) => {
   userId = user.uid;
   try {
