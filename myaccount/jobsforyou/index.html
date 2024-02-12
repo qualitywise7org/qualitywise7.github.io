@@ -110,6 +110,28 @@
                     <h2 class="jobs-header text-center">Jobs for You</h2>
                 </div>
             </div>
+
+
+            <!-- Filtering based on location -->
+            <div class="container mt-0">
+                <div class="row justify-content-start">
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <label for="locationInput" class="form-label fw-bold">Location:</label>
+                        <input type="text" class="form-control" id="locationInput" placeholder="Desired Location">
+                        <div id="locationSuggestions" class="list-group mt-2"></div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <label for="jobTypeInput" class="form-label fw-bold">Job Type:</label>
+                        <select class="form-select" id="jobTypeInput">
+                            <option value="">All Jobs</option>
+                            <option value="Full Time">Private</option>
+                            <option value="Part Time">Government</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
             <div id="loading" class="loading">getting jobs for you...</div>
             <div class="row">
                 <div class="col">
@@ -422,8 +444,6 @@
             </div>
         </div>
     </div> -->
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

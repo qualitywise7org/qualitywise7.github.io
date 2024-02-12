@@ -86,6 +86,87 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
+var uniqueLocations = new Set();
+var locationInput = document.getElementById("locationInput");
+var locationSuggestions = document.getElementById("locationSuggestions");
+
+locationInput.addEventListener("input", function () {
+  var userInput = this.value.trim().toLowerCase();
+
+  locationSuggestions.innerHTML = "";
+
+  if (userInput === "") {
+    localStorage.removeItem("userLocation");
+    displayJobs(jobsToShow);
+    return;
+  }
+
+  var filteredLocations = availableLocations.filter(function (location) {
+    return location.toLowerCase().startsWith(userInput);
+  });
+
+  filteredLocations.forEach(function (location) {
+    var suggestionElement = document.createElement("button");
+    suggestionElement.classList.add(
+      "list-group-item",
+      "list-group-item-action"
+    );
+    suggestionElement.textContent = location;
+    suggestionElement.addEventListener("click", function () {
+      locationInput.value = location;
+      localStorage.setItem("userLocation", location);
+      locationSuggestions.innerHTML = "";
+      filterJobsByLocation(location);
+    });
+    locationSuggestions.appendChild(suggestionElement);
+  });
+});
+
+jobs_data.forEach((job) => {
+  if (job.location) {
+    uniqueLocations.add(job.location);
+  }
+});
+var availableLocations = Array.from(uniqueLocations);
+
+function filterJobsByLocation(location) {
+  console.log(jobsToShow);
+  const filteredJobs = jobsToShow.filter((job) => job.location === location);
+  console.log(filteredJobs);
+  displayJobs(filteredJobs);
+}
+
+var jobTypeInput = document.getElementById("jobTypeInput");
+
+jobTypeInput.addEventListener("change", function () {
+  var selectedJobType = this.value;
+
+  if (selectedJobType === "") {
+    localStorage.removeItem("selectedJobType");
+    displayJobs(jobsToShow);
+    return;
+  }
+
+  const filteredJobs = jobsToShow.filter((job) => {
+    if (selectedJobType === "Full Time") {
+      localStorage.setItem("selectedJobType", "Private");
+      return job?.posts_data?.jobtype_masterdata?.name === "Private";
+    } else if (selectedJobType === "Part Time") {
+      localStorage.setItem("selectedJobType", "Government");
+      return job?.posts_data?.jobtype_masterdata?.name === "Government";
+    }
+  });
+
+  displayJobs(filteredJobs);
+});
+
+const filterJobsByJobType = (jobType) => {
+  const filteredJobs = jobsToShow.filter(
+    (job) => job?.posts_data?.jobtype_masterdata?.name === jobType
+  );
+  displayJobs(filteredJobs);
+};
+
 function calculateAge(dob) {
   const dobDate = new Date(dob);
   const currentDate = new Date();
@@ -168,7 +249,29 @@ async function fetchAndUseJobs() {
   previousJobs = jobsToShow;
 
   // Display the new jobs
-  displayJobs(newJobs);
+  var userLocation = localStorage.getItem("userLocation");
+  var selectedJobType = localStorage.getItem("selectedJobType");
+
+  if (userLocation && selectedJobType) {
+    filterJobsByLocationAndJobType(userLocation, selectedJobType);
+  } else if (userLocation) {
+    locationInput.value = userLocation;
+    filterJobsByLocation(userLocation);
+  } else if (selectedJobType) {
+    jobTypeInput.value = selectedJobType;
+    filterJobsByJobType(selectedJobType);
+  } else {
+    displayJobs(newJobs);
+  }
+}
+
+function filterJobsByLocationAndJobType(location, jobType) {
+  const filteredJobs = jobsToShow.filter(
+    (job) =>
+      job.location === location &&
+      job?.posts_data?.jobtype_masterdata?.name === jobType
+  );
+  displayJobs(filteredJobs);
 }
 
 // Function to display results in the resultsContainer
