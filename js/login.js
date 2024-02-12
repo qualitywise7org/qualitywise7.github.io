@@ -32,6 +32,8 @@ loginForm.addEventListener("submit", async (e) => {
     await loginUser(email, password);
 
     window.location.href = "/myaccount/jobsforyou/";
+    localStorage.setItem("email", email);
+
     alert("Logged in successfully!");
   } catch (error) {
     alert("Invalid email or password!");
