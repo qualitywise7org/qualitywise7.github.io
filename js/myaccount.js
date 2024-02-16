@@ -175,9 +175,8 @@ async function fetchAndUseNames() {
 const logoutButton = document.getElementById("logout-btn");
 
 if (logoutButton) {
-  logoutButton.addEventListener("click", () => {
-    // localStorage.removeItem('user');
-    localStorage.removeItem("userDetails");
+  logoutButton.addEventListener("click", () => { 
+    localStorage.clear(); 
     signOut(auth)
       .then(() => {
         window.location.href = "/login/";

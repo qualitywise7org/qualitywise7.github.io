@@ -24,15 +24,13 @@ const loginForm = document.getElementById("login-form");
 
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
   try {
     await loginUser(email, password);
-
-    window.location.href = "/myaccount/jobsforyou/";
     localStorage.setItem("email", email);
+    window.location.href = "/myaccount/jobsforyou/";
 
     alert("Logged in successfully!");
   } catch (error) {
