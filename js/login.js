@@ -30,11 +30,36 @@ loginForm.addEventListener("submit", async (e) => {
   try {
     await loginUser(email, password);
     localStorage.setItem("email", email);
-    window.location.href = "/myaccount/jobsforyou/";
-
-    alert("Logged in successfully!");
-  } catch (error) {
-    alert("Invalid email or password!");
+    Toastify({
+      text: "Logged in Successfully..",
+      duration: 3000,
+      newWindow: true,
+      close: true,
+      gravity: "top", 
+      position: "right", 
+      stopOnFocus: true, 
+      style: {
+        background: "linear-gradient(to right, #0d6efd, #586ba6)",
+        borderRadius: "10px"
+      }
+    }).showToast();
+    setTimeout(() => {
+      window.location.href = "/myaccount/jobsforyou/";
+    }, 1000);
+      } catch (error) {
+        Toastify({
+          text: "Error Please try after some time.",
+          duration: 3000,
+          newWindow: true,
+          close: true,
+          gravity: "top", 
+          position: "right", 
+          stopOnFocus: true, 
+          style: {
+            background: "linear-gradient(to right, #0d6efd, #586ba6)",
+            borderRadius: "10px"
+          }
+        }).showToast();
   }
 });
 
