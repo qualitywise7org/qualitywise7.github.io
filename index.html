@@ -24,10 +24,20 @@
             dataLayer.push(arguments);
         }
         gtag("js", new Date());
-
         gtag("config", "G-1JQVXS3B5L");
+
+
+        function handleclick(){
+            const email = localStorage.getItem("email");
+            if(email){
+                window.location.href = "/myaccount/jobsforyou"
+            }else{
+                window.location.href = "/details/?productcode=jobsforyou";
+            }
+        }
     </script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="fevicon.ico" type="profile" />
 </head>
 
 <body>
@@ -177,7 +187,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="/details/?productcode=jobsforyou" class="text-decoration-none">
+                        <a onclick={handleclick()} class="text-decoration-none">
                             <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
                                 style="border-bottom: 1px solid gray;">
                                 <div class="">

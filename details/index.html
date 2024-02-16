@@ -28,17 +28,25 @@
     gtag("js", new Date());
 
     gtag("config", "G-1JQVXS3B5L");
+  </script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    function trackBuyButtonClick(buttonName) {
+  gtag('config', 'G-1JQVXS3B5L');
+  function trackBuyButtonClick(buttonName) {
       gtag("event", "click", {
         event_category: "Buy Now Click",
         event_label: buttonName,
       });
     }
     function showjobsforyou() {
-      window.location.href = "/myaccount";
+      window.location.href = "/myaccount/jobsforyou";
     }
-  </script>
+</script>
 </head>
 
 <body>
@@ -342,7 +350,6 @@
       </div>
 
       <div class="col-md-6 right">
-
         <div class="apply-btn text-center">
           <a href="../register/index.html">Apply Now</a>
         </div>
