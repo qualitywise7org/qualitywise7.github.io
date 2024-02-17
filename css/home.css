@@ -7,7 +7,8 @@
   font-size: 2rem;
   text-align: center;
   padding: 1rem;
-  border-bottom: 0.2rem solid gray;
+  border: none;
+  background-color: #e2e8f0;
 }
 .content {
   font-size: 1.1rem;
