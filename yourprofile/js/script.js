@@ -179,8 +179,7 @@ function collectFormData() {
     });
 
   formData.skills = skills;
-  formData.admin.views = formData.admin.views || "";
-  formData.admin.score = formData.admin.score || "";
+  
   return formData;
 }
 
