@@ -246,6 +246,7 @@ body {
 }
 
 .card-section .heading {
+  font-size: 3rem;
   text-align: center;
   font-family: "Roboto Slab", serif;
 }
