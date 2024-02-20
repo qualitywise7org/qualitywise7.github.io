@@ -92,21 +92,6 @@ async function isUser() {
               borderRadius: "10px"
             }
           }).showToast();
-
-    } else {
-        Toastify({
-            text: "No Previous Data Found",
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "top", 
-            position: "right", 
-            stopOnFocus: true, 
-            style: {
-              background: "linear-gradient(to right, #0d6efd, #586ba6)",
-              borderRadius: "10px"
-            }
-          }).showToast();
     }
   } catch (error) {
     console.error("Error getting user data:", error);

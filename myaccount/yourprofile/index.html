@@ -19,7 +19,7 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
     <script src="https://code.jquery.com/jquery.-3.6.0.min.js"></script>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="icon" href="../../fevicon.ico" type="profile" />
 </head>
@@ -35,16 +35,17 @@
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+            <div class="collapse navbar-collapse" style="width: 100%;" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../demo/">Demo</a>
+                        <a class="nav-link" href="demo/">Demo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="myaccount/jobsforyou">Jobs For You</a>
+                        <a class="nav-link" href="/myaccount/jobsforyou">Jobs For You</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
@@ -52,11 +53,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="test" target="_blank">Test</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Blogs
-                        </a>
+                            aria-expanded="false">Blogs</a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a class="dropdown-item" href="careeroptions">Career Options</a>
@@ -74,12 +73,12 @@
                                 <a class="dropdown-item" href="motivation">Motivation</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="/myaccount/yourprofile" target="_blank">Your Profile</a>
                     </li>
                     <li class="nav-item  login-btn">
-                        <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="/login" onclick={handleclick()}>Login</a>
                     </li>
                 </ul>
             </div>
