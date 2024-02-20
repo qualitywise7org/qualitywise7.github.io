@@ -196,9 +196,10 @@ async function displayJobs(jobs) {
   const currentPage = parseInt(urlSearchParams.get("page")) || 1;
 
   const startIndex = (currentPage - 1) * jobsPerPage;
-  const endIndex = startIndex + jobsPerPage;
-
-  const paginatedJobs = groupedJobs?.slice(startIndex, endIndex);
+  const endIndex = Math.min(startIndex + jobsPerPage, jobs.length);
+  
+  // Slice the jobs array to get the paginated jobs
+  const paginatedJobs = jobs.slice(startIndex, endIndex);
 
   const jobsDiv = document.createElement("div");
   jobsDiv.classList.add("row", "g-3");
