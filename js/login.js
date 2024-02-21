@@ -44,7 +44,7 @@ loginForm.addEventListener("submit", async (e) => {
       }
     }).showToast();
     setTimeout(() => {
-      window.location.href = "/myaccount/jobsforyou/";
+      window.location.href = "/myaccount/";
     }, 1000);
       } catch (error) {
         Toastify({

@@ -63,7 +63,7 @@ article {
     
     /* using the has() relational pseudo selector to update our custom properties */
     article:has(:hover, :focus) {
-      --img-scale: 1.1;
+      /* --img-scale: 1.2; */
       --title-color: #28666e;
       --link-icon-translate: 0;
       --link-icon-opacity: 1;
@@ -132,4 +132,8 @@ article {
 
     section{
       height: calc(80vh);
+    }
+
+    .img{
+      overflow: hidden;
     }

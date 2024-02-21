@@ -40,6 +40,11 @@ section {
     background-color: #2980b9;
 }
 
+.overlay .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -52,9 +57,4 @@ section {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-.overlay .spinner-border {
-    width: 3rem;
-    height: 3rem;
 }
