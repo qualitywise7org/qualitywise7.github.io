@@ -96,7 +96,7 @@
                         <a class="nav-link" href="/myaccount/yourprofile" target="_blank">Your Profile</a>
                     </li>
                     <li class="nav-item  login-btn">
-                        <a class="nav-link" href="/login" onclick={handleclick()}>Login</a>
+                        <a class="nav-link " id="login-button" href="/login" onclick={handleclick()}>Login</a>
                     </li>
                 </ul>
             </div>
@@ -950,6 +950,18 @@
         document.getElementById
     </script>
     <script>
+
+        const email = localStorage.getItem('email');
+        if(email){
+            document.getElementById('login-button').innerHTML = "Logout";
+        }
+        const login_button = document.getElementById('login-button');
+        login_button.addEventListener('click', () => {
+            if(localStorage.getItem("email")){
+                localStorage.clear(); 
+            }
+            location.location.href = '/login';
+        })
         window.addEventListener("scroll", () => {
             let scrollVal = window.scrollY;
             if (scrollVal > 2000) {
