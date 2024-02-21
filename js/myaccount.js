@@ -45,12 +45,12 @@ onAuthStateChanged(auth, async (user) => {
         var userJSON = JSON.stringify(userData);
         localStorage.setItem("userDetails", userJSON);
         const userName1 = document.getElementById("userName1");
-        const login = document.getElementById("login");
+        // const login = document.getElementById("login");
 
         userName1.innerText = userData.full_name;
         console.log(userData.full_name);
-        login.style.display = "none";
-        fetchAndUseNames();
+        // login.style.display = "none";
+        await fetchAndUseNames();
         if (userData.firstLogin) {
           let myModal = new bootstrap.Modal(
             document.getElementById("myModal1")
@@ -149,8 +149,8 @@ async function fetchAndUseNames() {
   );
 
   // Hide the loading element
-  const loadingElement = document.getElementById("overlay");
-  loadingElement.style.display = "none";
+  // const loadingElement = document.getElementById("overlay");
+  // loadingElement.style.display = "none";
 
   const twelfthDetails = `${twelfthSubjectName || ""} - ${
     userData.twelfthPercentage || ""
@@ -175,8 +175,9 @@ async function fetchAndUseNames() {
 const logoutButton = document.getElementById("logout-btn");
 
 if (logoutButton) {
-  logoutButton.addEventListener("click", () => { 
-    localStorage.clear(); 
+  logoutButton.addEventListener("click", () => {
+    // localStorage.removeItem('user');
+    localStorage.removeItem("userDetails");
     signOut(auth)
       .then(() => {
         window.location.href = "/login/";

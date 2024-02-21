@@ -1,3 +1,8 @@
+const email = localStorage.getItem('email');
+if(!email){
+      window.location.href = "/login/";
+}
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
 import {
   getStorage,
@@ -81,21 +86,6 @@ async function isUser() {
         });
         Toastify({
             text: "Fetching Details",
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "top", 
-            position: "right", 
-            stopOnFocus: true, 
-            style: {
-              background: "linear-gradient(to right, #0d6efd, #586ba6)",
-              borderRadius: "10px"
-            }
-          }).showToast();
-
-    } else {
-        Toastify({
-            text: "No Previous Data Found",
             duration: 3000,
             newWindow: true,
             close: true,
