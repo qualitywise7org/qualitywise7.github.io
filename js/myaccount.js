@@ -37,19 +37,16 @@ onAuthStateChanged(auth, async (user) => {
     userId = user.uid;
 
     try {
-      const userDocRef = doc(db, "users", userId);
+      const userDocRef = await doc(db, "users", userId);
       const userDocSnapshot = await getDoc(userDocRef);
 
       if (userDocSnapshot.exists()) {
         userData = userDocSnapshot.data();
         var userJSON = JSON.stringify(userData);
+        console.log(userJSON);
         localStorage.setItem("userDetails", userJSON);
         const userName1 = document.getElementById("userName1");
-        // const login = document.getElementById("login");
-
         userName1.innerText = userData.full_name;
-        console.log(userData.full_name);
-        // login.style.display = "none";
         await fetchAndUseNames();
         if (userData.firstLogin) {
           let myModal = new bootstrap.Modal(
@@ -85,14 +82,16 @@ function populateUserDetails(
   const dobElement = document.getElementById("dob");
 
   // Populate personal information
-  fullNameElement.textContent = userData.full_name || "";
-  emailElement.textContent = userData.email || "";
+  // fullNameElement.textContent = userData.full_name || "";
+  // emailElement.textContent = userData.email || "";
 
   // Populate education details
-  twelfthDetailsElement.textContent = twelfthDetails;
-  diplomaDetailsElement.textContent = diplomaDetails;
-  graduationDetailsElement.textContent = graduationDetails;
-  pgDetailsElement.textContent = pgDetails;
+  twelfthDetailsElement.textContent = twelfthDetails ? twelfthDetails : " ";
+  diplomaDetailsElement.textContent = diplomaDetails ? diplomaDetails : " ";
+  graduationDetailsElement.textContent = graduationDetails
+    ? graduationDetails
+    : " ";
+  pgDetailsElement.textContent = pgDetails ? pgDetails : " ";
 
   // Populate additional information
   categoryElement.textContent = categoryDetails;
