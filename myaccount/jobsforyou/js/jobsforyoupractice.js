@@ -1,6 +1,6 @@
-const email = localStorage.getItem('email');
-if(!email){
-      window.location.href = "/login/";
+const email = localStorage.getItem("email");
+if (!email) {
+  window.location.href = "/login/";
 }
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
@@ -240,7 +240,6 @@ async function fetchAndUseJobs() {
 
     return false;
   }
-
   jobs?.forEach((job) => {
     if (isEligibleForJob(job)) {
       jobsToShow.push(job);
@@ -252,6 +251,7 @@ async function fetchAndUseJobs() {
 
   // Update the previously shown jobs
   previousJobs = jobsToShow;
+  console.log(jobsToShow);
 
   // Display the new jobs
   var userLocation = localStorage.getItem("userLocation");
@@ -292,17 +292,20 @@ async function displayJobs(jobs) {
 
   const groupedJobs = groupJobsByProfile(jobs);
 
-  const jobsPerPage = 2;
-  const numPages = Math.ceil(jobs?.length / jobsPerPage);
+  const jobsPerPage = 1;
+  const numPages = groupedJobs.length;
 
   // Get the current page number from URL query parameters (if available)
   const urlSearchParams = new URLSearchParams(window.location.search);
   const currentPage = parseInt(urlSearchParams.get("page")) || 1;
+  console.log(currentPage)
 
   const startIndex = (currentPage - 1) * jobsPerPage;
   const endIndex = startIndex + jobsPerPage;
 
   const paginatedJobs = groupedJobs?.slice(startIndex, endIndex);
+  console.log(groupedJobs)
+  console.log(paginatedJobs)
 
   const jobsDiv = document.createElement("div");
   jobsDiv.classList.add("row", "g-3");
