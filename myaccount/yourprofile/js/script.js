@@ -40,6 +40,7 @@ const storageRef = ref(storage);
 
 
 async function isUser() {
+  console.log("isUser");
   var email = localStorage.getItem('email'); 
   const docRef = doc(db, "userProfile", email);
   try {
@@ -105,7 +106,6 @@ async function isUser() {
 
 isUser();
 
-
 $(document).ready(function () {
   $(".repeater").repeater({
     initEmpty: false,
@@ -124,8 +124,6 @@ $(document).ready(function () {
 
 function collectFormData() {
   var formData = {};  
-
-  // Collect data for the "About" section
   var aboutData = {};
   aboutData.firstName = $("#firstname").val();
   aboutData.middleName = $("#middlename").val();
@@ -189,9 +187,7 @@ async function saveFormDataToDatabase() {
     const imageUrl = await uploadImageAndGetURL(imageFile);
     formData.about.image = imageUrl;
   }
-
-  const email = formData.about.email;
-
+  
   const userProfileRef = doc(db, "userProfile", email);
 
   await setDoc(userProfileRef, formData)
