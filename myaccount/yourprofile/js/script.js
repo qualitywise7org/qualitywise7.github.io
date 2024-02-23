@@ -171,11 +171,23 @@ function collectFormData() {
   return formData;
 }
 
+
+// This store the iamge in the storage section oof the firebase storage
 async function uploadImageAndGetURL(file) {
   const imageRef = ref(storage, "userImages/" + file.name);
   await uploadBytes(imageRef, file);
 
   const url = await getDownloadURL(imageRef);
+  return url;
+}
+
+
+// This function handle the cv upload in the your profile section
+async function uploadCV(file) { 
+  const cvRef = ref(storage, "userCV/" + file.name);
+  await uploadBytes(cvRef, file);
+
+  const url = await getDownloadURL(cvRef);
   return url;
 }
 
@@ -186,6 +198,12 @@ async function saveFormDataToDatabase() {
   if (imageFile) {
     const imageUrl = await uploadImageAndGetURL(imageFile);
     formData.about.image = imageUrl;
+  }
+
+  const cvFile = document.getElementById("cv").files[0];
+  if(cvFile) {
+    const cvUrl = await uploadCV(cvFile);
+    formData.about.cv = cvUrl;
   }
   
   const userProfileRef = doc(db, "userProfile", email);
