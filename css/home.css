@@ -46,3 +46,12 @@
   top: 60px;
   right: 10px;
 }
+
+.fa-arrow-bottom {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+ 
