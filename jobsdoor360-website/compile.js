@@ -4,7 +4,7 @@ const ejs = require('ejs');
 const path = require('path');
 
 const srcPath = 'src/main/ejs/main-files';
-const destPath = 'target'; // use ../ instead of target to generate in root folder
+const destPath = '../'; // use ../ or target instead of target to generate in root folder
 
 function readFolder(dir){
 	fs.readdirSync(dir).map(file => {
