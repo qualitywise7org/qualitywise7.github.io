@@ -41,9 +41,19 @@
             if(email){
                 window.location.href = "/myaccount/jobsforyou"
             }else{
-                window.location.href = "/details/?productcode=jobsforyou";
+                window.location.href = "/login/?redirect_url=/jobsforyou";
             }
         }
+
+        function your_profile(){
+            const email = localStorage.getItem("email");
+            if(email){
+                window.location.href = "/myaccount/yourprofile";
+            }else{
+                window.location.href = "/login/?redirect_url=/yourprofile";
+            }
+        }
+
     </script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" href="fevicon.ico" type="profile" />
@@ -81,7 +91,7 @@
                         <a class="nav-link" href="demo/">Demo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="myaccount/jobsforyou">Jobs For You</a>
+                        <a class="nav-link" onclick={handleclick()}>Jobs For You</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
@@ -112,8 +122,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/myaccount/yourprofile" target="_blank">Your Profile</a>
+                    <li class="nav-item" style="cursor: pointer;">
+                        <a class="nav-link" onclick={your_profile()} target="_blank">Your Profile</a>
                     </li>
                     <li class="nav-item  login-btn">
                         <a class="nav-link " id="login-button" href="/login" onclick={handleclick()}>Login</a>
@@ -230,7 +240,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="/details/?productcodefreeinternship=" class="text-decoration-none">
+                        <a href="/details/?productcode=freeinternship" class="text-decoration-none">
                             <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
                                 style="border-bottom: 1px solid gray;">
                                 <div class="forward_link">
@@ -240,8 +250,7 @@
                                     <i class="fa-solid fa-arrow-bottom">&#8674</i>
                                 </div>
                             </div>
-                        </a>
-
+                        </a> 
                         <a href="/details/?productcode=paidinternship" class="text-decoration-none">
                             <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
                                 style="border-bottom: 1px solid gray;">
@@ -253,22 +262,11 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="/details/?productcode=english" class="text-decoration-none">
+                        <a href="/details/?productcode=math" class="text-decoration-none">
                             <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
                                 style="border-bottom: 1px solid gray;">
                                 <div class="forward_link">
                                     <span class="text-xl">12 - Math, Aptitude & Reasoning</span>
-                                </div>
-                                <div class="text-xl">
-                                    <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/details/?productcode=english" class="text-decoration-none">
-                            <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                style="border-bottom: 1px solid gray;">
-                                <div class="forward_link">
-                                    <span class="text-xl">13 - English Assessment</span>
                                 </div>
                                 <div class="text-xl">
                                     <i class="fa-solid fa-arrow-bottom">&#8674</i>
@@ -393,7 +391,7 @@
                 </h4>
             </div>
 
-            <div class="cards">
+            <div class="cards "> 
                 <div class="card">
                     <div class="head">
                         <img src="./assets/schedule.jpg" alt="dummy" />
@@ -970,6 +968,7 @@
         document.getElementById
     </script>
     <script>
+
 
         const email = localStorage.getItem('email');
         if(email){
