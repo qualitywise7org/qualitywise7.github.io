@@ -1,3 +1,10 @@
+// const email = localStorage.getItem('email');
+// if(email) {
+//   window.location.href="../myaccount/" } 
+
+const urlParams = new URLSearchParams(window.location.search);
+const redirect_url = urlParams.get('redirect_url');
+
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -44,7 +51,12 @@ loginForm.addEventListener("submit", async (e) => {
       }
     }).showToast();
     setTimeout(() => {
-      window.location.href = "/myaccount/";
+      if(redirect_url){
+        window.location.href = "../myaccount"+redirect_url;
+      }else{
+        window.location.href = "../myaccount";
+      }
+     
     }, 1000);
       } catch (error) {
         Toastify({
@@ -63,16 +75,6 @@ loginForm.addEventListener("submit", async (e) => {
   }
 });
 
-// onAuthStateChanged(auth, (user) => {
-//     if (user) {
-//         if (user.emailVerified) {
-//             window.location.href = "/myaccount/jobsforyou/";
-//         } else {
-//             alert("Please verify your email!");
-//         }
-//     } else {
-//     }
-// });
 
 async function loginUser(email, password) {
   const auth = getAuth();

@@ -203,6 +203,7 @@ body {
 .hero-section .program-card .card-text {
   font-weight: 500;
   color: #5a5a5a;
+  font-family: "Roboto Slab", serif;
 }
 
 .hero-section .program-card img {
@@ -248,6 +249,7 @@ body {
 .card-section .heading {
   text-align: center;
   font-family: "Roboto Slab", serif;
+  font-size: larger;
 }
 
 .card-section .cards {
