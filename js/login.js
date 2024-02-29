@@ -1,7 +1,3 @@
-// const email = localStorage.getItem('email');
-// if(email) {
-//   window.location.href="../myaccount/" } 
-
 const urlParams = new URLSearchParams(window.location.search);
 const redirect_url = urlParams.get('redirect_url');
 

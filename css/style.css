@@ -1129,3 +1129,15 @@ body {
     right: 20px;
   }
 }
+
+.strip{
+  text-align: center;
+  background-color: white;
+  border-color: black;
+}
+
+.strip div{
+  background-color: #e2e8f0;
+  padding: 5px 50px;
+  border-radius: 10px;
+}

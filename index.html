@@ -54,6 +54,12 @@
             }
         }
 
+        const profile = localStorage.getItem("profile");
+        if(profile){
+            document.getElementsByClassName('strip')[0].style.display = 'none';
+        }
+
+
     </script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" href="fevicon.ico" type="profile" />
@@ -135,6 +141,7 @@
 
     <section>
         <h1 class="text-center mt-3 mb-0 pt-2 text-2xl shadow-lg p-10">Job Oriented Courses</h1>
+        <div class="strip"><div style="border: none; border-radius: 5px; ">PROFILE NOT FOUND. Create Your Profile</div></div>
         <div class="hero-section" id="home">
             <div class="program-card" id="programs">
                 <div class="card card-2 w-100 mb-3">
