@@ -1160,3 +1160,16 @@ body {
   font-size: 2rem;
   color: rgb(78, 78, 136);
 }
+
+.full-width-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Set the same dimensions for all images */
+.carousel-item .content img {
+  width: 100%; /* Adjust this value as needed */
+  height: 300px; /* Adjust this value as needed */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+
