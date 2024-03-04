@@ -497,7 +497,11 @@ body {
 /* Testimonial Section */
 
 .testimonial {
-  padding: 6rem 5rem;
+  padding: 50px 0;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  background: white;
 }
 
 .fade-carousel .carousel-item {
@@ -525,6 +529,7 @@ body {
 .fade-carousel .carousel-item .name {
   text-align: center;
   font-size: 1.5rem;
+  font-style: italic;
 }
 
 .fade-carousel .carousel-item .quote .right-quote {
@@ -897,10 +902,6 @@ body {
     gap: 1.5rem;
   }
 
-  .testimonial {
-    padding: 3rem;
-  }
-
   .masterclass .left-part {
     gap: 0.5rem;
   }
@@ -1130,14 +1131,32 @@ body {
   }
 }
 
-.strip{
+.strip {
   text-align: center;
-  background-color: white;
+  background: white;
   border-color: black;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 20px;
+  cursor: pointer;
 }
 
-.strip div{
+.strip div {
   background-color: #e2e8f0;
   padding: 5px 50px;
   border-radius: 10px;
+  width: 90%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+#carouselExampleSlidesOnly .container,
+#carouselExampleSlidesOnly .container .content {
+  width: 100%;
+  font-size: 2rem;
+  color: rgb(78, 78, 136);
 }

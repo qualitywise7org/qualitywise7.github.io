@@ -53,13 +53,6 @@
                 window.location.href = "/login/?redirect_url=/yourprofile";
             }
         }
-
-        const profile = localStorage.getItem("profile");
-        if(profile){
-            document.getElementsByClassName('strip')[0].style.display = 'none';
-        }
-
-
     </script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" href="fevicon.ico" type="profile" />
@@ -141,7 +134,44 @@
 
     <section>
         <h1 class="text-center mt-3 mb-0 pt-2 text-2xl shadow-lg p-10">Job Oriented Courses</h1>
-        <div class="strip"><div style="border: none; border-radius: 5px; ">PROFILE NOT FOUND. Create Your Profile</div></div>
+        <div id="strip" class="strip"><div id="profile" style="border: none; border-radius: 5px; "><a onclick={your_profile()}><strong>PROFILE NOT FOUND.</strong> Create Your Profile</a></div></div>
+        
+        <section>
+            <div class="testimonial">
+                <div id="carouselExampleSlidesOnly" class="carousel fade-carousel" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <div class="d-block w-100">
+                                <div class="container">
+                                    <div class="content">
+                                        <h2>Jobs <red style="color: rgb(188, 50, 50);">For </red>You</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <div class="d-block w-100">
+                                <div class="container">
+                                    <div class="content">
+                                         <h2 class="title">Your<red style="color: rgb(188, 50, 50);"> Pro</red>file</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <div class="d-block w-100">
+                                <div class="container">
+                                    <div class="content">
+                                         <h2 class="title">Profile<red style="color: rgb(188, 50, 50);"> Ana</red>lyzer</h2>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="hero-section" id="home">
             <div class="program-card" id="programs">
                 <div class="card card-2 w-100 mb-3">
@@ -971,8 +1001,17 @@
                 event.stopPropagation();
             });
         });
-
-        document.getElementById
+        const profile = localStorage.getItem('profile');
+        if(profile){
+            document.addEventListener("DOMContentLoaded", function() { 
+                var myDiv = document.getElementById('strip'); 
+                if (myDiv) { 
+                    myDiv.style.display = 'none';
+                } else {
+                    console.error("Element with ID 'strip' not found.");
+                }
+            }); 
+        }
     </script>
     <script>
 
@@ -980,6 +1019,9 @@
         const email = localStorage.getItem('email');
         if(email){
             document.getElementById('login-button').innerHTML = "Logout";
+        }
+        else{
+            document.getElementById('profile').innerHTML = "<strong>You are not logged in</strong>";
         }
         const login_button = document.getElementById('login-button');
         login_button.addEventListener('click', () => {
