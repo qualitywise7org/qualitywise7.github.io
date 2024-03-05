@@ -1,16 +1,19 @@
-// const email = localStorage.getItem('email');
-// if(email) {
-//   window.location.href="../myaccount/" } 
-
 const urlParams = new URLSearchParams(window.location.search);
 const redirect_url = urlParams.get('redirect_url');
-
 import {
   getAuth,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
+  signInWithEmailAndPassword, 
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+
+import {
+  getFirestore,
+  addDoc,
+  getDoc,
+  setDoc,
+  doc, 
+} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
@@ -26,6 +29,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 const loginForm = document.getElementById("login-form");
 
@@ -50,6 +54,11 @@ loginForm.addEventListener("submit", async (e) => {
         borderRadius: "10px"
       }
     }).showToast();
+    const docRef = doc(db, "userProfile", email);
+    const docSnap = await getDoc(docRef);
+    if(docSnap.exists()) {
+      localStorage.setItem('profile', true);
+    }
     setTimeout(() => {
       if(redirect_url){
         window.location.href = "../myaccount"+redirect_url;
