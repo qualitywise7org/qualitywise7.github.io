@@ -1,386 +1,408 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description"
-            content="Explore inspiring biographies of visionary entrepreneurs who have built successful businesses from humble beginnings. Learn how these individuals have impacted industries and inspired millions with their remarkable journeys." />
-      <title>Inspiring Entrepreneur Biographies</title>
-      <link rel="stylesheet" href="../css/style.css" />
-      <link rel="stylesheet" href="../css/biographies.css" />
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-            crossorigin="anonymous" />
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
-            crossorigin="anonymous"></script>
-      <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
-      <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                  dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-
-            gtag("config", "G-1JQVXS3B5L");
-      </script>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
-            crossorigin="anonymous"></script>
+    <title>Biography</title>
+    <meta name="description"
+    content="Experience the Power of Jobsdoor360's Job-Oriented Software Learning Demo Class! Join our Saturday session from 10:00 AM to 11:00 AM and discover exciting opportunities in web development, MERN-stack development, and backend development. Don't miss this chance to kickstart your tech career. Join Now!" />
+    <link rel="stylesheet" href="../css/demo.css" />
+	<link rel="stylesheet" href="../css/style.css" />
       <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-      <style>
-            .clamp-text {
-                  display: -webkit-box;
-                  -webkit-box-orient: vertical;
-                  overflow: hidden;
-                  -webkit-line-clamp: 3;
-                  max-height: 3em;
-            }
-      </style>
-<link rel="icon" href="./../fevicon.ico" type="profile" />
+
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<div class="container-fluid">
+	    <a class="brand" href="/">
+		  <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
+	    </a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+		  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		  <ul class="navbar-nav">
+			<li class="nav-item">
+			    <a class="nav-link" aria-current="/page" href="/">Home</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="/demo/">Demo</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="/myaccount/jobsforyou">Jobs For You</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="/test" target="_blank">Test</a>
+			</li>
+			<li class="nav-item dropdown">
+			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+				  aria-expanded="false">
+				  Blogs
+			    </a>
+			    <ul class="dropdown-menu">
+				  <li>
+					<a class="dropdown-item" href="/careeroptions">Career Options</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/jobs_analysis/">Jobs Analysis</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/businessplans">Business Plans</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/biographies">Biographies</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/motivation">Motivation</a>
+				  </li>
+			    </ul>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="/myaccount/yourprofile" target="_blank">Your Profile</a>
+			</li>
+			<li class="nav-item  login-btn">
+			    <a class="nav-link " id="login-button" href="/login" onclick={handleclick()}>Login</a>
+			</li>
+		  </ul>
+	    </div>
+	</div>
+  </nav>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+
+<script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-1JQVXS3B5L");
+</script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-MFBK5637');</script>
-      <!-- End Google Tag Manager -->
-  </head>
-  
-
-  <body class="bg-gradient-to-r from-indigo-200">
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Navbar -->
-      <bodymain>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                  <div class="container-fluid">
-                      <a class="brand" href="/">
-                          <img src="../../assets/Jobsdoor360 -logos__black.png" alt="logo" />
-                      </a>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                          <ul class="navbar-nav">
-                              <li class="nav-item">
-                                  <a class="nav-link" aria-current="page" href="/">Home</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="demo/">Demo</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="myaccount/jobsforyou">Jobs For You</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="test" target="_blank">Test</a>
-                              </li>
-                              <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                      aria-expanded="false">
-                                      Blogs
-                                  </a>
-                                  <ul class="dropdown-menu">
-                                      <li>
-                                          <a class="dropdown-item" href="careeroptions">Career Options</a>
-                                      </li>
-                                      <li>
-                                          <a class="dropdown-item" href="/jobs_analysis/">Jobs Analysis</a>
-                                      </li>
-                                      <li>
-                                          <a class="dropdown-item" href="businessplans">Business Plans</a>
-                                      </li>
-                                      <li>
-                                          <a class="dropdown-item" href="biographies">Biographies</a>
-                                      </li>
-                                      <li>
-                                          <a class="dropdown-item" href="motivation">Motivation</a>
-                                      </li>
-                                  </ul>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="/myaccount/yourprofile" target="_blank">Your Profile</a>
-                              </li>
-                              <li class="nav-item  login-btn">
-                                  <a class="nav-link" href="/login">Login</a>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-              </nav>
-
-
-
-            <!-- Biography Section -->
-            <section class="container mt-3 w-full">
-                  <div class="row">
-                        <div class="mx-auto">
-                              <!-- Title with Background -->
-                              <div class="bg-primary text-light p-3 rounded mb-4">
-                                    <h1 class="mb-0 text-2xl text-center">Bill Gates</h1>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MFBK5637");
+</script>
+<!-- End Google Tag Manager -->
+<link rel="icon" href="./../fevicon.ico" type="profile" />
+ 
+		<body class="bg-gradient-to-r from-indigo-200">
+                  <!-- Google Tag Manager (noscript) -->
+                  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+                  <!-- End Google Tag Manager (noscript) -->
+            
+                  <!-- Navbar -->
+                  <bodymain>
+                        <!-- Biography Section -->
+                        <section class="container mt-3 w-full">
+                              <div class="row">
+                                    <div class="mx-auto">
+                                          <!-- Title with Background -->
+                                          <div class="bg-primary text-light p-3 rounded mb-4">
+                                                <h1 class="mb-0 text-2xl text-center">Bill Gates</h1>
+                                          </div>
+            
+                                          <!-- Biography Text Container -->
+                                          <div class="bg-light p-4 rounded col-md-8 mx-auto mb-4">
+                                                <p class="lead">
+                                                      <strong>Introduction:</strong> Few names are as influential in the fields of
+                                                      technology and philanthropy as bill Gates. Gates, who changed
+                                                      into born in Seattle, Washington, on October 28, 1955, showed early flair for
+                                                      innovation that could finally
+                                                      alternate the tech industry.
+                                                      <br>
+                                                      <br>
+                                                      <strong>1. Childhood:</strong> Gates came from a own family with an extended
+                                                      line of commercial enterprise proprietors. His mother,
+                                                      Mary Maxwell Gates, turned into a company board member, and his father, ,
+                                                      William H. Gates Sr., was a
+                                                      well-known lawyer. This encouraging upbringing supplied the foundation for
+                                                      Gates's subsequent hobbies.
+                                                      <br>
+                                                      <br>
+                                                      <strong>2. Schooling and Prior Interests:</strong> Despite the fact that Gates
+                                                      left Harvard university in 1975, he had already tested his intelligence.
+                                                      Enticed
+                                                      via the possibilities offered by way of non-public computers, he threw himself
+                                                      into the area of pc coding
+                                                      and programming, paving the manner for the established order of Microsoft.
+                                                      <br>
+                                                      <br>
+                                                      <strong>3. Establishing Microsoft:</strong> Collectively with Paul Allen, a
+                                                      youth buddy, Gates set up Microsoft in 1975. the two had a vision that
+                                                      regarded ambitious at the time however would quickly come authentic: they
+                                                      wanted computers in each
+                                                      home and on each computing device.
+            
+                                                      <br>
+                                                      <br>
+                                                      <strong>4. Become Notable:</strong> Microsoft quickly gained notoriety by
+                                                      creating the renowned Windows operating system and securing its
+                                                      hegemony in the software industry. Gates was crucial in forming the business's
+                                                      tactics and guaranteeing
+                                                      its survival in a sector that was constantly changing.
+                                                      <br>
+                                                      <br>
+                                                      <strong>5. A journey of Philanthropy:</strong> With the founding of the bill &
+                                                      Melinda Gates basis in 2000, bill and his then-wife Melinda made a huge
+                                                      pass from the IT industry to philanthropy. consistent with Gates' goal of
+                                                      enhancing society, the inspiration
+                                                      focuses on international fitness, schooling, and poverty comfort.
+                                                      <br>
+                                                      <br>
+                                                      <strong>6. Notable Accomplishments:</strong> Gates has made contributions
+                                                      outside of Microsoft and charity. In popularity of his effect on business and
+                                                      era, Time mag named him its man or woman of the 12 months in 2005, amongst
+                                                      many different accolades
+                                                      and honors.
+                                                      <br>
+                                                      <br>
+                                                      <strong>7. Private Life:</strong> Gates accomplished great things in
+                                                      technology and philanthropy without sacrificing his personal life. In
+                                                      1994, he wed Melinda French; collectively, they have 3 youngsters. Gates is
+                                                      well known for his love of
+                                                      analyzing and curiosity about a huge variety of subjects.
+                                                      <br>
+                                                      <br>
+            
+                                                      <strong>8. Disagreements and Debates:</strong> Gates has been the target of
+                                                      controversy and criticism despite his accomplishments. His reputation has
+                                                      periodically been tarnished by concerns about Microsoft's business operations
+                                                      and accusations of antitrust
+                                                      infractions. Nonetheless, Gates has addressed these issues and added to the
+                                                      continuing conversation
+                                                      about moral corporate practices.
+                                                      <br>
+                                                      <br>
+                                                      <strong>9. Historical:</strong> The legacy of Bill Gates goes beyond his
+                                                      founding of Microsoft to include his charitable endeavors and his
+                                                      impact on world affairs. Generations after generation are inspired by his
+                                                      dedication to invention and
+                                                      improving society.
+                                                      <br>
+                                                      <br>
+                                                      <strong>10. Knowledge Acquired:</strong> There are important lessons to be
+                                                      learned from Gates' path. His tenacious pursuit of objectives, flexibility
+                                                      in the face of change, and commitment to bettering the world provide lessons
+                                                      that everyone aiming for
+                                                      achievement can learn from.
+                                                      <br>
+                                                      <br>
+                                                      <strong>11. Upcoming Projects:</strong> Gates has been actively involved in
+                                                      tackling urgent global issues in the past few years, such as infectious
+                                                      illnesses and climate change. His continued dedication to technology
+                                                      development and philanthropy
+                                                      points to a lasting influence from him in the future.
+                                                      <br>
+                                                      <br>
+                                                      <strong>12. William Gates quotations:</strong> The wisdom of Bill Gates goes
+                                                      beyond his deeds. His vision and philosophy are summed up in a few
+                                                      phrases, such "Your most unhappy customers are your greatest source of
+                                                      learning."
+                                                      <br>
+                                                      <br>
+                                                      <strong>13. Media Presence of Bill Gates:</strong> In the media, Gates's
+                                                      contributions to philanthropy and technology are frequently highlighted.
+                                                      Interviews
+                                                      and public appearances offer insights into his opinions on a range of topics,
+                                                      presenting a complex person.
+                                                      <br>
+                                                      <br>
+            
+                                                      <strong>14. Final Thoughts:</strong> In summary, Bill Gates' life story serves
+                                                      as evidence of the transformational potential of willpower and
+                                                      vision. Gates, who rose from a youthful computer hobbyist to a prominent
+                                                      figure in the world, has left a
+                                                      lasting legacy that transcends software codes and touches the hearts of people
+                                                      who are motivated by his
+                                                      life narrative.
+                                                      <br>
+                                                      <br>
+                                                </p>
+                                          </div>
+                                    </div>
                               </div>
+                        </section>
+                  </bodymain>
+      </body>
+      <!-- Footer -->
 
-                              <!-- Biography Text Container -->
-                              <div class="bg-light p-4 rounded col-md-8 mx-auto mb-4">
-                                    <p class="lead">
-                                          <strong>Introduction:</strong> Few names are as influential in the fields of
-                                          technology and philanthropy as bill Gates. Gates, who changed
-                                          into born in Seattle, Washington, on October 28, 1955, showed early flair for
-                                          innovation that could finally
-                                          alternate the tech industry.
-                                          <br>
-                                          <br>
-                                          <strong>1. Childhood:</strong> Gates came from a own family with an extended
-                                          line of commercial enterprise proprietors. His mother,
-                                          Mary Maxwell Gates, turned into a company board member, and his father, ,
-                                          William H. Gates Sr., was a
-                                          well-known lawyer. This encouraging upbringing supplied the foundation for
-                                          Gates's subsequent hobbies.
-                                          <br>
-                                          <br>
-                                          <strong>2. Schooling and Prior Interests:</strong> Despite the fact that Gates
-                                          left Harvard university in 1975, he had already tested his intelligence.
-                                          Enticed
-                                          via the possibilities offered by way of non-public computers, he threw himself
-                                          into the area of pc coding
-                                          and programming, paving the manner for the established order of Microsoft.
-                                          <br>
-                                          <br>
-                                          <strong>3. Establishing Microsoft:</strong> Collectively with Paul Allen, a
-                                          youth buddy, Gates set up Microsoft in 1975. the two had a vision that
-                                          regarded ambitious at the time however would quickly come authentic: they
-                                          wanted computers in each
-                                          home and on each computing device.
+    <footer>
+        <div class="footer-container">
+            <div class="footer">
+                <div class="column">
+                    <h3>Quick-Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li>
+                            <a href="https://forms.gle/CNJokZdCvhCPzArj9" target="_blank">Feedback</a>
+                        </li>
+                        <li>
+                            <a href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+                        </li>
+                        <li>
+                            <a href="/test/index.html">Test</a>
+                        </li>
+                        <li>
+                            <a href="/socialwork/index.html">Donate Books</a>
+                        </li>
+                        <li>
+                            <a href="/membership/index.html">Membership</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Blogs</h3>
+                    <ul>
+                        <li><a href="/biographies/">Biographies</a></li>
+                        <li>
+                            <a href="/businessplans/">Business Plans</a>
+                        </li>
+                        <li>
+                            <a href="/careeroptions/">Career options</a>
+                        </li>
+                        <li><a href="/motivation/">Motivation</a></li>
+                        <li><a href="/jobs_analysis/">jobs Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li>
+                            <a href="/#web-dev">Web Development</a>
+                        </li>
+                        <li>
+                            <a href="/#full-stack">MERN-Stack Development</a>
+                        </li>
+                        <li>
+                            <a href="/#backend-dev">Backend Development</a>
+                        </li>
+                        <li>
+                            <a href="/#full-stack">Full-Stack Development</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- others Links start -->
 
-                                          <br>
-                                          <br>
-                                          <strong>4. Become Notable:</strong> Microsoft quickly gained notoriety by
-                                          creating the renowned Windows operating system and securing its
-                                          hegemony in the software industry. Gates was crucial in forming the business's
-                                          tactics and guaranteeing
-                                          its survival in a sector that was constantly changing.
-                                          <br>
-                                          <br>
-                                          <strong>5. A journey of Philanthropy:</strong> With the founding of the bill &
-                                          Melinda Gates basis in 2000, bill and his then-wife Melinda made a huge
-                                          pass from the IT industry to philanthropy. consistent with Gates' goal of
-                                          enhancing society, the inspiration
-                                          focuses on international fitness, schooling, and poverty comfort.
-                                          <br>
-                                          <br>
-                                          <strong>6. Notable Accomplishments:</strong> Gates has made contributions
-                                          outside of Microsoft and charity. In popularity of his effect on business and
-                                          era, Time mag named him its man or woman of the 12 months in 2005, amongst
-                                          many different accolades
-                                          and honors.
-                                          <br>
-                                          <br>
-                                          <strong>7. Private Life:</strong> Gates accomplished great things in
-                                          technology and philanthropy without sacrificing his personal life. In
-                                          1994, he wed Melinda French; collectively, they have 3 youngsters. Gates is
-                                          well known for his love of
-                                          analyzing and curiosity about a huge variety of subjects.
-                                          <br>
-                                          <br>
-
-                                          <strong>8. Disagreements and Debates:</strong> Gates has been the target of
-                                          controversy and criticism despite his accomplishments. His reputation has
-                                          periodically been tarnished by concerns about Microsoft's business operations
-                                          and accusations of antitrust
-                                          infractions. Nonetheless, Gates has addressed these issues and added to the
-                                          continuing conversation
-                                          about moral corporate practices.
-                                          <br>
-                                          <br>
-                                          <strong>9. Historical:</strong> The legacy of Bill Gates goes beyond his
-                                          founding of Microsoft to include his charitable endeavors and his
-                                          impact on world affairs. Generations after generation are inspired by his
-                                          dedication to invention and
-                                          improving society.
-                                          <br>
-                                          <br>
-                                          <strong>10. Knowledge Acquired:</strong> There are important lessons to be
-                                          learned from Gates' path. His tenacious pursuit of objectives, flexibility
-                                          in the face of change, and commitment to bettering the world provide lessons
-                                          that everyone aiming for
-                                          achievement can learn from.
-                                          <br>
-                                          <br>
-                                          <strong>11. Upcoming Projects:</strong> Gates has been actively involved in
-                                          tackling urgent global issues in the past few years, such as infectious
-                                          illnesses and climate change. His continued dedication to technology
-                                          development and philanthropy
-                                          points to a lasting influence from him in the future.
-                                          <br>
-                                          <br>
-                                          <strong>12. William Gates quotations:</strong> The wisdom of Bill Gates goes
-                                          beyond his deeds. His vision and philosophy are summed up in a few
-                                          phrases, such "Your most unhappy customers are your greatest source of
-                                          learning."
-                                          <br>
-                                          <br>
-                                          <strong>13. Media Presence of Bill Gates:</strong> In the media, Gates's
-                                          contributions to philanthropy and technology are frequently highlighted.
-                                          Interviews
-                                          and public appearances offer insights into his opinions on a range of topics,
-                                          presenting a complex person.
-                                          <br>
-                                          <br>
-
-                                          <strong>14. Final Thoughts:</strong> In summary, Bill Gates' life story serves
-                                          as evidence of the transformational potential of willpower and
-                                          vision. Gates, who rose from a youthful computer hobbyist to a prominent
-                                          figure in the world, has left a
-                                          lasting legacy that transcends software codes and touches the hearts of people
-                                          who are motivated by his
-                                          life narrative.
-                                          <br>
-                                          <br>
-                                    </p>
-                              </div>
-                        </div>
-                  </div>
-            </section>
+                <div class="column">
+                    <h3>Other-Links</h3>
+                    <ul>
+                        <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund"
+                                target="_blank">Cancellation & Refund Policy</a></li>
+                        <li>
+                            <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms" target="_blank">Terms
+                                and Conditions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping"
+                                target="_blank">Shipping & Delivery Policy</a>
+                        </li>
+                        <li>
+                            <a href="/privacy/">Privacy Policy </a>
+                        </li>
+                        <li>
+                            <a href="../contactus/" target="_blank">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- others Links end -->
+                <div class="column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>
+                            <a href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+                                target="_blank">Connect with Us</a>
+                        </li>
+                        <li class="contact-icons">
+                            <a href="https://www.facebook.com/profile.php?id=100093276582711" target="_blank"
+                                class="fb-icon">
+                                <img width="35" height="35" src="https://img.icons8.com/color/48/facebook-new.png"
+                                    alt="facebook-new" />
+                            </a>
+                            <a href="https://www.instagram.com/jobsdoor360/" target="_blank" class="insta-icon">
+                                <img width="35" height="35" src="https://img.icons8.com/color/48/instagram-new--v1.png"
+                                    alt="instagram-new--v1" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/qualitywise-b05857275/" target="_blank"
+                                class="linkedin-icon">
+                                <img width="35" height="35" src="https://img.icons8.com/color/48/linkedin.png"
+                                    alt="linkedin" />
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ" target="_blank"
+                                class="youtube-icon">
+                                <img width="35" height="35" src="https://img.icons8.com/color/48/youtube-play.png"
+                                    alt="youtube-play" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>Copyright Jobsdoor360 © 2024. All rights reserved</p>
+        </div>
+    </footer>
 
 
+    <!-- WhatsApp Chat Button -->
+    <div class="chat-back-to-top">
+        <button id="like-button">
+            <i class="fa-solid fa-thumbs-up"></i>
+        </button>
+        <button id="dislike-button">
+            <i class="fa-solid fa-thumbs-down"></i>
+        </button>
+        <div class="whatsapp-chat">
+            <a href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+    </div>
 
+    <!-- The Bootstrap Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        What Can We Improve on Our Website?
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea id="feedback" class="form-control" placeholder="Your feedback..."></textarea>
+                    <input type="text" id="phoneNumber" class="form-control" placeholder="Your phone number..." />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button id="submitFeedback" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <!-- Footer -->
-
-            <footer>
-                  <div class="footer-container">
-                        <div class="footer">
-                              <div class="column">
-                                    <h3>Quick-Links</h3>
-                                    <ul>
-                                          <li><a href="/">Home</a></li>
-                                          <li>
-                                                <a href="https://forms.gle/CNJokZdCvhCPzArj9"
-                                                      target="_blank">Feedback</a>
-                                          </li>
-
-                                          <li>
-                                                <a href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
-                                          </li>
-                                          <li>
-                                                <a href="/test/index.html">Test</a>
-                                          </li>
-                                          <li>
-                                                <a href="/socialwork/index.html">Donate Books</a>
-                                          </li>
-                                          <li>
-                                                <a href="/membership/index.html">Membership</a>
-                                          </li>
-                                    </ul>
-                              </div>
-                              <div class="column">
-                                    <h3>Blogs</h3>
-                                    <ul>
-                                          <li><a href="/biographies/">Biographies</a></li>
-                                          <li>
-                                                <a href="/businessplans/">Business Plans</a>
-                                          </li>
-                                          <li>
-                                                <a href="/careeroptions/">Career options</a>
-                                          </li>
-                                          <li><a href="/motivation/">Motivation</a></li>
-                                          <li><a href="/jobs_analysis/">jobs Analysis</a></li>
-                                    </ul>
-                              </div>
-                              <div class="column">
-                                    <h3>Courses</h3>
-                                    <ul>
-                                          <li>
-                                                <a href="/#web-dev">Web Development</a>
-                                          </li>
-                                          <li>
-                                                <a href="/#full-stack">MERN-Stack Development</a>
-                                          </li>
-                                          <li>
-                                                <a href="/#backend-dev">Backend Development</a>
-                                          </li>
-                                          <li>
-                                                <a href="/#full-stack">Full-Stack Development</a>
-                                          </li>
-                                    </ul>
-                              </div>
-                              <!-- others Links start -->
-
-                              <div class="column">
-                                    <h3>Other-Links</h3>
-                                    <ul>
-                                          <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund"
-                                                      target="_blank">Cancellation & Refund Policy</a></li>
-                                          <li>
-                                                <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms"
-                                                      target="_blank">Terms
-                                                      and Conditions
-                                                </a>
-                                          </li>
-                                          <li>
-                                                <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping"
-                                                      target="_blank">Shipping & Delivery Policy</a>
-                                          </li>
-                                          <li>
-                                                <a href="/privacy/">Privacy Policy </a>
-                                          </li>
-                                          <li>
-                                                <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/contact_us"
-                                                      target="_blank">Contact us</a>
-                                          </li>
-                                    </ul>
-                              </div>
-                              <!-- others Links end -->
-                              <div class="column">
-                                    <h3>Contact Us</h3>
-                                    <ul>
-                                          <li>
-                                                <a href="../contactus/" target="_blank">Connect with Us</a>
-                                          </li>
-                                          <li class="contact-icons">
-                                                <a href="https://www.facebook.com/profile.php?id=100093276582711"
-                                                      target="_blank" class="fb-icon">
-                                                      <img width="35" height="35"
-                                                            src="https://img.icons8.com/color/48/facebook-new.png"
-                                                            alt="facebook-new" />
-                                                </a>
-                                                <a href="https://www.instagram.com/jobsdoor360/" target="_blank"
-                                                      class="insta-icon">
-                                                      <img width="35" height="35"
-                                                            src="https://img.icons8.com/color/48/instagram-new--v1.png"
-                                                            alt="instagram-new--v1" />
-                                                </a>
-                                                <a href="https://www.linkedin.com/in/qualitywise-b05857275/"
-                                                      target="_blank" class="linkedin-icon">
-                                                      <img width="35" height="35"
-                                                            src="https://img.icons8.com/color/48/linkedin.png"
-                                                            alt="linkedin" />
-                                                </a>
-                                                <a href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ"
-                                                      target="_blank" class="youtube-icon">
-                                                      <img width="35" height="35"
-                                                            src="https://img.icons8.com/color/48/youtube-play.png"
-                                                            alt="youtube-play" />
-                                                </a>
-                                          </li>
-                                    </ul>
-                              </div>
-                        </div>
-                        <p>Copyright Jobsdoor360 © 2024. All rights reserved</p>
-                  </div>
-            </footer>
-
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-                  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-                  crossorigin="anonymous"></script>
-      </bodymain>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </html>

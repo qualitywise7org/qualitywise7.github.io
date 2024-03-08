@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
     <link rel="stylesheet" href="../css/signup.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-<link rel="icon" href="./../fevicon.ico" type="profile" />
+    <link rel="icon" href="./../fevicon.ico" type="profile" />
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -17,11 +19,104 @@
         <!-- End Google Tag Manager -->
     </head>
     
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<div class="container-fluid">
+	    <a class="brand" href="/">
+		  <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
+	    </a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+		  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		  <ul class="navbar-nav">
+			<li class="nav-item">
+			    <a class="nav-link" aria-current="/page" href="/">Home</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="/demo/">Demo</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="/myaccount/jobsforyou">Jobs For You</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="/test" target="_blank">Test</a>
+			</li>
+			<li class="nav-item dropdown">
+			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+				  aria-expanded="false">
+				  Blogs
+			    </a>
+			    <ul class="dropdown-menu">
+				  <li>
+					<a class="dropdown-item" href="/careeroptions">Career Options</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/jobs_analysis/">Jobs Analysis</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/businessplans">Business Plans</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/biographies">Biographies</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/motivation">Motivation</a>
+				  </li>
+			    </ul>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="/myaccount/yourprofile" target="_blank">Your Profile</a>
+			</li>
+			<li class="nav-item  login-btn">
+			    <a class="nav-link " id="login-button" href="/login" onclick={handleclick()}>Login</a>
+			</li>
+		  </ul>
+	    </div>
+	</div>
+  </nav>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+
+<script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-1JQVXS3B5L");
+</script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MFBK5637");
+</script>
+<!-- End Google Tag Manager -->
+<link rel="icon" href="./../fevicon.ico" type="profile" />
+
     <body>
+
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <div class="signup-container">
+        <div class="signup-container">
         <a class="logo" style="background-color: #e8f0fe; border-radius: 10px; text-align: center;" href="../index.html">
             <img style="width: 50%; padding: 10px;" src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
         </a>
@@ -50,6 +145,171 @@
             </span>
         </p>
     </div>
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer">
+                <div class="column">
+                    <h3>Quick-Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li>
+                            <a href="https://forms.gle/CNJokZdCvhCPzArj9" target="_blank">Feedback</a>
+                        </li>
+                        <li>
+                            <a href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+                        </li>
+                        <li>
+                            <a href="/test/index.html">Test</a>
+                        </li>
+                        <li>
+                            <a href="/socialwork/index.html">Donate Books</a>
+                        </li>
+                        <li>
+                            <a href="/membership/index.html">Membership</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Blogs</h3>
+                    <ul>
+                        <li><a href="/biographies/">Biographies</a></li>
+                        <li>
+                            <a href="/businessplans/">Business Plans</a>
+                        </li>
+                        <li>
+                            <a href="/careeroptions/">Career options</a>
+                        </li>
+                        <li><a href="/motivation/">Motivation</a></li>
+                        <li><a href="/jobs_analysis/">jobs Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li>
+                            <a href="/#web-dev">Web Development</a>
+                        </li>
+                        <li>
+                            <a href="/#full-stack">MERN-Stack Development</a>
+                        </li>
+                        <li>
+                            <a href="/#backend-dev">Backend Development</a>
+                        </li>
+                        <li>
+                            <a href="/#full-stack">Full-Stack Development</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- others Links start -->
+
+                <div class="column">
+                    <h3>Other-Links</h3>
+                    <ul>
+                        <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund"
+                                target="_blank">Cancellation & Refund Policy</a></li>
+                        <li>
+                            <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms" target="_blank">Terms
+                                and Conditions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping"
+                                target="_blank">Shipping & Delivery Policy</a>
+                        </li>
+                        <li>
+                            <a href="/privacy/">Privacy Policy </a>
+                        </li>
+                        <li>
+                            <a href="../contactus/" target="_blank">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- others Links end -->
+                <div class="column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>
+                            <a href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+                                target="_blank">Connect with Us</a>
+                        </li>
+                        <li class="contact-icons">
+                            <a href="https://www.facebook.com/profile.php?id=100093276582711" target="_blank"
+                                class="fb-icon">
+                                <img width="35" height="35" src="https://img.icons8.com/color/48/facebook-new.png"
+                                    alt="facebook-new" />
+                            </a>
+                            <a href="https://www.instagram.com/jobsdoor360/" target="_blank" class="insta-icon">
+                                <img width="35" height="35" src="https://img.icons8.com/color/48/instagram-new--v1.png"
+                                    alt="instagram-new--v1" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/qualitywise-b05857275/" target="_blank"
+                                class="linkedin-icon">
+                                <img width="35" height="35" src="https://img.icons8.com/color/48/linkedin.png"
+                                    alt="linkedin" />
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ" target="_blank"
+                                class="youtube-icon">
+                                <img width="35" height="35" src="https://img.icons8.com/color/48/youtube-play.png"
+                                    alt="youtube-play" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>Copyright Jobsdoor360 © 2024. All rights reserved</p>
+        </div>
+    </footer>
+
+
+    <!-- WhatsApp Chat Button -->
+    <div class="chat-back-to-top">
+        <button id="like-button">
+            <i class="fa-solid fa-thumbs-up"></i>
+        </button>
+        <button id="dislike-button">
+            <i class="fa-solid fa-thumbs-down"></i>
+        </button>
+        <div class="whatsapp-chat">
+            <a href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- The Bootstrap Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        What Can We Improve on Our Website?
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea id="feedback" class="form-control" placeholder="Your feedback..."></textarea>
+                    <input type="text" id="phoneNumber" class="form-control" placeholder="Your phone number..." />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button id="submitFeedback" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 
     <script type="module" src="../js/signup.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
