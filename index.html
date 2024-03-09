@@ -167,50 +167,73 @@
 
 
     <section>
-        <h1 class="text-center mt-3 mb-0 pt-2 text-2xl shadow-lg p-10">Job Oriented Courses</h1>
-        <div id="strip" class="strip"><div id="profile" style="border: none; border-radius: 5px; "><a onclick={your_profile()}><strong>PROFILE NOT FOUND.</strong> Create Your Profile</a></div></div>
-        
-        <section>
-            <div class="testimonial">
-                <div id="carouselExampleSlidesOnly" class="carousel" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="3000">
-                            <div class="d-block w-100">
-                                <div class="container">
-                                    <div class="content">
-                                        <a href="/myaccount/">
-                                            <img  src="/assets/jobsforyou.gif" alt="" class="full-width-image">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <div class="d-block w-100">
-                                <div class="container">
-                                    <div class="content">
-                                        <a href="/myaccount/">
-                                            <img src="/assets/yourprofile.gif" alt="" class="full-width-image">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <div class="d-block w-100">
-                                <div class="container">
-                                    <div class="content">
-                                        <a href="/myaccount/">
-                                            <img src="/assets/profileanalyzer.gif" alt="" class="full-width-image">
-                                        </a>
-                                    </div> 
-                                </div>
+        <h1 class="text-center mt-3 mb-0 pt-2 text-2xl shadow-lg p-10" style="width: 100%;">Job Oriented Courses</h1>
+<div id="strip" class="strip" style="width: 100%;"><div id="profile" style="border: none; border-radius: 5px; width: 100%;"><a onclick={your_profile()}><strong>PROFILE NOT FOUND.</strong> Create Your Profile</a></div></div>
+
+<section style="width: 100%;">
+    <div class="testimonial" style="width: 100%;">
+        <div id="carouselExampleSlidesOnly" class="carousel" data-bs-ride="carousel" style="width: 100%;">
+            <div class="carousel-inner" style="width: 100%;">
+                <div class="carousel-item active" data-bs-interval="3000" style="width: 100%;">
+                    <div class="d-block w-100" style="width: 100%;">
+                        <div class="container" style="width: 100%;">
+                            <div class="content" style="width: 100%;">
+                                <a onclick={handleclick()} style="width: 100%;">
+                                    <img  src="/assets/jobsforyou.png" alt="" class="full-width-image" style="width: 100%;">
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>            
-        </section>
+                <div class="carousel-item" data-bs-interval="3000" style="width: 100%;">
+                    <div class="d-block w-100" style="width: 100%;">
+                        <div class="container" style="width: 100%;">
+                            <div class="content" style="width: 100%;">
+                                <a onclick={your_profile()} style="width: 100%;">
+                                    <img src="/assets/yourprofile.png" alt="" class="full-width-image" style="width: 100%;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000" style="width: 100%;">
+                    <div class="d-block w-100" style="width: 100%;">
+                        <div class="container" style="width: 100%;">
+                            <div class="content" style="width: 100%;">
+                                <a href="/careeroptions/profileanalyzer/" style="width: 100%;">
+                                    <img src="/assets/profile_analyze.png" alt="" class="full-width-image" style="width: 100%;">
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000" style="width: 100%;">
+                    <div class="d-block w-100" style="width: 100%;">
+                        <div class="container" style="width: 100%;">
+                            <div class="content" style="width: 100%;">
+                                <a href="/membership/" style="width: 100%;">
+                                    <img src="/assets/membership.png" alt="" class="full-width-image" style="width: 100%;">
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="carousel-item" data-bs-interval="3000" style="width: 100%;">
+                <div class="d-block w-100" style="width: 100%;">
+                    <div class="container" style="width: 100%;">
+                        <div class="content" style="width: 100%;">
+                            <a href="/halloffame/" style="width: 100%;">
+                                <img src="/assets/alumni.png" alt="" class="full-width-image" style="width: 100%;">
+                            </a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            
+</section>
+
  
         <div class="hero-section" id="home">
             <div class="program-card" id="programs">
@@ -366,6 +389,39 @@
                                 style="border-bottom: 1px solid gray;">
                                 <div class="forward_link">
                                     <span class="text-xl">14 - Devops.</span>
+                                </div>
+                                <div class="text-xl">
+                                    <i class="fa-solid fa-arrow-bottom">&#8674</i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/details/?productcode=social-media" class="text-decoration-none">
+                            <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                                style="border-bottom: 1px solid gray;">
+                                <div class="forward_link">
+                                    <span class="text-xl">15 - Social Media Marketing.</span>
+                                </div>
+                                <div class="text-xl">
+                                    <i class="fa-solid fa-arrow-bottom">&#8674</i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/details/?productcode=seo" class="text-decoration-none">
+                            <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                                style="border-bottom: 1px solid gray;">
+                                <div class="forward_link">
+                                    <span class="text-xl">16 - Search Engine Optimisation(S.E.O).</span>
+                                </div>
+                                <div class="text-xl">
+                                    <i class="fa-solid fa-arrow-bottom">&#8674</i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/details/?productcode=computer-operator" class="text-decoration-none">
+                            <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                                style="border-bottom: 1px solid gray;">
+                                <div class="forward_link">
+                                    <span class="text-xl">17 - Computer Operator.</span>
                                 </div>
                                 <div class="text-xl">
                                     <i class="fa-solid fa-arrow-bottom">&#8674</i>

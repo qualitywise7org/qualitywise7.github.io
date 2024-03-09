@@ -497,6 +497,7 @@ body {
 /* Testimonial Section */
 
 .testimonial {
+  
   background-color: #f8f9fa;
   display: flex;
   justify-content: center;
@@ -1143,8 +1144,8 @@ body {
 
 .strip div {
   background-color: #e2e8f0;
-  padding: 5px 50px;
-  width: 81%;
+  margin: 5px 10%;
+  width: auto;
 }
 
 .full-width-image {
