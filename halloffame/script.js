@@ -1,14 +1,26 @@
 const data = [
       {
-        name: "John Doe",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        studentId: "12345"
+        name: "Rohit Gupta",
+        imageURL: "rohitgupta",
+        description: "Learnt full stack development as internship",
       },
       {
-        name: "Jane Smith",
-        description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        studentId: "67890"
+        name: "Shivam Dhakad",
+        imageURL: "shivam",
+        description: "Learnt back-end development in python, frontend, DSA, problem solving.", 
       },
+      {
+        name: "Jatin Kushwah",
+        description: "Learnt full stack development as internship",
+      },
+      {
+        name: "Aditya Jain",
+        description: "Full stack developer. Placed in company(company name is not disclosed)",
+      },
+      {
+        name: "Ayush Jain",
+        description: "Full stack developer.",
+      }
     ];
     
     document.addEventListener("DOMContentLoaded", function() {
@@ -23,7 +35,11 @@ const data = [
         const imgDiv = document.createElement("div");
         imgDiv.classList.add("img");
         const img = document.createElement("img");
-        img.src = "public/image.png"; 
+        if(person.imageURL){
+          img.src = `public/${person.imageURL}.jpg`; 
+        }else{
+          img.src = "https://wallpapercave.com/wp/wp9566480.png";
+        }
         img.alt = person.name;
         imgDiv.appendChild(img);
     
@@ -33,7 +49,7 @@ const data = [
         const nameHeading = document.createElement("h4");
         nameHeading.textContent = person.name;
         const idParagraph = document.createElement("p");
-        idParagraph.textContent = `Student ID: ${person.studentId}`;
+        idParagraph.textContent = `${person.description}`;
         classificationDiv.appendChild(nameHeading);
         classificationDiv.appendChild(idParagraph);
     
