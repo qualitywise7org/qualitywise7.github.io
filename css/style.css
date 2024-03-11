@@ -497,7 +497,7 @@ body {
 /* Testimonial Section */
 
 .testimonial {
-  
+  margin: 0 25px;
   background-color: #f8f9fa;
   display: flex;
   justify-content: center;
@@ -1136,16 +1136,14 @@ body {
   background: white;
   border-color: black;
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: center; 
   cursor: pointer;
   border-radius: 20px;
 }
 
 .strip div {
   background-color: #e2e8f0;
-  margin: 5px 10%;
-  width: auto;
+  margin: 5px 7.6%; 
 }
 
 .full-width-image {

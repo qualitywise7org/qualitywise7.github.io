@@ -12,7 +12,10 @@ body {
   justify-content: space-between; 
 }
 .card {
-      padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
   flex: 0 1 calc(50% - 20px); /* Two cards side by side on large screens */
   margin-bottom: 20px;
   text-align: justify;

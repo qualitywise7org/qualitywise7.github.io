@@ -3,6 +3,8 @@ import {
   getFirestore,
   collection,
   getDocs,
+  doc,
+  setDoc,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 // Initialize Firebase app
@@ -19,7 +21,34 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+  
+async function updateProfile(userProfile) {  
+  let userProfileRef;
+  if (userProfile.id) {
+      userProfileRef = doc(db, "userProfile", userProfile.id); // Use id if available
+  } else if (userProfile.email) {
+      userProfileRef = doc(db, "userProfile", userProfile.email); // Fall back to email
+  } else {
+      console.error("Cannot update profile: No unique identifier found");
+      return;
+  }
 
+  try {
+      const snap = await getDocs(userProfileRef);
+      if(snap.exists()) {
+          const existingData = snap.data();
+          userProfile = {...existingData,...userProfile };  
+          await setDoc(userProfileRef, userProfile);
+          console.log("Updated user profile");
+      } else {
+          console.error("User profile not found");
+      }
+  } catch (error) {
+      console.error("Error updating user profile:", error);
+  }
+}
+
+ 
 // Function to generate a card for a user profile
 function generateUserProfileCard(userProfile) {
   // Create a div element for the card
@@ -35,23 +64,23 @@ function generateUserProfileCard(userProfile) {
   profilePhotoDiv.appendChild(profilePhotoImg);
   cardDiv.appendChild(profilePhotoDiv);
 
-  // Rating Section
-  const ratingDiv = document.createElement("div");
-  ratingDiv.classList.add("rating-section");
-  ratingDiv.innerHTML = `
+  // Rating Input
+  const ratingInputDiv = document.createElement("div");
+  ratingInputDiv.classList.add("details-section");
+  ratingInputDiv.innerHTML = `
         <h2>Rating</h2>
-        <p><strong>Overall Rating:</strong> ${userProfile.overallRating}</p>
+        <input type="number" class="rating-input" placeholder="${userProfile.overallRating || 'Enter overall rating'}" value="${userProfile.overallRating || ''}">
       `;
-  cardDiv.appendChild(ratingDiv);
+  cardDiv.appendChild(ratingInputDiv);
 
-  // Feedback Section
-  const feedbackDiv = document.createElement("div");
-  feedbackDiv.classList.add("feedback-section");
-  feedbackDiv.innerHTML = `
-        <h2>Professional Feedback</h2>
-        <p>${userProfile.description}</p>
+  // Description Input
+  const descriptionInputDiv = document.createElement("div");
+  descriptionInputDiv.classList.add("details-section");
+  descriptionInputDiv.innerHTML = `
+        <h2>Description</h2>
+        <textarea class="description-input" rows="5" placeholder="${userProfile.description || 'Enter description'}">${userProfile.description || ''}</textarea>
       `;
-  cardDiv.appendChild(feedbackDiv);
+  cardDiv.appendChild(descriptionInputDiv);
 
   // About Section
   const aboutDiv = document.createElement("div");
@@ -69,14 +98,10 @@ function generateUserProfileCard(userProfile) {
   educationDiv.classList.add("details-section");
   educationDiv.innerHTML = `
         <h2>Education</h2>
-        <!-- Add education details here -->
+        <p><strong>School:</strong> ${userProfile.education[0].school}</p>
+        <p><strong>Degree:</strong> ${userProfile.education[0].degree}</p>
+        <p><strong>Graduation Date:</strong> ${userProfile.education[0].graduation_date}</p>
       `;
-  // Iterate over education details and add them to the educationDiv
-  userProfile.education.forEach((edu) => {
-    const eduParagraph = document.createElement("p");
-    eduParagraph.innerHTML = `<strong>School:</strong> ${edu.school}, <strong>Degree:</strong> ${edu.degree}, <strong>Graduation Date:</strong> ${edu.graduation_date}`;
-    educationDiv.appendChild(eduParagraph);
-  });
   cardDiv.appendChild(educationDiv);
 
   // Skills Section
@@ -84,54 +109,40 @@ function generateUserProfileCard(userProfile) {
   skillsDiv.classList.add("details-section");
   skillsDiv.innerHTML = `
         <h2>Skills</h2>
-        <!-- Add skills here -->
+        <p>${userProfile.skills.join(", ")}</p>
       `;
-  // Iterate over skills and add them to the skillsDiv
-  userProfile.skills.forEach((skill) => {
-    const skillParagraph = document.createElement("p");
-    skillParagraph.textContent = skill;
-    skillsDiv.appendChild(skillParagraph);
-  });
   cardDiv.appendChild(skillsDiv);
 
   // Submit Button
   const submitButton = document.createElement("button");
   submitButton.textContent = "Submit";
   submitButton.classList.add("submit-button");
-  submitButton.addEventListener("click", () => {
-    const rating = ratingInput.value;
-    const feedback = feedbackInput.value;
-    userProfile.rating = rating;
-    userProfile.feedback = feedback;
-    updateProfile(userProfile);
+  submitButton.addEventListener("click", async () => {
+    const rating = document.querySelector(".rating-input").value;
+    const description = document.querySelector(".description-input").value;
+
+    userProfile.overallRating = rating;
+    userProfile.description = description;
+
+    try {
+      await updateProfile(userProfile);
+      console.log("Profile updated successfully.");
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
   });
-    cardDiv.appendChild(submitButton);
+  cardDiv.appendChild(submitButton);
 
   // Append the card to the container
   const containerDiv = document.querySelector(".container");
   containerDiv.appendChild(cardDiv);
 }
 
-// Function to retrieve all user profiles
-// async function getAllUserProfiles() {
-//   const userProfiles = {};
-//   try {
-//     const querySnapshot = await getDocs(collection(db, "userProfile"));
-//     console.log(querySnapshot);
-//     querySnapshot.forEach((doc) => {
-//       generateUserProfileCard(doc.data);
-//     });
-//   } catch (error) {
-//     console.error("Error getting user profiles:", error);
-//   }
-// }
-
 async function getAllUserProfiles() {
   try {
     const querySnapshot = await getDocs(collection(db, "userProfile"));
     querySnapshot.forEach((doc) => {
-      const userProfile = doc.data();
-      console.log(userProfile);
+      const userProfile = doc.data(); 
       generateUserProfileCard(userProfile);
     });
   } catch (error) {
@@ -140,3 +151,4 @@ async function getAllUserProfiles() {
 }
 
 getAllUserProfiles();
+ 
