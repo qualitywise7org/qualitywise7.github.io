@@ -208,6 +208,19 @@ async function saveFormDataToDatabase() {
   
   const userProfileRef = doc(db, "userProfile", email);
 
+  try {
+    const docSnap = await getDoc(userProfileRef);
+    if (docSnap.exists()) { 
+      const existingData = docSnap.data();
+      formData = { ...existingData, ...formData };
+    } else { 
+      formData.description = null;
+      formData.overallRating = null;
+    }
+  } catch (error) {
+    console.error("Error getting document:", error);
+  }
+
   await setDoc(userProfileRef, formData)
     .then(() => {
         Toastify({
