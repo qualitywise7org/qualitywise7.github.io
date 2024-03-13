@@ -696,7 +696,8 @@ body {
 
 .footer {
   color: white;
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   padding: 2rem 4rem;
   gap: 4rem;
   grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
@@ -1141,9 +1142,12 @@ body {
   border-radius: 20px;
 }
 
-.strip div {
-  background-color: #e2e8f0;
-  margin: 5px 7.6%; 
+#profile  {
+  background-color: #d7d8db;
+  width: auto;
+  padding: 5px 20px;
+  border-radius: 10px; 
+  margin-bottom: 10px;
 }
 
 .full-width-image {

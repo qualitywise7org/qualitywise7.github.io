@@ -24,10 +24,8 @@ const db = getFirestore(app);
   
 async function updateProfile(userProfile) {  
   let userProfileRef;
-  if (userProfile.id) {
-      userProfileRef = doc(db, "userProfile", userProfile.id); // Use id if available
-  } else if (userProfile.email) {
-      userProfileRef = doc(db, "userProfile", userProfile.email); // Fall back to email
+  if (userProfile.email) {
+      userProfileRef = doc(db, "userProfile", userProfile.email); // Use id if available
   } else {
       console.error("Cannot update profile: No unique identifier found");
       return;
