@@ -499,8 +499,7 @@ body {
 .testimonial {
   margin: 0 25px;
   background-color: #f8f9fa;
-  display: flex;
-  justify-content: center;
+  margin: auto;
   background: white;
 }
 
