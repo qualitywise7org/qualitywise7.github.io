@@ -42,7 +42,7 @@ const storageRef = ref(storage);
 async function isUser() {
   console.log("isUser");
   var email = localStorage.getItem('email'); 
-  const docRef = doc(db, "userProfile", email);
+  const docRef = doc(db, "user_profile", email);
   try {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
@@ -56,7 +56,8 @@ async function isUser() {
       $("#gender").val(userData.about.gender);
       $("#category").val(userData.about.category);
       $("#address").val(userData.about.address);
-      $("#email").val(userData.about.email);
+      // $("#email").val(email);
+      document.getElementById("email").innerHTML = email;
       $("#phoneno").val(userData.about.phoneNo);
       $("#linkedin").val(userData.about.linkedin);
       $("#github").val(userData.about.github);
@@ -132,7 +133,7 @@ function collectFormData() {
   aboutData.gender = $("#gender").val();
   aboutData.category = $("#category").val();
   aboutData.address = $("#address").val();
-  aboutData.email = $("#email").val();
+  aboutData.email = email;
   aboutData.phoneNo = $("#phoneno").val();
   aboutData.linkedin = $("#linkedin").val();
   aboutData.github = $("#github").val();
@@ -206,9 +207,22 @@ async function saveFormDataToDatabase() {
     formData.about.cv = cvUrl;
   }
   
-  const userProfileRef = doc(db, "userProfile", email);
+  const user_profileRef = doc(db, "user_profile", email);
 
-  await setDoc(userProfileRef, formData)
+  try {
+    const docSnap = await getDoc(user_profileRef);
+    if (docSnap.exists()) { 
+      const existingData = docSnap.data();
+      formData = { ...existingData, ...formData };
+    } else { 
+      formData.description = null;
+      formData.overallRating = null;
+    }
+  } catch (error) {
+    console.error("Error getting document:", error);
+  }
+
+  await setDoc(user_profileRef, formData)
     .then(() => {
         Toastify({
             text: "Details Successfully Submitted",

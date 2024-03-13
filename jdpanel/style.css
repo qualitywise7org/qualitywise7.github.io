@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+.container {
+      padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  flex: 0 1 calc(50% - 20px); /* Two cards side by side on large screens */
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+}
+.profile-photo img {
+  width: 100%;
+  height: auto;
+}
+.details-section {
+  margin-bottom: 20px;
+}
+.details-section h2,
+.rating-section h2,
+.feedback-section h2 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+.details-section p {
+  margin: 5px 0;
+}
+.rating-input,
+.description-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .card {
+    flex: 0 1 calc(100% - 20px);
+  }
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}
