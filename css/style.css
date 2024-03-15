@@ -1136,16 +1136,17 @@ body {
   background: white;
   border-color: black;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   cursor: pointer;
   border-radius: 20px;
 }
 
-#profile  {
+#profile {
+  font-size: 1rem;
   background-color: #d7d8db;
   width: auto;
   padding: 5px 20px;
-  border-radius: 10px; 
+  border-radius: 10px;
   margin-bottom: 10px;
 }
 

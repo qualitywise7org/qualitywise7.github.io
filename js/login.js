@@ -31,6 +31,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+ 
 const loginForm = document.getElementById("login-form");
 
 loginForm.addEventListener("submit", async (e) => {
@@ -85,7 +86,13 @@ loginForm.addEventListener("submit", async (e) => {
 });
 
 
-async function loginUser(email, password) {
-  const auth = getAuth();
-  await signInWithEmailAndPassword(auth, email, password);
+async function loginUser(email, password) { 
+  auth.onAuthStateChanged(async user => {
+    if (user.emailVerified) {
+      await signInWithEmailAndPassword(auth, email, password);
+      // console.log("verified user"); 
+    } else {
+      console.log("The Email is not verified");
+    }
+  });
 }

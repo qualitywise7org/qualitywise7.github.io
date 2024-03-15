@@ -29,41 +29,39 @@ const auth = getAuth(app);
 
 const signupForm = document.getElementById("signup-form");
 
-signupForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+// signupForm.addEventListener("submit", async (e) => {
+//   e.preventDefault();
 
-  const username = document.getElementById("username").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+//   const username = document.getElementById("username").value;
+//   const email = document.getElementById("email").value;
+//   const password = document.getElementById("password").value;
 
-  try {
-    const userCredential = await signUpUser(username, email, password);
+//   try {
+//     const userCredential = await signUpUser(username, email, password);
 
-    document.getElementById("username").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("password").value = "";
+//     document.getElementById("username").value = "";
+//     document.getElementById("email").value = "";
+//     document.getElementById("password").value = "";
 
-    await saveUserDataToFirestore(userCredential.user.uid, username, email);
+//     await saveUserDataToFirestore(userCredential.user.uid, username, email);
 
-    await sendEmailVerification(userCredential.user);
+//     await sendEmailVerification(userCredential.user);
 
-    var user = {
-      id: userCredential.user.uid,
-      userName: username,
-      email: email,
-    };
+//     var user = {
+//       id: userCredential.user.uid,
+//       userName: username,
+//       email: email,
+//     };
 
-    var userJSON = JSON.stringify(user);
-    localStorage.setItem("user", userJSON);
-    // const toast = new bootstrap.Toast(document.getElementById("loginToast"));
-    // toast.show();
-    alert("Signed up successfully! ");
-    // showToast("Signed up successfully!");
-  } catch (error) {
-    alert("Error signing up: " + error.message);
-    // showToast(`Error signing up: ${error.message}`);
-  }
-});
+//     var userJSON = JSON.stringify(user);
+//     localStorage.setItem("user", userJSON); 
+//     alert("Signed up successfully! "); 
+//   } catch (error) {
+//     alert("Error signing up: " + error.message); 
+//   }
+// });
+
+
 
 // onAuthStateChanged(auth, (user) => {
 //     if (user) {
@@ -87,6 +85,29 @@ signupForm.addEventListener("submit", async (e) => {
 //   }, 3000);
 // }
 
+signupForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+    document.getElementById("username").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+
+    const userCredential = await signUpUser(username, email, password);
+
+    // Send email verification
+    await sendEmailVerification(auth.currentUser);
+
+    alert("Signed up successfully! Please check your email to verify your account and try again Later!");
+  } catch (error) {
+    alert("Error signing up: " + error.message);
+  }
+});
+
 async function signUpUser(username, email, password) {
   const userCredential = await createUserWithEmailAndPassword(
     auth,
@@ -109,3 +130,4 @@ async function saveUserDataToFirestore(userId, username, email) {
     firstLogin: true,
   });
 }
+ 

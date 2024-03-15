@@ -41,7 +41,6 @@ const storageRef = ref(storage);
 
 async function isUser() {
   console.log("isUser");
-  var email = localStorage.getItem('email'); 
   const docRef = doc(db, "user_profile", email);
   try {
     const docSnap = await getDoc(docRef);
@@ -56,8 +55,7 @@ async function isUser() {
       $("#gender").val(userData.about.gender);
       $("#category").val(userData.about.category);
       $("#address").val(userData.about.address);
-      // $("#email").val(email);
-      document.getElementById("email").innerHTML = email;
+      $("#email").html(email);
       $("#phoneno").val(userData.about.phoneNo);
       $("#linkedin").val(userData.about.linkedin);
       $("#github").val(userData.about.github);
@@ -126,18 +124,17 @@ $(document).ready(function () {
 function collectFormData() {
   var formData = {};  
   var aboutData = {};
-  aboutData.firstName = $("#firstname").val();
-  aboutData.middleName = $("#middlename").val();
-  aboutData.lastName = $("#lastname").val();
-  aboutData.image = $("#image").val();
-  aboutData.gender = $("#gender").val();
-  aboutData.category = $("#category").val();
-  aboutData.address = $("#address").val();
-  aboutData.email = email;
-  aboutData.phoneNo = $("#phoneno").val();
-  aboutData.linkedin = $("#linkedin").val();
-  aboutData.github = $("#github").val();
-
+  aboutData.firstName = $("#firstname").val() || "";
+  aboutData.middleName = $("#middlename").val() || "";
+  aboutData.lastName = $("#lastname").val() || "";
+  aboutData.image = $("#image").val() || "";
+  aboutData.gender = $("#gender").val() || "";
+  aboutData.category = $("#category").val() || "";
+  aboutData.address = $("#address").val() || "";
+  aboutData.email = $("#email").val() || "";
+  aboutData.phoneNo = $("#phoneno").val() || "";
+  aboutData.linkedin = $("#linkedin").val() || "";
+  aboutData.github = $("#github").val() || "";
   formData.about = aboutData;
 
   // Collect data for the "Education" section
@@ -146,12 +143,12 @@ function collectFormData() {
     .find("[data-repeater-item]")
     .each(function () {
       var eduItem = {};
-      eduItem.school = $("#school", this).val();
-      eduItem.degree = $("#degree", this).val();
-      eduItem.start_date = $("#sdate", this).val();
-      eduItem.graduation_date = $("#edate", this).val();
-      eduItem.city = $("#city", this).val();
-      eduItem.percentage = $("#Percentage", this).val();
+      eduItem.school = $("#school", this).val() || "";
+      eduItem.degree = $("#degree", this).val() || "";
+      eduItem.start_date = $("#sdate", this).val() || "";
+      eduItem.graduation_date = $("#edate", this).val() || "";
+      eduItem.city = $("#city", this).val() || "";
+      eduItem.percentage = $("#Percentage", this).val() || "";
       education.push(eduItem);
     });
 
@@ -161,7 +158,7 @@ function collectFormData() {
   $('[data-repeater-list="group-skill"]')
     .find("[data-repeater-item]")
     .each(function () {
-      var skillValue = $(this).find(".skill").val().trim();
+      var skillValue = $(this).find(".skill").val().trim() || "";
       if (skillValue !== "") {
         skills.push(skillValue);
       }
@@ -172,24 +169,20 @@ function collectFormData() {
   return formData;
 }
 
-
-// This store the iamge in the storage section oof the firebase storage
 async function uploadImageAndGetURL(file) {
   const imageRef = ref(storage, "userImages/" + file.name);
   await uploadBytes(imageRef, file);
 
   const url = await getDownloadURL(imageRef);
-  return url;
+  return url || ""; // Return empty string if URL is undefined
 }
 
-
-// This function handle the cv upload in the your profile section
 async function uploadCV(file) { 
   const cvRef = ref(storage, "userCV/" + file.name);
   await uploadBytes(cvRef, file);
 
   const url = await getDownloadURL(cvRef);
-  return url;
+  return url || ""; // Return empty string if URL is undefined
 }
 
 async function saveFormDataToDatabase() {
@@ -207,22 +200,9 @@ async function saveFormDataToDatabase() {
     formData.about.cv = cvUrl;
   }
   
-  const user_profileRef = doc(db, "user_profile", email);
+  const userProfileRef = doc(db, "user_profile", email);
 
-  try {
-    const docSnap = await getDoc(user_profileRef);
-    if (docSnap.exists()) { 
-      const existingData = docSnap.data();
-      formData = { ...existingData, ...formData };
-    } else { 
-      formData.description = null;
-      formData.overallRating = null;
-    }
-  } catch (error) {
-    console.error("Error getting document:", error);
-  }
-
-  await setDoc(user_profileRef, formData)
+  await setDoc(userProfileRef, formData)
     .then(() => {
         Toastify({
             text: "Details Successfully Submitted",
@@ -237,6 +217,9 @@ async function saveFormDataToDatabase() {
               borderRadius: "10px"
             }
           }).showToast();
+          setTimeout(() => {
+            window.location.href = "/myaccount/yourprofile/forward_page";
+          }, 3000);
     })
     .catch((error) => {
       console.error("Error writing document: ", error);
