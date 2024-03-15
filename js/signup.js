@@ -102,7 +102,7 @@ signupForm.addEventListener("submit", async (e) => {
     // Send email verification
     await sendEmailVerification(auth.currentUser);
 
-    alert("Signed up successfully! Please check your email to verify your account.");
+    alert("Signed up successfully! Please check your email to verify your account and try again Later!");
   } catch (error) {
     alert("Error signing up: " + error.message);
   }
@@ -120,14 +120,14 @@ async function signUpUser(username, email, password) {
   return userCredential;
 }
 
-// async function saveUserDataToFirestore(userId, username, email) {
-//   const db = getFirestore();
-//   const userDocRef = doc(db, "users", userId);
+async function saveUserDataToFirestore(userId, username, email) {
+  const db = getFirestore();
+  const userDocRef = doc(db, "users", userId);
 
-//   await setDoc(userDocRef, {
-//     full_name: username,
-//     email: email,
-//     firstLogin: true,
-//   });
-// }
+  await setDoc(userDocRef, {
+    full_name: username,
+    email: email,
+    firstLogin: true,
+  });
+}
  

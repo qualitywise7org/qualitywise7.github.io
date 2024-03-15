@@ -119,57 +119,20 @@
 
   <body>
     <div class="container">
-      <div class="card">
-        <!-- Profile Photo -->
-        <div class="profile-photo">
-          <img
-            src="https://th.bing.com/th/id/OIP.IGNf7GuQaCqz_RPq5wCkPgAAAA?rs=1&pid=ImgDetMain"
-            alt="Profile Photo"
-          />
-        </div>
-
-        <!-- Rating Input -->
-        <div class="details-section">
-          <h2>Rating</h2>
-          <input
-            type="number"
-            class="rating-input"
-            placeholder="Enter overall rating"
-          />
-        </div>
-
-        <!-- Description Input -->
-        <div class="details-section">
-          <h2>Description</h2>
-          <textarea
-            class="description-input"
-            rows="5"
-            placeholder="Enter description"
-          ></textarea>
-        </div>
-
-        <!-- About Section -->
-        <div class="details-section">
-          <h2>About</h2>
-          <p><strong>Name:</strong> John Doe</p>
-          <p><strong>Email:</strong> john@example.com</p>
-          <p><strong>Gender:</strong> Male</p>
-        </div>
-
-        <!-- Education Section -->
-        <div class="details-section">
-          <h2>Education</h2>
-          <p><strong>School:</strong> XYZ University</p>
-          <p><strong>Degree:</strong> Bachelor of Science</p>
-          <p><strong>Graduation Date:</strong> May 2022</p>
-        </div>
-
-        <!-- Skills Section -->
-        <div class="details-section">
-          <h2>Skills</h2>
-          <p>HTML, CSS, JavaScript, Python</p>
-        </div>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Rating</th>
+            <th>Description</th>
+            <th>Education Details</th>
+            <th>Other Details</th>
+          </tr>
+        </thead>
+        <tbody id="userProfilesTableBody">
+          <!-- User profile data will be populated here -->
+        </tbody>
+      </table>
     </div>
     <script type="module" src="script.js"></script>
   </body> 
@@ -186,7 +149,7 @@
                             <a href="/vision/" target="_blank">Vision</a>
                         </li>
                         <li>
-                            <a href="/">Result</a>
+                            <a href="/result/">Result</a>
                         </li>
                     </ul>
                 </div>
