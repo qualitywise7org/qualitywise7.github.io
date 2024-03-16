@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Job Listings</title>
+      <link rel="stylesheet" href="/css/style.css" />
+      <link rel="stylesheet" href="style.css" />
+      
+</head>
+<body>
+      <%- include('../../partials/head.ejs') %>
+      <table id="jobTable">
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Stipend</th>
+                    <th>Job Role</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody id="jobListings">
+                <!-- Job listings will be added here -->
+            </tbody>
+        </table>
+        <%- include('../../partials/footer.ejs') %>
+      <script src="script.js"></script>
+</body>
+
+</html>
