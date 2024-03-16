@@ -1,46 +1,62 @@
-async function getAllUserProfiles() {
-  try {
-    const querySnapshot = await getDocs(collection(db, "userProfile"));
-    const tableBody = document.getElementById("userProfilesTableBody");
-    querySnapshot.forEach((doc) => {
-      const userProfile = doc.data();
-      const row = createUserProfileTableRow(userProfile);
-      tableBody.appendChild(row);
-    });
-  } catch (error) {
-    console.error("Error getting user profiles:", error);
+const data = [
+  {
+    name: "Rohit Gupta",
+    imageURL: "rohitgupta",
+    description: "Learnt full stack development as internship",
+  },
+  {
+    name: "Shivam Dhakad",
+    imageURL: "shivam",
+    description: "Learnt back-end development in python, frontend, DSA, problem solving.", 
+  },
+  {
+    name: "Jatin Kushwah",
+    description: "Learnt full stack development as internship",
+  },
+  {
+    name: "Aditya Jain",
+    description: "Full stack developer. Placed in company(company name is not disclosed)",
+  },
+  {
+    name: "Ayush Jain",
+    description: "Full stack developer.",
   }
-}
+];
 
-function createUserProfileTableRow(userProfile) {
-  const row = document.createElement("tr");
+document.addEventListener("DOMContentLoaded", function() {
+  const dataContainer = document.querySelector(".data");
 
-  // Name
-  const nameCell = document.createElement("td");
-  nameCell.textContent = `${userProfile.about.firstName} ${userProfile.about.lastName}`;
-  row.appendChild(nameCell);
+  data.forEach(person => {
+    // Create detail div
+    const detailDiv = document.createElement("div");
+    detailDiv.classList.add("detail");
 
-  // Rating
-  const ratingCell = document.createElement("td");
-  ratingCell.textContent = userProfile.overallRating || 'N/A';
-  row.appendChild(ratingCell);
+    // Create image container
+    const imgDiv = document.createElement("div");
+    imgDiv.classList.add("img");
+    const img = document.createElement("img");
+    if(person.imageURL){
+      img.src = `public/${person.imageURL}.jpg`; 
+    }else{
+      img.src = "https://wallpapercave.com/wp/wp9566480.png";
+    }
+    img.alt = person.name;
+    imgDiv.appendChild(img);
 
-  // Description
-  const descriptionCell = document.createElement("td");
-  descriptionCell.textContent = userProfile.description || 'N/A';
-  row.appendChild(descriptionCell);
+    // Create classification div
+    const classificationDiv = document.createElement("div");
+    classificationDiv.classList.add("classification");
+    const nameHeading = document.createElement("h4");
+    nameHeading.textContent = person.name;
+    const idParagraph = document.createElement("p");
+    idParagraph.textContent = `${person.description}`;
+    classificationDiv.appendChild(nameHeading);
+    classificationDiv.appendChild(idParagraph);
 
-  // Education Details
-  const educationCell = document.createElement("td");
-  educationCell.textContent = `${userProfile.education[0].school}, ${userProfile.education[0].degree}, Graduated: ${userProfile.education[0].graduation_date}`;
-  row.appendChild(educationCell);
+    // Append image and classification to detail div
+    detailDiv.appendChild(imgDiv);
+    detailDiv.appendChild(classificationDiv);
 
-  // Other Details (Example)
-  const otherDetailsCell = document.createElement("td");
-  otherDetailsCell.textContent = `Email: ${userProfile.about.email}, Gender: ${userProfile.about.gender}`;
-  row.appendChild(otherDetailsCell);
-
-  return row;
-}
-
-getAllUserProfiles();
+    dataContainer.appendChild(detailDiv);
+  });
+});
