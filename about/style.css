@@ -20,7 +20,6 @@ body {
   display: grid;
   max-width: 1200px;
   padding: 0 24px; /* Changed padding */
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px; /* Reduced gap */
 }
 
@@ -48,6 +47,7 @@ article:focus {
 }
 
 .article-body {
+  align-items: center;
   padding: 24px;
 }
 
@@ -56,6 +56,10 @@ article h2 {
   margin: 0 0 18px 0;
   font-size: 1.9rem;
   color: #28666e;
+}
+
+article h3{
+  color:#28666e;
 }
 
 article p {
@@ -82,11 +86,4 @@ article a:hover {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-/* Media query for smaller screens */
-@media screen and (max-width: 960px) {
-  .articles {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted column width */
-  }
 }

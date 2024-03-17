@@ -1,63 +1,20 @@
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-// import {
-//   getStorage,
-//   ref,
-//   uploadBytes,
-//   getDownloadURL,
-// } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js";
 
-// import {
-//   getFirestore,
-//   addDoc,
-//   getDoc,
-//   setDoc,
-//   doc,
-//   updateDoc,
-//   collection,
-// } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const jobListings = document.getElementById("jobListings");
-
-  // Sample data for job listings
-  const data = [
-    {
-      title: "Software Engineer",
-      stipend: "$5000",
-      role: "Developer",
-      location: "New York",
-      id: 1,
-    },
-    {
-      title: "Marketing Specialist",
-      stipend: "$4000",
-      role: "Marketing",
-      location: "San Francisco",
-      id: 2,
-    },
-    {
-      title: "Data Analyst",
-      stipend: "$4500",
-      role: "Analyst",
-      location: "Chicago",
-      id: 3,
-    },
-    // Add more job listings as needed
-  ];
-
-  // Populate the table with data
-  data.forEach((job) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-              <td>${job.title}</td>
-              <td>${job.stipend}</td>
-              <td>${job.role}</td>
-              <td>${job.location}</td>
-          `;
-    jobListings.appendChild(row);
-  });
-});
+import {
+  getFirestore,
+  addDoc,
+  getDoc,
+  setDoc,
+  doc,
+  updateDoc,
+  collection,
+} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 
 const firebaseConfig = {
@@ -73,14 +30,49 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const storage = getStorage(app);
+const storageRef = ref(storage);
 
-var applied_jobs = {};
+document.addEventListener("DOMContentLoaded", async function () {
+    const jobListings = document.getElementById('jobListings');
+    const appliedJobsRef = collection(db, 'jobsapplied');
 
-const email = localStorage.getItem("email");
-if (email) {
-  const docRef = doc(db, "jobsapplied", email);
-  const docSnap = await getDoc(docRef);
-  if (docSnap.exists()) {
-    applied_jobs = docSnap.data();
-  }
-}
+    // Fetch applied jobs from the database
+    const appliedJobsSnapshot = await getDoc(appliedJobsRef);
+    const appliedJobs = appliedJobsSnapshot.docs.map(doc => doc.data().id);
+
+    const data = [
+        { id: 1, title: "Software Engineer", stipend: "5000", role: "Developer", location: "abc" },
+        { id: 2, title: "Marketing Specialist", stipend: "4000", role: "Marketing", location: "bac" },
+        { id: 3, title: "Data Analyst", stipend: "4500", role: "Analyst", location: "asb" } 
+    ];
+
+    // Filter out jobs that are not already applied for
+    const filteredData = data.filter(job => !appliedJobs.includes(job.id));
+
+    // Populate the table with filtered data
+    filteredData.forEach(job => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${job.title}</td>
+            <td>${'₹'+job.stipend}</td>
+            <td>${job.role}</td>
+            <td>${job.location}</td>
+            <td><button class="applyButton" data-jobid="${job.id}">Apply</button></td>
+        `;
+        jobListings.appendChild(row);
+    });
+
+    // Add event listener for Apply buttons
+    const applyButtons = document.querySelectorAll('.applyButton');
+    applyButtons.forEach(button => {
+        button.addEventListener('click', applyForJob);
+    });
+
+    async function applyForJob(event) {
+        const jobId = event.target.dataset.jobid;
+        await addDoc(collection(db, 'jobsapplied', email), { id: jobId });
+        
+        console.log(`Applying for job with ID: ${jobId}`);
+    }
+});
