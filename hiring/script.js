@@ -33,93 +33,99 @@ const storage = getStorage(app);
 const storageRef = ref(storage);
 
 document.addEventListener("DOMContentLoaded", async function () {
-  const email = localStorage.getItem("email");
-  if (email) {
-    console.log("Email " + email);
-    try {
-      const appliedJobsRef = doc(db, "jobsapplied", email);
-      const docSnap = await getDoc(appliedJobsRef);
-      if (docSnap.exists()) {
-        var appliedJobs = docSnap.data();
-        console.log(appliedJobs);
-      }
-    } catch {
-      console.log("error");
-    }
-  }
-
   const jobListings = document.getElementById("jobListings");
+
+
   const data = [
-    {
-      id: 1,
-      title: "Web-Developer",
-      stipend: "8000",
-      role: "Developer",
-      location: "Remote",
-    },
-    {
-      id: 2,
-      title: "Marketing Specialist",
-      stipend: "4000",
-      role: "Marketing",
-      location: "bac",
-    },
-    {
-      id: 3,
-      title: "Data Analyst",
-      stipend: "4500",
-      role: "Analyst",
-      location: "asb",
-    },
+      {
+          id: 1,
+          title: "Web-Developer",
+          stipend: "8000",
+          role: "Developer",
+          location: "Remote",
+      },
+      {
+          id: 2,
+          title: "Marketing Specialist",
+          stipend: "4000",
+          role: "Marketing",
+          location: "bac",
+      },
+      {
+          id: 3,
+          title: "Data Analyst",
+          stipend: "4500",
+          role: "Analyst",
+          location: "asb",
+      },
   ];
 
   data.forEach((job) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-            <td>${job.title}</td>
-            <td>${"₹" + job.stipend}</td>
-            <td>${job.role}</td>
-            <td>${job.location}</td>
-            <td><button class="applyButton" data-jobid="${
-              job.id
-            }">Apply</button></td>
-        `;
-    jobListings.appendChild(row);
-
-    if (appliedJobs.includes(job.id)) {
-      const button = row.querySelector(".applyButton");
-      button.textContent = "Applied";
-      button.style.backgroundColor = "#999";
-      button.disabled = true; 
-    }
+      const row = document.createElement("tr");
+      row.innerHTML = `
+      <td>${job.title}</td>
+      <td>${"₹" + job.stipend}</td>
+      <td>${job.role}</td>
+      <td>${job.location}</td>
+      <td><button class="applyButton" data-jobid="${job.id}">Apply</button></td>
+  `;
+      jobListings.appendChild(row);
   });
+
+
+
+  const email = localStorage.getItem("email");
+
+  if (email) {
+      console.log("Email " + email);
+      try {
+          const appliedJobsRef = doc(db, "jobsapplied", email);
+          const docSnap = await getDoc(appliedJobsRef);
+          if (docSnap.exists()) {
+              const appliedJobs = docSnap.data();
+              console.log(appliedJobs);
+
+              for (const jobId in appliedJobs) {
+                  const button = document.querySelector(`.applyButton[data-jobid="${jobId}"]`);
+                  if (button) {
+                      button.textContent = "Applied";
+                      button.style.backgroundColor = "#45a049"; // Change color to indicate applied
+                      button.disabled = true; // Disable button
+                  }
+              }
+          }
+      } catch {
+          console.log("error");
+      }
+  }
 
   // Add event listener for Apply buttons
   const applyButtons = document.querySelectorAll(".applyButton");
   applyButtons.forEach((button) => {
-    button.addEventListener("click", applyForJob);
+      button.addEventListener("click", applyForJob);
   });
 
   async function applyForJob(event) {
-    const jobId = event.target.dataset.jobid;
-    const email = localStorage.getItem("email");
-    if (email) {
-      try {
-        const docRef = doc(db, "jobsapplied", email);
-        const docSnap = await getDoc(docRef);
+      const jobId = event.target.dataset.jobid;
+      const email = localStorage.getItem("email");
+      if (email) {
+          try {
+              const docRef = doc(db, "jobsapplied", email);
+              const docSnap = await getDoc(docRef);
 
-        if (docSnap.exists()) {
-          updateDoc(docRef, { [jobId]: true });
-          console.log("Job application updated");
-        } else {
-          await setDoc(docRef, { [jobId]: true });
-          console.log("Job application added");
-        }
-      } catch (error) {
-        console.error("Error applying for job:", error);
+              if (docSnap.exists()) {
+                  updateDoc(docRef, { [jobId]: true });
+                  console.log("Job application updated");
+              } else {
+                  await setDoc(docRef, { [jobId]: true });
+                  console.log("Job application added");
+              }
+          } catch (error) {
+              console.error("Error applying for job:", error);
+          }
+      } else {
+          alert("You are not loggedIn. Please login");
       }
-    } else {
-      alert("You are not loggedIn. Please login");
-    }
   }
 });
+
