@@ -41,7 +41,7 @@ loginForm.addEventListener("submit", async (e) => {
 
   try {
     await loginUser(email, password);
-    localStorage.setItem("email", email);
+    localStorage.setItem("email", email); 
     Toastify({
       text: "Logged in Successfully..",
       duration: 3000,
@@ -55,7 +55,7 @@ loginForm.addEventListener("submit", async (e) => {
         borderRadius: "10px"
       }
     }).showToast();
-    const docRef = doc(db, "userProfile", email);
+    const docRef = doc(db, "user_profile", email);
     const docSnap = await getDoc(docRef);
     if(docSnap.exists()) {
       localStorage.setItem('profile', true);
