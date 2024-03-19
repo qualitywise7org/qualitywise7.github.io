@@ -21,46 +21,22 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
-async function updateProfile(userProfile) {
-  let userProfileRef;
-  const email = localStorage.getItem("email");
-  if (email) {
-    userProfileRef = doc(db, "user_profile", email);
-    console.log(userProfileRef);
-  } else {
-    console.error("Cannot update profile: No unique identifier found");
-  }
-
-  try {
-    const snap = await getDocs(userProfileRef);
-    if (snap.exists()) {
-      const existingData = snap.data();
-      userProfile = { ...existingData, ...userProfile };
-      await setDoc(userProfileRef, userProfile);
-      console.log("Updated user profile");
-    } else {
-      console.error("User profile not found");
-    }
-  } catch (error) {
-    console.error("Error updating user profile:", error);
-  }
-}
-
+ 
+ 
 // Function to generate a card for a user profile
 function generateUserProfileCard(userProfile) {
   // Create a div element for the card
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card");
 
+  // Set unique email identifier as a data attribute
+  cardDiv.dataset.email = userProfile.about.email;
+
   // Profile Photo
   const profilePhotoDiv = document.createElement("div");
   profilePhotoDiv.classList.add("profile-photo");
   const profilePhotoImg = document.createElement("img");
-  profilePhotoImg.src =
-    userProfile.about && userProfile.about.image
-      ? userProfile.about.image
-      : "https://th.bing.com/th/id/OIP.yYUwl3GDU07Q5J5ttyW9fQHaHa?rs=1&pid=ImgDetMain";
+  profilePhotoImg.src = userProfile.about && userProfile.about.image ? userProfile.about.image : "https://th.bing.com/th/id/OIP.yYUwl3GDU07Q5J5ttyW9fQHaHa?rs=1&pid=ImgDetMain";
   profilePhotoImg.alt = "Profile Photo";
   profilePhotoDiv.appendChild(profilePhotoImg);
   cardDiv.appendChild(profilePhotoDiv);
@@ -70,9 +46,7 @@ function generateUserProfileCard(userProfile) {
   ratingInputDiv.classList.add("details-section");
   ratingInputDiv.innerHTML = `
         <h2>Rating</h2>
-        <input type="number" class="rating-input" placeholder="${
-          userProfile.overallRating || "Enter overall rating"
-        }" value="${userProfile.overallRating || ""}">
+        <input type="number" class="rating-input" placeholder="${userProfile.rating || 'Enter overall rating'}" value="${userProfile.overallRating || ''}">
       `;
   cardDiv.appendChild(ratingInputDiv);
 
@@ -81,9 +55,7 @@ function generateUserProfileCard(userProfile) {
   descriptionInputDiv.classList.add("details-section");
   descriptionInputDiv.innerHTML = `
         <h2>Description</h2>
-        <textarea class="description-input" rows="5" placeholder="${
-          userProfile.description || "Enter description"
-        }">${userProfile.description || ""}</textarea>
+        <textarea class="description-input" rows="5" placeholder="${userProfile.description || 'Enter description'}">${userProfile.description || ''}</textarea>
       `;
   cardDiv.appendChild(descriptionInputDiv);
 
@@ -123,18 +95,21 @@ function generateUserProfileCard(userProfile) {
   submitButton.textContent = "Submit";
   submitButton.classList.add("submit-button");
   submitButton.addEventListener("click", async () => {
-    const rating = document.querySelector(".rating-input").value;
-    const description = document.querySelector(".description-input").value;
-
-    userProfile.overallRating = rating;
+    const cardEmail = cardDiv.dataset.email; // Get the email associated with the card
+    const rating = cardDiv.querySelector(".rating-input").value;
+    const description = cardDiv.querySelector(".description-input").value;
+    userProfile.rating = rating;
     userProfile.description = description;
-
-    try {
-      await updateProfile(userProfile);
-      console.log("Profile updated successfully.");
-    } catch (error) {
-      console.error("Error updating profile:", error);
-    }
+    console.log(userProfile);
+    console.log("userprofile ", userProfile);
+    
+    const userProfileRef = doc(db, "user_profile", userProfile.about.email);
+    await setDoc(userProfileRef, userProfile)
+    .then(()=>{
+      console.log("userprofile ", userProfile);
+      console.log("finally data is saved in teh database");
+    })
+    
   });
   cardDiv.appendChild(submitButton);
 
@@ -145,9 +120,9 @@ function generateUserProfileCard(userProfile) {
 
 async function getAllUserProfiles() {
   try {
-    const querySnapshot = await getDocs(collection(db, "userProfile"));
+    const querySnapshot = await getDocs(collection(db, "user_profile"));
     querySnapshot.forEach((doc) => {
-      const userProfile = doc.data();
+      const userProfile = doc.data(); 
       generateUserProfileCard(userProfile);
     });
   } catch (error) {
