@@ -131,7 +131,7 @@ function collectFormData() {
   aboutData.gender = $("#gender").val() || "";
   aboutData.category = $("#category").val() || "";
   aboutData.address = $("#address").val() || "";
-  aboutData.email = $("#email").val() || "";
+  aboutData.email = email;
   aboutData.phoneNo = $("#phoneno").val() || "";
   aboutData.linkedin = $("#linkedin").val() || "";
   aboutData.github = $("#github").val() || "";
