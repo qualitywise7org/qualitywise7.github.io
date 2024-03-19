@@ -63,3 +63,12 @@ tr:hover {
   background-color: #45a049;
 }
 
+.parent{
+  display: flex; 
+  justify-content: center;
+}
+
+.child{
+  display: flex;
+  flex-direction: column;
+}

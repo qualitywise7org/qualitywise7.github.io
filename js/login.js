@@ -61,7 +61,10 @@ loginForm.addEventListener("submit", async (e) => {
       localStorage.setItem('profile', true);
     }
     setTimeout(() => {
-      if(redirect_url){
+      if(redirect_url == "hiring"){
+        window.location.href= '../hiring/';
+      }
+      else if(redirect_url){
         window.location.href = "../myaccount"+redirect_url;
       }else{
         window.location.href = "../myaccount";
