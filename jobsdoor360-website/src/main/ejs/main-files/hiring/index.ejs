@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Job Listings</title>
-      <link rel="stylesheet" href="/css/style.css" />
-      <link rel="stylesheet" href="style.css" />
-      
-</head>
-<body>
-      <%- include('../../partials/head.ejs') %>
-      <table id="jobTable">
-        <thead>
-            <tr>
-                <th>Job Title</th>
-                <th>Stipend</th>
-                <th>Job Role</th>
-                <th>Location</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody id="jobListings">
-            <!-- Job listings will be added here -->
-        </tbody>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <%- include('../../partials/head.ejs') %>
+    <table id="jobTable">
+      <thead>
+        <tr>
+          <th>Job Title</th>
+          <th>Stipend</th>
+          <th>Job Role</th>
+          <th>Location</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="jobListings">
+        <!-- Job listings will be added here -->
+      </tbody>
     </table>
-
+    <div class="parent">
+      <div class="child">
+        <h3>
+          <a style="text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(151, 134, 169); border-radius: 10px; padding: 5px 9px; cursor: pointer;" onclick={handleclick()}>
+            Click here to view other jobs for you.
+          </a>
+        </h3>
+      </div>
+    </div>
+    <script>
+        function handleclick(){
+            const email = localStorage.getItem("email");
+            if(email){
+                window.location.href = "/myaccount/jobsforyou"
+            }else{
+                window.location.href = "/login/?redirect_url=/jobsforyou";
+            }
+        }
+    </script>
     <script src="script.js" type="module"></script>
-        <%- include('../../partials/footer.ejs') %>
-</body>
-
+    <%- include('../../partials/footer.ejs') %>
+  </body>
 </html>

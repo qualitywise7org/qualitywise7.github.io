@@ -1,3 +1,9 @@
+ 
+const email = localStorage.getItem("email");
+if(!email){
+    window.location.href = "/login/?redirect_url=hiring";
+} 
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
 import {
   getStorage,
@@ -14,6 +20,7 @@ import {
   doc,
   updateDoc,
   collection,
+  getDocs,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -35,52 +42,32 @@ const storageRef = ref(storage);
 document.addEventListener("DOMContentLoaded", async function () {
   const jobListings = document.getElementById("jobListings");
 
-  const data = [
-    {
-      id: 1,
-      title: "Web-Developer",
-      stipend: "8000",
-      role: "Developer",
-      location: "Remote",
-    },
-    {
-      id: 2,
-      title: "Marketing Specialist",
-      stipend: "4000",
-      role: "Marketing",
-      location: "bac",
-    },
-    {
-      id: 3,
-      title: "Data Analyst",
-      stipend: "4500",
-      role: "Analyst",
-      location: "asb",
-    },
-  ];
-
-  data.forEach((job) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${job.title}</td>
-      <td>${"₹" + job.stipend}</td>
-      <td>${job.role}</td>
-      <td>${job.location}</td>
-      <td><button class="applyButton" data-jobid="${job.id}">Apply</button></td>
-  `;
-    jobListings.appendChild(row);
-  });
+  try {
+    const querySnapshot = await getDocs(collection(db, "hiring"));
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${data.title || "NOT DISCLOSED"}</td>
+        <td>${"₹" + data.stipend || "NOT DISCLOSED"}</td>
+        <td>${data.role || "NOT DISCLOSED"}</td>
+        <td>${data.location || "NOT DISCLOSED"}</td>
+        <td><button class="applyButton" data-jobid="${doc.id}">Apply</button></td>
+      `;
+      jobListings.appendChild(row);
+    });
+  } catch (error) {
+    console.error("Error retrieving job listings:", error);
+  }
 
   const email = localStorage.getItem("email");
 
-  if (email) {
-    console.log("Email " + email);
+  if (email) { 
     try {
       const appliedJobsRef = doc(db, "jobsapplied", email);
       const docSnap = await getDoc(appliedJobsRef);
       if (docSnap.exists()) {
-        const appliedJobs = docSnap.data();
-        console.log(appliedJobs);
+        const appliedJobs = docSnap.data(); 
 
         for (const jobId in appliedJobs) {
           const button = document.querySelector(
@@ -133,4 +120,4 @@ document.addEventListener("DOMContentLoaded", async function () {
       alert("You are not logged In. Please login");
     }
   }
-}); 
+});
