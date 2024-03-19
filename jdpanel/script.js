@@ -20,8 +20,25 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
- 
+const db = getFirestore(app); 
+const data = await getAllData();
+console.log(data);
+
+
+async function getAllData() {
+  let Data = [];  
+
+  try {
+    const querySnapshot = await getDocs(collection(db, "hiring"));
+    querySnapshot.forEach((doc) => {
+      Data.push(doc.data()); 
+    });
+  } catch (error) {
+    console.error("Error getting data from collection:", error);
+  } 
+  return Data; 
+}
+  
  
 // Function to generate a card for a user profile
 function generateUserProfileCard(userProfile) {
@@ -99,17 +116,9 @@ function generateUserProfileCard(userProfile) {
     const rating = cardDiv.querySelector(".rating-input").value;
     const description = cardDiv.querySelector(".description-input").value;
     userProfile.rating = rating;
-    userProfile.description = description;
-    console.log(userProfile);
-    console.log("userprofile ", userProfile);
-    
+    userProfile.description = description; 
     const userProfileRef = doc(db, "user_profile", userProfile.about.email);
-    await setDoc(userProfileRef, userProfile)
-    .then(()=>{
-      console.log("userprofile ", userProfile);
-      console.log("finally data is saved in teh database");
-    })
-    
+    await setDoc(userProfileRef, userProfile); 
   });
   cardDiv.appendChild(submitButton);
 

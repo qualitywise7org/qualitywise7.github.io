@@ -218,7 +218,7 @@ async function saveFormDataToDatabase() {
             }
           }).showToast();
           setTimeout(() => {
-            window.location.href = "/myaccount/yourprofile/forward_page";
+            window.location.href = "/myaccount/yourprofile/profile_saved";
           }, 3000);
     })
     .catch((error) => {
