@@ -54,145 +54,92 @@
     <%- include('../../partials/head.ejs') %>
     <!-- main body start -->
 
-    <table class="table table-striped">
+    <table class="table table-striped" id="jobTable">
         <h1 class="text-center m-2 p-2">Total No. of Jobs for each Profile</h1>
-        <thead>
-            <tr>
-                <th scope="col">S.NO.</th>
-                <th scope="col">Jobs Profile Name</th>
-                <th scope="col">Years</th>
-                <th scope="col">No. of Jobs</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Web Development</td>
-                <td>2023</td>
-                <td>300</td>
-            </tr>
-
-            <tr>
-                <th scope="row">2</th>
-                <td>Java Development</td>
-                <td>2023</td>
-                <td>200</td>
-            </tr>
-
-            <tr>
-                <th scope="row">3</th>
-                <td>Python Developer</td>
-                <td>2023</td>
-                <td>450</td>
-            </tr>
-
-            <tr>
-                <th scope="row">4</th>
-                <td>DBA (Database Administrator)</td>
-                <td>2023</td>
-                <td>290</td>
-            </tr>
-
-            <tr>
-                <th scope="row">5</th>
-                <td>NodeJs Developer</td>
-                <td>2023</td>
-                <td>435</td>
-            </tr>
-
-            <tr>
-                <th scope="row">6</th>
-                <td>Full Stack Developer</td>
-                <td>2023</td>
-                <td>498</td>
-            </tr>
-
-            <tr>
-                <th scope="row">7</th>
-                <td>QA (Quality Assurance)</td>
-                <td>2023</td>
-                <td>389</td>
-            </tr>
-
-            <tr>
-                <th scope="row">8</th>
-                <td>Program Manager</td>
-                <td>2023</td>
-                <td>382</td>
-            </tr>
-
-            <tr>
-                <th scope="row">9</th>
-                <td>Product Manager</td>
-                <td>2023</td>
-                <td>298</td>
-            </tr>
-
-            <tr>
-                <th scope="row">10</th>
-                <td>Librarian</td>
-                <td>2023</td>
-                <td>376</td>
-            </tr>
-
-            <tr>
-                <th scope="row">11</th>
-                <td>Fellow</td>
-                <td>2023</td>
-                <td>292</td>
-            </tr>
-
-            <tr>
-                <th scope="row">12</th>
-                <td>Nurse</td>
-                <td>2023</td>
-                <td>367</td>
-            </tr>
-
-            <tr>
-                <th scope="row">13</th>
-                <td>Medical Officer</td>
-                <td>2023</td>
-                <td>298</td>
-            </tr>
-
-            <tr>
-                <th scope="row">14</th>
-                <td>Pharmacist</td>
-                <td>2023</td>
-                <td>378</td>
-            </tr>
-
-            <tr>
-                <th scope="row">15</th>
-                <td>School Teacher</td>
-                <td>2023</td>
-                <td>355</td>
-            </tr>
-
-            <tr>
-                <th scope="row">16</th>
-                <td>Professor/Faculty</td>
-                <td>2023</td>
-                <td>465</td>
-            </tr>
-
-            <tr>
-                <th scope="row">17</th>
-                <td>Helper</td>
-                <td>2023</td>
-                <td>476</td>
-            </tr>
-
-            <tr>
-                <th scope="row">18</th>
-                <td>Store Keeper</td>
-                <td>2023</td>
-                <td>309</td>
-            </tr>
-
-        </tbody>
+      <thead>
+        <tr>
+          <th scope="col">S.NO.</th>
+          <th scope="col">Jobs Profile Name</th>
+          <th scope="col" class="text-center">2018</th>
+          <th scope="col" class="text-center">2019</th>
+          <th scope="col" class="text-center">2020</th>
+          <th scope="col" class="text-center">2021</th>
+          <th scope="col" class="text-center">2022</th>
+          <th scope="col" class="text-center">2023</th>
+          <th scope="col" class="text-center">2024</th>
+          <th scope="col" class="text-center">Total Jobs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table body will be populated dynamically -->
+      </tbody>
     </table>
+    <script src="../../../../../../website_data/jobs_data.js"></script>
+    <script>
+      //Logic to filter out unique job profiles and count their occurrences
+      const uniqueJobProfiles = jobs_data.reduce((acc, curr) => {
+        if (!curr.posts_data || !curr.job_code || !curr.post_date) return acc;
+
+        let postYear = curr.post_date.split("-")[0].slice(-2);
+        postYear = postYear.length === 2 ? "20" + postYear : postYear;
+
+        let year =
+          curr.post_date.length === 8
+            ? curr.post_date.slice(-2)
+            : curr.post_date.substring(0, 4);
+        year = year.length === 2 ? "20" + year : year;
+
+        let existingJob = acc.find(
+          (job) => job.profile_code === curr.posts_data.post_code
+        );
+        if (existingJob) {
+          existingJob.count++;
+          existingJob.post_years[year] =
+            (existingJob.post_years[year] || 0) + 1;
+        } else {
+          let postYears = {};
+          postYears[year] = 1;
+          acc.push({
+            job_code: curr.job_code,
+            profile_name: curr.posts_data.post_name,
+            profile_code: curr.posts_data.post_code,
+            post_years: postYears,
+            count: 1,
+          });
+        }
+
+        return acc;
+      }, []);
+
+      //Logic to populate the table with unique job profiles and their occurrences
+      function populateTable() {
+        var tbody = document.querySelector("#jobTable tbody");
+        tbody.innerHTML = ""; // Clear existing rows
+
+        uniqueJobProfiles.forEach(function (job, index) {
+          var row =
+            "<tr>" +
+            "<th scope='row'>" +
+            (index + 1) +
+            "</th>" +
+            "<td>" +
+            job.profile_name +
+            "</td>";
+
+          // Loop through years from 2018 to 2024 to create columns for each year
+          for (let year = 2018; year <= 2024; year++) {
+            row +=
+              "<td class='text-center'>" +
+              (job.post_years[year] || 0) +
+              "</td>";
+          }
+
+          row += "<td class='text-center'>" + job.count + "</td>" + "</tr>";
+          tbody.innerHTML += row;
+        });
+      }
+      populateTable();
+    </script>
 
 
     <!-- main body end -->
