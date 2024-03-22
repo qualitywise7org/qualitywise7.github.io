@@ -1,7 +1,7 @@
 // Function to start the countdown
 function startCountdown() {
     var timerElement = document.getElementById("timer");
-    var count = 5;
+    var count = 15;
 
     var countdown = setInterval(function () {
         timerElement.innerHTML = count;
