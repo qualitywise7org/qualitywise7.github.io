@@ -91,11 +91,16 @@ loginForm.addEventListener("submit", async (e) => {
 
 async function loginUser(email, password) { 
   auth.onAuthStateChanged(async user => {
-    if (user.emailVerified) {
-      await signInWithEmailAndPassword(auth, email, password);
-      // console.log("verified user"); 
+    if (user) {
+      if (user.emailVerified) {
+        await signInWithEmailAndPassword(auth, email, password);
+        // console.log("verified user"); 
+      } else { 
+        alert("Email is not verified");
+        throw new Error("Email is not verified");
+      }
     } else {
-      console.log("The Email is not verified");
+      console.log("No user signed in");
     }
   });
 }

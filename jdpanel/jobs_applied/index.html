@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Job Listings</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
 	<div class="container-fluid">
 	    <a class="brand" href="/">
 		  <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
@@ -103,40 +103,21 @@
 	
 </script>
 
-    <table id="jobTable">
-      <thead>
-        <tr>
-          <th>Job Title</th>
-          <th>Stipend</th>
-          <th>Job Role</th>
-          <th>Location</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="jobListings">
-        <!-- Job listings will be added here -->
-      </tbody>
-    </table>
-    <div class="parent">
-      <div class="child">
-        <h6>
-          <a style="text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(151, 134, 169); border-radius: 10px; padding: 5px 9px; cursor: pointer;" onclick={handleclick()}>
-            Click here to view other jobs for you.
-          </a>
-        </h6>
-      </div>
-    </div>
-    <script>
-        function handleclick(){
-            const email = localStorage.getItem("email");
-            if(email){
-                window.location.href = "/myaccount/jobsforyou"
-            }else{
-                window.location.href = "/login/?redirect_url=/jobsforyou";
-            }
-        }
-    </script>
-    <script src="script.js" type="module"></script>
+      <table id="jobTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Role</th>
+                    <th>Location</th>
+                    <th>Stipend</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Jobs will be displayed here -->
+            </tbody>
+        </table>
+    <script type="module" src="script.js"></script>
     <!-- Footer -->
 
     <footer>

@@ -21,9 +21,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app); 
-const data = await getAllData();
-console.log(data);
+const data = await getAllData(); 
 
+console.log(data);
 
 async function getAllData() {
   let Data = [];  
@@ -39,104 +39,111 @@ async function getAllData() {
   return Data; 
 }
   
- 
-// Function to generate a card for a user profile
-function generateUserProfileCard(userProfile) {
-  // Create a div element for the card
-  const cardDiv = document.createElement("div");
-  cardDiv.classList.add("card");
+// Function to populate user profiles in the table
+async function populateUserProfilesTable() {
+  const tableBody = document.querySelector('#userProfilesTable tbody');
 
-  // Set unique email identifier as a data attribute
-  cardDiv.dataset.email = userProfile.about.email;
-
-  // Profile Photo
-  const profilePhotoDiv = document.createElement("div");
-  profilePhotoDiv.classList.add("profile-photo");
-  const profilePhotoImg = document.createElement("img");
-  profilePhotoImg.src = userProfile.about && userProfile.about.image ? userProfile.about.image : "https://th.bing.com/th/id/OIP.yYUwl3GDU07Q5J5ttyW9fQHaHa?rs=1&pid=ImgDetMain";
-  profilePhotoImg.alt = "Profile Photo";
-  profilePhotoDiv.appendChild(profilePhotoImg);
-  cardDiv.appendChild(profilePhotoDiv);
-
-  // Rating Input
-  const ratingInputDiv = document.createElement("div");
-  ratingInputDiv.classList.add("details-section");
-  ratingInputDiv.innerHTML = `
-        <h2>Rating</h2>
-        <input type="number" class="rating-input" placeholder="${userProfile.rating || 'Enter overall rating'}" value="${userProfile.overallRating || ''}">
-      `;
-  cardDiv.appendChild(ratingInputDiv);
-
-  // Description Input
-  const descriptionInputDiv = document.createElement("div");
-  descriptionInputDiv.classList.add("details-section");
-  descriptionInputDiv.innerHTML = `
-        <h2>Description</h2>
-        <textarea class="description-input" rows="5" placeholder="${userProfile.description || 'Enter description'}">${userProfile.description || ''}</textarea>
-      `;
-  cardDiv.appendChild(descriptionInputDiv);
-
-  // About Section
-  const aboutDiv = document.createElement("div");
-  aboutDiv.classList.add("details-section");
-  aboutDiv.innerHTML = `
-        <h2>About</h2>
-        <p><strong>Name:</strong> ${userProfile.about.firstName} ${userProfile.about.lastName}</p>
-        <p><strong>Email:</strong> ${userProfile.about.email}</p>
-        <p><strong>Gender:</strong> ${userProfile.about.gender}</p>
-      `;
-  cardDiv.appendChild(aboutDiv);
-
-  // Education Section
-  const educationDiv = document.createElement("div");
-  educationDiv.classList.add("details-section");
-  educationDiv.innerHTML = `
-        <h2>Education</h2>
-        <p><strong>School:</strong> ${userProfile.education[0].school}</p>
-        <p><strong>Degree:</strong> ${userProfile.education[0].degree}</p>
-        <p><strong>Graduation Date:</strong> ${userProfile.education[0].graduation_date}</p>
-      `;
-  cardDiv.appendChild(educationDiv);
-
-  // Skills Section
-  const skillsDiv = document.createElement("div");
-  skillsDiv.classList.add("details-section");
-  skillsDiv.innerHTML = `
-        <h2>Skills</h2>
-        <p>${userProfile.skills.join(", ")}</p>
-      `;
-  cardDiv.appendChild(skillsDiv);
-
-  // Submit Button
-  const submitButton = document.createElement("button");
-  submitButton.textContent = "Submit";
-  submitButton.classList.add("submit-button");
-  submitButton.addEventListener("click", async () => {
-    const cardEmail = cardDiv.dataset.email; // Get the email associated with the card
-    const rating = cardDiv.querySelector(".rating-input").value;
-    const description = cardDiv.querySelector(".description-input").value;
-    userProfile.rating = rating;
-    userProfile.description = description; 
-    const userProfileRef = doc(db, "user_profile", userProfile.about.email);
-    await setDoc(userProfileRef, userProfile); 
-  });
-  cardDiv.appendChild(submitButton);
-
-  // Append the card to the container
-  const containerDiv = document.querySelector(".container");
-  containerDiv.appendChild(cardDiv);
-}
-
-async function getAllUserProfiles() {
   try {
     const querySnapshot = await getDocs(collection(db, "user_profile"));
-    querySnapshot.forEach((doc) => {
-      const userProfile = doc.data(); 
-      generateUserProfileCard(userProfile);
+    querySnapshot.forEach((documentSnapshot) => {  
+      const userProfile = documentSnapshot.data();
+
+      const row = document.createElement('tr');
+
+      // Profile Photo
+      const profilePhotoCell = document.createElement('td');
+      const profilePhotoImg = document.createElement('img');
+      profilePhotoImg.src = userProfile.about && userProfile.about.image ? userProfile.about.image : "https://th.bing.com/th/id/OIP.yYUwl3GDU07Q5J5ttyW9fQHaHa?rs=1&pid=ImgDetMain";
+      profilePhotoImg.alt = "Profile Photo";
+      profilePhotoCell.appendChild(profilePhotoImg);
+      row.appendChild(profilePhotoCell);
+
+      // About Section
+      const nameCell = document.createElement('td');
+      nameCell.textContent = `${userProfile.about.firstName} ${userProfile.about.lastName}`;
+      row.appendChild(nameCell);
+
+      const emailCell = document.createElement('td');
+      emailCell.textContent = userProfile.about.email;
+      row.appendChild(emailCell);
+
+      const genderCell = document.createElement('td');
+      genderCell.textContent = userProfile.about.gender;
+      row.appendChild(genderCell);
+
+      // Education Section
+      const schoolCell = document.createElement('td');
+      schoolCell.textContent = userProfile.education[0].school;
+      row.appendChild(schoolCell);
+
+      const degreeCell = document.createElement('td');
+      degreeCell.textContent = userProfile.education[0].degree;
+      row.appendChild(degreeCell);
+
+      const graduationDateCell = document.createElement('td');
+      graduationDateCell.textContent = userProfile.education[0].graduation_date;
+      row.appendChild(graduationDateCell);
+
+      // Skills Section
+      const skillsCell = document.createElement('td');
+      skillsCell.textContent = userProfile.skills.join(", ");
+      row.appendChild(skillsCell);
+
+      // Rating Input
+      const ratingCell = document.createElement('td');
+      const ratingInput = document.createElement('input');
+      ratingInput.type = 'number';
+      ratingInput.value = userProfile.rating || '';
+      ratingCell.appendChild(ratingInput);
+      row.appendChild(ratingCell);
+
+      // Description Input
+      const descriptionCell = document.createElement('td');
+      const descriptionInput = document.createElement('textarea');
+      descriptionInput.rows = 3;
+      descriptionInput.value = userProfile.description || '';
+      descriptionCell.appendChild(descriptionInput);
+      row.appendChild(descriptionCell);
+
+      // Action (Edit Button)
+      const editCell = document.createElement('td');
+      const editButton = document.createElement('button');
+      editButton.textContent = 'Applied_Job';
+      editButton.addEventListener('click', () => {
+        const userEmail = userProfile.about.email;
+        console.log(userEmail);
+        window.location.href = "jobs_applied/?user="+userEmail;
+        // window.location.href = path+`jobs_applied?user=${userProfile.about.email}`;
+      }); 
+
+      // Action (Submit Button)
+      const actionCell = document.createElement('td');
+      const submitButton = document.createElement('button');
+      submitButton.textContent = 'Submit';
+      submitButton.addEventListener('click', async () => {
+        const userEmail = emailCell.textContent;  
+        const userRating = ratingInput.value;
+        const userDescription = descriptionInput.value; 
+        userProfile.rating = userRating;
+        userProfile.description = userDescription;
+
+        const userProfileRef = doc(db, "user_profile", userProfile.about.email);
+
+        await setDoc(userProfileRef, userProfile)
+        .then("updated user profile");
+      });
+      actionCell.appendChild(editButton);
+      actionCell.appendChild(submitButton);
+      actionCell.classList.add("action");
+      row.appendChild(actionCell);
+
+      tableBody.appendChild(row);
     });
   } catch (error) {
     console.error("Error getting user profiles:", error);
   }
 }
 
-getAllUserProfiles();
+// Call the populateUserProfilesTable function to populate the table
+populateUserProfilesTable();
+ 
