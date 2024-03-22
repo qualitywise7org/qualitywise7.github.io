@@ -1,67 +1,57 @@
-body {
-  font-family: Arial, sans-serif;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
-}
-.container {
-      padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-  flex: 0 1 calc(50% - 20px); /* Two cards side by side on large screens */
-  margin-bottom: 20px;
-  text-align: justify;
-}
-.profile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 20px;
-}
-.profile-photo img {
-  width: 100%;
-  height: auto;
-}
-.details-section {
-  margin-bottom: 20px;
-}
-.details-section h2,
-.rating-section h2,
-.feedback-section h2 {
-  margin-bottom: 10px;
-  color: #007bff;
-}
-.details-section p {
-  margin: 5px 0;
-}
-.rating-input,
-.description-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  .card {
-    flex: 0 1 calc(100% - 20px);
-  }
+body{
+  overflow: auto;  
 }
 
-.submit-button {
-  display: block;
-  width: 100%;
-  padding: 10px 20px;
+/* Table */
+#userProfilesTable {
+  width: auto; /* Allow the table to adjust its width based on content */
+  border-collapse: collapse;
   margin-top: 20px;
+}
+
+/* Table Header */
+#userProfilesTable th {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Table Body */
+#userProfilesTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Profile Photo */
+#userProfilesTable img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+
+/* Name */
+#userProfilesTable .name-cell {
+  font-weight: bold;
+}
+
+/* Skills */
+#userProfilesTable .skills-cell {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* School and Education */
+#userProfilesTable .school-cell,
+#userProfilesTable .education-cell {
+  font-style: italic;
+  color: #888;
+}
+
+/* Submit Button */
+#userProfilesTable td button {
+  padding: 10px 20px;
   background-color: #007bff; /* Blue color */
   color: white;
   border: none;
@@ -71,6 +61,13 @@ body {
   transition: background-color 0.3s;
 }
 
-.submit-button:hover {
-  background-color: #0056b3; /* Darker blue color on hover */
+#userProfilesTable td button:hover {
+  background-color: #0056b3;  
+}
+
+
+.action{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
