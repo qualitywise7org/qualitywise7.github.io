@@ -116,6 +116,29 @@ document.addEventListener("DOMContentLoaded", async function () {
       } catch (error) {
         console.error("Error applying for job:", error);
       }
+
+      try {
+        const docRef = doc(db, "hiring", jobId);
+        const docSnap = await getDoc(docRef);
+      
+        if (docSnap.exists()) {
+          const jobData = docSnap.data();
+          const appliedCandidates = jobData.appliedCandidates || [];  
+                                                    
+          if (!appliedCandidates.includes(email)) {
+            appliedCandidates.push(email);  
+            await updateDoc(docRef, { appliedCandidates }); 
+            console.log("Candidate added to the list of applied candidates");
+          } else {
+            console.log("Candidate already applied for this job");
+          }
+        } else {
+          console.log("Job document does not exist");
+        }
+      } catch (error) {
+        console.error("Error updating applied candidates list:", error);
+      }
+      
     } else {
       alert("You are not logged In. Please login");
     }
