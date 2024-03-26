@@ -976,31 +976,31 @@
             </script>
             <script>
 
-
-                const email = localStorage.getItem('email');
-                if (email) {
-                    document.getElementById('login-button').innerHTML = "Logout";
-                }
-                else {
-                    document.getElementById('profile').innerHTML = "<strong>You are not logged in</strong>";
-                }
-                const login_button = document.getElementById('login-button');
-                login_button.addEventListener('click', () => {
-                    if (localStorage.getItem("email")) {
-                        localStorage.clear();
-                    }
-                    location.location.href = '/login';
-                })
-                window.addEventListener("scroll", () => {
-                    let scrollVal = window.scrollY;
-                    if (scrollVal > 2000) {
-                        document.getElementById("backToTopBtn").style.display =
-                            "block";
-                    } else {
-                        document.getElementById("backToTopBtn").style.display =
-                            "none";
-                    }
-                });
+        const email = localStorage.getItem('email');
+        if(email){
+            document.getElementById('login-button').innerHTML = "Logout";
+            document.getElementById("user-email").innerHTML = email;
+        }
+        else{
+            document.getElementById('profile').innerHTML = "<strong>You are not logged in</strong>";
+        }
+        const login_button = document.getElementById('login-button');
+        login_button.addEventListener('click', () => {
+            if(localStorage.getItem("email")){
+                localStorage.clear(); 
+            }
+            location.location.href = '/login';
+        })
+        window.addEventListener("scroll", () => {
+            let scrollVal = window.scrollY;
+            if (scrollVal > 2000) {
+                document.getElementById("backToTopBtn").style.display =
+                    "block";
+            } else {
+                document.getElementById("backToTopBtn").style.display =
+                    "none";
+            }
+        });
 
                 function scrollToTop() {
                     document.documentElement.scrollTop = 0;
