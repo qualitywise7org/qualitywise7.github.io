@@ -976,7 +976,7 @@
                 const email = localStorage.getItem('email');
                 if (email) {
                     document.getElementById('login-button').innerHTML = "Logout";
-                    document.getElementById("user-email").innerHTML = email;
+                    document.getElementById("user-email").innerHTML = email.charAt(0).toUpperCase();
                 }
                 else {
                     document.getElementById('profile').innerHTML = "<strong>You are not logged in</strong>";

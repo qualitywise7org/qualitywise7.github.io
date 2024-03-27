@@ -16,7 +16,7 @@
 		  <span class="navbar-toggler-icon"></span>
 	    </button>
 	    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-		  <ul class="navbar-nav">
+		  <ul class="navbar-nav flex items-center">
 			<li class="nav-item">
 			    <a class="nav-link" aria-current="/page" href="/">Home</a>
 			</li>
@@ -56,13 +56,18 @@
 			    </ul>
 			</li>
 			<li class="nav-item">
-			    <a class="nav-link" href="/myaccount/yourprofile" target="_blank">Your Profile</a>
+			    <a class="nav-link" href="/hiring/" target="_blank">Hiring</a>
 			</li>
-			<li class="nav-item  user-info">
-				<span style="font-weight: 600; font-size: large; color: #586ba6;" class="nav-link" id="user-email"></span>
+			<li class="nav-item login-btn">
+				<a class="nav-link" id="login-button" href="/login" onclick={handleclick()}>Login</a>
 			</li>
-			<li class="nav-item  login-btn">
-			    <a class="nav-link " id="login-button" href="/login" onclick={handleclick()}>Login</a>
+			<!-- <div class="flex flex-col justify-center items-center">
+				<span style="font-weight: 600; color: lightgray; display: none;" class="nav-link" id="user-email"></span>
+			</div> -->
+			<li class="nav-item">
+				<div id="user-email" class="w-10 h-10 bg-gray-400 border-4 border-gray-500 rounded-full text-black flex justify-center items-center">
+					
+				</div>
 			</li>
 		  </ul>
 	    </div>
