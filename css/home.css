@@ -18,10 +18,13 @@
 }
 .card-text {
   text-align: center;
-  padding: 1.2rem;
+  padding: 1rem;
   font-size: 1.3rem;
-  font-weight: 900;
+  font-weight: 600;
+  font-style: italic;
+  font-family: serif;
 }
+
 .hero .imgs {
   padding: 1.3rem;
   justify-content: center;
@@ -41,3 +44,43 @@
     padding: 8px;
 
 } */
+
+.banner {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 200;
+  font-size: 25px;
+  padding: 5px;
+}
+.banner1{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 200;
+  font-size: 18px;
+  padding: 5px; 
+  display: none;
+}   
+@media (max-width: 768px) {
+  .banner {
+    display: none;
+  }
+  .banner1 {
+    display: block;
+  }
+}
+
+.img{
+  display: block;
+  width: 100%;
+}
+.img1{
+  display: none;
+  width: 100%;
+  display: none;
+}
+@media (max-width: 768px) {
+  .img{
+    display: none;
+  }
+  .img1{
+    display: block;
+  }
+}
