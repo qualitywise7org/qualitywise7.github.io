@@ -76,9 +76,12 @@
 
     <!-- Navbar -->
     <%- include('../partials/head.ejs') %>
-
-
         <section>
+            <div style="display: flex; gap: 8px; align-items: center; justify-content: center; margin-top: 18px;">
+                <span style="font-weight: 500;">Welcome</span>
+                <span id="user-mail" style="color: #586ba6; font-weight: 600; font-size: 1.1rem;">
+                </span>
+            </div>
             <h1 class="text-center mt-3 mb-0 pt-2 text-2xl shadow-lg p-10" style="width: 100%;">Job Oriented Courses
             </h1>
             <div id="strip" class="strip">
@@ -977,6 +980,7 @@
                 if (email) {
                     document.getElementById('login-button').innerHTML = "Logout";
                     document.getElementById("user-email").innerHTML = email.charAt(0).toUpperCase();
+                    document.getElementById("user-mail").innerHTML = email;
                 }
                 else {
                     document.getElementById('profile').innerHTML = "<strong>You are not logged in</strong>";
