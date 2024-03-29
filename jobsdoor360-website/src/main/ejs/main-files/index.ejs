@@ -957,6 +957,7 @@
                 if (email) {
                     document.getElementById('login-button').innerHTML = "Logout";
                     document.getElementById("user-email").innerHTML = email.charAt(0).toUpperCase();
+                    document.getElementById("user-email").style.display = "flex";
                     document.getElementById("user-mail").innerHTML = email;
                 }
                 else {
