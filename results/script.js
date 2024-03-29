@@ -3,27 +3,35 @@ const data = [
     name: "Rohit Gupta",
     imageURL: "rohitgupta",
     description: "Learnt full stack development as internship",
+    company: "Currently in Final Year"
   },
   {
     name: "Shivam Dhakad",
     imageURL: "shivam",
-    description: "Learnt back-end development in python, frontend, DSA, problem solving.", 
+    description: "Learnt back-end development in python, frontend, DSA, problem solving.",
+    company: ""
   },
   {
     name: "Jatin Kushwah",
+    imageURL: "",
     description: "Learnt full stack development as internship",
+    company: "Skillops"
   },
   {
     name: "Aditya Jain",
-    description: "Full stack developer. Placed in company(company name is not disclosed)",
+    imageURL: "",
+    description: "Learnt full stack development and product management as internship.",
+    company: "Got placed(Company name not disclosed)"
   },
   {
     name: "Ayush Jain",
-    description: "Full stack developer.",
+    imageURL: "",
+    description: "Learning full stack development as internship.",
+    company: ""
   }
 ];
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const dataContainer = document.querySelector(".data");
 
   data.forEach(person => {
@@ -35,11 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const imgDiv = document.createElement("div");
     imgDiv.classList.add("img");
     const img = document.createElement("img");
-    if(person.imageURL){
-      img.src = `public/${person.imageURL}.jpg`; 
-    }else{
-      img.src = "https://wallpapercave.com/wp/wp9566480.png";
-    }
+    (person.imageURL) ? img.src = `public/${person.imageURL}.jpg` : img.src = "https://wallpapercave.com/wp/wp9566480.png"
     img.alt = person.name;
     imgDiv.appendChild(img);
 
@@ -49,9 +53,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const nameHeading = document.createElement("h4");
     nameHeading.textContent = person.name;
     const idParagraph = document.createElement("p");
+    const companyParagraph = document.createElement("p");
     idParagraph.textContent = `${person.description}`;
+    idParagraph.style.color = "#dee2e6";
+    companyParagraph.textContent = `${person.company}`
+    companyParagraph.style.fontWeight = "bold";
     classificationDiv.appendChild(nameHeading);
     classificationDiv.appendChild(idParagraph);
+    classificationDiv.appendChild(companyParagraph);
 
     // Append image and classification to detail div
     detailDiv.appendChild(imgDiv);
