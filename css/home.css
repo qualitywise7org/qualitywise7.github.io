@@ -48,24 +48,24 @@
 .banner {
   font-family: 'Courier New', Courier, monospace;
   font-weight: 200;
-  font-size: 25px;
-  padding: 5px;
+  font-size: 30px;
+  
 }
-.banner1{
+.banner1 {
   font-family: 'Courier New', Courier, monospace;
   font-weight: 200;
   font-size: 18px;
-  padding: 5px; 
   display: none;
-}   
+}
 @media (max-width: 768px) {
-  .banner {
+  .banner{
     display: none;
   }
-  .banner1 {
+  .banner1{
     display: block;
   }
 }
+
 
 .img{
   display: block;
