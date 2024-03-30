@@ -3,7 +3,7 @@ const data = [
     name: "Rohit Gupta",
     imageURL: "rohitgupta",
     description: "Learnt full stack development as internship",
-    company: "Currently in Final Year"
+    company: "Placement - currently in final year."
   },
   {
     name: "Shivam Dhakad",
@@ -15,13 +15,13 @@ const data = [
     name: "Jatin Kushwah",
     imageURL: "",
     description: "Learnt full stack development as internship",
-    company: "Skillops"
+    company: "Placement - Skillops"
   },
   {
     name: "Aditya Jain",
     imageURL: "",
     description: "Learnt full stack development and product management as internship.",
-    company: "Got placed(Company name not disclosed)"
+    company: "Placement - got placed(company name not disclosed)"
   },
   {
     name: "Ayush Jain",
