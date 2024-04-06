@@ -686,14 +686,15 @@ body {
   text-align: center;
   padding-bottom: 0.6rem;
   font-size: 0.8rem;
+  display: flex;
 }
 
 .footer {
   color: white;
-  display: grid;
   padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
   gap: 4rem;
-  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
 }
 
 .footer .column {
@@ -1130,7 +1131,11 @@ body {
 }
 
 .main{
-  margin: 5% 8%; 
+  padding: 5% 8%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  color: black;
 }
 
 .cv-form-row-title{
@@ -1161,38 +1166,40 @@ body {
 
 .single-row-data{
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
 }
-
 .form-elem{
-  width: 100%
-}
-
-.dropdown{
-  width: 100%;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
 }
+.form-elem input{
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #d6d3d3;
+}
 
 .repeater-add-btn{
-  padding: 5px 10px;
+  padding: 5px 20px;
   border-radius: 5px;
-  background-color: rgb(114, 192, 206);
+  background-color: #15803d;
   color: white;
   font-weight: bold;
-  width: 23%;
+  border: none;
+  width: fit-content;
 
 }
 
 .repeater-remove-btn{
-  padding: 5px 10px;
+  padding: 5px 20px;
   margin: 10px 0;
   border-radius: 5px;
-  background-color: rgb(241, 35, 35);
+  background-color: #ef4444;
   color: white;
   font-weight: bold;
-  width: 23%;
+  width: fit-content;
+  border: none;
 }
 
 .navbar-nav{
