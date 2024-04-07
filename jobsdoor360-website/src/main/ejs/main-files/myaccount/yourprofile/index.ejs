@@ -391,17 +391,6 @@
       document.getElementById("firstname").focus();
     </script>
     <script>
-      const email = localStorage.getItem("email");
-      if (email) {
-        document.getElementById("login-button").innerHTML = "Logout";
-      }
-      const login_button = document.getElementById("login-button");
-      login_button.addEventListener("click", () => {
-        if (localStorage.getItem("email")) {
-          localStorage.clear();
-        }
-        location.location.href = "/login";
-      });
       $(document).ready(function () {
         $(document).on("click", function (event) {
           if (!$(event.target).closest(".accordion").length) {

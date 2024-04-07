@@ -222,17 +222,6 @@
       });
     </script>
     <script>
-      const email = localStorage.getItem("email");
-      if (email) {
-        document.getElementById("login-button").innerHTML = "Logout";
-      }
-      const login_button = document.getElementById("login-button");
-      login_button.addEventListener("click", () => {
-        if (localStorage.getItem("email")) {
-          localStorage.clear();
-        }
-        location.location.href = "/login";
-      });
       window.addEventListener("scroll", () => {
         let scrollVal = window.scrollY;
         if (scrollVal > 2000) {
