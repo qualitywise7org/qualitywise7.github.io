@@ -1,1031 +1,1343 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <title>Software Development Training - Web development, FullStack, Backend, Java, Reactjs</title>
+    <title>
+      Software Development Training - Web development, FullStack, Backend, Java,
+      Reactjs
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!" />
-    <meta name="google-adsense-account" content="ca-pub-2075086355753452">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
-        crossorigin="anonymous"></script>
+    <meta
+      name="description"
+      content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/home.css">
-    <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/home.css" />
+    <script
+      src="https://kit.fontawesome.com/f6b356be29.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Google tag (gtag.js) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Trirong"
+    />
 
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MFBK5637');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MFBK5637");
+    </script>
     <!-- End Google Tag Manager -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-1JQVXS3B5L");
 
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
+      function handleclick() {
+        const email = localStorage.getItem("email");
+        if (email) {
+          window.location.href = "/myaccount/jobsforyou";
+        } else {
+          window.location.href = "/login/?redirect_url=/jobsforyou";
         }
-        gtag("js", new Date());
-        gtag("config", "G-1JQVXS3B5L");
-
-
-        function handleclick() {
-            const email = localStorage.getItem("email");
-            if (email) {
-                window.location.href = "/myaccount/jobsforyou"
-            } else {
-                window.location.href = "/login/?redirect_url=/jobsforyou";
-            }
+      }
+      function your_profile() {
+        const email = localStorage.getItem("email");
+        if (email) {
+          window.location.href = "/myaccount/yourprofile";
+        } else {
+          window.location.href = "/login/?redirect_url=/yourprofile";
         }
-        function your_profile() {
-            const email = localStorage.getItem("email");
-            if (email) {
-                window.location.href = "/myaccount/yourprofile";
-            } else {
-                window.location.href = "/login/?redirect_url=/yourprofile";
-            }
-        }
-
+      }
     </script>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <link rel="icon" href="fevicon.ico" type="profile" />
     <style>
-        .forward_link {
-            font-family: "Trirong", serif;
-            color: #3D3B40;
-        }
+      .forward_link {
+        font-family: "Trirong", serif;
+        color: #3d3b40;
+      }
     </style>
-</head>
+    <%- include('../partials/head.ejs') %>
+  </head>
 
-<body>
+  <body>
     <!-- Google Tag Manager -->
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navbar -->
-    <%- include('../partials/head.ejs') %>
-        <section>
-            <div style="display: flex; gap: 8px; align-items: center; justify-content: center; margin-top: 10px;">
-                <span style="font-weight: 500; margin-bottom: 8px;">Welcome</span>
-                <span id="user-mail" style="color: #586ba6; font-weight: 600; font-size: 1.1rem;margin-bottom: 8px;">
-                </span>
+    <%- include('../partials/navbar.ejs') %>
+    <section>
+      <div
+        style="
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          justify-content: center;
+          margin-top: 10px;
+        "
+      >
+        <span style="font-weight: 500; margin-bottom: 8px">Welcome</span>
+        <span
+          id="user-mail"
+          style="
+            color: #586ba6;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+          "
+        >
+        </span>
+      </div>
+      <div id="strip" class="strip" style="margin-bottom: -15px">
+        <div id="profile">
+          <a onclick="{your_profile()}"
+            ><strong>𝐂𝐨𝐦𝐩𝐥𝐞𝐭𝐞 𝐘𝐨𝐮𝐫 𝐏𝐫𝐨𝐟𝐢𝐥𝐞.</strong></a
+          >
+        </div>
+      </div>
+      <h1
+        class="text-center mt-3 mb-0 pt-2 text-2xl shadow-lg pb-3"
+        style="width: 100%"
+      >
+        Job Oriented Courses
+      </h1>
+
+      <section>
+        <div class="testimonial" style="width: 100%; margin-bottom: 10px">
+          <div
+            id="carouselExampleSlidesOnly"
+            class="carousel"
+            data-bs-ride="carousel"
+            style="width: 100%"
+          >
+            <div class="carousel-inner" style="width: 100%">
+              <div
+                class="carousel-item active"
+                data-bs-interval=" 3000"
+                style="width: 100%"
+              >
+                <div class="d-block w-100" style="width: 100%">
+                  <div class="container" style="width: 100%">
+                    <div class="content" style="width: 100%">
+                      <a href="/hiring/" style="width: 100%">
+                        <img
+                          src="/assets/mock_interviews1.png"
+                          alt=""
+                          class="full-width-image img"
+                        />
+                        <img
+                          src="/assets/mock_interviews.png"
+                          alt=""
+                          class="full-width-image img1"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="carousel-item"
+                data-bs-interval="3000"
+                style="width: 100%"
+              >
+                <div class="d-block w-100" style="width: 100%">
+                  <div class="container" style="width: 100%">
+                    <div class="content" style="width: 100%">
+                      <a
+                        href="/careeroptions/profileanalyzer/"
+                        style="width: 100%"
+                      >
+                        <img
+                          src="/assets/profile_ana.png"
+                          alt=""
+                          class="full-width-image img"
+                        />
+                        <img
+                          src="/assets/profile_analyze.png"
+                          alt=""
+                          class="full-width-image img1"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="carousel-item"
+                data-bs-interval="3000"
+                style="width: 100%"
+              >
+                <div class="d-block w-100" style="width: 100%">
+                  <div class="container" style="width: 100%">
+                    <div class="content" style="width: 100%">
+                      <a href="/membership/" style="width: 100%">
+                        <img
+                          src="/assets/membership1.png"
+                          alt=""
+                          class="full-width-image img"
+                        />
+                        <img
+                          src="/assets/membership.png"
+                          alt=""
+                          class="full-width-image img1"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="carousel-item"
+                data-bs-interval="3000"
+                style="width: 100%"
+              >
+                <div class="d-block w-100" style="width: 100%">
+                  <div class="container" style="width: 100%">
+                    <div class="content" style="width: 100%">
+                      <a href="/results/" style="width: 100%">
+                        <img
+                          src="/assets/our_results1.png"
+                          alt=""
+                          class="full-width-image img"
+                        />
+                        <img
+                          src="/assets/our_results.png"
+                          alt=""
+                          class="full-width-image img1"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div id="strip" class="strip" style="margin-bottom: -15px;">
-                <div id="profile"><a onclick={your_profile()}><strong>𝐂𝐨𝐦𝐩𝐥𝐞𝐭𝐞 𝐘𝐨𝐮𝐫
-                            𝐏𝐫𝐨𝐟𝐢𝐥𝐞.</strong></a></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="" style="width: 100%">
+        <div class="d-block w-100" style="width: 100%">
+          <div class="container" style="width: 100%">
+            <div
+              class="content"
+              style="
+                width: 100%;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #d9dcdf;
+                border-radius: 10px;
+              "
+            >
+              <a
+                href="/hiring/"
+                style="
+                  width: 100%;
+                  text-align: center;
+                  color: inherit;
+                  text-decoration: none;
+                "
+              >
+                <h2 class="banner">We are hiring, click here..</h2>
+                <h2 class="banner1">We are hiring, click here..</h2>
+              </a>
             </div>
-            <h1 class="text-center mt-3 mb-0 pt-2 text-2xl shadow-lg pb-3" style="width: 100%;">Job Oriented Courses
-            </h1>
+          </div>
+        </div>
+      </div>
 
-            <section>
-                <div class="testimonial" style="width: 100%; margin-bottom: 10px;">
-                    <div id="carouselExampleSlidesOnly" class="carousel" data-bs-ride="carousel" style="width: 100%;">
-                        <div class="carousel-inner" style="width: 100%;">
-                            <div class="carousel-item active" data-bs-interval=" 3000" style="width: 100%;">
-                                <div class="d-block w-100" style="width: 100%;">
-                                    <div class="container" style="width: 100%;">
-                                        <div class="content" style="width: 100%;">
-                                            <a href="/hiring/" style="width: 100%;">
-                                                <img src="/assets/mock_interviews1.png" alt=""
-                                                    class="full-width-image img">
-                                                <img src="/assets/mock_interviews.png" alt=""
-                                                    class="full-width-image img1">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item" data-bs-interval="3000" style="width: 100%;">
-                                <div class="d-block w-100" style="width: 100%;">
-                                    <div class="container" style="width: 100%;">
-                                        <div class="content" style="width: 100%;">
-                                            <a href="/careeroptions/profileanalyzer/" style="width: 100%;">
-                                                <img src="/assets/profile_ana.png" alt="" class="full-width-image img">
-                                                <img src="/assets/profile_analyze.png" alt=""
-                                                    class="full-width-image img1">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item" data-bs-interval="3000" style="width: 100%;">
-                                <div class="d-block w-100" style="width: 100%;">
-                                    <div class="container" style="width: 100%;">
-                                        <div class="content" style="width: 100%;">
-                                            <a href="/membership/" style="width: 100%;">
-                                                <img src="/assets/membership1.png" alt="" class=" full-width-image img">
-                                                <img src="/assets/membership.png" alt="" class="full-width-image img1">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class=" carousel-item" data-bs-interval="3000" style="width: 100%;">
-                                <div class="d-block w-100" style="width: 100%;">
-                                    <div class="container" style="width: 100%;">
-                                        <div class="content" style="width: 100%;">
-                                            <a href="/results/" style="width: 100%;">
-                                                <img src="/assets/our_results1.png" alt="" class="full-width-image img">
-                                                <img src="/assets/our_results.png" alt="" class="full-width-image img1">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+      <div class="hero-section" id="home">
+        <div class="program-card" id="programs">
+          <div class="card card-2 w-100 mb-3">
+            <h2 class="header">Goals</h2>
+            <div>
+              <a
+                href="/details/?productcode=webdevelopment"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">1 - Web Development</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
                 </div>
-            </section>
-
-
-            <div class="" style="width: 100%;">
-                <div class="d-block w-100" style="width: 100%;">
-                    <div class="container" style="width: 100%;">
-                        <div class="content"
-                            style="width: 100%; height: 100px; display: flex; align-items: center; justify-content: center; background-color: #d9dcdf; border-radius: 10px;">
-                            <a href="/hiring/"
-                                style="width: 100%; text-align: center; color: inherit; text-decoration: none;">
-                                <h2 class="banner">
-                                    We are hiring, click here..
-                                </h2>
-                                <h2 class="banner1">
-                                    We are hiring, click here..
-                                </h2>
-                            </a>
-                        </div>
-                    </div>
+              </a>
+              <a
+                href="/details/?productcode=backendjava"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">2 - Backend Java</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
                 </div>
+              </a>
+              <a
+                href="/details/?productcode=fullstack"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">3 - FullStack Development</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a href="/details/?productcode=qa" class="text-decoration-none">
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl"
+                      >4 - Quality Assurance (QA) Engineer</span
+                    >
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=cvcreation"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">5 - CV Creation</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=videoprofile"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">6 - Video Profile Creation</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=mockinterview"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">7 - Mock interviews</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a onclick="{handleclick()}" class="text-decoration-none">
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">8 - Jobs for You</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=chargeableinternship"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">9 - Chargeable Internship</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=freeinternship"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">10 - Free Internship</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=paidinternship"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">11 - Paid Internship</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a href="/details/?productcode=math" class="text-decoration-none">
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">12 - Math, Aptitude & Reasoning</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=english"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">13 - English Speaking</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=devops"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">14 - Devops</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=social-media"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">15 - Social Media Marketing</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a href="/details/?productcode=seo" class="text-decoration-none">
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl"
+                      >16 - Search Engine Optimisation(S.E.O)</span
+                    >
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=computer-operator"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">17 - Computer Operator</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=business-analysis"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">18 - Business Analyst</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/details/?productcode=ux-course"
+                class="text-decoration-none"
+              >
+                <div
+                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
+                  style="border-bottom: 1px solid gray"
+                >
+                  <div class="forward_link">
+                    <span class="text-xl">19 - UX Course</span>
+                  </div>
+                  <div class="text-xl">
+                    <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hero">
+          <div class="hero-tag" style="margin-left: 50px; width: 100%">
+            <div class="imgs">
+              <span
+                ><a
+                  href="/results/"
+                  class="text-decoration-none text-black text-center"
+                  >SEE OUR RESULTS</a
+                ></span
+              >
+              <img src="./assets/avatar.gif" alt="student" />
+            </div>
+          </div>
+          <div class="card list m-3 p-3">
+            <p
+              class="card-text"
+              style="
+                font-weight: 500;
+                color: #5a5a5a;
+                font-size: 1.5rem;
+                word-spacing: 0.2vmin;
+              "
+            >
+              <strong
+                >Learn and Crack interviews in software development with IT
+                industry experts having 10+ years experience</strong
+              >
+            </p>
+            <ul style="margin-left: 15px">
+              <li>Professional guidance</li>
+              <li>Help in finding jobs</li>
+              <li>English Communictaion</li>
+              <li>Interview practice</li>
+              <li>Internship</li>
+              <li>Emphasizing Hindi Medium Students</li>
+            </ul>
+          </div>
+          <div>
+            <span>
+              <p class="card-text">
+                Advance your software development skills and open doors to
+                rewarding job prospects.
+                <br />
+                <br />
+                Secure Your Spot in the Upcoming Oct/Nov Batch
+              </p>
+            </span>
+            <div class="apply-container">
+              <div class="apply-btn">
+                <a href="register">Apply Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card section -->
+
+    <section>
+      <div class="card-section">
+        <h3 class="heading">These programs are ideally designed for</h3>
+        <div class="cards">
+          <div class="card">
+            <div class="head">
+              <img src="./assets/students.png" alt="students" />
+              <h4>Undergraduates</h4>
+              <span>Accelerate Your IT Journey from Campus to Career!</span>
+            </div>
+            <div class="para">
+              <p>
+                Gain guidance and support for the best job opportunities.
+                Develop full stack development skills, master resume building,
+                and gain insights into the IT world.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <img src="./assets/graduates.png" alt="graduates" />
+              <h4>Graduates</h4>
+              <span>Launch Your IT Career with Us!</span>
+            </div>
+            <div class="para">
+              <p>
+                Join us to secure the best IT jobs. Benefit from resume
+                building, full stack development training, and inspiring alumni
+                success stories. Take the leap towards a successful transition
+                today!
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <img src="./assets/professional.png" alt="professionals" />
+              <h4>Working professionals</h4>
+              <span>Elevate Your IT Career to New Heights!</span>
+            </div>
+            <div class="para">
+              <p>
+                Fuel Your IT Career Growth with a Transformative Journey. Unlock
+                exclusive opportunities, enhance your full stack development
+                expertise. Excel in your IT endeavors.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="apply-btn">
+          <a href="register">Apply Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we offer section -->
+
+    <section>
+      <div class="pitch-section">
+        <div class="top">
+          <h3 class="heading text-2xl">Why Jobsdoor360?</h3>
+          <h4 class="heading">
+            Discover the Key Ingredients That Make Our Program a Game-Changer
+          </h4>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="head">
+              <img src="./assets/schedule.jpg" alt="dummy" />
+              <span>Comprehensive Candidate Preparation Program</span>
+            </div>
+            <div class="para">
+              <ul>
+                <li>🗣️ Mock Interview Practice</li>
+                <li>📄 Aptitude Test Assessment</li>
+                <li>💻 DSA (Data Structure and Algorithm) Mastery</li>
+                <li>
+                  👨🏻‍💻 Skill Grooming in Web, Backend, Full Stack, SQL, and
+                  Database
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="head">
+              <img src="./assets/practicalLearning.jpg" alt="dummy" />
+              <span
+                >Empowering Excellence through Real-World Projects and Expert
+                Insights</span
+              >
+            </div>
+            <div class="para">
+              <ul>
+                <li>🏢 Industry-Standard Project Development</li>
+                <li>🎓 Learn from 10+ Years of IT Industry Experts</li>
+                <li>🤝 Hands-on Learning: Practical project experience</li>
+                <li>📈 Career Readiness: Job market readiness</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="head">
+              <img src="./assets/Career_job.jpg" alt="live classes" />
+              <span>Career Support and Job Search Services</span>
+            </div>
+            <div class="para">
+              <ul>
+                <li>👥 1:1 Mentorship for Personalized Guidance</li>
+                <li>🆓 Free Career Consultancy Sessions</li>
+                <li>📝 Expert CV Review and Optimization</li>
+                <li>💼 Proven Strategies to Find Jobs Effectively</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="apply-btn">
+          <a href="register">Apply Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section>
+      <div class="curriculum" id="curriculum">
+        <div class="top">
+          <!-- <h3 class="heading">Curriculum</h3> -->
+          <h1 class="text-3xl">Student Questions and Answers</h1>
+          <div class="accordion col-12" id="accordionExample1">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwenty"
+                  aria-expanded="false"
+                  aria-controls="collapseTwenty"
+                >
+                  <h5>
+                    👉 Why students don't get job after graduation and post
+                    graduation ?
+                  </h5>
+                </button>
+              </h2>
+              <div
+                id="collapseTwenty"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample1"
+              >
+                <div class="accordion-body">
+                  <li>Limited practical skills and experience</li>
+                  <li>
+                    Mismatch between qualifications and job market demand.
+                  </li>
+                </div>
+              </div>
             </div>
 
-            <div class="hero-section" id="home">
-                <div class="program-card" id="programs">
-                    <div class="card card-2 w-100 mb-3">
-                        <h2 class="header">Goals</h2>
-                        <div>
-                            <a href="/details/?productcode=webdevelopment" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">1 - Web Development</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=backendjava" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">2 - Backend Java</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=fullstack" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">3 - FullStack Development</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=qa" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">4 - Quality Assurance (QA) Engineer</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=cvcreation" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">5 - CV Creation</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=videoprofile" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">6 - Video Profile Creation</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=mockinterview" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">7 - Mock interviews</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a onclick={handleclick()} class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">8 - Jobs for You</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=chargeableinternship" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">9 - Chargeable
-                                            Internship</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=freeinternship" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">10 - Free Internship</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=paidinternship" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">11 - Paid Internship</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=math" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">12 - Math, Aptitude & Reasoning</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=english" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">13 - English Speaking</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=devops" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">14 - Devops</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=social-media" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">15 - Social Media Marketing</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=seo" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">16 - Search Engine Optimisation(S.E.O)</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=computer-operator" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">17 - Computer Operator</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=business-analysis" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">18 - Business Analyst</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/details/?productcode=ux-course" class="text-decoration-none">
-                                <div class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                                    style="border-bottom: 1px solid gray;">
-                                    <div class="forward_link">
-                                        <span class="text-xl">19 - UX Course</span>
-                                    </div>
-                                    <div class="text-xl">
-                                        <i class="fa-solid fa-arrow-bottom">&#8674</i>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwentyone"
+                  aria-expanded="false"
+                  aria-controls="collapseTwentyone"
+                >
+                  <h5>👉 What people should do after 12 ?</h5>
+                </button>
+              </h2>
+              <div
+                id="collapseTwentyone"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample1"
+              >
+                <div class="accordion-body">
+                  <li>Explore diverse interests.</li>
+                  <li>Consider higher education or vocational training.</li>
+                  <li>Start building relevant skills early.</li>
                 </div>
-                <div class="hero ">
-                    <div class="hero-tag" style="margin-left:50px; width:100%">
-
-                        <div class="imgs ">
-                            <span><a href="/results/" class="text-decoration-none text-black text-center">SEE OUR
-                                    RESULTS</a></span>
-                            <img src="./assets/avatar.gif" alt="student" />
-                        </div>
-                    </div>
-                    <div class="card list m-3 p-3">
-                        <p class="card-text"
-                            style="font-weight: 500; color:#5a5a5a; font-size:1.5rem; word-spacing:0.2vmin">
-                            <strong>Learn and Crack interviews in software development with
-                                IT industry experts having 10+ years experience</strong>
-
-                        </p>
-                        <ul style="margin-left: 15px;">
-                            <li>Professional guidance</li>
-                            <li>Help in finding jobs</li>
-                            <li>English Communictaion</li>
-                            <li>Interview practice</li>
-                            <li>Internship</li>
-                            <li>Emphasizing Hindi Medium Students</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <span>
-                            <p class="card-text">
-                                Advance your software development skills and open doors to rewarding job prospects.
-                                <br>
-                                <br>
-                                Secure Your Spot in the Upcoming Oct/Nov Batch
-                            </p>
-                        </span>
-                        <div class="apply-container">
-                            <div class="apply-btn">
-                                <a href="register">Apply Now</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+              </div>
             </div>
 
-        </section>
-
-        <!-- Card section -->
-
-        <section>
-            <div class="card-section">
-                <h3 class="heading">These programs are ideally designed for</h3>
-                <div class="cards">
-                    <div class="card">
-                        <div class="head">
-                            <img src="./assets/students.png" alt="students" />
-                            <h4>Undergraduates</h4>
-                            <span>Accelerate Your IT Journey from Campus to
-                                Career!</span>
-                        </div>
-                        <div class="para">
-                            <p>
-                                Gain guidance and support for the best job
-                                opportunities. Develop full stack development
-                                skills, master resume building, and gain
-                                insights into the IT world.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="head">
-                            <img src="./assets/graduates.png" alt="graduates" />
-                            <h4>Graduates</h4>
-                            <span>Launch Your IT Career with Us!</span>
-                        </div>
-                        <div class="para">
-                            <p>
-                                Join us to secure the best IT jobs. Benefit from
-                                resume building, full stack development
-                                training, and inspiring alumni success stories.
-                                Take the leap towards a successful transition
-                                today!
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="head">
-                            <img src="./assets/professional.png" alt="professionals" />
-                            <h4>Working professionals</h4>
-                            <span>Elevate Your IT Career to New Heights!</span>
-                        </div>
-                        <div class="para">
-                            <p>
-                                Fuel Your IT Career Growth with a Transformative
-                                Journey. Unlock exclusive opportunities, enhance
-                                your full stack development expertise. Excel in
-                                your IT endeavors.
-                            </p>
-                        </div>
-                    </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsetwentyThree"
+                  aria-expanded="false"
+                  aria-controls="collapsetwentyThree"
+                >
+                  <h5>👉 What is the importance of internship ?</h5>
+                </button>
+              </h2>
+              <div
+                id="collapsetwentyThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample1"
+              >
+                <div class="accordion-body">
+                  <li>Real-world experience and networking.</li>
+                  <li>Gaining practical skills and insights.</li>
                 </div>
-                <div class="apply-btn">
-                    <a href="register">Apply Now</a>
-                </div>
+              </div>
             </div>
-        </section>
 
-        <!-- What we offer section -->
-
-        <section>
-            <div class="pitch-section">
-                <div class="top">
-                    <h3 class="heading text-2xl">Why Jobsdoor360?</h3>
-                    <h4 class="heading">
-                        Discover the Key Ingredients That Make Our Program a
-                        Game-Changer
-                    </h4>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwentyfour"
+                  aria-expanded="false"
+                  aria-controls="collapseTwentyfour"
+                >
+                  <h5>
+                    👉 Should we work parallel to the graduation post graduation
+                    ?
+                  </h5>
+                </button>
+              </h2>
+              <div
+                id="collapseTwentyfour"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample1"
+              >
+                <div class="accordion-body">
+                  <li>Depends on personal circumstances.</li>
+                  <li>Part-time work can enhance skills and income.</li>
                 </div>
-
-                <div class="cards ">
-                    <div class="card">
-                        <div class="head">
-                            <img src="./assets/schedule.jpg" alt="dummy" />
-                            <span>Comprehensive Candidate Preparation
-                                Program</span>
-                        </div>
-                        <div class="para">
-                            <ul>
-                                <li>🗣️ Mock Interview Practice</li>
-                                <li>📄 Aptitude Test Assessment</li>
-                                <li>
-                                    💻 DSA (Data Structure and Algorithm)
-                                    Mastery
-                                </li>
-                                <li>
-                                    👨🏻‍💻 Skill Grooming in Web, Backend, Full
-                                    Stack, SQL, and Database
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="head">
-                            <img src="./assets/practicalLearning.jpg" alt="dummy" />
-                            <span>Empowering Excellence through Real-World
-                                Projects and Expert Insights</span>
-                        </div>
-                        <div class="para">
-                            <ul>
-                                <li>
-                                    🏢 Industry-Standard Project Development
-                                </li>
-                                <li>
-                                    🎓 Learn from 10+ Years of IT Industry
-                                    Experts
-                                </li>
-                                <li>
-                                    🤝 Hands-on Learning: Practical project
-                                    experience
-                                </li>
-                                <li>
-                                    📈 Career Readiness: Job market readiness
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="head">
-                            <img src="./assets/Career_job.jpg" alt="live classes" />
-                            <span>Career Support and Job Search Services</span>
-                        </div>
-                        <div class="para">
-                            <ul>
-                                <li>
-                                    👥 1:1 Mentorship for Personalized Guidance
-                                </li>
-                                <li>🆓 Free Career Consultancy Sessions</li>
-                                <li>📝 Expert CV Review and Optimization</li>
-                                <li>
-                                    💼 Proven Strategies to Find Jobs
-                                    Effectively
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="apply-btn">
-                    <a href="register">Apply Now</a>
-                </div>
+              </div>
             </div>
-        </section>
 
-        <!-- Curriculum Section -->
-        <section>
-            <div class="curriculum" id="curriculum">
-                <div class="top">
-                    <!-- <h3 class="heading">Curriculum</h3> -->
-                    <h1 class="text-3xl">Student Questions and Answers</h1>
-                    <div class="accordion col-12" id="accordionExample1">
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwenty" aria-expanded="false"
-                                    aria-controls="collapseTwenty">
-                                    <h5>👉 Why students don't get job after graduation and post graduation ?
-                                    </h5>
-                                </button>
-                            </h2>
-                            <div id="collapseTwenty" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample1">
-                                <div class="accordion-body">
-                                    <li>
-                                        Limited practical skills and experience
-                                    </li>
-                                    <li>
-                                        Mismatch between qualifications and job market demand.
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwentyone" aria-expanded="false"
-                                    aria-controls="collapseTwentyone">
-                                    <h5> 👉 What people should do after 12 ?</h5>
-                                </button>
-                            </h2>
-                            <div id="collapseTwentyone" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample1">
-                                <div class="accordion-body">
-                                    <li>
-                                        Explore diverse interests.
-                                    </li>
-                                    <li>
-                                        Consider higher education or vocational training.
-                                    </li>
-                                    <li>Start building relevant skills early.</li>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapsetwentyThree" aria-expanded="false"
-                                    aria-controls="collapsetwentyThree">
-                                    <h5>👉 What is the importance of internship ?</h5>
-                                </button>
-                            </h2>
-                            <div id="collapsetwentyThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample1">
-                                <div class="accordion-body">
-                                    <li>
-                                        Real-world experience and networking.
-                                    </li>
-                                    <li>Gaining practical skills and insights.</li>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwentyfour" aria-expanded="false"
-                                    aria-controls="collapseTwentyfour">
-                                    <h5>👉 Should we work parallel to the graduation post graduation ?</h5>
-                                </button>
-                            </h2>
-                            <div id="collapseTwentyfour" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample1">
-                                <div class="accordion-body">
-                                    <li>Depends on personal circumstances.</li>
-                                    <li>Part-time work can enhance skills and income.
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwentyfive" aria-expanded="false"
-                                    aria-controls="collapseTwentyfive">
-                                    <h5>👉 What is the good practice of writing CV ?</h5>
-                                </button>
-                            </h2>
-                            <div id="collapseTwentyfive" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample1">
-                                <div class="accordion-body">
-                                    <li>
-                                        Tailor to the job you're applying for.
-                                    </li>
-                                    <li>Highlight skills, achievements, and experiences.</li>
-                                    <li>Keep it concise and error-free.</li>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwentysix" aria-expanded="false"
-                                    aria-controls="collapseTwentysix">
-                                    <h5>👉 What is the market trend ?</h5>
-                                </button>
-                            </h2>
-                            <div id="collapseTwentysix" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample1">
-                                <div class="accordion-body">
-                                    <li>
-                                        Rapid digitalization.
-                                    </li>
-                                    <li>Remote work opportunities.</li>
-                                    <li>Focus on sustainability and tech.</li>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwentyseven" aria-expanded="false"
-                                    aria-controls="collapseTwentyseven">
-                                    <h5>👉 Career options available after 12th ?</h5>
-                                </button>
-                            </h2>
-                            <div id="collapseTwentyseven" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample1">
-                                <div class="accordion-body">
-                                    <li>Higher education (college/university).</li>
-                                    <li>Vocational training (trade school).</li>
-                                    <li>Early job opportunities (apprenticeships, entry-level positions).</li>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwentyfive"
+                  aria-expanded="false"
+                  aria-controls="collapseTwentyfive"
+                >
+                  <h5>👉 What is the good practice of writing CV ?</h5>
+                </button>
+              </h2>
+              <div
+                id="collapseTwentyfive"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample1"
+              >
+                <div class="accordion-body">
+                  <li>Tailor to the job you're applying for.</li>
+                  <li>Highlight skills, achievements, and experiences.</li>
+                  <li>Keep it concise and error-free.</li>
                 </div>
+              </div>
             </div>
-            </div>
-        </section>
 
-
-        <!-- Company Section -->
-
-        <section>
-            <div class="company-container">
-                <h2 class="text-2xl">
-                    The Technologies that we cover up are widely used in
-                    companies like
-                </h2>
-
-                <div class="company-logo">
-                    <img src="./assets/Disney+_Hotstar.png" alt="Hotstar" />
-                    <img src="./assets/Swiggy.png" alt="Swiggy" />
-                    <img src="./assets/Paytm.jpg" alt="paytm" />
-                    <img src="./assets/Urban.jpg" alt="urban clap" />
-                    <img src="./assets/netflix.png" alt="netflix" />
-                    <img src="./assets/adobe.png" alt="adobe" />
-                    <img src="./assets/walmart.png" alt="walmart" />
-                    <img src="./assets/myntra.png" alt="myntra" />
-                    <img src="./assets/flipkart.png" alt="flipkart" />
-                    <img src="./assets/MakeMyTrip.png" alt="makeMyTrip" />
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwentysix"
+                  aria-expanded="false"
+                  aria-controls="collapseTwentysix"
+                >
+                  <h5>👉 What is the market trend ?</h5>
+                </button>
+              </h2>
+              <div
+                id="collapseTwentysix"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample1"
+              >
+                <div class="accordion-body">
+                  <li>Rapid digitalization.</li>
+                  <li>Remote work opportunities.</li>
+                  <li>Focus on sustainability and tech.</li>
                 </div>
+              </div>
             </div>
-        </section>
 
-        <!-- Masterclass Section -->
-
-        <section>
-            <div class="masterclass">
-                <div class="left-part">
-                    <h3>Expert Advice from Jobsdoor360 Masterclass Series</h3>
-                    <p>
-                        Discover invaluable insights from professionals who have
-                        successfully navigated the job market. Jobsdoor360
-                        masterclass series offers a unique opportunity to learn
-                        directly from mentors who have been in your shoes. In
-                        this particular video, "How to Find Jobs for Freshers
-                        and Experienced Professionals," you'll gain insider
-                        knowledge on job search strategies tailored specifically
-                        to your needs.
-                    </p>
-                    <div class="apply-btn apply" style="align-self: baseline">
-                        <a href="register">Apply Now</a>
-                    </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwentyseven"
+                  aria-expanded="false"
+                  aria-controls="collapseTwentyseven"
+                >
+                  <h5>👉 Career options available after 12th ?</h5>
+                </button>
+              </h2>
+              <div
+                id="collapseTwentyseven"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample1"
+              >
+                <div class="accordion-body">
+                  <li>Higher education (college/university).</li>
+                  <li>Vocational training (trade school).</li>
+                  <li>
+                    Early job opportunities (apprenticeships, entry-level
+                    positions).
+                  </li>
                 </div>
-                <div class="right-part">
-                    <iframe src="https://www.youtube.com/embed/QTNOWcAjtJE" frameborder="0" allowfullscreen></iframe>
-                    <div class="text">
-                        how to find jobs for fresher and experience by Jobs-Door
-                        360&deg;
-                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Section -->
+
+    <section>
+      <div class="company-container">
+        <h2 class="text-2xl">
+          The Technologies that we cover up are widely used in companies like
+        </h2>
+
+        <div class="company-logo">
+          <img src="./assets/Disney+_Hotstar.png" alt="Hotstar" />
+          <img src="./assets/Swiggy.png" alt="Swiggy" />
+          <img src="./assets/Paytm.jpg" alt="paytm" />
+          <img src="./assets/Urban.jpg" alt="urban clap" />
+          <img src="./assets/netflix.png" alt="netflix" />
+          <img src="./assets/adobe.png" alt="adobe" />
+          <img src="./assets/walmart.png" alt="walmart" />
+          <img src="./assets/myntra.png" alt="myntra" />
+          <img src="./assets/flipkart.png" alt="flipkart" />
+          <img src="./assets/MakeMyTrip.png" alt="makeMyTrip" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Masterclass Section -->
+
+    <section>
+      <div class="masterclass">
+        <div class="left-part">
+          <h3>Expert Advice from Jobsdoor360 Masterclass Series</h3>
+          <p>
+            Discover invaluable insights from professionals who have
+            successfully navigated the job market. Jobsdoor360 masterclass
+            series offers a unique opportunity to learn directly from mentors
+            who have been in your shoes. In this particular video, "How to Find
+            Jobs for Freshers and Experienced Professionals," you'll gain
+            insider knowledge on job search strategies tailored specifically to
+            your needs.
+          </p>
+          <div class="apply-btn apply" style="align-self: baseline">
+            <a href="register">Apply Now</a>
+          </div>
+        </div>
+        <div class="right-part">
+          <iframe
+            src="https://www.youtube.com/embed/QTNOWcAjtJE"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="text">
+            how to find jobs for fresher and experience by Jobs-Door 360&deg;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+
+    <section>
+      <div class="testimonial">
+        <div
+          id="carouselExampleSlidesOnly"
+          class="carousel fade-carousel"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+              <div class="d-flex w-100">
+                <div class="quote">
+                  <img
+                    class="left-quote"
+                    src="./assets/left-quotes.png"
+                    alt="left-quote"
+                  />
+                  <h2>
+                    Thanks to Jobsdoor360, I now possess the communication
+                    skills and IT expertise to excel in my dream career.
+                  </h2>
+                  <img
+                    class="right-quote"
+                    src="./assets/right-quotes.png"
+                    alt="right-quote"
+                  />
                 </div>
+
+                <h3 class="name">Shivam</h3>
+              </div>
             </div>
-        </section>
-
-        <!-- Testimonials Section -->
-
-        <section>
-            <div class="testimonial">
-                <div id="carouselExampleSlidesOnly" class="carousel fade-carousel" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="3000">
-                            <div class="d-flex w-100">
-                                <div class="quote">
-                                    <img class="left-quote" src="./assets/left-quotes.png" alt="left-quote" />
-                                    <h2>
-                                        Thanks to Jobsdoor360, I now possess the
-                                        communication skills and IT expertise to
-                                        excel in my dream career.
-                                    </h2>
-                                    <img class="right-quote" src="./assets/right-quotes.png" alt="right-quote" />
-                                </div>
-
-                                <h3 class="name">Shivam</h3>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <div class="d-flex  w-100">
-                                <div class="quote">
-                                    <img class="left-quote" src="./assets/left-quotes.png" alt="left-quote" />
-                                    <h2>
-                                        With Jobsdoor360 by my side, I
-                                        confidently embarked on a successful
-                                        journey into web development and beyond.
-                                    </h2>
-                                    <img class="right-quote" src="./assets/right-quotes.png" alt="right-quote" />
-                                </div>
-
-                                <h3 class="name">Yash</h3>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <div class="d-flex w-100">
-                                <div class="quote">
-                                    <img class="left-quote" src="./assets/left-quotes.png" alt="left-quote" />
-                                    <h2>
-                                        If you want to ace your job search and
-                                        master the art of communication,
-                                        Jobsdoor360 is the place to be!
-                                    </h2>
-                                    <img class="right-quote" src="./assets/right-quotes.png" alt="right-quote" />
-                                </div>
-
-                                <h3 class="name">Jatin</h3>
-                            </div>
-                        </div>
-                    </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="d-flex w-100">
+                <div class="quote">
+                  <img
+                    class="left-quote"
+                    src="./assets/left-quotes.png"
+                    alt="left-quote"
+                  />
+                  <h2>
+                    With Jobsdoor360 by my side, I confidently embarked on a
+                    successful journey into web development and beyond.
+                  </h2>
+                  <img
+                    class="right-quote"
+                    src="./assets/right-quotes.png"
+                    alt="right-quote"
+                  />
                 </div>
+
+                <h3 class="name">Yash</h3>
+              </div>
             </div>
-        </section>
-
-        <!-- News Section -->
-
-        <section>
-            <div class="news">
-                <h2>"Join us to prepare for placement and jobs"</h2>
-                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7089869348319727618"
-                    height="undefined" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-
-        <section>
-            <div class="faq">
-                <h2 class="text-2xl">Frequently Asked Questions</h2>
-                <div class="accordion" id="accordionExample2">
-
-                    <div class="accordion-item" id="pricing">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThirty" aria-expanded="false" aria-controls="collapseThirty">
-                                What is the Pricing of program?
-                            </button>
-                        </h2>
-                        <div id="collapseThirty" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample2">
-                            <div class="accordion-body">
-                                The Pricing would be Rs. 1000 per month. For
-                                more info, refer to this
-                                <a href="pricing">Pricing</a> page.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThirtyone" aria-expanded="false"
-                                aria-controls="collapseThirtyone">
-                                What would be timing of master class?
-                            </button>
-                        </h2>
-                        <div id="collapseThirtyone" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample2">
-                            <div class="accordion-body">
-                                Every Saturday, 8 AM - 9.30 AM.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" id="refund">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThirtytwo" aria-expanded="false"
-                                aria-controls="collapseThirtytwo">
-                                What is refund policy?
-                            </button>
-                        </h2>
-                        <div id="collapseThirtytwo" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample2">
-                            <div class="accordion-body">
-                                You can get your refund in time span of first
-                                month.
-                            </div>
-                        </div>
-                    </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="d-flex w-100">
+                <div class="quote">
+                  <img
+                    class="left-quote"
+                    src="./assets/left-quotes.png"
+                    alt="left-quote"
+                  />
+                  <h2>
+                    If you want to ace your job search and master the art of
+                    communication, Jobsdoor360 is the place to be!
+                  </h2>
+                  <img
+                    class="right-quote"
+                    src="./assets/right-quotes.png"
+                    alt="right-quote"
+                  />
                 </div>
+
+                <h3 class="name">Jatin</h3>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Footer -->
+    <!-- News Section -->
 
-        <%- include('../partials/footer.ejs') %>
+    <section>
+      <div class="news">
+        <h2>"Join us to prepare for placement and jobs"</h2>
+        <iframe
+          src="https://www.linkedin.com/embed/feed/update/urn:li:share:7089869348319727618"
+          height="undefined"
+          width="504"
+          frameborder="0"
+          allowfullscreen=""
+          title="Embedded post"
+        ></iframe>
+      </div>
+    </section>
 
-            <!-- The Bootstrap Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">
-                                What Can We Improve on Our Website?
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <textarea id="feedback" class="form-control mb-2" placeholder="Feedback..."></textarea>
-                            <input type="text" id="phoneNumber" class="form-control" placeholder="Phone number..." />
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">
-                                Close
-                            </button>
-                            <button id="submitFeedback" class="btn btn-primary">
-                                Submit
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    <!-- FAQ Section -->
+
+    <section>
+      <div class="faq">
+        <h2 class="text-2xl">Frequently Asked Questions</h2>
+        <div class="accordion" id="accordionExample2">
+          <div class="accordion-item" id="pricing">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThirty"
+                aria-expanded="false"
+                aria-controls="collapseThirty"
+              >
+                What is the Pricing of program?
+              </button>
+            </h2>
+            <div
+              id="collapseThirty"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample2"
+            >
+              <div class="accordion-body">
+                The Pricing would be Rs. 1000 per month. For more info, refer to
+                this
+                <a href="pricing">Pricing</a> page.
+              </div>
             </div>
-            <script>
-                $(document).ready(function () {
-                    $(document).on('click', function (event) {
-                        if (!$(event.target).closest('.accordion').length) {
-                            $('.accordion-collapse').collapse('hide');
-                        }
-                    });
+          </div>
 
-                    $('.accordion').on('click', function (event) {
-                        event.stopPropagation();
-                    });
-                });
-                const profile = localStorage.getItem('profile');
-                if (profile) {
-                    document.addEventListener("DOMContentLoaded", function () {
-                        var myDiv = document.getElementById('strip');
-                        if (myDiv) {
-                            myDiv.style.display = 'none';
-                        } else {
-                            console.error("Element with ID 'strip' not found.");
-                        }
-                    });
-                }
-            </script>
-            <script>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThirtyone"
+                aria-expanded="false"
+                aria-controls="collapseThirtyone"
+              >
+                What would be timing of master class?
+              </button>
+            </h2>
+            <div
+              id="collapseThirtyone"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample2"
+            >
+              <div class="accordion-body">Every Saturday, 8 AM - 9.30 AM.</div>
+            </div>
+          </div>
+          <div class="accordion-item" id="refund">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThirtytwo"
+                aria-expanded="false"
+                aria-controls="collapseThirtytwo"
+              >
+                What is refund policy?
+              </button>
+            </h2>
+            <div
+              id="collapseThirtytwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample2"
+            >
+              <div class="accordion-body">
+                You can get your refund in time span of first month.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Footer -->
 
+    <%- include('../partials/footer.ejs') %>
 
-                const email = localStorage.getItem('email');
-                if (email) {
-                    document.getElementById('login-button').innerHTML = "Logout";
-                    document.getElementById("user-mail").innerHTML = email;
-                }
-                else {
-                    document.getElementById('profile').innerHTML = "<strong>Create your profile to get jobs</strong>";
-                }
-                const login_button = document.getElementById('login-button');
-                login_button.addEventListener('click', () => {
-                    if (localStorage.getItem("email")) {
-                        localStorage.clear();
-                    }
-                    location.location.href = '/login';
-                })
-                window.addEventListener("scroll", () => {
-                    let scrollVal = window.scrollY;
-                    if (scrollVal > 2000) {
-                        document.getElementById("backToTopBtn").style.display =
-                            "block";
-                    } else {
-                        document.getElementById("backToTopBtn").style.display =
-                            "none";
-                    }
-                });
+    <!-- The Bootstrap Modal -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              What Can We Improve on Our Website?
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <textarea
+              id="feedback"
+              class="form-control mb-2"
+              placeholder="Feedback..."
+            ></textarea>
+            <input
+              type="text"
+              id="phoneNumber"
+              class="form-control"
+              placeholder="Phone number..."
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              Close
+            </button>
+            <button id="submitFeedback" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $(document).on("click", function (event) {
+          if (!$(event.target).closest(".accordion").length) {
+            $(".accordion-collapse").collapse("hide");
+          }
+        });
 
-                function scrollToTop() {
-                    document.documentElement.scrollTop = 0;
-                }
+        $(".accordion").on("click", function (event) {
+          event.stopPropagation();
+        });
+      });
+      const profile = localStorage.getItem("profile");
+      if (profile) {
+        document.addEventListener("DOMContentLoaded", function () {
+          var myDiv = document.getElementById("strip");
+          if (myDiv) {
+            myDiv.style.display = "none";
+          } else {
+            console.error("Element with ID 'strip' not found.");
+          }
+        });
+      }
+    </script>
+    <script>
+      const email = localStorage.getItem("email");
+      if (email) {
+        document.getElementById("login-button").innerHTML = "Logout";
+        document.getElementById("user-mail").innerHTML = email;
+      } else {
+        document.getElementById("profile").innerHTML =
+          "<strong>Create your profile to get jobs</strong>";
+      }
+      const login_button = document.getElementById("login-button");
+      login_button.addEventListener("click", () => {
+        if (localStorage.getItem("email")) {
+          localStorage.clear();
+        }
+        location.location.href = "/login";
+      });
+      window.addEventListener("scroll", () => {
+        let scrollVal = window.scrollY;
+        if (scrollVal > 2000) {
+          document.getElementById("backToTopBtn").style.display = "block";
+        } else {
+          document.getElementById("backToTopBtn").style.display = "none";
+        }
+      });
 
-                document
-                    .getElementById("backToTopBtn")
-                    .addEventListener("click", scrollToTop);
-            </script>
-            <script type="module" src="js/script.js"></script>
-            <script async
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
-                crossorigin="anonymous"></script>
-            <!-- jobsdoor360 -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2075086355753452"
-                data-ad-slot="7339269701" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+      function scrollToTop() {
+        document.documentElement.scrollTop = 0;
+      }
 
+      document
+        .getElementById("backToTopBtn")
+        .addEventListener("click", scrollToTop);
+    </script>
+    <script type="module" src="js/script.js"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jobsdoor360 -->
+    <ins
+      class="adsbygoogle"
+      style="display: block"
+      data-ad-client="ca-pub-2075086355753452"
+      data-ad-slot="7339269701"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
-
-            <!-- <div class="gtranslate_wrapper"></div>
+    <!-- <div class="gtranslate_wrapper"></div>
         <script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","hi"],"wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"right"}</script>
         <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script> -->
 
-            <!-- <script>window.gtranslateSettings = {"default_language":"en",
+    <!-- <script>window.gtranslateSettings = {"default_language":"en",
             "native_language_names":true,
             "detect_browser_language":true,
             "languages":["en","hi"],
@@ -1033,7 +1345,5 @@
         }
         </script>
        <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script> -->
-
-</body>
-
+  </body>
 </html>

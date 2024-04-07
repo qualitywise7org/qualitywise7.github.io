@@ -6,9 +6,10 @@
     <title>Job Listings</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="style.css" />
+    <%- include('../../partials/head.ejs') %>
   </head>
   <body>
-    <%- include('../../partials/head.ejs') %>
+    <%- include('../../partials/navbar.ejs') %>
     <table id="jobTable">
       <thead>
         <tr>
@@ -26,21 +27,31 @@
     <div class="parent">
       <div class="child">
         <h6>
-          <a style="text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(151, 134, 169); border-radius: 10px; padding: 5px 9px; cursor: pointer;" onclick={handleclick()}>
+          <a
+            style="
+              text-decoration: none;
+              color: rgb(255, 255, 255);
+              background-color: rgb(151, 134, 169);
+              border-radius: 10px;
+              padding: 5px 9px;
+              cursor: pointer;
+            "
+            onclick="{handleclick()}"
+          >
             Click here to view other jobs for you.
           </a>
         </h6>
       </div>
     </div>
     <script>
-        function handleclick(){
-            const email = localStorage.getItem("email");
-            if(email){
-                window.location.href = "/myaccount/jobsforyou"
-            }else{
-                window.location.href = "/login/?redirect_url=/jobsforyou";
-            }
+      function handleclick() {
+        const email = localStorage.getItem("email");
+        if (email) {
+          window.location.href = "/myaccount/jobsforyou";
+        } else {
+          window.location.href = "/login/?redirect_url=/jobsforyou";
         }
+      }
     </script>
     <script src="script.js" type="module"></script>
     <%- include('../../partials/footer.ejs') %>

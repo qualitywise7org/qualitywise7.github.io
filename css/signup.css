@@ -5,7 +5,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 
@@ -14,6 +13,12 @@ body {
   position: absolute;
   top: 20px;
   right: 20px; 
+}
+
+.main_container_signup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .signup-container {
