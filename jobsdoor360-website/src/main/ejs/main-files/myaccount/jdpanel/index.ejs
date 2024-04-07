@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../../css/style.css" />
-    <link rel="stylesheet" href="style.css" /> 
+    <link rel="stylesheet" href="style.css" />
+    <%- include('../../../partials/head.ejs') %>
   </head>
-  <%- include('../../../partials/head.ejs') %>
   <body>
+    <%- include('../../../partials/navbar.ejs') %>
     <table id="userProfilesTable">
       <thead>
         <tr>
@@ -22,14 +23,15 @@
           <th>Skills</th>
           <th>Rating</th>
           <th>Description</th>
-          <th>Action</th> <!-- New column for Submit Button -->
+          <th>Action</th>
+          <!-- New column for Submit Button -->
         </tr>
       </thead>
       <tbody>
         <!-- User profiles will be dynamically inserted here -->
       </tbody>
-    </table> 
+    </table>
     <script type="module" src="script.js"></script>
   </body>
-  <%- include('../../../partials/footer.ejs') %> 
+  <%- include('../../../partials/footer.ejs') %>
 </html>

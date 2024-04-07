@@ -6,23 +6,24 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="style.css" />
+    <%- include('../../../partials/head.ejs') %>
   </head>
   <body>
-        <%- include('../../../partials/head.ejs') %>
-      <table id="jobTable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Role</th>
-                    <th>Location</th>
-                    <th>Stipend</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Jobs will be displayed here -->
-            </tbody>
-        </table>
+    <%- include('../../../partials/navbar.ejs') %>
+    <table id="jobTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Role</th>
+          <th>Location</th>
+          <th>Stipend</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Jobs will be displayed here -->
+      </tbody>
+    </table>
     <script type="module" src="script.js"></script>
     <%- include('../../../partials/footer.ejs') %>
   </body>

@@ -1,260 +1,287 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Biography</title>
-    <meta name="description"
-    content="Experience the Power of Jobsdoor360's Job-Oriented Software Learning Demo Class! Join our Saturday session from 10:00 AM to 11:00 AM and discover exciting opportunities in web development, MERN-stack development, and backend development. Don't miss this chance to kickstart your tech career. Join Now!" />
-    <link rel="stylesheet" href="../css/demo.css" />
-	<link rel="stylesheet" href="../css/style.css" />
-      <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-
-	<!DOCTYPE html>
-<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
+    <title>Biography</title>
+    <meta
+      name="description"
+      content="Experience the Power of Jobsdoor360's Job-Oriented Software Learning Demo Class! Join our Saturday session from 10:00 AM to 11:00 AM and discover exciting opportunities in web development, MERN-stack development, and backend development. Don't miss this chance to kickstart your tech career. Join Now!"
     />
-	<link rel="icon" href="./../fevicon.ico" type="profile" />
-  </head>
-  <body>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
-		<div class="container-fluid">
-			<a class="brand" href="/">
-			  <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-			  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown" style="transition: height 1s ease;">
-			  <ul class="navbar-nav flex items-center">
-				<li class="nav-item">
-					<a class="nav-link" aria-current="/page" href="/">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/demo/">Demo</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/myaccount/jobsforyou">Jobs For You</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/test" target="_blank">Test</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-					  aria-expanded="false">
-					  Blogs
-					</a>
-					<ul class="dropdown-menu">
-					  <li>
-						<a class="dropdown-item" href="/careeroptions">Career Options</a>
-					  </li>
-					  <li>
-						<a class="dropdown-item" href="/jobs_analysis/">Jobs Analysis</a>
-					  </li>
-					  <li>
-						<a class="dropdown-item" href="/businessplans">Business Plans</a>
-					  </li>
-					  <li>
-						<a class="dropdown-item" href="/biographies">Biographies</a>
-					  </li>
-					  <li>
-						<a class="dropdown-item" href="/motivation">Motivation</a>
-					  </li>
-					</ul>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/hiring/" target="_blank">Hiring</a>
-				</li>
-				<li class="nav-item login-btn">
-					<a class="nav-link" id="login-button" href="/login" onclick={handleclick()}>Login</a>
-				</li>
-			  </ul>
-			</div>
-		</div>
-	  </nav>
-    <script
-      src="https://kit.fontawesome.com/f6b356be29.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    <link rel="stylesheet" href="../css/demo.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-adsense-account" content="ca-pub-2075086355753452" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 
-      gtag("config", "G-1JQVXS3B5L");
-    </script>
-    <script>
-      (function (w, d, s, l, i) {
+<!--deprecated: we will use boostrap not tailwind from 06/04/2024 -->
+
+<link rel="icon" href="./../fevicon.ico" type="profile" />
+<!-- <link rel="stylesheet" href="../../css/style.css" /> -->
+
+<!-- icons -->
+<script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-1JQVXS3B5L");
+</script>
+<script>
+    (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
         var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
         j.async = true;
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-MFBK5637");
-    </script>
-  </body>
-</html>
- 
-		<body class="bg-gradient-to-r from-indigo-200">
-                  <!-- Google Tag Manager (noscript) -->
-                  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-                  <!-- End Google Tag Manager (noscript) -->
-            
-                  <!-- Navbar -->
-                  <bodymain>
-                        <!-- Biography Section -->
-                        <section class="container mt-3 w-full">
-                              <div class="row">
-                                    <div class="mx-auto">
-                                          <!-- Title with Background -->
-                                          <div class="bg-primary text-light p-3 rounded mb-4">
-                                                <h1 class="mb-0 text-2xl text-center">Bill Gates</h1>
-                                          </div>
-            
-                                          <!-- Biography Text Container -->
-                                          <div class="bg-light p-4 rounded col-md-8 mx-auto mb-4">
-                                                <p class="lead">
-                                                      <strong>Introduction:</strong> Few names are as influential in the fields of
-                                                      technology and philanthropy as bill Gates. Gates, who changed
-                                                      into born in Seattle, Washington, on October 28, 1955, showed early flair for
-                                                      innovation that could finally
-                                                      alternate the tech industry.
-                                                      <br>
-                                                      <br>
-                                                      <strong>1. Childhood:</strong> Gates came from a own family with an extended
-                                                      line of commercial enterprise proprietors. His mother,
-                                                      Mary Maxwell Gates, turned into a company board member, and his father, ,
-                                                      William H. Gates Sr., was a
-                                                      well-known lawyer. This encouraging upbringing supplied the foundation for
-                                                      Gates's subsequent hobbies.
-                                                      <br>
-                                                      <br>
-                                                      <strong>2. Schooling and Prior Interests:</strong> Despite the fact that Gates
-                                                      left Harvard university in 1975, he had already tested his intelligence.
-                                                      Enticed
-                                                      via the possibilities offered by way of non-public computers, he threw himself
-                                                      into the area of pc coding
-                                                      and programming, paving the manner for the established order of Microsoft.
-                                                      <br>
-                                                      <br>
-                                                      <strong>3. Establishing Microsoft:</strong> Collectively with Paul Allen, a
-                                                      youth buddy, Gates set up Microsoft in 1975. the two had a vision that
-                                                      regarded ambitious at the time however would quickly come authentic: they
-                                                      wanted computers in each
-                                                      home and on each computing device.
-            
-                                                      <br>
-                                                      <br>
-                                                      <strong>4. Become Notable:</strong> Microsoft quickly gained notoriety by
-                                                      creating the renowned Windows operating system and securing its
-                                                      hegemony in the software industry. Gates was crucial in forming the business's
-                                                      tactics and guaranteeing
-                                                      its survival in a sector that was constantly changing.
-                                                      <br>
-                                                      <br>
-                                                      <strong>5. A journey of Philanthropy:</strong> With the founding of the bill &
-                                                      Melinda Gates basis in 2000, bill and his then-wife Melinda made a huge
-                                                      pass from the IT industry to philanthropy. consistent with Gates' goal of
-                                                      enhancing society, the inspiration
-                                                      focuses on international fitness, schooling, and poverty comfort.
-                                                      <br>
-                                                      <br>
-                                                      <strong>6. Notable Accomplishments:</strong> Gates has made contributions
-                                                      outside of Microsoft and charity. In popularity of his effect on business and
-                                                      era, Time mag named him its man or woman of the 12 months in 2005, amongst
-                                                      many different accolades
-                                                      and honors.
-                                                      <br>
-                                                      <br>
-                                                      <strong>7. Private Life:</strong> Gates accomplished great things in
-                                                      technology and philanthropy without sacrificing his personal life. In
-                                                      1994, he wed Melinda French; collectively, they have 3 youngsters. Gates is
-                                                      well known for his love of
-                                                      analyzing and curiosity about a huge variety of subjects.
-                                                      <br>
-                                                      <br>
-            
-                                                      <strong>8. Disagreements and Debates:</strong> Gates has been the target of
-                                                      controversy and criticism despite his accomplishments. His reputation has
-                                                      periodically been tarnished by concerns about Microsoft's business operations
-                                                      and accusations of antitrust
-                                                      infractions. Nonetheless, Gates has addressed these issues and added to the
-                                                      continuing conversation
-                                                      about moral corporate practices.
-                                                      <br>
-                                                      <br>
-                                                      <strong>9. Historical:</strong> The legacy of Bill Gates goes beyond his
-                                                      founding of Microsoft to include his charitable endeavors and his
-                                                      impact on world affairs. Generations after generation are inspired by his
-                                                      dedication to invention and
-                                                      improving society.
-                                                      <br>
-                                                      <br>
-                                                      <strong>10. Knowledge Acquired:</strong> There are important lessons to be
-                                                      learned from Gates' path. His tenacious pursuit of objectives, flexibility
-                                                      in the face of change, and commitment to bettering the world provide lessons
-                                                      that everyone aiming for
-                                                      achievement can learn from.
-                                                      <br>
-                                                      <br>
-                                                      <strong>11. Upcoming Projects:</strong> Gates has been actively involved in
-                                                      tackling urgent global issues in the past few years, such as infectious
-                                                      illnesses and climate change. His continued dedication to technology
-                                                      development and philanthropy
-                                                      points to a lasting influence from him in the future.
-                                                      <br>
-                                                      <br>
-                                                      <strong>12. William Gates quotations:</strong> The wisdom of Bill Gates goes
-                                                      beyond his deeds. His vision and philosophy are summed up in a few
-                                                      phrases, such "Your most unhappy customers are your greatest source of
-                                                      learning."
-                                                      <br>
-                                                      <br>
-                                                      <strong>13. Media Presence of Bill Gates:</strong> In the media, Gates's
-                                                      contributions to philanthropy and technology are frequently highlighted.
-                                                      Interviews
-                                                      and public appearances offer insights into his opinions on a range of topics,
-                                                      presenting a complex person.
-                                                      <br>
-                                                      <br>
-            
-                                                      <strong>14. Final Thoughts:</strong> In summary, Bill Gates' life story serves
-                                                      as evidence of the transformational potential of willpower and
-                                                      vision. Gates, who rose from a youthful computer hobbyist to a prominent
-                                                      figure in the world, has left a
-                                                      lasting legacy that transcends software codes and touches the hearts of people
-                                                      who are motivated by his
-                                                      life narrative.
-                                                      <br>
-                                                      <br>
-                                                </p>
-                                          </div>
-                                    </div>
-                              </div>
-                        </section>
-                  </bodymain>
-      </body>
-      <!-- Footer -->
+    })(window, document, "script", "dataLayer", "GTM-MFBK5637");
+</script>
+
+
+<script type="text/javascript">
+    function handleclick() {
+        const email = localStorage.getItem("email");
+        if (email) {
+            window.location.href = "/myaccount/jobsforyou";
+        } else {
+            window.location.href = "/details/?productcode=jobsforyou";
+        }
+    }
+</script>
+  </head>
+  <body class="bg-gradient-to-r from-indigo-200">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<div class="container-fluid">
+		<a class="brand" href="/">
+		  <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+		  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown" style="transition: height 1s ease;">
+		  <ul class="navbar-nav flex items-center">
+			<li class="nav-item">
+				<a class="nav-link" aria-current="/page" href="/">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/demo/">Demo</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/myaccount/jobsforyou">Jobs For You</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/test" target="_blank">Test</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+				  aria-expanded="false">
+				  Blogs
+				</a>
+				<ul class="dropdown-menu">
+				  <li>
+					<a class="dropdown-item" href="/careeroptions">Career Options</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/jobs_analysis/">Jobs Analysis</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/businessplans">Business Plans</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/biographies">Biographies</a>
+				  </li>
+				  <li>
+					<a class="dropdown-item" href="/motivation">Motivation</a>
+				  </li>
+				</ul>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/hiring/" target="_blank">Hiring</a>
+			</li>
+			<li class="nav-item login-btn">
+				<a class="nav-link" id="login-button" href="/login" onclick={handleclick()}>Login</a>
+			</li>
+		  </ul>
+		</div>
+	</div>
+</nav>
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript
+><iframe
+  src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
+  height="0"
+  width="0"
+  style="display: none; visibility: hidden"
+></iframe
+></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navbar -->
+    <bodymain>
+      <!-- Biography Section -->
+      <section class="container mt-3 w-full">
+        <div class="row">
+          <div class="mx-auto">
+            <!-- Title with Background -->
+            <div class="bg-primary text-light p-3 rounded mb-4">
+              <h1 class="mb-0 text-2xl text-center">Bill Gates</h1>
+            </div>
+
+            <!-- Biography Text Container -->
+            <div class="bg-light p-4 rounded col-md-8 mx-auto mb-4">
+              <p class="lead">
+                <strong>Introduction:</strong> Few names are as influential in
+                the fields of technology and philanthropy as bill Gates. Gates,
+                who changed into born in Seattle, Washington, on October 28,
+                1955, showed early flair for innovation that could finally
+                alternate the tech industry.
+                <br />
+                <br />
+                <strong>1. Childhood:</strong> Gates came from a own family with
+                an extended line of commercial enterprise proprietors. His
+                mother, Mary Maxwell Gates, turned into a company board member,
+                and his father, , William H. Gates Sr., was a well-known lawyer.
+                This encouraging upbringing supplied the foundation for Gates's
+                subsequent hobbies.
+                <br />
+                <br />
+                <strong>2. Schooling and Prior Interests:</strong> Despite the
+                fact that Gates left Harvard university in 1975, he had already
+                tested his intelligence. Enticed via the possibilities offered
+                by way of non-public computers, he threw himself into the area
+                of pc coding and programming, paving the manner for the
+                established order of Microsoft.
+                <br />
+                <br />
+                <strong>3. Establishing Microsoft:</strong> Collectively with
+                Paul Allen, a youth buddy, Gates set up Microsoft in 1975. the
+                two had a vision that regarded ambitious at the time however
+                would quickly come authentic: they wanted computers in each home
+                and on each computing device.
+
+                <br />
+                <br />
+                <strong>4. Become Notable:</strong> Microsoft quickly gained
+                notoriety by creating the renowned Windows operating system and
+                securing its hegemony in the software industry. Gates was
+                crucial in forming the business's tactics and guaranteeing its
+                survival in a sector that was constantly changing.
+                <br />
+                <br />
+                <strong>5. A journey of Philanthropy:</strong> With the founding
+                of the bill & Melinda Gates basis in 2000, bill and his
+                then-wife Melinda made a huge pass from the IT industry to
+                philanthropy. consistent with Gates' goal of enhancing society,
+                the inspiration focuses on international fitness, schooling, and
+                poverty comfort.
+                <br />
+                <br />
+                <strong>6. Notable Accomplishments:</strong> Gates has made
+                contributions outside of Microsoft and charity. In popularity of
+                his effect on business and era, Time mag named him its man or
+                woman of the 12 months in 2005, amongst many different accolades
+                and honors.
+                <br />
+                <br />
+                <strong>7. Private Life:</strong> Gates accomplished great
+                things in technology and philanthropy without sacrificing his
+                personal life. In 1994, he wed Melinda French; collectively,
+                they have 3 youngsters. Gates is well known for his love of
+                analyzing and curiosity about a huge variety of subjects.
+                <br />
+                <br />
+
+                <strong>8. Disagreements and Debates:</strong> Gates has been
+                the target of controversy and criticism despite his
+                accomplishments. His reputation has periodically been tarnished
+                by concerns about Microsoft's business operations and
+                accusations of antitrust infractions. Nonetheless, Gates has
+                addressed these issues and added to the continuing conversation
+                about moral corporate practices.
+                <br />
+                <br />
+                <strong>9. Historical:</strong> The legacy of Bill Gates goes
+                beyond his founding of Microsoft to include his charitable
+                endeavors and his impact on world affairs. Generations after
+                generation are inspired by his dedication to invention and
+                improving society.
+                <br />
+                <br />
+                <strong>10. Knowledge Acquired:</strong> There are important
+                lessons to be learned from Gates' path. His tenacious pursuit of
+                objectives, flexibility in the face of change, and commitment to
+                bettering the world provide lessons that everyone aiming for
+                achievement can learn from.
+                <br />
+                <br />
+                <strong>11. Upcoming Projects:</strong> Gates has been actively
+                involved in tackling urgent global issues in the past few years,
+                such as infectious illnesses and climate change. His continued
+                dedication to technology development and philanthropy points to
+                a lasting influence from him in the future.
+                <br />
+                <br />
+                <strong>12. William Gates quotations:</strong> The wisdom of
+                Bill Gates goes beyond his deeds. His vision and philosophy are
+                summed up in a few phrases, such "Your most unhappy customers
+                are your greatest source of learning."
+                <br />
+                <br />
+                <strong>13. Media Presence of Bill Gates:</strong> In the media,
+                Gates's contributions to philanthropy and technology are
+                frequently highlighted. Interviews and public appearances offer
+                insights into his opinions on a range of topics, presenting a
+                complex person.
+                <br />
+                <br />
+
+                <strong>14. Final Thoughts:</strong> In summary, Bill Gates'
+                life story serves as evidence of the transformational potential
+                of willpower and vision. Gates, who rose from a youthful
+                computer hobbyist to a prominent figure in the world, has left a
+                lasting legacy that transcends software codes and touches the
+                hearts of people who are motivated by his life narrative.
+                <br />
+                <br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </bodymain>
+    <!-- Footer -->
 
 <footer class="footer-container">
     <div class="">
@@ -410,4 +437,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
+  </body>
 </html>
