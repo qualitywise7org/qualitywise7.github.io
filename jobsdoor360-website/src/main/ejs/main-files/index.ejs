@@ -1282,8 +1282,10 @@
       }
     </script>
     <script>
-      const email = localStorage.getItem("email");
-      if (!email) {
+      const mail = localStorage.getItem("email");
+      if (mail) {
+        document.getElementById("user-mail").innerHTML = mail;
+      } else {
         document.getElementById("profile").innerHTML =
           "<strong>Create your profile to get jobs</strong>";
       }
