@@ -351,19 +351,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script>
-      const email = localStorage.getItem("email");
-      if (email) {
-        document.getElementById("login-button").innerHTML = "Logout";
-      }
-      const login_button = document.getElementById("login-button");
-      login_button.addEventListener("click", () => {
-        if (localStorage.getItem("email")) {
-          localStorage.clear();
-        }
-        location.location.href = "/login";
-      });
-    </script>
     <script src="../../website_data/jobs_data.js"></script>
     <script src="../../website_data/website_masterdata.js"></script>
     <script type="module" src="../../js/myaccount.js"></script>
