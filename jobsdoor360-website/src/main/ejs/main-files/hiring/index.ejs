@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <title>Job Listings</title>
-    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="style.css" />
     <%- include('../../partials/head.ejs') %>
   </head>
@@ -41,16 +40,6 @@
         </h6>
       </div>
     </div>
-    <script>
-      function handleclick() {
-        const email = localStorage.getItem("email");
-        if (email) {
-          window.location.href = "/myaccount/jobsforyou";
-        } else {
-          window.location.href = "/login/?redirect_url=/jobsforyou";
-        }
-      }
-    </script>
     <script src="script.js" type="module"></script>
     <%- include('../../partials/footer.ejs') %>
   </body>
