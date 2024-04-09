@@ -9,58 +9,8 @@
       name="description"
       content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!"
     />
-    <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/home.css" />
-    <script
-      src="https://kit.fontawesome.com/f6b356be29.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google tag (gtag.js) -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Trirong"
-    />
-
-    <!-- Google Tag Manager -->
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-          "gtm.start": new Date().getTime(),
-          event: "gtm.js",
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-MFBK5637");
-    </script>
-    <!-- End Google Tag Manager -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-1JQVXS3B5L");
-
-      function handleclick() {
-        const email = localStorage.getItem("email");
-        if (email) {
-          window.location.href = "/myaccount/jobsforyou";
-        } else {
-          window.location.href = "/login/?redirect_url=/jobsforyou";
-        }
-      }
       function your_profile() {
         const email = localStorage.getItem("email");
         if (email) {
@@ -74,40 +24,43 @@
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="icon" href="fevicon.ico" type="profile" />
     <style>
       .forward_link {
-        font-family: "Trirong", serif;
         color: #3d3b40;
+      }
+      .goal_div:hover {
+        background-color: lightgray;
+      }
+      .goal_div {
+        border-bottom: 1px solid gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding-inline: 40px;
+        padding-block: 14px;
       }
     </style>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
+<link rel="icon" href="fevicon.ico" type="profile" />
+<link rel="stylesheet" href="/css/style.css" />
 <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
   rel="stylesheet"
   integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
   crossorigin="anonymous"
 />
-
-<!--deprecated: we will use boostrap not tailwind from 06/04/2024 -->
-
-<link rel="icon" href="./../fevicon.ico" type="profile" />
-<!-- <link rel="stylesheet" href="../../css/style.css" /> -->
-
-<!-- icons -->
-<script
-  src="https://kit.fontawesome.com/f6b356be29.js"
-  crossorigin="anonymous"
-></script>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Google tag (gtag.js) -->
 <script
   async
   src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"
+></script>
+<script
+  src="https://kit.fontawesome.com/f6b356be29.js"
+  crossorigin="anonymous"
 ></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -130,6 +83,11 @@
     f.parentNode.insertBefore(j, f);
   })(window, document, "script", "dataLayer", "GTM-MFBK5637");
 </script>
+<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
+  crossorigin="anonymous"
+></script>
 
 <script type="text/javascript">
   function handleclick() {
@@ -145,18 +103,6 @@
   </head>
 
   <body>
-    <!-- Google Tag Manager -->
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -296,12 +242,15 @@
         </div>
       </div>
       <h1
-        class="text-center mt-3 mb-0 pt-2 text-2xl shadow-lg pb-3"
-        style="width: 100%"
+        style="
+          text-align: center;
+          width: 100%;
+          font-size: x-large;
+          margin-block: 20px;
+        "
       >
         Job Oriented Courses
       </h1>
-
       <section>
         <div class="testimonial" style="width: 100%; margin-bottom: 10px">
           <div
@@ -316,7 +265,7 @@
                 data-bs-interval=" 3000"
                 style="width: 100%"
               >
-                <div class="d-block w-100" style="width: 100%">
+                <div class="d-block" style="width: 100%">
                   <div class="container" style="width: 100%">
                     <div class="content" style="width: 100%">
                       <a href="/hiring/" style="width: 100%">
@@ -341,7 +290,7 @@
                 data-bs-interval="3000"
                 style="width: 100%"
               >
-                <div class="d-block w-100" style="width: 100%">
+                <div class="d-block" style="width: 100%">
                   <div class="container" style="width: 100%">
                     <div class="content" style="width: 100%">
                       <a
@@ -369,7 +318,7 @@
                 data-bs-interval="3000"
                 style="width: 100%"
               >
-                <div class="d-block w-100" style="width: 100%">
+                <div class="d-block" style="width: 100%">
                   <div class="container" style="width: 100%">
                     <div class="content" style="width: 100%">
                       <a href="/membership/" style="width: 100%">
@@ -394,7 +343,7 @@
                 data-bs-interval="3000"
                 style="width: 100%"
               >
-                <div class="d-block w-100" style="width: 100%">
+                <div class="d-block" style="width: 100%">
                   <div class="container" style="width: 100%">
                     <div class="content" style="width: 100%">
                       <a href="/results/" style="width: 100%">
@@ -419,7 +368,7 @@
       </section>
 
       <div class="" style="width: 100%">
-        <div class="d-block w-100" style="width: 100%">
+        <div class="d-block" style="width: 100%">
           <div class="container" style="width: 100%">
             <div
               class="content"
@@ -452,21 +401,18 @@
 
       <div class="hero-section" id="home">
         <div class="program-card" id="programs">
-          <div class="card card-2 w-100 mb-3">
+          <div class="card card-2">
             <h2 class="header">Goals</h2>
             <div>
               <a
                 href="/details/?productcode=webdevelopment"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">1 - Web Development</span>
+                    <span style="font-size: larger">1 - Web Development</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -475,14 +421,11 @@
                 href="/details/?productcode=backendjava"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">2 - Backend Java</span>
+                    <span style="font-size: larger">2 - Backend Java</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -491,29 +434,25 @@
                 href="/details/?productcode=fullstack"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">3 - FullStack Development</span>
+                    <span style="font-size: larger"
+                      >3 - FullStack Development</span
+                    >
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
               </a>
               <a href="/details/?productcode=qa" class="text-decoration-none">
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl"
+                    <span style="font-size: larger"
                       >4 - Quality Assurance (QA) Engineer</span
                     >
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -522,14 +461,11 @@
                 href="/details/?productcode=cvcreation"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">5 - CV Creation</span>
+                    <span style="font-size: larger">5 - CV Creation</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -538,14 +474,13 @@
                 href="/details/?productcode=videoprofile"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">6 - Video Profile Creation</span>
+                    <span style="font-size: larger"
+                      >6 - Video Profile Creation</span
+                    >
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -554,27 +489,21 @@
                 href="/details/?productcode=mockinterview"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">7 - Mock interviews</span>
+                    <span style="font-size: larger">7 - Mock interviews</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
               </a>
               <a onclick="{handleclick()}" class="text-decoration-none">
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">8 - Jobs for You</span>
+                    <span style="font-size: larger">8 - Jobs for You</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -583,14 +512,13 @@
                 href="/details/?productcode=chargeableinternship"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">9 - Chargeable Internship</span>
+                    <span style="font-size: larger"
+                      >9 - Chargeable Internship</span
+                    >
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -599,14 +527,11 @@
                 href="/details/?productcode=freeinternship"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">10 - Free Internship</span>
+                    <span style="font-size: larger">10 - Free Internship</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -615,27 +540,23 @@
                 href="/details/?productcode=paidinternship"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">11 - Paid Internship</span>
+                    <span style="font-size: larger">11 - Paid Internship</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
               </a>
               <a href="/details/?productcode=math" class="text-decoration-none">
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">12 - Math, Aptitude & Reasoning</span>
+                    <span style="font-size: larger"
+                      >12 - Math, Aptitude & Reasoning</span
+                    >
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -644,14 +565,11 @@
                 href="/details/?productcode=english"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">13 - English Speaking</span>
+                    <span style="font-size: larger">13 - English Speaking</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -660,14 +578,11 @@
                 href="/details/?productcode=devops"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">14 - Devops</span>
+                    <span style="font-size: larger">14 - Devops</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -676,29 +591,25 @@
                 href="/details/?productcode=social-media"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">15 - Social Media Marketing</span>
+                    <span style="font-size: larger"
+                      >15 - Social Media Marketing</span
+                    >
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
               </a>
               <a href="/details/?productcode=seo" class="text-decoration-none">
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl"
+                    <span style="font-size: larger"
                       >16 - Search Engine Optimisation(S.E.O)</span
                     >
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -707,14 +618,13 @@
                 href="/details/?productcode=computer-operator"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">17 - Computer Operator</span>
+                    <span style="font-size: larger"
+                      >17 - Computer Operator</span
+                    >
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -723,14 +633,11 @@
                 href="/details/?productcode=business-analysis"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">18 - Business Analyst</span>
+                    <span style="font-size: larger">18 - Business Analyst</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -739,14 +646,11 @@
                 href="/details/?productcode=ux-course"
                 class="text-decoration-none"
               >
-                <div
-                  class="flex justify-between items-center h-full w-full px-10 hover:bg-gray-400 rounded py-3"
-                  style="border-bottom: 1px solid gray"
-                >
+                <div class="goal_div">
                   <div class="forward_link">
-                    <span class="text-xl">19 - UX Course</span>
+                    <span style="font-size: larger">19 - UX Course</span>
                   </div>
-                  <div class="text-xl">
+                  <div style="font-size: larger">
                     <i class="fa-solid fa-arrow-bottom">&#8674;</i>
                   </div>
                 </div>
@@ -1717,11 +1621,6 @@
         .addEventListener("click", scrollToTop);
     </script>
     <script type="module" src="js/script.js"></script>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
-      crossorigin="anonymous"
-    ></script>
     <!-- jobsdoor360 -->
     <ins
       class="adsbygoogle"
