@@ -3,18 +3,15 @@
   <head>
     <title>Profile Analyzer</title>
     <meta name="description" content="Profile Analyzer" />
-    <link rel="stylesheet" href="css/profileanalyzer.css" />
-    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/careeroptions/profileanalyzer/style.css"
+    />
     <%- include('../../../partials/head.ejs') %>
   </head>
 
   <body>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- Navbar -->
-
     <%- include('../../../partials/navbar.ejs') %>
-
-    <!-- Profile Analyzer Section -->
     <section class="profile_analyzer">
       <h1 style="font-family: serif">Profile Analyzer</h1>
       <form id="profileForm" class="profileForm">
@@ -128,7 +125,10 @@
     </div>
     <script src="../../website_data/jobs_data.js"></script>
     <script src="../../website_data/website_masterdata.js"></script>
-    <script type="module" src="js/profileanalyzer.js"></script>
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/careeroptions/profileanalyzer/script.js"
+    ></script>
     <script type="module" src="../../js/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,24 @@
+.privacy {
+  padding: 2rem;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}

@@ -9,28 +9,15 @@
       name="description"
       content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!"
     />
-    <link rel="stylesheet" href="../../css/home.css" />
-    <link rel="stylesheet" href="style.css" />
-    <script>
-      function handleclick() {
-        const email = localStorage.getItem("email");
-        if (email) {
-          window.location.href = "/myaccount/jobsforyou";
-        } else {
-          window.location.href = "/details/?productcode=jobsforyou";
-        }
-      }
-    </script>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/style.css" />
     <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="icon" href="../fevicon.ico" type="profile" />
     <%- include('../../partials/head.ejs') %>
   </head>
 
   <body>
-    <!-- End Google Tag Manager (noscript) -->
     <%- include('../../partials/navbar.ejs') %>
     <section class="articles">
       <article>
@@ -225,6 +212,5 @@
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-    <script src="myaccount.js"></script>
   </body>
 </html>

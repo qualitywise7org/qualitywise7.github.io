@@ -3,19 +3,15 @@
   <head>
     <meta name="description" content="Job Details" />
     <title>Job Details</title>
-    <link rel="stylesheet" href="css/jobdetails.css" />
-    <!-- Include Bootstrap CSS -->
-
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/careeroptions/jobdetails/style.css"
+    />
     <%- include('../../../partials/head.ejs') %>
   </head>
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
     <%- include('../../../partials/navbar.ejs') %>
-    
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- job detail section -->
     <div
       class="container vh-auto p-3 d-flex justify-content-center align-items-center"
     >
@@ -123,7 +119,10 @@
       </div>
     </div>
     <script src="../../website_data/jobs_data.js"></script>
-    <script type="module" src="js/jobdetails.js"></script>
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/careeroptions/jobdetails/script.js"
+    ></script>
     <script type="module" src="../../js/script.js"></script>
   </body>
 </html>

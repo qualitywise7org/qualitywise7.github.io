@@ -1,0 +1,84 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+.header {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+  border: none;
+  background-color: #e2e8f0;
+}
+.content {
+  font-size: 1.1rem;
+}
+.program-card {
+  margin: 20px;
+}
+.card-text {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-style: italic;
+  font-family: serif;
+}
+
+.hero .imgs {
+  padding: 1.3rem;
+  justify-content: center;
+}
+.hero img {
+  justify-content: center;
+  width: 70%;
+}
+
+.list ul li {
+  font-size: 17px;
+}
+/* .language{
+      position: relative;
+      width: 160px !important;
+      margin-left: 8px;
+      padding: 8px;
+  
+  } */
+
+.banner {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 200;
+  font-size: 30px;
+}
+.banner1 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 200;
+  font-size: 18px;
+  display: none;
+}
+@media (max-width: 768px) {
+  .banner {
+    display: none;
+  }
+  .banner1 {
+    display: block;
+  }
+}
+
+.img {
+  display: block;
+  width: 100%;
+}
+.img1 {
+  display: none;
+  width: 100%;
+  display: none;
+}
+@media (max-width: 768px) {
+  .img {
+    display: none;
+  }
+  .img1 {
+    display: block;
+  }
+}

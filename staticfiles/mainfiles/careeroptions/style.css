@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+section {
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab", serif;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+article {
+  margin-bottom: 40px;
+}
+
+article h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-family: auto;
+}
+
+article section h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-family: auto;
+}
+
+article p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.pathways {
+  text-align: center;
+  font-family: "Roboto Slab";
+  margin-bottom: 2rem;
+}

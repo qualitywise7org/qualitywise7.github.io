@@ -1,0 +1,96 @@
+.container {
+  margin-top: 50px;
+  margin-bottom: 73px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-btn {
+  margin: 1rem 0 0 1rem;
+  width: fit-content;
+}
+
+.job-head {
+  display: flex;
+  justify-content: center;
+}
+
+.jobs-header {
+  font-size: 24px;
+  color: black;
+  border-bottom: 2px solid;
+  font-family: math;
+  width: 100vw;
+  padding: 0.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-form {
+  width: 50%;
+}
+
+.loading {
+  display: block;
+  font-size: 2rem;
+  font-family: "Ysabeau SC";
+  text-align: center;
+  margin: 10rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 18px;
+  margin: 0;
+  background: #504387;
+  color: white !important;
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.username {
+  padding: 100px;
+}
+
+.name {
+  background-color: #6c757d;
+  border-radius: 5px;
+  margin: 19px;
+  color: white;
+  /* font-size: 14px; */
+  padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .loading {
+    display: block;
+    font-size: 1rem;
+    font-family: "Ysabeau SC";
+    text-align: center;
+    margin: 8rem;
+  }
+}
+
+.user_n {
+  display: flex;
+  justify-content: center;
+}
