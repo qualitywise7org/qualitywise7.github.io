@@ -1,8 +1,7 @@
- 
 const email = localStorage.getItem("email");
-if(!email){
-    window.location.href = "/login/?redirect_url=hiring";
-} 
+if (!email) {
+  window.location.href = "/login/?redirect_url=hiring";
+}
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
 import {
@@ -52,7 +51,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         <td>${"₹" + data.stipend || "NOT DISCLOSED"}</td>
         <td>${data.role || "NOT DISCLOSED"}</td>
         <td>${data.location || "NOT DISCLOSED"}</td>
-        <td><button class="applyButton" data-jobid="${doc.id}">Apply</button></td>
+        <td>${data.company_name || "NOT DISCLOSED"}</td>
+        <td><a href="${data.job_description_doc || "#"}">Click Here</a></td>
+        <td><button class="applyButton" data-jobid="${
+          doc.id
+        }">Apply</button></td>
       `;
       jobListings.appendChild(row);
     });
@@ -62,12 +65,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const email = localStorage.getItem("email");
 
-  if (email) { 
+  if (email) {
     try {
       const appliedJobsRef = doc(db, "jobsapplied", email);
       const docSnap = await getDoc(appliedJobsRef);
       if (docSnap.exists()) {
-        const appliedJobs = docSnap.data(); 
+        const appliedJobs = docSnap.data();
 
         for (const jobId in appliedJobs) {
           const button = document.querySelector(
@@ -120,14 +123,14 @@ document.addEventListener("DOMContentLoaded", async function () {
       try {
         const docRef = doc(db, "hiring", jobId);
         const docSnap = await getDoc(docRef);
-      
+
         if (docSnap.exists()) {
           const jobData = docSnap.data();
-          const appliedCandidates = jobData.appliedCandidates || [];  
-                                                    
+          const appliedCandidates = jobData.appliedCandidates || [];
+
           if (!appliedCandidates.includes(email)) {
-            appliedCandidates.push(email);  
-            await updateDoc(docRef, { appliedCandidates }); 
+            appliedCandidates.push(email);
+            await updateDoc(docRef, { appliedCandidates });
             console.log("Candidate added to the list of applied candidates");
           } else {
             console.log("Candidate already applied for this job");
@@ -138,7 +141,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       } catch (error) {
         console.error("Error updating applied candidates list:", error);
       }
-      
     } else {
       alert("You are not logged In. Please login");
     }
