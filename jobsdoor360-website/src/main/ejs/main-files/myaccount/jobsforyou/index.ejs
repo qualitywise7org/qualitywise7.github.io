@@ -6,7 +6,10 @@
       name="description"
       content="Unlock remarkable opportunities with JobsDoor360's seamless resume upload. Elevate your career journey by submitting your comprehensive CV, and stay ahead as we expand to accommodate additional details. Join us on the path to success with streamlined job applications and personalized career development."
     />
-    <link rel="stylesheet" href="css/jobsforyou.css" />
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/myaccount/jobsforyou/style.css"
+    />
     <%- include('../../../partials/head.ejs') %>
   </head>
 
@@ -237,12 +240,7 @@
         </div>
       </div>
     </div>
-
-    <!-- Footer -->
-
     <%- include('../../../partials/footer.ejs') %>
-
-    <!-- WhatsApp Chat Button -->
     <div class="chat-back-to-top">
       <button id="like-button">
         <i class="fa-solid fa-thumbs-up"></i>
@@ -262,15 +260,15 @@
         <i class="fa-solid fa-chevron-up"></i>
       </button>
     </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
     <script src="../../website_data/jobs_data.js"></script>
     <script src="../../website_data/website_masterdata.js"></script>
-    <script type="module" src="../../js/myaccount.js"></script>
-    <script type="module" src="./js/jobsforyoupractice.js"></script>
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/script.js"
+    ></script>
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/jobsforyou/script.js"
+    ></script>
   </body>
 </html>

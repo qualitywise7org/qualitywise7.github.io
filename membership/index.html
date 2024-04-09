@@ -6,14 +6,13 @@
       name="description"
       content="Explore essential information on how to make a business plan, revenue and marketing spend for e-commerce, and inspiring success stories from entrepreneurs. Learn from real-world examples and take your business to new heights."
     />
-    <link rel="stylesheet" href="../css/businessplans.css" />
     <link rel="stylesheet" href="style.css" />
-
+    <link rel="stylesheet" href="/staticfiles/mainfiles/membership/style.css">
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
 <link rel="icon" href="fevicon.ico" type="profile" />
-<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/staticfiles/style.css" />
 <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
   rel="stylesheet"
@@ -70,9 +69,6 @@
   </head>
 
   <body>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- Navbar -->
-
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="brand" href="/">
@@ -171,14 +167,15 @@
   const email = localStorage.getItem("email");
   if (email) {
     document.getElementById("login-button").innerHTML = "Logout";
+  } else {
+    const login_button = document.getElementById("login-button");
+    login_button.addEventListener("click", () => {
+      if (localStorage.getItem("email")) {
+        localStorage.clear();
+      }
+      location.location.href = "/login";
+    });
   }
-  const login_button = document.getElementById("login-button");
-  login_button.addEventListener("click", () => {
-    if (localStorage.getItem("email")) {
-      localStorage.clear();
-    }
-    location.location.href = "/login";
-  });
 </script>
 
 
