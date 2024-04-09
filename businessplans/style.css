@@ -10,13 +10,6 @@
 .plans .single-plan {
     margin-bottom: 30px;
 }
-
-.plans h2,
-.aside h2 {
-    text-align: center;
-    font-family: math;
-}
-
 .aside {
     padding: 20px;
     display: flex;
