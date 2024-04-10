@@ -57,24 +57,13 @@
           justify-content: center;
           margin-top: 10px;
         "
-      >
-        <span style="font-weight: 500; margin-bottom: 8px">Welcome</span>
-        <span
-          id="user-mail"
-          style="
-            color: #586ba6;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-          "
-        >
-        </span>
-      </div>
+      ></div>
       <div id="strip" class="strip" style="margin-bottom: -15px">
         <div id="profile">
           <a onclick="{your_profile()}"
-            ><strong>𝐂𝐨𝐦𝐩𝐥𝐞𝐭𝐞 𝐘𝐨𝐮𝐫 𝐏𝐫𝐨𝐟𝐢𝐥𝐞.</strong></a
-          >
+            >Complete your Profile
+            <i class="fa-solid fa-arrow-bottom">&#8674;</i>
+          </a>
         </div>
       </div>
       <h1
@@ -497,11 +486,12 @@
         <div class="hero">
           <div class="hero-tag" style="margin-left: 50px; width: 100%">
             <div class="imgs">
-              <span
+              <span style="display: flex"
                 ><a
                   href="/results/"
-                  class="text-decoration-none text-black text-center"
-                  >SEE OUR RESULTS</a
+                  class="t"
+                  >See our results
+                  <i class="fa-solid fa-arrow-bottom">&#8674;</i></a
                 ></span
               >
               <img src="./assets/avatar.gif" alt="student" />
@@ -1188,9 +1178,7 @@
     </script>
     <script>
       const mail = localStorage.getItem("email");
-      if (mail) {
-        document.getElementById("user-mail").innerHTML = mail;
-      } else {
+      if (!mail) {
         document.getElementById("profile").innerHTML =
           "<strong>Create your profile to get jobs</strong>";
       }

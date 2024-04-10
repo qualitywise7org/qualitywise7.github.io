@@ -8,6 +8,33 @@
   margin-top: 10px;
 }
 
+.join-btn {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+  align-self: center;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  border-radius: 0.3rem;
+  padding: 0.5rem 3rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  /* background-color: #5c3d84; */
+  background-color: #586ba6;
+  font-family: "Ysabeau SC", sans-serif;
+}
+
+.join-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.join-btn:hover {
+  background-color: #465684;
+  transition: 0.3s ease-in-out;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
