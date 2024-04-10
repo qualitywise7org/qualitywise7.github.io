@@ -81,6 +81,19 @@
     </div>
   </div>
 </nav>
+<div style="display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 5px;">
+  <span style="font-weight: 500; margin-bottom: 8px">Welcome</span>
+  <span
+    id="user-mail"
+    style="
+      color: #586ba6;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    "
+  >
+  </span>
+</div>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript
@@ -96,6 +109,7 @@
   const email = localStorage.getItem("email");
   if (email) {
     document.getElementById("login-button").innerHTML = "Logout";
+    document.getElementById("user-mail").innerHTML = email;
   } else {
     const login_button = document.getElementById("login-button");
     login_button.addEventListener("click", () => {

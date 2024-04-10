@@ -1133,8 +1133,6 @@ body {
 
 .strip {
   text-align: center;
-  background: white;
-  border-color: black;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -1143,11 +1141,21 @@ body {
 
 #profile {
   font-size: 1rem;
-  background-color: #d7d8db;
   width: auto;
   padding: 5px 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   margin-bottom: 10px;
+  color: #586ba6;
+  font-weight: 600;
+  border: 1px solid #000000;
+  background-color: #f2f2f2;
+}
+
+#profile:hover {
+  background-color: #f1f1f1;
+  color: #000000;
+  scale: 105%;
+  transition: all 0.5s;
 }
 
 .full-width-image {
