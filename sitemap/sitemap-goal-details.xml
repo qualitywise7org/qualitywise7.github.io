@@ -1,118 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=webdevelopment</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=backendjava</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=fullstack</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=qa</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=majorproject</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=cvcreation</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=videoprofile</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=mockinterview</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=jobsforyou</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=chargeableinternship</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=freeinternship</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=paidinternship</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=english</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=devops</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=social</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=seo</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=computer</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=business</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
-      <url>
-        <loc>https://jobsdoor360.in/details/?productcode=math</loc>
-        <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
-        <priority>1.00</priority>
-      </url>
-    
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=webdevelopment</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=backendjava</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=fullstack</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=qa</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=majorproject</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=cvcreation</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=videoprofile</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=mockinterview</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=jobsforyou</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=chargeableinternship</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=freeinternship</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=paidinternship</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=english</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=devops</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=social</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=seo</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=computer</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=business</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/details/?productcode=math</loc>
+  <lastmod>Sat Mar 30 2024 10:55:58 GMT+0530 (India Standard Time)</lastmod>
+  <priority>1.00</priority>
+</url>
 </urlset>
