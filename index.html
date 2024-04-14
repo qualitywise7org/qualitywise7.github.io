@@ -10,16 +10,6 @@
       content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!"
     />
     <link rel="stylesheet" href="/staticfiles/mainfiles/style.css" />
-    <script>
-      function your_profile() {
-        const email = localStorage.getItem("email");
-        if (email) {
-          window.location.href = "/myaccount/yourprofile";
-        } else {
-          window.location.href = "/login/?redirect_url=/yourprofile";
-        }
-      }
-    </script>
     <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
@@ -239,10 +229,9 @@
       ></div>
       <div id="strip" class="strip" style="margin-bottom: -15px">
         <div id="profile">
-          <a onclick="{your_profile()}"
-            >Complete your Profile
-            <i class="fa-solid fa-arrow-bottom">&#8674;</i>
-          </a>
+          <a href="/myaccount/yourprofile/"
+            >Complete your profile to get jobs</a
+          >
         </div>
       </div>
       <h1
@@ -666,9 +655,7 @@
           <div class="hero-tag" style="margin-left: 50px; width: 100%">
             <div class="imgs">
               <span style="display: flex"
-                ><a
-                  href="/results/"
-                  class="t"
+                ><a href="/results/" class="t"
                   >See our results
                   <i class="fa-solid fa-arrow-bottom">&#8674;</i></a
                 ></span
@@ -1604,7 +1591,7 @@
       const mail = localStorage.getItem("email");
       if (!mail) {
         document.getElementById("profile").innerHTML =
-          "<strong>Create your profile to get jobs</strong>";
+          "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
       }
       window.addEventListener("scroll", () => {
         let scrollVal = window.scrollY;
