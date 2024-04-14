@@ -655,10 +655,7 @@
           <div class="hero-tag" style="margin-left: 50px; width: 100%">
             <div class="imgs">
               <span style="display: flex"
-                ><a href="/results/" class="t"
-                  >See our results
-                  <i class="fa-solid fa-arrow-bottom">&#8674;</i></a
-                ></span
+                ><a href="/results/" class="t">See our results</a></span
               >
               <img src="./assets/avatar.gif" alt="student" />
             </div>
@@ -1304,6 +1301,9 @@
             <a href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
           </li>
           <li>
+            <a href="/hirewithus/">Hire With Us</a>
+          </li>
+          <li>
             <a href="/test/">Test</a>
           </li>
         </ul>
@@ -1575,17 +1575,6 @@
           event.stopPropagation();
         });
       });
-      const profile = localStorage.getItem("profile");
-      if (profile) {
-        document.addEventListener("DOMContentLoaded", function () {
-          var myDiv = document.getElementById("strip");
-          if (myDiv) {
-            myDiv.style.display = "none";
-          } else {
-            console.error("Element with ID 'strip' not found.");
-          }
-        });
-      }
     </script>
     <script>
       const mail = localStorage.getItem("email");
