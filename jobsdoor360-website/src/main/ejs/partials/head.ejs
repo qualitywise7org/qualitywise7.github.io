@@ -44,7 +44,6 @@
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
   crossorigin="anonymous"
 ></script>
-
 <script type="text/javascript">
   function handleclick() {
     const email = localStorage.getItem("email");
@@ -52,6 +51,11 @@
       window.location.href = "/myaccount/jobsforyou";
     } else {
       window.location.href = "/details/?productcode=jobsforyou";
+    }
+  }
+  function handleLoginButtonClick(){
+    if(localStorage.getItem("email")){
+      localStorage.clear();
     }
   }
 </script>
