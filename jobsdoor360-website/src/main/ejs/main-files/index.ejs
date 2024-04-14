@@ -1148,17 +1148,6 @@
           event.stopPropagation();
         });
       });
-      const profile = localStorage.getItem("profile");
-      if (profile) {
-        document.addEventListener("DOMContentLoaded", function () {
-          var myDiv = document.getElementById("strip");
-          if (myDiv) {
-            myDiv.style.display = "none";
-          } else {
-            console.error("Element with ID 'strip' not found.");
-          }
-        });
-      }
     </script>
     <script>
       const mail = localStorage.getItem("email");

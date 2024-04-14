@@ -147,7 +147,6 @@ ul li {
   .card_details {
     height: auto;
     display: flex;
-    justify-content: space-evenly;
   }
   .left {
     width: 50%;
