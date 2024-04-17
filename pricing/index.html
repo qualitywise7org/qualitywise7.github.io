@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="/staticfiles/mainfiles/pricing/style.css" />
     <link rel="stylesheet" href="style.css" />
     <script>
+      window.location.replace("/membership/");
+    </script>
+    <script>
       function trackBuyButtonClick(buttonName) {
         gtag("event", "click", {
           event_category: "Buy Now Click",
@@ -112,7 +115,7 @@
           <a class="nav-link" aria-current="/page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/demo/">About us</a>
+          <a class="nav-link" href="/about/">About us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/myaccount/jobsforyou">Jobs For You</a>
@@ -405,6 +408,9 @@
           </li>
           <li>
             <a href="/socialwork/donatebook/">Donate Books</a>
+          </li>
+          <li>
+            <a href="/demo/">Demo</a>
           </li>
         </ul>
       </div>
