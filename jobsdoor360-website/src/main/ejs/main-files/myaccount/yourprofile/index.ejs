@@ -13,14 +13,14 @@
     <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js"></script>
     <link
       rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-    />
-    <link
-      rel="stylesheet"
       href="/staticfiles/mainfiles/myaccount/yourprofile/style.css"
     />
     <%- include('../../../partials/head.ejs') %>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
 
   <body>
@@ -93,14 +93,8 @@
                       </div>
                       <div class="form-elem">
                         <label for="email" class="form-label">Email</label>
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          class="form-control"
-                          placeholder="e.g. johan@gmail.com"
-                          required
-                        />
+                        <br />
+                        <label id="email"></label>
                         <span class="form-text"></span>
                       </div>
                       <div class="form-elem">
@@ -138,7 +132,12 @@
                       </div>
                       <div class="form-elem">
                         <label for="gender" class="form-label">Gender</label>
-                        <select class="form-select" id="gender" name="gender" required>
+                        <select
+                          class="form-select"
+                          id="gender"
+                          name="gender"
+                          required
+                        >
                           <option value="better not to say">None</option>
                           <option value="male">Male</option>
                           <option value="female">Female</option>
@@ -148,7 +147,12 @@
                         <label for="category" class="form-label"
                           >Category</label
                         >
-                        <select id="category" class="form-select" name="gender" required>
+                        <select
+                          id="category"
+                          class="form-select"
+                          name="gender"
+                          required
+                        >
                           <option value="none">None</option>
                           <option value="General">General</option>
                           <option value="OBC">OBC</option>
@@ -256,7 +260,11 @@
                             </div>
                           </div>
                           <div class="remove_button">
-                            <button type="button" class="repeater-remove-btn">
+                            <button
+                              data-repeater-delete
+                              type="button"
+                              class="repeater-remove-btn"
+                            >
                               Remove
                             </button>
                           </div>
@@ -268,6 +276,7 @@
                       value="Add"
                       id="addeducation"
                       class="repeater-add-btn"
+                      data-repeater-create
                     >
                       Add
                     </button>
@@ -292,7 +301,11 @@
                             <span class="form-text"></span>
                           </div>
                           <div class="remove_button">
-                            <button type="button" class="repeater-remove-btn">
+                            <button
+                              data-repeater-delete
+                              type="button"
+                              class="repeater-remove-btn"
+                            >
                               Remove
                             </button>
                           </div>
@@ -321,10 +334,13 @@
     </main>
 
     <!-- Footer -->
-    <script src="script.js"></script>
 
     <%- include('../../../partials/footer.ejs') %>
 
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/yourprofile/script.js"
+    ></script>
     <script>
       document.getElementById("firstname").focus();
     </script>
@@ -341,10 +357,6 @@
         });
       });
     </script>
-    <script
-      type="module"
-      src="/staticfiles/mainfiles/myaccount/yourprofile/script.js"
-    ></script>
     <!-- jobsdoor360 -->
     <ins
       class="adsbygoogle"
