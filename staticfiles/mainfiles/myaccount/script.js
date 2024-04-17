@@ -46,7 +46,7 @@ onAuthStateChanged(auth, async (user) => {
                 console.log(userJSON);
                 localStorage.setItem("userDetails", userJSON);
                 const userName1 = document.getElementById("userName1");
-                localStorage.setItem("user_name", userData.full_name);
+                userName1.innerText = userData.full_name;
                 await fetchAndUseNames();
                 if (userData.firstLogin) {
                     let myModal = new bootstrap.Modal(

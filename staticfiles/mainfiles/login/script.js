@@ -41,36 +41,6 @@ loginForm.addEventListener("submit", async (e) => {
 
     try {
         await loginUser(email, password);
-        localStorage.setItem("email", email);
-        Toastify({
-            text: "Logged in Successfully..",
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "top",
-            position: "right",
-            stopOnFocus: true,
-            style: {
-                background: "linear-gradient(to right, #0d6efd, #586ba6)",
-                borderRadius: "10px"
-            }
-        }).showToast();
-        const docRef = doc(db, "user_profile", email);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-            localStorage.setItem('profile', true);
-        }
-        setTimeout(() => {
-            if (redirect_url == "hiring") {
-                window.location.href = '../hiring/';
-            }
-            else if (redirect_url) {
-                window.location.href = "../myaccount" + redirect_url;
-            } else {
-                window.location.href = "../myaccount";
-            }
-
-        }, 1000);
     } catch (error) {
         Toastify({
             text: "Error Please try after some time.",
@@ -94,7 +64,37 @@ async function loginUser(email, password) {
         if (user) {
             if (user.emailVerified) {
                 await signInWithEmailAndPassword(auth, email, password);
-                // console.log("verified user"); 
+                // console.log("verified user");
+                localStorage.setItem("email", email);
+                const docRef = doc(db, "user_profile", email);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    localStorage.setItem('profile', true);
+                }
+                setTimeout(() => {
+                    if (redirect_url == "hiring") {
+                        window.location.href = '../hiring/';
+                    }
+                    else if (redirect_url) {
+                        window.location.href = "../myaccount" + redirect_url;
+                    } else {
+                        window.location.href = "../myaccount";
+                    }
+
+                }, 1000);
+                Toastify({
+                    text: "Logged in Successfully..",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                        background: "linear-gradient(to right, #0d6efd, #586ba6)",
+                        borderRadius: "10px"
+                    }
+                }).showToast();
             } else {
                 alert("Email is not verified");
                 throw new Error("Email is not verified");
