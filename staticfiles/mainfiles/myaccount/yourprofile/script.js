@@ -63,6 +63,7 @@ async function isUser() {
             imageUrl = userData.about.image;
             cvUrl = userData.about.cv;
 
+            if (!imageUrl) imageUrl = "https://www.pngall.com/wp-content/uploads/5/Profile.png";
             const profileImage = document.getElementById("show_image");
             profileImage.src = imageUrl;
 
