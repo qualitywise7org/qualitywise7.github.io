@@ -1,4 +1,6 @@
 const email = localStorage.getItem('email');
+let imageUrl = ""
+let cvUrl = ""
 if (!email) {
     window.location.href = "/login/";
 }
@@ -48,11 +50,9 @@ async function isUser() {
         if (docSnap.exists()) {
             var userData = docSnap.data();
             $("#btn").html("Update Details");
-            // Update HTML input values for the "About" section
             $("#firstname").val(userData.about.firstName);
             $("#middlename").val(userData.about.middleName);
             $("#lastname").val(userData.about.lastName);
-            // $("#image").val(userData.about.image);
             $("#gender").val(userData.about.gender);
             $("#category").val(userData.about.category);
             $("#address").val(userData.about.address);
@@ -60,6 +60,11 @@ async function isUser() {
             $("#phoneno").val(userData.about.phoneNo);
             $("#linkedin").val(userData.about.linkedin);
             $("#github").val(userData.about.github);
+            imageUrl = userData.about.image;
+            cvUrl = userData.about.cv;
+
+            const profileImage = document.getElementById("show_image");
+            profileImage.src = imageUrl;
 
             // Update HTML input values for the "Education" section
             $('[data-repeater-list="group-education"]')
@@ -128,7 +133,7 @@ function collectFormData() {
     aboutData.firstName = $("#firstname").val() || "";
     aboutData.middleName = $("#middlename").val() || "";
     aboutData.lastName = $("#lastname").val() || "";
-    aboutData.image = $("#image").val() || "";
+    aboutData.image = imageUrl || "";
     aboutData.gender = $("#gender").val() || "";
     aboutData.category = $("#category").val() || "";
     aboutData.address = $("#address").val() || "";
@@ -136,6 +141,7 @@ function collectFormData() {
     aboutData.phoneNo = $("#phoneno").val() || "";
     aboutData.linkedin = $("#linkedin").val() || "";
     aboutData.github = $("#github").val() || "";
+    aboutData.cv = cvUrl || "";
     formData.about = aboutData;
 
     // Collect data for the "Education" section
@@ -175,7 +181,7 @@ async function uploadImageAndGetURL(file) {
     await uploadBytes(imageRef, file);
 
     const url = await getDownloadURL(imageRef);
-    return url || ""; // Return empty string if URL is undefined
+    return url; // Return empty string if URL is undefined
 }
 
 async function uploadCV(file) {
@@ -183,7 +189,7 @@ async function uploadCV(file) {
     await uploadBytes(cvRef, file);
 
     const url = await getDownloadURL(cvRef);
-    return url || ""; // Return empty string if URL is undefined
+    return url; // Return empty string if URL is undefined
 }
 
 async function saveFormDataToDatabase() {
@@ -191,14 +197,14 @@ async function saveFormDataToDatabase() {
 
     const imageFile = document.getElementById("image").files[0];
     if (imageFile) {
-        const imageUrl = await uploadImageAndGetURL(imageFile);
+        imageUrl = await uploadImageAndGetURL(imageFile);
         formData.about.image = imageUrl;
         console.log("Image URL: ", imageUrl);
     }
 
     const cvFile = document.getElementById("cv").files[0];
     if (cvFile) {
-        const cvUrl = await uploadCV(cvFile);
+        cvUrl = await uploadCV(cvFile);
         formData.about.cv = cvUrl;
     }
 
