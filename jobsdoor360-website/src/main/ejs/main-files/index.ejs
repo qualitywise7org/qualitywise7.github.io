@@ -1127,6 +1127,15 @@
         </div>
       </div>
     </div>
+    <!-- complete your profile or welcome related -->
+    <script>
+          const mail = localStorage.getItem("email");
+          if (!mail) {
+            document.getElementById("profile").innerHTML =
+              "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
+          }
+    </script>
+    
     <script>
       $(document).ready(function () {
         $(document).on("click", function (event) {
@@ -1140,29 +1149,7 @@
         });
       });
     </script>
-    <script>
-      const mail = localStorage.getItem("email");
-      if (!mail) {
-        document.getElementById("profile").innerHTML =
-          "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
-      }
-      window.addEventListener("scroll", () => {
-        let scrollVal = window.scrollY;
-        if (scrollVal > 2000) {
-          document.getElementById("backToTopBtn").style.display = "block";
-        } else {
-          document.getElementById("backToTopBtn").style.display = "none";
-        }
-      });
-
-      function scrollToTop() {
-        document.documentElement.scrollTop = 0;
-      }
-
-      document
-        .getElementById("backToTopBtn")
-        .addEventListener("click", scrollToTop);
-    </script>
+    
     <script type="module" src="/staticfiles/script.js"></script>
     <!-- jobsdoor360 -->
     <ins
