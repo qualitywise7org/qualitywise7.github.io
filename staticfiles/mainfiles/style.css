@@ -65,12 +65,14 @@
   font-family: "Courier New", Courier, monospace;
   font-weight: 200;
   font-size: 30px;
+  padding: 10px;
 }
 .banner1 {
   font-family: "Courier New", Courier, monospace;
   font-weight: 200;
   font-size: 18px;
   display: none;
+  padding: 10px;
 }
 @media (max-width: 768px) {
   .banner {
