@@ -112,7 +112,7 @@ async function populateUserProfilesTable() {
             editButton.addEventListener('click', () => {
                 const userEmail = userProfile.about.email;
                 console.log(userEmail);
-                window.location.href = "jobs_applied/?user=" + userEmail;
+                window.open("jobs_applied/?user=" + userEmail,'_blank');
                 // window.location.href = path+`jobs_applied?user=${userProfile.about.email}`;
             });
 
