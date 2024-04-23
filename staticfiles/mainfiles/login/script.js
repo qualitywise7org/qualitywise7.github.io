@@ -43,7 +43,7 @@ loginForm.addEventListener("submit", async (e) => {
         await loginUser(email, password);
     } catch (error) {
         Toastify({
-            text: "Error Please try after some time.",
+            text: "Try again",
             duration: 3000,
             newWindow: true,
             close: true,
@@ -60,47 +60,43 @@ loginForm.addEventListener("submit", async (e) => {
 
 
 async function loginUser(email, password) {
-    auth.onAuthStateChanged(async user => {
-        if (user) {
-            if (user.emailVerified) {
-                await signInWithEmailAndPassword(auth, email, password);
-                // console.log("verified user");
-                localStorage.setItem("email", email);
-                const docRef = doc(db, "user_profile", email);
-                const docSnap = await getDoc(docRef);
-                if (docSnap.exists()) {
-                    localStorage.setItem('profile', true);
-                }
-                setTimeout(() => {
-                    if (redirect_url == "hiring") {
-                        window.location.href = '../hiring/';
-                    }
-                    else if (redirect_url) {
-                        window.location.href = "../myaccount" + redirect_url;
-                    } else {
-                        window.location.href = "../myaccount";
-                    }
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
 
-                }, 1000);
-                Toastify({
-                    text: "Logged in Successfully..",
-                    duration: 3000,
-                    newWindow: true,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    stopOnFocus: true,
-                    style: {
-                        background: "linear-gradient(to right, #0d6efd, #586ba6)",
-                        borderRadius: "10px"
-                    }
-                }).showToast();
+        if (user.emailVerified) {
+            localStorage.setItem("email", email);
+            const docRef = doc(db, "user_profile", email);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                localStorage.setItem('profile', true);
+            }
+            if (redirect_url == "hiring") {
+                window.location.href = '../hiring/';
+            } else if (redirect_url) {
+                window.location.href = "../myaccount" + redirect_url;
             } else {
-                alert("Email is not verified");
-                throw new Error("Email is not verified");
+                window.location.href = "../myaccount";
             }
         } else {
-            console.log("No user signed in");
+            alert("Email is not verified");
+            throw new Error("Email is not verified");
         }
-    });
+    } catch (error) {
+        console.log("Error:", error.message);
+        Toastify({
+            text: error.message.split(' ')[2].split("(")[1].split(")")[0].split('/')[1].replaceAll('-', ' '),
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #0d6efd, #586ba6)",
+                borderRadius: "10px"
+            }
+        }).showToast();
+    }
 }
+
