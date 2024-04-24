@@ -1,4 +1,4 @@
-const email = localStorage.getItem('email');
+const email = JSON.parse(localStorage.getItem("user")).email;
 let imageUrl = ""
 let cvUrl = ""
 if (!email) {

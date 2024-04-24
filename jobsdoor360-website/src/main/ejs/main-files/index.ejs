@@ -1138,10 +1138,8 @@
         </div>
       </div>
     </div>
-    <!-- complete your profile or welcome related -->
     <script>
-      const user = JSON.parse(sessionStorage.getItem("user"));
-      const mail = user.email;
+      const mail = JSON.parse(localStorage.getItem("user")).email;
       if (!mail) {
         document.getElementById("profile").innerHTML =
           "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
