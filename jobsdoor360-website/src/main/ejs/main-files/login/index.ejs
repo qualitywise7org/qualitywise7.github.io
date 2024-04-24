@@ -5,10 +5,10 @@
     <link rel="stylesheet" href="/staticfiles/mainfiles/login/style.css" />
     <%- include('../../partials/head.ejs') %>
     <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-  />
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
 
   <body>
@@ -17,11 +17,15 @@
       <div class="login-container" style="text-align: center">
         <a
           class="logo"
-          style="background-color: #e8f0fe; border-radius: 10px"
-          href="../index.html"
+          style="
+            background-color: #e8f0fe;
+            border-radius: 10px;
+            text-align: center;
+          "
+          href="/"
         >
           <img
-            style="width: 80%; padding: 20px"
+            style="width: 50%; padding: 10px"
             src="/assets/Jobsdoor360 -logos__black.png"
             alt="logo"
           />
@@ -29,14 +33,27 @@
         <h2 class="login-head">Login</h2>
         <form id="login-form">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" required placeholder="Email"/>
 
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
 
-          <button type="submit">Login</button>
+          <button type="submit" style="margin-top: 20px">Login</button>
         </form>
 
+        <button
+          id="google-login-btn"
+          class="google-button"
+          style="
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+          "
+        >
+          <i class="fab fa-google"></i><span>Login with Google</span>
+        </button>
         <div class="lines-text">
           <span>OR</span>
         </div>
@@ -52,8 +69,8 @@
     <%- include('../../partials/footer.ejs') %>
 
     <script
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/toastify-js"
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
     <script type="module" src="/staticfiles/mainfiles/login/script.js"></script>
   </body>

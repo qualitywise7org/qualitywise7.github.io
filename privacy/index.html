@@ -51,16 +51,20 @@
 ></script>
 <script type="text/javascript">
   function handleclick() {
-    const email = localStorage.getItem("email");
+    const user = JSON.parse(sessionStorage.getItem("user"));
+    const email = user.email;
     if (email) {
       window.location.href = "/myaccount/jobsforyou";
     } else {
       window.location.href = "/details/?productcode=jobsforyou";
     }
   }
-  function handleLoginButtonClick(){
-    if(localStorage.getItem("email")){
+  function handleLoginButtonClick() {
+    const user = JSON.parse(sessionStorage.getItem("user"));
+    const email = user.email;
+    if (email) {
       localStorage.clear();
+      sessionStorage.clear();
     }
   }
 </script>
@@ -151,8 +155,16 @@
     </div>
   </div>
 </nav>
-<div style="display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 5px;">
-  <span style="font-weight: 500; margin-bottom: 8px">Welcome</span>
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+  "
+>
+  <span style="font-weight: 500; margin-bottom: 8px" id="welcome-text"></span>
   <span
     id="user-mail"
     style="
@@ -176,15 +188,20 @@
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <script>
-  const email = localStorage.getItem("email");
+  const user = JSON.parse(sessionStorage.getItem("user"));
+  const email = user.email;
   if (email) {
     document.getElementById("login-button").innerHTML = "Logout";
     document.getElementById("user-mail").innerHTML = email;
+    document.getElementById("welcome-text").innerHTML = "Welcome";
   } else {
     const login_button = document.getElementById("login-button");
     login_button.addEventListener("click", () => {
-      if (localStorage.getItem("email")) {
+      const user = JSON.parse(sessionStorage.getItem("user"));
+      const email = user.email;
+      if (email) {
         localStorage.clear();
+        sessionStorage.clear();
       }
       location.location.href = "/login";
     });

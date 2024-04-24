@@ -35,6 +35,7 @@ body {
 
 .signup-head {
   text-align: center;
+  font-size: 24px;
   /* font-family: serif; */
   color: #465684;
 }
@@ -43,6 +44,7 @@ form {
   width: 100%;
   display: flex;
   flex-direction: column;
+  text-align: start;
 }
 
 label {
