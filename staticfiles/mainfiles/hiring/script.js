@@ -1,4 +1,5 @@
-const email = localStorage.getItem("email");
+const user = JSON.parse(sessionStorage.getItem("user"));
+const email = user.email;
 if (!email) {
     window.location.href = "/login/?redirect_url=hiring";
 }
@@ -62,8 +63,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error("Error retrieving job listings:", error);
     }
 
-    const email = localStorage.getItem("email");
-
     if (email) {
         try {
             const appliedJobsRef = doc(db, "jobsapplied", email);
@@ -96,7 +95,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     async function applyForJob(event) {
         const button = event.target;
         const jobId = button.dataset.jobid;
-        const email = localStorage.getItem("email");
+        const user = JSON.parse(sessionStorage.getItem("user"));
+        const email = user.email;
 
         if (email) {
             try {

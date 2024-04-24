@@ -4,6 +4,8 @@ import {
     createUserWithEmailAndPassword,
     updateProfile,
     sendEmailVerification,
+    GoogleAuthProvider,
+    signInWithPopup,
     onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 import {
@@ -26,6 +28,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+auth.languageCode = 'en';
+const provider = new GoogleAuthProvider();
 
 const signupForm = document.getElementById("signup-form");
 
@@ -84,6 +88,21 @@ const signupForm = document.getElementById("signup-form");
 //     toastContainer.style.display = "none";
 //   }, 3000);
 // }
+
+
+const googleSignUp = document.getElementById("google-signup-btn");
+googleSignUp.addEventListener("click", async () => {
+    signInWithPopup(auth, provider)
+        .then(async (result) => {
+            const credentials = GoogleAuthProvider.credentialFromResult(result);
+            const user = result.user;
+            sessionStorage.setItem("user", JSON.stringify(user));
+            window.location.href = "../myaccount";
+        }).catch((error) => {
+            const errorMessage = error.message;
+            console.log("Error:", errorMessage);
+        });
+})
 
 signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();

@@ -471,7 +471,14 @@
         </div>
         <div class="hero">
           <div class="hero-tag" style="width: 100%">
-            <div style="text-align: center;padding: 15px;background-color: aliceblue;margin: 0 16px 16px 16px;">
+            <div
+              style="
+                text-align: center;
+                padding: 15px;
+                background-color: aliceblue;
+                margin: 0 16px 16px 16px;
+              "
+            >
               <a href="/results/" class="t">Click here to see our results</a>
             </div>
             <div class="card list m-3 p-3">
@@ -484,10 +491,11 @@
                   Secure Your Spot in the Upcoming Batch
                 </p>
               </span>
-              <a href="/membership/" style="
-                  text-align: center;
-                  margin-bottom: 15px;
-              ">Memership fees</a>
+              <a
+                href="/membership/"
+                style="text-align: center; margin-bottom: 15px"
+                >Memership fees</a
+              >
               <div class="apply-container">
                 <div class="apply-btn">
                   <a href="register">Apply Now</a>
@@ -498,7 +506,7 @@
               <img src="./assets/avatar.gif" alt="student" />
             </div>
           </div>
-          
+
           <div class="card list m-3 p-3">
             <p
               class="card-text"
@@ -523,7 +531,6 @@
               <li>Emphasizing Hindi Medium Students</li>
             </ul>
           </div>
-          
         </div>
       </div>
     </section>
@@ -884,7 +891,7 @@
       <div class="masterclass">
         <div class="left-part">
           <h3>Expert Advice from Jobsdoor360 Master classes</h3>
-          
+
           <div class="apply-btn apply" style="align-self: baseline">
             <a href="register">Apply Now</a>
           </div>
@@ -1133,13 +1140,14 @@
     </div>
     <!-- complete your profile or welcome related -->
     <script>
-          const mail = localStorage.getItem("email");
-          if (!mail) {
-            document.getElementById("profile").innerHTML =
-              "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
-          }
+      const user = JSON.parse(sessionStorage.getItem("user"));
+      const mail = user.email;
+      if (!mail) {
+        document.getElementById("profile").innerHTML =
+          "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
+      }
     </script>
-    
+
     <script>
       $(document).ready(function () {
         $(document).on("click", function (event) {
@@ -1153,7 +1161,7 @@
         });
       });
     </script>
-    
+
     <script type="module" src="/staticfiles/script.js"></script>
     <!-- jobsdoor360 -->
     <ins
