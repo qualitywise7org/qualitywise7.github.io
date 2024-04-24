@@ -1,5 +1,4 @@
-const user = JSON.parse(sessionStorage.getItem("user"));
-const email = user.email;
+const email = JSON.parse(localStorage.getItem("user")).email;
 if (!email) {
     window.location.href = "/login/";
 }

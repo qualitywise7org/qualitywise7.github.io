@@ -41,7 +41,7 @@ googleLogin.addEventListener("click", async () => {
         .then(async (result) => {
             const credentials = GoogleAuthProvider.credentialFromResult(result);
             const user = result.user;
-            sessionStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("user", JSON.stringify(user));
             const docRef = doc(db, "user_profile", user.email);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
@@ -110,7 +110,7 @@ async function loginUser(email, password) {
         const user = userCredential.user;
 
         if (user.emailVerified) {
-            sessionStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("user", JSON.stringify(user));
             const docRef = doc(db, "user_profile", email);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
