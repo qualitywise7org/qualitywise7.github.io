@@ -42,6 +42,7 @@ googleLogin.addEventListener("click", async () => {
             const credentials = GoogleAuthProvider.credentialFromResult(result);
             const user = result.user;
             localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("email", user.email);
             const docRef = doc(db, "user_profile", user.email);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
@@ -111,17 +112,16 @@ async function loginUser(email, password) {
 
         if (user.emailVerified) {
             localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("email", user.email);
             const docRef = doc(db, "user_profile", email);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
                 localStorage.setItem('profile', true);
             }
-            if (redirect_url == "hiring") {
-                window.location.href = '../hiring/';
-            } else if (redirect_url) {
-                window.location.href = "../myaccount" + redirect_url;
+            if (redirect_url) {
+                window.location.href = redirect_url;
             } else {
-                window.location.href = "../myaccount";
+                window.location.href = "/";
             }
         } else {
             alert("Email is not verified");

@@ -1604,7 +1604,7 @@
       </div>
     </div>
     <script>
-      const mail = JSON.parse(localStorage.getItem("user")).email;
+      const mail = localStorage.getItem("email");
       if (!mail) {
         document.getElementById("profile").innerHTML =
           "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
