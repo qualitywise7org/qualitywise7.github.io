@@ -97,6 +97,7 @@ googleSignUp.addEventListener("click", async () => {
             const credentials = GoogleAuthProvider.credentialFromResult(result);
             const user = result.user;
             localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("email", user.email);
             window.location.href = "../myaccount";
         }).catch((error) => {
             const errorMessage = error.message;
