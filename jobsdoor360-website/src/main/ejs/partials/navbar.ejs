@@ -114,7 +114,7 @@
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <script>
-  const email = JSON.parse(localStorage.getItem("user")).email;
+  const email = localStorage.getItem("email");
   if (email) {
     document.getElementById("login-button").innerHTML = "Logout";
     document.getElementById("user-mail").innerHTML = email;
@@ -122,7 +122,7 @@
   } else {
     const login_button = document.getElementById("login-button");
     login_button.addEventListener("click", () => {
-      const email = JSON.parse(localStorage.getItem("user")).email;
+      const email = localStorage.getItem("email");
       if (email) {
         localStorage.clear();
       }

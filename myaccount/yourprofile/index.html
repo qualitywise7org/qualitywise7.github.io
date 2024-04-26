@@ -63,7 +63,7 @@
 ></script>
 <script type="text/javascript">
   function handleclick() {
-    const email = JSON.parse(localStorage.getItem("user")).email;
+    const email = localStorage.getItem("email");;
     if (email) {
       window.location.href = "/myaccount/jobsforyou";
     } else {
@@ -71,7 +71,7 @@
     }
   }
   function handleLoginButtonClick() {
-    const email = JSON.parse(localStorage.getItem("user")).email;
+    const email = localStorage.getItem("email");
     if (email) {
       localStorage.clear();
     }
@@ -202,7 +202,7 @@
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <script>
-  const email = JSON.parse(localStorage.getItem("user")).email;
+  const email = localStorage.getItem("email");
   if (email) {
     document.getElementById("login-button").innerHTML = "Logout";
     document.getElementById("user-mail").innerHTML = email;
@@ -210,7 +210,7 @@
   } else {
     const login_button = document.getElementById("login-button");
     login_button.addEventListener("click", () => {
-      const email = JSON.parse(localStorage.getItem("user")).email;
+      const email = localStorage.getItem("email");
       if (email) {
         localStorage.clear();
       }
