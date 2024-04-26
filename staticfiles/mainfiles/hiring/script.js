@@ -1,4 +1,4 @@
-const email = JSON.parse(localStorage.getItem("user")).email;
+const email = localStorage.getItem("email");
 if (!email) {
     window.location.href = "/login/?redirect_url=hiring";
 }
@@ -94,7 +94,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     async function applyForJob(event) {
         const button = event.target;
         const jobId = button.dataset.jobid;
-        const email = JSON.parse(localStorage.getItem("user")).email;
 
         if (email) {
             try {
