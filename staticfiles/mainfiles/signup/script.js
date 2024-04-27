@@ -96,7 +96,8 @@ googleSignUp.addEventListener("click", async () => {
         .then(async (result) => {
             const credentials = GoogleAuthProvider.credentialFromResult(result);
             const user = result.user;
-            localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("uid", user.uid);
+            localStorage.setItem("email", user.email);
             window.location.href = "../myaccount";
         }).catch((error) => {
             const errorMessage = error.message;
@@ -110,13 +111,15 @@ signupForm.addEventListener("submit", async (e) => {
     const username = document.getElementById("username").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const phoneNumber = document.getElementById("phoneNumber").value;
 
     try {
         document.getElementById("username").value = "";
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";
+        document.getElementById("phoneNumber").value = "";
 
-        const userCredential = await signUpUser(username, email, password);
+        const userCredential = await signUpUser(username,phoneNumber, email, password);
 
         // Send email verification
         await sendEmailVerification(auth.currentUser);
@@ -127,7 +130,7 @@ signupForm.addEventListener("submit", async (e) => {
     }
 });
 
-async function signUpUser(username, email, password) {
+async function signUpUser(username,phoneNumber, email, password) {
     const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -135,16 +138,18 @@ async function signUpUser(username, email, password) {
     );
 
     await updateProfile(userCredential.user, { displayName: username });
+    await saveUserDataToFirestore(userCredential.user.uid, username, email, phoneNumber);
 
     return userCredential;
 }
 
-async function saveUserDataToFirestore(userId, username, email) {
+async function saveUserDataToFirestore(userId, username, email,phoneNumber) {
     const db = getFirestore();
     const userDocRef = doc(db, "users", userId);
 
     await setDoc(userDocRef, {
         full_name: username,
+        phonenumber:phoneNumber,
         email: email,
         firstLogin: true,
     });
