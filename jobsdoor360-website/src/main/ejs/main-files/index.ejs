@@ -573,10 +573,7 @@
                   of projects available for purchase. Explore innovative
                   solutions tailored to propel your ambitions forward.
                   <br />
-                  <a
-                    href="/buyproject"
-                    target="_blank"
-                    class="btn btn-outline-info mt-2"
+                  <a href="/buyproject" class="btn btn-outline-info mt-2"
                     >Buy now</a
                   >
                 </div>
@@ -1040,12 +1037,13 @@
     </div>
     
     <script>
-      const mail = localStorage.getItem("email");
+      const mail = JSON.parse(localStorage.getItem("user")).email;
       if (!mail) {
         document.getElementById("profile").innerHTML =
           "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
       }
     </script>
+
     <script>
       $(document).ready(function () {
         $(document).on("click", function (event) {
