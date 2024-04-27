@@ -14,6 +14,10 @@
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <style>
       .forward_link {
         color: #3d3b40;
@@ -543,7 +547,11 @@
                   employers. Showcase your skills, experience, and achievements
                   to attract potential employers.
                   <br />
-                  <a href="/hiring/" class="btn btn-outline-info mt-2">View</a>
+                  <a
+                    href="hiring/?company=factorryott"
+                    class="btn btn-outline-info mt-2"
+                    >View</a
+                  >
                 </div>
               </div>
             </div>
@@ -730,6 +738,41 @@
                       alt="whatsapp"
                       style="width: 150px; height: 35px; border-radius: 5px"
                   /></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buy projects -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTen">
+                <button
+                  class="accordion-button collapsed fs-5"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTen"
+                  aria-expanded="false"
+                  aria-controls="collapseTen"
+                >
+                  Buy Projects
+                </button>
+              </h2>
+              <div
+                id="collapseTen"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTen"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Unlock opportunities and expand your portfolio with our range
+                  of projects available for purchase. Explore innovative
+                  solutions tailored to propel your ambitions forward.
+                  <br />
+                  <a
+                    href="/buyproject"
+                    target="_blank"
+                    class="btn btn-outline-info mt-2"
+                    >Buy now</a
+                  >
                 </div>
               </div>
             </div>
@@ -973,10 +1016,7 @@
           </div>
         </div>
 
-        <!-- jQuery and Bootstrap JS -->
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-
+        <!-- accordion script -->
         <script>
           $(document).ready(function () {
             $(".accordion-button").click(function () {
@@ -993,6 +1033,74 @@
         </script>
       </div>
     </section>
+
+    <!-- promotion  -->
+    <div
+      class="container-fluid text-center py-4"
+      style="background-color: rgb(146 155 157 / 62%)"
+    >
+      <div class="container" id="promoContent">
+        <div class="row">
+          <div class="col-md-3 my-3 pt-2">
+            <strong class="fs-2 counter" id="counter1">60</strong>
+            <span class="fs-1">+</span>
+            <p class="fs-5">Total placement class conducted</p>
+          </div>
+          <div class="col-md-3 my-3 pt-2">
+            <strong class="fs-2 counter" id="counter2">80</strong>
+            <span class="fs-1">+</span>
+            <p class="fs-5">Total consultancy provided</p>
+          </div>
+          <div class="col-md-6 my-3">
+            <strong class="fs-3"> Vinay Kumar</strong>
+            <p style="text-align: justify; font-size: 18px" class="px-3">
+              with ranks and qualification(AIEEE(now JEE mains) AIR 10630, state
+              level rank 602, PET rank 126, Btech + Mtech from ABV- IIITM
+              Gwalior(top college of India),
+              <br />
+              <strong>10 year experience in IT companies</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Intersection Observer ki settings
+      const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      };
+
+      // Intersection Observer ka callback function
+      const callback = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startCounter(entry.target);
+          }
+        });
+      };
+
+      // Intersection Observer ka object
+      const observer = new IntersectionObserver(callback, options);
+      document
+        .querySelectorAll(".counter")
+        .forEach((counter) => observer.observe(counter));
+
+      // startCounter() function
+      function startCounter(counterElement) {
+        var targetNumber = parseInt(counterElement.innerText, 10);
+        var count = 0;
+        var interval = setInterval(function () {
+          count++;
+          counterElement.innerText = count;
+          if (count === targetNumber) {
+            clearInterval(interval);
+          }
+        }, 50);
+      }
+    </script>
 
     <!-- Testimonials Section -->
     <section>
@@ -1394,13 +1502,13 @@
         </div>
       </div>
     </div>
-    <script>
-      const mail = JSON.parse(localStorage.getItem("user")).email;
-      if (!mail) {
-        document.getElementById("profile").innerHTML =
-          "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
-      }
-    </script>
+    <s>
+      const mail = JSON.parse(localStorage.getItem("user")).email; if (!mail) {
+      document.getElementById("profile").innerHTML = "<a
+        href="/login/?redirect_url=/yourprofile"
+        >Create your profile to get jobs</a
+      >"; }
+    </s>
 
     <script>
       $(document).ready(function () {

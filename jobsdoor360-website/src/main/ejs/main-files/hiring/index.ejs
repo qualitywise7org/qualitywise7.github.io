@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/hiring/style.css" />
+    <%- include('../../partials/head.ejs') %>
+  </head>
 
-<head>
-  <title>Job Listings</title>
-  <link rel="stylesheet" href="/staticfiles/mainfiles/hiring/style.css" />
-  <%- include('../../partials/head.ejs') %>
-</head>
-
-<body>
-  <%- include('../../partials/navbar.ejs') %>
+  <body>
+    <%- include('../../partials/navbar.ejs') %>
     <table id="jobTable">
       <thead>
         <tr>
@@ -28,21 +27,26 @@
     <div class="parent">
       <div class="child">
         <h6>
-          <a style="
+          <a
+            style="
               text-decoration: none;
               color: rgb(255, 255, 255);
               background-color: rgb(151, 134, 169);
               border-radius: 10px;
               padding: 5px 9px;
               cursor: pointer;
-            " onclick="{handleclick()}">
+            "
+            onclick="{handleclick()}"
+          >
             Click here to view other jobs for you.
           </a>
         </h6>
       </div>
     </div>
-    <script src="/staticfiles/mainfiles/hiring/script.js" type="module"></script>
+    <script
+      src="/staticfiles/mainfiles/hiring/script.js"
+      type="module"
+    ></script>
     <%- include('../../partials/footer.ejs') %>
-</body>
-
+  </body>
 </html>
