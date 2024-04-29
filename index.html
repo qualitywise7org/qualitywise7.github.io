@@ -741,6 +741,38 @@
                 </div>
               </div>
             </div>
+
+            <!-- Buy projects -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTen">
+                <button
+                  class="accordion-button collapsed fs-5"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTen"
+                  aria-expanded="false"
+                  aria-controls="collapseTen"
+                >
+                  Buy Projects
+                </button>
+              </h2>
+              <div
+                id="collapseTen"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTen"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Unlock opportunities and expand your portfolio with our range
+                  of projects available for purchase. Explore innovative
+                  solutions tailored to propel your ambitions forward.
+                  <br />
+                  <a href="/buyproject" class="btn btn-outline-info mt-2"
+                    >Buy now</a
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1339,14 +1371,14 @@
   <button id="dislike-button">
     <i class="fa-solid fa-thumbs-down"></i>
   </button> -->
-  <div class="whatsapp-chat">
+  <!-- <div class="whatsapp-chat">
     <a
       href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
       target="_blank"
     >
       <i class="fab fa-whatsapp"></i>
     </a>
-  </div>
+  </div> -->
   <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
     <i class="fa-solid fa-chevron-up"></i>
   </button>
@@ -1470,13 +1502,15 @@
         </div>
       </div>
     </div>
+
     <script>
-      const mail = localStorage.getItem("email");
+      const mail = JSON.parse(localStorage.getItem("user")).email;
       if (!mail) {
         document.getElementById("profile").innerHTML =
           "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
       }
     </script>
+
     <script>
       $(document).ready(function () {
         $(document).on("click", function (event) {
