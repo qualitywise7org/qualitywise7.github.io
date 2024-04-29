@@ -676,7 +676,7 @@ body {
 
 /* Footer */
 
-.footer-container {
+/* .footer-container {
   background-color: #000000;
 }
 
@@ -694,9 +694,9 @@ body {
   padding: 2rem 4rem;
   gap: 4rem;
   grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
-}
+} */
 
-.footer .column {
+/* .footer .column {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -739,7 +739,7 @@ body {
 
 .footer .contact-icons a i {
   font-size: 1rem;
-}
+} */
 
 /* Whatsapp Chat Button and back to top */
 
