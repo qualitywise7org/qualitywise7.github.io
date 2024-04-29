@@ -676,6 +676,20 @@ body {
 
 /* Footer */
 
+.footer{
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 1000;
+}
+.footer li a{
+  text-decoration: none;
+  color: rgb(235, 229, 229);
+  font-size: 14px;
+}
+.footer li a:hover{
+  text-decoration: underline;
+  color: rgb(209, 228, 244);
+}
+
 /* .footer-container {
   background-color: #000000;
 }
