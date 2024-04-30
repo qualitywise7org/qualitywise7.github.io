@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Log in</title>
-    <link rel="stylesheet" href="/staticfiles/mainfiles/login/style.css" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/forgotpassword/style.css" />
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -207,8 +207,8 @@
   }
 </script>
 
-    <div class="login_parent">
-      <div class="login-container" style="text-align: center">
+    <div class="forgot_parent">
+      <div class="forgot-container" style="text-align: center">
         <a
           class="logo"
           style="
@@ -224,45 +224,11 @@
             alt="logo"
           />
         </a>
-        <h2 class="login-head">Login</h2>
-        <form id="login-form">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required placeholder="Email"/>
-
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required />
-
-          <button type="submit" style="margin-top: 20px">Login</button>
+        <h2 class="forgot-head">Reset Password</h2>
+        <form id="forgot-form">
+          <input type="email" id="email" name="email" placeholder="Enter email" required />
+          <button type="submit" style="margin-top: 10px">Send Mail</button>
         </form>
-        <p class="bottom-heading">
-          <span>
-            <a href="/forgotpassword/">Forgot password?</a>
-          </span>
-        </p>
-
-        <!-- <button
-          id="google-login-btn"
-          class="google-button"
-          style="
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-          "
-        >
-          <i class="fab fa-google"></i><span>Login with Google</span>
-        </button> -->
-        <div class="lines-text">
-          <span>OR</span>
-        </div>
-
-        <p class="bottom-heading">
-          Do not have an account?
-          <span>
-            <a href="/signup/">Sign Up</a>
-          </span>
-        </p>
       </div>
     </div>
     <footer class="container-fluid bg-black">
@@ -534,6 +500,6 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
-    <script type="module" src="/staticfiles/mainfiles/login/script.js"></script>
+    <script type="module" src="/staticfiles/mainfiles/forgotpassword/script.js"></script>
   </body>
 </html>
