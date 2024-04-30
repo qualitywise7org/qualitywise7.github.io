@@ -1,8 +1,3 @@
-const email = localStorage.getItem("email");
-if (!email) {
-    window.location.href = "/login/?redirect_url=hiring";
-}
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
 import {
     getStorage,
