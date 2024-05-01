@@ -687,6 +687,9 @@ body {
   font-family: "Ysabeau SC", sans-serif;
   font-weight: 1000;
 }
+.footer li {
+  list-style-type: none;
+}
 .footer li a{
   text-decoration: none;
   color: rgb(235, 229, 229);
