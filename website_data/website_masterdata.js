@@ -355,12 +355,14 @@ const qualification_masterdata = [
   {
     "code": "qa",
     "name": "QA - Quality Assurance",
-    "minimum_skills_required": "test case writing, manual testing, automation testing, selenium, jmeter",
+    "minimum_skills_required": "test case writing, manual testing, automation testing, selenium, jmeter, bug tracking, test planning, regression testing, performance testing, quality assurance, CI/CD, API testing, exploratory testing, agile methodology, defect management, test strategy, smoke testing, acceptance testing, black box testing, white box testing, load testing, usability testing, security testing, TDD (Test-Driven Development), BDD (Behavior-Driven Development), code review, test automation framework, SQL, continuous integration, web testing, mobile testing, cross-browser testing, test documentation, validation, verification, root cause analysis, test reporting",
     "minimum_qualifications": [
       "graduation"
     ],
     "preferred_streams": [
-      "any"
+      "Computer Science",
+      "Information Technology",
+      "Engineering"
     ],
     "entrance_exam": [
       "interview"

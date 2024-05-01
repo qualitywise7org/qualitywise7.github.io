@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <title>Job Listings</title>
-    <link rel="stylesheet" href="/staticfiles/style.css" />
     <%- include('../../../partials/head.ejs') %>
   </head>
   <body>
@@ -14,6 +13,17 @@
           <h4 class="text-center text-white bg-dark p-2 mb-4">
             Candidate List
           </h4>
+        </div>
+      </div>
+      <!-- Search bar -->
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="Search candidates..."
+          />
         </div>
       </div>
       <div class="row">
@@ -29,7 +39,7 @@
               </tr>
             </thead>
             <tbody id="users_data" class="text-center">
-              <!-- Users'data will be added here -->
+              <!-- Users' data will be added here -->
             </tbody>
           </table>
         </div>
@@ -78,7 +88,39 @@
               <td>${data.about.email || "not found"}</td>
               <td>${data.education.degree || "not found"}</td>
               <td>${data.skills || "not found"}</td>`;
-            users_data.appendChild(row);
+            jobListings.appendChild(row);
+          });
+
+          // Search functionality
+          const searchInput = document.getElementById("searchInput");
+          searchInput.addEventListener("input", function () {
+            const query = searchInput.value.toLowerCase();
+            const rows = jobListings.querySelectorAll("tr");
+
+            rows.forEach((row) => {
+              const name = row
+                .querySelector("td:nth-child(2)")
+                .textContent.toLowerCase();
+              const email = row
+                .querySelector("td:nth-child(3)")
+                .textContent.toLowerCase();
+              const qualification = row
+                .querySelector("td:nth-child(4)")
+                .textContent.toLowerCase();
+              const skill = row
+                .querySelector("td:nth-child(5)")
+                .textContent.toLowerCase();
+              if (
+                name.includes(query) ||
+                email.includes(query) ||
+                qualification.includes(query) ||
+                skill.includes(query)
+              ) {
+                row.style.display = "";
+              } else {
+                row.style.display = "none";
+              }
+            });
           });
         } catch (error) {
           console.error("Error retrieving users' data:", error);

@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <title>Job Listings</title>
-    <link rel="stylesheet" href="/staticfiles/style.css" />
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -210,6 +209,17 @@
           </h4>
         </div>
       </div>
+      <!-- Search bar -->
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="Search candidates..."
+          />
+        </div>
+      </div>
       <div class="row">
         <div class="col">
           <table class="table table-bordered table-striped bg-light">
@@ -223,7 +233,7 @@
               </tr>
             </thead>
             <tbody id="users_data" class="text-center">
-              <!-- Users'data will be added here -->
+              <!-- Users' data will be added here -->
             </tbody>
           </table>
         </div>
@@ -272,7 +282,39 @@
               <td>${data.about.email || "not found"}</td>
               <td>${data.education.degree || "not found"}</td>
               <td>${data.skills || "not found"}</td>`;
-            users_data.appendChild(row);
+            jobListings.appendChild(row);
+          });
+
+          // Search functionality
+          const searchInput = document.getElementById("searchInput");
+          searchInput.addEventListener("input", function () {
+            const query = searchInput.value.toLowerCase();
+            const rows = jobListings.querySelectorAll("tr");
+
+            rows.forEach((row) => {
+              const name = row
+                .querySelector("td:nth-child(2)")
+                .textContent.toLowerCase();
+              const email = row
+                .querySelector("td:nth-child(3)")
+                .textContent.toLowerCase();
+              const qualification = row
+                .querySelector("td:nth-child(4)")
+                .textContent.toLowerCase();
+              const skill = row
+                .querySelector("td:nth-child(5)")
+                .textContent.toLowerCase();
+              if (
+                name.includes(query) ||
+                email.includes(query) ||
+                qualification.includes(query) ||
+                skill.includes(query)
+              ) {
+                row.style.display = "";
+              } else {
+                row.style.display = "none";
+              }
+            });
           });
         } catch (error) {
           console.error("Error retrieving users' data:", error);
@@ -281,8 +323,8 @@
     </script>
 
     <footer class="container-fluid bg-black">
-  <div class="container text-white">
-    <div class="row pt-5">
+  <div class="text-white">
+    <div class="row pt-5" style="padding-left: 100px">
       <div class="col-md-4 mb-3">
         <ul class="footer">
           <h4 class="fs-3">Quick-Links</h4>

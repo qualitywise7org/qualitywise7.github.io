@@ -12,29 +12,35 @@
 
   <body>
     <%- include('../../../partials/navbar.ejs') %>
-    <section class="profile_analyzer">
-      <h1 style="font-family: serif">Profile Analyzer</h1>
-      <form id="profileForm" class="profileForm">
-        <div class="main-user-info">
-          <div class="user-input-box">
-            <label for="jobType">Job Type:</label>
-            <select type="text" id="jobType" name="jobType"></select>
-          </div>
+    <section class="container">
+      <h1 style="font-family: serif; margin-top: -35px">Profile Analyzer</h1>
+      <div class="card">
+        <div class="card-body">
+          <form id="profileForm">
+            <div class="main-user-info">
+              <div class="user-input-box">
+                <label for="jobType">Job Type:</label>
+                <select type="text" id="jobType" name="jobType"></select>
+              </div>
 
-          <div class="user-input-box">
-            <label for="industry">Industry:</label>
-            <select type="text" id="industry" name="industry"></select>
-          </div>
+              <div class="user-input-box">
+                <label for="industry">Industry:</label>
+                <select type="text" id="industry" name="industry">
+                  <option value="">none</option>
+                </select>
+              </div>
 
-          <div class="user-input-box">
-            <label for="profile">Work Profile:</label>
-            <select type="text" id="profile" name="profile"></select>
-          </div>
+              <div class="user-input-box">
+                <label for="profile">Work Profile:</label>
+                <select type="text" id="profile" name="profile"></select>
+              </div>
+            </div>
+            <div class="form-submit-btn">
+              <input type="submit" id="submitButton" />
+            </div>
+          </form>
         </div>
-        <div class="form-submit-btn">
-          <input type="submit" id="submitButton" />
-        </div>
-      </form>
+      </div>
 
       <div class="container mt-3 mr-4 ml-4">
         <div class="row justify-content-center">
