@@ -3,6 +3,15 @@
   <head>
     <title>Job Listings</title>
     <%- include('../../../partials/head.ejs') %>
+    <style>
+      @media (max-width: 576px) {
+        .table-responsive {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+          max-width: 100%; /* Prevent table from overflowing its container */
+        }
+      }
+    </style>
   </head>
   <body>
     <%- include('../../../partials/navbar.ejs') %>
@@ -28,20 +37,23 @@
       </div>
       <div class="row">
         <div class="col">
-          <table class="table table-bordered table-striped bg-light">
-            <thead class="text-white text-center">
-              <tr>
-                <th class="text-center">Id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Qualification</th>
-                <th>Skill</th>
-              </tr>
-            </thead>
-            <tbody id="users_data" class="text-center">
-              <!-- Users' data will be added here -->
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <!-- Use table-responsive class -->
+            <table class="table table-bordered table-striped bg-light">
+              <thead class="text-white text-center">
+                <tr>
+                  <th class="text-center">Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Qualification</th>
+                  <th>Skill</th>
+                </tr>
+              </thead>
+              <tbody id="users_data" class="text-center">
+                <!-- Users' data will be added here -->
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
