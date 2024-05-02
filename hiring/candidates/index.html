@@ -65,6 +65,15 @@
   }
 </script>
 
+    <style>
+      @media (max-width: 576px) {
+        .table-responsive {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+          max-width: 100%; /* Prevent table from overflowing its container */
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -222,20 +231,23 @@
       </div>
       <div class="row">
         <div class="col">
-          <table class="table table-bordered table-striped bg-light">
-            <thead class="text-white text-center">
-              <tr>
-                <th class="text-center">Id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Qualification</th>
-                <th>Skill</th>
-              </tr>
-            </thead>
-            <tbody id="users_data" class="text-center">
-              <!-- Users' data will be added here -->
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <!-- Use table-responsive class -->
+            <table class="table table-bordered table-striped bg-light">
+              <thead class="text-white text-center">
+                <tr>
+                  <th class="text-center">Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Qualification</th>
+                  <th>Skill</th>
+                </tr>
+              </thead>
+              <tbody id="users_data" class="text-center">
+                <!-- Users' data will be added here -->
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -324,7 +336,7 @@
 
     <footer class="container-fluid bg-black">
   <div class="text-white">
-    <div class="row pt-5" style="padding-left: 100px">
+    <div class="row pt-5 text-center" style="margin-right: 22px">
       <div class="col-md-4 mb-3">
         <ul class="footer">
           <h4 class="fs-3">Quick-Links</h4>
