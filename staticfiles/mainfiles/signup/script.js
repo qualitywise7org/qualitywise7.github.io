@@ -152,6 +152,7 @@ async function saveUserDataToFirestore(userId, username, email,phoneNumber) {
         phonenumber:phoneNumber,
         email: email,
         firstLogin: true,
+        isAdmin  : false,
     });
 }
 
