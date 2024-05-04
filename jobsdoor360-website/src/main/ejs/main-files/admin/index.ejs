@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Authorize Admin</title>
+    <link rel="icon" href="./../fevicon.ico" type="profile" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/style.css">
+    <script type="module" src="/staticfiles/mainfiles/admin/script.js"></script>
+    <%- include('../../partials/head.ejs'); %>
+  </head>
+
+  <body>
+    <%- include('../../partials/navbar.ejs'); %>
+    <div class="login-container d-flex justify-content-center flex-column align-items-center py-5 my-5">
+      <h2 class="login-head">Admin Login</h2>
+      <form id="login-form" class="d-flex flex-column gap-4">
+        <label for="email" style="text-align: center"
+          >Credential for Admin:</label
+        >
+        <input type="text" id="code" name="code" style="padding-block: 8px; padding-inline: 10px;" required />
+
+        <button type="submit" style="background-color: #586ba6; color: white; padding-block: 10px; border: none; border-radius: 5px;">Login</button>
+      </form>
+
+      <div class="lines-text"></div>
+    </div>
+    <%- include('../../partials/footer.ejs'); %>
+  </body>
+</html>
