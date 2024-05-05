@@ -8,7 +8,7 @@ function startCountdown() {
 
         if (count === 0) {
             clearInterval(countdown);
-            window.location.href = "/myaccount/jobsforyou";
+            jobsforyou();
         }
 
         count--;
@@ -17,7 +17,7 @@ function startCountdown() {
 
 // Function to open Google Meet in a new tab
 function jobsforyou() {
-    window.open("https://meet.google.com/byp-mzic-hqi", "_blank");
+    window.location.href = "/myaccount/jobsforyou";
 }
 
 // Event listener for the "Join Now" button
