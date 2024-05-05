@@ -5,41 +5,6 @@ if (!email) {
     window.location.href = "/login/";
 }
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-import {
-    getStorage,
-    ref,
-    uploadBytes,
-    getDownloadURL,
-} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js";
-
-import {
-    getFirestore,
-    addDoc,
-    getDoc,
-    setDoc,
-    doc,
-    updateDoc,
-    collection,
-} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
-    authDomain: "jobsdoor360-39b87.firebaseapp.com",
-    databaseURL: "https://jobsdoor360-39b87-default-rtdb.firebaseio.com",
-    projectId: "jobsdoor360-39b87",
-    storageBucket: "jobsdoor360-39b87.appspot.com",
-    messagingSenderId: "326416618185",
-    appId: "1:326416618185:web:de19e90fe4f06006ef3318",
-    measurementId: "G-60RHEMJNM6",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
-const storageRef = ref(storage);
-
 
 async function isUser() {
     console.log("isUser");
