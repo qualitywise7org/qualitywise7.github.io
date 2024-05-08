@@ -27,10 +27,10 @@ body {
 .text-uppercase {
   letter-spacing: 0.2rem;
 }
-ul li {
+/* ul li {
   text-align: start;
-  /* text-justify: auto; */
-}
+  text-justify: auto;
+} */
 .image {
   text-align: center;
   width: 150px;

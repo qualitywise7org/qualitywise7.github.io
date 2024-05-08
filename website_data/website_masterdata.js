@@ -1,6 +1,6 @@
 
 
-const category_masterdata = [
+    const category_masterdata = [
   {
     "code": "general",
     "name": "General"
@@ -23,7 +23,7 @@ const category_masterdata = [
   }
 ];
 
-const subject_masterdata = [
+    const subject_masterdata = [
   {
     "code": "science",
     "name": "Science"
@@ -42,7 +42,7 @@ const subject_masterdata = [
   }
 ];
 
-const stream_masterdata = [
+    const stream_masterdata = [
   {
     "code": "cs",
     "name": "Computer Science"
@@ -65,7 +65,7 @@ const stream_masterdata = [
   }
 ];
 
-const qualification_masterdata = [
+    const qualification_masterdata = [
   {
     "code": "10",
     "name": "10th"
@@ -125,7 +125,7 @@ const qualification_masterdata = [
   }
 ];
 
-  const jobtype_masterdata = [
+    const jobtype_masterdata = [
   {
     "code": "private",
     "name": "Private"
@@ -135,8 +135,8 @@ const qualification_masterdata = [
     "name": "Government"
   }
 ];
-  
-  const industry_masterdata = [
+    
+    const industry_masterdata = [
   {
     "code": "cs_it_engineering",
     "name": "CS/IT"
@@ -200,8 +200,8 @@ const qualification_masterdata = [
     "name": "Environmental Engineering"
   }
 ];
-  
-  const profile_masterdata = [
+    
+    const profile_masterdata = [
   {
     "code": "web_developer",
     "name": "Web Developer(Reactjs, html, css, js etc)",
@@ -278,6 +278,9 @@ const qualification_masterdata = [
         "title": "How Much Salary Should You Expect As A Fresher Developer",
         "url": "https://www.youtube.com/watch?v=QiJ20NDOpSc&ab_channel=Simplilearn"
       }
+    ],
+    "keywords": [
+      "python"
     ]
   },
   {
@@ -600,10 +603,6 @@ const qualification_masterdata = [
     ]
   },
   {
-    "code": "all",
-    "name": "All"
-  },
-  {
     "code": "helper",
     "name": "Helper",
     "minimum_skills_required": "good nature",
@@ -644,5 +643,245 @@ const qualification_masterdata = [
         "url": "https://www.youtube.com/watch?v=QVEuKl54mOE"
       }
     ]
+  },
+  {
+    "code": "group_b",
+    "name": "Group B",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "sports",
+    "name": "Sports",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "army",
+    "name": "Army",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "junior_executive",
+    "name": "Junior Executive",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "iti",
+    "name": "ITI",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "officer",
+    "name": "Officer",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "constable",
+    "name": "Constable",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "sub_inspector",
+    "name": "Sub Inspector",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "administrative",
+    "name": "Administrative",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "android_developer",
+    "name": "Android Developer",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "apprentice",
+    "name": "Apprentice",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "ui",
+    "name": "UI",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "ux",
+    "name": "UX",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "software_engineer",
+    "name": "Software Engineer",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": [],
+    "keywords": [
+      "developer",
+      "wordpress"
+    ]
+  },
+  {
+    "code": "data_science",
+    "name": "Data Science",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": [],
+    "keywords": [
+      "big_data",
+      "big data",
+      "data scientist"
+    ]
+  },
+  {
+    "code": "computer_hardware",
+    "name": "Computer Hardware",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "consultant",
+    "name": "Consultant",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "data_analytics",
+    "name": "Data Analytics",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "english_literature",
+    "name": "English Literature",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "research",
+    "name": "Research",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "receptionist",
+    "name": "Receptionist",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "coordinator",
+    "name": "Coordinator",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
+  },
+  {
+    "code": "voice_accent",
+    "name": "voice/Accent",
+    "minimum_skills_required": "",
+    "minimum_qualifications": [],
+    "preferred_streams": [
+      "any"
+    ],
+    "life_style": []
   }
 ];
+    
