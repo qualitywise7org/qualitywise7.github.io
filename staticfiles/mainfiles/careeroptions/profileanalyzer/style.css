@@ -1,4 +1,4 @@
-.profile_analyzer {
+/* .profile_analyzer {
   padding: 2rem;
 }
 
@@ -13,10 +13,10 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
-}
+} */
 
 /* form start */
-.main-user-info {
+/* .main-user-info {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -24,12 +24,12 @@ h1 {
   border-radius: 5px;
   margin: 5px;
   padding: 10px;
-}
+} */
 /* .user-input-box:nth-child{
     justify-content: end;
 } */
 
-.user-input-box {
+/* .user-input-box {
   display: flex;
   flex-wrap: wrap;
   width: 30%;
@@ -69,7 +69,65 @@ h1 {
 .form-submit-btn input:hover {
   background-color: #0056b3;
   color: #333;
+} */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffffff, #cae1ef);
 }
+.form-group {
+  margin-bottom: 30px;
+}
+.bg{
+  background: linear-gradient(100deg, #3a5bed, #33aad9);
+  padding: 5px;
+  color: white;
+}
+label {
+  font-weight: 600;
+  color: #000;
+}
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #188bdd;
+  box-shadow: 0 0 10px rgba(118, 75, 162, 0.3);
+}
+.buttn {
+  background: linear-gradient(135deg, #3a5bed, #42b0db);
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease;
+}
+.buttn:hover {
+  box-shadow: 0 0 20px rgba(215, 238, 239, 0.5);
+}
+.buttn i {
+  margin-right: 8px;
+}
+/* .input-group-append-text {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+} */
 
 /*form end */
 
@@ -77,10 +135,10 @@ h1 {
   margin-top: 50px;
 }
 
-section {
+/* section {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .job-head {
   display: flex;
@@ -135,7 +193,7 @@ section {
   color: #666;
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .loading {
     display: block;
     font-size: 1rem;
@@ -155,7 +213,7 @@ section {
     justify-content: center;
     align-items: center;
   }
-}
+} */
 
 /* .results {
     display: none;

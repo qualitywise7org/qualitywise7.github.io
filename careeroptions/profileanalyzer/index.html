@@ -7,6 +7,10 @@
       rel="stylesheet"
       href="/staticfiles/mainfiles/careeroptions/profileanalyzer/style.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -206,50 +210,59 @@
   }
 </script>
 
-    <section class="container">
-      <h1 style="font-family: serif; margin-top: -35px">Profile Analyzer</h1>
-      <div class="card">
-        <div class="card-body">
-          <form id="profileForm">
-            <div class="main-user-info">
-              <div class="user-input-box">
-                <label for="jobType">Job Type:</label>
-                <select type="text" id="jobType" name="jobType"></select>
-              </div>
 
-              <div class="user-input-box">
-                <label for="industry">Industry:</label>
-                <select type="text" id="industry" name="industry">
-                  <option value="">none</option>
-                </select>
-              </div>
-
-              <div class="user-input-box">
-                <label for="profile">Work Profile:</label>
-                <select type="text" id="profile" name="profile"></select>
+    <div class="container">
+      <div style="max-width: 400px; margin: 0 auto; margin-top: -30px">
+        <h1 class="bg text-center mb-5 rounded">Profile Analyzer</h1>
+        <form id="searchForm">
+          <div class="form-group">
+            <label for="jobType">Job Type</label>
+            <select id="jobType" class="form-control"></select>
+          </div>
+          <div class="form-group" style="display: none">
+            <label for="industry">Industry</label>
+            <select id="industry" class="form-control">
+              All
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="workProfile">Work Profile</label>
+            <div class="input-group">
+              <select type="text" id="profile" class="form-control"></select>
+              <div class="input-group-append">
+                <span class="input-group-text input-group-append-text"
+                  ><i class="fas fa-user-tie"></i
+                ></span>
               </div>
             </div>
-            <div class="form-submit-btn">
-              <input type="submit" id="submitButton" />
+          </div>
+          <br />
+          <button
+            type="submit"
+            class="btn btn-block buttn text-white"
+            id="submitButton"
+          >
+            <i class="fas fa-paper-plane"></i> Submit
+          </button>
+        </form>
+      </div>
+      <br />
+      <div class="row">
+        <div class="container mt-3">
+          <div class="row justify-content-center">
+            <div class="col job-head">
+              <h2 class="jobs-header text-center">Jobs</h2>
             </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="container mt-3 mr-4 ml-4">
-        <div class="row justify-content-center">
-          <div class="col job-head">
-            <h2 class="jobs-header text-center">Jobs</h2>
           </div>
-        </div>
-        <div id="loading" class="loading">getting jobs for you...</div>
-        <div class="row">
-          <div class="col">
-            <div id="results" class="result-field"></div>
+          <div id="loading" class="loading">getting jobs for you...</div>
+          <div class="row">
+            <div class="col">
+              <div id="results" class="result-field"></div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- Footer -->
 
@@ -491,6 +504,7 @@
     </div>
   </div>
 </div>
+
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -593,5 +607,13 @@
       src="/staticfiles/mainfiles/careeroptions/profileanalyzer/script.js"
     ></script>
     <script type="module" src="/staticfiles/script.js"></script>
+
+    <script>
+      document
+        .getElementById("searchForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission behavior
+        });
+    </script>
   </body>
 </html>

@@ -251,9 +251,7 @@
                   provide comprehensive training, covering both technical and
                   soft skills.
                   <br />
-                  <a
-                    href="/placement/"
-                    class="mt-2 btn btn-outline-info"
+                  <a href="/placement/" class="mt-2 btn btn-outline-info"
                     >View</a
                   >
                 </div>
@@ -852,7 +850,10 @@
           </div>
           <div class="col-md-6 my-3">
             <strong class="fs-3"> Vinay Kumar</strong>
-            <p style="text-align: center; font-size: 18px; margin-top: 8px;"  class="px-3">
+            <p
+              style="text-align: center; font-size: 18px; margin-top: 8px"
+              class="px-3"
+            >
               with ranks and qualification(AIEEE(now JEE mains) AIR 10630, state
               level rank 602, PET rank 126, Btech + Mtech from ABV- IIITM
               Gwalior(top college of India),
@@ -982,55 +983,6 @@
     </section>
 
     <%- include('../partials/footer.ejs') %>
-
-    <!-- The Bootstrap Modal -->
-    <div
-      class="modal fade"
-      id="myModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              What Can We Improve on Our Website?
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <textarea
-              id="feedback"
-              class="form-control mb-2"
-              placeholder="Feedback..."
-            ></textarea>
-            <input
-              type="text"
-              id="phoneNumber"
-              class="form-control"
-              placeholder="Phone number..."
-            />
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              Close
-            </button>
-            <button id="submitFeedback" class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script>
       const mail = JSON.parse(localStorage.getItem("user")).email;

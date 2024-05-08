@@ -1,4 +1,4 @@
-.container {
+/* .container {
   margin-top: 50px;
   margin-bottom: 73px;
 }
@@ -27,11 +27,11 @@ section {
   padding: 0.5rem;
   margin-bottom: 20px;
   text-align: center;
-}
+} */
 
-.filter-form {
+/* .filter-form {
   width: 50%;
-}
+} */
 
 .loading {
   display: block;
@@ -69,7 +69,7 @@ section {
 
 .username {
   padding: 100px;
-}
+} */
 
 .name {
   background-color: #6c757d;
@@ -93,4 +93,54 @@ section {
 .user_n {
   display: flex;
   justify-content: center;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffffff, #cae1ef);
+  color: #000;
+}
+.bg{
+  background: linear-gradient(90deg, #3255f1, #1bace5);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  font-weight: 600;
+  color: #000;
+}
+input[type="text"],
+select {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #188bdd;
+  box-shadow: 0 0 10px rgba(118, 75, 162, 0.3);
+}
+.buttn {
+  background: linear-gradient(135deg, #3255f1, #1bace5);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+.buttn:hover {
+  box-shadow: 0 0 20px rgba(137, 140, 141, 0.5);
+}
+.buttn i {
+  margin-right: 8px;
 }

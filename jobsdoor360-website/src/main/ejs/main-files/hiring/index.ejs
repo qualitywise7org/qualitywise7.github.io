@@ -4,26 +4,37 @@
     <title>Job Listings</title>
     <link rel="stylesheet" href="/staticfiles/mainfiles/hiring/style.css" />
     <%- include('../../partials/head.ejs') %>
+    <style>
+      th,
+      td {
+        white-space: nowrap;
+      }
+    </style>
   </head>
 
   <body>
     <%- include('../../partials/navbar.ejs') %>
-    <table id="jobTable">
-      <thead>
-        <tr>
-          <th>Job Title</th>
-          <th>Stipend</th>
-          <th>Job Role</th>
-          <th>Location</th>
-          <th>Company Name</th>
-          <th>Job Description</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="jobListings">
-        <!-- Job listings will be added here -->
-      </tbody>
-    </table>
+    <div class="container-fluid">
+      <div class="table-responsive">
+        <table class="table table-bordered text-center" id="jobTable">
+          <thead class="table-light">
+            <tr>
+              <th>Job Title</th>
+              <th>Stipend</th>
+              <th>Job Role</th>
+              <th>Location</th>
+              <th>Company Name</th>
+              <th>Job Description</th>
+              <th>Apply</th>
+            </tr>
+          </thead>
+          <tbody id="jobListings">
+            <!-- Job listings will be added here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <div class="parent">
       <div class="child">
         <h6>
