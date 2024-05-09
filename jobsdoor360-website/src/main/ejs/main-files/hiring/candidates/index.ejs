@@ -57,7 +57,7 @@
         </div>
       </div>
     </div>
-
+    <%- include('../../../partials/footer.ejs') %>
     <script type="module">
       const email = localStorage.getItem("email");
       if (!email) {
@@ -118,7 +118,5 @@
         }
       });
     </script>
-
-    <%- include('../../../partials/footer.ejs') %>
   </body>
 </html>
