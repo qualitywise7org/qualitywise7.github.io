@@ -251,89 +251,6 @@
         </div>
       </div>
     </div>
-
-    <script type="module">
-      const email = localStorage.getItem("email");
-      if (!email) {
-        window.location.href = "/login/?redirect_url=hiring";
-      }
-
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-      import {
-        getFirestore,
-        collection,
-        getDocs,
-      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
-        authDomain: "jobsdoor360-39b87.firebaseapp.com",
-        databaseURL: "https://jobsdoor360-39b87-default-rtdb.firebaseio.com",
-        projectId: "jobsdoor360-39b87",
-        storageBucket: "jobsdoor360-39b87.appspot.com",
-        messagingSenderId: "326416618185",
-        appId: "1:326416618185:web:de19e90fe4f06006ef3318",
-        measurementId: "G-60RHEMJNM6",
-      };
-
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-
-      document.addEventListener("DOMContentLoaded", async function () {
-        const jobListings = document.getElementById("users_data");
-
-        try {
-          const querySnapshot = await getDocs(collection(db, "user_profile"));
-          let id = 1; // Initialize ID counter
-          querySnapshot.forEach((doc) => {
-            const data = doc.data();
-            const row = document.createElement("tr");
-            row.innerHTML = `
-              <td>${id++}</td> <!-- Increment the ID counter -->
-              <td>${data.about.firstName || "not found"}</td>
-              <td>${data.about.email || "not found"}</td>
-              <td>${data.education.degree || "not found"}</td>
-              <td>${data.skills || "not found"}</td>`;
-            jobListings.appendChild(row);
-          });
-
-          // Search functionality
-          const searchInput = document.getElementById("searchInput");
-          searchInput.addEventListener("input", function () {
-            const query = searchInput.value.toLowerCase();
-            const rows = jobListings.querySelectorAll("tr");
-
-            rows.forEach((row) => {
-              const name = row
-                .querySelector("td:nth-child(2)")
-                .textContent.toLowerCase();
-              const email = row
-                .querySelector("td:nth-child(3)")
-                .textContent.toLowerCase();
-              const qualification = row
-                .querySelector("td:nth-child(4)")
-                .textContent.toLowerCase();
-              const skill = row
-                .querySelector("td:nth-child(5)")
-                .textContent.toLowerCase();
-              if (
-                name.includes(query) ||
-                email.includes(query) ||
-                qualification.includes(query) ||
-                skill.includes(query)
-              ) {
-                row.style.display = "";
-              } else {
-                row.style.display = "none";
-              }
-            });
-          });
-        } catch (error) {
-          console.error("Error retrieving users' data:", error);
-        }
-      });
-    </script>
-
     <footer class="container-fluid bg-black">
   <div class="text-white">
     <div class="row pt-5 text-center" style="margin-right: 22px">
@@ -599,5 +516,67 @@
     .addEventListener("click", scrollToTop);
 </script>
 
+<script type="module" src="/staticfiles/db/dbconfig.js"></script>
+
+    <script type="module">
+      const email = localStorage.getItem("email");
+      if (!email) {
+        window.location.href = "/login/?redirect_url=hiring";
+      }
+
+      document.addEventListener("DOMContentLoaded", async function () {
+        const jobListings = document.getElementById("users_data");
+
+        try {
+          const querySnapshot = await getDocs(collection(db, "user_profile"));
+          let id = 1; // Initialize ID counter
+          querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td>${id++}</td> <!-- Increment the ID counter -->
+              <td>${data.about.firstName || "not found"}</td>
+              <td>${data.about.email || "not found"}</td>
+              <td>${data.education.degree || "not found"}</td>
+              <td>${data.skills || "not found"}</td>`;
+            jobListings.appendChild(row);
+          });
+
+          // Search functionality
+          const searchInput = document.getElementById("searchInput");
+          searchInput.addEventListener("input", function () {
+            const query = searchInput.value.toLowerCase();
+            const rows = jobListings.querySelectorAll("tr");
+
+            rows.forEach((row) => {
+              const name = row
+                .querySelector("td:nth-child(2)")
+                .textContent.toLowerCase();
+              const email = row
+                .querySelector("td:nth-child(3)")
+                .textContent.toLowerCase();
+              const qualification = row
+                .querySelector("td:nth-child(4)")
+                .textContent.toLowerCase();
+              const skill = row
+                .querySelector("td:nth-child(5)")
+                .textContent.toLowerCase();
+              if (
+                name.includes(query) ||
+                email.includes(query) ||
+                qualification.includes(query) ||
+                skill.includes(query)
+              ) {
+                row.style.display = "";
+              } else {
+                row.style.display = "none";
+              }
+            });
+          });
+        } catch (error) {
+          console.error("Error retrieving users' data:", error);
+        }
+      });
+    </script>
   </body>
 </html>
