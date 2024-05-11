@@ -113,7 +113,7 @@ async function signUpUser(username,phoneNumber, email, password) {
 
 async function saveUserDataToFirestore(userId, username, email,phoneNumber) {
     const db = getFirestore();
-    const userDocRef = doc(db, "users", userId);
+    const userDocRef = doc(db, "login_details", userId);
 
     await setDoc(userDocRef, {
         full_name: username,
