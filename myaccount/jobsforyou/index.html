@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Jobs For You</title>
-    <meta
-      name="description"
-      content="Unlock remarkable opportunities with JobsDoor360's seamless resume upload. Elevate your career journey by submitting your comprehensive CV, and stay ahead as we expand to accommodate additional details. Join us on the path to success with streamlined job applications and personalized career development."
-    />
-    <link
-      rel="stylesheet"
-      href="/staticfiles/mainfiles/myaccount/jobsforyou/style.css"
-    />
+    <meta name="description"
+        content="Unlock remarkable opportunities with JobsDoor360's seamless resume upload. Elevate your career journey by submitting your comprehensive CV, and stay ahead as we expand to accommodate additional details. Join us on the path to success with streamlined job applications and personalized career development." />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/jobsforyou/style.css" />
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -69,13 +65,20 @@
     const email = localStorage.getItem("email");
     if (email) {
       localStorage.clear();
+      signOut(auth)
+      .then(() => {
+        window.location.href = "/login/";
+      })
+      .catch((error) => {
+        console.error("Error signing out:", error);
+      });
     }
   }
 </script>
 
-  </head>
+</head>
 
-  <body>
+<body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="brand" href="/">
@@ -209,89 +212,171 @@
   }
 </script>
 
-    <section>
-      <div class="container mt-2">
-        <div style="max-width: 400px; margin: 0 auto">
-          <div class="row justify-content-center">
-            <div class="col">
-              <h5 class="bg p-2 my-4 text-center text-white rounded">
-                <i class="fas fa-briefcase me-2"></i>Explore Job Opportunities
-                Here...
-              </h5>
-              <form>
-                <div class="form-group mb-3">
-                  <label for="locationInput" class="form-label text-primary">
-                    <i class="fas fa-map-marker-alt me-2"></i>Location
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="locationInput"
-                    placeholder="Enter your desired location"
-                  />
+        <section>
+            <div class="container mt-3 mr-4 ml-4">
+                <button id="openModalButton" class="btn btn-primary mt-3">
+                    Change Qualification
+                </button>
+
+                <div class="row justify-content-center">
+                    <div class="col job-head">
+                        <h2 class="jobs-header text-center">Jobs for You</h2>
+                    </div>
                 </div>
-                <div class="form-group mb-3">
-                  <label for="jobTypeInput" class="form-label text-primary">
-                    <i class="fas fa-tasks me-2"></i>Job Type
-                  </label>
-                  <select class="form-control" id="jobTypeInput">
-                    <option value="">All Jobs</option>
-                    <option value="Full Time">Private</option>
-                    <option value="Part Time">Government</option>
-                  </select>
+
+                <!-- Filtering based on location -->
+                <div class="container mt-0">
+                    <div class="row justify-content-start">
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <label for="locationInput" class="form-label fw-bold">Location:</label>
+                            <input type="text" class="form-control" id="locationInput" placeholder="Desired Location" />
+                            <div id="locationSuggestions" class="list-group mt-2"></div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <label for="jobTypeInput" class="form-label fw-bold">Job Type:</label>
+                            <select class="form-select" id="jobTypeInput">
+                                <option value="">All Jobs</option>
+                                <option value="Full Time">Private</option>
+                                <option value="Part Time">Government</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group mb-3">
-                  <label for="searchInput" class="form-label text-primary">
-                    <i class="fas fa-search me-2"></i>Search Jobs
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="searchInput"
-                    placeholder="Search for jobs..."
-                  />
+
+                <div id="loading" class="loading">getting jobs for you...</div>
+                <div class="row">
+                    <div class="col">
+                        <div id="results" class="result-field"></div>
+                    </div>
                 </div>
-                <div class="form-group mb-3 text-center">
-                  <button
-                    class="btn btn-primary buttn"
-                    type="button"
-                    id="searchButton"
-                  >
-                    <i class="fas fa-search me-2"></i>Search Now
-                  </button>
-                </div>
-              </form>
             </div>
-          </div>
-        </div>
 
-        <div id="loading" class="loading">Getting jobs for you...</div>
-        <div class="row">
-          <div class="col">
-            <div id="results" class="result-field"></div>
-          </div>
-        </div>
-      </div>
+            <!-- Offcanvas -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="optionsOffcanvas">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">My Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+            </div>
+        </section>
 
-      <!-- Offcanvas -->
-      <div
-        class="offcanvas offcanvas-start"
-        tabindex="-1"
-        id="optionsOffcanvas"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title">My Account</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-      </div>
-    </section>
+        <!-- Modal structure -->
+        <div class="modal fade" id="myModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Education Details
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            id="closed1"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <!-- 12th -->
+                            <div class="mb-3">
+                                <h3>12th*</h3>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="twelfthSubject" class="form-label">Subject</label>
+                                        <select class="form-select" id="twelfthSubject"></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="twelfthPercentage" class="form-label">Percentage</label>
+                                        <input type="text" class="form-control" id="twelfthPercentage"
+                                            placeholder="e.g. 70" required />
+                                    </div>
+                                </div>
+                            </div>
 
-    <footer class="container-fluid bg-black">
+                            <!-- Diploma -->
+                            <div class="mb-3">
+                                <h3>Diploma</h3>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="diplomaStream" class="form-label">Stream</label>
+                                        <select class="form-select" id="diplomaStream"></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="diplomaName" class="form-label">Diploma Name</label>
+                                        <select class="form-select" id="diplomaName"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Graduation -->
+                            <div class="mb-3">
+                                <h3>Graduation</h3>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="graduationStream" class="form-label">Stream</label>
+                                        <select class="form-select" id="graduationStream"></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="graduationDegree" class="form-label">Degree</label>
+                                        <select class="form-select" id="graduationDegree"></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="graduationPercentage" class="form-label">Percentage</label>
+                                        <input type="text" class="form-control" id="graduationPercentage"
+                                            placeholder="e.g. 80" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post Graduation -->
+                            <div class="mb-3">
+                                <h3>Post Graduation</h3>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="pgStream" class="form-label">Stream</label>
+                                        <select class="form-select" id="pgStream"></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="pgDegree" class="form-label">Degree</label>
+                                        <select class="form-select" id="pgDegree"></select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="pgPercentage" class="form-label">Percentage</label>
+                                        <input type="text" class="form-control" id="pgPercentage"
+                                            placeholder="e.g. 75" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Information  -->
+                            <div class="mb-3">
+                                <h3>Additional Information</h3>
+
+                                <!-- Category -->
+                                <div class="mb-3">
+                                    <label for="categories" class="form-label">Category</label>
+                                    <select class="form-select" id="categories"></select>
+                                </div>
+
+                                <!-- Date of Birth -->
+                                <div class="mb-3">
+                                    <label for="user-dob" class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="user-dob" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close"
+                            id="closed2">
+                            Close
+                        </button>
+                        <button type="submit" id="saveDetails" class="btn btn-primary">
+                            Search Jobs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="container-fluid bg-black">
   <div class="text-white">
     <div class="row pt-5 text-center" style="margin-right: 22px">
       <div class="col-md-4 mb-3">
@@ -558,32 +643,11 @@
 
 <script type="module" src="/staticfiles/db/dbconfig.js"></script>
 
-    <div class="chat-back-to-top">
-      <button id="like-button"><i class="fa-solid fa-thumbs-up"></i></button>
-      <button id="dislike-button">
-        <i class="fa-solid fa-thumbs-down"></i>
-      </button>
-      <div class="whatsapp-chat">
-        <a
-          href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-          target="_blank"
-          ><i class="fab fa-whatsapp"></i
-        ></a>
-      </div>
-      <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
-        <i class="fa-solid fa-chevron-up"></i>
-      </button>
-    </div>
 
-    <script src="../../website_data/jobs_data.js"></script>
-    <script src="../../website_data/website_masterdata.js"></script>
-    <script
-      type="module"
-      src="/staticfiles/mainfiles/myaccount/script.js"
-    ></script>
-    <script
-      type="module"
-      src="/staticfiles/mainfiles/myaccount/jobsforyou/script.js"
-    ></script>
-  </body>
+            <script src="../../website_data/jobs_data.js"></script>
+            <script src="../../website_data/website_masterdata.js"></script>
+            <script type="module" src="/staticfiles/mainfiles/myaccount/jobsforyou/jobsforyou.js"></script>
+            <script type="module" src="/staticfiles/mainfiles/myaccount/jobsforyou/jobsforyou1.js"></script>
+</body>
+
 </html>

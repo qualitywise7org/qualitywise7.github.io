@@ -86,6 +86,13 @@
     const email = localStorage.getItem("email");
     if (email) {
       localStorage.clear();
+      signOut(auth)
+      .then(() => {
+        window.location.href = "/login/";
+      })
+      .catch((error) => {
+        console.error("Error signing out:", error);
+      });
     }
   }
 </script>
