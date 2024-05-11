@@ -62,6 +62,13 @@
     const email = localStorage.getItem("email");
     if (email) {
       localStorage.clear();
+      signOut(auth)
+      .then(() => {
+        window.location.href = "/login/";
+      })
+      .catch((error) => {
+        console.error("Error signing out:", error);
+      });
     }
   }
 </script>
@@ -486,6 +493,8 @@
     .getElementById("backToTopBtn")
     .addEventListener("click", scrollToTop);
 </script>
+
+<script type="module" src="/staticfiles/db/dbconfig.js"></script>
 
     <link rel="stylesheet" href="/staticfiles/mainfiles/hirewithus/script.js" />
   </body>

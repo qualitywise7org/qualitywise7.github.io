@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>Sign Up</title>
-  <link rel="stylesheet" href="/staticfiles/mainfiles/signup/style.css" />
-  <meta charset="utf-8" />
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/signup/style.css" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
 <link rel="icon" href="/fevicon.ico" type="profile" />
@@ -63,14 +62,21 @@
     const email = localStorage.getItem("email");
     if (email) {
       localStorage.clear();
+      signOut(auth)
+      .then(() => {
+        window.location.href = "/login/";
+      })
+      .catch((error) => {
+        console.error("Error signing out:", error);
+      });
     }
   }
 </script>
 
-</head>
+  </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="brand" href="/">
       <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
@@ -205,26 +211,58 @@
 
     <div class="main_container_signup">
       <div class="signup-container">
-        <a class="logo" style="
+        <a
+          class="logo"
+          style="
             background-color: #e8f0fe;
             border-radius: 10px;
             text-align: center;
-          " href="/">
-          <img style="width: 50%; padding: 10px" src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
+          "
+          href="/"
+        >
+          <img
+            style="width: 50%; padding: 10px"
+            src="/assets/Jobsdoor360 -logos__black.png"
+            alt="logo"
+          />
         </a>
         <h2 class="signup-head">Sign Up</h2>
         <form id="signup-form">
           <label for="full_name">Full Name:</label>
-          <input type="text" id="username" name="full_name" required autocomplete="name" />
+          <input
+            type="text"
+            id="username"
+            name="full_name"
+            required
+            autocomplete="name"
+          />
 
           <label for="phone">Phone:</label>
-          <input type="text" id="phoneNumber" name="phone" required autocomplete="phone" />
+          <input
+            type="text"
+            id="phoneNumber"
+            name="phone"
+            required
+            autocomplete="phone"
+          />
 
           <label for="email">Email:</label>
-          <input type="text" id="email" name="email" required autocomplete="email" />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+          />
 
           <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required autocomplete="current-password" />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            autocomplete="current-password"
+          />
 
           <button type="submit" style="margin-top: 20px">Sign Up</button>
         </form>
@@ -519,10 +557,12 @@
     .addEventListener("click", scrollToTop);
 </script>
 
+<script type="module" src="/staticfiles/db/dbconfig.js"></script>
 
-      <script type="module" src="/staticfiles/db/dbconfig.js"></script>
 
-      <script type="module" src="/staticfiles/mainfiles/signup/script.js"></script>
-</body>
-
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/signup/script.js"
+    ></script>
+  </body>
 </html>
