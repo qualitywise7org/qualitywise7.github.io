@@ -35,6 +35,20 @@
         padding-inline: 40px;
         padding-block: 14px;
       }
+
+      .whatsapp-chat-btn {
+        display: inline-block;
+        background-color: #25d366;
+        color: #fff;
+        padding: 5px 5px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .whatsapp-chat-btn:hover {
+        background-color: #128c7e;
+      }
     </style>
     <%- include('../partials/head.ejs') %>
   </head>
@@ -213,6 +227,46 @@
           </div>
         </div>
       </div>
+      <br />
+      <div class="container">
+        <div
+          class="show-lg text-center"
+          style="margin-top: -15px; margin-bottom: -5px"
+        >
+          <h6
+            class="rounded register"
+            style="
+              background-color: #dcdfe1;
+              padding-top: 12px;
+              padding-bottom: 12px;
+              font-style: italic;
+              font-size: 15px;
+            "
+          >
+            <a href="/register/" style="text-decoration: none; color: black">
+              Register for demo placement classes, click here...<i
+                class="fa-solid fa-computer-mouse"
+              ></i
+            ></a>
+          </h6>
+
+          <h4
+            class="rounded register1"
+            style="
+              background-color: #dcdfe1;
+              padding-top: 12px;
+              padding-bottom: 12px;
+              font-style: italic;
+            "
+          >
+            <a href="/register/" style="text-decoration: none; color: black">
+              Register for demo placement classes, click here...<i
+                class="fa-solid fa-computer-mouse"
+              ></i
+            ></a>
+          </h4>
+        </div>
+      </div>
 
       <div class="hero-section" id="home">
         <!--left accordion -->
@@ -251,9 +305,14 @@
                   provide comprehensive training, covering both technical and
                   soft skills.
                   <br />
-                  <a href="/placement/" class="mt-2 btn btn-outline-info"
-                    >View</a
-                  >
+                  <div class="d-flex">
+                    <a href="/placement/" class="mt-2 btn btn-outline-info mx-2"
+                      >View</a
+                    >
+                    <a href="/register/" class="btn btn-outline-info mt-2"
+                      >Apply free</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -283,11 +342,16 @@
                   and preferences. Our platform matches you with companies that
                   align with your career goals.
                   <br />
-                  <a
-                    href="/myaccount/jobsforyou/"
-                    class="btn btn-outline-info mt-2"
-                    >View</a
-                  >
+                  <div class="d-flex">
+                    <a
+                      href="/myaccount/jobsforyou/"
+                      class="btn btn-outline-info mt-2 mx-2"
+                      >View</a
+                    >
+                    <a href="/register/" class="btn btn-outline-info mt-2"
+                      >Apply free</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -317,11 +381,16 @@
                   improvement with our Profile Analyser. Analyze your resume and
                   LinkedIn profile to optimize your job search strategy.
                   <br />
-                  <a
-                    href="/careeroptions/profileanalyzer/"
-                    class="btn mt-2 btn-outline-info"
-                    >View</a
-                  >
+                  <div class="d-flex">
+                    <a
+                      href="/careeroptions/profileanalyzer/"
+                      class="btn mt-2 btn-outline-info mx-2"
+                      >View</a
+                    >
+                    <a href="/register/" class="btn btn-outline-info mt-2"
+                      >Apply free</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -351,7 +420,14 @@
                   employers. Showcase your skills, experience, and achievements
                   to attract potential employers.
                   <br />
-                  <a href="/hiring/" class="btn btn-outline-info mt-2">View</a>
+                  <div class="d-flex">
+                    <a href="/hiring/" class="btn btn-outline-info mt-2 mx-2"
+                      >View</a
+                    >
+                    <a href="/register/" class="btn btn-outline-info mt-2"
+                      >Apply free</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -380,16 +456,23 @@
                   Get personalized career guidance from industry experts.
                   Understand the latest trends and get advice on navigating your
                   career path effectively.
-                  <br />
-                  <a
-                    href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                    target="_blank"
-                    class="btn mt-2"
-                    ><img
-                      src="../../../../../assets/whatsapp_button.png"
-                      alt="whatsapp"
-                      style="width: 150px; height: 35px; border-radius: 5px"
-                  /></a>
+                  <br /><br />
+                  <div class="d-flex, justify-content">
+                    <a
+                      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+                      class="whatsapp-chat-btn"
+                    >
+                      <span
+                        >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
+                      ></span>
+                    </a>
+                    <a
+                      href="/register/"
+                      class="btn btn-outline-info"
+                      style="margin-top: -5px"
+                      >Apply free</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -419,9 +502,16 @@
                   experiences effectively. Get templates and tips to create an
                   impactful CV.
                   <br />
-                  <a href="/cv_creation/" class="btn btn-outline-info mt-2"
-                    >View</a
-                  >
+                  <div class="d-flex justify-content">
+                    <a
+                      href="/cv_creation/"
+                      class="btn btn-outline-info mt-2 mx-2"
+                      >View</a
+                    >
+                    <a href="/register/" class="btn btn-outline-info mt-2"
+                      >Apply free</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -451,7 +541,7 @@
                   and insights. Enhance your skills and build your professional
                   network.
                   <br />
-                  <div class="d-flex justify-content-around">
+                  <div class="d-sm-flex">
                     <a
                       href="/details/?productcode=freeinternship"
                       class="btn btn-outline-info mt-2"
@@ -459,7 +549,7 @@
                     >
                     <a
                       href="/details/?productcode=paidinternship"
-                      class="btn btn-outline-info mt-2"
+                      class="btn btn-outline-info mx-2 mt-2"
                       >Paid</a
                     >
                     <a
@@ -467,6 +557,20 @@
                       class="btn btn-outline-info mt-2"
                       >Chargeable</a
                     >
+                    <a
+                      href="/register/"
+                      type="submit"
+                      class="btn btn-outline-info mx-2 mt-2"
+                      >Apply free</a
+                    >
+                    <a
+                      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+                      class="whatsapp-chat-btn mt-2"
+                    >
+                      <span
+                        >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
+                      ></span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -496,11 +600,27 @@
                   Enhance your English communication skills with our specialized
                   courses. Improve your fluency, vocabulary, and pronunciation.
                   <br />
-                  <a
-                    href="/details/?productcode=english"
-                    class="btn btn-outline-info mt-2"
-                    >View</a
-                  >
+                  <div class="d-flex">
+                    <a
+                      href="/details/?productcode=english"
+                      class="btn btn-outline-info mt-2"
+                      >View</a
+                    >
+                    <a
+                      href="/register/"
+                      type="submit"
+                      class="btn btn-outline-info mx-2 mt-2"
+                      >Apply free</a
+                    >
+                    <a
+                      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+                      class="whatsapp-chat-btn mt-2"
+                    >
+                      <span
+                        >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
+                      ></span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -528,16 +648,20 @@
                 <div class="accordion-body">
                   Showcase your major projects and collaborate with peers. Gain
                   hands-on experience and contribute to impactful projects.
-                  <br />
-                  <a
-                    href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                    target="_blank"
-                    class="btn mt-2"
-                    ><img
-                      src="../../../../../assets/whatsapp_button.png"
-                      alt="whatsapp"
-                      style="width: 150px; height: 35px; border-radius: 5px"
-                  /></a>
+                  <br /><br />
+                  <div class="d-flex">
+                    <a
+                      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+                      class="whatsapp-chat-btn mx-2"
+                    >
+                      <span
+                        >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
+                      ></span>
+                    </a>
+                    <a href="/register/" class="btn btn-outline-info"
+                      >Apply free</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -567,9 +691,20 @@
                   of projects available for purchase. Explore innovative
                   solutions tailored to propel your ambitions forward.
                   <br />
-                  <a href="/buyproject" class="btn btn-outline-info mt-2"
-                    >Buy now</a
-                  >
+                  <br />
+                  <div class="d-flex">
+                    <a href="/buyproject" class="btn btn-outline-info"
+                      >Buy now</a
+                    >
+                    <a
+                      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+                      class="whatsapp-chat-btn mx-2"
+                    >
+                      <span
+                        >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
+                      ></span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -643,16 +778,15 @@
                   skills and cultural fit. Our streamlined platform simplifies
                   hiring, connecting you with candidates that exceed
                   expectations.
-                  <br />
+                  <br /><br />
                   <a
                     href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                    target="_blank"
-                    class="btn mt-2"
-                    ><img
-                      src="../../../../../assets/whatsapp_button.png"
-                      alt="whatsapp"
-                      style="width: 150px; height: 35px; border-radius: 5px"
-                  /></a>
+                    class="whatsapp-chat-btn"
+                  >
+                    <span
+                      >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
+                    ></span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -682,16 +816,15 @@
                   Stay ahead with our team of experts adapting to the latest
                   algorithms and trends, driving organic traffic and
                   conversions.
-                  <br />
+                  <br /><br />
                   <a
                     href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                    target="_blank"
-                    class="btn mt-2"
-                    ><img
-                      src="../../../../../assets/whatsapp_button.png"
-                      alt="whatsapp"
-                      style="width: 150px; height: 35px; border-radius: 5px"
-                  /></a>
+                    class="whatsapp-chat-btn"
+                  >
+                    <span
+                      >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
+                    ></span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -720,16 +853,15 @@
                   Craft meaningful connections with our comprehensive digital
                   marketing services. Our data-driven campaigns resonate with
                   your audience, enhancing engagement and driving growth.
-                  <br />
+                  <br /><br />
                   <a
                     href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                    target="_blank"
-                    class="btn mt-2"
-                    ><img
-                      src="../../../../../assets/whatsapp_button.png"
-                      alt="whatsapp"
-                      style="width: 150px; height: 35px; border-radius: 5px"
-                  /></a>
+                    class="whatsapp-chat-btn"
+                  >
+                    <span
+                      >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
+                    ></span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -759,16 +891,15 @@
                   performs seamlessly. Our team uses the latest technologies to
                   create a powerful marketing tool that attracts and converts
                   visitors.
-                  <br />
+                  <br /><br />
                   <a
                     href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                    target="_blank"
-                    class="btn mt-2"
-                    ><img
-                      src="../../../../../assets/whatsapp_button.png"
-                      alt="whatsapp"
-                      style="width: 150px; height: 35px; border-radius: 5px"
-                  /></a>
+                    class="whatsapp-chat-btn"
+                  >
+                    <span
+                      >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
+                    ></span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -797,16 +928,15 @@
                   Gain a competitive edge with our custom software solutions. We
                   deliver high-quality, scalable software tailored to your
                   unique business needs, driving efficiency and innovation.
-                  <br />
+                  <br /><br />
                   <a
                     href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                    target="_blank"
-                    class="btn mt-2"
-                    ><img
-                      src="../../../../../assets/whatsapp_button.png"
-                      alt="whatsapp"
-                      style="width: 150px; height: 35px; border-radius: 5px"
-                  /></a>
+                    class="whatsapp-chat-btn"
+                  >
+                    <span
+                      >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
+                    ></span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -854,7 +984,7 @@
               style="text-align: center; font-size: 18px; margin-top: 8px"
               class="px-3"
             >
-              with ranks and qualification(AIEEE(now JEE mains) AIR 10630, state
+              with ranks and qualification AIEEE(now JEE mains) AIR 10630, state
               level rank 602, PET rank 126, Btech + Mtech from ABV- IIITM
               Gwalior(top college of India),
               <br />
