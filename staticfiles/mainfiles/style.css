@@ -84,8 +84,11 @@
   text-decoration: underline;
   color: rgb(209, 228, 244);
 }
-.register {
+.reg {
   display: none;
+}
+.reg1{
+  display: block;
 }
 
 
@@ -117,10 +120,10 @@
 }
 
 @media (max-width: 768px) {
-  .register {
+  .reg {
     display: block;
   }
-  .register1 {
+  .reg1 {
     display: none;
   }
 }
