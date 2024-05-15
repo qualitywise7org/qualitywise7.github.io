@@ -84,7 +84,9 @@
   text-decoration: underline;
   color: rgb(209, 228, 244);
 }
-
+.register {
+  display: none;
+}
 
 
 @media (max-width: 768px) {
@@ -111,5 +113,14 @@
   }
   .img1 {
     display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .register {
+    display: block;
+  }
+  .register1 {
+    display: none;
   }
 }
