@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/resend_email_verification/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <%- include('../../partials/head.ejs') %>
+  </head>
+
+  <body>
+    <%- include('../../partials/navbar.ejs') %>
+    <div
+      class="d-flex justify-content-center my-5 py-5 flex-column align-items-center"
+    >
+      <div class="d-flex flex-column align-items-center gap-4 mb-4">
+        <h2>Resend verification email</h2>
+        <span id="timer_text"></span>
+      </div>
+      <button type="submit" id="resend_button">Resent Email</button>
+    </div>
+    <%- include('../../partials/footer.ejs') %>
+
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/resend_email_verification/script.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </body>
+</html>

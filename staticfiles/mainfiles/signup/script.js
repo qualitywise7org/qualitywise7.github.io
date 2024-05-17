@@ -91,6 +91,7 @@ signupForm.addEventListener("submit", async (e) => {
 
         // Send email verification
         await sendEmailVerification(auth.currentUser);
+        window.location.href = "/resend_email_verification/";
 
         alert("Signed up successfully! Please check your email to verify your account and try again Later!");
     } catch (error) {
