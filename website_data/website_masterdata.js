@@ -254,6 +254,9 @@
         "title": "How Much Salary Should You Expect As A Fresher Developer",
         "url": "https://www.youtube.com/watch?v=3hoFiGx8ti0&ab_channel=GenieAshwani"
       }
+    ],
+    "keywords": [
+      "java,"
     ]
   },
   {
