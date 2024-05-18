@@ -1,29 +1,84 @@
+
+
 document.addEventListener("DOMContentLoaded", async function () {
   const jobListings = document.getElementById("jobListings");
+  const searchCompany = document.getElementById("filterCompany");
+  const company=document.getElementById("searchItem").value;
+  const companyCode=document.getElementById("companyCode");
+  const searchCode=document.getElementById("searchCode").value;
+  console.log(searchCode, "searchcode")
+  if(company != null || company != "" || searchCode!=null||searchCode!=""){
+    // Add event listener to search company button
+    searchCompany.addEventListener('click',async () =>{
+      const searchCode=document.getElementById("searchCode").value;
+      const company=document.getElementById("searchItem").value;
+  
+      const queryParams= new URLSearchParams(window.location.search);
+      queryParams.set('company_name',  company);
+      queryParams.set('company_code', searchCode);
 
-  try {
-    const querySnapshot = await getDocs(collection(db, "hiring"));
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
+      
+      const newUrl=`${window.location.pathname}?${queryParams.toString()}`;
+      window.history.replaceState({}, '', newUrl);
+      const param1=queryParams.get('company_name');
+      const param2=queryParams.get('company_code');
+  console.log(param1, param2)
+  
+  try{
+    const querySnapshot= await getDocs(collection(db, "hiring"));
+    querySnapshot.forEach((doc)=>{
+      const data=doc.data();
       const row = document.createElement("tr");
-      row.innerHTML = `
-        <td class="text-center">${data.title || "NOT DISCLOSED"}</td>
-        <td class="text-center">${"₹" + data.stipend || "NOT DISCLOSED"}</td>
-        <td class="text-center">${data.role || "NOT DISCLOSED"}</td>
-        <td class="text-center">${data.location || "NOT DISCLOSED"}</td>
-        <td class="text-center">${data.company_name || "NOT DISCLOSED"}</td>
+      if(data?.company_name==param1 || data?.company_code==param2 ){
+        row.innerHTML = `
+        <td class="text-center">${data?.title || "NOT DISCLOSED"}</td>
+        <td class="text-center">${"₹" + data?.stipend || "NOT DISCLOSED"}</td>
+        <td class="text-center">${data?.role || "NOT DISCLOSED"}</td>
+        <td class="text-center">${data?.location || "NOT DISCLOSED"}</td>
+        <td class="text-center">${data?.company_name || "NOT DISCLOSED"}</td>
         <td class="text-center"><a href="${
-          data.job_description_doc || "#"
+          data?.job_description_doc || "#"
         }">Click Here</a></td>
         <td><button class="applyButton" data-jobid="${
           doc.id
         }">Apply</button></td>
       `;
       jobListings.appendChild(row);
-    });
+      console.log(data)
+      }
+    })
   } catch (error) {
     console.error("Error retrieving job listings:", error);
   }
+    });
+  } else if(company==""||company==null) {
+    try {
+      const querySnapshot = await getDocs(collection(db, "hiring"));
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td class="text-center">${data?.title || "NOT DISCLOSED"}</td>
+          <td class="text-center">${"₹" + data?.stipend || "NOT DISCLOSED"}</td>
+          <td class="text-center">${data?.role || "NOT DISCLOSED"}</td>
+          <td class="text-center">${data?.location || "NOT DISCLOSED"}</td>
+          <td class="text-center">${data?.company_name || "NOT DISCLOSED"}</td>
+          <td class="text-center"><a href="${
+            data?.job_description_doc || "#"
+          }">Click Here</a></td>
+          <td><button class="applyButton" data-jobid="${
+            doc.id
+          }">Apply</button></td>
+        `;
+        jobListings.appendChild(row);
+      });
+    } catch (error) {
+      console.error("Error retrieving job listings:", error);
+    }
+  }
+  
+
+  
 
   if (email) {
     try {
