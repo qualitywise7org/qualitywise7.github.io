@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Apply</title>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/apply/style.css" />
+    <%- include('../../partials/head.ejs') %>
+  </head>
+
+  <body>
+    <%- include('../../partials/navbar.ejs') %>
+    <div class="main_container_signup">
+      <div class="signup-container">
+        <h2 class="signup-head">Apply</h2>
+        <form id="signup-form">
+          <label for="full_name">Full Name:</label>
+          <input
+            type="text"
+            id="username"
+            name="full_name"
+            required
+            autocomplete="name"
+          />
+
+          <label for="phone">Phone:</label>
+          <input
+            type="text"
+            id="phoneNumber"
+            name="phone"
+            required
+            autocomplete="phone"
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+          />
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            autocomplete="current-password"
+          />
+
+          <button type="submit" style="margin-top: 20px">Apply</button>
+        </form>
+      </div>
+    </div>
+    <%- include('../../partials/footer.ejs') %>
+
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/apply/script.js"
+    ></script>
+  </body>
+</html>
