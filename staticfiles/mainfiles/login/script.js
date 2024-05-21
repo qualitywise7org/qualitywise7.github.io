@@ -101,7 +101,7 @@ async function loginUser(email, password) {
                             var userData = docSnap.data();
                             $("#btn").html("Update CV");
                             cvUrl = userData.about.cv;
-                            (cvUrl) ? window.location.href = "/myaccount/yourprofile/" : window.location.href = "/myaccount/cv_upload/";
+                            (cvUrl) ? window.location.href = "/myaccount/" : window.location.href = "/myaccount/cv_upload/";
                         }
                     } catch (error) {
                         console.error("Error getting user data:", error);
