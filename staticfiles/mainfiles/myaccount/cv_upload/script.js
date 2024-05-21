@@ -1,8 +1,8 @@
 const email = localStorage.getItem("email");
-let cvUrl = "";
 if (!email) {
     window.location.href = "/login/";
 }
+let cvUrl = "";
 
 async function isUser() {
     console.log("isUser");
@@ -11,7 +11,6 @@ async function isUser() {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
             var userData = docSnap.data();
-            $("#btn").html("Update CV");
             cvUrl = userData.about.cv;
             if (cvUrl) window.location.href = "/myaccount/yourprofile/"
         }
@@ -31,12 +30,15 @@ async function uploadCV(file) {
 }
 
 async function saveCVToDatabase() {
+    const uploadButton = document.getElementById("btn")
+    uploadButton.innerHTML = "Uploading...";
+    uploadButton.disabled = true;
     const cvFile = document.getElementById("cv").files[0];
     if (cvFile) {
         cvUrl = await uploadCV(cvFile);
 
         const userProfileRef = doc(db, "user_profile", email);
-        await setDoc(userProfileRef, { "about.cv": cvUrl }, { merge: true })
+        await updateDoc(userProfileRef, { "about.cv": cvUrl })
             .then(() => {
                 Toastify({
                     text: "CV Successfully Submitted",
@@ -59,6 +61,9 @@ async function saveCVToDatabase() {
                 console.error("Error writing document: ", error);
             });
     }
+    
+    uploadButton.innerHTML = "UPLOAD RESUME";
+    uploadButton.disabled = false;
 }
 
 $("#btn").on("click", function () {
