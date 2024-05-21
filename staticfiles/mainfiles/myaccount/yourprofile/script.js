@@ -172,6 +172,7 @@ async function saveFormDataToDatabase() {
     if (cvFile) {
         cvUrl = await uploadCV(cvFile);
         formData.about.cv = cvUrl;
+        console.log("CV URL: ", cvUrl);
     }
 
     const userProfileRef = doc(db, "user_profile", email);
