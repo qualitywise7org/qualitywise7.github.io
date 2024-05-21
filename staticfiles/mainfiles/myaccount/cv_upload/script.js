@@ -4,23 +4,6 @@ if (!email) {
 }
 let cvUrl = "";
 
-async function isUser() {
-    console.log("isUser");
-    const docRef = doc(db, "user_profile", email);
-    try {
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-            var userData = docSnap.data();
-            cvUrl = userData.about.cv;
-            if (cvUrl) window.location.href = "/myaccount/yourprofile/"
-        }
-    } catch (error) {
-        console.error("Error getting user data:", error);
-    }
-}
-
-isUser();
-
 async function uploadCV(file) {
     const cvRef = ref(storage, "user_cv/" + file.name);
     await uploadBytes(cvRef, file);
