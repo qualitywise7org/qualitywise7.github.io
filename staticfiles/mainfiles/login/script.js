@@ -85,9 +85,26 @@ async function loginUser(email, password) {
                 localStorage.setItem('profile', true);
             }
             if (redirect_url) {
-                window.location.href = "/myaccount"+redirect_url;
+                window.location.href = "/myaccount" + redirect_url;
             } else {
-                window.location.href = "/";
+                async function isUser() {
+                    console.log("isUser");
+                    let cvUrl = "";
+                    const docRef = doc(db, "user_profile", email);
+                    try {
+                        const docSnap = await getDoc(docRef);
+                        if (docSnap.exists()) {
+                            var userData = docSnap.data();
+                            $("#btn").html("Update CV");
+                            cvUrl = userData.about.cv;
+                            (cvUrl) ? window.location.href = "/myaccount/yourprofile/" : window.location.href = "/myaccount/cv_upload/";
+                        }
+                    } catch (error) {
+                        console.error("Error getting user data:", error);
+                    }
+                }
+
+                isUser();
             }
         } else {
             alert("Email is not verified");

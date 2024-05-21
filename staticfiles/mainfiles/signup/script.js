@@ -87,7 +87,7 @@ signupForm.addEventListener("submit", async (e) => {
         document.getElementById("password").value = "";
         document.getElementById("phoneNumber").value = "";
 
-        const userCredential = await signUpUser(username,phoneNumber, email, password);
+        const userCredential = await signUpUser(username, phoneNumber, email, password);
 
         // Send email verification
         await sendEmailVerification(auth.currentUser);
@@ -99,7 +99,7 @@ signupForm.addEventListener("submit", async (e) => {
     }
 });
 
-async function signUpUser(username,phoneNumber, email, password) {
+async function signUpUser(username, phoneNumber, email, password) {
     const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -112,16 +112,16 @@ async function signUpUser(username,phoneNumber, email, password) {
     return userCredential;
 }
 
-async function saveUserDataToFirestore(userId, username, email,phoneNumber) {
+async function saveUserDataToFirestore(userId, username, email, phoneNumber) {
     const db = getFirestore();
     const userDocRef = doc(db, "login_details", userId);
 
     await setDoc(userDocRef, {
         full_name: username,
-        phonenumber:phoneNumber,
+        phonenumber: phoneNumber,
         email: email,
         firstLogin: true,
-        isAdmin  : false,
+        isAdmin: false,
     });
 }
 
