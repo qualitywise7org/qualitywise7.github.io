@@ -1,6 +1,6 @@
 const email = localStorage.getItem("email");
 let imageUrl = ""
-let cvUrl = ""
+// let cvUrl = ""
 if (!email) {
     window.location.href = "/login/";
 }
@@ -26,7 +26,7 @@ async function isUser() {
             $("#linkedin").val(userData.about.linkedin);
             $("#github").val(userData.about.github);
             imageUrl = userData.about.image;
-            cvUrl = userData.about.cv;
+            // cvUrl = userData.about.cv;
 
             if (!imageUrl) imageUrl = "https://www.pngall.com/wp-content/uploads/5/Profile.png";
             const profileImage = document.getElementById("show_image");
@@ -107,7 +107,7 @@ function collectFormData() {
     aboutData.phoneNo = $("#phoneno").val() || "";
     aboutData.linkedin = $("#linkedin").val() || "";
     aboutData.github = $("#github").val() || "";
-    aboutData.cv = cvUrl || "";
+    // aboutData.cv = cvUrl || "";
     formData.about = aboutData;
 
     // Collect data for the "Education" section
@@ -150,13 +150,13 @@ async function uploadImageAndGetURL(file) {
     return url; // Return empty string if URL is undefined
 }
 
-async function uploadCV(file) {
-    const cvRef = ref(storage, "userCV/" + file.name);
-    await uploadBytes(cvRef, file);
+// async function uploadCV(file) {
+//     const cvRef = ref(storage, "userCV/" + file.name);
+//     await uploadBytes(cvRef, file);
 
-    const url = await getDownloadURL(cvRef);
-    return url; // Return empty string if URL is undefined
-}
+//     const url = await getDownloadURL(cvRef);
+//     return url; // Return empty string if URL is undefined
+// }
 
 async function saveFormDataToDatabase() {
     var formData = collectFormData();
@@ -168,12 +168,12 @@ async function saveFormDataToDatabase() {
         console.log("Image URL: ", imageUrl);
     }
 
-    const cvFile = document.getElementById("cv").files[0];
-    if (cvFile) {
-        cvUrl = await uploadCV(cvFile);
-        formData.about.cv = cvUrl;
-        console.log("CV URL: ", cvUrl);
-    }
+    // const cvFile = document.getElementById("cv").files[0];
+    // if (cvFile) {
+    //     cvUrl = await uploadCV(cvFile);
+    //     formData.about.cv = cvUrl;
+    //     console.log("CV URL: ", cvUrl);
+    // }
 
     const userProfileRef = doc(db, "user_profile", email);
 
