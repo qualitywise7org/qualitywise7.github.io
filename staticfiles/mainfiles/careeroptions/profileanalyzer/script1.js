@@ -28,14 +28,11 @@ function displayJobProfiles(profiles) {
     jobProfilesContainer.innerHTML += card;
   });
 }
-// Function to truncate text if it exceeds a certain length or line count
-function truncateText(text, maxLines) {
-  const lines = text.split("\n");
-  if (lines.length <= maxLines) {
-    return text;
-  } else {
-    return lines.slice(0, maxLines).join("\n");
-  }
+
+// Function to update the profile count
+function updateProfileCount(count) {
+  const profileCountContainer = document.getElementById("profileCount");
+  profileCountContainer.innerHTML = `Profiles found: ${count}`;
 }
 
 // Function to filter job profiles based on search query
@@ -52,25 +49,33 @@ function filterJobProfiles(query) {
   });
 
   displayJobProfiles(filteredProfiles);
+  updateProfileCount(filteredProfiles.length); // Update the profile count with filtered profiles
 }
 
 // Display all job profiles when the page loads
 window.onload = function () {
   displayJobProfiles(profile_masterdata);
+  updateProfileCount(profile_masterdata.length); // Display the total profile count
 
   // Add event listener to search input
   const searchInput = document.getElementById("searchInput");
+  let searchTimeout;
+
   searchInput.addEventListener("input", function () {
     const query = this.value.trim();
-    if (query.length >= 2) {
-      // Change the condition to check for a minimum of 2 characters
-      // Delay filtering by 1 second
-      setTimeout(() => {
-        filterJobProfiles(query);
-      }, 1000);
-    } else {
-      // Clear search results if query length is less than 2
-      displayJobProfiles(profile_masterdata);
+
+    if (searchTimeout) {
+      clearTimeout(searchTimeout);
     }
+
+    searchTimeout = setTimeout(() => {
+      if (query.length >= 2) {
+        filterJobProfiles(query);
+      } else {
+        // Clear search results if query length is less than 2
+        displayJobProfiles(profile_masterdata);
+        updateProfileCount(profile_masterdata.length); // Reset to total profile count
+      }
+    }, 1000);
   });
 };
