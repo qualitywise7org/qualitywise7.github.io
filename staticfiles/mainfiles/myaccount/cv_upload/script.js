@@ -23,7 +23,7 @@ async function isUser() {
 isUser();
 
 async function uploadCV(file) {
-    const cvRef = ref(storage, "userCV/" + file.name);
+    const cvRef = ref(storage, "user_cv/" + file.name);
     await uploadBytes(cvRef, file);
 
     const url = await getDownloadURL(cvRef);

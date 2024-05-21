@@ -143,7 +143,7 @@ function collectFormData() {
 }
 
 async function uploadImageAndGetURL(file) {
-    const imageRef = ref(storage, "userImages/" + file.name);
+    const imageRef = ref(storage, "user_images/" + file.name);
     await uploadBytes(imageRef, file);
 
     const url = await getDownloadURL(imageRef);
@@ -151,7 +151,7 @@ async function uploadImageAndGetURL(file) {
 }
 
 // async function uploadCV(file) {
-//     const cvRef = ref(storage, "userCV/" + file.name);
+//     const cvRef = ref(storage, "user_cv/" + file.name);
 //     await uploadBytes(cvRef, file);
 
 //     const url = await getDownloadURL(cvRef);
