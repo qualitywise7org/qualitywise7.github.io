@@ -1,5 +1,6 @@
 
 const signupForm = document.getElementById("signup-form");
+const applyButton = document.getElementById("apply-btn");
 
 // signupForm.addEventListener("submit", async (e) => {
 //   e.preventDefault();
@@ -82,6 +83,8 @@ signupForm.addEventListener("submit", async (e) => {
     const phoneNumber = document.getElementById("phoneNumber").value;
 
     try {
+        applyButton.innerHTML = "Applying...";
+        applyButton.disabled = true;
         document.getElementById("username").value = "";
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";
@@ -97,6 +100,8 @@ signupForm.addEventListener("submit", async (e) => {
     } catch (error) {
         alert("Error signing up: " + error.message);
     }
+    applyButton.innerHTML = "Apply";
+    applyButton.disabled = false;
 });
 
 async function signUpUser(username,phoneNumber, email, password) {

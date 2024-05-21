@@ -2,7 +2,7 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 const redirect_url = urlParams.get('redirect_url');
-
+const loginButton = document.getElementById("login-btn");
 const googleLogin = document.getElementById("google-login-btn");
 // googleLogin.addEventListener("click", async () => {
 //     signInWithPopup(auth, provider)
@@ -52,6 +52,8 @@ loginForm.addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value;
 
     try {
+        loginButton.innerHTML = "Logging in...";
+        loginButton.disabled = true;
         await loginUser(email, password);
     } catch (error) {
         Toastify({
@@ -68,6 +70,8 @@ loginForm.addEventListener("submit", async (e) => {
             }
         }).showToast();
     }
+    loginButton.innerHTML = "Login";
+    loginButton.disabled = false;
 });
 
 
