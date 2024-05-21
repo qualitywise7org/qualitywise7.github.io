@@ -356,17 +356,23 @@ async function displayResults(
   page
 ) {
   const jobs = [];
-console.log(selectedJobType, selectedLocation, selectedProfile);
+  console.log(selectedJobType, selectedLocation, selectedProfile);
+
   for (const job of jobs_data) {
-    if (
-      (selectedJobType === "all" ||
-        job.posts_data?.jobtype_masterdata?.code === selectedJobType) &&
-      (selectedLocation === "india" || (job?.location?.trim() === "" || job?.location?.toLowerCase()?.includes(selectedLocation?.toLowerCase()))) &&
-      (selectedProfile === "all" ||
-        job.posts_data?.post_name
-          .toLowerCase()
-          .includes(selectedProfile.toLowerCase()))
-    ) {
+    const jobTypeMatch =
+      selectedJobType === "all" ||
+      job.posts_data?.jobtype_masterdata?.code === selectedJobType;
+    const locationMatch =
+      selectedLocation.toLowerCase() === "india" ||
+      job?.location?.trim() === "" ||
+      job?.location?.toLowerCase().includes(selectedLocation.toLowerCase());
+    const profileMatch =
+      selectedProfile === "all" ||
+      job.posts_data?.post_name
+        .toLowerCase()
+        .includes(selectedProfile.toLowerCase());
+
+    if (jobTypeMatch && locationMatch && profileMatch) {
       jobs.push(job);
     }
   }
