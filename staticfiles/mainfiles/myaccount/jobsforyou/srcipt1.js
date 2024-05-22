@@ -360,19 +360,21 @@ async function displayResults(
 
   for (const job of jobs_data) {
     const jobTypeMatch =
-      selectedJobType === "all" ||
-      job.posts_data?.jobtype_masterdata?.code === selectedJobType;
+      !selectedJobType || selectedJobType === "all" || job.posts_data?.jobtype_masterdata?.code === selectedJobType;
+
     const locationMatch =
-      selectedLocation.toLowerCase() === "india" ||
+      !selectedLocation || selectedLocation.toLowerCase() === "india" ||
       job?.location?.trim() === "" ||
       job?.location?.toLowerCase().includes(selectedLocation.toLowerCase());
-    const profileMatch =
-      selectedProfile === "all" ||
-      job.posts_data?.post_name
-        .toLowerCase()
-        .includes(selectedProfile.toLowerCase());
 
-    if (jobTypeMatch && locationMatch && profileMatch) {
+    const profileMatch =
+      !selectedProfile || selectedProfile === "all" ||
+      job.posts_data?.post_name.toLowerCase().includes(selectedProfile.toLowerCase());
+
+    // Check each condition only if it's provided by the user
+    const matches = jobTypeMatch && locationMatch && profileMatch;
+
+    if (matches) {
       jobs.push(job);
     }
   }
