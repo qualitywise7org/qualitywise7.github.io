@@ -58,20 +58,20 @@ const signupForm = document.getElementById("signup-form");
 // }
 
 
-const googleSignUp = document.getElementById("google-signup-btn");
-googleSignUp.addEventListener("click", async () => {
-    signInWithPopup(auth, provider)
-        .then(async (result) => {
-            const credentials = GoogleAuthProvider.credentialFromResult(result);
-            const user = result.user;
-            localStorage.setItem("uid", user.uid);
-            localStorage.setItem("email", user.email);
-            window.location.href = "/myaccount/cv_upload/";
-        }).catch((error) => {
-            const errorMessage = error.message;
-            console.log("Error:", errorMessage);
-        });
-})
+// const googleSignUp = document.getElementById("google-signup-btn");
+// googleSignUp.addEventListener("click", async () => {
+//     signInWithPopup(auth, provider)
+//         .then(async (result) => {
+//             const credentials = GoogleAuthProvider.credentialFromResult(result);
+//             const user = result.user;
+//             localStorage.setItem("uid", user.uid);
+//             localStorage.setItem("email", user.email);
+//             window.location.href = "/myaccount/cv_upload/";
+//         }).catch((error) => {
+//             const errorMessage = error.message;
+//             console.log("Error:", errorMessage);
+//         });
+// })
 
 signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
