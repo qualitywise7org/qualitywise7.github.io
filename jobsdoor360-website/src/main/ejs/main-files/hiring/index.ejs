@@ -15,12 +15,22 @@
   <body>
     <%- include('../../partials/navbar.ejs') %>
     <div class="container-fluid">
-      <div style="padding-bottom: 5px;" >
-        <input type="search" placeholder="Company name" class="search" id="searchItem" name="search">
-        <input type="search" placeholder="Company code" class="search"  id="searchCode" name="search">
-        <input type="search" placeholder="Job" class="search"  id="searchJob" name="search">
-        
-      </div>
+      <!-- <div class="container" > -->
+        <div class="row mt-3" style="padding: 10px;">
+          <div class="col-md-4 mb-">
+            <label for="company_name" style="font-weight: 500;">Company Name:</label>
+            <input class="form-control"  type="search" placeholder="Search Company" class="search" id="searchItem" name="search">
+          </div>
+          <div class="col-md-4 mb-">
+            <label for="Code" style="font-weight: 500;">Company Code:</label>
+            <input class="form-control"  type="search" placeholder="Search Company Code" class="search"  id="searchCode" name="search">
+          </div>
+          <div class="col-md-4 mb-">
+            <label for="Profile" style="font-weight: 500;">Job Profile:</label>
+            <input class="form-control" type="search" placeholder="Search Job Profile..." class="search"  id="searchJob" name="search">
+          </div>
+        </div>
+      <!-- </div> -->
       <div class="table-responsive">
         
         <table class="table table-bordered text-center" id="jobTable">
