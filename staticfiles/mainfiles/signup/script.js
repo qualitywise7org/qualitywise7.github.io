@@ -1,3 +1,7 @@
+const email = localStorage.getItem("email");
+if (email) {
+    window.location.href = "/";
+}
 const signupButton = document.getElementById("signup-btn");
 const signupForm = document.getElementById("signup-form");
 

@@ -1,5 +1,8 @@
 
-
+const email = localStorage.getItem("email");
+if (email) {
+    window.location.href = "/";
+}
 const urlParams = new URLSearchParams(window.location.search);
 const redirect_url = urlParams.get('redirect_url');
 const loginButton = document.getElementById("login-btn");
