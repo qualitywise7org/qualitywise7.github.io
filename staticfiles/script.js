@@ -229,3 +229,5 @@ submitButton.addEventListener("click", async () => {
 closeModal?.addEventListener("click", async () => {
   modal.hide();
 });
+
+

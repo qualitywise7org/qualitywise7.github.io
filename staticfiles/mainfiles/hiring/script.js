@@ -2,58 +2,18 @@
 
 document.addEventListener("DOMContentLoaded", async function () {
   const jobListings = document.getElementById("jobListings");
-  const searchCompany = document.getElementById("filterCompany");
-  const company=document.getElementById("searchItem").value;
-  const companyCode=document.getElementById("companyCode");
-  const searchCode=document.getElementById("searchCode").value;
-  console.log(searchCode, "searchcode")
-  if(company != null || company != "" || searchCode!=null||searchCode!=""){
-    // Add event listener to search company button
-    searchCompany.addEventListener('click',async () =>{
-      const searchCode=document.getElementById("searchCode").value;
-      const company=document.getElementById("searchItem").value;
-  
-      const queryParams= new URLSearchParams(window.location.search);
-      queryParams.set('company_name',  company);
-      queryParams.set('company_code', searchCode);
+  const company=document.getElementById("searchItem");
+  const job=document.getElementById("searchJob");
+  const searchCode=document.getElementById("searchCode");
 
-      
-      const newUrl=`${window.location.pathname}?${queryParams.toString()}`;
-      window.history.replaceState({}, '', newUrl);
-      const param1=queryParams.get('company_name');
-      const param2=queryParams.get('company_code');
-  console.log(param1, param2)
-  
-  try{
-    const querySnapshot= await getDocs(collection(db, "hiring"));
-    querySnapshot.forEach((doc)=>{
-      const data=doc.data();
-      const row = document.createElement("tr");
-      if(data?.company_name==param1 || data?.company_code==param2 ){
-        row.innerHTML = `
-        <td class="text-center">${data?.title || "NOT DISCLOSED"}</td>
-        <td class="text-center">${"₹" + data?.stipend || "NOT DISCLOSED"}</td>
-        <td class="text-center">${data?.role || "NOT DISCLOSED"}</td>
-        <td class="text-center">${data?.location || "NOT DISCLOSED"}</td>
-        <td class="text-center">${data?.company_name || "NOT DISCLOSED"}</td>
-        <td class="text-center"><a href="${
-          data?.job_description_doc || "#"
-        }">Click Here</a></td>
-        <td><button class="applyButton" data-jobid="${
-          doc.id
-        }">Apply</button></td>
-      `;
-      jobListings.appendChild(row);
-      console.log(data)
-      }
-    })
-  } catch (error) {
-    console.error("Error retrieving job listings:", error);
-  }
-    });
-  } else if(company==""||company==null) {
+  let querySnapshot;
+  querySnapshot = await getDocs(collection(db, "hiring"));
+
+  // Create function to render table 
+  async function renderJobListing() {
+    jobListings.innerHTML = ''; // Clear existing table rows
+
     try {
-      const querySnapshot = await getDocs(collection(db, "hiring"));
       querySnapshot.forEach((doc) => {
         const data = doc.data();
         const row = document.createElement("tr");
@@ -63,19 +23,154 @@ document.addEventListener("DOMContentLoaded", async function () {
           <td class="text-center">${data?.role || "NOT DISCLOSED"}</td>
           <td class="text-center">${data?.location || "NOT DISCLOSED"}</td>
           <td class="text-center">${data?.company_name || "NOT DISCLOSED"}</td>
-          <td class="text-center"><a href="${
-            data?.job_description_doc || "#"
-          }">Click Here</a></td>
-          <td><button class="applyButton" data-jobid="${
-            doc.id
-          }">Apply</button></td>
+          <td class="text-center"><a href="${data?.job_description_doc || "#"}">Click Here</a></td>
+          <td><button class="applyButton" data-jobid="${doc.id}">Apply</button></td>
         `;
         jobListings.appendChild(row);
       });
     } catch (error) {
       console.error("Error retrieving job listings:", error);
-    }
+    } 
   }
+
+  //call renderJobListing function when page loads
+  await renderJobListing();
+
+  // Add event listener to search job
+
+  job.addEventListener('input',async () =>{
+    const role=document.getElementById("searchJob").value.toLowerCase();
+    try {
+    const queryParams= new URLSearchParams(window.location.search);
+    
+    queryParams.set('role', role);
+    const newUrl=`${window.location.pathname}?${queryParams.toString()}`;
+    window.history.replaceState({}, '', newUrl);
+    
+    let param1=queryParams.get('role').toLowerCase();
+      console.log( param1,"role")
+      querySnapshot = await getDocs(
+          query(collection(db, "hiring"), where("role", "==", param1.toLowerCase()))
+        );
+        console.log(querySnapshot,"querysnapshot");
+        querySnapshot.forEach((doc)=>{
+          console.log(doc.data(), "job")
+        })
+
+        await renderJobListing();
+
+    } catch (error) {
+
+      console.log("search",error)
+      
+    }
+
+  });
+
+  // Add event listener to search company code
+
+  searchCode.addEventListener('input',async () =>{
+    const code=document.getElementById("searchCode").value;
+    
+    console.log("click")
+    try {
+    const queryParams= new URLSearchParams(window.location.search);
+    
+    queryParams.set('company_code', code);
+    const newUrl=`${window.location.pathname}?${queryParams.toString()}`;
+    window.history.replaceState({}, '', newUrl);
+    
+    let param1=parseInt(queryParams.get('company_code'));
+      console.log(typeof param1,"code")
+      querySnapshot = await getDocs(
+          query(collection(db, "hiring"), where("company_code", "==", param1))
+        );
+        console.log(querySnapshot,"querysnapshot");
+        querySnapshot.forEach((doc)=>{
+          console.log(doc.data(), "joio44")
+        })
+
+        await renderJobListing();
+
+    } catch (error) {
+
+      console.log("search",error)
+      
+    }
+
+  });
+
+    // Add event listener to search company name
+    
+    company.addEventListener('input',async () =>{
+      const company=document.getElementById("searchItem").value;
+      // const code=document.getElementById("searchCode").value;
+      console.log("click")
+      try {
+      const queryParams= new URLSearchParams(window.location.search);
+      queryParams.set('company_name',  company);
+      // queryParams.set('company_code', code);
+      const newUrl=`${window.location.pathname}?${queryParams.toString()}`;
+      window.history.replaceState({}, '', newUrl);
+      let param1=queryParams.get('company_name').toLowerCase();
+      // let param2=queryParams.get('company_code');
+        console.log( param1,"company");
+        querySnapshot = await getDocs(
+            query(collection(db, "hiring"), where("company_name", "==", param1))
+          );
+          console.log(querySnapshot,"querysnapshot");
+          querySnapshot.forEach((doc)=>{
+            console.log(doc.data(), "joio44")
+          })
+
+          await renderJobListing();
+
+      } catch (error) {
+
+        console.log("search",error)
+        
+      }
+
+    });
+
+    
+  
+  // try{
+  //   let querySnapshot;
+  //   // if(param1.length>1){
+  //   //   await getDocs(
+  //   //     query(collection(db, "hiring"), where("company_name", "==", param1))
+  //   //   );
+  //   // }else{
+  //      querySnapshot= await getDocs(collection(db, "hiring"));
+    
+
+  //   querySnapshot.forEach((doc)=>{
+  //   let   data=doc.data();
+  //     const row = document.createElement("tr");
+     
+  //       row.innerHTML = `
+  //       <td class="text-center">${data?.title || "NOT DISCLOSED"}</td>
+  //       <td class="text-center">${"₹" + data?.stipend || "NOT DISCLOSED"}</td>
+  //       <td class="text-center">${data?.role || "NOT DISCLOSED"}</td>
+  //       <td class="text-center">${data?.location || "NOT DISCLOSED"}</td>
+  //       <td class="text-center">${data?.company_name || "NOT DISCLOSED"}</td>
+  //       <td class="text-center"><a href="${
+  //         data?.job_description_doc || "#"
+  //       }">Click Here</a></td>
+  //       <td><button class="applyButton" data-jobid="${
+  //         doc.id
+  //       }">Apply</button></td>
+  //     `;
+  //     jobListings.appendChild(row);
+  //     console.log(data)
+      
+  //   })
+  // } catch (error) {
+  //   console.error("Error retrieving job listings:", error);
+  // }
+  //   // });
+
   
 
   
