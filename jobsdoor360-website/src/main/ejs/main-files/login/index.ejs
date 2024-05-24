@@ -83,26 +83,26 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
-    <script type="module" src="/staticfiles/mainfiles/login/script.js"></script>
-    <script>
-      async function transferData() {
-  try{
-    // step1: Read data from source collection
-    const sourceSnapshot= await getDocs(collection(db, "users"));
-    // step2: Write data to destination collection
-    sourceSnapshot.forEach(async(doc)=>{
-      const docData=doc.data();
-      await setDoc(collection(db,"login_details"), doc.id, docData);
-      console.log(`Document ${doc.id} transferred successfully.`);
-    });
-    console.log("Data transfer completed");
-  } catch (error){
-    console.error("Error transferring data:", error);
-  }
-}
+//   <script type="module" src="/staticfiles/mainfiles/login/script.js"></script>
+//    <script>
+//    async function transferData() {
+// try{
+// step1: Read data from source collection
+//   const sourceSnapshot= await getDocs(collection(db, "users"));
+// step2: Write data to destination collection
+//   sourceSnapshot.forEach(async(doc)=>{
+//     const docData=doc.data();
+//     await setDoc(collection(db,"login_details"), doc.id, docData);
+//      console.log(`Document ${doc.id} transferred successfully.`);
+//   });
+//    console.log("Data transfer completed");
+//  } catch (error){
+//  console.error("Error transferring data:", error);
+// }
+// }
 
 // call function to start data transfer
-transferData();
-    </script>
+// transferData();
+   // </script>
   </body>
 </html>
