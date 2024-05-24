@@ -85,10 +85,22 @@
   color: rgb(209, 228, 244);
 }
 .reg {
+  
   display: none;
+  background-color: #dcdfe1;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  line-height: 17px;
+  font-size: 13px;
+  word-spacing:3px;
 }
 .reg1{
   display: block;
+  background-color: #dcdfe1;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight: 200;
+  font-size: 25px;
 }
 
 

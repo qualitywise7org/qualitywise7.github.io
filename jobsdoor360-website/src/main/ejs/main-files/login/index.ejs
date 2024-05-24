@@ -15,21 +15,6 @@
     <%- include('../../partials/navbar.ejs') %>
     <div class="login_parent">
       <div class="login-container" style="text-align: center">
-        <a
-          class="logo"
-          style="
-            background-color: #e8f0fe;
-            border-radius: 10px;
-            text-align: center;
-          "
-          href="/"
-        >
-          <img
-            style="width: 50%; padding: 10px"
-            src="/assets/Jobsdoor360 -logos__black.png"
-            alt="logo"
-          />
-        </a>
         <h2 class="login-head">Login</h2>
         <form id="login-form">
           <label for="email">Email:</label>
@@ -44,7 +29,7 @@
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
 
-          <button type="submit" style="margin-top: 20px">Login</button>
+          <button type="submit" id="login-btn" style="margin-top: 20px">Login</button>
         </form>
         <p class="bottom-heading">
           <span>

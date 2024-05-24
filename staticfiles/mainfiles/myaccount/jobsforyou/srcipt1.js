@@ -356,17 +356,25 @@ async function displayResults(
   page
 ) {
   const jobs = [];
-console.log(selectedJobType, selectedLocation, selectedProfile);
+  console.log(selectedJobType, selectedLocation, selectedProfile);
+
   for (const job of jobs_data) {
-    if (
-      (selectedJobType === "all" ||
-        job.posts_data?.jobtype_masterdata?.code === selectedJobType) &&
-      (selectedLocation === "india" || (job?.location?.trim() === "" || job?.location?.toLowerCase()?.includes(selectedLocation?.toLowerCase()))) &&
-      (selectedProfile === "all" ||
-        job.posts_data?.post_name
-          .toLowerCase()
-          .includes(selectedProfile.toLowerCase()))
-    ) {
+    const jobTypeMatch =
+      !selectedJobType || selectedJobType === "all" || job.posts_data?.jobtype_masterdata?.code === selectedJobType;
+
+    const locationMatch =
+      !selectedLocation || selectedLocation.toLowerCase() === "india" ||
+      job?.location?.trim() === "" ||
+      job?.location?.toLowerCase().includes(selectedLocation.toLowerCase());
+
+    const profileMatch =
+      !selectedProfile || selectedProfile === "all" ||
+      job.posts_data?.post_name.toLowerCase().includes(selectedProfile.toLowerCase());
+
+    // Check each condition only if it's provided by the user
+    const matches = jobTypeMatch && locationMatch && profileMatch;
+
+    if (matches) {
       jobs.push(job);
     }
   }
