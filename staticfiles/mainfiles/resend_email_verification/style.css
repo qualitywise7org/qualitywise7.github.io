@@ -1,0 +1,16 @@
+button {
+  background-color: #586ba6;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+}
+
+#timer_text {
+    color: #586ba6;
+    font-size: 5rem;
+    font-weight: bolder;
+}

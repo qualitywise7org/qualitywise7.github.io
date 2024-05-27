@@ -1,4 +1,8 @@
-
+const email = localStorage.getItem("email");
+if (email) {
+    window.location.href = "/";
+}
+const signupButton = document.getElementById("signup-btn");
 const signupForm = document.getElementById("signup-form");
 
 // signupForm.addEventListener("submit", async (e) => {
@@ -58,7 +62,7 @@ const signupForm = document.getElementById("signup-form");
 // }
 
 
-const googleSignUp = document.getElementById("google-signup-btn");
+// const googleSignUp = document.getElementById("google-signup-btn");
 // googleSignUp.addEventListener("click", async () => {
 //     signInWithPopup(auth, provider)
 //         .then(async (result) => {
@@ -66,7 +70,7 @@ const googleSignUp = document.getElementById("google-signup-btn");
 //             const user = result.user;
 //             localStorage.setItem("uid", user.uid);
 //             localStorage.setItem("email", user.email);
-//             window.location.href = "../myaccount";
+//             window.location.href = "/myaccount/cv_upload/";
 //         }).catch((error) => {
 //             const errorMessage = error.message;
 //             console.log("Error:", errorMessage);
@@ -82,23 +86,27 @@ signupForm.addEventListener("submit", async (e) => {
     const phoneNumber = document.getElementById("phoneNumber").value;
 
     try {
+        signupButton.innerHTML = "Signing up...";
+        signupButton.disabled = true;
         document.getElementById("username").value = "";
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";
         document.getElementById("phoneNumber").value = "";
 
-        const userCredential = await signUpUser(username,phoneNumber, email, password);
+        const userCredential = await signUpUser(username, phoneNumber, email, password);
 
         // Send email verification
         await sendEmailVerification(auth.currentUser);
-
-        alert("Signed up successfully! Please check your email to verify your account and try again Later!");
+        window.location.href = "/resend_email_verification/";
     } catch (error) {
         alert("Error signing up: " + error.message);
     }
+
+    signupButton.innerHTML = "Sign Up";
+    signupButton.disabled = false;
 });
 
-async function signUpUser(username,phoneNumber, email, password) {
+async function signUpUser(username, phoneNumber, email, password) {
     const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -111,16 +119,16 @@ async function signUpUser(username,phoneNumber, email, password) {
     return userCredential;
 }
 
-async function saveUserDataToFirestore(userId, username, email,phoneNumber) {
+async function saveUserDataToFirestore(userId, username, email, phoneNumber) {
     const db = getFirestore();
     const userDocRef = doc(db, "login_details", userId);
 
     await setDoc(userDocRef, {
         full_name: username,
-        phonenumber:phoneNumber,
+        phonenumber: phoneNumber,
         email: email,
         firstLogin: true,
-        isAdmin  : false,
+        isAdmin: false,
     });
 }
 

@@ -4,12 +4,11 @@ article {
   --link-icon-translate: -20px;
   --link-icon-opacity: 0;
   position: relative;
-  border-radius: 16px;
+  border-radius: 6px;
   box-shadow: none;
   background: #fff;
   transform-origin: center;
   transition: all 0.4s ease-in-out;
-  overflow: hidden;
 }
 
 article a::after {
@@ -23,7 +22,7 @@ article a::after {
 article h2 {
   text-align: center;
   margin: 0 0 18px 0;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   letter-spacing: 0.06em;
   color: var(--title-color);
   transition: color 0.3s ease-out;
@@ -37,7 +36,7 @@ article img {
 }
 
 .article-body {
-  padding: 24px;
+  padding: 24px 24px 0 24px;
 }
 
 article a {
@@ -86,21 +85,18 @@ body {
 }
 
 .articles {
-  margin: 100px;
+  margin: 50px;
   display: grid;
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: 24px;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 50px;
+  gap: 20px;
 }
 
 @media screen and (max-width: 960px) {
   article {
     container: card/inline-size;
-  }
-  .article-body p {
-    display: none;
   }
 }
 
@@ -130,10 +126,3 @@ body {
   width: 1px;
 }
 
-section {
-  height: calc(80vh);
-}
-
-.img {
-  overflow: hidden;
-}
