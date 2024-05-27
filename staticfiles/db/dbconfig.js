@@ -18,6 +18,8 @@ import {
   getDocs,
   getDoc,
   doc,
+  query,
+  where,
   setDoc,
   addDoc,
   updateDoc,
