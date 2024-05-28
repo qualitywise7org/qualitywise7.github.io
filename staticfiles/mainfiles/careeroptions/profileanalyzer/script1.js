@@ -47,7 +47,7 @@ function displayJobProfiles(profiles, query = "") {
             }
             <p class="text-center fw-bold">
               Ready to seize the opportunity?<br/>
-              <a href="http://127.0.0.1:5501/myaccount/jobsforyou/?jobType=all&location=india&profile=${encodeURIComponent(
+              <a href="http://jobsdoor360.in/myaccount/jobsforyou/?jobType=all&location=india&profile=${encodeURIComponent(
                 query
               )}&page=1" class="btn btn-outline-success mt-2">
                 click here
