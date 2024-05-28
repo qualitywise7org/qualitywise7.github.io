@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="/staticfiles/mainfiles/pricing/style.css" />
     <link rel="stylesheet" href="style.css" />
     <script>
-      window.location.replace("/membership/");
-    </script>
-    <script>
       function trackBuyButtonClick(buttonName) {
         gtag("event", "click", {
           event_category: "Buy Now Click",
@@ -55,8 +52,8 @@
                 ><span class="linked">Course Link</span>
               </a>
             </td>
-            <td>9000</td>
-            <td>9 months</td>
+            <td>20000</td>
+            <td>6 months</td>
           </tr>
           <tr>
             <td colspan="4">
@@ -71,8 +68,8 @@
                 ><span class="linked">Course Link</span></a
               >
             </td>
-            <td>4000</td>
-            <td>2 months</td>
+            <td>5000</td>
+            <td>1 month</td>
           </tr>
           <tr>
             <td colspan="4">
@@ -87,8 +84,8 @@
                 ><span class="linked">Course Link</span></a
               >
             </td>
-            <td>9000</td>
-            <td>9 months</td>
+            <td>20000</td>
+            <td>6 months</td>
           </tr>
           <tr>
             <td colspan="4">
@@ -103,8 +100,8 @@
                 ><span class="linked">Course Link</span></a
               >
             </td>
-            <td>11000</td>
-            <td>11 months</td>
+            <td>20000</td>
+            <td>6 months</td>
           </tr>
           <tr>
             <td colspan="4">
@@ -167,13 +164,13 @@
           <tbody>
             <tr class="table-secondary">
               <td>One mock interview</td>
-              <td>500</td>
+              <td>700</td>
               <td>—</td>
             </tr>
             <tr>
               <td>10 mock interviews</td>
+              <td>7000</td>
               <td>5000</td>
-              <td>4000</td>
             </tr>
           </tbody>
         </table>
@@ -190,6 +187,7 @@
           <thead class="table-primary">
             <tr>
               <th>Consultancy</th>
+              <th>Time</th>
               <th>Price (Rs.)</th>
               <th>Limited Period Offer price (Rs.)</th>
             </tr>
@@ -197,11 +195,19 @@
           <tbody>
             <tr class="table-secondary">
               <td>Career Consultancy</td>
-              <td>300</td>
+              <td>1 hr</td>
+              <td>500</td>
               <td>0 (Free)</td>
             </tr>
           </tbody>
         </table>
+        <a
+          class="buy-now-btn"
+          href="/register/"
+          onclick="trackBuyButtonClick('Buy Now - Internship')"
+          ><span class="btn1">Apply</span></a
+        >
+        <br><br><br>
 
         <!-- Footer -->
 
