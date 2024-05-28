@@ -62,6 +62,9 @@ window.addEventListener("load", async () => {
 // Function to render paginated jobs and generate pagination controls
 function renderPaginatedJobsAndControls(jobs, currentPage) {
   console.log(jobs);
+  jobs.forEach((doc)=>{
+    console.log(doc.posts_data.post_name, "location")
+  })
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
 

@@ -48,14 +48,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     window.history.replaceState({}, '', newUrl);
     
     let param1=queryParams.get('role').toLowerCase();
-      console.log( param1,"role")
       querySnapshot = await getDocs(
           query(collection(db, "hiring"), where("role", "==", param1.toLowerCase()))
         );
-        console.log(querySnapshot,"querysnapshot");
-        querySnapshot.forEach((doc)=>{
-          console.log(doc.data(), "job")
-        })
+        // querySnapshot.forEach((doc)=>{
+          // console.log(doc.data(), "job")
+        // })
 
         await renderJobListing();
 
@@ -72,7 +70,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   searchCode.addEventListener('input',async () =>{
     const code=document.getElementById("searchCode").value;
     
-    console.log("click")
+    
     try {
     const queryParams= new URLSearchParams(window.location.search);
     
@@ -85,10 +83,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       querySnapshot = await getDocs(
           query(collection(db, "hiring"), where("company_code", "==", param1))
         );
-        console.log(querySnapshot,"querysnapshot");
-        querySnapshot.forEach((doc)=>{
-          console.log(doc.data(), "joio44")
-        })
+        
+        // querySnapshot.forEach((doc)=>{
+          // console.log(doc.data(), "joio44")
+        // })
 
         await renderJobListing();
 
@@ -105,7 +103,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     company.addEventListener('input',async () =>{
       const company=document.getElementById("searchItem").value;
       // const code=document.getElementById("searchCode").value;
-      console.log("click")
       try {
       const queryParams= new URLSearchParams(window.location.search);
       queryParams.set('company_name',  company);
@@ -114,14 +111,12 @@ document.addEventListener("DOMContentLoaded", async function () {
       window.history.replaceState({}, '', newUrl);
       let param1=queryParams.get('company_name').toLowerCase();
       // let param2=queryParams.get('company_code');
-        console.log( param1,"company");
         querySnapshot = await getDocs(
             query(collection(db, "hiring"), where("company_name", "==", param1))
           );
-          console.log(querySnapshot,"querysnapshot");
-          querySnapshot.forEach((doc)=>{
-            console.log(doc.data(), "joio44")
-          })
+          // querySnapshot.forEach((doc)=>{
+            // console.log(doc.data(), "joio44")
+          // })
 
           await renderJobListing();
 
