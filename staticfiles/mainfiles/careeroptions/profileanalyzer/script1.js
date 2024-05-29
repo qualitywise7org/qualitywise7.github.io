@@ -28,23 +28,6 @@ function displayJobProfiles(profiles, query = "") {
             <p class="card-text">
               <b>Entrance Exam:</b> ${profile.entrance_exam}
             </p>
-            ${
-              profile.lifestyle && profile.lifestyle.length > 0
-                ? `
-            <p class="card-text">
-              <b>Lifestyle:</b>
-              <ul>
-                ${profile.lifestyle
-                  .map(
-                    (video) => `
-                  <li><a href="${video.url}" target="_blank">${video.title}</a></li>
-                `
-                  )
-                  .join("")}
-              </ul>
-            </p>`
-                : ""
-            }
             <p class="text-center fw-bold">
               Ready to seize the opportunity?<br/>
               <a href="http://jobsdoor360.in/myaccount/jobsforyou/?jobType=all&location=india&profile=${encodeURIComponent(
