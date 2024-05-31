@@ -7,6 +7,9 @@ function displayJobProfiles(profiles, query = "") {
 
   // Loop through each profile and create a card for it
   profiles.forEach((profile) => {
+    const profileUrl = `http://jobsdoor360.in/myaccount/jobsforyou/?jobType=all&location=india&profile=${encodeURIComponent(
+      query
+    )}&page=1`;
     const card = `
       <div class="col-md-6 col-sm-12">
         <div class="card mb-3">
@@ -30,17 +33,34 @@ function displayJobProfiles(profiles, query = "") {
             </p>
             <p class="text-center fw-bold">
               Ready to seize the opportunity?<br/>
-              <a href="http://jobsdoor360.in/myaccount/jobsforyou/?jobType=all&location=india&profile=${encodeURIComponent(
-                query
-              )}&page=1" class="btn btn-outline-success mt-2">
+              <a href="${profileUrl}" class="btn btn-outline-success mt-2 mx-2">
                 click here
               </a>
+              <button class="btn btn-success shareBtn mt-2 mx-2" data-url="${profileUrl}">Share</button>
             </p>
+           
           </div>
         </div>
       </div>
     `;
     jobProfilesContainer.innerHTML += card;
+  });
+
+  // Add event listeners to share buttons
+  document.querySelectorAll(".shareBtn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const url = this.getAttribute("data-url");
+      if (navigator.share) {
+        navigator
+          .share({
+            title: "Job Profile",
+            url: url,
+          })
+          .catch(console.error);
+      } else {
+        alert("Web Share API not supported in this browser.");
+      }
+    });
   });
 }
 
@@ -91,6 +111,6 @@ window.onload = function () {
         displayJobProfiles(profile_masterdata);
         updateProfileCount(profile_masterdata.length);
       }
-    }, 1000); // Reduced delay to 300ms for a more responsive search experience
+    }, 1000); // Reduced delay to 1000ms for a more responsive search experience
   });
 };
