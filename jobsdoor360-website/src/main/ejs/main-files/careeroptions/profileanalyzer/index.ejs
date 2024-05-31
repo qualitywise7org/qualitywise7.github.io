@@ -37,5 +37,37 @@
     <!-- Import master data -->
     <script src="/website_data/website_masterdata.js"></script>
     <script src="/staticfiles/mainfiles/careeroptions/profileanalyzer/script1.js"></script>
+    <script>
+      // Share button api
+document.getElementById("shareBtn").addEventListener("click", async () => {
+  const query = "yourQuery"; // Replace with your actual query or a variable that holds the query
+  const encodedQuery = encodeURIComponent(query);
+  const shareUrl = `http://jobsdoor360.in/myaccount/jobsforyou/?jobType=all&location=india&profile=${encodedQuery}&page=1`;
+
+  const shareData = {
+    title: "Check out this page!",
+    text: "I found this page really interesting, take a look!",
+    url: shareUrl,
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+      console.log("Page shared successfully");
+    } catch (err) {
+      console.error("Error sharing:", err);
+    }
+  } else {
+    // Fallback for browsers that don't support the Web Share API
+    const textArea = document.createElement("textarea");
+    textArea.value = shareData.url;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+    alert("Link copied to clipboard");
+  }
+});
+    </script>
   </body>
 </html>
