@@ -5,46 +5,48 @@ function displayJobProfiles(profiles, query = "") {
   // Clear existing content
   jobProfilesContainer.innerHTML = "";
 
+  // Create a document fragment for better performance
+  const fragment = document.createDocumentFragment();
+
   // Loop through each profile and create a card for it
   profiles.forEach((profile) => {
     const profileUrl = `http://jobsdoor360.in/myaccount/jobsforyou/?jobType=all&location=india&profile=${encodeURIComponent(
-      query
+      profile.name
     )}&page=1`;
-    const card = `
-      <div class="col-md-6 col-sm-12">
-        <div class="card mb-3">
-          <div class="card-body">
-            <h6 class="text-center card-title fs-5 fw-bold h6 text-white py-2 mb-3">
-              ${profile.name}
-            </h6>
-            <p class="card-text">
-              <b>Minimum Qualifications:</b> ${profile.minimum_qualifications.join(
-                ", "
-              )}
-            </p>
-            <p class="card-text">
-              <b>Minimum Skills Required:</b> ${profile.minimum_skills_required}
-            </p>
-            <p class="card-text">
-              <b>Preferred Streams:</b> ${profile.preferred_streams}
-            </p>
-            <p class="card-text">
-              <b>Entrance Exam:</b> ${profile.entrance_exam}
-            </p>
-            <p class="text-center fw-bold">
-              Ready to seize the opportunity?<br/>
-              <a href="${profileUrl}" class="btn btn-outline-success mt-2 mx-2">
-                click here
-              </a>
-              <button class="btn btn-success shareBtn mt-2 mx-2" data-url="${profileUrl}">Share</button>
-            </p>
-           
-          </div>
+    const card = document.createElement("div");
+    card.className = "col-md-6 col-sm-12";
+    card.innerHTML = `
+      <div class="card mb-3">
+        <div class="card-body">
+          <h6 class="text-center card-title fs-5 fw-bold h6 text-white py-2 mb-3">
+            ${profile.name}
+          </h6>
+          <p class="card-text">
+            <b>Minimum Qualifications:</b> ${profile.minimum_qualifications.join(
+              ", "
+            )}
+          </p>
+          <p class="card-text">
+            <b>Minimum Skills Required:</b> ${profile.minimum_skills_required}
+          </p>
+          <p class="card-text">
+            <b>Preferred Streams:</b> ${profile.preferred_streams}
+          </p>
+          <p class="card-text">
+            <b>Entrance Exam:</b> ${profile.entrance_exam}
+          </p>
+          <p class="text-center fw-bold">
+            Ready to seize the opportunity?<br/>
+            <a href="${profileUrl}" class="btn btn-outline-success mt-2 mx-2 clickHereBtn">Click here</a>
+            <button class="btn btn-success shareBtn mt-2 mx-2" data-url="${profileUrl}">Share</button>
+          </p>
         </div>
       </div>
     `;
-    jobProfilesContainer.innerHTML += card;
+    fragment.appendChild(card);
   });
+
+  jobProfilesContainer.appendChild(fragment);
 
   // Add event listeners to share buttons
   document.querySelectorAll(".shareBtn").forEach((button) => {
@@ -60,6 +62,15 @@ function displayJobProfiles(profiles, query = "") {
       } else {
         alert("Web Share API not supported in this browser.");
       }
+    });
+  });
+
+  // Add event listeners to "Click here" buttons
+  document.querySelectorAll(".clickHereBtn").forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      const url = this.getAttribute("href");
+      window.location.href = url;
     });
   });
 }
@@ -111,6 +122,6 @@ window.onload = function () {
         displayJobProfiles(profile_masterdata);
         updateProfileCount(profile_masterdata.length);
       }
-    }, 1000); // Reduced delay to 1000ms for a more responsive search experience
+    }, 1000); // Delay to 1000ms for a more responsive search experience
   });
 };
