@@ -41,7 +41,7 @@ const data = [
   {
     
     name: "Narayan Raghuwanshi",
-      imageURL: "c:\Users\ADITYA INVESTORS\Downloads\narayan.jpg",
+      imageURL: "",
       description: "Learning full stack development as internship.",
       company: " final year student",
       linkedinURL: "https://www.linkedin.com/in/narayan-raghuwanshi-4589b4290/"
