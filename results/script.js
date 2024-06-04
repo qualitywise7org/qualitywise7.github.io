@@ -42,16 +42,16 @@ const data = [
     
     name: "Narayan Raghuwanshi",
       imageURL: "",
-      description: "Learning full stack development as internship.",
-      company: " final year student",
+      description: "Developer who specializes in creating high-performance applications using the latest version of Next.js.",
+      company: " Final year student",
       linkedinURL: "https://www.linkedin.com/in/narayan-raghuwanshi-4589b4290/"
     },
     {
     
-      name: "Devraj",
+      name: "Devraj Pun",
         imageURL: "",
-        description: "Learning full stack development as internship.",
-        company: "",
+        description: "Learning Full stack and problem solving as internship.",
+        company: "Final year student",
         linkedinURL: "https://www.linkedin.com/in/devraj-pun-0019jb/"
       },
       {
