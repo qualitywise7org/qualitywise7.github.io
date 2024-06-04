@@ -4,6 +4,7 @@ const data = [
     imageURL: "rohitgupta",
     description: "Learnt full stack development as internship",
     company: "Placement - currently in final year.",
+    linkedinURL: "https://www.linkedin.com/in/rohit-gupta-21088b226/"
   },
   {
     name: "Shivam Dhakad",
@@ -11,26 +12,57 @@ const data = [
     description:
       "Learnt back-end development in python, frontend, DSA, problem solving.",
     company: "Placement - Muthoot Bank",
+    linkedinURL: "https://www.linkedin.com/in/shiv597166/"
   },
   {
     name: "Jatin Kushwah",
     imageURL: "",
     description: "Learnt full stack development as internship",
     company: "Placement - Skillops",
+    linkedinURL: "https://www.linkedin.com/in/jatin-kushwah-1b6694255/"
   },
   {
-    name: "Aditya Jain",
+    name: "Aditya jain",
     imageURL: "",
     description:
       "Learnt full stack development and product management as internship.",
     company: "Placement - got placed(company name not disclosed)",
+    linkedinURL: "https://www.linkedin.com/in/aditya-jain-98606a266/"
   },
+ 
   {
-    name: "Ayush Jain",
+    name: "Ayush Meena",
     imageURL: "",
     description: "Learning full stack development as internship.",
     company: "",
+    linkedinURL: "https://www.linkedin.com/in/ayush-meena-ba4211251/"
   },
+  
+  {
+    
+    name: "Narayan Raghuwanshi",
+      imageURL: "c:\Users\ADITYA INVESTORS\Downloads\narayan.jpg",
+      description: "Learning full stack development as internship.",
+      company: " final year student",
+      linkedinURL: "https://www.linkedin.com/in/narayan-raghuwanshi-4589b4290/"
+    },
+    {
+    
+      name: "Devraj",
+        imageURL: "",
+        description: "Learning full stack development as internship.",
+        company: "",
+        linkedinURL: "https://www.linkedin.com/in/devraj-pun-0019jb/"
+      },
+      {
+    
+        name: "Nivesh Garg",
+          imageURL: "",
+          description: "Learning full stack development as internship.",
+          company: "",
+          linkedinURL: "https://www.linkedin.com/in/nivesh-garg-865767229"
+        },
+             
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -69,6 +101,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Append image and classification to detail div
     detailDiv.appendChild(imgDiv);
     detailDiv.appendChild(classificationDiv);
+    // add the linkedin code in js
+    if (person.linkedinURL) {
+      const linkedinLink = document.createElement("a");
+      linkedinLink.textContent = "LinkedIn Profile";
+      linkedinLink.href = person.linkedinURL;
+      linkedinLink.target = "_blank"; // Open in a new tab
+      linkedinLink.rel = "noopener noreferrer"; // Security best practices
+      detailDiv.appendChild(linkedinLink);
+    }
 
     dataContainer.appendChild(detailDiv);
   });
