@@ -16,14 +16,14 @@ const data = [
   },
   {
     name: "Jatin Kushwah",
-    imageURL: "",
+    imageURL: "jatin",
     description: "Learnt full stack development as internship",
     company: "Placement - Skillops",
     linkedinURL: "https://www.linkedin.com/in/jatin-kushwah-1b6694255/"
   },
   {
     name: "Aditya jain",
-    imageURL: "",
+    imageURL: "aditya",
     description:
       "Learnt full stack development and product management as internship.",
     company: "Placement - got placed(company name not disclosed)",
@@ -32,7 +32,7 @@ const data = [
  
   {
     name: "Ayush Meena",
-    imageURL: "",
+    imageURL: "ayush",
     description: "Learning full stack development as internship.",
     company: "",
     linkedinURL: "https://www.linkedin.com/in/ayush-meena-ba4211251/"
@@ -41,7 +41,7 @@ const data = [
   {
     
     name: "Narayan Raghuwanshi",
-      imageURL: "",
+      imageURL: "narayan",
       description: "Developer who specializes in creating high-performance applications using the latest version of Next.js.",
       company: " Final year student",
       linkedinURL: "https://www.linkedin.com/in/narayan-raghuwanshi-4589b4290/"
@@ -49,7 +49,7 @@ const data = [
     {
     
       name: "Devraj Pun",
-        imageURL: "",
+        imageURL: "devraj",
         description: "Learning Full stack and problem solving as internship.",
         company: "Final year student",
         linkedinURL: "https://www.linkedin.com/in/devraj-pun-0019jb/"
@@ -57,8 +57,8 @@ const data = [
       {
     
         name: "Nivesh Garg",
-          imageURL: "",
-          description: "Learning full stack development as internship.",
+          imageURL: "nivesh",
+          description: "Learning Product Manager as internship.",
           company: "",
           linkedinURL: "https://www.linkedin.com/in/nivesh-garg-865767229"
         },
