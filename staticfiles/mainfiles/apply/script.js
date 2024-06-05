@@ -1,6 +1,6 @@
-let cvUrl = "";
 const signupForm = document.getElementById("signup-form");
 const applyButton = document.getElementById("apply-btn");
+
 
 signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -8,21 +8,22 @@ signupForm.addEventListener("submit", async (e) => {
     const username = document.getElementById("username").value;
     const email = document.getElementById("email").value;
     const phoneNumber = document.getElementById("phoneNumber").value;
+    localStorage.setItem("full_name", username);
+    localStorage.setItem("emailApply", email);
+    localStorage.setItem("phonenumber", phoneNumber);
 
     try {
         applyButton.innerHTML = "Applying...";
         applyButton.disabled = true;
-        cvUrl = await uploadCV(document.getElementById("cv").files[0]);
         const docRef = await doc(db, "user_profile", email);
         const userData = {
             full_name: username,
             email: email,
             phonenumber: phoneNumber,
-            cv: cvUrl,
         }
         await setDoc(docRef,userData)
         Toastify({
-            text: 'Applied successfully, login to explore more.',
+            text: 'Thanks for applying, redirecting to CV upload page.',
             duration: 3000,
             newWindow: true,
             close: true,
@@ -34,19 +35,11 @@ signupForm.addEventListener("submit", async (e) => {
                 borderRadius: "10px"
             }
         }).showToast();
-        window.location.href = "/login";
+        window.location.href = "/myaccount/cv_upload/";
     } catch (error) {
         alert("Error signing up: " + error.message);
     }
     applyButton.innerHTML = "Apply";
     applyButton.disabled = false;
 });
-
-async function uploadCV(file) {
-    const cvRef = ref(storage, "user_cv/" + file.name);
-    await uploadBytes(cvRef, file);
-
-    const url = await getDownloadURL(cvRef);
-    return url; // Return empty string if URL is undefined
-}
 
