@@ -1,6 +1,6 @@
 const email = localStorage.getItem("email");
 let imageUrl = ""
-// let cvUrl = ""
+let cvUrl = ""
 if (!email) {
     window.location.href = "/login/";
 }
@@ -26,7 +26,7 @@ async function isUser() {
             $("#linkedin").val(userData.about.linkedin);
             $("#github").val(userData.about.github);
             imageUrl = userData.about.image;
-            // cvUrl = userData.about.cv;
+            cvUrl = userData.about.cv;
 
             if (!imageUrl) imageUrl = "https://www.pngall.com/wp-content/uploads/5/Profile.png";
             const profileImage = document.getElementById("show_image");
@@ -107,7 +107,7 @@ function collectFormData() {
     aboutData.phoneNo = $("#phoneno").val() || "";
     aboutData.linkedin = $("#linkedin").val() || "";
     aboutData.github = $("#github").val() || "";
-    // aboutData.cv = cvUrl || "";
+    aboutData.cv = cvUrl || "";
     formData.about = aboutData;
 
     // Collect data for the "Education" section
