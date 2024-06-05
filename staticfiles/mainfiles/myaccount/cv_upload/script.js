@@ -43,7 +43,7 @@ async function saveCVToDatabase() {
                     }
                 }).showToast();
                 setTimeout(() => {
-                    window.location.href = "/myaccount/yourprofile/";
+                    window.location.href = "/apply/thanks/";
                 }, 3000);
             })
             .catch((error) => {
