@@ -3,6 +3,11 @@
   <head>
     <title>Apply</title>
     <link rel="stylesheet" href="/staticfiles/mainfiles/apply/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -238,21 +243,23 @@
 
           <label for="email">Email:</label>
           <input
-            type="text"
+            type="email"
             id="email"
             name="email"
             required
             autocomplete="email"
           />
-
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            autocomplete="current-password"
-          />
+          <div class="d-flex justify-content-center flex-column mt-2">
+            <label for="">Upload Cv</label>
+            <input
+              id="cv"
+              type="file"
+              class="form-control cv"
+              accept="cv/*"
+              required
+            />
+            <span class="form-text"></span>
+          </div>
 
           <button type="submit" id="apply-btn" style="margin-top: 20px">Apply</button>
         </form>
@@ -547,7 +554,10 @@
   </button>
 </div> -->
 
-
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
     <script
       type="module"
       src="/staticfiles/mainfiles/apply/script.js"
