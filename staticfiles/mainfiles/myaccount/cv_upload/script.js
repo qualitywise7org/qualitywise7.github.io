@@ -1,6 +1,11 @@
 const email = localStorage.getItem("email");
 const emailApply = localStorage.getItem("emailApply");
-if (!emailApply) {
+let userEmail = ''
+if (emailApply && email) {
+    userEmail = email;
+}else if(emailApply && !email){
+    userEmail = emailApply;
+}else{
     window.location.href = "/apply/";
 }
 let cvUrl = "";
@@ -21,7 +26,7 @@ async function saveCVToDatabase() {
     if (cvFile) {
         cvUrl = await uploadCV(cvFile);
 
-        const userProfileRef = doc(db, "user_profile", email || emailApply);
+        const userProfileRef = doc(db, "user_profile", userEmail);
         await updateDoc(userProfileRef, { "about.cv": cvUrl })
             .then(() => {
                 Toastify({
