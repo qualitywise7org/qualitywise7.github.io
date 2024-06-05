@@ -3,6 +3,11 @@
   <head>
     <title>Apply</title>
     <link rel="stylesheet" href="/staticfiles/mainfiles/apply/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <%- include('../../partials/head.ejs') %>
   </head>
 
@@ -32,20 +37,11 @@
 
           <label for="email">Email:</label>
           <input
-            type="text"
+            type="email"
             id="email"
             name="email"
             required
             autocomplete="email"
-          />
-
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            autocomplete="current-password"
           />
 
           <button type="submit" id="apply-btn" style="margin-top: 20px">Apply</button>
@@ -53,7 +49,10 @@
       </div>
     </div>
     <%- include('../../partials/footer.ejs') %>
-
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
     <script
       type="module"
       src="/staticfiles/mainfiles/apply/script.js"

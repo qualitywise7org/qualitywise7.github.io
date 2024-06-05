@@ -87,15 +87,19 @@ async function loginUser(email, password) {
         if (user.emailVerified) {
             localStorage.setItem("uid", user.uid);
             localStorage.setItem("email", user.email);
-            const docRef = doc(db, "user_profile", email);
+            const docRef = await doc(db, "user_profile", email);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
                 localStorage.setItem('profile', true);
-            }
-            if (redirect_url) {
-                window.location.href = "/myaccount" + redirect_url;
+                const redirectTo = redirect_url ? "/myaccount" + redirect_url :
+                    (docSnap.data().about.cv ? "/myaccount/" : "/myaccount/cv_upload/");
+                window.location.href = redirectTo;
             } else {
-                window.location.href = "/myaccount/cv_upload/"
+                const userData = { email, firstName: user.displayName };
+                await setDoc(docRef, userData);
+                localStorage.setItem('profile', true);
+                const redirectTo = redirect_url ? "/myaccount" + redirect_url : "/myaccount/cv_upload/";
+                window.location.href = redirectTo;
             }
         } else {
             alert("Email is not verified");
