@@ -24,7 +24,7 @@ signupForm.addEventListener("submit", async (e) => {
         await setDoc(docRef,userData)
         Toastify({
             text: 'Thanks for applying, redirecting to CV upload page.',
-            duration: 3000,
+            duration: 5000,
             newWindow: true,
             close: true,
             gravity: "top",
@@ -35,7 +35,9 @@ signupForm.addEventListener("submit", async (e) => {
                 borderRadius: "10px"
             }
         }).showToast();
-        window.location.href = "/myaccount/cv_upload/";
+        setTimeout(() => {
+            window.location.href = "/myaccount/cv_upload/";
+        }, 5000);
     } catch (error) {
         alert("Error signing up: " + error.message);
     }
