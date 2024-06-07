@@ -230,4 +230,3 @@ closeModal?.addEventListener("click", async () => {
   modal.hide();
 });
 
-
