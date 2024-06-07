@@ -225,26 +225,22 @@
         <div class="row mt-3" style="padding: 10px;">
           <div class="col-md-4 mb-">
             <label for="company_name" style="font-weight: 500;">Company Name:</label>
-            <input class="form-control"  type="search" placeholder="Search Company" class="search" id="searchItem" name="search">
+            <input class="form-control"  type="search" placeholder="Search Company" class="search" id="searchCompany" name="search">
           </div>
           <div class="col-md-4 mb-">
-            <label for="Code" style="font-weight: 500;">Company Code:</label>
-            <input class="form-control"  type="search" placeholder="Search Company Code" class="search"  id="searchCode" name="search">
-          </div>
-          <div class="col-md-4 mb-">
-            <label for="Profile" style="font-weight: 500;">Job Profile:</label>
-            <input class="form-control" type="search" placeholder="Search Job Profile..." class="search"  id="searchJob" name="search">
+            <label for="Profile" style="font-weight: 500;">Search:</label>
+            <input class="form-control" type="search" placeholder="Search Job Profile..." class="search"  id="search" name="search">
           </div>
         </div>
       <!-- </div> -->
       <div class="table-responsive">
         
-        <table class="table table-bordered text-center" id="jobTable">
+        <table class="table table-bordered text-left" id="jobTable">
           <thead class="table-light">
             <tr>
               <th>Job Title</th>
               <th>Stipend</th>
-              <th>Job Role</th>
+              <th class="custom-width" >Job Role</th>
               <th>Location</th>
               <th>Company Name</th>
               <th>Job Description</th>

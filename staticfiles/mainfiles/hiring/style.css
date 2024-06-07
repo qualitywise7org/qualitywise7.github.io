@@ -23,10 +23,16 @@ table {
   border-collapse: collapse;
 }
 
+.custom-width {
+    width: 200px;
+    word-wrap: break-word; 
+  
+}
+
 th,
 td {
   padding: 12px;
-  text-align: left;
+  /* text-align: left; */
   border-bottom: 1px solid #ddd;
 }
 
