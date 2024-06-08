@@ -1,9 +1,9 @@
 const email = localStorage.getItem("email");
 const emailApply = localStorage.getItem("emailApply");
 let userEmail = ''
-if (emailApply && email) {
+if (email) {
     userEmail = email;
-}else if(emailApply && !email){
+}else if(emailApply){
     userEmail = emailApply;
 }else{
     window.location.href = "/apply/";
