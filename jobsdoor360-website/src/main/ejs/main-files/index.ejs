@@ -81,7 +81,78 @@
           <a href="/myaccount/" style="margin-left: 10px;">Go to Your Account</a>
         </div>
       </div>
+      <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">jobsdoor360</a>
+            <div class="search-bar">
+                <input type="text" id="keyword" placeholder="Enter Keywords">
+                <input type="text" id="location" placeholder="Enter Location">
+                <button type="button" id="search-button">Search</button>
+            </div>
+        </div>
+    </nav>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+.navbar {
+    background-color: #004d99;
+    padding: 15px;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff6600;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #e65c00;
+}
+
+    </style>
+    <script>
+      document.getElementById('search-button').addEventListener('click', function() {
+    const keyword = document.getElementById('keyword').value;
+    const location = document.getElementById('location').value;
+    alert(`Searching for jobs with keyword: ${keyword} and location: ${location}`);
+    // Add logic to perform search operation
+});
+
+    </script>
       <!-- <h1
         style="
           text-align: center;
@@ -403,7 +474,7 @@
               "
             >
               for demo classes, click here...<i
-                class="fa-solid fa-computer-mouse"
+               class="fa-solid  fa-computer-mouse "
               ></i
             ></a>
           </div>
@@ -418,7 +489,7 @@
               "
             >
                for demo classes, click here...<i
-                class="fa-solid fa-computer-mouse"
+                class="fa-solid  fa-computer-mouse"
               ></i
             ></a>
           </div>
