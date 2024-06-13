@@ -92,7 +92,7 @@ async function loginUser(email, password) {
             if (docSnap.exists()) {
                 localStorage.setItem('profile', true);
                 const redirectTo = redirect_url ? "/myaccount" + redirect_url :
-                    (docSnap.data().about.cv ? "/myaccount/" : "/myaccount/cv_upload/");
+                    (docSnap.data().about?.cv ? "/myaccount/" : "/myaccount/cv_upload/");
                 window.location.href = redirectTo;
             } else {
                 const userData = { email, firstName: user.displayName };
