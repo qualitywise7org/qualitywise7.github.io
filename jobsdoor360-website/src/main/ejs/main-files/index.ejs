@@ -81,7 +81,7 @@
           <a href="/myaccount/" style="margin-left: 10px;">Go to Your Account</a>
         </div>
       </div>
-      <nav class="navbar">
+      <!--<nav class="navbar">
         <div class="container">
             <a href="#" class="logo">jobsdoor360</a>
             <div class="search-bar">
@@ -152,7 +152,7 @@
     // Add logic to perform search operation
 });
 
-    </script>
+    </script>-->
       <!-- <h1
         style="
           text-align: center;
@@ -182,12 +182,12 @@
                     <div class="content" style="width: 100%">
                       <a href="/results/" style="width: 100%">
                         <img
-                          src="assets/result_page.png"
+                          src="assets/image_result.png"
                           alt=""
                           class="full-width-image img"
                         />
                         <img
-                          src="assets/result_page.png"
+                          src="assets/image_result.png"
                           alt=""
                           class="full-width-image img1"
                         />
@@ -210,12 +210,12 @@
                         style="width: 100%"
                       >
                         <img
-                          src="assets/sakshi.png"
+                          src="assets/image_banner1.png"
                           alt=""
                           class="full-width-image img"
                         />
                         <img
-                          src="assets/sakshi.png"
+                          src="assets/image_banner1.png"
                           alt=""
                           class="full-width-image img1"
                         />
@@ -235,12 +235,12 @@
                     <div class="content" style="width: 100%">
                       <a href="/results/" style="width: 100%">
                         <img
-                          src="assets/sakshi11.png"
+                          src="assets/image_banner2.png"
                           alt=""
                           class="full-width-image img"
                         />
                         <img
-                          src="assets/sakshi11.png"
+                          src="assets/image_banner2.png"
                           alt=""
                           class="full-width-image img1"
                         />
@@ -250,7 +250,7 @@
                 </div>
               </div>
 
-              <div
+             <!-- <div
                 class="carousel-item"
                 data-bs-interval="3000"
                 style="width: 100%"
@@ -279,7 +279,7 @@
               class="carousel-item"
               data-bs-interval="3000"
               style="width: 100%"
-            >
+            >-->
               <!--<div class="d-block" style="width: 100%">
                 <div class="container" style="width: 100%">
                   <div class="content" style="width: 100%">
@@ -433,7 +433,7 @@
         </div>
       </section>
 
-      <div class="" style="width: 100%">
+      <!--<div class="" style="width: 100%">
         <div class="d-block" style="width: 100%">
           <div class="container" style="width: 100%">
             <div
@@ -460,39 +460,146 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
       <br />
       <div class="container">
         <div class="show-lg text-center" style="margin-top: -15px">
           <div class="rounded reg">
             <a
-              href="/register/"
+              href="/apply/"
+              class="apply-link"
               style="
                 text-decoration: none;
                 color: black;
                 font-family: Courier New, Courier, monospace;
               "
             >
-              for demo classes, click here...<i
+            Demo class available <!--<i
                class="fa-solid  fa-computer-mouse "
-              ></i
-            ></a>
+              ></i-->
+            </a>
+            <button
+            id="apply-button"
+            >
+            Apply Now
+            </button>
+            <style>
+          /* Basic styles for the button and container */
+          .reg .apply-link {
+          font-size: 30px ;
+           }
+
+          .rounded {
+           border-radius: 5px;
+           padding: 10px;
+           background-color: #f0f0f0;
+           display: inline-block;
+           width: 80%; /* Adjust the width as needed */
+    
+
+           }
+
+           .apply-link {
+            text-decoration: none;
+             color: black;
+             font-family: Courier New, Courier, monospace;
+             font-size: 24px;
+             
+             }
+
+            #apply-button {
+             margin-left: 10px;
+              padding: 10px 20px;
+               background-color: #3d3b40;
+               color: white;
+               border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                 font-family: Courier New, Courier, monospace;
+                 font-size: 24px;
+                }
+
+            #apply-button:hover {
+             background-color: #128c7e;
+            }
+
+        </style>
+        <script>// Wait until the DOM is fully loaded before attaching the event listener
+          document.addEventListener('DOMContentLoaded', function() {
+              const applyButton = document.getElementById('apply-button');
+          
+              if (applyButton) {
+                  applyButton.addEventListener('click', function() {
+                      window.location.href = '/apply/';
+                  });
+              }
+          });
+          </script>
+            
           </div>
 
-          <div class="rounded reg1">
+         <!-- <div class="rounded reg1">
             <a
-              href="/register/"
+              href="/apply/"
               style="
                 text-decoration: none;
                 color: black;
                 font-family: Courier New, Courier, monospace;
               "
             >
-               for demo classes, click here...<i
+               Demo class available <i
                 class="fa-solid  fa-computer-mouse"
               ></i
-            ></a>
-          </div>
+            </a>
+            <button
+          id="apply-button"
+        >
+          Apply Now
+        </button>
+        <style>
+          /* Basic styles for the button and container */
+.rounded {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    display: inline-block;
+}
+
+.apply-link {
+    text-decoration: none;
+    color: black;
+    font-family: Courier New, Courier, monospace;
+}
+
+#apply-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Courier New, Courier, monospace;
+}
+
+#apply-button:hover {
+    background-color: #e65c00;
+}
+
+        </style>
+        <script>// Wait until the DOM is fully loaded before attaching the event listener
+          document.addEventListener('DOMContentLoaded', function() {
+              const applyButton = document.getElementById('apply-button');
+          
+              if (applyButton) {
+                  applyButton.addEventListener('click', function() {
+                      window.location.href = '/apply/';
+                  });
+              }
+          });
+          </script>
+            
+          </div>-->
         </div>
       </div>
 
