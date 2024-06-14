@@ -121,14 +121,13 @@ async function signUpUser(username, phoneNumber, email, password) {
 
 async function saveUserDataToFirestore(userId, username, email, phoneNumber) {
     const db = getFirestore();
-    const userDocRef = doc(db, "login_details", userId);
+    const leadDocRef = doc(db, "lead", email);
 
-    await setDoc(userDocRef, {
+    await setDoc(leadDocRef, {
         full_name: username,
         phonenumber: phoneNumber,
         email: email,
-        firstLogin: true,
-        isAdmin: false,
+        userId: userId
     });
 }
 
