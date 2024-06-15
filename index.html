@@ -285,78 +285,94 @@
           <a href="/myaccount/" style="margin-left: 10px;">Go to Your Account</a>
         </div>
       </div>
-      <!--<nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">jobsdoor360</a>
-            <div class="search-bar">
-                <input type="text" id="keyword" placeholder="Enter Keywords">
-                <input type="text" id="location" placeholder="Enter Location">
-                <button type="button" id="search-button">Search</button>
-            </div>
-        </div>
-    </nav>
+      <div class="search-container">
+        <input type="text" id="job-title" class="search-input" placeholder="Search jobs here" onclick="redirectToJobForU()">
+        
+        <a id="search-button" class="search-button" href="/myaccount/jobsforyou/"><i class="fas fa-search"></i></a>
+      </div>
+        
+    </div>
+    <div id="search-results"></div>
     <style>
-      body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+      /* styles.css */
 
-.navbar {
-    background-color: #004d99;
-    padding: 15px;
-    color: white;
-}
 
-.container {
+   .search-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5em;
-    color: white;
-    text-decoration: none;
-}
-
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input {
+    margin-left:450px;
+    background-color: white;
     padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
+    height: 8vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    border-radius: 25px;
+    
+    
+   
 }
+.search-input {
+            width: 100%;
+            padding: 5px; /* Adjusted padding */
+            border: none;
+            border-radius: 25px 0 0 25px;
+            font-size: 18px; /* Adjusted font size */
+            outline: none;
+        }
 
-#search-button {
+
+.search-button {
     padding: 10px 20px;
-    border: none;
-    background-color: #ff6600;
+    background-color: blue;
     color: white;
-    border-radius: 4px;
+    border: none;
+    border-radius: 0 25px 25px 0;
     cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remove underline */
+    color: white; 
 }
 
-#search-button:hover {
-    background-color: #e65c00;
+.search-button i {
+    margin-left: 5px;
+}
+
+
+#search-results {
+    margin-top: 20px;
+    text-align: center;
 }
 
     </style>
     <script>
-      document.getElementById('search-button').addEventListener('click', function() {
-    const keyword = document.getElementById('keyword').value;
-    const location = document.getElementById('location').value;
-    alert(`Searching for jobs with keyword: ${keyword} and location: ${location}`);
-    // Add logic to perform search operation
+      // scripts.js
+      function redirectToJobForU() {
+            window.location.href = '/myaccount/jobsforyou/'; // Replace with your actual URL
+        }
+
+        // Handle button click
+        document.getElementById('search-button').addEventListener('click', function(event) {
+            var jobTitle = document.getElementById('job-title').value;
+
+            if(!jobTitle) {
+                event.preventDefault(); // Prevent the default action if no job title is entered
+                document.getElementById('search-results').innerText = 'Please enter a job title to search';
+            }
+        });
+
+document.getElementById('search-button').addEventListener('click', function() {
+    var jobTitle = document.getElementById('job-title').value;
+
+    if(jobTitle) {
+        document.getElementById('search-results').innerText = `Searching for jobs with title "${jobTitle}"...`;
+    } else {
+        document.getElementById('search-results').innerText = 'Please enter a job title to search';
+    }
 });
 
-    </script>-->
+    </script>
       <!-- <h1
         style="
           text-align: center;
