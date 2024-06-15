@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Thanks for applying in Jobsdoor360</title>
+    <title>Cv upload</title>
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/apply/cv_upload/style.css"
+    />
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -72,8 +76,12 @@
   }
 </script>
 
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
-
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -211,11 +219,32 @@
   }
 </script>
 
-    <div class="d-flex justify-content-center flex-column align-items-center py-5 my-5">
-        <i class="fa fa-check-circle mb-2" style="color: green; font-size: 70px;"></i>
-        <h1>Thanks for applying</h1>
-        <h4>You will receive a call from Jobsdoor360</h4>
-        <a href="/signup/" class="btn btn-primary mt-4">Signup to see jobs</a>
+    <div
+      class="d-flex justify-content-center align-items-center flex-column gap-4"
+      style="margin-block: 100px"
+    >
+      <h2>UPLOAD YOUR RESUME</h2>
+      <form action="" class="d-flex flex-column justify-content-center gap-3">
+        <div class="d-flex justify-content-center flex-column">
+          <input
+            id="cv"
+            type="file"
+            class="form-control cv"
+            accept="cv/*"
+            required
+          />
+          <span class="form-text"></span>
+        </div>
+        <button type="button" id="btn" class="print-btn btn btn-primary">
+          UPLOAD RESUME
+        </button>
+        <div class="px-1">
+          <a href="/apply/thanks/" class="text-decoration-none d-flex justify-content-end align-items-center gap-2">
+            <span>Skip</span>
+            <i class="fa-solid fa-arrow-right mt-1"></i>
+          </a>
+        </div>
+      </form>
     </div>
     <footer class="container-fluid bg-black">
   <div class="text-white">
@@ -512,5 +541,13 @@
   </button>
 </div> -->
 
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/apply/cv_upload/script.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
   </body>
 </html>

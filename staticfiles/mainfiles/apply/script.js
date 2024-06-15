@@ -15,7 +15,7 @@ signupForm.addEventListener("submit", async (e) => {
     try {
         applyButton.innerHTML = "Applying...";
         applyButton.disabled = true;
-        const docRef = await doc(db, "user_profile", email);
+        const docRef = await doc(db, "lead", email);
         const userData = {
             full_name: username,
             email: email,
@@ -36,7 +36,7 @@ signupForm.addEventListener("submit", async (e) => {
             }
         }).showToast();
         setTimeout(() => {
-            window.location.href = "/myaccount/cv_upload/";
+            window.location.href = "/apply/cv_upload/";
         }, 5000);
     } catch (error) {
         alert("Error signing up: " + error.message);
