@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <title>
-      Software Development Training - Web development, FullStack, Backend, Java,
-      Reactjs
+      Internship, Interview prep, placement classes, cv making, DSA, Web development, FullStack, Backend, Java, Reactjs
     </title>
     <meta
       name="description"
@@ -1628,27 +1627,6 @@
 
           <%- include('../partials/footer.ejs') %>
 
-    <script>
-      const mail = JSON.parse(localStorage.getItem("user")).email;
-      if (!mail) {
-        document.getElementById("profile").innerHTML =
-          "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
-      }
-    </script>
-
-    <script>
-      $(document).ready(function () {
-        $(document).on("click", function (event) {
-          if (!$(event.target).closest(".accordion").length) {
-            $(".accordion-collapse").collapse("hide");
-          }
-        });
-
-        $(".accordion").on("click", function (event) {
-          event.stopPropagation();
-        });
-      });
-    </script>
 
     <script type="module" src="/staticfiles/script.js"></script>
    
