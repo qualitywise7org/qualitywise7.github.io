@@ -68,7 +68,7 @@
       ></div>
       <div id="strip" class="strip" style="margin-bottom: 15px">
         <div id="profile">
-          <a href="/myaccount/"
+          <a href="/myaccount/cv_upload/"
         
             >Complete your profile to get jobs</a
           >
@@ -82,93 +82,16 @@
         </div>
       </div>
       <div class="search-container">
-        <input type="text" id="job-title" class="search-input" placeholder="Search jobs here" onclick="redirectToJobForU()">
-        
-        <a id="search-button" class="search-button" href="/myaccount/jobsforyou/"><i class="fas fa-search"></i></a>
+        <div class="searchbox" id="searchbox">
+            <input type="text" id="job-title" class="search-input" placeholder="Search jobs here">
+          
+            <a id="search-button" class="search-button" href="/myaccount/jobsforyou/"><i class="fas fa-search"></i></a>
+        </div>
       </div>
         
     </div>
     <div id="search-results"></div>
-    <style>
-      /* styles.css */
 
-
-   .search-container {
-    display: flex;
-    margin-left:450px;
-    background-color: white;
-    padding: 10px;
-    height: 8vh;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    border-radius: 25px;
-    
-    
-   
-}
-.search-input {
-            width: 100%;
-            padding: 5px; /* Adjusted padding */
-            border: none;
-            border-radius: 25px 0 0 25px;
-            font-size: 18px; /* Adjusted font size */
-            outline: none;
-        }
-
-
-.search-button {
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 0 25px 25px 0;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none; /* Remove underline */
-    color: white; 
-}
-
-.search-button i {
-    margin-left: 5px;
-}
-
-
-#search-results {
-    margin-top: 20px;
-    text-align: center;
-}
-
-    </style>
-    <script>
-      // scripts.js
-      function redirectToJobForU() {
-            window.location.href = '/myaccount/jobsforyou/'; // Replace with your actual URL
-        }
-
-        // Handle button click
-        document.getElementById('search-button').addEventListener('click', function(event) {
-            var jobTitle = document.getElementById('job-title').value;
-
-            if(!jobTitle) {
-                event.preventDefault(); // Prevent the default action if no job title is entered
-                document.getElementById('search-results').innerText = 'Please enter a job title to search';
-            }
-        });
-
-document.getElementById('search-button').addEventListener('click', function() {
-    var jobTitle = document.getElementById('job-title').value;
-
-    if(jobTitle) {
-        document.getElementById('search-results').innerText = `Searching for jobs with title "${jobTitle}"...`;
-    } else {
-        document.getElementById('search-results').innerText = 'Please enter a job title to search';
-    }
-});
-
-    </script>
       <!-- <h1
         style="
           text-align: center;
@@ -535,17 +458,7 @@ document.getElementById('search-button').addEventListener('click', function() {
 
            
         </style>
-        <script>// Wait until the DOM is fully loaded before attaching the event listener
-          document.addEventListener('DOMContentLoaded', function() {
-              const applyButton = document.getElementById('apply-button');
-          
-              if (applyButton) {
-                  applyButton.addEventListener('click', function() {
-                      window.location.href = '/apply/';
-                  });
-              }
-          });
-          </script>
+
             
           </div>
 
@@ -1590,21 +1503,7 @@ document.getElementById('search-button').addEventListener('click', function() {
 
         
 
-        <!-- accordion script -->
-        <script>
-          $(document).ready(function () {
-            $(".accordion-button").click(function () {
-              // Close all open accordion items
-              $(".accordion-collapse").collapse("hide");
-
-              // Open the clicked accordion item
-              $(this)
-                .closest(".accordion-item")
-                .find(".accordion-collapse")
-                .collapse("show");
-            });
-          });
-        </script>
+       
       </div>
     </section>
 
@@ -1641,43 +1540,6 @@ document.getElementById('search-button').addEventListener('click', function() {
         </div>
       </div>
     </div>
-
-    <script>
-      // Intersection Observer ki settings
-      const options = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.5,
-      };
-
-      // Intersection Observer ka callback function
-      const callback = (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            startCounter(entry.target);
-          }
-        });
-      };
-
-      // Intersection Observer ka object
-      const observer = new IntersectionObserver(callback, options);
-      document
-        .querySelectorAll(".counter")
-        .forEach((counter) => observer.observe(counter));
-
-      // startCounter() function
-      function startCounter(counterElement) {
-        var targetNumber = parseInt(counterElement.innerText, 10);
-        var count = 0;
-        var interval = setInterval(function () {
-          count++;
-          counterElement.innerText = count;
-          if (count === targetNumber) {
-            clearInterval(interval);
-          }
-        }, 50);
-      }
-    </script>
 
     <!-- Testimonials Section -->
     <section>
@@ -1761,53 +1623,8 @@ document.getElementById('search-button').addEventListener('click', function() {
 
     <%- include('../partials/footer.ejs') %>
 
-    <script>
-      const mail = JSON.parse(localStorage.getItem("user")).email;
-      if (!mail) {
-        document.getElementById("profile").innerHTML =
-          "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
-      }
-    </script>
-
-    <script>
-      $(document).ready(function () {
-        $(document).on("click", function (event) {
-          if (!$(event.target).closest(".accordion").length) {
-            $(".accordion-collapse").collapse("hide");
-          }
-        });
-
-        $(".accordion").on("click", function (event) {
-          event.stopPropagation();
-        });
-      });
-    </script>
 
     <script type="module" src="/staticfiles/script.js"></script>
-    <!-- jobsdoor360 -->
-    <ins
-      class="adsbygoogle"
-      style="display: block"
-      data-ad-client="ca-pub-2075086355753452"
-      data-ad-slot="7339269701"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
-    <!-- <div class="gtranslate_wrapper"></div>
-        <script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","hi"],"wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"right"}</script>
-        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script> -->
-
-    <!-- <script>window.gtranslateSettings = {"default_language":"en",
-            "native_language_names":true,
-            "detect_browser_language":true,
-            "languages":["en","hi"],
-            "wrapper_selector":".gtranslate_wrapper"
-        }
-        </script>
-       <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script> -->
+   
   </body>
 </html>

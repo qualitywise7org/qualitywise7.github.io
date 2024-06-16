@@ -141,21 +141,7 @@ async function fetchAndUseNames() {
     categoryDetails
   );
 }
-const logoutButton = document.getElementById("logout-btn");
 
-if (logoutButton) {
-  logoutButton.addEventListener("click", () => {
-    // localStorage.removeItem('user');
-    localStorage.removeItem("userDetails");
-    signOut(auth)
-      .then(() => {
-        window.location.href = "/login/";
-      })
-      .catch((error) => {
-        console.error("Error signing out:", error);
-      });
-  });
-}
 
 // JavaScript to trigger the modal and populate form fields
 document

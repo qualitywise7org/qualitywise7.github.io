@@ -5,228 +5,84 @@ if (currentPageUrl === "/") {
   docRefrencePage = "_home_";
 }
 
-const modal = new bootstrap.Modal(document.getElementById("myModal"));
-const closeModal = document.getElementById("closeModal");
-const feedbackInput = document.getElementById("feedback");
-const phoneNumberInput = document.getElementById("phoneNumber");
 
-const submitButton = document.getElementById("submitFeedback");
 
-const likeButton = document.getElementById("like-button");
-const dislikeButton = document.getElementById("dislike-button");
-
-likeButton.addEventListener("click", () => {
-  likeButton.classList.add("clicked");
-  setTimeout(() => {
-    likeButton.classList.remove("clicked");
-  }, 600);
-});
-
-dislikeButton.addEventListener("click", () => {
-  dislikeButton.classList.add("clicked");
-  setTimeout(() => {
-    dislikeButton.classList.remove("clicked");
-  }, 600);
-});
-
-async function fetchJobDocument(postName) {
-  try {
-    if (postName) {
-      // Fetch the "posts" document using "post_name"
-      const postQuerySnapshot = await getDocs(
-        query(collection(db, "posts"), where("post_name", "==", postName))
-      );
-
-      if (!postQuerySnapshot.empty) {
-        const postData = postQuerySnapshot.docs[0].data();
-
-        // Fetch "industry_masterdata", "jobtype_masterdata", and "profile_masterdata"
-        const industryCode = postData.industry_masterdata_code;
-        const jobTypeCode = postData.jobtype_masterdata_code;
-        const profileCode = postData.profile_masterdata_code;
-
-        // Fetch data from "industry_masterdata"
-        const industryQuerySnapshot = await getDocs(
-          query(
-            collection(db, "industry_masterdata "),
-            where("code", "==", industryCode)
-          )
-        );
-
-        const industry = industryQuerySnapshot.docs[0]?.data()?.name || "";
-
-        // Fetch data from "jobtype_masterdata"
-        const jobTypeQuerySnapshot = await getDocs(
-          query(
-            collection(db, "jobtype_masterdata"),
-            where("code", "==", jobTypeCode)
-          )
-        );
-
-        const jobType = jobTypeQuerySnapshot.docs[0]?.data()?.name || "";
-
-        // Fetch data from "profile_masterdata"
-        const profileQuerySnapshot = await getDocs(
-          query(
-            collection(db, "profile_masterdata "),
-            where("code", "==", profileCode)
-          )
-        );
-
-        const profile = profileQuerySnapshot.docs[0]?.data()?.name || "";
-
-        // Return the combined data
-        return {
-          industry,
-          jobType,
-          profile,
-        };
-      } else {
-        console.error("No matching document found in 'posts' collection.");
-        return null;
-      }
-    } else {
-      console.error("No matching document found for postName:");
-      return null;
+//accordian code
+$(document).ready(function () {
+  $(document).on("click", function (event) {
+    if (!$(event.target).closest(".accordion").length) {
+      $(".accordion-collapse").collapse("hide");
     }
-  } catch (error) {
-    console.error("Error fetching job document:", error);
-    return null;
-  }
-}
-
-// Function to fetch all jobs from Firestore
-async function fetchAllJobs() {
-  // Check if jobs data is available in local storage
-  const jobsDataFromLocalStorage = localStorage.getItem("jobsData");
-
-  if (jobsDataFromLocalStorage) {
-    // If data is available in local storage, parse it
-    JSON.parse(jobsDataFromLocalStorage);
-  } else {
-    // If data is not available in local storage, fetch it from Firestore
-    const jobCollectionRef = collection(db, "jobs");
-    const jobQuerySnapshot = await getDocs(jobCollectionRef);
-
-    const jobs = [];
-
-    for (const doc of jobQuerySnapshot.docs) {
-      const jobData = doc.data();
-      const job = {
-        postName: jobData.post_name,
-        qualificationEligibility: jobData.qualification_eligibility,
-        postDate: jobData.post_date,
-        lastDate: jobData.last_date,
-        jobCode: encodeURIComponent(jobData.job_code),
-        briefInfo: jobData.brief_info,
-        minAge: jobData.minimum_age,
-        maxAge: jobData.maximum_age,
-        recruitmentBoard: jobData.recruitment_board,
-        jobLink: jobData.job_link,
-      };
-
-      // Call fetchJobDocument for additional fields
-      const additionalData = await fetchJobDocument(jobData.post_name);
-
-      if (additionalData) {
-        job.industry = additionalData.industry;
-        job.jobType = additionalData.jobType;
-        job.profile = additionalData.profile;
-      }
-
-      jobs.push(job);
-    }
-
-    // Store jobs data in local storage
-    localStorage.setItem("jobsData", JSON.stringify(jobs));
-  }
-}
-
-fetchAllJobs();
-
-function openModal() {
-  modal.show();
-}
-
-async function updateFeedbackCounts(likeCount, dislikeCount, pageIdentifier) {
-  try {
-    const feedbackDocRef = doc(db, "page_feedback", pageIdentifier);
-
-    await setDoc(feedbackDocRef, {
-      like_count: likeCount,
-      dislike_count: dislikeCount,
-    });
-
-    console.log(`Feedback counts updated for ${docRefrencePage}`);
-  } catch (error) {
-    console.error(
-      `Error updating feedback counts for ${docRefrencePage}:`,
-      error
-    );
-  }
-}
-
-document.getElementById("like-button").addEventListener("click", async () => {
-  const feedbackDocRef = doc(db, "page_feedback", docRefrencePage);
-  const feedbackDocSnapshot = await getDoc(feedbackDocRef);
-
-  const newLikeCount = (feedbackDocSnapshot.data()?.like_count || 0) + 1;
-
-  await updateFeedbackCounts(
-    newLikeCount,
-    feedbackDocSnapshot.data()?.dislike_count || 0,
-    docRefrencePage
-  );
-});
-
-document
-  .getElementById("dislike-button")
-  .addEventListener("click", async () => {
-    openModal();
-
-    const feedbackDocRef = doc(db, "page_feedback", docRefrencePage);
-    const feedbackDocSnapshot = await getDoc(feedbackDocRef);
-
-    const newDislikeCount =
-      (feedbackDocSnapshot.data()?.dislike_count || 0) + 1;
-
-    await updateFeedbackCounts(
-      feedbackDocSnapshot.data()?.like_count || 0,
-      newDislikeCount,
-      docRefrencePage
-    );
   });
 
-submitButton.addEventListener("click", async () => {
-  const feedback = feedbackInput.value;
-  const phoneNumber = phoneNumberInput.value;
+  $(".accordion").on("click", function (event) {
+    event.stopPropagation();
+  });
+});
 
-  const feedbackData = {
-    phoneNumber: phoneNumber,
-    feedback: feedback,
-    webPage: docRefrencePage,
+// Wait until the DOM is fully loaded before attaching the event listener
+document.addEventListener('DOMContentLoaded', function() {
+    const applyButton = document.getElementById('apply-button');
+
+    if (applyButton) {
+        applyButton.addEventListener('click', function() {
+            window.location.href = '/apply/';
+        });
+    }
+});
+
+
+// Check if the user is signed in
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    
+  } else {
+    // No user is signed in
+    console.log("No user is signed in");
+    document.getElementById("profile").innerHTML =
+    "<a href='/login/?redirect_url=/myaccount/yourprofile'>Create your profile to get jobs</a>";
+  }
+});
+
+
+
+  // content related js
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
   };
 
-  try {
-    const feedbackCollectionRef = collection(db, "user_feedback");
+  // Intersection Observer ka callback function
+  const callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startCounter(entry.target);
+      }
+    });
+  };
 
-    // Add a new document with the feedback data
-    await addDoc(feedbackCollectionRef, feedbackData);
+  // Intersection Observer ka object
+  const observer = new IntersectionObserver(callback, options);
+  document
+    .querySelectorAll(".counter")
+    .forEach((counter) => observer.observe(counter));
 
-    console.log("User feedback stored successfully.");
-  } catch (error) {
-    console.error("Error storing user feedback:", error);
+  // startCounter() function
+  function startCounter(counterElement) {
+    var targetNumber = parseInt(counterElement.innerText, 10);
+    var count = 0;
+    var interval = setInterval(function () {
+      count++;
+      counterElement.innerText = count;
+      if (count === targetNumber) {
+        clearInterval(interval);
+      }
+    }, 50);
   }
 
-  // Close the modal
-  modal.hide();
 
-  // Clear input fields
-  feedbackInput.value = "";
-  phoneNumberInput.value = "";
+// Handle button click
+document.getElementById('searchbox').addEventListener('click', function(event) {
+  window.location.href = '/myaccount/jobsforyou/';
 });
-
-closeModal?.addEventListener("click", async () => {
-  modal.hide();
-});
-

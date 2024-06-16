@@ -17,64 +17,6 @@
   integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
   crossorigin="anonymous"
 />
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"
-></script>
-<script
-  src="https://kit.fontawesome.com/f6b356be29.js"
-  crossorigin="anonymous"
-></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", "G-1JQVXS3B5L");
-</script>
-<script>
-  (function (w, d, s, l, i) {
-    w[l] = w[l] || [];
-    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-    var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s),
-      dl = l != "dataLayer" ? "&l=" + l : "";
-    j.async = true;
-    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-    f.parentNode.insertBefore(j, f);
-  })(window, document, "script", "dataLayer", "GTM-MFBK5637");
-</script>
-<script
-  async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452"
-  crossorigin="anonymous"
-></script>
-<script type="text/javascript">
-  function handleclick() {
-    const email = localStorage.getItem("email");;
-    if (email) {
-      window.location.href = "/myaccount/jobsforyou";
-    } else {
-      window.location.href = "/details/?productcode=jobsforyou";
-    }
-  }
-  function handleLoginButtonClick() {
-    const email = localStorage.getItem("email");
-    if (email) {
-      localStorage.clear();
-      signOut(auth)
-      .then(() => {
-        window.location.href = "/login/";
-      })
-      .catch((error) => {
-        console.error("Error signing out:", error);
-      });
-    }
-  }
-</script>
 
     <link rel="stylesheet" href="style.css" />
     <style>
@@ -195,7 +137,6 @@
             class="nav-link"
             id="login-button"
             href="/login"
-            onclick="{handleLoginButtonClick()}"
             >Login</a
           >
         </li>
@@ -235,23 +176,6 @@
   ></iframe
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<script>
-  const email = localStorage.getItem("email");
-  if (email) {
-    document.getElementById("login-button").innerHTML = "Logout";
-    document.getElementById("user-mail").innerHTML = email;
-    document.getElementById("welcome-text").innerHTML = "Welcome";
-  } else {
-    const login_button = document.getElementById("login-button");
-    login_button.addEventListener("click", () => {
-      const email = localStorage.getItem("email");
-      if (email) {
-        localStorage.clear();
-      }
-      location.location.href = "/login";
-    });
-  }
-</script>
 
     <section id="features" class="features-section">
       <div class="container">
@@ -583,20 +507,55 @@
   </div>
 </div>
 
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-  crossorigin="anonymous"
-></script>
 
-<!-- scroll related -->
+<script type="module" src="/staticfiles/db/dbconfig.js"></script>
+<script type="module">
+  // Check if the user is signed in
+  window.auth.onAuthStateChanged((user) => {
+      if (user) {
+        localStorage.setItem("email", user.email);
+        document.getElementById("login-button").innerHTML = "Logout";
+        document.getElementById("user-mail").innerHTML = user.email;
+        document.getElementById("welcome-text").innerHTML = "Welcome";
+      } else {
+        const login_button = document.getElementById("login-button");
+        login_button.addEventListener("click", () => {
+          const email = localStorage.getItem("email");
+          if (email) {
+            localStorage.clear();
+          }
+          location.location.href = "/login";
+        });
+      }
+  });
+
+
+  document.getElementById("login-button").addEventListener("click", function() {
+    const email = localStorage.getItem("email");
+    if (email) {
+      localStorage.clear();
+      auth.signOut()
+      .then(() => {
+        window.location.href = "/login/";
+      })
+      .catch((error) => {
+        console.error("Error signing out:", error);
+      });
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+  crossorigin="anonymous"></script>
+
 <script>
   window.addEventListener("scroll", () => {
     let scrollVal = window.scrollY;
     if (scrollVal > 2000) {
-      document.getElementById("backToTopBtn").style.display = "block";
+    document.getElementById("backToTopBtn").style.display = "block";
     } else {
-      document.getElementById("backToTopBtn").style.display = "none";
+    document.getElementById("backToTopBtn").style.display = "none";
     }
   });
 
@@ -609,22 +568,36 @@
     .addEventListener("click", scrollToTop);
 </script>
 
-<script type="module" src="/staticfiles/db/dbconfig.js"></script>
 
-<!-- <div class="chat-back-to-top">
-  <span style="font-size: 15px">Any question or complaint</span>
-  <div class="whatsapp-chat">
-    <a
-      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-      target="_blank"
-    >
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </div>
-  <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
-    <i class="fa-solid fa-chevron-up"></i>
-  </button>
-</div> -->
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+<script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-1JQVXS3B5L");
+</script>
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-MFBK5637");
+</script>
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452" crossorigin="anonymous"></script>-->
+
+
 
   </body>
 </html>
