@@ -117,3 +117,9 @@ button:hover {
   text-decoration: none;
   color: #465684;
 }
+.custom-legend {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.1em; /* Adjust font size for legend */
+  line-height:1.2; /* Adjust line height for legend */
+}
