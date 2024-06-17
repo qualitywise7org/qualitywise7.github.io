@@ -9,7 +9,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged,
-  signInWithEmailAndPassword,
+  signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
 import {
@@ -61,6 +61,7 @@ window.auth = auth;
 window.provider = provider;
 window.storage = storage;
 window.storageRef = storageRef;
+
 
 Object.assign(window, {
   getStorage,

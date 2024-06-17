@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <title>
-      Software Development Training - Web development, FullStack, Backend, Java,
-      Reactjs
+      Internship, Interview prep, placement classes, cv making, DSA, Web development, FullStack, Backend, Java, Reactjs
     </title>
     <meta
       name="description"
@@ -69,7 +68,10 @@
       ></div>
       <div id="strip" class="strip" style="margin-bottom: 15px">
         <div id="profile">
-          <a href="/myaccount/">Complete your profile to get jobs</a>
+          <a href="/myaccount/cv_upload/"
+        
+            >Complete your profile to get jobs</a
+          >
         </div>
       </div>
       <div id="strip" class="strip" style="margin-bottom: 15px">
@@ -79,144 +81,16 @@
           <a href="/myaccount/" style="margin-left: 10px">Go to Your Account</a>
         </div>
       </div>
-      <div class=" d-flex justify-content-center my-3 " style="width:100%;" >
-        <div class="search-container d-flex justify-content-center align-items-center gap-5  border-1 rounded-3">
-          <input
-            type="text";
-            id="job-title"
-            class="search-input px-2 py-1 rounded-3 "
-            placeholder="Search jobs here"
-            onclick="redirectToJobForU()"
-          />
-          <button
-            id="search-button" 
-            class="search-button btn btn-primary px-3 rounded-3"
-            href="/myaccount/jobsforyou/"
-          >
-            <i class="fas fa-search"></i>
-        </button>
+      <div class="search-container">
+        <div class="searchbox" id="searchbox">
+            <input type="text" id="job-title" class="search-input" placeholder="Search jobs here">
+          
+            <a id="search-button" class="search-button" href="/myaccount/jobsforyou/"><i class="fas fa-search"></i></a>
         </div>
       </div>
-      <div id="search-results"></div>
-
-      <!-- <style>
-        /* styles.css */
-       .wrapper{ 
-        display:flex;
-        justify-content: center;
-        align-items: center;
-
-       }
-        .search-container {
-          display: flex;
-          background-color: white;
-
-          border-radius: 2.5vh;
-          box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.1);
-
-          max-width: 80vw;
-          justify-content: center;
-          align-items: center;
-          box-sizing: border-box;
-        }
-
-        .search-input {
-          border: none;
-          border-radius: 2.5vh 0 0 2.5vh;
-          font-size: 3vh;
-          outline: none;
-          width: 100%;
-        }
-
-        .search-button {
-          background-color: blue;
-          color: white;
-          border: none;
-          border-radius: 50%;
-          cursor: pointer;
-          font-size: 3vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-decoration: none; /* Added for button styling */
-          width: fit-content;
-        }
-
-        .search-button i {
-          margin-left: 0.5vh;
-        }
-
-        #search-results {
-          margin-top: 2vh;
-          text-align: center;
-        }
-
-        @media (max-width: 1024px) {
-          .search-container {
-          }
-
-          .search-input {
-            font-size: 1.6vh;
-          }
-
-          .search-button {
-            font-size: 1.4vh;
-          }
-        }
-
-        /* Responsive styles for mobile devices */
-        @media (max-width: 768px) {
-          .search-container {
-          }
-
-          .search-input {
-            border-radius: 2.5vh;
-            margin-bottom: 1vh;
-            font-size: 1.6vh;
-          }
-
-          .search-button {
-            border-radius: 2.5vh;
-            font-size: 1.4vh;
-
-            display: block;
-            text-align: center;
-          }
-        }
-      </style> -->
-      <script>
-        // scripts.js
-        function redirectToJobForU() {
-          window.location.href = "/myaccount/jobsforyou/"; // Replace with your actual URL
-        }
-        document
-          .getElementById("search-container")
-          .addEventListener("click", function (event) {
-            var jobTitle = document.getElementById("job-title").value;
-
-            if (!jobTitle) {
-              event.preventDefault(); // Prevent the default action if no job title is entered
-              document.getElementById("search-results").innerText =
-                "Please enter a job title to search";
-            }
-          });
-
-        document
-          .getElementById("search-button")
-          .addEventListener("click", function (event) {
-            var jobTitle = document.getElementById("job-title").value;
-
-            if (jobTitle) {
-              document.getElementById(
-                "search-results"
-              ).innerText = `Searching for jobs with title "${jobTitle}"...`;
-            } else {
-              document.getElementById("search-results").innerText =
-                "Please enter a job title to search";
-              event.preventDefault(); // Prevent the default action if no job title is entered
-            }
-          });
-      </script>
+        
+    </div>
+    <div id="search-results"></div>
 
       <!-- <h1
         style="
@@ -561,31 +435,23 @@
                     font-size: 24px;
                   }
 
-                  #apply-button {
-                    margin-left: 10px;
-                    padding: 10px 20px;
-                    background-color: #586ba6;
-                    color: white;
-                    border: none;
-                    border-radius: 0.3rem;
-                    cursor: pointer;
-                    font-family: "Ysabeau SC", sans-serif;
-                    font-size: 24px;
-                  }
-                </style>
-                <script>
-                  // Wait until the DOM is fully loaded before attaching the event listener
-                  document.addEventListener("DOMContentLoaded", function () {
-                    const applyButton = document.getElementById("apply-button");
+            #apply-button {
+             margin-left: 10px;
+              padding: 10px 20px;
+               background-color: #586ba6;
+               color: white;
+               border: none;
+                border-radius: 0.3rem;
+                cursor: pointer;
+                 font-family:  "Ysabeau SC", sans-serif;
+                 font-size: 24px;
+                }
 
-                    if (applyButton) {
-                      applyButton.addEventListener("click", function () {
-                        window.location.href = "/apply/";
-                      });
-                    }
-                  });
-                </script>
-              </div>
+           
+        </style>
+
+            
+          </div>
 
               <!-- <div class="rounded reg1">
             <a
@@ -1639,93 +1505,45 @@
               </div>
             </div>
 
-            <!-- accordion script -->
-            <script>
-              $(document).ready(function () {
-                $(".accordion-button").click(function () {
-                  // Close all open accordion items
-                  $(".accordion-collapse").collapse("hide");
+        
 
-                  // Open the clicked accordion item
-                  $(this)
-                    .closest(".accordion-item")
-                    .find(".accordion-collapse")
-                    .collapse("show");
-                });
-              });
-            </script>
+       
+      </div>
+    </section>
+
+    <!-- promotion  -->
+    <div
+      class="container-fluid text-center py-4"
+      style="background-color: rgb(146 155 157 / 62%)"
+    >
+      <div class="container" id="promoContent">
+        <div class="row">
+          <div class="col-md-3 my-3 pt-2">
+            <strong class="fs-2 counter" id="counter1">60</strong>
+            <span class="fs-1">+</span>
+            <p class="fs-5">Total placement class conducted</p>
           </div>
-
-          <!-- promotion  -->
-          <div
-            class="container-fluid text-center py-4"
-            style="background-color: rgb(146 155 157 / 62%)"
-          >
-            <div class="container" id="promoContent">
-              <div class="row">
-                <div class="col-md-3 my-3 pt-2">
-                  <strong class="fs-2 counter" id="counter1">60</strong>
-                  <span class="fs-1">+</span>
-                  <p class="fs-5">Total placement class conducted</p>
-                </div>
-                <div class="col-md-3 my-3 pt-2">
-                  <strong class="fs-2 counter" id="counter2">80</strong>
-                  <span class="fs-1">+</span>
-                  <p class="fs-5">Total consultancy provided</p>
-                </div>
-                <div class="col-md-6 my-3">
-                  <strong class="fs-3"> Vinay Kumar</strong>
-                  <p
-                    style="text-align: center; font-size: 18px; margin-top: 8px"
-                    class="px-3"
-                  >
-                    with ranks and qualification AIEEE(now JEE mains) AIR 10630,
-                    state level rank 602, PET rank 126, Btech + Mtech from ABV-
-                    IIITM Gwalior(top college of India),
-                    <br />
-                    <strong>10 year experience in IT companies</strong>
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div class="col-md-3 my-3 pt-2">
+            <strong class="fs-2 counter" id="counter2">80</strong>
+            <span class="fs-1">+</span>
+            <p class="fs-5">Total consultancy provided</p>
           </div>
-
-          <script>
-            // Intersection Observer ki settings
-            const options = {
-              root: null,
-              rootMargin: "0px",
-              threshold: 0.5,
-            };
-
-            // Intersection Observer ka callback function
-            const callback = (entries, observer) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  startCounter(entry.target);
-                }
-              });
-            };
-
-            // Intersection Observer ka object
-            const observer = new IntersectionObserver(callback, options);
-            document
-              .querySelectorAll(".counter")
-              .forEach((counter) => observer.observe(counter));
-
-            // startCounter() function
-            function startCounter(counterElement) {
-              var targetNumber = parseInt(counterElement.innerText, 10);
-              var count = 0;
-              var interval = setInterval(function () {
-                count++;
-                counterElement.innerText = count;
-                if (count === targetNumber) {
-                  clearInterval(interval);
-                }
-              }, 50);
-            }
-          </script>
+          <div class="col-md-6 my-3">
+            <strong class="fs-3"> Vinay Kumar</strong>
+            <p
+              style="text-align: center; font-size: 18px; margin-top: 8px"
+              class="px-3"
+            >
+              with ranks and qualification AIEEE(now JEE mains) AIR 10630, state
+              level rank 602, PET rank 126, Btech + Mtech from ABV- IIITM
+              Gwalior(top college of India),
+              <br />
+              <strong>10 year experience in IT companies</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
           <!-- Testimonials Section -->
           <section>
@@ -1809,56 +1627,8 @@
 
           <%- include('../partials/footer.ejs') %>
 
-          <script>
-            const mail = JSON.parse(localStorage.getItem("user")).email;
-            if (!mail) {
-              document.getElementById("profile").innerHTML =
-                "<a href='/login/?redirect_url=/yourprofile'>Create your profile to get jobs</a>";
-            }
-          </script>
 
-          <script>
-            $(document).ready(function () {
-              $(document).on("click", function (event) {
-                if (!$(event.target).closest(".accordion").length) {
-                  $(".accordion-collapse").collapse("hide");
-                }
-              });
-
-              $(".accordion").on("click", function (event) {
-                event.stopPropagation();
-              });
-            });
-          </script>
-
-          <script type="module" src="/staticfiles/script.js"></script>
-          <!-- jobsdoor360 -->
-          <ins
-            class="adsbygoogle"
-            style="display: block"
-            data-ad-client="ca-pub-2075086355753452"
-            data-ad-slot="7339269701"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
-          <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-
-          <!-- <div class="gtranslate_wrapper"></div>
-        <script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","hi"],"wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"right"}</script>
-        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script> -->
-
-          <!-- <script>window.gtranslateSettings = {"default_language":"en",
-            "native_language_names":true,
-            "detect_browser_language":true,
-            "languages":["en","hi"],
-            "wrapper_selector":".gtranslate_wrapper"
-        }
-        </script>
-       <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script> -->
-        </div>
-      </section>
-    </section>
+    <script type="module" src="/staticfiles/script.js"></script>
+   
   </body>
 </html>

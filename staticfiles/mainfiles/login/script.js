@@ -91,14 +91,14 @@ async function loginUser(email, password) {
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
                 localStorage.setItem('profile', true);
-                const redirectTo = redirect_url ? "/myaccount" + redirect_url :
-                    (docSnap.data().about?.cv ? "/myaccount/" : "/myaccount/cv_upload/");
+                const redirectTo = redirect_url ? redirect_url :
+                    (docSnap.data().about?.cv ? "/myaccount/yourprofile" : "/myaccount/cv_upload/");
                 window.location.href = redirectTo;
             } else {
                 const userData = { email, firstName: user.displayName };
                 await setDoc(docRef, userData);
                 localStorage.setItem('profile', true);
-                const redirectTo = redirect_url ? "/myaccount" + redirect_url : "/myaccount/cv_upload/";
+                const redirectTo = redirect_url ? redirect_url : "/myaccount/cv_upload/";
                 window.location.href = redirectTo;
             }
         } else {

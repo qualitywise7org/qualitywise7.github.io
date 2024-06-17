@@ -36,14 +36,17 @@ async function isUser() {
             $('[data-repeater-list="group-education"]')
                 .find("[data-repeater-item]")
                 .each(function (index) {
-                    var eduItem = userData.education[index];
-                    if (eduItem) {
-                        $(this).find("#school").val(eduItem.school || "");
-                        $(this).find("#degree").val(eduItem.degree || "");
-                        $(this).find("#sdate").val(eduItem.start_date || "");
-                        $(this).find("#edate").val(eduItem.graduation_date || "");
-                        $(this).find("#city").val(eduItem.city || "");
-                        $(this).find("#Percentage").val(eduItem.percentage || "");
+                    var edu = userData?.education;
+                    if(edu){
+                        var eduItem = edu[index];
+                        if (eduItem) {
+                            $(this).find("#school").val(eduItem.school || "");
+                            $(this).find("#degree").val(eduItem.degree || "");
+                            $(this).find("#sdate").val(eduItem.start_date || "");
+                            $(this).find("#edate").val(eduItem.graduation_date || "");
+                            $(this).find("#city").val(eduItem.city || "");
+                            $(this).find("#Percentage").val(eduItem.percentage || "");
+                        }
                     }
                 });
 

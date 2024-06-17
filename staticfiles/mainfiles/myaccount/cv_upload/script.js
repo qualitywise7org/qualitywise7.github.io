@@ -1,13 +1,17 @@
+let userEmail;
+// Check if the user is signed in
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        userEmail = user.email;
+    } else {
+      // No user is signed in
+      console.log("No user is signed in");
+      window.location.href = "/login/?redirect_url=/myaccount/cv_upload";
+    }
+});
+
 const email = localStorage.getItem("email");
-const emailApply = localStorage.getItem("emailApply");
-let userEmail = ''
-if (email) {
-    userEmail = email;
-}else if(emailApply){
-    userEmail = emailApply;
-}else{
-    window.location.href = "/apply/";
-}
+
 let cvUrl = "";
 
 async function uploadCV(file) {
@@ -43,7 +47,7 @@ async function saveCVToDatabase() {
                     }
                 }).showToast();
                 setTimeout(() => {
-                    window.location.href = "/apply/thanks/";
+                    window.location.href = "/myaccount/yourprofile/";
                 }, 3000);
             })
             .catch((error) => {
