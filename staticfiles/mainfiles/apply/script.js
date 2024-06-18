@@ -1,4 +1,13 @@
-const signupForm = document.getElementById("signup-form");
+let currentUser = null;
+//  Add event listener for authentication state changes
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        currentUser = user;  // Set currentUser when a user is logged in
+    } else {
+        currentUser = null;  // Set currentUser to null when no user is logged in
+    }
+});
+  const signupForm = document.getElementById("signup-form");
 const applyButton = document.getElementById("apply-btn");
 
 
@@ -8,6 +17,12 @@ signupForm.addEventListener("submit", async (e) => {
     const username = document.getElementById("username").value;
     const email = document.getElementById("email").value;
     const phoneNumber = document.getElementById("phoneNumber").value;
+    const applyingFor = [];
+    document.querySelectorAll('input[name="applying_for"]:checked').forEach((checkbox) => {
+        applyingFor.push(checkbox.value);
+    });
+  
+  
     localStorage.setItem("full_name", username);
     localStorage.setItem("emailApply", email);
     localStorage.setItem("phonenumber", phoneNumber);
@@ -15,12 +30,32 @@ signupForm.addEventListener("submit", async (e) => {
     try {
         applyButton.innerHTML = "Applying...";
         applyButton.disabled = true;
+        let userId = "Anonymous";
+        let currentTime = new Date().toISOString();
+
+        if (currentUser) {
+            const userId = currentUser.uid;
+            const currentTime = new Date().toISOString();
+
+            document.getElementById("created_by").value = userId;
+            document.getElementById("created_date").value = currentTime;
+            document.getElementById("last_modified_by").value = userId;
+            document.getElementById("last_modified_date").value = currentTime;
+        }
         const docRef = await doc(db, "lead", email);
         const userData = {
             full_name: username,
             email: email,
             phonenumber: phoneNumber,
+            applying_for: applyingFor, // Adding checkbox data
+            created_by: "User123", // Replace with actual user ID
+            created_date: new Date().toISOString(),
+            last_modified_by: "User123", // Replace with actual user ID
+            last_modified_date: new Date().toISOString(),
+            
         }
+    
+        console.log("UserData being saved to Firestore:", userData);
         await setDoc(docRef,userData)
         Toastify({
             text: 'Thanks for applying, redirecting to CV upload page.',

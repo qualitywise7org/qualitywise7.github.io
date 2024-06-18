@@ -173,46 +173,130 @@
           />
           <fieldset>
             <legend class="custom-legend">Applying For :</legend>
-            <input type="checkbox" id="internship" name="applying_for" value="Internship">
-            <label for="internship">Internship</label><br>
+            <input
+              type="checkbox"
+              id="internship"
+              name="applying_for"
+              value="Internship"
+            />
+            <label for="internship">Internship</label><br />
 
-            <input type="checkbox" id="interview_preparation" name="applying_for" value="Interview Preparation classes">
-            <label for="interview_preparation">Interview Preparation classes</label><br>
+            <input
+              type="checkbox"
+              id="interview_preparation"
+              name="applying_for"
+              value="Interview Preparation classes"
+            />
+            <label for="interview_preparation"
+              >Interview Preparation classes</label
+            ><br />
 
-            <input type="checkbox" id="placement_classes" name="applying_for" value="Placement classes">
-            <label for="placement_classes">Placement classes</label><br>
+            <input
+              type="checkbox"
+              id="placement_classes"
+              name="applying_for"
+              value="Placement classes"
+            />
+            <label for="placement_classes">Placement classes</label><br />
 
-            <input type="checkbox" id="mock_interviews" name="applying_for" value="Mock Interviews">
-            <label for="mock_interviews">Mock Interviews</label><br>
+            <input
+              type="checkbox"
+              id="mock_interviews"
+              name="applying_for"
+              value="Mock Interviews"
+            />
+            <label for="mock_interviews">Mock Interviews</label><br />
 
-            <input type="checkbox" id="cv_making" name="applying_for" value="CV Making">
-            <label for="cv_making">CV Making</label><br>
+            <input
+              type="checkbox"
+              id="cv_making"
+              name="applying_for"
+              value="CV Making"
+            />
+            <label for="cv_making">CV Making</label><br />
 
-            <input type="checkbox" id="career_consultancy" name="applying_for" value="Career Consultancy">
-            <label for="career_consultancy">Career Consultancy</label><br>
+            <input
+              type="checkbox"
+              id="career_consultancy"
+              name="applying_for"
+              value="Career Consultancy"
+            />
+            <label for="career_consultancy">Career Consultancy</label><br />
 
-            <input type="checkbox" id="major_project" name="applying_for" value="Major project">
-            <label for="major_project">Major project</label><br>
+            <input
+              type="checkbox"
+              id="major_project"
+              name="applying_for"
+              value="Major project"
+            />
+            <label for="major_project">Major project</label><br />
 
-            <input type="checkbox" id="buy_projects" name="applying_for" value="Buy Projects">
-            <label for="buy_projects">Buy Projects</label><br>
+            <input
+              type="checkbox"
+              id="buy_projects"
+              name="applying_for"
+              value="Buy Projects"
+            />
+            <label for="buy_projects">Buy Projects</label><br />
 
-            <input type="checkbox" id="english_classes" name="applying_for" value="English classes">
-            <label for="english_classes">English classes</label><br>
+            <input
+              type="checkbox"
+              id="english_classes"
+              name="applying_for"
+              value="English classes"
+            />
+            <label for="english_classes">English classes</label><br />
 
-            <input type="checkbox" id="business_classes" name="applying_for" value="Business classes">
-            <label for="business_classes">Business classes</label><br>
+            <input
+              type="checkbox"
+              id="business_classes"
+              name="applying_for"
+              value="Business classes"
+            />
+            <label for="business_classes">Business classes</label><br />
 
-            <input type="checkbox" id="looking_for_job" name="applying_for" value="Looking for job">
-            <label for="looking_for_job">Looking for job</label><br>
-        </fieldset>
+            <input
+              type="checkbox"
+              id="looking_for_job"
+              name="applying_for"
+              value="Looking for job"
+            />
+            <label for="looking_for_job">Looking for job</label><br />
+          </fieldset>
+          <input
+            type="hidden"
+            id="created_by"
+            name="created_by"
+            value="User123"
+          />
+          
+          <input
+            type="hidden"
+            id="created_date"
+            name="created_date"
+            value="%= new Date().toISOString() "
+          />
+          <input
+            type="hidden"
+            id="last_modified_by"
+            name="last_modified_by"
+            value="User123"
+          />
+          <input
+            type="hidden"
+            id="last_modified_date"
+            name="last_modified_date"
+            value="%= new Date().toISOString() "
+          />
+        
 
-
-          <button type="submit" id="apply-btn" style="margin-top: 20px">Apply</button>
+          <button type="submit" id="apply-btn" style="margin-top: 20px">
+            Apply
+          </button>
         </form>
       </div>
     </div>
-  
+
     <footer class="container-fluid bg-black">
   <div class="text-white">
     <div class="row pt-5 text-center" style="margin-right: 22px">
@@ -558,12 +642,9 @@
 
 
     <script
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/toastify-js"
-  ></script>
-    <script
-      type="module"
-      src="/staticfiles/mainfiles/apply/script.js"
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
+    <script type="module" src="/staticfiles/mainfiles/apply/script.js"></script>
   </body>
 </html>
