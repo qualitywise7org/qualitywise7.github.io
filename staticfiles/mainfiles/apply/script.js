@@ -30,28 +30,15 @@ signupForm.addEventListener("submit", async (e) => {
     try {
         applyButton.innerHTML = "Applying...";
         applyButton.disabled = true;
-        let userId = "Anonymous";
-        let currentTime = new Date().toISOString();
 
-        if (currentUser) {
-            const userId = currentUser.uid;
-            const currentTime = new Date().toISOString();
-
-            document.getElementById("created_by").value = userId;
-            document.getElementById("created_date").value = currentTime;
-            document.getElementById("last_modified_by").value = userId;
-            document.getElementById("last_modified_date").value = currentTime;
-        }
         const docRef = await doc(db, "lead", email);
         const userData = {
             full_name: username,
             email: email,
             phonenumber: phoneNumber,
             applying_for: applyingFor, // Adding checkbox data
-            created_by: "User123", // Replace with actual user ID
-            created_date: new Date().toISOString(),
-            last_modified_by: "User123", // Replace with actual user ID
-            last_modified_date: new Date().toISOString(),
+            created_by: currentUser?currentUser.email:"",
+            created_datetime: new Date().toISOString()
             
         }
     
