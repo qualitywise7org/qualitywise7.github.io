@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Cv upload</title>
-    <link
-      rel="stylesheet"
-      href="/staticfiles/mainfiles/apply/cv_upload/style.css"
-    />
+    <title>CV Upload</title>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/apply/cv_upload/style.css" />
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -18,11 +15,8 @@
   crossorigin="anonymous"
 />
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+     
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -143,26 +137,33 @@
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <div
-      class="d-flex justify-content-center align-items-center flex-column gap-4"
-      style="margin-block: 100px"
-    >
-      <h2>UPLOAD YOUR RESUME</h2>
-      <form action="" class="d-flex flex-column justify-content-center gap-3">
+    <div class="d-flex justify-content-center align-items-center flex-column gap-0.5" style="margin-block: 100px">
+      <div>UPLOAD YOUR RESUME</div>
+      <form action="" class="d-flex flex-column justify-content-center gap-2" id="resumeForm">
         <div class="d-flex justify-content-center flex-column">
-          <input
-            id="cv"
-            type="file"
-            class="form-control cv"
-            accept="cv/*"
-            required
-          />
+          <input id="cv" type="file" class="form-control cv" accept=".pdf, .doc, .docx" required />
           <span class="form-text"></span>
         </div>
-        <button type="button" id="btn" class="print-btn btn btn-primary">
-          UPLOAD RESUME
-        </button>
-        <div class="px-1">
+        <div class="form-group">
+          <label for="skills">Enter your Skills:</label>
+          <input id="skills" name="skills" type="text" class="form-control" placeholder="Enter your skills" list="skill-list">
+          <!-- <datalist id="skill-list">
+            <option value="HTML">
+            <option value="CSS">
+            <option value="JavaScript">
+            <option value="Node.js">
+            <option value="Python">
+            <option value="Java">
+            <option value="C++">
+            <option value="Ruby">
+          </datalist> -->
+          <small class="form-text text-muted"></small>
+        </div>
+        <div class="center-button-container">
+          <button type="button" id="btn" class="print-btn btn btn-primary">SUBMIT</button>
+          <!-- <span id="loading" class="loading">Loading...</span> -->
+        </div>
+        <div class="px-1 mt-2 d-flex justify-content-center align-items-center gap-2">
           <a href="/apply/thanks/" class="text-decoration-none d-flex justify-content-end align-items-center gap-2">
             <span>Skip</span>
             <i class="fa-solid fa-arrow-right mt-1"></i>
@@ -359,9 +360,10 @@
     <i class="fa-solid fa-thumbs-down"></i>
   </button> -->
   <!-- <span style="font-size: 15px">Any question or complaint</span> -->
-  <span style="font-size: 14px; font-weight: 500; color: black"
-    >Any question or complaint</span
-  >
+ <a href= "https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+ target="_blank"   style="font-size: 14px; font-weight: 500; color: black"
+    >Any question or complaint</a
+  > 
   <div class="whatsapp-chat">
     <a
       href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
@@ -371,7 +373,7 @@
         class="fab fa-whatsapp"
         style="font-size: 27px; margin-bottom: 13px"
       ></i>
-    </a>
+       
   </div>
   <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
     <i class="fa-solid fa-chevron-up"></i>
@@ -514,13 +516,16 @@
 
 
 
-    <script
-      type="module"
-      src="/staticfiles/mainfiles/apply/cv_upload/script.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/toastify-js"
-    ></script>
+    <script type="module" src="/staticfiles/mainfiles/apply/cv_upload/script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script>
+      // JavaScript code goes here
+    </script>
   </body>
 </html>
