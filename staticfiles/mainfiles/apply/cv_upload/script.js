@@ -53,7 +53,7 @@ async function saveCVToDatabase() {
 
                 setTimeout(() => {
                     window.location.href = "http://127.0.0.1:5501/login/";
-                }, 3000);
+                }, 1000);
             })
             .catch((error) => {
                 console.error("Error writing document: ", error);
