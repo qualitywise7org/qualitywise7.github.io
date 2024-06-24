@@ -1,0 +1,22 @@
+.center-button-container{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+        margin-top: 40px;
+     /* align-items: center; */
+}
+#skills {
+   width: 100%;
+   height: 90px; /* Adjust height as needed */
+   resize: vertical; /* Allow vertical resizing */
+   padding: 10px;
+   box-sizing: border-box;
+   margin-top: 12px; /* Add margin from top */
+}
+#skills::placeholder {
+   font-size: 15px; /* Adjust font size as needed */
+   color: #999; /* Optionally, change the color of the placeholder */
+}
+#cv {
+   margin-top: 12px; /* Add margin from top for file input */
+}

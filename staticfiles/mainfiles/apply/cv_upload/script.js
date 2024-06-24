@@ -1,12 +1,12 @@
-
 const emailApply = localStorage.getItem("emailApply");
 let userEmail = '';
-if(emailApply){
+if (emailApply) {
     userEmail = emailApply;
-}else{
-    window.location.href = "/apply/";
+} else {
+    window.location.href = "/login/";
 }
 let cvUrl = "";
+let skills = [];
 
 async function uploadCV(file) {
     const cvRef = ref(storage, "user_cv/" + file.name);
@@ -17,18 +17,28 @@ async function uploadCV(file) {
 }
 
 async function saveCVToDatabase() {
-    const uploadButton = document.getElementById("btn")
+    const uploadButton = document.getElementById("btn");
     uploadButton.innerHTML = "Uploading...";
     uploadButton.disabled = true;
+
     const cvFile = document.getElementById("cv").files[0];
+    const skillsInput = document.getElementById("skills").value;
+
     if (cvFile) {
         cvUrl = await uploadCV(cvFile);
 
+        if (skillsInput) {
+            skills = skillsInput.split(',').map(skill => skill.trim());
+        }
+
         const userProfileRef = doc(db, "lead", userEmail);
-        await updateDoc(userProfileRef, { "about.cv": cvUrl })
+        await updateDoc(userProfileRef, {
+            "about.cv": cvUrl,
+            "about.skills": skills
+        })
             .then(() => {
                 Toastify({
-                    text: "CV Successfully Submitted",
+                    text: "CV and Skills Successfully Submitted",
                     duration: 3000,
                     newWindow: true,
                     close: true,
@@ -40,15 +50,16 @@ async function saveCVToDatabase() {
                         borderRadius: "10px"
                     }
                 }).showToast();
+
                 setTimeout(() => {
-                    window.location.href = "/apply/thanks/";
-                }, 3000);
+                    window.location.href = "http://127.0.0.1:5501/login/";
+                }, 1000);
             })
             .catch((error) => {
                 console.error("Error writing document: ", error);
             });
     }
-    
+
     uploadButton.innerHTML = "UPLOAD RESUME";
     uploadButton.disabled = false;
 }
