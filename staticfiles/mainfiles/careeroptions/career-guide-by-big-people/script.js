@@ -1,0 +1,53 @@
+
+        const videoSummaries = [
+            {
+                title: "Career guidance by S. Jaishankar",
+                summary: "S. Jaishankar shares insights on choosing a career, emphasizing the importance of aligning one's passion with professional goals.",
+                link: "https://youtube.com/shorts/qE2EGggAhFY?feature=share"
+            },
+            {
+                title: "How to teach Abdul Kalam",
+                summary: "Tips and anecdotes on effective teaching methods inspired by Dr. A.P.J. Abdul Kalam's life and approach to education.",
+                link: "https://youtube.com/shorts/zuy7KG3ITNI?feature=share"
+            },
+            {
+                title: "Professional skills by Abdul Kalam",
+                summary: "Dr. Kalam highlights essential professional skills such as communication, teamwork, and continuous learning.",
+                link: "https://youtube.com/shorts/F7U3J9AJS8M?feature=share"
+            },
+            {
+                title: "Why India doesn't produce entrepreneurs by Bill Gates",
+                summary: "Bill Gates discusses systemic issues and cultural factors that may hinder entrepreneurship in India.",
+                link: "https://youtube.com/shorts/mmhA_uD_NRo?feature=share"
+            },
+            {
+                title: "Invention example of Japan",
+                summary: "An example showcasing Japanese innovation, illustrating the country's commitment to technological advancements.",
+                link: "https://youtube.com/shorts/8omW7JjJcuA?feature=share"
+            },
+            {
+                title: "Divyakirti: Life is not that much tough",
+                summary: "Dr. Vikas Divyakirti encourages resilience and a positive outlook, stressing that life challenges can be overcome with determination.",
+                link: "https://youtube.com/shorts/p1XTVfoOJjQ?feature=share"
+            },
+            {
+                title: "Education is to make alive",
+                summary: "A perspective on education's role in fostering critical thinking and the ability to question and understand the world.",
+                link: "https://youtube.com/shorts/KkmUXydY0Xk?feature=share"
+            },
+            {
+                title: "Education gives the ability to think/question everything",
+                summary: "A perspective on education's role in fostering critical thinking and the ability to question and understand the world.",
+                link: "https://youtube.com/shorts/4McfYZu7ayY?feature=share"
+            }
+        ];
+
+        const summariesDiv = document.getElementById('summaries');
+
+        videoSummaries.forEach(video => {
+            const videoDiv = document.createElement('div');
+            videoDiv.classList.add('video-summary');
+            videoDiv.innerHTML = `<h2>${video.title}</h2><p>${video.summary}</p><a href="${video.link}" target="_blank">Watch here</a>`;
+            summariesDiv.appendChild(videoDiv);
+        });
+    
