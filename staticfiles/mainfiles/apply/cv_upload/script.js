@@ -7,7 +7,6 @@ if (emailApply) {
 }
 let cvUrl = "";
 let skills = [];
-
 async function uploadCV(file) {
     const cvRef = ref(storage, "user_cv/" + file.name);
     await uploadBytes(cvRef, file);
