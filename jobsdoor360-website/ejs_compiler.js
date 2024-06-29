@@ -5,6 +5,9 @@ const path = require('path');
 
 const destPath = '../'; // use ../ or target instead of target to generate in root folder
 
+const data = {
+    job_options_data: require("../staticfiles/mainfiles/careeroptions/job-options/job_options_data.json")
+};
 function readFolder(dir){
 	fs.readdirSync(dir).map(file => {
 		// build the full path of the file
@@ -18,18 +21,18 @@ function readFolder(dir){
           readFolder(filePath);
         } else if(file.endsWith('.ejs')) {
           // if the file is a match, print it
-          ejsCompile(filePath);
+          ejsCompile(filePath, data);
         }
 	});
 }
 
-function ejsCompile(filePath){
+function ejsCompile(filePath, data){
 	//let finalPath = filePath;//path.join(__dirname,filePath);
 	console.log("ejs file = "+filePath);
 
-	ejs.renderFile(filePath, function(err, data) {
+	ejs.renderFile(filePath, data, function(err, data) {
         if(err)
-	        console.log(err);
+	          console.log(err);
         writeOutput(filePath, data);
     });
 }

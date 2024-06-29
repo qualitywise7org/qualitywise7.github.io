@@ -7,7 +7,6 @@ if (emailApply) {
 }
 let cvUrl = "";
 let skills = [];
-
 async function uploadCV(file) {
     const cvRef = ref(storage, "user_cv/" + file.name);
     await uploadBytes(cvRef, file);
@@ -23,6 +22,8 @@ async function saveCVToDatabase() {
 
     const cvFile = document.getElementById("cv").files[0];
     const skillsInput = document.getElementById("skills").value;
+    const college = document.getElementById("college").value;
+
 
     if (cvFile) {
         cvUrl = await uploadCV(cvFile);
@@ -34,11 +35,12 @@ async function saveCVToDatabase() {
         const userProfileRef = doc(db, "lead", userEmail);
         await updateDoc(userProfileRef, {
             "about.cv": cvUrl,
-            "about.skills": skills
+            "about.skills": skills,
+            "about.college": college
         })
             .then(() => {
                 Toastify({
-                    text: "CV and Skills Successfully Submitted",
+                    text: "Information Successfully Submitted",
                     duration: 3000,
                     newWindow: true,
                     close: true,
