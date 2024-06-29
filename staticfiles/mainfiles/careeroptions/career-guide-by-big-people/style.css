@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+h1{
+    text-align: center;
+}
 body, html {
     /* height: 100%;/ */
     margin: 0;
