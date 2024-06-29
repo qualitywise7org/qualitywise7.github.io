@@ -41,11 +41,29 @@ async function isUser() {
                         var eduItem = edu[index];
                         if (eduItem) {
                             $(this).find("#school").val(eduItem.school || "");
+                            $(this).find("#college").val(eduItem.college || "");
                             $(this).find("#degree").val(eduItem.degree || "");
                             $(this).find("#sdate").val(eduItem.start_date || "");
                             $(this).find("#edate").val(eduItem.graduation_date || "");
                             $(this).find("#city").val(eduItem.city || "");
                             $(this).find("#Percentage").val(eduItem.percentage || "");
+                        }
+                    }
+                });
+
+                $('[data-repeater-list="group-experience"]')
+                .find("[data-repeater-item]")
+                .each(function (index) {
+                    var exp = userData?.experience;
+                    if (exp) {
+                        var expItem = exp[index];
+                        if (expItem) {
+                            $(this).find("#job_title").val(expItem.job_title || "");
+                            $(this).find("#company").val(expItem.company || "");
+                            $(this).find("#exp_start_date").val(expItem.start_date || "");
+                            $(this).find("#exp_end_date").val(expItem.end_date || "");
+                            $(this).find("#exp_city").val(expItem.city || "");
+                            $(this).find("#exp_description").val(expItem.description || "");
                         }
                     }
                 });
@@ -120,6 +138,7 @@ function collectFormData() {
         .each(function () {
             var eduItem = {};
             eduItem.school = $("#school", this).val() || "";
+            eduItem.college = $("#college", this).val() || "";
             eduItem.degree = $("#degree", this).val() || "";
             eduItem.start_date = $("#sdate", this).val() || "";
             eduItem.graduation_date = $("#edate", this).val() || "";
@@ -129,6 +148,21 @@ function collectFormData() {
         });
 
     formData.education = education;
+    
+    var experience = [];
+    $('[data-repeater-list="group-experience"]')
+        .find("[data-repeater-item]")
+        .each(function () {
+            var expItem = {};
+            expItem.job_title = $("#job_title", this).val() || "";
+            expItem.company = $("#company", this).val() || "";
+            expItem.start_date = $("#exp_start_date", this).val() || "";
+            expItem.end_date = $("#exp_end_date", this).val() || "";
+            expItem.city = $("#exp_city", this).val() || "";
+            expItem.description = $("#exp_description", this).val() || "";
+            experience.push(expItem);
+        });
+    formData.experience = experience;
 
     var skills = [];
     $('[data-repeater-list="group-skill"]')
