@@ -81,7 +81,6 @@ loginForm.addEventListener("submit", async (e) => {
   loginButton.innerHTML = "Login";
   loginButton.disabled = false;
 });
-
 async function loginUser(email, password) {
   try {
     const userCredential = await signInWithEmailAndPassword(

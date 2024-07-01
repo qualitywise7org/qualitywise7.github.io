@@ -351,19 +351,12 @@ async function displayJobs(page) {
   renderPaginatedJobsAndControls(jobs, page);
 }
 
-// Function to display results in the resultsContainer
-async function displayResults(
-  selectedJobType,
-  selectedLocation,
-  selectedProfile,
-  page
-) {
-  const jobs = [];
-  console.log(selectedJobType, selectedLocation, selectedProfile);
+async function displayResults(selectedJobType, selectedLocation, selectedProfile, page) {
+  console.log("Filters:", selectedJobType, selectedLocation, selectedProfile);
 
-  for (const job of jobs_data) {
+  const jobs = jobs_data.filter(job => {
     const jobTypeMatch =
-      !selectedJobType || selectedJobType === "all" || job.posts_data?.jobtype_masterdata?.code === selectedJobType;
+      !selectedJobType || selectedJobType === "all" || job.job_type === selectedJobType;
 
     const locationMatch =
       !selectedLocation || selectedLocation.toLowerCase() === "india" ||
@@ -374,15 +367,11 @@ async function displayResults(
       !selectedProfile || selectedProfile === "all" ||
       job.posts_data?.post_name.toLowerCase().includes(selectedProfile.toLowerCase());
 
-    // Check each condition only if it's provided by the user
-    const matches = jobTypeMatch && locationMatch && profileMatch;
+    return jobTypeMatch && locationMatch && profileMatch;
+  });
 
-    if (matches) {
-      jobs.push(job);
-    }
-  }
+  console.log("Filtered Jobs:", jobs); // Check filtered jobs in console
 
-  // Render paginated jobs and generate pagination controls
   renderPaginatedJobsAndControls(jobs, page);
 }
 

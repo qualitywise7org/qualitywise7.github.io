@@ -224,8 +224,13 @@
                       </div>
                       <div class="form-elem">
                         <label for="email" class="form-label">Email</label>
-                        <br />
-                        <label id="email"></label>
+                        <input
+                          id="email"
+                          type="email"
+                          class="form-control email"
+                          placeholder="e.g. john.doe@example.com"
+                          required
+                        />
                         <span class="form-text"></span>
                       </div>
                       <div class="form-elem">
@@ -327,6 +332,18 @@
                             <span class="form-text"></span>
                           </div>
                           <div class="form-elem">
+                            <label for="college" class="form-label">College</label>
+                            <input
+                              name="college"
+                              type="text"
+                              class="form-control college"
+                              id="college"
+                              placeholder="Name of College"
+                              required
+                            />
+                            <span class="form-text"></span>
+                          </div>
+                          <div class="form-elem">
                             <label for="" class="form-label">Degree</label>
                             <input
                               name="edu_degree"
@@ -413,6 +430,111 @@
                     </button>
                   </div>
                 </div>
+
+                <div class="cv-form-blk">
+                  <div class="cv-form-row-title">
+                    <h3>Experience</h3>
+                  </div>
+                  <div class="row-separator repeater">
+                    <div class="repeater" data-repeater-list="group-experience">
+                      <div data-repeater-item class="experience_box">
+                        <div class="cv-form-row cv-form-row-blk">
+                          <div class="form-elem">
+                            <label for="job_title" class="form-label">Job Title</label>
+                            <input
+                              name="job_title"
+                              type="text"
+                              class="form-control job_title"
+                              id="job_title"
+                              placeholder="e.g. Software Developer"
+                              required
+                            />
+                            <span class="form-text"></span>
+                          </div>
+                          <div class="form-elem">
+                            <label for="company" class="form-label">Company</label>
+                            <input
+                              name="company"
+                              type="text"
+                              class="form-control company"
+                              id="company"
+                              placeholder="e.g. Tech Corp"
+                              required
+                            />
+                            <span class="form-text"></span>
+                          </div>
+                          <div class="single-row-data">
+                            <div class="form-elem">
+                              <label for="exp_start_date" class="form-label">Start Date</label>
+                              <input
+                                name="exp_start_date"
+                                type="month"
+                                id="exp_start_date"
+                                class="form-control exp_start_date"
+                                required
+                              />
+                              <span class="form-text"></span>
+                            </div>
+                            <div class="form-elem">
+                              <label for="exp_end_date" class="form-label">End Date</label>
+                              <input
+                                name="exp_end_date"
+                                type="month"
+                                id="exp_end_date"
+                                class="form-control exp_end_date"
+                                required
+                              />
+                              <span class="form-text"></span>
+                            </div>
+                          </div>
+                          <div class="form-elem">
+                            <label for="exp_city" class="form-label">City</label>
+                            <input
+                              name="exp_city"
+                              type="text"
+                              class="form-control exp_city"
+                              id="exp_city"
+                              placeholder="e.g. New York"
+                              required
+                            />
+                            <span class="form-text"></span>
+                          </div>
+                          <div class="form-elem">
+                            <label for="exp_description" class="form-label">Description</label>
+                            <textarea
+                              name="exp_description"
+                              class="form-control exp_description"
+                              id="exp_description"
+                              placeholder="Describe your role"
+                              rows="3"
+                              required
+                            ></textarea>
+                            <span class="form-text"></span>
+                          </div>
+                          <div class="remove_button">
+                            <button
+                              data-repeater-delete
+                              type="button"
+                              class="repeater-remove-btn"
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      value="Add"
+                      id="addexperience"
+                      class="repeater-add-btn"
+                      data-repeater-create
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+                
 
                 <div class="cv-form-blk">
                   <div class="cv-form-row-title">
