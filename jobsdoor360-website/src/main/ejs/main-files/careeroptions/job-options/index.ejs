@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
     <title>Job Options</title>
+    <meta
+      name="description"
+      content="jobs options"
+    />
     <link rel="stylesheet" href="/staticfiles/mainfiles/careeroptions/job-options/style.css">
-</head>
-    <body>
-        <!-- <a href="#" id="job-option">Job-Option</a> -->
-        <div id="data-container"></div>
-        <script src="/staticfiles/mainfiles/careeroptions/job-options/script.js"></script>
-    </body>
-    </html>
+    <%- include('../../../partials/head.ejs') %>
+  </head>
+
+  <body>
+   
+    <%- include('../../../partials/navbar.ejs') %>
+    <h1>Job Options</h1>
+        <!-- this is how we can create html using data provided to ejs template
+
+            <% for (let i=0; i < job_options_data.job_options_data.length; i++) { %>
+                <div><b>Name:</b>
+                    <%= job_options_data.job_options_data[i] %>
+                </div>
+            <% } %>    
+        -->
+    <div id="data-container"></div>
+    <%- include('../../../partials/footer.ejs') %>
+    <script src="/staticfiles/mainfiles/careeroptions/job-options/script.js"></script>
+  </body>
+</html>
