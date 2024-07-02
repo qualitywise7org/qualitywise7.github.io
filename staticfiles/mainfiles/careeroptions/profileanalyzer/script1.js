@@ -20,7 +20,7 @@ function displayJobProfiles(profiles, query = "") {
       <div class="card mb-3">
         <div class="card-body">
           <h6 class="text-center card-title fs-5 fw-bold h6 text-white py-2 mb-3">
-             ${serialNumber}.            ${profile.name}
+             ${serialNumber}. ${profile.name}
           </h6>
           <p class="card-text">
             <b>Minimum Qualifications:</b> ${profile.minimum_qualifications.join(
@@ -36,6 +36,21 @@ function displayJobProfiles(profiles, query = "") {
           <p class="card-text">
             <b>Entrance Exam:</b> ${profile.entrance_exam}
           </p>
+          ${
+            profile.life_style && profile.life_style.length > 0
+              ? `<p class="card-text">
+                   <b>Lifestyle:</b>
+                   <ul class="lifestyle-list">
+                     ${profile.life_style
+                       .map(
+                         (item) =>
+                           `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`
+                       )
+                       .join("")}
+                   </ul>
+                 </p>`
+              : ""
+          }
           <p class="text-center fw-bold">
             Ready to seize the opportunity?<br/>
             <a href="${profileUrl}" class="btn btn-outline-success mt-2 mx-2 clickHereBtn">Click here</a>
