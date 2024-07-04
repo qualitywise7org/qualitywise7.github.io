@@ -2,7 +2,7 @@
 const fs = require('node:fs');
 const ejs = require('ejs');
 const path = require('path');
-
+console.log("hi");
 const destPath = '../'; // use ../ or target instead of target to generate in root folder
 
 const data = {
