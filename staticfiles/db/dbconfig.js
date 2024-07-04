@@ -55,22 +55,25 @@ const provider = new GoogleAuthProvider();
 const storage = getStorage(app);
 const storageRef = ref(storage);
 
-window.app = app;
-window.db = db;
-window.auth = auth;
-window.provider = provider;
-window.storage = storage;
-window.storageRef = storageRef;
+
+var obj = {};
+
+obj.app = app;
+obj.db = db;
+obj.auth = auth;
+obj.provider = provider;
+obj.storage = storage;
+obj.storageRef = storageRef;
 
 
-Object.assign(window, {
+Object.assign(obj, {
   getStorage,
   ref,
   uploadBytes,
   getDownloadURL,
 });
 
-Object.assign(window, {
+Object.assign(obj, {
   getFirestore,
   collection,
   getDocs,
@@ -84,7 +87,7 @@ Object.assign(window, {
   updateDoc,
 });
 
-Object.assign(window, {
+Object.assign(obj, {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
@@ -94,3 +97,8 @@ Object.assign(window, {
   onAuthStateChanged,
   signInWithEmailAndPassword,
 });
+
+//assigning into windows so that in other files or places we can use like window.getAuth
+Object.assign(window,obj);
+//exporting default so that we can use like module as well [ import { getAuth } from "./dbconfig.js";) ]
+export default obj;

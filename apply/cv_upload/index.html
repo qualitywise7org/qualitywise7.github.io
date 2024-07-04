@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Cv upload</title>
+    <title>CV Upload</title>
     <link
       rel="stylesheet"
       href="/staticfiles/mainfiles/apply/cv_upload/style.css"
@@ -93,18 +93,13 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/hiring/">Hiring</a>
+          <a class="nav-link" href="/myaccount/jobsforyou">Jobs for you</a>
         </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="/apply/">Apply</a>
-        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="/myaccount/">My account</a>
+        </li>
         <li class="nav-item login-btn">
-          <a
-            class="nav-link"
-            id="login-button"
-            href="/login"
-            >Login</a
-          >
+          <a class="nav-link" id="login-button" href="/login">Login</a>
         </li>
       </ul>
     </div>
@@ -144,26 +139,63 @@
 <!-- End Google Tag Manager (noscript) -->
 
     <div
-      class="d-flex justify-content-center align-items-center flex-column gap-4"
+      class="d-flex justify-content-center align-items-center flex-column gap-0.5"
       style="margin-block: 100px"
     >
-      <h2>UPLOAD YOUR RESUME</h2>
-      <form action="" class="d-flex flex-column justify-content-center gap-3">
+      <div>UPLOAD YOUR RESUME</div>
+      <form
+        action=""
+        class="d-flex flex-column justify-content-center gap-2"
+        id="resumeForm"
+      >
         <div class="d-flex justify-content-center flex-column">
           <input
             id="cv"
             type="file"
             class="form-control cv"
-            accept="cv/*"
+            accept=".pdf, .doc, .docx"
             required
           />
           <span class="form-text"></span>
         </div>
-        <button type="button" id="btn" class="print-btn btn btn-primary">
-          UPLOAD RESUME
-        </button>
-        <div class="px-1">
-          <a href="/apply/thanks/" class="text-decoration-none d-flex justify-content-end align-items-center gap-2">
+
+        <div class="form-group text-center">
+          <label for="college">COLLEGE NAME</label>
+          <textarea
+            id="college"
+            name="college"
+            class="form-control"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group text-center">
+          <label for="skills">ENTER YOUR SKILLS:</label>
+          <textarea
+            id="skills"
+            name="skills"
+            type="text"
+            class="form-control"
+            placeholder="For example : html, css, js, Reactjs, express, nodejs, content writer, hr, blogger, seo, digital marketing, MySQL,  database
+          "
+            list="skill-list"
+          ></textarea>
+
+          <small class="form-text text-muted"></small>
+        </div>
+        <div class="center-button-container">
+          <button type="button" id="btn" class="print-btn btn btn-primary">
+            SUBMIT
+          </button>
+          <!-- <span id="loading" class="loading">Loading...</span> -->
+        </div>
+        <div
+          class="px-1 mt-2 d-flex justify-content-center align-items-center gap-2"
+        >
+          <a
+            href="/apply/thanks/"
+            class="text-decoration-none d-flex justify-content-end align-items-center gap-2"
+          >
             <span>Skip</span>
             <i class="fa-solid fa-arrow-right mt-1"></i>
           </a>
@@ -359,9 +391,10 @@
     <i class="fa-solid fa-thumbs-down"></i>
   </button> -->
   <!-- <span style="font-size: 15px">Any question or complaint</span> -->
-  <span style="font-size: 14px; font-weight: 500; color: black"
-    >Any question or complaint</span
-  >
+ <a href= "https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+ target="_blank"   style="font-size: 14px; font-weight: 500; color: black"
+    >Any question or complaint</a
+  > 
   <div class="whatsapp-chat">
     <a
       href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
@@ -371,7 +404,7 @@
         class="fab fa-whatsapp"
         style="font-size: 27px; margin-bottom: 13px"
       ></i>
-    </a>
+       
   </div>
   <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
     <i class="fa-solid fa-chevron-up"></i>
@@ -514,13 +547,20 @@
 
 
 
-    <script
+    <!-- <script
       type="module"
       src="/staticfiles/mainfiles/apply/cv_upload/script.js"
-    ></script>
+    ></script> -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include Firebase -->
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/apply/cv_upload/script.js"
     ></script>
   </body>
 </html>

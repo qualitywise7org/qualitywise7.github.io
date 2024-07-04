@@ -1,6 +1,6 @@
 const jobTypeSelect = document.getElementById("jobType");
 const locationSelect = document.getElementById("location");
-const profileSelect = document.getElementById("profile");
+// const profileSelect = document.getElementById("profile"); // Removed profile select element
 const submitButton = document.getElementById("submitButton");
 const resultsContainer = document.getElementById("results");
 
@@ -25,7 +25,7 @@ window.addEventListener("load", async () => {
   // Call the function to populate select options from local storage
   populateSelectOptions(jobtype_masterdata, jobTypeSelect);
   populateSelectOptions(industry_masterdata, locationSelect);
-  populateSelectOptions(profile_masterdata, profileSelect);
+  // populateSelectOptions(profile_masterdata, profileSelect); // Removed profile options
 
   // Check if URL parameters are present and apply them
   const urlSearchParams = new URLSearchParams(window.location.search);
@@ -43,18 +43,18 @@ window.addEventListener("load", async () => {
     if (urlLocation) {
       locationSelect.value = urlLocation;
     }
-    if (urlProfile) {
-      profileSelect.value = urlProfile;
-    }
+    // if (urlProfile) {
+    //   profileSelect.value = urlProfile;
+    // }
 
-    if (urlJobType || urlLocation || urlProfile) {
-      displayResults(urlJobType, urlLocation, urlProfile, currentPage);
+    if (urlJobType || urlLocation /* || urlProfile */) {
+      displayResults(urlJobType, urlLocation, currentPage);
     } else {
       displayJobs(currentPage);
     }
   }, 1000);
 
-  if (!urlJobType && !urlLocation && !urlProfile) {
+  if (!urlJobType && !urlLocation /* && !urlProfile */) {
     displayJobs(1);
   }
 });
@@ -62,26 +62,19 @@ window.addEventListener("load", async () => {
 // Function to render paginated jobs and generate pagination controls
 function renderPaginatedJobsAndControls(jobs, currentPage) {
   console.log(jobs);
-  jobs.forEach((doc)=>{
-    console.log(doc.posts_data.post_name, "location")
-  })
+  jobs.forEach((doc) => {
+    console.log(doc.posts_data.post_name, "location");
+  });
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
 
-  const profileCardStyles = {
-    // width: "fit-content",
-    // margin: "0 auto",
-  };
-
-  const groupedJobs = groupJobsByProfile(jobs);
-
-  const jobsPerPage = 2;
+  const jobsPerPage = 30;
   const numPages = Math.ceil(jobs?.length / jobsPerPage);
 
   const startIndex = (currentPage - 1) * jobsPerPage;
   const endIndex = startIndex + jobsPerPage;
 
-  const paginatedJobs = groupedJobs?.slice(startIndex, endIndex);
+  const paginatedJobs = jobs?.slice(startIndex, endIndex);
 
   const jobsDiv = document.createElement("div");
   jobsDiv.classList.add("row", "g-3");
@@ -94,126 +87,33 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
   if (paginatedJobs?.length > 0) {
     // about pagination button
 
-    paginatedJobs.forEach((profileJobs) => {
-      const profileCard = document.createElement("div");
-      profileCard.classList.add("card", "col-12");
+    paginatedJobs.forEach((job) => {
+      const jobDiv = document.createElement("div");
+      jobDiv.classList.add("col-md-4", "col-12");
+      jobDiv.innerHTML = `
+                <div class="card h-100 overflow-hidden">
+                    <div class="card-body " style=" background-color:rgb(244 242 255)">
+                        <h5 class="card-title text-center">${job?.posts_data?.post_name}</h5>
 
-      Object.keys(profileCardStyles).forEach((styleKey) => {
-        profileCard.style[styleKey] = profileCardStyles[styleKey];
-      });
+                        ${job.last_date ? `
+                        <p><strong>Post Date : </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>` : `
+                        <p><strong>Post Date : </strong>${job?.post_date}</p>`}
 
-      profileCard.innerHTML = `
-                <div class="card-body">
-                    <h5 class="card-title" style="color:white; background-color:#4f92ef; padding:5px;">${
-                      profileJobs[0]?.posts_data?.profile_masterdata?.name
-                        ? profileJobs[0]?.posts_data?.profile_masterdata?.name
-                        : "Other"
-                    }</h5>
-                    <p><strong>Job Type: </strong>${
-                      profileJobs[0]?.posts_data?.jobtype_masterdata?.name
-                    } | <strong>Industry: </strong>${
-        profileJobs[0]?.posts_data?.industry_masterdata?.name
-      }</p>
-            <p>
-                        <strong>Minimum Skills Required: </strong>${
-                          profileJobs[0]?.posts_data?.profile_masterdata
-                            ?.minimum_skills_required
-                            ? profileJobs[0]?.posts_data?.profile_masterdata
-                                ?.minimum_skills_required
-                            : ""
-                        } | 
-                        <strong>Minimum Qualifications: </strong>${
-                          profileJobs[0]?.posts_data?.profile_masterdata
-                            ?.minimum_qualifications
-                            ? profileJobs[0]?.posts_data?.profile_masterdata?.minimum_qualifications
-                                ?.map((elem) => `${elem}`)
-                                .join(",")
-                            : ""
-                        } | 
-                        <strong>Preferred Streams: </strong>${
-                          profileJobs[0]?.posts_data?.profile_masterdata
-                            ?.preferred_streams
-                            ? profileJobs[0]?.posts_data?.profile_masterdata
-                                ?.preferred_streams ||
-                              profileJobs[0]?.posts_data?.profile_masterdata?.preferred_streams
-                                ?.map((elem) => `${elem}`)
-                                .join(",")
-                            : ""
-                        } | 
-                        <strong>Entrance Exam: </strong>${
-                          profileJobs[0]?.posts_data?.profile_masterdata
-                            ?.entrance_exam
-                            ? profileJobs[0]?.posts_data?.profile_masterdata?.entrance_exam
-                                ?.map((elem) => `${elem}`)
-                                .join(",")
-                            : ""
-                        }
-                    </p>
-                    <p><strong>Lifestyle: </strong>${
-                      profileJobs[0]?.posts_data?.profile_masterdata
-                        ? profileJobs[0]?.posts_data?.profile_masterdata?.life_style
-                            .map(
-                              (video) =>
-                                `<div><a href="${video.url}">👉 ${video.title}</a></div>`
-                            )
-                            .join(" ")
-                        : ""
-                    }</p>
-                </div>
+                        <p><strong>Eligibility : </strong>${job?.qualification_eligibility}</p>
+
+                        ${job?.recruitment_board ? `
+                        <p><strong>Recruitment Board :</strong> ${job?.recruitment_board}</p>` : `
+                        <p><strong>Location :</strong> ${job?.location}</p>`}
+
+                        ${job?.minimum_age || job?.maximum_age ? `
+                        <p><strong>Minimum Age :</strong> ${job?.minimum_age} | <strong>Maximum Age :</strong> ${job?.maximum_age}</p>` : job?.company_name ? `
+                        <p><strong>Company Name : </strong>${job?.company_name}</p>` : ``}
+                        <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code}" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
+                    </div>
+                </div>    
             `;
 
-      jobsDiv.appendChild(profileCard);
-
-      profileJobs.forEach((job) => {
-        const jobDiv = document.createElement("div");
-        jobDiv.classList.add("col-md-4", "col-12");
-        jobDiv.innerHTML = `
-                    <div class="card h-100 overflow-hidden">
-                        <div class="card-body " style=" background-color:rgb(244 242 255)">
-                            <h5 class="card-title text-center">${
-                              job?.posts_data?.post_name
-                            }</h5>
-
-                            ${
-                              job.last_date
-                                ? `
-                            <p><strong>Post Date : </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>  
-                            `
-                                : `
-                            <p><strong>Post Date : </strong>${job?.post_date}</p>
-                            `
-                            }
-
-                            <p><strong>Eligibility : </strong>${
-                              job?.qualification_eligibility
-                            }</p>
-
-                            ${
-                              job?.recruitment_board
-                                ? `
-                            <p><strong>Recruitment Board :</strong> ${job?.recruitment_board}</p>
-                            `
-                                : `
-                            <p><strong>Location :</strong> ${job?.location}</p>
-                            `
-                            }
-
-                            ${
-                              job?.minimum_age || job?.maximum_age
-                                ? `<p><strong>Minimum Age :</strong> ${job?.minimum_age} | <strong>Maximum Age :</strong> ${job?.maximum_age}</p>`
-                                : job?.company_name
-                                ? `<p><strong>Company Name : </strong>${job?.company_name}</p>`
-                                : ``
-                            }
-                            <a href="/careeroptions/jobdetails/?jobCode=${
-                              job?.job_code
-                            }" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
-                        </div>
-                    </div>    
-                `;
-
-        jobsDiv.appendChild(jobDiv);
-      });
+      jobsDiv.appendChild(jobDiv);
     });
 
     const paginationContainer = document.createElement("nav");
@@ -274,71 +174,19 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
   resultsContainer.appendChild(jobsDiv);
 }
 
-function groupJobsByProfile(jobs) {
-  const groupedJobs = [];
-
-  // Separate jobs with a profile and jobs without a profile
-  const jobsWithProfile = jobs.filter(
-    (job) => job?.posts_data?.profile_masterdata?.code
-  );
-  const jobsWithoutProfile = jobs.filter(
-    (job) => !job?.posts_data?.profile_masterdata?.code
-  );
-
-  // Group jobs with the same profile together
-  const uniqueProfiles = [
-    ...new Set(
-      jobsWithProfile.map((job) => job?.posts_data?.profile_masterdata?.code)
-    ),
-  ];
-
-  // Sort the unique profile codes alphabetically
-  uniqueProfiles.sort();
-
-  uniqueProfiles.forEach((profile) => {
-    const profileJobs = jobsWithProfile
-      .filter((job) => job?.posts_data?.profile_masterdata?.code === profile)
-      .sort((a, b) => {
-        const dateA = parseDate(a?.post_date);
-        const dateB = parseDate(b?.post_date);
-
-        return dateB - dateA;
-      });
-
-    groupedJobs.push(profileJobs);
-  });
-
-  // Add jobs without a profile to the end
-  if (jobsWithoutProfile != "") {
-    groupedJobs.push(jobsWithoutProfile);
-  }
-
-  return groupedJobs;
-}
-
-function parseDate(dateString) {
-  const parts = dateString.split("/");
-  const year = parseInt(parts[2], 10);
-  const month = parseInt(parts[1], 10) - 1;
-  const day = parseInt(parts[0], 10);
-  return new Date(year, month, day);
-}
-
 // Function to get the current URL search parameters
 function getSearchParams() {
   const urlSearchParams = new URLSearchParams(window.location.search);
   const selectedJobType = jobTypeSelect.value;
   const selectedLocation = locationSelect.value;
-  const selectedProfile = profileSelect.value;
+  // const selectedProfile = profileSelect.value; // Removed profile parameter
 
   // Remove existing "page" parameter if it exists
   urlSearchParams.delete("page");
 
   urlSearchParams.set("jobType", selectedJobType);
-
   urlSearchParams.set("location", selectedLocation);
-
-  urlSearchParams.set("profile", selectedProfile);
+  // urlSearchParams.set("profile", selectedProfile); // Removed profile parameter
 
   // Return the formatted search parameters
   return `&${urlSearchParams.toString()}`;
@@ -351,62 +199,35 @@ async function displayJobs(page) {
   renderPaginatedJobsAndControls(jobs, page);
 }
 
-// Function to display results in the resultsContainer
-async function displayResults(
-  selectedJobType,
-  selectedLocation,
-  selectedProfile,
-  page
-) {
-  const jobs = [];
-  console.log(selectedJobType, selectedLocation, selectedProfile);
+async function displayResults(selectedJobType, selectedLocation, page) {
+  console.log("Filters:", selectedJobType, selectedLocation);
 
-  for (const job of jobs_data) {
-    const jobTypeMatch =
-      !selectedJobType || selectedJobType === "all" || job.posts_data?.jobtype_masterdata?.code === selectedJobType;
+  const jobs = jobs_data.filter(job => {
+    const jobTypeMatch = !selectedJobType || selectedJobType === "all" || job.job_type === selectedJobType;
+    const locationMatch = !selectedLocation || selectedLocation.toLowerCase() === "india" ||
+      job?.location?.trim() === "" || job?.location?.toLowerCase().includes(selectedLocation.toLowerCase());
 
-    const locationMatch =
-      !selectedLocation || selectedLocation.toLowerCase() === "india" ||
-      job?.location?.trim() === "" ||
-      job?.location?.toLowerCase().includes(selectedLocation.toLowerCase());
+    return jobTypeMatch && locationMatch;
+  });
 
-    const profileMatch =
-      !selectedProfile || selectedProfile === "all" ||
-      job.posts_data?.post_name.toLowerCase().includes(selectedProfile.toLowerCase());
+  console.log("Filtered Jobs:", jobs); // Check filtered jobs in console
 
-    // Check each condition only if it's provided by the user
-    const matches = jobTypeMatch && locationMatch && profileMatch;
-
-    if (matches) {
-      jobs.push(job);
-    }
-  }
-
-  // Render paginated jobs and generate pagination controls
   renderPaginatedJobsAndControls(jobs, page);
 }
 
 // Function to display results based on user selections
-submitButton.addEventListener("click", async () => {
+submitButton.addEventListener("click", async (e) => {
+  e.preventDefault();
   const selectedJobType = jobTypeSelect.value;
   const selectedLocation = locationSelect.value;
-  const selectedProfile = profileSelect.value;
+  // const selectedProfile = profileSelect.value; // Removed profile parameter
 
-  // Reset the page parameter to 1 in the URL
-  const urlSearchParams = new URLSearchParams(window.location.search);
+  console.log("Selected:", selectedJobType, selectedLocation /* , selectedProfile */);
 
-  // Clear previous results
-  resultsContainer.textContent = "";
-  resultsContainer.classList.add("results-visible");
+  // Update the URL with selected parameters
+  const url = `?jobType=${selectedJobType}&location=${selectedLocation}`; // Removed profile parameter
+  history.pushState(null, "", url);
 
-  displayResults(selectedJobType, selectedLocation, selectedProfile, 1);
-
-  // Set the parameters for jobType, industry, and profile
-  urlSearchParams.set("jobType", selectedJobType);
-  urlSearchParams.set("location", selectedLocation);
-  urlSearchParams.set("profile", selectedProfile);
-  urlSearchParams.set("page", "1");
-
-  // Update the URL with the new parameters
-  window.history.pushState({}, "", `?${urlSearchParams.toString()}`);
+  // Call displayResults function with selected parameters
+  displayResults(selectedJobType, selectedLocation, 1);
 });

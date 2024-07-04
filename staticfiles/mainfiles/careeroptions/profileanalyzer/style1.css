@@ -41,3 +41,21 @@ body {
 .h6{
   background-color: #282323;
 }
+
+.lifestyle-list {
+  padding-left: 20px; /* Adjusts the left padding for list items */
+  margin-top: 5px; /* Adjusts the top margin for the list */
+}
+
+.lifestyle-list li {
+  margin-bottom: 5px; /* Adds space between list items */
+}
+
+.lifestyle-list a {
+  color: #007bff; /* Adjusts the link color */
+  text-decoration: none; /* Removes underline from links */
+}
+
+.lifestyle-list a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+}
