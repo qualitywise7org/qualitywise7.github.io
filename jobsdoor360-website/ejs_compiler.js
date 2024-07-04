@@ -2,11 +2,12 @@
 const fs = require('node:fs');
 const ejs = require('ejs');
 const path = require('path');
-
+console.log("hi");
 const destPath = '../'; // use ../ or target instead of target to generate in root folder
 
 const data = {
-    job_options_data: require("../staticfiles/mainfiles/careeroptions/job-options/job_options_data.json")
+    job_options_data: require("../staticfiles/mainfiles/careeroptions/job-options/job_options_data.json"),
+    business_options_data: require("../staticfiles/mainfiles/careeroptions/business-options/business_options_data.json")
 };
 function readFolder(dir){
 	fs.readdirSync(dir).map(file => {
