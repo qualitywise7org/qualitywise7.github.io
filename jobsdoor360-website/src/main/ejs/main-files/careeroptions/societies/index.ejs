@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prominent Societies and Associations in India</title>
-    <link rel="stylesheet" href="/staticfiles/mainfiles/careeroptions/societies/style.css">
-    <%- include('../../../partials/head.ejs') %>
+   <link rel="stylesheet" href="/staticfiles/mainfiles/careeroptions/societies/style.css">
+   <%- include('../../../partials/head.ejs') %>
 </head>
-<body>
-
+<body> 
     <%- include('../../../partials/navbar.ejs') %>
+    
     <h1>Societies</h1>
-    <ul id="society-list"></ul>
-   
+    <div id="data-container">
+        <ul class="centered-list">
+          <% for (let i = 0; i < societies_data.societies_data.length; i++) { %>
+            <li><%= societies_data.societies_data[i] %></li>
+          <% } %>
+        </ul>
+      </div>
+      
     <%- include('../../../partials/footer.ejs') %>
-    <script src="/staticfiles/mainfiles/careeroptions/societies/script.js"></script>
    
 </body>
 </html>
+
