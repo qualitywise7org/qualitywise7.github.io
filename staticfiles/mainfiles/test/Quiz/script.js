@@ -19,12 +19,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
-
+//Data that should be store in firebase....
 const subjects = {
-  html: {
-    id: "rTGOLNqvOBVvJeslowf0",
-    title: "HTML Quiz",
+  htmlcssjs: {
+    id: "html, css & js",
+    title: "HTML,CSS & JAVASCRIPT",
     questions: [
       {
         question: "What does HTML stand for?",
@@ -144,7 +143,8 @@ const subjects = {
     ],
   },
   python: {
-    title: "CSS Quiz",
+    id: "python",
+    title: "Python",
     questions: [
       {
         question: "What does CSS stand for?",
@@ -184,7 +184,8 @@ const subjects = {
     ],
   },
   nodejs: {
-    title: "JavaScript Quiz",
+    id: "node.js",
+    title: "Node.Js",
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -235,7 +236,8 @@ const subjects = {
     ],
   },
   react: {
-    title: "JavaScript Quiz",
+    id: "react.js",
+    title: "React.Js",
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -286,7 +288,8 @@ const subjects = {
     ],
   },
   mongodb: {
-    title: "JavaScript Quiz",
+    id: "mongodb",
+    title: "MongoDB",
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -337,7 +340,8 @@ const subjects = {
     ],
   },
   mysql: {
-    title: "JavaScript Quiz",
+    id: "mysql",
+    title: "MySQL",
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -388,7 +392,8 @@ const subjects = {
     ],
   },
   firebase: {
-    title: "JavaScript Quiz",
+    id: "firebase",
+    title: "Firebase",
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -439,7 +444,8 @@ const subjects = {
     ],
   },
   devops: {
-    title: "JavaScript Quiz",
+    id: "devops",
+    title: "DevOps",
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -490,7 +496,8 @@ const subjects = {
     ],
   },
   pcm: {
-    title: "JavaScript Quiz",
+    id: "physics, che. & maths",
+    title: "Physics, Chemistry & Maths",
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -541,7 +548,8 @@ const subjects = {
     ],
   },
   reasoning: {
-    title: "JavaScript Quiz",
+    id: "reasoning",
+    title: "Reasoning",
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -610,22 +618,38 @@ const previousButton = document.getElementById("pre-btn");
 const homeButton = document.getElementById("home-btn"); // New: Grab the home button element
 const timerDisplay = document.getElementById("timer");
 
+function startQuiz(subject) {
+  currentSubject = subjects[subject];
+  currentQuestion = 0;
+  score = 0;
+  timeLimit = 30 * 60; // Reset time limit to 30 minutes
+  startTimer(); // Start the timer when quiz starts
+  showQuiz();
 
-// Function to start the quiz based on subject code
-function startQuiz(subjectCode) {
-  const subject = subjects[subjectCode];
-  if (subject) {
-    currentSubject = subject;
-    currentQuestion = 0;
-    score = 0;
-    timeLimit = 30 * 60; // Reset time limit to 30 minutes
-    startTimer(); // Start the timer when quiz starts
-    showQuiz();
-  } else {
-    alert(`Quiz for ${subjectCode} not found.`);
-  }
+  // Update the URL with the subject
+  const url = new URL(window.location);
+  url.searchParams.set("subject", subject);
+  window.history.pushState({}, "", url);
+}
+document.addEventListener("DOMContentLoaded", function () {
+  const startButtons = document.querySelectorAll(".btn-start"); // Select by ID
+  startButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      // Get the subject key from the data-subject attribute
+      const subject = button.getAttribute("data-subject");
+      startQuiz(subject);
+    });
+  });
+}); // Replace "htmlcssjs" with the actual subject key
+
+// Read the subject from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const subject = urlParams.get("subject");
+if (subject) {
+  startQuiz(subject);
 }
 
+//Function to show the quiz when startQuiz is called
 function showQuiz() {
   document.getElementById("quiz-container").style.display = "block";
   document.querySelector(".assessment-grid").style.display = "none";
@@ -637,6 +661,7 @@ function showQuiz() {
   loadQuestion();
 }
 
+//Function for uploading questions on showQuiz page
 function loadQuestion() {
   const question = currentSubject.questions[currentQuestion];
   questionContainer.innerHTML = `
@@ -669,30 +694,40 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const nextButton = document.getElementById("next-btn");
+  if (nextButton) {
+    nextButton.addEventListener("click", nextQuestion);
+  }
+});
 
 //Function to get in the new questions page
 function nextQuestion() {
+  // Check if a radio button is selected
   const selectedAnswer = document.querySelector('input[name="answer"]:checked');
   if (!selectedAnswer) {
     alert("Please select an answer.");
     return;
   }
 
+  // Get the index of the selected answer
+  const answerIndex = parseInt(selectedAnswer.value, 10);
 
-  //Function for counting the score 
-  const answerIndex = parseInt(selectedAnswer.value);
+  // Check if the answer is correct and update score
   if (answerIndex === currentSubject.questions[currentQuestion].correctAnswer) {
     score++;
   }
 
+  // Move to the next question
   currentQuestion++;
+
+  // Check if there are more questions to load
   if (currentQuestion < currentSubject.questions.length) {
-    loadQuestion();
+    loadQuestion(); // Load the next question
   } else {
-    showResult();
+    showResult(); // Show the quiz result if no more questions
   }
 }
-
 
 //Function for going to the previous question page
 function previousQuestion() {
@@ -703,8 +738,6 @@ function previousQuestion() {
     alert("You are at the first question.");
   }
 }
-
-
 
 //Function for Showing the result
 function showResult() {
@@ -721,11 +754,10 @@ function showResult() {
   );
   scoreDisplay.textContent = score;
   percentageDisplay.textContent = percentage;
-
+  previousButton.style.display = "none";
   // Creating a link for going into home page
   homeButton.style.display = "block";
 }
-
 
 // Function to start the timer
 function startTimer() {
@@ -740,12 +772,10 @@ function startTimer() {
   }, 1000); // Update timer every second
 }
 
-
 // Function to stop the timer
 function stopTimer() {
   clearInterval(timerInterval);
 }
-
 
 // Function to update the timer display
 function updateTimerDisplay() {
@@ -754,7 +784,13 @@ function updateTimerDisplay() {
   timerDisplay.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
-
+// Home
+document.addEventListener("DOMContentLoaded", function () {
+  const nextButton = document.getElementById("home-btn");
+  if (nextButton) {
+    nextButton.addEventListener("click", goHome);
+  }
+});
 // Function to go back to the home page
 function goHome() {
   document.getElementById("quiz-container").style.display = "none";
@@ -763,31 +799,41 @@ function goHome() {
   stopTimer(); // Stop the timer when going back to the home page
 }
 
-
 //Function for adding assessment data to the firebase
 async function addQuizzesToFirestore() {
   try {
-    for (let subjectKey in subjects) {
-      const subject = subjects[id];
-      const docRef = doc(db, "assessment", subject.html.id); // Assuming you want to use HTML ID for document ID
-      await setDoc(docRef, subject);
-      console.log(`Quiz for ${subjectKey} added to Firestore.`);
+    // Iterate over the quizzes (values) in the subjects object
+    for (let quiz of Object.values(subjects)) {
+      // Check if the quiz is defined and has necessary properties
+      if (quiz && quiz.id) {
+        // Construct the document reference with quiz.html.id
+        const docRef = doc(db, "assessment", quiz.id);
+
+        // Set the document with title and questions from the quiz
+        await setDoc(docRef, {
+          title: quiz.title,
+          questions: quiz.questions,
+        });
+
+        // Log success message
+        console.log(
+          `Quiz with ID ${quiz.id} added to 'assessment' collection in Firestore.`
+        );
+      } else {
+        // Throw an error if html.id is not defined for the quiz
+        throw new Error(`HTML quiz ID is undefined for ${quiz}`);
+      }
     }
-    console.log("All quizzes added to Firestore successfully!");
+
+    // Log success message after all documents are added
+    console.log(
+      "All quizzes added to 'assessment' collection in Firestore successfully!"
+    );
   } catch (error) {
+    // Log any errors that occur during the process
     console.error("Error adding quizzes to Firestore: ", error);
   }
 }
 
-// Call the function to add quizzes to Firestore (move this call outside the function if not already done)
+// Call the function to add quizzes to Firestore
 addQuizzesToFirestore();
-
-
-// Handle URL parameters to start the quiz based on 'code' parameter
-document.addEventListener("DOMContentLoaded", function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  const subjectCode = urlParams.get("code");
-  if (subjectCode) {
-    startQuiz(subjectCode);
-  }
-});

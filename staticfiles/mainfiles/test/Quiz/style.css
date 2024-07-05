@@ -5,9 +5,11 @@
 }
 
 body {
+  background-color: #f5f5f5; /* Light gray background */
   font-family: "Roboto", Arial, sans-serif;
-  background-color: #f5f5f5;
   padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .center {
@@ -18,24 +20,30 @@ body {
 .content {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100vw; /* Full width of the viewport */
+  height: auto;
 }
-
- 
-
-
-/* Existing CSS remains unchanged */
 
 /* Style for the quiz container */
 #quiz-container {
   display: none;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Light gray background */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: auto; /* Center horizontally */
-  max-width: 800px; /* Adjust max width as needed */
-  text-align: left; /* Align text and content to the left */
+  position: fixed; /* Fixed position to center */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centering trick */
+  width: 70%; /* Adjust width as needed */
+  max-width: 600px; /* Maximum width */
+  height: 70%; /* Adjust height as needed */
+  max-height: 90vh; /* Maximum height relative to viewport height */
+  text-align: center; /* Center content horizontally */
+  z-index: 1000; /* Ensure it's above other content if needed */
 }
+
+
 
 #quiz {
   margin-bottom: 20px;
@@ -43,23 +51,24 @@ body {
 
 #question-container {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 60px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   text-align: left;
 }
 
-#feedback-container {
+/* #feedback-container {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   text-align: left;
-}
+} */
 
-#next-btn, #pre-btn, #home-btn {
+/* Previous button */
+#pre-btn {
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -67,10 +76,43 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-right: 10px; /* Adjust spacing between buttons */
+  position: absolute;
+  bottom: 20px; /* Adjust distance from the bottom */
+  left: 20px; /* Adjust distance from the left */
 }
 
-#next-btn:hover, #pre-btn:hover, #home-btn:hover {
+
+/* Next button */
+#next-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 20px; /* Adjust distance from the bottom */
+  right: 20px; /* Adjust distance from the right */
+}
+
+
+/* Home button */
+#home-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 auto; /* Center the button horizontally */
+}
+
+/* Hover state for all buttons */
+#pre-btn:hover,
+#next-btn:hover,
+#home-btn:hover {
   background-color: #0056b3;
 }
 
@@ -88,8 +130,14 @@ body {
   font-weight: bold;
   color: #007bff;
   margin-top: 10px;
+  background-color: #f9f9f9; /* Light gray background */
+  padding: 10px 20px; /* Padding around the timer text */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  text-align: center; /* Center text horizontally */
+  margin: 0 auto; /* Center the timer box horizontally */
+  display: inline-block; /* Ensure the box wraps around the content */
 }
-
 
 /* Assessment Grid and Boxes */
 .assessment-grid {
@@ -106,7 +154,6 @@ body {
   text-align: left;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
- 
 
 .assessment-box:hover {
   transform: translateY(-2px);
@@ -125,7 +172,7 @@ body {
   margin-bottom: 20px;
 }
 
-.btn {
+.btn-start {
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -135,36 +182,8 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.btn-start:hover {
   background-color: #0056b3;
-}
-#next-btn{
-  background-color: #f2f2f3;
-  color: #030202;
-  font-size: medium;
-  border: none;
-  margin-top: 20px; 
-  margin-bottom: 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-#next-btn:hover{
-  background-color: #c7c7c7;
-}
-#home-btn{
-  background-color: #f2f2f3;
-  color: #030202;
-  font-size: medium;
-  border: none;
-  margin-top: 20px; 
-  margin-bottom: 20px;
-  border-radius: 0px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-#home-btn{
-  background-color: #c7c7c7;
 }
 
 /* Media query for tablets and smaller screens */
