@@ -3,7 +3,7 @@ function displayJobProfiles(profiles, query = "") {
   const jobProfilesContainer = document.getElementById("jobProfiles");
 
   // Clear existing content
-  jobProfilesContainer.innerHTML = "";
+  jobProfilesContainer.innerHTML = " ";
 
   // Create a document fragment for better performance
   const fragment = document.createDocumentFragment();
