@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Job Options</title>
-    <meta
-      name="description"
-      content="jobs options"
-    />
+    <title>Business Options</title>
+    <meta name="description" content="Business options"/>
     <link rel="stylesheet" href="/staticfiles/mainfiles/careeroptions/business-options/style.css">
     <%- include('../../../partials/head.ejs') %>
   </head>
-
   <body>
     <%- include('../../../partials/navbar.ejs') %>
     <h1>Business Options</h1>
-    <div id="data-container"></div>
+    <div id="data-container"> 
+      <% for (let i = 0; i < business_options_data.business_options_data.length; i++) { %>
+        <h2><%= business_options_data.business_options_data[i].sector %></h2>
+        <% if (business_options_data.business_options_data[i].subsectors.length > 0) { %>
+          <ul>
+            <% for (let j = 0; j < business_options_data.business_options_data[i].subsectors.length; j++) { %>
+              <li><%= business_options_data.business_options_data[i].subsectors[j] %></li>
+            <% } %>
+          </ul>
+        <% } else { %>
+          <p></p>
+        <% } %>
+      <% } %>
+    </div>
     <%- include('../../../partials/footer.ejs') %>
-    <script src="/staticfiles/mainfiles/careeroptions/business-options/script.js"></script>
+    <!-- <script src="/staticfiles/mainfiles/careeroptions/business-options/script.js"></script> -->
   </body>
 </html>

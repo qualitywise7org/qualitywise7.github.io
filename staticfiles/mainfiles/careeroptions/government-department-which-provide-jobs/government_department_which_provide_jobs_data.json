@@ -1,0 +1,249 @@
+{
+  "government_department_which_provide_jobs_data": [
+    {
+      "department": "Ministry of Home Affairs",
+      "sub_departments": ["Border Security Force (BSF)","Central Reserve Police Force (CRPF)","Central Industrial Security Force (CISF)","Sashastra Seema Bal (SSB)","National Investigation Agency (NIA)"
+      ]
+    },
+    {
+      "department": "Ministry of Defence",
+      "sub_departments": [
+        "Indian Army",
+        "Indian Navy",
+        "Indian Air Force",
+        "Defence Research and Development Organisation (DRDO)",
+        "Ordnance Factory Board (OFB)"
+      ]
+    },
+    {
+      "department": "Ministry of Railways",
+      "sub_departments": [
+        "Indian Railways Engineering Service (IRES)",
+        "Indian Railways Accounts Service (IRAS)",
+        "Indian Railways Personnel Service (IRPS)",
+        "Indian Railways Traffic Service (IRTS)",
+        "Indian Railway Medical Service (IRMS)"
+      ]
+    },
+    {
+      "department": "Ministry of Finance",
+      "sub_departments": [
+        "Income Tax Department",
+        "Customs and Central Excise Department",
+        "Reserve Bank of India (RBI)",
+        "Securities and Exchange Board of India (SEBI)",
+        "Insurance Regulatory and Development Authority of India (IRDAI)"
+      ]
+    },
+    {
+      "department": "Ministry of Health and Family Welfare",
+      "sub_departments": [
+        "All India Institute of Medical Sciences (AIIMS)",
+        "Central Drugs Standard Control Organization (CDSCO)",
+        "National Health Mission (NHM)",
+        "Indian Council of Medical Research (ICMR)",
+        "Central Council for Research in Ayurvedic Sciences (CCRAS)"
+      ]
+    },
+    {
+      "department": "Ministry of Agriculture and Farmers Welfare",
+      "sub_departments": [
+        "Department of Agriculture and Co-operation",
+        "National Bank for Agriculture and Rural Development (NABARD)",
+        "Indian Council of Agricultural Research (ICAR)",
+        "Food Corporation of India (FCI)",
+        "Agricultural and Processed Food Products Export Development Authority (APEDA)"
+      ]
+    },
+    {
+      "department": "Ministry of Education (formerly Ministry of Human Resource Development)",
+      "sub_departments": [
+        "Central Board of Secondary Education (CBSE)",
+        "University Grants Commission (UGC)",
+        "National Council of Educational Research and Training (NCERT)",
+        "Kendriya Vidyalaya Sangathan (KVS)",
+        "Navodaya Vidyalaya Samiti (NVS)"
+      ]
+    },
+    {
+      "department": "Ministry of Rural Development",
+      "sub_departments": [
+        "National Rural Employment Guarantee Act (NREGA)",
+        "Pradhan Mantri Awaas Yojana (PMAY)",
+        "Mahatma Gandhi National Rural Employment Guarantee Scheme (MGNREGS)",
+        "Pradhan Mantri Gram Sadak Yojana (PMGSY)",
+        "Swachh Bharat Mission (Rural)"
+      ]
+    },
+    {
+      "department": "Ministry of Environment, Forest and Climate Change",
+      "sub_departments": [
+        "Ministry of Environment and Forests (MoEF)",
+        "Central Pollution Control Board (CPCB)",
+        "Forest Survey of India (FSI)",
+        "National Tiger Conservation Authority (NTCA)",
+        "Wildlife Institute of India (WII)"
+      ]
+    },
+    {
+      "department": "Ministry of Transport and Highways",
+      "sub_departments": [
+        "National Highways Authority of India (NHAI)",
+        "Indian Road Congress (IRC)",
+        "Directorate General of Civil Aviation (DGCA)",
+        "Central Institute of Road Transport (CIRT)",
+        "Indian Ports Association (IPA)"
+      ]
+    },
+    {
+      "department": "Ministry of Commerce and Industry",
+      "sub_departments": [
+        "Directorate General of Foreign Trade (DGFT)",
+        "Export-Import Bank of India (EXIM Bank)",
+        "Bureau of Indian Standards (BIS)",
+        "Office of the Controller General of Patents, Designs and Trademarks (CGPDTM)",
+        "Directorate General of Anti-Dumping and Allied Duties (DGAD)"
+      ]
+    },
+    {
+      "department": "Ministry of Power",
+      "sub_departments": [
+        "Central Electricity Regulatory Commission (CERC)",
+        "Central Electricity Authority (CEA)",
+        "Power Grid Corporation of India Limited (POWERGRID)",
+        "National Thermal Power Corporation Limited (NTPC)",
+        "Power Finance Corporation Limited (PFC)"
+      ]
+    },
+    {
+      "department": "Ministry of Petroleum and Natural Gas",
+      "sub_departments": [
+        "Oil and Natural Gas Corporation (ONGC)",
+        "Oil India Limited (OIL)",
+        "Bharat Petroleum Corporation Limited (BPCL)",
+        "Indian Oil Corporation Limited (IOCL)",
+        "Gas Authority of India Limited (GAIL)"
+      ]
+    },
+    {
+      "department": "Ministry of Social Justice and Empowerment",
+      "sub_departments": [
+        "National Commission for Scheduled Castes (NCSC)",
+        "National Commission for Scheduled Tribes (NCST)",
+        "National Commission for Backward Classes (NCBC)",
+        "National Institute of Social Defence (NISD)",
+        "National Trust for the Welfare of Persons with Autism, Cerebral Palsy, Mental Retardation and Multiple Disabilities (NATIONAL TRUST)"
+      ]
+    },
+    {
+      "department": "Ministry of Minority Affairs",
+      "sub_departments": [
+        "Maulana Azad Education Foundation (MAEF)",
+        "National Minorities Development and Finance Corporation (NMDFC)",
+        "National Commission for Minority Educational Institutions (NCMEI)",
+        "Ministry of Minority Affairs - Scholarship Schemes",
+        "Ministry of Minority Affairs - Skill Development Initiatives"
+      ]
+    },
+    {
+      "department": "Department of Space",
+      "sub_departments": [
+        "Indian Space Research Organisation (ISRO)",
+        "Antrix Corporation Limited",
+        "Indian National Committee for Space Research (INCOSPAR)",
+        "Space Applications Centre (SAC)",
+        "Indian Institute of Space Science and Technology (IIST)"
+      ]
+    },
+    {
+      "department": "Department of Atomic Energy",
+      "sub_departments": [
+        "Atomic Energy Commission (AEC)",
+        "Bhabha Atomic Research Centre (BARC)",
+        "Nuclear Power Corporation of India Limited (NPCIL)",
+        "Atomic Minerals Directorate for Exploration and Research (AMD)",
+        "Indian Rare Earths Limited (IREL)"
+      ]
+    },
+    {
+      "department": "Department of Posts",
+      "sub_departments": [
+        "India Post Payments Bank (IPPB)",
+        "Postal Life Insurance (PLI)",
+        "Rural Postal Life Insurance (RPLI)",
+        "Postal Printing Presses",
+        "Philately Bureau"
+      ]
+    },
+    {
+      "department": "Central Board of Direct Taxes (CBDT)",
+      "sub_departments": [
+        "Income Tax Department-Assessment",
+        "Income Tax Department-Investigation",
+        "Income Tax Department - TDS",
+        "Income Tax Department - International Taxation",
+        "Income Tax Department - Appeals"
+      ]
+    },
+    {
+      "department": "Central Board of Secondary Education (CBSE)",
+      "sub_departments": [
+        "CBSE Regional Offices (e.g., CBSE Regional Office, Delhi; CBSE Regional Office, Chennai, etc.)",
+        "CBSE Affiliated Schools",
+        "CBSE Examination (e.g., Class X Board Exams, Class XII Board Exams, etc.)",
+        "CBSE Academic Unit",
+        "CBSE Examination Unit"
+      ]
+    },
+    {
+      "department": "National Institute of Health and Family Welfare (NIHFW)",
+      "sub_departments": [
+        "Department of Reproductive Biomedicine and Health",
+        "Department of Health Management",
+        "Department of Non-Communicable Diseases",
+        "Department of Health Research",
+        "Department of Communication"
+      ]
+    },
+    {
+      "department": "Department of Defence Production (DDP)",
+      "sub_departments": [
+        "Ordnance Factory Board (OFB)",
+        "Hindustan Aeronautics Limited (HAL)",
+        "Bharat Electronics Limited (BEL)",
+        "Bharat Earth Movers Limited (BEML)",
+        "Mazagon Dock Shipbuilders Limited (MDL)"
+      ]
+    },
+    {
+      "department": "Department of Animal Husbandry, Dairying and Fisheries",
+      "sub_departments": [
+        "National Dairy Development Board (NDDB)",
+        "Central Institute of Fisheries Technology (CIFT)",
+        "National Institute of Animal Nutrition and Physiology (NIANP)",
+        "Central Avian Research Institute (CARI)",
+        "Directorate of Poultry Research (DPR)"
+      ]
+    },
+    {
+      "department": "Ministry of New and Renewable Energy (MNRE)",
+      "sub_departments": [
+        "Solar Energy Corporation of India (SECI)",
+        "National Institute of Solar Energy (NISE)",
+        "Ministry of New and Renewable Energy - Schemes and Programs",
+        "National Institute of Wind Energy (NIWE)",
+        "International Solar Alliance (ISA)"
+      ]
+    },
+    {
+      "department": "Ministry of Panchayati Raj",
+      "sub_departments": [
+        "National Panchayat Awards",
+        "Ministry of Panchayati Raj - Schemes and Programs",
+        "Ministry of Panchayati Raj - Capacity Building Initiatives",
+        "Ministry of Panchayati Raj - e-Panchayat Mission Mode Project",
+        "Ministry of Panchayati Raj - Rural Local Governance"
+      ]
+    }
+  ]
+}
