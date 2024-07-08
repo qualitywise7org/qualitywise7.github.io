@@ -143,6 +143,7 @@ const subjects = {
     ],
   },
   python: {
+
     id: "python",
     title: "Python",
     questions: [
@@ -184,8 +185,10 @@ const subjects = {
     ],
   },
   nodejs: {
+
     id: "node.js",
     title: "Node.Js",
+
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -238,6 +241,7 @@ const subjects = {
   react: {
     id: "react.js",
     title: "React.Js",
+
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -288,8 +292,10 @@ const subjects = {
     ],
   },
   mongodb: {
+
     id: "mongodb",
     title: "MongoDB",
+
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -340,8 +346,10 @@ const subjects = {
     ],
   },
   mysql: {
+
     id: "mysql",
     title: "MySQL",
+
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -394,6 +402,7 @@ const subjects = {
   firebase: {
     id: "firebase",
     title: "Firebase",
+
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -444,8 +453,10 @@ const subjects = {
     ],
   },
   devops: {
+
     id: "devops",
     title: "DevOps",
+
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -496,8 +507,10 @@ const subjects = {
     ],
   },
   pcm: {
+
     id: "physics, che. & maths",
     title: "Physics, Chemistry & Maths",
+
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -548,8 +561,10 @@ const subjects = {
     ],
   },
   reasoning: {
+
     id: "reasoning",
     title: "Reasoning",
+
     questions: [
       {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -650,6 +665,7 @@ if (subject) {
 }
 
 //Function to show the quiz when startQuiz is called
+
 function showQuiz() {
   document.getElementById("quiz-container").style.display = "block";
   document.querySelector(".assessment-grid").style.display = "none";
@@ -662,6 +678,7 @@ function showQuiz() {
 }
 
 //Function for uploading questions on showQuiz page
+
 function loadQuestion() {
   const question = currentSubject.questions[currentQuestion];
   questionContainer.innerHTML = `
@@ -704,6 +721,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //Function to get in the new questions page
 function nextQuestion() {
   // Check if a radio button is selected
+
   const selectedAnswer = document.querySelector('input[name="answer"]:checked');
   if (!selectedAnswer) {
     alert("Please select an answer.");
@@ -714,6 +732,7 @@ function nextQuestion() {
   const answerIndex = parseInt(selectedAnswer.value, 10);
 
   // Check if the answer is correct and update score
+
   if (answerIndex === currentSubject.questions[currentQuestion].correctAnswer) {
     score++;
   }
@@ -728,6 +747,7 @@ function nextQuestion() {
     showResult(); // Show the quiz result if no more questions
   }
 }
+
 
 //Function for going to the previous question page
 function previousQuestion() {
@@ -754,7 +774,9 @@ function showResult() {
   );
   scoreDisplay.textContent = score;
   percentageDisplay.textContent = percentage;
+
   previousButton.style.display = "none";
+
   // Creating a link for going into home page
   homeButton.style.display = "block";
 }
@@ -777,6 +799,7 @@ function stopTimer() {
   clearInterval(timerInterval);
 }
 
+
 // Function to update the timer display
 function updateTimerDisplay() {
   const minutes = Math.floor(timeLimit / 60);
@@ -791,6 +814,7 @@ document.addEventListener("DOMContentLoaded", function () {
     nextButton.addEventListener("click", goHome);
   }
 });
+
 // Function to go back to the home page
 function goHome() {
   document.getElementById("quiz-container").style.display = "none";
@@ -798,6 +822,7 @@ function goHome() {
   resultContainer.style.display = "none";
   stopTimer(); // Stop the timer when going back to the home page
 }
+
 
 //Function for adding assessment data to the firebase
 async function addQuizzesToFirestore() {
@@ -831,9 +856,12 @@ async function addQuizzesToFirestore() {
     );
   } catch (error) {
     // Log any errors that occur during the process
+
     console.error("Error adding quizzes to Firestore: ", error);
   }
 }
 
+
 // Call the function to add quizzes to Firestore
 addQuizzesToFirestore();
+

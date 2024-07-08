@@ -5,11 +5,13 @@
 }
 
 body {
+
   background-color: #f5f5f5; /* Light gray background */
   font-family: "Roboto", Arial, sans-serif;
   padding: 20px;
   margin: 0;
   box-sizing: border-box;
+
 }
 
 .center {
@@ -20,6 +22,7 @@ body {
 .content {
   max-width: 1200px;
   margin: 0 auto;
+
   width: 100vw; /* Full width of the viewport */
   height: auto;
 }
@@ -45,13 +48,16 @@ body {
 
 
 
+
 #quiz {
   margin-bottom: 20px;
 }
 
 #question-container {
   background-color: #ffffff;
+
   padding: 60px;
+
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -59,12 +65,14 @@ body {
 }
 
 /* #feedback-container {
+
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   text-align: left;
+
 } */
 
 /* Previous button */
@@ -99,6 +107,7 @@ body {
 
 /* Home button */
 #home-btn {
+
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -106,6 +115,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+
   margin: 0 auto; /* Center the button horizontally */
 }
 
@@ -113,6 +123,7 @@ body {
 #pre-btn:hover,
 #next-btn:hover,
 #home-btn:hover {
+
   background-color: #0056b3;
 }
 
@@ -130,6 +141,7 @@ body {
   font-weight: bold;
   color: #007bff;
   margin-top: 10px;
+
   background-color: #f9f9f9; /* Light gray background */
   padding: 10px 20px; /* Padding around the timer text */
   border-radius: 8px; /* Rounded corners */
@@ -138,6 +150,7 @@ body {
   margin: 0 auto; /* Center the timer box horizontally */
   display: inline-block; /* Ensure the box wraps around the content */
 }
+
 
 /* Assessment Grid and Boxes */
 .assessment-grid {
@@ -173,6 +186,7 @@ body {
 }
 
 .btn-start {
+
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -184,6 +198,7 @@ body {
 
 .btn-start:hover {
   background-color: #0056b2;
+
 }
 
 /* Media query for tablets and smaller screens */
