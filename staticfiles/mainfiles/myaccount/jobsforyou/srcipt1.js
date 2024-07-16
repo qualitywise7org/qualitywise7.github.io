@@ -62,9 +62,9 @@ window.addEventListener("load", async () => {
 // Function to render paginated jobs and generate pagination controls
 function renderPaginatedJobsAndControls(jobs, currentPage) {
   console.log(jobs);
-  jobs.forEach((doc)=>{
-    console.log(doc.posts_data.post_name, "location")
-  })
+  jobs.forEach((doc) => {
+    console.log(doc.posts_data.post_name, "location");
+  });
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
 
@@ -351,21 +351,32 @@ async function displayJobs(page) {
   renderPaginatedJobsAndControls(jobs, page);
 }
 
-async function displayResults(selectedJobType, selectedLocation, selectedProfile, page) {
+async function displayResults(
+  selectedJobType,
+  selectedLocation,
+  selectedProfile,
+  page
+) {
   console.log("Filters:", selectedJobType, selectedLocation, selectedProfile);
 
-  const jobs = jobs_data.filter(job => {
+  const jobs = jobs_data.filter((job) => {
     const jobTypeMatch =
-      !selectedJobType || selectedJobType === "all" || job.job_type === selectedJobType;
+      !selectedJobType ||
+      selectedJobType === "all" ||
+      job.job_type === selectedJobType;
 
     const locationMatch =
-      !selectedLocation || selectedLocation.toLowerCase() === "india" ||
+      !selectedLocation ||
+      selectedLocation.toLowerCase() === "india" ||
       job?.location?.trim() === "" ||
       job?.location?.toLowerCase().includes(selectedLocation.toLowerCase());
 
     const profileMatch =
-      !selectedProfile || selectedProfile === "all" ||
-      job.posts_data?.post_name.toLowerCase().includes(selectedProfile.toLowerCase());
+      !selectedProfile ||
+      selectedProfile === "all" ||
+      job.posts_data?.post_name
+        .toLowerCase()
+        .includes(selectedProfile.toLowerCase());
 
     return jobTypeMatch && locationMatch && profileMatch;
   });
