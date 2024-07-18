@@ -1,17 +1,13 @@
-(() => {
-  // Constants
+document.addEventListener("DOMContentLoaded", () => {
   const TIME_LIMIT = 30 * 60; // 30 minutes in seconds
 
-  // State variables
   let currentSubject = null;
-  let currentQuestion = 0;
+  let currentQuestionIndex = 0;
   let score = 0;
-  let timeLimit = TIME_LIMIT;
+  let timeLeft = TIME_LIMIT;
   let timerInterval = null;
 
-  // DOM elements
   const questionContainer = document.getElementById("question-container");
-  const feedbackContainer = document.getElementById("feedback-container");
   const scoreDisplay = document.getElementById("score");
   const percentageDisplay = document.getElementById("percentage");
   const resultContainer = document.getElementById("result-container");
@@ -20,14 +16,13 @@
   const homeButton = document.getElementById("home-btn");
   const timerDisplay = document.getElementById("timer");
 
-  // Fetch questions for a specific subject from Firestore
   async function fetchQuestions(assessmentKey) {
     try {
-      console.log(`Fetching questions for subject: ${assessmentKey}`); // Debug log
+      console.log(`Fetching questions for subject: ${assessmentKey}`);
       const docRef = doc(db, "assessment", assessmentKey);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        console.log(`Document found: ${assessmentKey}`); // Debug log
+        console.log(`Document found: ${assessmentKey}`);
         return docSnap.data();
       } else {
         console.error("No such document!");
@@ -40,59 +35,75 @@
   }
 
   async function startQuiz(assessmentKey) {
-    console.log(`Starting quiz for subject: ${assessmentKey}`); // Debug log
+    console.log(`Starting quiz for subject: ${assessmentKey.title}`);
     currentSubject = await fetchQuestions(assessmentKey);
     if (!currentSubject) {
       console.error("Failed to load subject data.");
+      alert("Failed to load quiz data. Please try again.");
       return;
     }
-    currentQuestion = 0;
+    currentQuestionIndex = 0;
     score = 0;
-    timeLimit = TIME_LIMIT; // Reset time limit
-    startTimer(); // Start the timer when quiz starts
-    showQuiz();
+    timeLeft = TIME_LIMIT;
+    displayQuiz();
+    startTimer();
 
-    // Update the URL with the subject
     const url = new URL(window.location);
-    url.pathname = "test/quiz/";
     url.searchParams.set("quizcode", assessmentKey);
-    window.history.pushState({ subject: assessmentKey }, "", url);
+    window.history.pushState(
+      { subject: assessmentKey },
+      "",
+      `/test/quiz/?quizcode=${assessmentKey}`
+    );
   }
 
-  function showQuiz() {
-    document.getElementById("quiz-container").style.display = "block";
-    document.querySelector(".assessment-grid").style.display = "none";
-    nextButton.style.display = "block";
-    resultContainer.style.display = "none";
-    homeButton.style.display = "none";
+  function displayQuiz() {
+    const quizContainer = document.getElementById("quiz-container");
+
+    const assessmentGrid = document.querySelector(".assessment-grid");
+    if (quizContainer) quizContainer.style.display = "block";
+    if (questionContainer) questionContainer.style.display = "block";
+
+    if (assessmentGrid) assessmentGrid.style.display = "none";
+    if (nextButton) nextButton.style.display = "block";
+    if (previousButton) previousButton.style.display = "block";
+    if (resultContainer) resultContainer.style.display = "none";
+    if (homeButton) homeButton.style.display = "none";
 
     loadQuestion();
   }
 
   function loadQuestion() {
-    const question = currentSubject.questions[currentQuestion];
-    questionContainer.innerHTML = `
-      <h2>${currentSubject.title} - Question ${currentQuestion + 1}</h2>
-      <p>${question.question}</p>
-      <ul>
+    const question = currentSubject.questions[currentQuestionIndex];
+    if (questionContainer) {
+      questionContainer.innerHTML = `
+        <h2>${currentSubject.title} - Question ${currentQuestionIndex + 1}</h2>
+        <p>${question.question}</p>
+        <ul>
           ${question.answers
             .map(
               (answer, index) => `
               <li>
-                  <label>
-                      <input type="radio" name="answer" value="${index}">
-                      ${answer}
-                  </label>
+                <label>
+                  <input type="radio" name="answer" value="${index}">
+                  ${answer}
+                </label>
               </li>
-          `
+            `
             )
             .join("")}
-      </ul>
-  `;
+        </ul>
+      `;
+      console.log(questionContainer.innerHTML);
+      
+      console.log(currentSubject.title);
+    }
   }
 
   function nextQuestion() {
-    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    const selectedAnswer = document.querySelector(
+      'input[name="answer"]:checked'
+    );
     if (!selectedAnswer) {
       alert("Please select an answer.");
       return;
@@ -100,56 +111,55 @@
 
     const answerIndex = parseInt(selectedAnswer.value, 10);
 
-    if (answerIndex === currentSubject.questions[currentQuestion].correctAnswer) {
+    if (
+      answerIndex ===
+      currentSubject.questions[currentQuestionIndex].correctAnswer
+    ) {
       score++;
     }
 
-    currentQuestion++;
+    currentQuestionIndex++;
 
-    if (currentQuestion < currentSubject.questions.length) {
+    if (currentQuestionIndex < currentSubject.questions.length) {
       loadQuestion();
     } else {
-      showResult();
+      displayResult();
     }
   }
 
   function previousQuestion() {
-    if (currentQuestion > 0) {
-      currentQuestion--;
+    if (currentQuestionIndex > 0) {
+      currentQuestionIndex--;
       loadQuestion();
     } else {
       alert("You are at the first question.");
     }
   }
 
-  function showResult() {
-    questionContainer.style.display = "none";
-    feedbackContainer.style.display = "none";
-    nextButton.style.display = "none";
-    resultContainer.style.display = "block";
-    homeButton.style.display = "none";
+  function displayResult() {
+    if (questionContainer) questionContainer.style.display = "none";
+    if (nextButton) nextButton.style.display = "none";
+    if (previousButton) previousButton.style.display = "none";
+    if (resultContainer) resultContainer.style.display = "block";
+    if (homeButton) homeButton.style.display = "block";
 
     stopTimer();
 
     const percentage = Math.round(
       (score / currentSubject.questions.length) * 100
     );
-    scoreDisplay.textContent = score;
-    percentageDisplay.textContent = percentage;
-
-    previousButton.style.display = "none";
-
-    homeButton.style.display = "block";
+    if (scoreDisplay) scoreDisplay.textContent = score;
+    if (percentageDisplay) percentageDisplay.textContent = `${percentage}%`;
   }
 
   function startTimer() {
     timerInterval = setInterval(() => {
-      timeLimit--;
+      timeLeft--;
       updateTimerDisplay();
-      if (timeLimit <= 0) {
+      if (timeLeft <= 0) {
         stopTimer();
         alert("Time's up! Quiz session ended.");
-        showResult();
+        displayResult();
       }
     }, 1000);
   }
@@ -159,56 +169,44 @@
   }
 
   function updateTimerDisplay() {
-    const minutes = Math.floor(timeLimit / 60);
-    const seconds = timeLimit % 60;
-    timerDisplay.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    if (timerDisplay) {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      timerDisplay.textContent = `${minutes}:${
+        seconds < 10 ? "0" : ""
+      }${seconds}`;
+    }
   }
 
   function goHome() {
-    document.getElementById("quiz-container").style.display = "none";
-    document.querySelector(".assessment-grid").style.display = "grid";
-    resultContainer.style.display = "none";
+    const quizContainer = document.getElementById("quiz-container");
+    const assessmentGrid = document.querySelector(".assessment-grid");
+    if (quizContainer) quizContainer.style.display = "none";
+    if (assessmentGrid) assessmentGrid.style.display = "grid";
+    if (resultContainer) resultContainer.style.display = "none";
     stopTimer();
     window.history.pushState({}, "", window.location.pathname);
   }
 
   function setupEventListeners() {
     const startButtons = document.querySelectorAll(".btn-start");
-    startButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
+    startButtons.forEach((button) => {
+      button.addEventListener("click", () => {
         const assessmentKey = button.getAttribute("data-subject");
         startQuiz(assessmentKey);
       });
     });
 
-    if (previousButton) {
-      previousButton.addEventListener("click", previousQuestion);
-    } else {
-      console.error("Element with ID 'pre-btn' not found.");
-    }
-
     if (nextButton) {
       nextButton.addEventListener("click", nextQuestion);
     }
-
+    if (previousButton) {
+      previousButton.addEventListener("click", previousQuestion);
+    }
     if (homeButton) {
       homeButton.addEventListener("click", goHome);
     }
-
-    window.addEventListener("popstate", function (event) {
-      if (event.state && event.state.subject) {
-        startQuiz(event.state.subject);
-      } else {
-        goHome();
-      }
-    });
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const assessmentKey = urlParams.get("quizcode");
-    if (window.location.pathname === "/test/quiz/" && assessmentKey) {
-      startQuiz(assessmentKey);
-    }
   }
 
-  document.addEventListener("DOMContentLoaded", setupEventListeners);
-})();
+  setupEventListeners();
+});
