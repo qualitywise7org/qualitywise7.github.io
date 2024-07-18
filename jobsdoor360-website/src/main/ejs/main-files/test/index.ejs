@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assessment Page</title>
+  <title>Assessment</title>
   <link rel="stylesheet" href="\staticfiles\mainfiles\test\style.css">
+  <%- include('../../partials/head.ejs') %>
 </head>
 
 <body>
+  <%- include('../../partials/navbar.ejs') %>
   <section class="content">
     <h1 class="center">Master Your Skills: Assessments & Challenges</h1>
     
-    <div class="assessment-grid">
+    <div class="assessment-grid" id="assessment">
       <div class="assessment-box">
         <h2 class="assessment-title">JavaScript, HTML and CSS</h2>
         <p class="assessment-description">Write a function that calculates the factorial of a number.</p>
@@ -73,8 +73,7 @@
       </div>
     </div>
   </section>
-   <!-- Include Firebase config file -->
-   <script type="module" src="\staticfiles\mainfiles\test\script.js"></script>
-   <script type="module" src=" \staticfiles\db\dbconfig.js"></script>
+  <%- include('../../partials/footer.ejs') %>
+   <script type="module" src="/staticfiles/mainfiles/test/script.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,26 +7,30 @@
   <link rel="stylesheet" href="/staticfiles/mainfiles/test/style.css">
 </head>
 <body>
-   <section class="content">
-    <div id="quiz-container">
-      <div id="quiz">
-        <div id="question-container">
-          
-        </div>
-        <button id="next-btn" style="display: none;">Next Question</button>
-        <button id="pre-btn" style="display: none;" onclick="previousQuestion()">Previous Question</button>
-        <div id="result-container" style="display: none;">
-          <h2>Quiz Completed!</h2>
-          <p>Your score: <span id="score"></span></p>
-          <p>Percentage correct: <span id="percentage"></span>%</p>
-        </div>
-        <button id="home-btn" style="display: none;" onclick="goHome()">Go To Home</button>
-        <div id="timer">30:00</div> 
-      </div>
+    <div>
+        <section class="content">
+            <div id="quiz-container">
+              <div id="quiz">
+                <div id="question-container">
+                  
+                </div>
+                <button id="next-btn" style="display: none;">Next Question</button>
+                <button id="pre-btn" style="display: none;" onclick="previousQuestion()">Previous Question</button>
+                <div id="result-container" style="display: none;">
+                  <h2>Quiz Completed!</h2>
+                  <p>Your score: <span id="score"></span></p>
+                  <p>Percentage correct: <span id="percentage"></span>%</p>
+                </div>
+                <button id="home-btn" style="display: none;" onclick="goHome()">Go To Home</button>
+                <div id="timer">30:00</div> 
+              </div>
+            </div>
+          </section> 
+           
     </div>
-  </section> 
-
-    <script type="module" src="/staticfiles/db/dbconfig.js"></script>
-  <script type="module" src="/staticfiles/mainfiles/test/script.js"></script>
+   
+  <!-- Include Firebase config file -->
+  <script type="module" src="/staticfiles/db/dbconfig.js"></script>
+  <script type="module" src="/staticfiles/mainfiles/test/quiz/script.js"></script>
 </body>
-</html> -->
+</html>
