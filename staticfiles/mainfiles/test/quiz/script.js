@@ -1,4 +1,6 @@
 //write code related to quiz
+const queryParams = new URLSearchParams(window.location.search);
+const quizCode = queryParams.get('quizcode').toLowerCase();
 
 document.addEventListener("DOMContentLoaded", () => {
     const TIME_LIMIT = 30 * 60; // 30 minutes in seconds
@@ -184,9 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     function setupEventListeners() {
-        const searchParams = new URLSearchParams(window.location.search);
-
-        startQuiz(searchParams.quizcode);
+        startQuiz(quizCode);
   
       if (nextButton) {
         nextButton.addEventListener("click", nextQuestion);
