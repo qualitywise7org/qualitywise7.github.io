@@ -7400,10 +7400,14 @@
       "discretion",
       "emotional resilience"
     ]
+<<<<<<< HEAD
   }
 ];
 
     const skills_masterdata = [
+=======
+  },
+>>>>>>> ced3a65159d6920292403002c4d4df61329b780d
   {
     "code": "java",
     "name": "Java"
@@ -7442,6 +7446,7 @@
     ]
   },
   {
+<<<<<<< HEAD
     "code": "css",
     "name": "CSS"
   },
@@ -7452,3 +7457,170 @@
 ];
 
     
+=======
+    "code": "entertainment_media_specialist",
+    "name": "Entertainment and Media Specialist",
+    "minimum_skills_required": "Expertise in film and television production, music industry dynamics, digital media trends, publishing processes, content creation, media marketing, audience engagement strategies, and multimedia storytelling",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "film_production",
+      "media_studies",
+      "communication",
+      "journalism"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of an Entertainment and Media Specialist",
+        "url": "https://youtu.be/nKBQGowUz2A?si=9vZ-0Uk4psGpNHKJ"
+      },
+      {
+        "title": "Career Prospects and Salary in the Entertainment and Media Industry",
+        "url": "https://youtu.be/nKBQGowUz2A?si=9vZ-0Uk4psGpNHKJ"
+      }
+    ],
+    "keywords": [
+      "film production",
+      "music industry",
+      "digital media",
+      "publishing"
+    ]
+  },
+  {
+    "code": "telecommunications_specialist",
+    "name": "Telecommunications Specialist",
+    "minimum_skills_required": "Expertise in mobile network operations, internet service provision, telecommunications equipment manufacturing, satellite communications, network infrastructure management, cybersecurity protocols, data analytics, and customer service",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "telecommunications_engineering",
+      "information_technology",
+      "computer_science",
+      "electrical_engineering"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Telecommunications Specialist",
+        "url": "https://youtu.be/0lab8NZGqKY?si=R5s-khTbOOB4zquv"
+      },
+      {
+        "title": "Career Prospects and Salary in the Telecommunications Industry",
+        "url": "https://youtu.be/0lab8NZGqKY?si=R5s-khTbOOB4zquv"
+      }
+    ],
+    "keywords": [
+      "mobile network operators",
+      "internet service providers",
+      "telecom equipment manufacturing",
+      "satellite communications"
+    ]
+  },
+  {
+    "code": "energy_utilities_specialist",
+    "name": "Energy and Utilities Specialist",
+    "minimum_skills_required": "Expertise in oil and gas operations, renewable energy technologies, utilities management, energy trading strategies, regulatory compliance, environmental sustainability practices, project management, and crisis response",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "energy_engineering",
+      "environmental_science",
+      "mechanical_engineering",
+      "business_administration"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of an Energy and Utilities Specialist",
+        "url": "https://youtu.be/pE1WfAPlPEs?si=8nQnojecEcIIZeyU"
+      },
+      {
+        "title": "Career Prospects and Salary in the Energy and Utilities Industry",
+        "url": "https://youtu.be/pE1WfAPlPEs?si=8nQnojecEcIIZeyU"
+      }
+    ],
+    "keywords": [
+      "oil and gas",
+      "renewable energy",
+      "utilities management",
+      "energy trading"
+    ]
+  },
+  {
+    "code": "hospitality_tourism_specialist",
+    "name": "Hospitality and Tourism Specialist",
+    "minimum_skills_required": "Expertise in hospitality management, customer service, event planning, tourism marketing, hotel operations, restaurant management, travel agency operations, venue management, cultural sensitivity, and crisis management",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "hospitality_management",
+      "tourism_management",
+      "business_administration",
+      "event_management"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Hospitality and Tourism Specialist",
+        "url": "https://youtu.be/FHlQx7d6pn8?si=mhiwoegku9toBJiA"
+      },
+      {
+        "title": "Career Prospects and Salary in the Hospitality and Tourism Industry",
+        "url": "https://youtu.be/FHlQx7d6pn8?si=mhiwoegku9toBJiA"
+      }
+    ],
+    "keywords": [
+      "hotels and resorts",
+      "restaurants and food services",
+      "travel agencies",
+      "event management"
+    ]
+  },
+  {
+    "code": "healthcare_pharmaceuticals_specialist",
+    "name": "Healthcare and Pharmaceuticals Specialist",
+    "minimum_skills_required": "Expertise in healthcare administration, clinical operations, pharmaceutical manufacturing processes, biotechnology research, health insurance regulations, patient care management, medical ethics, regulatory compliance, and crisis response",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "healthcare_administration",
+      "pharmaceutical_sciences",
+      "biotechnology",
+      "medicine"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Healthcare and Pharmaceuticals Specialist",
+        "url": "https://youtu.be/hi4KyRT5BWU?si=7sgPmraeu_E0DxnI"
+      },
+      {
+        "title": "Career Prospects and Salary in Healthcare and Pharmaceuticals",
+        "url": "https://youtu.be/hi4KyRT5BWU?si=7sgPmraeu_E0DxnI"
+      }
+    ],
+    "keywords": [
+      "hospitals and clinics",
+      "pharmaceutical manufacturing",
+      "biotechnology",
+      "health insurance"
+    ]
+  }
+];
+>>>>>>> ced3a65159d6920292403002c4d4df61329b780d
