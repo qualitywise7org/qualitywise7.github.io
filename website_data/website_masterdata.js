@@ -233,6 +233,7 @@
     ]
   },
   {
+<<<<<<< HEAD
     "code": "civil_aviation_officer",
     "name": "Civil Aviation Officer",
     "minimum_skills_required": "Knowledge of aviation regulations, flight operations, air traffic control, airport management, safety protocols, and aviation technology",
@@ -265,6 +266,8 @@
     ]
   },
   {
+=======
+>>>>>>> 8d76955d0ba08f46d6e149f189cc916ce9308ad6
     "code": "java_developer",
     "name": "Java Developer",
     "minimum_skills_required": "Java, Advance Java",
@@ -7400,6 +7403,7 @@
       "discretion",
       "emotional resilience"
     ]
+<<<<<<< HEAD
   },
   {
     "code": "packaging_specialist",
@@ -7802,4 +7806,28 @@
     ]
   }
 ];
+=======
+  }
+];
+
+    const skills_masterdata = [
+  {
+    "code": "java",
+    "name": "Java"
+  },
+  {
+    "code": "html",
+    "name": "HTML"
+  },
+  {
+    "code": "css",
+    "name": "CSS"
+  },
+  {
+    "code": "javascript",
+    "name": "Javascript"
+  }
+];
+
+>>>>>>> 8d76955d0ba08f46d6e149f189cc916ce9308ad6
     

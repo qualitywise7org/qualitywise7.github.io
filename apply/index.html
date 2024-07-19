@@ -93,16 +93,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/myaccount/jobsforyou">Jobs for you</a>
         </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="/apply/">Apply</a>
-        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="/myaccount/">My account</a>
+        </li>
         <li class="nav-item login-btn">
-          <a
-            class="nav-link"
-            id="login-button"
-            href="/login"
-            >Login</a
-          >
+          <a class="nav-link" id="login-button" href="/login">Login</a>
         </li>
       </ul>
     </div>
@@ -172,13 +167,17 @@
             autocomplete="email"
           />
           <fieldset>
-            <legend class="custom-legend">Applying For :</legend>
+            <legend class="custom-legend">
+              Applying For : <span class="small-text">(Tick checkbox)</span>
+            </legend>
             <input
               type="checkbox"
               id="internship"
               name="applying_for"
               value="Software Engineer Internship"
             />
+            
+            
             <label for="Software Engineer Internship">Software Engineer Internship</label><br />
 
             <input

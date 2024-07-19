@@ -4,14 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Government Departments and Branches</title>
- <link rel="stylesheet" href="/staticfiles/mainfiles/careeroptions/government-department-which-provide-jobs/style.css">
- <%- include('../../../partials/head.ejs') %>
+  <link rel="stylesheet" href="/staticfiles/mainfiles/careeroptions/government-department-which-provide-jobs/style.css">
+  <%- include('../../../partials/head.ejs') %>
 </head>
-<body>
+<body> 
   <%- include('../../../partials/navbar.ejs') %>
-    <!-- <a href="#" id="government-department-which-provide-jobs">Government Department</a> -->
-  <div id="department-list"></div>
+  <h1>Government Department</h1>
+  <div id="department-list">
+    <% for (let i = 0; i < government_department_which_provide_jobs_data.government_department_which_provide_jobs_data.length; i++) { %>
+      <h2><%= government_department_which_provide_jobs_data.government_department_which_provide_jobs_data[i].department %></h2>
+      <ul>
+        <% for (let j = 0; j < government_department_which_provide_jobs_data.government_department_which_provide_jobs_data[i].sub_departments.length; j++) { %>
+          <li><%= government_department_which_provide_jobs_data.government_department_which_provide_jobs_data[i].sub_departments[j] %></li>
+        <% } %>
+      </ul>
+    <% } %>
+  </div>
   <%- include('../../../partials/footer.ejs') %>
-  <script src="/staticfiles/mainfiles/careeroptions/government-department-which-provide-jobs/script.js"></script>
+  <!-- <script src="/staticfiles/mainfiles/careeroptions/government-department-which-provide-jobs/script.js"></script> -->
 </body>
 </html>
