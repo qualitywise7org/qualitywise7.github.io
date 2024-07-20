@@ -7400,17 +7400,6 @@
       "discretion",
       "emotional resilience"
     ]
-<<<<<<< HEAD
-  }
-];
-
-    const skills_masterdata = [
-=======
-  },
->>>>>>> ced3a65159d6920292403002c4d4df61329b780d
-  {
-    "code": "java",
-    "name": "Java"
   },
   {
     "code": "environmental_services_specialist",
@@ -7446,18 +7435,6 @@
     ]
   },
   {
-<<<<<<< HEAD
-    "code": "css",
-    "name": "CSS"
-  },
-  {
-    "code": "javascript",
-    "name": "Javascript"
-  }
-];
-
-    
-=======
     "code": "entertainment_media_specialist",
     "name": "Entertainment and Media Specialist",
     "minimum_skills_required": "Expertise in film and television production, music industry dynamics, digital media trends, publishing processes, content creation, media marketing, audience engagement strategies, and multimedia storytelling",
@@ -7623,4 +7600,4 @@
     ]
   }
 ];
->>>>>>> ced3a65159d6920292403002c4d4df61329b780d
+
