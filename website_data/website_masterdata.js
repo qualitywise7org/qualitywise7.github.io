@@ -233,6 +233,38 @@
     ]
   },
   {
+    "code": "civil_aviation_officer",
+    "name": "Civil Aviation Officer",
+    "minimum_skills_required": "Knowledge of aviation regulations, flight operations, air traffic control, airport management, safety protocols, and aviation technology",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "aviation",
+      "aeronautical_engineering"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Civil Aviation Officer",
+        "url": "https://www.youtube.com/watch?v=nX1tEZmcInE"
+      },
+      {
+        "title": "How Much Salary Should You Expect As A Civil Aviation Officer",
+        "url": "https://www.youtube.com/watch?v=nX1tEZmcInE"
+      }
+    ],
+    "keywords": [
+      "civil aviation",
+      "aviation officer",
+      "aviation",
+      "flight operations",
+      "air traffic control"
+    ]
+  },
+  {
     "code": "java_developer",
     "name": "Java Developer",
     "minimum_skills_required": "Java, Advance Java",
@@ -7368,366 +7400,204 @@
       "discretion",
       "emotional resilience"
     ]
+  },
+  {
+    "code": "environmental_services_specialist",
+    "name": "Environmental Services Specialist",
+    "minimum_skills_required": "Knowledge of environmental consulting practices, waste management principles, renewable energy development processes, environmental remediation techniques, environmental regulations, sustainability practices, data analysis, and project management",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "environmental_science",
+      "environmental_engineering",
+      "sustainability",
+      "geography"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of an Environmental Services Specialist",
+        "url": "https://youtu.be/4ZyLBdcCtpE?si=7TAiNV0epYjNpb_5"
+      },
+      {
+        "title": "Career Prospects and Salary in the Environmental Services Industry",
+        "url": "https://youtu.be/4ZyLBdcCtpE?si=7TAiNV0epYjNpb_5"
+      }
+    ],
+    "keywords": [
+      "environmental consulting",
+      "waste management",
+      "renewable energy",
+      "environmental remediation"
+    ]
+  },
+  {
+    "code": "entertainment_media_specialist",
+    "name": "Entertainment and Media Specialist",
+    "minimum_skills_required": "Expertise in film and television production, music industry dynamics, digital media trends, publishing processes, content creation, media marketing, audience engagement strategies, and multimedia storytelling",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "film_production",
+      "media_studies",
+      "communication",
+      "journalism"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of an Entertainment and Media Specialist",
+        "url": "https://youtu.be/nKBQGowUz2A?si=9vZ-0Uk4psGpNHKJ"
+      },
+      {
+        "title": "Career Prospects and Salary in the Entertainment and Media Industry",
+        "url": "https://youtu.be/nKBQGowUz2A?si=9vZ-0Uk4psGpNHKJ"
+      }
+    ],
+    "keywords": [
+      "film production",
+      "music industry",
+      "digital media",
+      "publishing"
+    ]
+  },
+  {
+    "code": "telecommunications_specialist",
+    "name": "Telecommunications Specialist",
+    "minimum_skills_required": "Expertise in mobile network operations, internet service provision, telecommunications equipment manufacturing, satellite communications, network infrastructure management, cybersecurity protocols, data analytics, and customer service",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "telecommunications_engineering",
+      "information_technology",
+      "computer_science",
+      "electrical_engineering"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Telecommunications Specialist",
+        "url": "https://youtu.be/0lab8NZGqKY?si=R5s-khTbOOB4zquv"
+      },
+      {
+        "title": "Career Prospects and Salary in the Telecommunications Industry",
+        "url": "https://youtu.be/0lab8NZGqKY?si=R5s-khTbOOB4zquv"
+      }
+    ],
+    "keywords": [
+      "mobile network operators",
+      "internet service providers",
+      "telecom equipment manufacturing",
+      "satellite communications"
+    ]
+  },
+  {
+    "code": "energy_utilities_specialist",
+    "name": "Energy and Utilities Specialist",
+    "minimum_skills_required": "Expertise in oil and gas operations, renewable energy technologies, utilities management, energy trading strategies, regulatory compliance, environmental sustainability practices, project management, and crisis response",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "energy_engineering",
+      "environmental_science",
+      "mechanical_engineering",
+      "business_administration"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of an Energy and Utilities Specialist",
+        "url": "https://youtu.be/pE1WfAPlPEs?si=8nQnojecEcIIZeyU"
+      },
+      {
+        "title": "Career Prospects and Salary in the Energy and Utilities Industry",
+        "url": "https://youtu.be/pE1WfAPlPEs?si=8nQnojecEcIIZeyU"
+      }
+    ],
+    "keywords": [
+      "oil and gas",
+      "renewable energy",
+      "utilities management",
+      "energy trading"
+    ]
+  },
+  {
+    "code": "hospitality_tourism_specialist",
+    "name": "Hospitality and Tourism Specialist",
+    "minimum_skills_required": "Expertise in hospitality management, customer service, event planning, tourism marketing, hotel operations, restaurant management, travel agency operations, venue management, cultural sensitivity, and crisis management",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "hospitality_management",
+      "tourism_management",
+      "business_administration",
+      "event_management"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Hospitality and Tourism Specialist",
+        "url": "https://youtu.be/FHlQx7d6pn8?si=mhiwoegku9toBJiA"
+      },
+      {
+        "title": "Career Prospects and Salary in the Hospitality and Tourism Industry",
+        "url": "https://youtu.be/FHlQx7d6pn8?si=mhiwoegku9toBJiA"
+      }
+    ],
+    "keywords": [
+      "hotels and resorts",
+      "restaurants and food services",
+      "travel agencies",
+      "event management"
+    ]
+  },
+  {
+    "code": "healthcare_pharmaceuticals_specialist",
+    "name": "Healthcare and Pharmaceuticals Specialist",
+    "minimum_skills_required": "Expertise in healthcare administration, clinical operations, pharmaceutical manufacturing processes, biotechnology research, health insurance regulations, patient care management, medical ethics, regulatory compliance, and crisis response",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "healthcare_administration",
+      "pharmaceutical_sciences",
+      "biotechnology",
+      "medicine"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Healthcare and Pharmaceuticals Specialist",
+        "url": "https://youtu.be/hi4KyRT5BWU?si=7sgPmraeu_E0DxnI"
+      },
+      {
+        "title": "Career Prospects and Salary in Healthcare and Pharmaceuticals",
+        "url": "https://youtu.be/hi4KyRT5BWU?si=7sgPmraeu_E0DxnI"
+      }
+    ],
+    "keywords": [
+      "hospitals and clinics",
+      "pharmaceutical manufacturing",
+      "biotechnology",
+      "health insurance"
+    ]
   }
 ];
 
-    const skills_masterdata = [
-  {
-    "code": "html",
-    "name": "HTML"
-  },
-  {
-    "code": "css",
-    "name": "CSS"
-  },
-  {
-    "code": "javascript",
-    "name": "JavaScript"
-  },
-  {
-    "code": "typescript",
-    "name": "TypeScript"
-  },
-  {
-    "code": "react",
-    "name": "React"
-  },
-  {
-    "code": "angular",
-    "name": "Angular"
-  },
-  {
-    "code": "vue",
-    "name": "Vue.js"
-  },
-  {
-    "code": "svelte",
-    "name": "Svelte"
-  },
-  {
-    "code": "next",
-    "name": "Next.js"
-  },
-  {
-    "code": "nuxt",
-    "name": "Nuxt.js"
-  },
-  {
-    "code": "node",
-    "name": "Node.js"
-  },
-  {
-    "code": "express",
-    "name": "Express"
-  },
-  {
-    "code": "nest",
-    "name": "NestJS"
-  },
-  {
-    "code": "php",
-    "name": "PHP"
-  },
-  {
-    "code": "laravel",
-    "name": "Laravel"
-  },
-  {
-    "code": "symfony",
-    "name": "Symfony"
-  },
-  {
-    "code": "python",
-    "name": "Python"
-  },
-  {
-    "code": "django",
-    "name": "Django"
-  },
-  {
-    "code": "flask",
-    "name": "Flask"
-  },
-  {
-    "code": "ruby",
-    "name": "Ruby"
-  },
-  {
-    "code": "rails",
-    "name": "Ruby on Rails"
-  },
-  {
-    "code": "java",
-    "name": "Java"
-  },
-  {
-    "code": "spring",
-    "name": "Spring"
-  },
-  {
-    "code": "kotlin",
-    "name": "Kotlin"
-  },
-  {
-    "code": "groovy",
-    "name": "Groovy"
-  },
-  {
-    "code": "scala",
-    "name": "Scala"
-  },
-  {
-    "code": "csharp",
-    "name": "C#"
-  },
-  {
-    "code": "dotnet",
-    "name": ".NET"
-  },
-  {
-    "code": "go",
-    "name": "Go"
-  },
-  {
-    "code": "rust",
-    "name": "Rust"
-  },
-  {
-    "code": "swift",
-    "name": "Swift"
-  },
-  {
-    "code": "objectivec",
-    "name": "Objective-C"
-  },
-  {
-    "code": "sql",
-    "name": "SQL"
-  },
-  {
-    "code": "postgresql",
-    "name": "PostgreSQL"
-  },
-  {
-    "code": "mysql",
-    "name": "MySQL"
-  },
-  {
-    "code": "sqlite",
-    "name": "SQLite"
-  },
-  {
-    "code": "mongodb",
-    "name": "MongoDB"
-  },
-  {
-    "code": "firebase",
-    "name": "Firebase"
-  },
-  {
-    "code": "aws",
-    "name": "AWS"
-  },
-  {
-    "code": "azure",
-    "name": "Azure"
-  },
-  {
-    "code": "gcp",
-    "name": "Google Cloud Platform"
-  },
-  {
-    "code": "docker",
-    "name": "Docker"
-  },
-  {
-    "code": "kubernetes",
-    "name": "Kubernetes"
-  },
-  {
-    "code": "graphql",
-    "name": "GraphQL"
-  },
-  {
-    "code": "rest",
-    "name": "REST"
-  },
-  {
-    "code": "sass",
-    "name": "Sass"
-  },
-  {
-    "code": "less",
-    "name": "Less"
-  },
-  {
-    "code": "styledcomponents",
-    "name": "Styled Components"
-  },
-  {
-    "code": "tailwind",
-    "name": "Tailwind CSS"
-  },
-  {
-    "code": "bootstrap",
-    "name": "Bootstrap"
-  },
-  {
-    "code": "bulma",
-    "name": "Bulma"
-  },
-  {
-    "code": "foundation",
-    "name": "Foundation"
-  },
-  {
-    "code": "materialize",
-    "name": "Materialize"
-  },
-  {
-    "code": "semanticui",
-    "name": "Semantic UI"
-  },
-  {
-    "code": "gulp",
-    "name": "Gulp"
-  },
-  {
-    "code": "grunt",
-    "name": "Grunt"
-  },
-  {
-    "code": "webpack",
-    "name": "Webpack"
-  },
-  {
-    "code": "parcel",
-    "name": "Parcel"
-  },
-  {
-    "code": "rollup",
-    "name": "Rollup"
-  },
-  {
-    "code": "babel",
-    "name": "Babel"
-  },
-  {
-    "code": "eslint",
-    "name": "ESLint"
-  },
-  {
-    "code": "prettier",
-    "name": "Prettier"
-  },
-  {
-    "code": "git",
-    "name": "Git"
-  },
-  {
-    "code": "github",
-    "name": "GitHub"
-  },
-  {
-    "code": "gitlab",
-    "name": "GitLab"
-  },
-  {
-    "code": "bitbucket",
-    "name": "Bitbucket"
-  },
-  {
-    "code": "npm",
-    "name": "npm"
-  },
-  {
-    "code": "yarn",
-    "name": "Yarn"
-  },
-  {
-    "code": "pnpm",
-    "name": "pnpm"
-  },
-  {
-    "code": "jest",
-    "name": "Jest"
-  },
-  {
-    "code": "mocha",
-    "name": "Mocha"
-  },
-  {
-    "code": "chai",
-    "name": "Chai"
-  },
-  {
-    "code": "cypress",
-    "name": "Cypress"
-  },
-  {
-    "code": "jasmine",
-    "name": "Jasmine"
-  },
-  {
-    "code": "puppeteer",
-    "name": "Puppeteer"
-  },
-  {
-    "code": "selenium",
-    "name": "Selenium"
-  },
-  {
-    "code": "webdriverio",
-    "name": "WebdriverIO"
-  },
-  {
-    "code": "cucumber",
-    "name": "Cucumber"
-  },
-  {
-    "code": "perl",
-    "name": "Perl"
-  },
-  {
-    "code": "clojure",
-    "name": "Clojure"
-  },
-  {
-    "code": "haskell",
-    "name": "Haskell"
-  },
-  {
-    "code": "elixir",
-    "name": "Elixir"
-  },
-  {
-    "code": "fsharp",
-    "name": "F#"
-  },
-  {
-    "code": "dart",
-    "name": "Dart"
-  },
-  {
-    "code": "r",
-    "name": "R"
-  },
-  {
-    "code": "matlab",
-    "name": "MATLAB"
-  },
-  {
-    "code": "vb",
-    "name": "Visual Basic"
-  },
-  {
-    "code": "assembly",
-    "name": "Assembly"
-  },
-  {
-    "code": "lua",
-    "name": "Lua"
-  }
-];
-
-    
