@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(`User is logged in: ${userId}`);
       await fetchAndDisplayResults(userId);
     } else {
-      alert("Please log in to attempt an assessment");
+      alert("Please log in to check your assessment reports");
       window.location.href = "/";
     }
   });
