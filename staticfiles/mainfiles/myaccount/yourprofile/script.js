@@ -272,3 +272,54 @@ $("#btn").on("click", function () {
 });
 
 isUser();
+
+const skillInput = document.getElementById('skillInput');
+  const dataList = document.getElementById('autocomplete-list');
+  const selectedSkillsContainer = document.getElementById('selectedSkills');
+
+  skillInput.addEventListener('input', function () {
+    const inputValue = this.value.toLowerCase();
+    dataList.innerHTML = '';
+
+    if (inputValue) {
+      const filteredSkills = skills_masterdata.filter(skill => skill.name.toLowerCase().includes(inputValue));
+
+      filteredSkills.forEach(skill => {
+        const item = document.createElement('div');
+        item.textContent = skill.name;
+        item.addEventListener('click', function () {
+          addSkill(skill.name);
+        });
+        dataList.appendChild(item);
+      });
+    }
+  });
+
+  skillInput.addEventListener('input', function (e) {
+    if (e.inputType === 'insertText' && e.data === ',') {
+      addSkill(e.target.value.slice(0, -1).trim());
+    }
+  });
+
+  skillInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      addSkill(e.target.value.trim());
+    }
+  });
+
+  function addSkill(skill) {
+    if (skill && !Array.from(selectedSkillsContainer.children).some(child => child.textContent.trim() === skill)) {
+      const skillTag = document.createElement('div');
+      skillTag.className = 'skill-tag';
+      skillTag.textContent = skill;
+      const removeButton = document.createElement('button');
+      removeButton.className = 'remove-skill';
+      removeButton.textContent = 'x';
+      removeButton.onclick = () => skillTag.remove();
+      skillTag.appendChild(removeButton);
+      selectedSkillsContainer.appendChild(skillTag);
+    }
+    skillInput.value = '';
+    dataList.innerHTML = ''; // Clear the dropdown after adding a skill
+  }
