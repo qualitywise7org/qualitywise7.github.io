@@ -1,20 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>
-      Software Development Training - Web development, FullStack, Backend, Java,
-      Reactjs
-    </title>
-    <meta
-      name="description"
-      content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!"
-    />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/style.css" />
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <meta charset="utf-8" />
+<head>
+  <title>Assessment Report</title>
+  <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/test-report/style.css">
+  <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
 <link rel="icon" href="/fevicon.ico" type="profile" />
@@ -26,11 +15,9 @@
   crossorigin="anonymous"
 />
 
-  </head>
-
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="brand" href="/">
       <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
@@ -143,74 +130,17 @@
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-
-    <div class="d-flex justify-content-center mt-4 myaccount_option">
-      <a href="/myaccount/test-report/" class="text-decoration-none px-4 bg-white py-1 rounded-4">Test Report</a>
+  <div class="container">
+    <h1>Assessment Report</h1>
+    <div class="results-grid" id="assessment-report">
+      <!-- Report will be injected here by JavaScript -->
     </div>
-
-    <div class="d-flex justify-content-center mt-4 myaccount_option">
-      <a href="/myaccount/cv_upload/" class="text-decoration-none px-4 bg-white py-1 rounded-4">Update CV</a>
+    <div id="no-results-message" style="display: none;">
+      <p>No assessments completed.</p>
+      <a class="btn-start" href="/test/">Start An Assessment</a>
     </div>
-
-    <div class="d-flex justify-content-center mt-4 myaccount_option">
-      <a href="/myaccount/yourprofile/" class="text-decoration-none px-4 bg-white py-1 rounded-4" style="text-align: center;">Your profile
-      </a>
-    </div>
-    <div style="color: grey; text-align: center;">Complete profile to get jobs</div>
-
-    <div class="d-flex justify-content-center mt-4 myaccount_option">
-      <a href="/myaccount/jobsforyou/" class="text-decoration-none px-4 bg-white py-1 rounded-4">Jobs for you</a>
-    </div>
-
-    <br><br><br><br><br><br><br>
-<!--    <section class="articles">
-      <article>
-        <a href="/myaccount/yourprofile/">
-          <div class="article-wrapper">
-            <div class="article-body">
-              <h2>Your profile</h2>
-              <div class="article-content">
-                <p>
-                 Complete profile to get jobs
-                </p>
-                <div class="img">
-                  <img
-                    src="https://cdn.dribbble.com/users/1223630/screenshots/8115260/media/8145a871d9c4d67ec06e047ccc6574b4.gif"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </article>
-
-      <article>
-        <a href="../myaccount/jobsforyou/">
-          <div class="article-wrapper">
-            <div class="article-body">
-              <h2>Jobs for you</h2>
-              <div class="article-content">
-                <p>
-                  
-                </p>
-                <div class="img">
-                  <img
-                    src="https://img.freepik.com/premium-vector/businessman-works-laptop-man-jacket-isolated-vector_174639-19644.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </article>
-    </section>
--->
-
-    <!-- Footer -->
-
-    <footer class="container-fluid bg-black">
+  </div>
+  <footer class="container-fluid bg-black">
   <div class="text-white">
     <div class="row pt-5 text-center" style="margin-right: 22px">
       <div class="col-md-4 mb-3">
@@ -555,33 +485,6 @@
 
 
 
-
-    <script>
-      $(document).ready(function () {
-        $(document).on("click", function (event) {
-          if (!$(event.target).closest(".accordion").length) {
-            $(".accordion-collapse").collapse("hide");
-          }
-        });
-
-        $(".accordion").on("click", function (event) {
-          event.stopPropagation();
-        });
-      });
-    </script>
-
-    <script type="module" src="/staticfiles/script.js"></script>
-    <!-- jobsdoor360 -->
-    <ins
-      class="adsbygoogle"
-      style="display: block"
-      data-ad-client="ca-pub-2075086355753452"
-      data-ad-slot="7339269701"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </body>
+  <script type="module" src="/staticfiles/mainfiles/myaccount/test-report/script.js"></script>
+</body>
 </html>
