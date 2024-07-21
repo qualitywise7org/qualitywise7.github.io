@@ -30,6 +30,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Updated to 4 columns */
   gap: 20px; /* Reduced gap between cards */
+  margin-bottom: 20px;
 }
 
 .assessment-box {
