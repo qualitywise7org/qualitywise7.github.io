@@ -1,124 +1,191 @@
-/* global styles */
+/* Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #f5f5f5; /* Light gray background */
-    font-family: "Roboto", Arial, sans-serif;
-    padding: 20px;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#quiz-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #667eea;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#quiz {
+  width: 100%;
+}
+
+#question-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: #667eea;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#question-container {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  text-align: left;
+  animation: slideIn 1s ease-in-out;
+  font-size: 1.2rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #667eea;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.btn i {
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background-color: #5a67d8;
+  transform: scale(1.05);
+}
+
+#result-container {
+  display: none;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#timer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff6347;
+  padding: 15px 30px;
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
   .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100vw; /* Full width of the viewport */
-    height: auto;
+    padding: 30px;
   }
-  
-  /* Style for the quiz container */
-  #quiz-container {
-    display: none;
-    background-color: #711212; /* Light gray background */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Fixed position to center */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centering trick */
-    width: 70%; /* Adjust width as needed */
-    max-width: 600px; /* Maximum width */
-    height: 70%; /* Adjust height as needed */
-    max-height: 90vh; /* Maximum height relative to viewport height */
-    text-align: center; /* Center content horizontally */
-    z-index: 1000; /* Ensure it's above other content if needed */
-  }
-  
-  #quiz {
-    margin-bottom: 20px;
-  }
-  
+
   #question-container {
-    background-color: #ffffff;
-    padding: 60px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  /* Previous button */
-  #pre-btn {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: absolute;
-    bottom: 20px; /* Adjust distance from the bottom */
-    left: 20px; /* Adjust distance from the left */
-  }
-  
-  /* Next button */
-  #next-btn {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: absolute;
-    bottom: 20px; /* Adjust distance from the bottom */
-    right: 20px; /* Adjust distance from the right */
-  }
-  
-  /* Home button */
-  #home-btn {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 0 auto; /* Center the button horizontally */
-  }
-  
-  /* Hover state for all buttons */
-  #pre-btn:hover,
-  #next-btn:hover,
-  #home-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  #result-container {
-    background-color: #ffffff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    text-align: left;
   }
-  
+
+  .btn {
+    padding: 12px 20px;
+  }
+
+  #timer {
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 20px;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
   #timer {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #007bff;
-    margin-top: 10px;
-    background-color: #f9f9f9; /* Light gray background */
-    padding: 10px 20px; /* Padding around the timer text */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-    text-align: center; /* Center text horizontally */
-    margin: 0 auto; /* Center the timer box horizontally */
-    display: inline-block; /* Ensure the box wraps around the content */
+    padding: 10px 15px;
   }
-  
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
