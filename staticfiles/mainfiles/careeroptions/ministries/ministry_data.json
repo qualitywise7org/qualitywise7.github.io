@@ -1,0 +1,274 @@
+{
+  "ministry_data": [
+    {
+      "name": "Ministry of Finance",
+      "functions": [
+        "Manages national budget, revenue collection, and public expenditures.",
+        "Develops financial policies and regulations.",
+        "Oversees taxation and fiscal policies.",
+        "Supervises banking and financial institutions."
+      ]
+    },
+    {
+      "name": "Ministry of Education",
+      "functions": [
+        "Formulates educational policies and standards.",
+        "Oversees primary, secondary, and higher education institutions.",
+        "Implements educational reforms and programs.",
+        "Promotes research and development in education."
+      ]
+    },
+    {
+      "name": "Ministry of Health",
+      "functions": [
+        "Develops and implements health policies and programs.",
+        "Manages public health services and healthcare facilities.",
+        "Conducts health awareness and disease prevention campaigns.",
+        "Oversees medical research and healthcare workforce training."
+      ]
+    },
+    {
+      "name": "Ministry of Defense",
+      "functions": [
+        "Manages national defense and armed forces.",
+        "Develops defense policies and strategies.",
+        "Oversees military operations and defense infrastructure.",
+        "Ensures national security and defense preparedness."
+      ]
+    },
+    {
+      "name": "Ministry of Home Affairs",
+      "functions": [
+        "Manages internal security and public order.",
+        "Oversees police and law enforcement agencies.",
+        "Handles immigration, border control, and citizenship.",
+        "Implements disaster management and emergency response."
+      ]
+    },
+    {
+      "name": "Ministry of Foreign Affairs",
+      "functions": [
+        "Manages international relations and diplomacy.",
+        "Represents the country in international organizations and forums.",
+        "Oversees embassies and consulates abroad.",
+        "Negotiates treaties and agreements with other nations."
+      ]
+    },
+    {
+      "name": "Ministry of Justice",
+      "functions": [
+        "Develops and enforces legal policies and frameworks.",
+        "Manages the judiciary and legal system.",
+        "Oversees correctional facilities and rehabilitation programs.",
+        "Ensures the protection of human rights and the rule of law."
+      ]
+    },
+    {
+      "name": "Ministry of Agriculture",
+      "functions": [
+        "Develops agricultural policies and programs.",
+        "Supports farmers and agricultural research.",
+        "Oversees food security and rural development.",
+        "Promotes sustainable farming practices."
+      ]
+    },
+    {
+      "name": "Ministry of Labor and Employment",
+      "functions": [
+        "Develops labor policies and regulations.",
+        "Promotes employment and job creation.",
+        "Oversees labor welfare and workers' rights.",
+        "Implements vocational training and skill development programs."
+      ]
+    },
+    {
+      "name": "Ministry of Environment",
+      "functions": [
+        "Develops environmental policies and regulations.",
+        "Oversees conservation and natural resource management.",
+        "Conducts environmental impact assessments.",
+        "Promotes sustainable development and pollution control."
+      ]
+    },
+    {
+      "name": "Ministry of Transport",
+      "functions": [
+        "Develops transportation policies and infrastructure.",
+        "Oversees road, rail, air, and maritime transport.",
+        "Implements traffic safety and regulation measures.",
+        "Promotes public transportation systems."
+      ]
+    },
+    {
+      "name": "Ministry of Energy",
+      "functions": [
+        "Develops energy policies and regulations.",
+        "Oversees electricity generation and distribution.",
+        "Promotes renewable energy and energy conservation.",
+        "Manages national energy resources and infrastructure."
+      ]
+    },
+    {
+      "name": "Ministry of Water Resources",
+      "functions": [
+        "Manages water resources and irrigation systems.",
+        "Develops water policies and conservation programs.",
+        "Oversees water supply and sanitation services.",
+        "Implements flood control and water management projects."
+      ]
+    },
+    {
+      "name": "Ministry of Culture",
+      "functions": [
+        "Promotes cultural heritage and arts.",
+        "Supports cultural events and activities.",
+        "Oversees museums, libraries, and cultural institutions.",
+        "Develops policies for cultural preservation and promotion."
+      ]
+    },
+    {
+      "name": "Ministry of Tourism",
+      "functions": [
+        "Develops tourism policies and strategies.",
+        "Promotes the country as a tourist destination.",
+        "Supports tourism infrastructure and services.",
+        "Implements tourism marketing and promotional campaigns."
+      ]
+    },
+    {
+      "name": "Ministry of Information and Broadcasting",
+      "functions": [
+        "Develops media and communication policies.",
+        "Oversees public broadcasting and media regulation.",
+        "Promotes access to information and digital literacy.",
+        "Manages government communication and public information."
+      ]
+    },
+    {
+      "name": "Ministry of Commerce and Industry",
+      "functions": [
+        "Develops trade and industrial policies.",
+        "Promotes international trade and export.",
+        "Supports industrial development and investment.",
+        "Oversees market regulation and consumer protection."
+      ]
+    },
+    {
+      "name": "Ministry of Science and Technology",
+      "functions": [
+        "Promotes scientific research and innovation.",
+        "Develops policies for science and technology advancement.",
+        "Supports technological development and commercialization.",
+        "Oversees national research institutions and projects."
+      ]
+    },
+    {
+      "name": "Ministry of Housing and Urban Affairs",
+      "functions": [
+        "Develops housing policies and urban planning.",
+        "Oversees urban development and infrastructure projects.",
+        "Promotes affordable housing and urban renewal.",
+        "Manages public housing and urban services."
+      ]
+    },
+    {
+      "name": "Ministry of Rural Development",
+      "functions": [
+        "Develops rural development policies and programs.",
+        "Supports rural infrastructure and services.",
+        "Promotes rural employment and livelihoods.",
+        "Implements poverty alleviation and social welfare projects."
+      ]
+    },
+    {
+      "name": "Ministry of Social Welfare",
+      "functions": [
+        "Develops social welfare policies and programs.",
+        "Supports vulnerable and marginalized groups.",
+        "Oversees social security and welfare services.",
+        "Promotes inclusive and equitable development."
+      ]
+    },
+    {
+      "name": "Ministry of Sports and Youth Affairs",
+      "functions": [
+        "Develops sports policies and programs.",
+        "Promotes youth development and engagement.",
+        "Supports sports infrastructure and training.",
+        "Organizes national and international sports events."
+      ]
+    },
+    {
+      "name": "Ministry of Telecommunications",
+      "functions": [
+        "Develops telecommunications policies and regulations.",
+        "Oversees telecommunication infrastructure and services.",
+        "Promotes digital connectivity and broadband access.",
+        "Supports innovation in telecommunications technology."
+      ]
+    },
+    {
+      "name": "Ministry of Public Works",
+      "functions": [
+        "Develops infrastructure policies and projects.",
+        "Oversees construction and maintenance of public infrastructure.",
+        "Manages transportation and public facilities.",
+        "Implements urban and rural infrastructure development."
+      ]
+    },
+    {
+      "name": "Ministry of Immigration and Citizenship",
+      "functions": [
+        "Manages immigration policies and services.",
+        "Oversees border control and visa regulations.",
+        "Promotes citizenship and integration programs.",
+        "Handles refugee and asylum services."
+      ]
+    },
+    {
+      "name": "Ministry of Fisheries",
+      "functions": [
+        "Develops fisheries policies and regulations.",
+        "Supports sustainable fishing practices.",
+        "Oversees aquaculture and marine resource management.",
+        "Promotes seafood industry and trade."
+      ]
+    },
+    {
+      "name": "Ministry of Women and Child Development",
+      "functions": [
+        "Develops policies for women and child welfare.",
+        "Supports programs for women's empowerment and child protection.",
+        "Oversees nutrition and early childhood development.",
+        "Promotes gender equality and family welfare."
+      ]
+    },
+    {
+      "name": "Ministry of Small and Medium Enterprises (SMEs)",
+      "functions": [
+        "Develops policies for SME growth and development.",
+        "Supports entrepreneurship and innovation.",
+        "Provides financial assistance and market access for SMEs.",
+        "Promotes skill development and capacity building for SMEs."
+      ]
+    },
+    {
+      "name": "Ministry of Interior",
+      "functions": [
+        "Manages internal security and public safety.",
+        "Oversees law enforcement and emergency services.",
+        "Develops policies for crime prevention and control.",
+        "Ensures national stability and public order."
+      ]
+    },
+    {
+      "name": "Ministry of Innovation and Digital Economy",
+      "functions": [
+        "Promotes digital transformation and innovation.",
+        "Develops policies for the digital economy and e-governance.",
+        "Supports technology startups and digital entrepreneurship.",
+        "Oversees digital infrastructure and services."
+      ]
+    }
+  ]
+}

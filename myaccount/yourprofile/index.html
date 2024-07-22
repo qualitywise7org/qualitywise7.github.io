@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>
-      Software Development Training - Web development, FullStack, Backend, Java,
-      Reactjs
-    </title>
-    <meta
-      name="description"
-      content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!"
-    />
-    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js"></script>
-    <link
-      rel="stylesheet"
-      href="/staticfiles/mainfiles/myaccount/yourprofile/style.css"
-    />
-    <meta charset="utf-8" />
+
+<head>
+  <title>
+    Software Development Training - Web development, FullStack, Backend, Java,
+    Reactjs
+  </title>
+  <meta name="description"
+    content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!" />
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js"></script>
+  <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/yourprofile/style.css" />
+  <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
 <link rel="icon" href="/fevicon.ico" type="profile" />
@@ -27,15 +23,11 @@
   crossorigin="anonymous"
 />
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-    />
-  </head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+</head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="brand" href="/">
       <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
@@ -99,6 +91,9 @@
             </li>
             <li>
               <a class="dropdown-item" href="/motivation">Motivation</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/healthy-diet">Heathy Diet</a>
             </li>
           </ul>
         </li>
@@ -164,90 +159,47 @@
                   <div class="cv-form-row cv-form-row-blk">
                     <div class="single-row-data">
                       <div class="form-elem">
-                        <label for="firstname" class="form-label"
-                          >First Name</label
-                        >
-                        <input
-                          id="firstname"
-                          type="text"
-                          class="form-control firstname"
-                          placeholder="e.g. John"
-                          required
-                        />
+                        <label for="firstname" class="form-label">First Name</label>
+                        <input id="firstname" type="text" class="form-control firstname" placeholder="e.g. John"
+                          required />
                         <span class="form-text"></span>
                       </div>
                       <div class="form-elem">
-                        <label for="middlename" class="form-label"
-                          >Middle Name
-                          <span class="opt-text">(optional)</span></label
-                        >
-                        <input
-                          id="middlename"
-                          type="text"
-                          class="form-control middlename"
-                          placeholder="e.g. Herbert"
-                        />
+                        <label for="middlename" class="form-label">Middle Name
+                          <span class="opt-text">(optional)</span></label>
+                        <input id="middlename" type="text" class="form-control middlename" placeholder="e.g. Herbert" />
                         <span class="form-text"></span>
                       </div>
                       <div class="form-elem">
-                        <label for="lastname" class="form-label"
-                          >Last Name</label
-                        >
-                        <input
-                          id="lastname"
-                          type="text"
-                          class="form-control lastname"
-                          placeholder="e.g. Doe"
-                          required
-                        />
+                        <label for="lastname" class="form-label">Last Name</label>
+                        <input id="lastname" type="text" class="form-control lastname" placeholder="e.g. Doe"
+                          required />
                         <span class="form-text"></span>
                       </div>
                       <div class="form-elem">
                         <div class="single-row-data">
                           <div class="form-elem">
-                            <label for="image" class="form-label"
-                              >Your Image</label
-                            >
-                            <input
-                              id="image"
-                              type="file"
-                              class="form-control image"
-                              accept="image/*"
-                            />
+                            <label for="image" class="form-label">Your Image</label>
+                            <input id="image" type="file" class="form-control image" accept="image/*" />
                           </div>
                         </div>
                       </div>
                       <div class="form-elem">
                         <label for="email" class="form-label">Email</label>
-                        <input
-                          id="email"
-                          type="email"
-                          class="form-control email"
-                          placeholder="e.g. john.doe@example.com"
-                          required
-                        />
+                        <input id="email" type="email" class="form-control email"
+                          placeholder="e.g. john.doe@example.com" required />
                         <span class="form-text"></span>
                       </div>
                       <div class="form-elem">
                         <label for="phoneno" class="form-label">Phone No</label>
-                        <input
-                          id="phoneno"
-                          type="integer"
-                          class="form-control phoneno"
-                          placeholder="e.g. 456-768-798, 567.654.002"
-                          required
-                        />
+                        <input id="phoneno" type="integer" class="form-control phoneno"
+                          placeholder="e.g. 456-768-798, 567.654.002" required />
                         <span class="form-text"></span>
                       </div>
                       <div class="form-elem">
                         <label for="github" class="form-label">Github</label>
-                        <input
-                          id="github"
-                          type="text"
-                          class="form-control email"
-                          placeholder="e.g. xyz.github.com"
-                          required
-                        />
+                        <input id="github" type="text" class="form-control email" placeholder="e.g. xyz.github.com"
+                          required />
                         <span class="form-text"></span>
                       </div>
                       <!-- <div class="form-elem">
@@ -263,27 +215,15 @@
                       </div> -->
                       <div class="form-elem">
                         <label for="gender" class="form-label">Gender</label>
-                        <select
-                          class="form-select"
-                          id="gender"
-                          name="gender"
-                          required
-                        >
+                        <select class="form-select" id="gender" name="gender" required>
                           <option value="better not to say">None</option>
                           <option value="male">Male</option>
                           <option value="female">Female</option>
                         </select>
                       </div>
                       <div class="form-elem">
-                        <label for="category" class="form-label"
-                          >Category</label
-                        >
-                        <select
-                          id="category"
-                          class="form-select"
-                          name="gender"
-                          required
-                        >
+                        <label for="category" class="form-label">Category</label>
+                        <select id="category" class="form-select" name="gender" required>
                           <option value="none">None</option>
                           <option value="General">General</option>
                           <option value="OBC">OBC</option>
@@ -294,13 +234,7 @@
                     </div>
                     <div class="form-elem">
                       <label for="address" class="form-label">Address</label>
-                      <input
-                        id="address"
-                        type="text"
-                        class="form-control"
-                        placeholder="e.g. Lake Street-23"
-                        required
-                      />
+                      <input id="address" type="text" class="form-control" placeholder="e.g. Lake Street-23" required />
                       <span class="form-text"></span>
                     </div>
                   </div>
@@ -317,110 +251,59 @@
                         <div class="cv-form-row cv-form-row-blk">
                           <div class="form-elem">
                             <label for="" class="form-label">School</label>
-                            <input
-                              name="school"
-                              type="text"
-                              class="form-control school"
-                              id="school"
-                              placeholder="Name of School"
-                            />
+                            <input name="school" type="text" class="form-control school" id="school"
+                              placeholder="Name of School" />
                             <span class="form-text"></span>
                           </div>
                           <div class="form-elem">
                             <label for="college" class="form-label">College</label>
-                            <input
-                              name="college"
-                              type="text"
-                              class="form-control college"
-                              id="college"
-                              placeholder="Name of College"
-                              required
-                            />
+                            <input name="college" type="text" class="form-control college" id="college"
+                              placeholder="Name of College" required />
                             <span class="form-text"></span>
                           </div>
                           <div class="form-elem">
                             <label for="" class="form-label">Degree</label>
-                            <input
-                              name="edu_degree"
-                              type="text"
-                              class="form-control edu_degree"
-                              id="degree"
-                              placeholder="Degree"
-                            />
+                            <input name="edu_degree" type="text" class="form-control edu_degree" id="degree"
+                              placeholder="Degree" />
                             <span class="form-text"></span>
                           </div>
                           <div class="single-row-data">
                             <div class="form-elem">
-                              <label for="sdate" class="form-label"
-                                >Start Date</label
-                              >
-                              <input
-                                name="edu_start_date"
-                                type="month"
-                                id="sdate"
-                                class="form-control edu_start_date"
-                                required
-                              />
+                              <label for="sdate" class="form-label">Start Date</label>
+                              <input name="edu_start_date" type="month" id="sdate" class="form-control edu_start_date"
+                                required />
                               <span class="form-text"></span>
                             </div>
                             <div class="form-elem">
-                              <label for="edate" class="form-label"
-                                >End Date</label
-                              >
-                              <input
-                                name="edu_graduation_date"
-                                type="month"
-                                id="edate"
-                                class="form-control edu_graduation_date"
-                                required
-                              />
+                              <label for="edate" class="form-label">End Date</label>
+                              <input name="edu_graduation_date" type="month" id="edate"
+                                class="form-control edu_graduation_date" required />
                               <span class="form-text"></span>
                             </div>
                           </div>
                           <div class="single-row-data">
                             <div class="form-elem">
                               <label for="" class="form-label">City</label>
-                              <input
-                                name="edu_city"
-                                type="text"
-                                class="form-control edu_city"
-                                id="city"
-                                placeholder="City Name"
-                              />
+                              <input name="edu_city" type="text" class="form-control edu_city" id="city"
+                                placeholder="City Name" />
                               <span class="form-text"></span>
                             </div>
                             <div class="form-elem">
-                              <label for="" class="form-label"
-                                >Percentage/CGPA</label
-                              >
-                              <input
-                                name="percentage"
-                                type="text"
-                                id="Percentage"
-                                class="form-control edu_description"
-                              />
+                              <label for="" class="form-label">Percentage/CGPA</label>
+                              <input name="percentage" type="text" id="Percentage"
+                                class="form-control edu_description" />
                               <span class="form-text"></span>
                             </div>
                           </div>
                           <div class="remove_button">
-                            <button
-                              data-repeater-delete
-                              type="button"
-                              class="repeater-remove-btn"
-                            >
+                            <button data-repeater-delete type="button" class="repeater-remove-btn">
                               Remove
                             </button>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <button
-                      type="button"
-                      value="Add"
-                      id="addeducation"
-                      class="repeater-add-btn"
-                      data-repeater-create
-                    >
+                    <button type="button" value="Add" id="addeducation" class="repeater-add-btn" data-repeater-create>
                       Add
                     </button>
                   </div>
@@ -436,107 +319,75 @@
                         <div class="cv-form-row cv-form-row-blk">
                           <div class="form-elem">
                             <label for="job_title" class="form-label">Job Title</label>
-                            <input
-                              name="job_title"
-                              type="text"
-                              class="form-control job_title"
-                              id="job_title"
-                              placeholder="e.g. Software Developer"
-                              required
-                            />
+                            <input name="job_title" type="text" class="form-control job_title" id="job_title"
+                              placeholder="e.g. Software Developer" required />
                             <span class="form-text"></span>
                           </div>
                           <div class="form-elem">
                             <label for="company" class="form-label">Company</label>
-                            <input
-                              name="company"
-                              type="text"
-                              class="form-control company"
-                              id="company"
-                              placeholder="e.g. Tech Corp"
-                              required
-                            />
+                            <input name="company" type="text" class="form-control company" id="company"
+                              placeholder="e.g. Tech Corp" required />
                             <span class="form-text"></span>
                           </div>
                           <div class="single-row-data">
                             <div class="form-elem">
                               <label for="exp_start_date" class="form-label">Start Date</label>
-                              <input
-                                name="exp_start_date"
-                                type="month"
-                                id="exp_start_date"
-                                class="form-control exp_start_date"
-                                required
-                              />
+                              <input name="exp_start_date" type="month" id="exp_start_date"
+                                class="form-control exp_start_date" required />
                               <span class="form-text"></span>
                             </div>
                             <div class="form-elem">
                               <label for="exp_end_date" class="form-label">End Date</label>
-                              <input
-                                name="exp_end_date"
-                                type="month"
-                                id="exp_end_date"
-                                class="form-control exp_end_date"
-                                required
-                              />
+                              <input name="exp_end_date" type="month" id="exp_end_date"
+                                class="form-control exp_end_date" required />
                               <span class="form-text"></span>
                             </div>
                           </div>
                           <div class="form-elem">
                             <label for="exp_city" class="form-label">City</label>
-                            <input
-                              name="exp_city"
-                              type="text"
-                              class="form-control exp_city"
-                              id="exp_city"
-                              placeholder="e.g. New York"
-                              required
-                            />
+                            <input name="exp_city" type="text" class="form-control exp_city" id="exp_city"
+                              placeholder="e.g. New York" required />
                             <span class="form-text"></span>
                           </div>
                           <div class="form-elem">
                             <label for="exp_description" class="form-label">Description</label>
-                            <textarea
-                              name="exp_description"
-                              class="form-control exp_description"
-                              id="exp_description"
-                              placeholder="Describe your role"
-                              rows="3"
-                              required
-                            ></textarea>
+                            <textarea name="exp_description" class="form-control exp_description" id="exp_description"
+                              placeholder="Describe your role" rows="3" required></textarea>
                             <span class="form-text"></span>
                           </div>
                           <div class="remove_button">
-                            <button
-                              data-repeater-delete
-                              type="button"
-                              class="repeater-remove-btn"
-                            >
+                            <button data-repeater-delete type="button" class="repeater-remove-btn">
                               Remove
                             </button>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <button
-                      type="button"
-                      value="Add"
-                      id="addexperience"
-                      class="repeater-add-btn"
-                      data-repeater-create
-                    >
+                    <button type="button" value="Add" id="addexperience" class="repeater-add-btn" data-repeater-create>
                       Add
                     </button>
                   </div>
                 </div>
-                
+
 
                 <div class="cv-form-blk">
                   <div class="cv-form-row-title">
                     <h3>Skills</h3>
+                    <p>
+                      Start typing a skill and select from the dropdown. You can add multiple skills separated by commas:
+                    </p>
                   </div>
-
-                  <div class="row-separator repeater">
+                
+                  <form autocomplete="off" action="/action_page.php">
+                    <div class="autocomplete" style="width: 800px">
+                      <input id="skillInput" type="text" name="skills" placeholder="Enter your Skills" />
+                      <div id="autocomplete-list" class="autocomplete-items"></div>
+                    </div>
+                    <div class="selected-skills" id="selectedSkills"></div>
+                    <!-- <input type="submit" /> -->
+                  </form>
+                </div>
+                <!-- <div class="row-separator repeater">
                     <div class="repeater" data-repeater-list="group-skill">
                       <div data-repeater-item>
                         <div class="cv-form-row cv-form-row-skills">
@@ -545,10 +396,11 @@
                               name="skill"
                               type="text"
                               class="form-control skill"
+                              multiple
                             />
                             <span class="form-text"></span>
-                          </div>
-                          <div class="remove_button">
+                          </div> -->
+                <!-- <div class="remove_button">
                             <button
                               data-repeater-delete
                               type="button"
@@ -556,30 +408,170 @@
                             >
                               Remove
                             </button>
-                          </div>
-                        </div>
+                          </div> -->
+                <!-- </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </form>
+                  </div> -->
             </div>
+            </form>
+            <section class="print-btn-sc">
+              <div class="container">
+                <button type="button" id="btn" class="print-btn btn btn-primary">
+                  Submit Details
+                </button>
+              </div>
+            </section>
           </div>
-        </section>
+        </main>
+      <!-- </section> -->
 
-        <section class="print-btn-sc">
-          <div class="container">
-            <button type="button" id="btn" class="print-btn btn btn-primary">
-              Submit Details
-            </button>
-          </div>
-        </section>
+     
+      <!-- jquery cdn -->
 
-        <!-- jquery cdn -->
+      <!-- custom js -->
+      <!-- <script>
+          function autocomplete(inp, arr) {
+            var currentFocus;
+            inp.addEventListener("input", function (e) {
+              var a,
+                b,
+                i,
+                val = this.value;
+              /split the input value by comma and trim any extra spaces/
+              var skillList = val.split(",").map((skill) => skill.trim());
+              var currentInput = skillList[skillList.length - 1];
+              /close any already open lists of autocompleted values/
+              closeAllLists();
+              if (!currentInput) {
+                return false;
+              }
+              currentFocus = -1;
+              /create a DIV element that will contain the items (values):/
+              a = document.createElement("DIV");
+              a.setAttribute("id", this.id + "autocomplete-list");
+              a.setAttribute("class", "autocomplete-items");
+              /append the DIV element as a child of the autocomplete container:/
+              this.parentNode.appendChild(a);
+              /for each item in the array.../
+              for (i = 0; i < arr.length; i++) {
+                /check if the item starts with the same letters as the current input value:/
+                if (
+                  arr[i].substr(0, currentInput.length).toUpperCase() ==
+                  currentInput.toUpperCase()
+                ) {
+                  /create a DIV element for each matching element:/
+                  b = document.createElement("DIV");
+                  /make the matching letters bold:/
+                  b.innerHTML =
+                    "<strong>" +
+                    arr[i].substr(0, currentInput.length) +
+                    "</strong>";
+                  b.innerHTML += arr[i].substr(currentInput.length);
+                  /insert a input field that will hold the current array item's value:/
+                  b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                  /execute a function when someone clicks on the item value (DIV element):/
+                  b.addEventListener("click", function (e) {
+                    /insert the value for the autocomplete text field:/
+                    skillList[skillList.length - 1] =
+                      this.getElementsByTagName("input")[0].value;
+                    inp.value = skillList.join(", ") + ", ";
+                    /*close the list of autocompleted values,
+                        (or any other open lists of autocompleted values:*/
+                    closeAllLists();
+                  });
+                  a.appendChild(b);
+                }
+              }
+            });
+            /execute a function presses a key on the keyboard:/
+            inp.addEventListener("keydown", function (e) {
+              var x = document.getElementById(this.id + "autocomplete-list");
+              if (x) x = x.getElementsByTagName("div");
+              if (e.keyCode == 40) {
+                /*If the arrow DOWN key is pressed,
+                  increase the currentFocus variable:*/
+                currentFocus++;
+                /and make the current item more visible:/
+                addActive(x);
+              } else if (e.keyCode == 38) {
+                //up
+                /*If the arrow UP key is pressed,
+                  decrease the currentFocus variable:*/
+                currentFocus--;
+                /and make the current item more visible:/
+                addActive(x);
+              } else if (e.keyCode == 13) {
+                /If the ENTER key is pressed, prevent the form from being submitted,/
+                e.preventDefault();
+                if (currentFocus > -1) {
+                  /and simulate a click on the "active" item:/
+                  if (x) x[currentFocus].click();
+                }
+              }
+            });
+            function addActive(x) {
+              /a function to classify an item as "active":/
+              if (!x) return false;
+              /start by removing the "active" class on all items:/
+              removeActive(x);
+              if (currentFocus >= x.length) currentFocus = 0;
+              if (currentFocus < 0) currentFocus = x.length - 1;
+              /add class "autocomplete-active":/
+              x[currentFocus].classList.add("autocomplete-active");
+            }
+            function removeActive(x) {
+              /a function to remove the "active" class from all autocomplete items:/
+              for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("autocomplete-active");
+              }
+            }
+            function closeAllLists(elmnt) {
+              /*close all autocomplete lists in the document,
+              except the one passed as an argument:*/
+              var x = document.getElementsByClassName("autocomplete-items");
+              for (var i = 0; i < x.length; i++) {
+                if (elmnt != x[i] && elmnt != inp) {
+                  x[i].parentNode.removeChild(x[i]);
+                }
+              }
+            }
+            /execute a function when someone clicks in the document:/
+            document.addEventListener("click", function (e) {
+              closeAllLists(e.target);
+            });
+          }
 
-        <!-- custom js -->
-      </div>
-    </main>
+          /An array containing skill names:/
+          var skills = [
+            "JavaScript",
+            "Java",
+            "Python",
+            "C#",
+            "PHP",
+            "C++",
+            "TypeScript",
+            "Ruby",
+            "Swift",
+            "Go",
+            "Kotlin",
+            "HTML",
+            "CSS",
+            "SQL",
+            "R",
+            "MATLAB",
+            "Perl",
+            "Scala",
+            "Rust",
+            "Dart",
+            "Objective-C",
+            "VBA",
+          ];
+
+          /initiate the autocomplete function on the "skillInput" element, and pass along the skills array as possible autocomplete values:/
+          autocomplete(document.getElementById("skillInput"), skills);
+        </script> -->
+     
 
     <!-- Footer -->
 
@@ -928,53 +920,38 @@
 
 
 
-    <script
-      type="module"
-      src="/staticfiles/mainfiles/myaccount/yourprofile/script.js"
-    ></script>
-    <script>
-      document.getElementById("firstname").focus();
-    </script>
-    <script>
-      $(document).ready(function () {
-        $(document).on("click", function (event) {
-          if (!$(event.target).closest(".accordion").length) {
-            $(".accordion-collapse").collapse("hide");
-          }
-        });
+      <script src="/website_data/website_masterdata.js"></script>
 
-        $(".accordion").on("click", function (event) {
-          event.stopPropagation();
+      <script type="module" src="/staticfiles/mainfiles/myaccount/yourprofile/script.js"></script>
+      <script>
+        document.getElementById("firstname").focus();
+      </script>
+      <script>
+        $(document).ready(function () {
+          $(document).on("click", function (event) {
+            if (!$(event.target).closest(".accordion").length) {
+              $(".accordion-collapse").collapse("hide");
+            }
+          });
+
+          $(".accordion").on("click", function (event) {
+            event.stopPropagation();
+          });
         });
-      });
-    </script>
-    <!-- jobsdoor360 -->
-    <ins
-      class="adsbygoogle"
-      style="display: block"
-      data-ad-client="ca-pub-2075086355753452"
-      data-ad-slot="7339269701"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <script
-      src="https://code.jquery.com/jquery-3.6.4.js"
-      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
-      crossorigin="anonymous"
-    ></script>
-    <!-- jquery repeater cdn -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js"
-      integrity="sha512-bZAXvpVfp1+9AUHQzekEZaXclsgSlAeEnMJ6LfFAvjqYUVZfcuVXeQoN5LhD7Uw0Jy4NCY9q3kbdEXbwhZUmUQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/toastify-js"
-    ></script>
-  </body>
+      </script>
+      <!-- jobsdoor360 -->
+      <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-2075086355753452" data-ad-slot="7339269701"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+      <!-- jquery repeater cdn -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js"
+        integrity="sha512-bZAXvpVfp1+9AUHQzekEZaXclsgSlAeEnMJ6LfFAvjqYUVZfcuVXeQoN5LhD7Uw0Jy4NCY9q3kbdEXbwhZUmUQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
 </html>

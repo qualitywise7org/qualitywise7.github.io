@@ -120,6 +120,13 @@ button:hover {
 .custom-legend {
   font-family: Arial, sans-serif;
   font-weight: 700;
+  color: #465684;
+  margin-top: 10px;
   font-size: 1.1em; /* Adjust font size for legend */
   line-height:1.2; /* Adjust line height for legend */
 }
+
+.small-text {
+  font-size: 14px; /* Adjust the size as needed */
+}
+
