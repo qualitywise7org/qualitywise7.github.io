@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'input[name="answer"]:checked'
         );
         if (!selectedAnswer) {
-            alert("Please select an answer.");
+            alert("Please  an answer.");
             return;
         }
 
