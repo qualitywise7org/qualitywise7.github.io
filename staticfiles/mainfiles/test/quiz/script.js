@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
     let quizWindowFocus = true;
+    let tabSwitchAlertPending = false;
 
     const questionTitle = document.getElementById("question-title");
     const questionContainer = document.getElementById("question-container");
@@ -231,14 +232,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Detect tab switching
         window.addEventListener('blur', () => {
-            if (quizWindowFocus) {
-                alert("You have switched tabs or windows, which is not allowed during the test.");
-                window.location.href = "/";
-            }
+            tabSwitchAlertPending = true;
+            setTimeout(() => {
+                if (tabSwitchAlertPending) {
+                    alert("You have switched tabs or windows, which is not allowed during the test.");
+                    window.location.href = "/";
+                }
+            }, 100); // Delay to allow "select an answer" alert to be handled first
         });
 
         window.addEventListener('focus', () => {
             quizWindowFocus = true;
+            tabSwitchAlertPending = false;
         });
     }
 
