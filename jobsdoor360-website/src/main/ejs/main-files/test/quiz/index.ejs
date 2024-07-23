@@ -5,26 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Page</title>
   <link rel="stylesheet" href="/staticfiles/mainfiles/test/quiz/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div>
+  <div class="container">
     <section class="content">
+      <div class="quiz-header">
+        <div id="quiz-title"></div>
+        <div id="timer">30:00</div>
+      </div>
+      <div id="question-title">
+        <!-- Heading will be injected here -->
+      </div>
       <div id="quiz-container">
         <div id="quiz">
           <div id="question-container">
+            <!-- Question content will be injected here -->
           </div>
-          <button id="next-btn" style="display: none;">Next Question</button>
-          <button id="pre-btn" style="display: none;" onclick="previousQuestion()">Previous Question</button>
-          <div id="result-container" style="display: none;">
+          <div class="button-group">
+            <button id="pre-btn" class="btn"><i class="fas fa-arrow-left"></i> Previous</button>
+            <button id="next-btn" class="btn">Next <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div id="result-container">
             <h2>Quiz Completed!</h2>
             <p>Your score: <span id="score"></span></p>
             <p>Percentage correct: <span id="percentage"></span>%</p>
           </div>
-          <button id="home-btn" style="display: none;" onclick="goHome()">Go To Home</button>
-          <div id="timer">30:00</div> 
+          <button id="home-btn" class="btn"><i class="fas fa-home"></i> Home</button>
         </div>
       </div>
-    </section> 
+    </section>
   </div>
   
   <!-- Include Firebase config file -->

@@ -1,6 +1,3 @@
-const queryParams = new URLSearchParams(window.location.search);
-const quizCode = queryParams.get('quizcode').toLowerCase();
-
 document.addEventListener("DOMContentLoaded", () => {
     const TIME_LIMIT = 30 * 60; // 30 minutes in seconds
 
@@ -10,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
 
+    const questionTitle = document.getElementById("question-title");
     const questionContainer = document.getElementById("question-container");
     const scoreDisplay = document.getElementById("score");
     const percentageDisplay = document.getElementById("percentage");
@@ -18,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const previousButton = document.getElementById("pre-btn");
     const homeButton = document.getElementById("home-btn");
     const timerDisplay = document.getElementById("timer");
+    const quizTitleElement = document.getElementById('quiz-title'); // Add this line to get the quiz title element
 
     async function fetchQuestions(assessmentKey) {
         try {
@@ -71,9 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function loadQuestion() {
         const question = currentSubject.questions[currentQuestionIndex];
         if (questionContainer) {
+            questionTitle.innerHTML = `<p>${currentQuestionIndex + 1}. ${question.question}</p>`;
             questionContainer.innerHTML = `
-            <h2>${currentSubject.title} - Question ${currentQuestionIndex + 1}</h2>
-            <p>${question.question}</p>
             <ul>
                 ${question.answers
                 .map(
@@ -89,8 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 .join("")}
             </ul>
             `;
-            console.log(questionContainer.innerHTML);
-            console.log(currentSubject.title);
         }
     }
 
@@ -204,29 +200,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function goHome() {
-        const quizContainer = document.getElementById("quiz-container");
-        const assessmentGrid = document.querySelector(".assessment-grid");
-        if (quizContainer) quizContainer.style.display = "none";
-        if (assessmentGrid) assessmentGrid.style.display = "grid";
-        if (resultContainer) resultContainer.style.display = "none";
-        stopTimer();
-        window.location.href = '/'; // Redirect to the home page
+    nextButton.addEventListener("click", nextQuestion);
+    previousButton.addEventListener("click", previousQuestion);
+    homeButton.addEventListener("click", () => location.href = "/");
+
+    // Assuming you have a way to get the assessmentKey from URL or some other method
+    const urlParams = new URLSearchParams(window.location.search);
+    const assessmentKey = urlParams.get("quizcode");
+    
+    // Set the quiz title from the URL parameter or another source
+    if (quizTitleElement) {
+        quizTitleElement.textContent = urlParams.get("quizcode"); // Update this with actual title if available
     }
-
-    function setupEventListeners() {
-        startQuiz(quizCode);
-
-        if (nextButton) {
-            nextButton.addEventListener("click", nextQuestion);
-        }
-        if (previousButton) {
-            previousButton.addEventListener("click", previousQuestion);
-        }
-        if (homeButton) {
-            homeButton.addEventListener("click", goHome);
-        }
-    }
-
-    setupEventListeners();
+    
+    startQuiz(assessmentKey);
 });
