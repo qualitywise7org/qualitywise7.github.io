@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Assessment</title>
-  <link rel="stylesheet" href="/staticfiles/mainfiles/test/style.css">
+  <title>Assessment Report</title>
+  <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/test-report/style.css">
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -130,33 +130,16 @@
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <section class="content">
-    <h1 class="center">Master Your Skills: Assessments & Challenges</h1>
-    <div class="assessment-grid" id="assessment">
-      Fetching Assessments ...!
+  <div class="container">
+    <h1>Assessment Report</h1>
+    <div class="results-grid" id="assessment-report">
+      <!-- Report will be injected here by JavaScript -->
     </div>
-
-    <!-- Popup structure here -->
-    <div class="popup" id="popup-template" style="display: none;">
-      <h3>Assessment Guidelines</h3>
-      <div>
-        <p>Please read the following guidelines before starting the test:</p>
-        <ul>
-          <li>Ensure you have a stable internet connection.</li>
-          <li>Do not use any external help such as books, internet, or other people.</li>
-          <li>Complete the test within the given time limit.</li>
-          <li>Submit your results to the designated WhatsApp group upon completion.</li>
-          <li>Do not refresh the page during the test.</li>
-        </ul>
-      </div>
-      <input type="hidden" name="quizcode" value="">
-      <button type="submit" class="btn-submit">Start</button>
-      <button type="button" class="btn-back">Back</button>
+    <div id="no-results-message" style="display: none;">
+      <p>No assessments completed.</p>
+      <a class="btn-start" href="/test/">Start An Assessment</a>
     </div>
-
-    <!-- Overlay -->
-    <div id="overlay" style="display: none;"></div>
-  </section>
+  </div>
   <footer class="container-fluid bg-black">
   <div class="text-white">
     <div class="row pt-5 text-center" style="margin-right: 22px">
@@ -502,6 +485,6 @@
 
 
 
-  <script type="module" src="/staticfiles/mainfiles/test/script.js"></script>
+  <script type="module" src="/staticfiles/mainfiles/myaccount/test-report/script.js"></script>
 </body>
 </html>
