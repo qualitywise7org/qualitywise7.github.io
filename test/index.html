@@ -1,317 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Assessment</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/test/style.css" />
-  </head>
+<head>
+  <title>Assessment</title>
+  <link rel="stylesheet" href="/staticfiles/mainfiles/test/style.css">
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-adsense-account" content="ca-pub-2075086355753452" />
+<link rel="icon" href="/fevicon.ico" type="profile" />
+<link rel="stylesheet" href="/staticfiles/style.css" />
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+  crossorigin="anonymous"
+/>
 
-  <body class="bg-gradient-to-r from-red-200 via-blue-400 to-blue-300 gap-3">
-    <div class="p-8 text-white">
-      <div class="rounded-lg text-center text-4xl font-extrabold">
-        <span class="bg-clip-text text-white">TEST</span>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="brand" href="/">
+      <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNavDropdown"
+      style="transition: height 1s ease"
+    >
+      <ul class="navbar-nav flex items-center">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="/page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about/">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pricing/">Pricing</a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" href="/register/"
+            >Get Demo classes
+          </a>
+        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="/apply/">Apply</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Blogs
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="/careeroptions">Career Options</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/jobs_analysis/">Jobs Analysis</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/businessplans">Business Plans</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/biographies">Biographies</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/motivation">Motivation</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/myaccount/jobsforyou">Jobs for you</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/myaccount/">My account</a>
+        </li>
+        <li class="nav-item login-btn">
+          <a class="nav-link" id="login-button" href="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+  "
+>
+  <span style="font-weight: 500; margin-bottom: 8px" id="welcome-text"></span>
+  <span
+    id="user-mail"
+    style="
+      color: #586ba6;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    "
+  >
+  </span>
+</div>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript
+  ><iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
+    height="0"
+    width="0"
+    style="display: none; visibility: hidden"
+  ></iframe
+></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <section class="content">
+    <h1 class="center">Master Your Skills: Assessments & Challenges</h1>
+    <div class="assessment-grid" id="assessment">
+      Fetching Assessments ...!
+    </div>
+
+    <!-- Popup structure here -->
+    <div class="popup" id="popup-template" style="display: none;">
+      <h3>Assessment Guidelines</h3>
+      <div>
+        <p>Please read the following guidelines before starting the test:</p>
+        <ul>
+          <li>Ensure you have a stable internet connection.</li>
+          <li>Do not use any external help such as books, internet, or other people.</li>
+          <li>Complete the test within the given time limit.</li>
+          <li>Submit your results to the designated WhatsApp group upon completion.</li>
+          <li>Do not refresh the page during the test.</li>
+        </ul>
       </div>
-      <div class="mt-4 text-center text-lg">
-        <p class="bg-silver font-monospace">
-          Please submit your result to the WhatsApp group.
+      <input type="hidden" name="quizcode" value="">
+      <button type="submit" class="btn-submit">Start</button>
+      <button type="button" class="btn-back">Back</button>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" style="display: none;"></div>
+  </section>
+  <footer class="container-fluid bg-black">
+  <div class="text-white">
+    <div class="row pt-5 text-center" style="margin-right: 22px">
+      <div class="col-md-4 mb-3">
+        <ul class="footer">
+          <h4 class="fs-3">Quick-Links</h4>
+          <li><a href="/">Home</a></li>
+          <li>
+            <a href="/about/">About Us</a>
+          </li>
+          <li>
+            <a href="/results/">Our Results</a>
+          </li>
+          <li>
+            <a href="/pricing/">Pricing</a>
+          </li>
+          <li>
+            <a href="/campaign/workshop/registration/">Workshop</a>
+          </li>
+          <li>
+            <a href="/apply/">Apply</a>
+          </li>
+          <li>
+            <a href="/socialwork/donatebook/">Donate Books</a>
+          </li>
+          <li>
+            <a href="/contactus/">Contact us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <ul class="footer">
+          <h4 class="fs-3">Products</h4>
+          <li>
+            <a href="/myaccount/jobsforyou/">Jobs For You</a>
+          </li>
+          <li>
+            <a href="/myaccount/yourprofile/">Your Profile</a>
+          </li>
+          <li>
+            <a href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+          </li>
+          <li>
+            <a href="/hiring/">Hiring</a>
+          </li>
+          <li>
+            <a href="/hirewithus/">Hire With Us</a>
+          </li>
+          <li>
+            <a href="/test/">Test Yourself</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <ul class="footer">
+          <h4 class="fs-3">Other-Links</h4>
+          <li>
+            <a
+              href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund"
+              target="_blank"
+              >Cancellation & Refund Policy</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms"
+              target="_blank"
+              >Terms and Conditions
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping"
+              target="_blank"
+              >Shipping & Delivery Policy</a
+            >
+          </li>
+          <li>
+            <a href="/privacy/">Privacy Policy </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-center">
+          <a
+            href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+            target="_blank"
+            class="fb-icon"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="35"
+              height="35"
+              viewBox="0 0 48 48"
+            >
+              <path
+                fill="#fff"
+                d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
+              ></path>
+              <path
+                fill="#fff"
+                d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
+              ></path>
+              <path
+                fill="#cfd8dc"
+                d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
+              ></path>
+              <path
+                fill="#40c351"
+                d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
+              ></path>
+              <path
+                fill="#fff"
+                fill-rule="evenodd"
+                d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=100093276582711"
+            target="_blank"
+            class="fb-icon"
+          >
+            <img
+              width="35"
+              height="35"
+              src="https://img.icons8.com/color/48/facebook-new.png"
+              alt="facebook-new"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/jobsdoor360/"
+            target="_blank"
+            class="insta-icon"
+          >
+            <img
+              width="35"
+              height="35"
+              src="https://img.icons8.com/color/48/instagram-new--v1.png"
+              alt="instagram-new--v1"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/qualitywise-b05857275/"
+            target="_blank"
+            class="linkedin-icon"
+          >
+            <img
+              width="35"
+              height="35"
+              src="https://img.icons8.com/color/48/linkedin.png"
+              alt="linkedin"
+            />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ"
+            target="_blank"
+            class="youtube-icon"
+          >
+            <img
+              width="35"
+              height="35"
+              src="https://img.icons8.com/color/48/youtube-play.png"
+              alt="youtube-play"
+          /></a>
+        </div>
+        <br />
+        <p style="font-size: 14px">
+          Copyright Jobsdoor360 © 2024. All rights reserved
         </p>
       </div>
     </div>
+  </div>
+</footer>
+<!-- WhatsApp Chat Button -->
+<div class="chat-back-to-top">
+  <!-- <button id="like-button">
+    <i class="fa-solid fa-thumbs-up"></i>
+  </button>
+  <button id="dislike-button">
+    <i class="fa-solid fa-thumbs-down"></i>
+  </button> -->
+  <!-- <span style="font-size: 15px">Any question or complaint</span> -->
+ <a href= "https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+ target="_blank"   style="font-size: 14px; font-weight: 500; color: black"
+    >Any question or complaint</a
+  > 
+  <div class="whatsapp-chat">
+    <a
+      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+      target="_blank"
+    >
+      <i
+        class="fab fa-whatsapp"
+        style="font-size: 27px; margin-bottom: 13px"
+      ></i>
+       
+  </div>
+  <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</div>
 
-    <div class="grid-cols-1 sm:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a href="https://www.indiabix.com/online-test/aptitude-test/1">
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://th.bing.com/th/id/OIP.LKJId9-gUm5UDHxJq8q0hwHaEK?rs=1&pid=ImgDetMain"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">Apptitude</h4>
-                <p class="leading-normal overflow-auto">
-                  Total number of questions: 20.
-                  <br />
-                  Time allotted: 30 minutes. Each question carries 1 mark
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
+<!-- The Bootstrap Modal -->
+<div
+  class="modal fade"
+  id="myModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          What Can We Improve on Our Website?
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
-
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a href="https://iqtest.com/quiz/iq-test/">
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://th.bing.com/th/id/OIP.QhPJ_tQTkhd2NL6dQ4DVBgHaE8?rs=1&pid=ImgDetMain"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">IQ Test</h4>
-                <p class="leading-normal overflow-auto">
-                  Do not use pencil or paper or a calculator during this test.
-                  <br />
-                  Time is limited attend all the question in time.
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
+      <div class="modal-body">
+        <textarea
+          id="feedback"
+          class="form-control"
+          placeholder="Your feedback..."
+        ></textarea>
+        <input
+          type="text"
+          id="phoneNumber"
+          class="form-control"
+          placeholder="Your phone number..."
+        />
       </div>
-
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a
-          href="https://reasoningquestions.in/reasoning-questions-and-answers-with-solution/"
-        >
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://www.sofolympiadtrainer.com/content_images/logical-reasoning.jpg"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">Reasoning</h4>
-                <p class="leading-normal overflow-auto">
-                  Total number of questions: 20.
-                  <br />
-                  Time allotted: 30 minutes. Each question carries 1 mark
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a href="https://www.psychometrictests.org/tests/">
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://i.ytimg.com/vi/YDnYjr8cj6Y/maxresdefault.jpg"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">Psychometric</h4>
-                <p class="leading-normal overflow-auto">
-                  Include all of the Psychometric Problems.
-                  <br />
-                  Choose Free tests.
-                  <br />
-                  Time Limit: 20 min.
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a href="https://www.geeksforgeeks.org/html-course-practice-quiz-1/">
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://th.bing.com/th/id/OIP.B1GepOD6wH9jAtUkVlUEcQAAAA?rs=1&pid=ImgDetMain"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">HTML</h4>
-                <p class="leading-normal overflow-auto">
-                  Total number of questions: 20.
-                  <br />
-                  Each question carries 1 mark
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a href="https://www.geeksforgeeks.org/html-course-practice-quiz-1/">
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://th.bing.com/th/id/OIP.B1GepOD6wH9jAtUkVlUEcQAAAA?rs=1&pid=ImgDetMain"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">
-                  HTML, CSS, Js , Database...
-                </h4>
-                <p class="leading-normal overflow-auto">
-                  Each section have quiz section in them for each topic.
-                  <br />
-                  Along with the theory and practice code.
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a href="https://mindmajix.com/quiz/sql-server-dba-quiz">
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://media.instamojo.com/imgs/6867ce73890545e68853ba1f00c71496.jpg"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">SQL Server DBA</h4>
-                <p class="leading-normal overflow-auto">
-                  Answer all the question within time for better scores.
-                  <br />
-                  Quiz questions matrix color indications.
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a href="https://www.onlineinterviewquestions.com/devops-mcq/">
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://th.bing.com/th/id/OIP.85S_qYuuTNKJDkqI-dwWGgHaE1?rs=1&pid=ImgDetMain"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">Devops</h4>
-                <p class="leading-normal overflow-auto">
-                  Answer all the question within time for better scores.
-                  <br />
-                  It include 30 questions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a
-          href="https://testbook.com/objective-questions/mcq-on-network-security--5eea6a0939140f30f369d917"
-        >
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://www.stratospherenetworks.com/blog/wp-content/uploads/2018/10/network-security.jpg"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">Network & Security</h4>
-                <p class="leading-normal overflow-auto">
-                  Question with well explained answer.
-                  <br />
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a
-          href="https://www.theserverside.com/quiz/REST-web-services-and-RESTful-API-quiz-for-developers"
-        >
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://ded9.com/wp-content/uploads/2021/04/API-illustration-ss-1920.gif"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">RESTfull and REST API</h4>
-                <p class="leading-normal overflow-auto">
-                  Question related to API.
-                  <br />
-                  RESTfull and REST api.
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="max-w-md mx-auto px-4 mb-4">
-        <a href="https://www.cambridgeenglish.org/test-your-english/">
-          <div
-            class="h-[200px] flex flex-row items-stretch bg-white shadow-lg rounded-md overflow-hidden"
-          >
-            <div class="flex justify-center items-center">
-              <img
-                alt=""
-                class="p-1 rounded w-32 h-32 object-contain"
-                src="https://img.favpng.com/9/8/13/cambridge-assessment-english-tkt-english-language-test-graphics-png-favpng-Em9pGj9h7cigYYQqgVaWRFGua.jpg"
-              />
-            </div>
-            <div class="flex-1 card-block items-center">
-              <div class="p-6">
-                <h4 class="font-medium text-2xl mb-3">English Assessment</h4>
-                <p class="leading-normal overflow-auto">
-                  English Language Assessment Test
-                  <br />
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button id="submitFeedback" class="btn btn-primary">Submit</button>
       </div>
     </div>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </body>
+  </div>
+</div>
+
+
+<script type="module" src="/staticfiles/db/dbconfig.js"></script>
+<script type="module">
+  // Check if the user is signed in
+  window.auth.onAuthStateChanged((user) => {
+      if (user) {
+        localStorage.setItem("email", user.email);
+        document.getElementById("login-button").innerHTML = "Logout";
+        document.getElementById("user-mail").innerHTML = user.email;
+        document.getElementById("welcome-text").innerHTML = "Welcome";
+      } else {
+        const login_button = document.getElementById("login-button");
+        login_button.addEventListener("click", () => {
+          const email = localStorage.getItem("email");
+          if (email) {
+            localStorage.clear();
+          }
+          location.location.href = "/login";
+        });
+      }
+  });
+
+
+  document.getElementById("login-button").addEventListener("click", function() {
+    const email = localStorage.getItem("email");
+    if (email) {
+      localStorage.clear();
+      auth.signOut()
+      .then(() => {
+        window.location.href = "/login/";
+      })
+      .catch((error) => {
+        console.error("Error signing out:", error);
+      });
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+  crossorigin="anonymous"></script>
+
+<script>
+  window.addEventListener("scroll", () => {
+    let scrollVal = window.scrollY;
+    if (scrollVal > 2000) {
+    document.getElementById("backToTopBtn").style.display = "block";
+    } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+    }
+  });
+
+  function scrollToTop() {
+    document.documentElement.scrollTop = 0;
+  }
+
+  document
+    .getElementById("backToTopBtn")
+    .addEventListener("click", scrollToTop);
+</script>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+<script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-1JQVXS3B5L");
+</script>
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-MFBK5637");
+</script>
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452" crossorigin="anonymous"></script>-->
+
+
+
+  <script type="module" src="/staticfiles/mainfiles/test/script.js"></script>
+</body>
 </html>
