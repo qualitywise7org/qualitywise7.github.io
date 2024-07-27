@@ -52,9 +52,8 @@ function displayJobProfiles(profiles, query = "") {
               : ""
           }
           <p class="text-center fw-bold">
-            Ready to seize the opportunity?<br/>
+            See Job Options?<br/>
             <a href="${profileUrl}" class="btn btn-outline-success mt-2 mx-2 clickHereBtn">Click here</a>
-            <button class="btn btn-success shareBtn mt-2 mx-2" data-url="${profileUrl}">Share</button>
           </p>
         </div>
       </div>
@@ -63,23 +62,6 @@ function displayJobProfiles(profiles, query = "") {
   });
 
   jobProfilesContainer.appendChild(fragment);
-
-  // Add event listeners to share buttons
-  document.querySelectorAll(".shareBtn").forEach((button) => {
-    button.addEventListener("click", function () {
-      const url = this.getAttribute("data-url");
-      if (navigator.share) {
-        navigator
-          .share({
-            title: "Job Profile",
-            url: url,
-          })
-          .catch(console.error);
-      } else {
-        alert("Web Share API not supported in this browser.");
-      }
-    });
-  });
 
   // Add event listeners to "Click here" buttons
   document.querySelectorAll(".clickHereBtn").forEach((button) => {

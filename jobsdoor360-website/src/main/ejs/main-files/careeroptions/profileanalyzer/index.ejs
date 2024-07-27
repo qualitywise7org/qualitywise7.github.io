@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Job Profiles</title>
-    <%- include('../../../partials/head.ejs') %>
-    <link
-      rel="stylesheet"
-      href="/staticfiles/mainfiles/careeroptions/profileanalyzer/style1.css"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Profiles</title>
+  <%- include('../../../partials/head.ejs') %>
+  <link
+    rel="stylesheet"
+    href="/staticfiles/mainfiles/careeroptions/profileanalyzer/style1.css"
+  />
+</head>
 
-  <body>
-    <%- include('../../../partials/navbar.ejs') %>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <!-- heading -->
-          <h2 class="mt-3 text-center">Profile Analyzer</h2>
-          <!-- Search bar -->
-          <input
-            type="text"
-            id="searchInput"
-            class="form-control my-4"
-            placeholder="Search profiles..."
-          />
-          <div id="profileCount" class="fw-bold"></div>
-          <!-- <div id="jobProfiles"></div> -->
-          <br />
+<body>
+  <%- include('../../../partials/navbar.ejs') %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- heading -->
+        <h2 class="mt-3 text-center">Profile Analyzer</h2>
+        <!-- Search bar -->
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control my-4"
+          placeholder="Search profiles..."
+        />
+        <div id="profileCount" class="fw-bold"></div>
+        <div class="detailed-analysis mt-2">
+          <label class="fw-bold"> Detailed job analysis :
+            <a href="/jobs_analysis/" class="btn btn-primary">
+              Click Here
+            </a>
+          </label>
         </div>
+        <br />
       </div>
-      <div class="row row-cols-1 row-cols-md-3 g-4" id="jobProfiles"></div>
     </div>
-    <br /><br />
-    <%- include('../../../partials/footer.ejs') %>
-    <!-- Import master data -->
-    <script src="/website_data/website_masterdata.js"></script>
-    <script src="/staticfiles/mainfiles/careeroptions/profileanalyzer/script1.js"></script>
-  </body>
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="jobProfiles"></div>
+  </div>
+  <br /><br />
+  <%- include('../../../partials/footer.ejs') %>
+  <!-- Import master data -->
+  <script src="/website_data/website_masterdata.js"></script>
+  <script src="/staticfiles/mainfiles/careeroptions/profileanalyzer/script1.js"></script>
+</body>
 </html>
