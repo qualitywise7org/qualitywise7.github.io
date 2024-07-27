@@ -11,59 +11,79 @@ body {
   font-size: 1.2rem;
   line-height: 1.6rem;
   background-image: linear-gradient(#b5b682, #fff, #b5b682);
-  min-height: 100vh; /* Changed to 100vh */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
 /* Container for articles */
 .articles {
-  margin: 50px auto; /* Changed margin for centering */
+  margin: 50px auto;
   display: grid;
   max-width: 1200px;
-  padding: 0 24px; /* Changed padding */
-  gap: 30px; /* Reduced gap */
+  padding: 0 24px;
+  gap: 30px;
+  grid-template-columns: 1fr; /* Ensure single-column layout */
+}
+
+@media screen and (min-width: 768px) {
+  .articles {
+    grid-template-columns: 1fr 1fr; /* Two-column layout on larger screens */
+  }
 }
 
 /* Article styling */
 article {
   position: relative;
   border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   background: #fff;
   overflow: hidden;
-  transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out; /* Added box-shadow transition */
+  transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 article:hover,
 article:focus {
-  transform: translateY(-5px); /* Added hover/focus effect */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Added hover/focus effect */
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .article-wrapper {
   display: flex;
-  flex-direction: column; /* Changed flex direction */
-  justify-content: space-between; /* Changed alignment */
-  height: 100%; /* Added height */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .article-body {
-  align-items: center;
   padding: 24px;
 }
 
 article h2 {
   text-align: center;
   margin: 0 0 18px 0;
-  font-size: 1.9rem;
+  font-size: 2rem;
   color: #28666e;
 }
 
-article h3{
-  color:#28666e;
+.article-content {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.call-to-action {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #28666e;
+  margin-top: 20px;
 }
 
 article p {
-  color: #555; /* Added color */
+  color: #555;
 }
 
 article a {
@@ -73,10 +93,9 @@ article a {
 }
 
 article a:hover {
-  color: #1a4a51; /* Added hover color */
+  color: #1a4a51;
 }
 
-/* Hidden text for screen readers */
 .sr-only:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
@@ -88,9 +107,49 @@ article a:hover {
   border: 0;
 }
 
-@media screen and (min-width: 1024px) {
-  .article-content{
-    margin-left: 200px;
-  }
+/* WhatsApp Chat Button and Back to Top */
+.chat-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.whatsapp-chat a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.whatsapp-chat a:hover {
+  background-color: #1ebea5;
+}
+
+.back-to-top-btn {
+  margin-top: 10px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: #28666e;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-to-top-btn:hover {
+  background-color: #1a4a51;
+}
