@@ -1,4 +1,4 @@
-/* global styles */
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -82,7 +82,7 @@ body.no-scroll {
 /* Popup styles */
 .popup {
   width: 90%;
-  max-width: 400px;
+  max-width: 500px;
   background: #fff;
   border-radius: 6px;
   position: fixed;
@@ -90,7 +90,7 @@ body.no-scroll {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.1);
   text-align: center;
-  padding: 20px 30px;
+  padding: 20px 20px; /* Reduced padding vertically */
   color: #333;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
@@ -105,18 +105,45 @@ body.no-scroll {
 }
 
 .popup h3 {
-  margin-top: 10px;
+  margin-top: 1px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.popup p, .popup ul {
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.popup ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.popup ul li {
+  margin-bottom: 10px;
+}
+
+.popup label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.popup input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
 }
 
 .popup button {
   width: 100%;
-  margin-top: 10px;
-  padding: 10px 0;
+  margin-top: 20px;
+  padding: 12px 0;
   background: #007bff;
   color: #fff;
   border: 0;
   outline: none;
-  font-size: 18px;
+  font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -124,7 +151,7 @@ body.no-scroll {
 
 .popup button.btn-back {
   background: #a81c1c;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .popup button.btn-back:hover {
@@ -164,7 +191,26 @@ body.no-scroll {
     font-size: 1.5rem;
   }
 
-  .btn {
+  .btn-start {
     padding: 10px 20px;
+  }
+
+  .popup {
+    width: 90%;
+    max-width: 320px;
+    padding: 15px 10px; /* Reduced padding vertically for smaller screens */
+  }
+
+  .popup button {
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+
+  .popup h3 {
+    font-size: 1.2rem;
+  }
+
+  .popup p, .popup ul {
+    font-size: 0.9rem;
   }
 }
