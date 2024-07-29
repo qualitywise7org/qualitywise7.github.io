@@ -1,11 +1,9 @@
-// Get the authenticated user's ID
 let userId = null;
 let userData = {};
 let isPopupOpen = false;
 
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    // User is not logged in, show alert and redirect to Home page
     alert("Please log in to attempt an assessment");
     window.location.href = "/";
   }
@@ -41,17 +39,8 @@ function displayCards(assessments) {
   });
   divCont.innerHTML = content.join('');
 
-  // Add event listeners to the dynamically created buttons
   document.querySelectorAll('.btn-start').forEach(button => {
     button.addEventListener('click', (e) => openPopup(button.getAttribute('data-popup-id'), e.target.form));
-  });
-
-  document.querySelectorAll('.btn-back').forEach(button => {
-    button.addEventListener('click', () => closePopup());
-  });
-
-  document.querySelectorAll('.btn-submit').forEach(button => {
-    button.addEventListener('click', () => closePopup());
   });
 
   console.log(assessments);
@@ -68,10 +57,16 @@ function openPopup(popupId, form) {
   let quizCodeInput = popupTemplate.querySelector('input[name="quizcode"]');
   quizCodeInput.value = popupId;
 
+  let agreeCheckbox = popupTemplate.querySelector('#agree-checkbox');
   let submitButton = popupTemplate.querySelector('.btn-submit');
-  submitButton.setAttribute('data-popup-id', popupId);
-  submitButton.addEventListener('click', () => {
-    form.submit();
+
+  submitButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (agreeCheckbox.checked) {
+      form.submit();
+    } else {
+      alert("Please agree to all guidelines before starting the assessment.");
+    }
   });
 
   popupTemplate.querySelector('.btn-back').addEventListener('click', () => closePopup(popupTemplate));

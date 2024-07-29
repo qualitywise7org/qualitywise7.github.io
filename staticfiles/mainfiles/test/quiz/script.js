@@ -1,3 +1,11 @@
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        // User is not logged in, show alert and redirect to Home page
+        alert("Please log in to attempt an assessment");
+        window.location.href = "/";
+    }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const TIME_LIMIT = 30 * 60; // 30 minutes in seconds
 
@@ -8,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let timerInterval = null;
     let quizWindowFocus = true;
     let tabSwitchAlertPending = false;
+    let selectedAnswers = {}; // Store the selected answers
 
     const questionTitle = document.getElementById("question-title");
     const questionContainer = document.getElementById("question-container");
@@ -40,15 +49,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function startQuiz(assessmentKey) {
         console.log(`Starting quiz for subject: ${assessmentKey}`);
-        currentSubject = await fetchQuestions(assessmentKey);
-        if (!currentSubject) {
+        const assessmentData = await fetchQuestions(assessmentKey);
+        if (!assessmentData) {
             console.error("Failed to load subject data.");
             alert("Failed to load quiz data. Please try again.");
             return;
         }
+        currentSubject = assessmentData;
+        if (quizTitleElement) {
+            quizTitleElement.textContent = assessmentData.title; 
+        }
         currentQuestionIndex = 0;
         score = 0;
         timeLeft = TIME_LIMIT;
+        selectedAnswers = {}; // Reset selected answers
         displayQuiz();
         startTimer();
         preventCheating();
@@ -81,7 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     (answer, index) => `
                     <li>
                         <label>
-                            <input type="radio" name="answer" value="${index}">
+                            <input type="radio" name="answer" value="${index}" ${
+                                selectedAnswers[currentQuestionIndex] === index ? 'checked' : ''
+                            }>
                             ${answer}
                         </label>
                     </li>
@@ -94,20 +110,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function nextQuestion() {
-        const selectedAnswer = document.querySelector(
-            'input[name="answer"]:checked'
-        );
+        const selectedAnswer = document.querySelector('input[name="answer"]:checked');
         if (!selectedAnswer) {
             alert("Please select an answer.");
             return;
         }
 
         const answerIndex = parseInt(selectedAnswer.value, 10);
+        selectedAnswers[currentQuestionIndex] = answerIndex;
 
-        if (
-            answerIndex ===
-            currentSubject.questions[currentQuestionIndex].correctAnswer
-        ) {
+        if (answerIndex === currentSubject.questions[currentQuestionIndex].correctAnswer) {
             score++;
         }
 
@@ -138,9 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         stopTimer();
 
-        const percentage = Math.round(
-            (score / currentSubject.questions.length) * 100
-        );
+        const percentage = Math.round((score / currentSubject.questions.length) * 100);
         if (scoreDisplay) scoreDisplay.textContent = score;
         if (percentageDisplay) percentageDisplay.textContent = `${percentage}`;
 
@@ -208,16 +218,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (timerDisplay) {
             const minutes = Math.floor(timeLeft / 60);
             const seconds = timeLeft % 60;
-            timerDisplay.textContent = `${minutes}:${
-                seconds < 10 ? "0" : ""
-            }${seconds}`;
+            timerDisplay.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
         }
     }
 
     function preventCheating() {
-        // // Prevent right-click
-        // document.addEventListener('contextmenu', event => event.preventDefault());
-
         // Prevent text selection
         document.addEventListener('selectstart', event => event.preventDefault());
 
@@ -255,10 +260,5 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const assessmentKey = urlParams.get("quizcode");
 
-    // Set the quiz title from the URL parameter or another source
-    if (quizTitleElement) {
-        quizTitleElement.textContent = assessmentKey; 
-    }
-    
     startQuiz(assessmentKey);
 });
