@@ -214,3 +214,28 @@ body.no-scroll {
     font-size: 0.9rem;
   }
 }
+
+/* Additional adjustments for very small screens */
+@media (max-width: 400px) {
+  .assessment-title {
+    font-size: 1.2rem;
+  }
+
+  .btn-start {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .popup button {
+    padding: 8px 0;
+    font-size: 0.8rem;
+  }
+
+  .popup h3 {
+    font-size: 1rem;
+  }
+
+  .popup p, .popup ul {
+    font-size: 0.8rem;
+  }
+}
