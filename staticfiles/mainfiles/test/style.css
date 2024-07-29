@@ -25,7 +25,7 @@ body.no-scroll {
 .content {
   max-width: 1200px;
   margin: 0 auto;
-  width: 100vw; /* Full width of the viewport */
+  width: 100%; /* Full width of the container */
   height: auto;
 }
 
@@ -184,7 +184,7 @@ body.no-scroll {
   }
 
   .assessment-box {
-    padding: 20px;
+    padding: 15px; /* Reduced padding for smaller screens */
   }
 
   .assessment-title {
