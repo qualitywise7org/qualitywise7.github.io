@@ -40,6 +40,55 @@ async function fetchFromLeadCollection() {
   }
 }
 
+function calculateCompletion(userData) {
+  let completion = {
+    about: 0,
+    education: 0,
+    experience: 0,
+    skills: 0,
+  };
+
+  // About Section Completion
+  const aboutFields = ["firstName", "middleName", "lastName", "gender", "category", "address", "phoneNo", "linkedin", "github"];
+  let filledAboutFields = aboutFields.filter(field => userData.about?.[field]).length;
+  completion.about = (filledAboutFields / aboutFields.length) * 100;
+
+  // Education Section Completion
+  if (userData.education?.length) {
+    let eduCount = userData.education.length;
+    let filledEducation = userData.education.filter(edu => edu.school && edu.college && edu.degree && edu.start_date && edu.graduation_date && edu.city && edu.percentage).length;
+    completion.education = (filledEducation / eduCount) * 100;
+  }
+
+  // Experience Section Completion
+  if (userData.experience?.length) {
+    let expCount = userData.experience.length;
+    let filledExperience = userData.experience.filter(exp => exp.job_title && exp.company && exp.start_date && exp.end_date && exp.city && exp.description).length;
+    completion.experience = (filledExperience / expCount) * 100;
+  }
+
+  // Skills Section Completion
+  if (userData.skills?.length) {
+    completion.skills = 100;
+  }
+
+  return completion;
+}
+
+function updateProgressBars(completion) {
+  document.getElementById('about-progress').style.width = `${completion.about}%`;
+  document.getElementById('about-progress').innerText = `${Math.round(completion.about)}%`;
+
+  document.getElementById('education-progress').style.width = `${completion.education}%`;
+  document.getElementById('education-progress').innerText = `${Math.round(completion.education)}%`;
+
+  document.getElementById('experience-progress').style.width = `${completion.experience}%`;
+  document.getElementById('experience-progress').innerText = `${Math.round(completion.experience)}%`;
+
+  document.getElementById('skills-progress').style.width = `${completion.skills}%`;
+  document.getElementById('skills-progress').innerText = `${Math.round(completion.skills)}%`;
+}
+
 function populateForm(userData) {
   $("#firstname").val(userData.about?.firstName || "");
   $("#middlename").val(userData.about?.middleName || "");
@@ -51,9 +100,7 @@ function populateForm(userData) {
   $("#phoneno").val(userData.about?.phoneNo || "");
   $("#linkedin").val(userData.about?.linkedin || "");
   $("#github").val(userData.about?.github || "");
-  imageUrl =
-    userData.about?.image ||
-    "https://www.pngall.com/wp-content/uploads/5/Profile.png";
+  imageUrl = userData.about?.image || "https://www.pngall.com/wp-content/uploads/5/Profile.png";
   cvUrl = userData.about?.cv || "";
 
   const profileImage = document.getElementById("show_image");
@@ -126,6 +173,10 @@ function populateForm(userData) {
       }
     });
 
+  // Calculate and update completion status
+  const completion = calculateCompletion(userData);
+  updateProgressBars(completion);
+  
   Toastify({
     text: "Fetching Details",
     duration: 3000,
