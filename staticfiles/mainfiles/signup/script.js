@@ -101,7 +101,7 @@ googleSignUp.addEventListener("click", async () => {
         // Check if the email is already registered
         const userExists = await checkIfUserExists(user.email);
         if (userExists) {
-            alert("User already registered. Redirecting to login page.");
+            alert("This email is already registered with us. Signing in you.");
             window.location.href = "/login";
             return;
         }
