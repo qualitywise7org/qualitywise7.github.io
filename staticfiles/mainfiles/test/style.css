@@ -79,96 +79,6 @@ body.no-scroll {
   background-color: #0056b2;
 }
 
-/* Popup styles */
-.popup {
-  width: 90%;
-  max-width: 500px;
-  background: #fff;
-  border-radius: 6px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.1);
-  text-align: center;
-  padding: 20px 20px; /* Reduced padding vertically */
-  color: #333;
-  visibility: hidden;
-  transition: transform 0.4s, top 0.4s;
-  z-index: 1000;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.open-popup {
-  visibility: visible;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.popup h3 {
-  margin-top: 1px;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-}
-
-.popup p, .popup ul {
-  font-size: 1rem;
-  text-align: left;
-  margin-bottom: 15px;
-}
-
-.popup ul {
-  list-style: disc;
-  padding-left: 20px;
-}
-
-.popup ul li {
-  margin-bottom: 10px;
-}
-
-.popup label {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.popup input[type="checkbox"] {
-  transform: scale(1.2);
-  margin-right: 10px;
-}
-
-.popup button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 12px 0;
-  background: #007bff;
-  color: #fff;
-  border: 0;
-  outline: none;
-  font-size: 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-.popup button.btn-back {
-  background: #a81c1c;
-  margin-top: 10px;
-}
-
-.popup button.btn-back:hover {
-  background: #871515;
-}
-
-/* Overlay styles */
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  display: none;
-}
 
 /* Media query for tablets and smaller screens */
 @media (max-width: 992px) {
@@ -194,25 +104,6 @@ body.no-scroll {
   .btn-start {
     padding: 10px 20px;
   }
-
-  .popup {
-    width: 90%;
-    max-width: 320px;
-    padding: 15px 10px; /* Reduced padding vertically for smaller screens */
-  }
-
-  .popup button {
-    padding: 10px 0;
-    font-size: 0.9rem;
-  }
-
-  .popup h3 {
-    font-size: 1.2rem;
-  }
-
-  .popup p, .popup ul {
-    font-size: 0.9rem;
-  }
 }
 
 /* Additional adjustments for very small screens */
@@ -223,19 +114,6 @@ body.no-scroll {
 
   .btn-start {
     padding: 8px 16px;
-    font-size: 0.8rem;
-  }
-
-  .popup button {
-    padding: 8px 0;
-    font-size: 0.8rem;
-  }
-
-  .popup h3 {
-    font-size: 1rem;
-  }
-
-  .popup p, .popup ul {
     font-size: 0.8rem;
   }
 }
