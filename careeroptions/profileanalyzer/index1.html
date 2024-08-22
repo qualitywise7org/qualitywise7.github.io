@@ -54,14 +54,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/about/">About Us</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="/pricing/">Pricing</a>
-        </li> -->
-        <!--<li class="nav-item">
-          <a class="nav-link" href="/register/"
-            >Get Demo classes
-          </a>
-        </li>-->
         <li class="nav-item">
           <a class="nav-link" href="/apply/">Apply</a>
         </li>
@@ -87,6 +79,9 @@
           </li>
           <li>
             <a class="dropdown-item" href="/jobs_analysis/">Job Analysis</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
           </li>
         </ul>
       </li>
@@ -124,6 +119,9 @@
         <li class="nav-item login-btn">
           <a class="nav-link" id="login-button" href="/login">Login</a>
         </li>
+        <li class="nav-item signup-btn" id="signup-button">
+          <a class="nav-link" href="/signup">Sign up</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -160,7 +158,6 @@
   ></iframe
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
 
     <div class="container">
       <div style="max-width: 400px; margin: 0 auto; margin-top: -30px">
@@ -473,26 +470,28 @@
 
 <script type="module" src="/staticfiles/db/dbconfig.js"></script>
 <script type="module">
-  // Check if the user is signed in
-  window.auth.onAuthStateChanged((user) => {
+ // Check if the user is signed in
+ window.auth.onAuthStateChanged((user) => {
+      const signupButton = document.getElementById('signup-button');
+      
       if (user) {
-        localStorage.setItem("email", user.email);
-        document.getElementById("login-button").innerHTML = "Logout";
-        document.getElementById("user-mail").innerHTML = user.email;
-        document.getElementById("welcome-text").innerHTML = "Welcome";
+          localStorage.setItem("email", user.email);
+          document.getElementById("login-button").innerHTML = "Logout";
+          signupButton.style.display = "none"; // Hide the signup button directly
+          document.getElementById("user-mail").innerHTML = user.email;
+          document.getElementById("welcome-text").innerHTML = "Welcome";
       } else {
-        const login_button = document.getElementById("login-button");
-        login_button.addEventListener("click", () => {
-          const email = localStorage.getItem("email");
-          if (email) {
-            localStorage.clear();
-          }
-          location.location.href = "/login";
-        });
+          const loginButton = document.getElementById("login-button");
+          loginButton.addEventListener("click", () => {
+              const email = localStorage.getItem("email");
+              if (email) {
+                  localStorage.clear();
+              }
+              location.href = "/login"; // Corrected 'location.location.href' to 'location.href'
+          });
+          signupButton.style.display = "block"; // Show the signup button when user is not signed in
       }
   });
-
-
   document.getElementById("login-button").addEventListener("click", function() {
     const email = localStorage.getItem("email");
     if (email) {

@@ -1,104 +1,103 @@
+// Check if the user is already logged in by checking local storage
 const email = localStorage.getItem("email");
 if (email) {
   window.location.href = "/";
 }
+
+// Get the redirect URL from the query parameters, if any
 const urlParams = new URLSearchParams(window.location.search);
 const redirect_url = urlParams.get("redirect_url");
-const loginButton = document.getElementById("login-btn");
 
+// Get references to the login button and form
+const loginButton = document.getElementById("login-btn");
 const loginForm = document.getElementById("login-form");
 
+// Add an event listener to the login form to handle form submission
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
+  // Update login button state to indicate logging in process
+  loginButton.innerHTML = "Logging in...";
+  loginButton.disabled = true;
+
   try {
-    loginButton.innerHTML = "Logging in...";
-    loginButton.disabled = true;
     await loginUser(email, password);
   } catch (error) {
-    Toastify({
-      text: "Try again",
-      duration: 3000,
-      newWindow: true,
-      close: true,
-      gravity: "top",
-      position: "right",
-      stopOnFocus: true,
-      style: {
-        background: "linear-gradient(to right, #0d6efd, #586ba6)",
-        borderRadius: "10px",
-      },
-    }).showToast();
+    // Show error message if login fails
+    showToast("Try again");
   }
+
+  // Reset login button state
   loginButton.innerHTML = "Login";
   loginButton.disabled = false;
 });
-// changes done
+
+// Function to handle user login
 async function loginUser(email, password) {
   try {
-    const userCredential = await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
+    // Check if the user's email is verified
     if (user.emailVerified) {
+      // Store user information in local storage
       localStorage.setItem("uid", user.uid);
       localStorage.setItem("email", user.email);
+
       const docRef = doc(db, "user_profile", email);
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
+        // Redirect to the account page if user profile exists
         localStorage.setItem("profile", true);
-        const redirectTo = redirect_url
-          ? redirect_url
-          : docSnap.data().about?.cv
-          ? "/myaccount/yourprofile"
-          : "/myaccount/cv_upload/";
-        window.location.href = redirectTo;
+        window.location.href = "/myaccount/";
       } else {
         // Fetch data from lead collection if user profile does not exist
         const leadDocRef = doc(db, "lead", email);
         const leadDocSnap = await getDoc(leadDocRef);
         let userData = { email, firstName: user.displayName };
 
+        // Merge lead data with user data if lead document exists
         if (leadDocSnap.exists()) {
           userData = { ...userData, ...leadDocSnap.data() };
         }
 
+        // Create user profile document with merged data
         await setDoc(docRef, userData);
         localStorage.setItem("profile", true);
-        const redirectTo = redirect_url
-          ? redirect_url
-          : "/myaccount/cv_upload/";
-        window.location.href = redirectTo;
+
+        // Redirect to either the redirect URL or CV upload page
+        window.location.href = redirect_url ? redirect_url : "/myaccount/cv_upload/";
       }
     } else {
+      // Alert user if email is not verified
       alert("Email is not verified");
       throw new Error("Email is not verified");
     }
   } catch (error) {
+    // Log error message and show error toast
     console.log("Error:", error.message);
-    Toastify({
-      text: error.message
-        .split(" ")[2]
-        .split("(")[1]
-        .split(")")[0]
-        .split("/")[1]
-        .replaceAll("-", " "),
-      duration: 3000,
-      newWindow: true,
-      close: true,
-      gravity: "top",
-      position: "right",
-      stopOnFocus: true,
-      style: {
-        background: "linear-gradient(to right, #0d6efd, #586ba6)",
-        borderRadius: "10px",
-      },
-    }).showToast();
+    showToast(
+      error.message.split(" ")[2].split("(")[1].split(")")[0].split("/")[1].replaceAll("-", " ")
+    );
   }
+}
+
+// Function to display toast notifications
+function showToast(message) {
+  Toastify({
+    text: message,
+    duration: 3000,
+    newWindow: true,
+    close: true,
+    gravity: "top",
+    position: "right",
+    stopOnFocus: true,
+    style: {
+      background: "linear-gradient(to right, #0d6efd, #586ba6)",
+      borderRadius: "10px",
+    },
+  }).showToast();
 }
