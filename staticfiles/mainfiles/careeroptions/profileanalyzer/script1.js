@@ -41,12 +41,15 @@ function displayJobProfiles(profiles, query = "") {
               ? `<p class="card-text">
                    <b>Lifestyle:</b>
                    <ul class="lifestyle-list">
-                     ${profile.life_style
-                       .map(
-                         (item) =>
-                           `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`
-                       )
-                       .join("")}
+                     <li><a href="${profile.life_style[0].url}" target="_blank">${profile.life_style[0].title}</a></li>
+                   </ul>
+                 </p>
+                 <p class="card-text">
+                   <b>Salary Range:</b> 
+                 </p>
+                 <p class="card-text">
+                   <ul class="lifestyle-list">
+                     <li><a href="${profile.life_style[1].url}" target="_blank">${profile.life_style[1].title}</a></li>
                    </ul>
                  </p>`
               : ""
