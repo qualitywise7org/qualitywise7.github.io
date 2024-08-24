@@ -36,7 +36,88 @@
         <br />
       </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4" id="jobProfiles"></div>
+
+    <!-- Start of Profile Data -->
+    <div class="row row-cols-1 row-cols-md-2 g-4" id="jobProfiles">
+      <% master_data.profile_masterdata.forEach(function(profile, index) { %>
+        <div class="col-md-6 col-sm-12">
+          <div class="card mb-3 h-100">
+            <div class="card-body">
+              <h6 class="text-center card-title fs-5 fw-bold h6 text-white py-2 mb-3">
+                <%= index + 1 %>. <%= profile.name %>
+              </h6>
+
+              <p class="card-text">
+                <b>Minimum Qualifications:</b> <%= profile.minimum_qualifications.join(', ') %>
+              </p>
+              
+              <p class="card-text">
+                <b>Minimum Skills Required:</b> <%= Array.isArray(profile.minimum_skills_required) ? profile.minimum_skills_required.join(', ') : profile.minimum_skills_required %>
+              </p>
+
+              <p class="card-text">
+                <b>Preferred Streams:</b> 
+                <% if (Array.isArray(profile.preferred_streams)) { %>
+                  <%= profile.preferred_streams.join(', ') %>
+                <% } else { %>
+                  <%= profile.preferred_streams || 'N/A' %> 
+                  <!-- Default to 'N/A' if profile.preferred_streams is null or undefined -->
+                <% } %>
+              </p>
+
+              <% if (Array.isArray(profile.entrance_exam) && profile.entrance_exam.length > 0) { %>
+                <p class="card-text">
+                  <b>Entrance Exam:</b> <%= profile.entrance_exam.join(', ') %>
+                </p>
+              <% } %>
+
+              <% if (profile.life_style && profile.life_style.length > 0) { %>
+                <p class="card-text">
+                  <b>Lifestyle:</b>
+                  <ul class="lifestyle-list">
+                    <li><a href="<%= profile.life_style[0].url %>" target="_blank"><%= profile.life_style[0].title %></a></li>
+                  </ul>
+                </p>
+                <p class="card-text">
+                  <b>Salary Range:</b> 
+                </p>
+                <p class="card-text">
+                  <ul class="lifestyle-list">
+                    <li><a href="<%= profile.life_style[1].url %>" target="_blank"><%= profile.life_style[1].title %></a></li>
+                  </ul>
+                </p>
+              <% } %>
+
+              <% if (Array.isArray(profile.colleges) && profile.colleges.length > 0) { %>
+                <p class="card-text">
+                  <b>Top Colleges:</b>
+                  <ul class="college-list">
+                    <% for (let i = 0; i < profile.colleges.length; i += 3) { %>
+                      <li>
+                        <%= profile.colleges.slice(i, i + 3).join(', ') %>
+                      </li>
+                    <% } %>
+                  </ul>
+                </p>
+              <% } %>
+                            
+              <% if (Array.isArray(profile.industries) && profile.industries.length > 0) { %>
+                <p class="card-text">
+                  <b>Industries:</b> <%= profile.industries.join(', ') %>
+                </p>
+              <% } %>
+
+              <p class="text-center fw-bold">
+                See Job Options?<br/>
+                <a href="http://jobsdoor360.in/myaccount/jobsforyou/?jobType=all&location=india&profile=<%= encodeURIComponent(profile.name) %>&page=1" class="btn btn-outline-success mt-2 mx-2 clickHereBtn">Click here</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+    <!-- End of Profile Data -->
+    
   </div>
   <br /><br />
   <%- include('../../../partials/footer.ejs') %>
