@@ -1,6 +1,6 @@
 
 
-    const category_masterdata = [
+const category_masterdata = [
   {
     "code": "general",
     "name": "General"
@@ -230,6 +230,13 @@
       "frontend_developer",
       "frontend",
       "react"
+    ],
+    "colleges": [
+      "mits",
+      "prestige"
+    ],
+    "industry": [
+      "cs_it_engineering"
     ]
   },
   {
@@ -262,6 +269,17 @@
       "aviation",
       "flight operations",
       "air traffic control"
+    ],
+    "colleges": [
+      "Indian Institute of Aeronautics (IIA), New Delhi",
+      "Indira Gandhi Institute of Aeronautics (IGIA), Chennai",
+      "Hindustan Aviation Academy, Bangalore"
+    ],
+    "industry": [
+      "Civil Aviation",
+      "Airlines",
+      "Airport Management",
+      "Government Aviation Agencies"
     ]
   },
   {
@@ -289,6 +307,19 @@
     ],
     "keywords": [
       "java,"
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IIIT Hyderabad",
+      "BITS Pilani",
+      "NIT Trichy"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "E-commerce",
+      "Startups"
     ]
   },
   {
@@ -316,6 +347,19 @@
     ],
     "keywords": [
       "python"
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IIIT Hyderabad",
+      "BITS Pilani",
+      "NIT Trichy"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "E-commerce",
+      "Startups"
     ]
   },
   {
@@ -340,6 +384,19 @@
         "title": "How Much Salary Should You Expect As A Fresher Developer",
         "url": "https://www.youtube.com/watch?v=EiAZVCBsx30&ab_channel=PandeyGuruji"
       }
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IIIT Hyderabad",
+      "BITS Pilani",
+      "NIT Trichy"
+    ],
+    "industry": [
+      "Information Technology",
+      "Database Management",
+      "Software Development",
+      "Startups"
     ]
   },
   {
@@ -364,6 +421,19 @@
         "title": "How Much Salary Should You Expect As A Fresher Developer",
         "url": "https://www.youtube.com/shorts/6A-Cl0GhX0o"
       }
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IIIT Hyderabad",
+      "BITS Pilani",
+      "NIT Trichy"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "E-commerce",
+      "Startups"
     ]
   },
   {
@@ -388,6 +458,19 @@
         "title": "How Much Salary Should You Expect As A Fresher Developer",
         "url": "https://www.youtube.com/shorts/qm5sJsy3dBE"
       }
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IIIT Hyderabad",
+      "BITS Pilani",
+      "NIT Trichy"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "E-commerce",
+      "Startups"
     ]
   },
   {
@@ -414,6 +497,20 @@
         "title": "How Much Salary Should You Expect As A Fresher Quality Assurance",
         "url": "https://www.youtube.com/shorts/f2Nu_lHMi8M"
       }
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IIIT Hyderabad",
+      "BITS Pilani",
+      "NIT Trichy",
+      "VIT Vellore",
+      "SRM University"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "Startups"
     ]
   },
   {
@@ -438,6 +535,20 @@
         "title": "How Much Salary Should You Expect As A Fresher Program manager",
         "url": "https://www.youtube.com/watch?v=39QgN5XB_JE&ab_channel=TheUrbanFight"
       }
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "XLRI Jamshedpur",
+      "SPJIMR Mumbai",
+      "FMS Delhi",
+      "MDI Gurgaon"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "Startups"
     ]
   },
   {
@@ -462,6 +573,20 @@
         "title": "How Much Salary Should You Expect As A Fresher Product manager",
         "url": "https://www.youtube.com/shorts/ycMqZTYhgvc"
       }
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "XLRI Jamshedpur",
+      "SPJIMR Mumbai",
+      "FMS Delhi",
+      "MDI Gurgaon"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "Startups"
     ]
   },
   {
@@ -484,6 +609,18 @@
         "title": "How Much Salary Should You Expect As A Librarian",
         "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
       }
+    ],
+    "colleges": [
+      "Delhi University",
+      "IGNOU",
+      "Jamia Millia Islamia",
+      "University of Calcutta",
+      "University of Mumbai"
+    ],
+    "industry": [
+      "Education",
+      "Public Libraries",
+      "Research Institutions"
     ]
   },
   {
@@ -505,6 +642,18 @@
         "title": "How Much Salary Should You Expect As A Fresher Fellow",
         "url": "https://www.youtube.com/watch?v=KSDToclQPss&ab_channel=HSESTUDYGUIDE"
       }
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IISc Bangalore",
+      "Jawaharlal Nehru University",
+      "Tata Institute of Fundamental Research"
+    ],
+    "industry": [
+      "Academia",
+      "Research Institutions",
+      "Think Tanks"
     ]
   },
   {
@@ -526,6 +675,18 @@
         "title": "How Much Salary Should You Expect As A Fresher nurse",
         "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
       }
+    ],
+    "colleges": [
+      "AIIMS Delhi",
+      "Christian Medical College Vellore",
+      "Armed Forces Medical College Pune",
+      "Tata Memorial Hospital Mumbai",
+      "Apollo College of Nursing"
+    ],
+    "industry": [
+      "Healthcare",
+      "Hospitals",
+      "Clinics"
     ]
   },
   {
@@ -550,6 +711,18 @@
         "title": "How Much Salary Should You Expect As A Medical Officer",
         "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
       }
+    ],
+    "colleges": [
+      "AIIMS Delhi",
+      "Christian Medical College Vellore",
+      "Armed Forces Medical College Pune",
+      "King George's Medical University Lucknow",
+      "JIPMER Puducherry"
+    ],
+    "industry": [
+      "Healthcare",
+      "Hospitals",
+      "Clinics"
     ]
   },
   {
@@ -571,6 +744,18 @@
         "title": "How Much Salary Should You Expect As A Pharmacist",
         "url": "https://www.youtube.com/shorts/ptR3zD14Wa0"
       }
+    ],
+    "colleges": [
+      "Jamia Hamdard University",
+      "Manipal College of Pharmaceutical Sciences",
+      "University Institute of Pharmaceutical Sciences Chandigarh",
+      "BITS Pilani",
+      "Poona College of Pharmacy"
+    ],
+    "industry": [
+      "Healthcare",
+      "Pharmacies",
+      "Pharmaceutical Companies"
     ]
   },
   {
@@ -596,6 +781,18 @@
         "title": "How Much Salary Should You Expect As A School Teacher",
         "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
       }
+    ],
+    "colleges": [
+      "Delhi University",
+      "Jamia Millia Islamia",
+      "Banaras Hindu University",
+      "Aligarh Muslim University",
+      "University of Calcutta"
+    ],
+    "industry": [
+      "Education",
+      "Schools",
+      "Coaching Centers"
     ]
   },
   {
@@ -614,6 +811,18 @@
         "title": "How Much Salary Should You Expect As A Assistant",
         "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
       }
+    ],
+    "colleges": [
+      "Delhi University",
+      "Mumbai University",
+      "Bangalore University",
+      "University of Hyderabad",
+      "University of Madras"
+    ],
+    "industry": [
+      "Corporate",
+      "Business Support",
+      "Administrative Services"
     ]
   },
   {
@@ -635,6 +844,18 @@
         "title": "How Much Salary Should You Expect As A Professor",
         "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
       }
+    ],
+    "colleges": [
+      "IITs",
+      "NITs",
+      "IISERs",
+      "Delhi University",
+      "Jawaharlal Nehru University"
+    ],
+    "industry": [
+      "Academia",
+      "Research Institutions",
+      "Think Tanks"
     ]
   },
   {
@@ -656,6 +877,14 @@
         "title": "How Much Salary Should You Expect As a helper",
         "url": "https://www.youtube.com/watch?v=KSDToclQPss"
       }
+    ],
+    "colleges": [
+      "NA"
+    ],
+    "industry": [
+      "Construction",
+      "Manufacturing",
+      "Retail"
     ]
   },
   {
@@ -687,7 +916,14 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "NA"
+    ],
+    "industry": [
+      "Government",
+      "Public Sector"
+    ]
   },
   {
     "code": "sports",
@@ -697,7 +933,20 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "National Institute of Sports, Patiala",
+      "Lal Bahadur Shastri Sports Complex, Delhi",
+      "Jawaharlal Nehru Stadium, Delhi",
+      "University of Mumbai - Sports Department",
+      "University of Delhi - Sports Department",
+      "Indian Institute of Sports Management, Mumbai"
+    ],
+    "industry": [
+      "Sports",
+      "Fitness",
+      "Recreation"
+    ]
   },
   {
     "code": "army",
@@ -707,7 +956,17 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "National Defence Academy (NDA)",
+      "Indian Military Academy (IMA)",
+      "Officers Training Academy (OTA)",
+      "Various State Universities"
+    ],
+    "industry": [
+      "Defense",
+      "Military"
+    ]
   },
   {
     "code": "junior_executive",
@@ -717,7 +976,15 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Various State Universities",
+      "Various Private Universities"
+    ],
+    "industry": [
+      "Corporate",
+      "Business Support"
+    ]
   },
   {
     "code": "iti",
@@ -727,7 +994,18 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Government ITI, Mumbai",
+      "Government ITI, Delhi",
+      "Government ITI, Bangalore",
+      "Government ITI, Chennai",
+      "Government ITI, Kolkata"
+    ],
+    "industry": [
+      "Technical",
+      "Vocational Training"
+    ]
   },
   {
     "code": "officer",
@@ -737,7 +1015,18 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Delhi University",
+      "Mumbai University",
+      "Bangalore University",
+      "University of Calcutta"
+    ],
+    "industry": [
+      "Administrative",
+      "Government",
+      "Corporate"
+    ]
   },
   {
     "code": "constable",
@@ -747,7 +1036,17 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "National Police Academy, Hyderabad",
+      "Sardar Vallabhbhai Patel National Police Academy, Hyderabad",
+      "State Police Training Academies"
+    ],
+    "industry": [
+      "Law Enforcement",
+      "Public Safety",
+      "Security"
+    ]
   },
   {
     "code": "sub_inspector",
@@ -757,7 +1056,17 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "National Police Academy, Hyderabad",
+      "Sardar Vallabhbhai Patel National Police Academy, Hyderabad",
+      "State Police Training Academies"
+    ],
+    "industry": [
+      "Law Enforcement",
+      "Public Safety",
+      "Security"
+    ]
   },
   {
     "code": "administrative",
@@ -767,7 +1076,17 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Delhi Administrative Service Academy",
+      "Administrative Staff College of India (ASCI), Hyderabad",
+      "State Administrative Training Institutes"
+    ],
+    "industry": [
+      "Government Administration",
+      "Public Sector",
+      "Management"
+    ]
   },
   {
     "code": "android_developer",
@@ -777,7 +1096,19 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Indian Institute of Technology (IIT), Bombay",
+      "National Institute of Technology (NIT), Trichy",
+      "Birla Institute of Technology and Science (BITS), Pilani",
+      "Vellore Institute of Technology (VIT), Vellore",
+      "Delhi Technological University (DTU), Delhi"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "Mobile App Development"
+    ]
   },
   {
     "code": "apprentice",
@@ -787,7 +1118,17 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "National Institute of Technical Teachers Training and Research (NITTTR), Chennai",
+      "Government Industrial Training Institutes (ITIs)",
+      "Private Industrial Training Institutes"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Engineering",
+      "Technical Training"
+    ]
   },
   {
     "code": "ui",
@@ -797,7 +1138,18 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "National Institute of Design (NID), Ahmedabad",
+      "Indian Institute of Technology (IIT), Bombay",
+      "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+      "MIT Institute of Design, Pune"
+    ],
+    "industry": [
+      "Information Technology",
+      "Design",
+      "User Experience"
+    ]
   },
   {
     "code": "ux",
@@ -807,7 +1159,18 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "National Institute of Design (NID), Ahmedabad",
+      "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+      "Indian Institute of Technology (IIT), Bombay",
+      "MIT Institute of Design, Pune"
+    ],
+    "industry": [
+      "Information Technology",
+      "Design",
+      "User Experience"
+    ]
   },
   {
     "code": "software_engineer",
@@ -821,6 +1184,18 @@
     "keywords": [
       "developer",
       "wordpress"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT), Delhi",
+      "National Institute of Technology (NIT), Warangal",
+      "Birla Institute of Technology and Science (BITS), Pilani",
+      "Vellore Institute of Technology (VIT), Vellore",
+      "Delhi Technological University (DTU), Delhi"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "Tech Startups"
     ]
   },
   {
@@ -836,6 +1211,18 @@
       "big_data",
       "big data",
       "data scientist"
+    ],
+    "colleges": [
+      "Indian Statistical Institute (ISI), Kolkata",
+      "Indian Institute of Technology (IIT), Bombay",
+      "University of Hyderabad",
+      "Delhi University - Department of Computer Science",
+      "Vellore Institute of Technology (VIT), Vellore"
+    ],
+    "industry": [
+      "Data Science",
+      "Analytics",
+      "Big Data"
     ]
   },
   {
@@ -846,7 +1233,18 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Indian Institute of Technology (IIT), Kanpur",
+      "National Institute of Technology (NIT), Rourkela",
+      "Institute of Technical Education and Research (ITER), Bhubaneswar",
+      "Vellore Institute of Technology (VIT), Vellore"
+    ],
+    "industry": [
+      "Information Technology",
+      "Computer Hardware",
+      "Electronics"
+    ]
   },
   {
     "code": "consultant",
@@ -856,7 +1254,18 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Indian Institute of Management (IIM), Ahmedabad",
+      "Indian Institute of Management (IIM), Bangalore",
+      "Indian School of Business (ISB), Hyderabad",
+      "Xavier Labour Relations Institute (XLRI), Jamshedpur"
+    ],
+    "industry": [
+      "Consulting",
+      "Management",
+      "Business Strategy"
+    ]
   },
   {
     "code": "data_analytics",
@@ -866,7 +1275,18 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Indian Institute of Management (IIM), Bangalore",
+      "Indian School of Business (ISB), Hyderabad",
+      "Delhi University - Department of Computer Science",
+      "Vellore Institute of Technology (VIT), Vellore"
+    ],
+    "industry": [
+      "Data Analytics",
+      "Business Intelligence",
+      "Information Technology"
+    ]
   },
   {
     "code": "english_literature",
@@ -876,7 +1296,19 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "University of Delhi - Department of English",
+      "Jawaharlal Nehru University (JNU), Delhi",
+      "University of Calcutta",
+      "St. Xavier's College, Mumbai",
+      "Madras University"
+    ],
+    "industry": [
+      "Education",
+      "Publishing",
+      "Media"
+    ]
   },
   {
     "code": "research",
@@ -886,7 +1318,18 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Indian Institute of Science (IISc), Bangalore",
+      "Jawaharlal Nehru University (JNU), Delhi",
+      "Indian Statistical Institute (ISI), Kolkata",
+      "University of Delhi - Research Programs"
+    ],
+    "industry": [
+      "Academic Research",
+      "Scientific Research",
+      "Technology Research"
+    ]
   },
   {
     "code": "receptionist",
@@ -896,7 +1339,18 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Aptech Learning",
+      "NIIT",
+      "ITIs offering Office Management Courses",
+      "Various Private Institutes offering Receptionist Training"
+    ],
+    "industry": [
+      "Administration",
+      "Customer Service",
+      "Corporate Office"
+    ]
   },
   {
     "code": "coordinator",
@@ -906,7 +1360,21 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
+    "life_style": [],
+    "colleges": [
+      "Indian Institute of Management (IIM)",
+      "Indian School of Business (ISB)",
+      "Xavier School of Management (XLRI)",
+      "Symbiosis Institute of Business Management (SIBM)",
+      "Narsee Monjee Institute of Management Studies (NMIMS)"
+    ],
+    "industries": [
+      "Healthcare",
+      "Education",
+      "Corporate",
+      "Non-Profit",
+      "Government"
+    ]
   },
   {
     "code": "voice_accent",
@@ -916,108 +1384,20 @@
     "preferred_streams": [
       "any"
     ],
-    "life_style": []
-  },
-  {
-    "code": "data_scientist",
-    "name": "Data Scientist",
-    "minimum_skills_required": "Data Analysis, Machine Learning, Statistical Modeling, Programming (Python/R), Data Visualization",
-    "minimum_qualifications": [
-      "graduation in Computer Science, Statistics, Mathematics, or related field"
+    "life_style": [],
+    "colleges": [
+      "National School of Drama (NSD)",
+      "Film and Television Institute of India (FTII)",
+      "Indian Institute of Mass Communication (IIMC)",
+      "Symbiosis Institute of Media and Communication (SIMC)",
+      "Asian Academy of Film and Television (AAFT)"
     ],
-    "preferred_streams": [
-      "Computer Science",
-      "Statistics",
-      "Mathematics",
-      "Data Science"
-    ],
-    "entrance_exam": [
-      "interview",
-      "technical assessment"
-    ],
-    "life_style": [
-      {
-        "title": "A Day in the Life of a Data Scientist",
-        "url": ""
-      },
-      {
-        "title": "Career Paths and Salary Expectations for Data Scientists",
-        "url": ""
-      }
-    ],
-    "keywords": [
-      "data scientist",
-      "data analysis",
-      "machine learning",
-      "statistical modeling",
-      "data visualization"
-    ]
-  },
-  {
-    "code": "cybersecurity_specialist",
-    "name": "Cybersecurity Specialist",
-    "minimum_skills_required": "Network Security, Ethical Hacking, Incident Response",
-    "minimum_qualifications": [
-      "graduation in Computer Science or related field"
-    ],
-    "preferred_streams": [
-      "Computer Science",
-      "Information Technology",
-      "Cybersecurity"
-    ],
-    "entrance_exam": [
-      "interview",
-      "technical assessment"
-    ],
-    "life_style": [
-      {
-        "title": "A Day in the Life of a Cybersecurity Specialist",
-        "url": ""
-      },
-      {
-        "title": "Cybersecurity Career Paths and Salary Expectations",
-        "url": ""
-      }
-    ],
-    "keywords": [
-      "cybersecurity",
-      "network security",
-      "ethical hacking"
-    ]
-  },
-  {
-    "code": "it_project_manager",
-    "name": "IT Project Manager",
-    "minimum_skills_required": "Project Management, Leadership, Communication, Risk Management, Agile Methodologies",
-    "minimum_qualifications": [
-      "graduation in Computer Science, Information Technology, or related field",
-      "PMP or equivalent certification (preferred)"
-    ],
-    "preferred_streams": [
-      "Computer Science",
-      "Information Technology",
-      "Business Administration"
-    ],
-    "entrance_exam": [
-      "interview",
-      "project management assessment (if applicable)"
-    ],
-    "life_style": [
-      {
-        "title": "A Day in the Life of an IT Project Manager",
-        "url": ""
-      },
-      {
-        "title": "Salary Expectations for IT Project Managers",
-        "url": ""
-      }
-    ],
-    "keywords": [
-      "IT project manager",
-      "project management",
-      "agile methodologies",
-      "risk management",
-      "leadership"
+    "industries": [
+      "Entertainment",
+      "Corporate",
+      "Education",
+      "Customer Service",
+      "Public Relations"
     ]
   },
   {
@@ -1053,6 +1433,20 @@
       "machine learning",
       "statistical modeling",
       "data visualization"
+    ],
+    "colleges": [
+      "Indian Statistical Institute (ISI)",
+      "Indian Institute of Technology (IIT)",
+      "Indian Institute of Science (IISc)",
+      "Jawaharlal Nehru University (JNU)",
+      "University of Delhi"
+    ],
+    "industry": [
+      "Technology",
+      "Finance",
+      "Healthcare",
+      "E-commerce",
+      "Research and Development"
     ]
   },
   {
@@ -1085,6 +1479,18 @@
       "cybersecurity",
       "network security",
       "ethical hacking"
+    ],
+    "colleges": [
+      "IIT Delhi",
+      "IIT Mumbai",
+      "IIT Madras",
+      "BITS Pilani",
+      "IIIT Hyderabad"
+    ],
+    "industry": [
+      "Information Technology",
+      "Cybersecurity Firms",
+      "Government Agencies"
     ]
   },
   {
@@ -1120,6 +1526,156 @@
       "agile methodologies",
       "risk management",
       "leadership"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "XLRI Jamshedpur",
+      "SPJIMR Mumbai"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "Consulting"
+    ]
+  },
+  {
+    "code": "data_scientist",
+    "name": "Data Scientist",
+    "minimum_skills_required": "Data Analysis, Machine Learning, Statistical Modeling, Programming (Python/R), Data Visualization",
+    "minimum_qualifications": [
+      "graduation in Computer Science, Statistics, Mathematics, or related field"
+    ],
+    "preferred_streams": [
+      "Computer Science",
+      "Statistics",
+      "Mathematics",
+      "Data Science"
+    ],
+    "entrance_exam": [
+      "interview",
+      "technical assessment"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Data Scientist",
+        "url": ""
+      },
+      {
+        "title": "Career Paths and Salary Expectations for Data Scientists",
+        "url": ""
+      }
+    ],
+    "keywords": [
+      "data scientist",
+      "data analysis",
+      "machine learning",
+      "statistical modeling",
+      "data visualization"
+    ],
+    "colleges": [
+      "IIT Delhi",
+      "IIT Bombay",
+      "IIT Kharagpur",
+      "IISc Bangalore",
+      "BITS Pilani"
+    ],
+    "industry": [
+      "Information Technology",
+      "Finance",
+      "Healthcare"
+    ]
+  },
+  {
+    "code": "cybersecurity_specialist",
+    "name": "Cybersecurity Specialist",
+    "minimum_skills_required": "Network Security, Ethical Hacking, Incident Response",
+    "minimum_qualifications": [
+      "graduation in Computer Science or related field"
+    ],
+    "preferred_streams": [
+      "Computer Science",
+      "Information Technology",
+      "Cybersecurity"
+    ],
+    "entrance_exam": [
+      "interview",
+      "technical assessment"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Cybersecurity Specialist",
+        "url": ""
+      },
+      {
+        "title": "Cybersecurity Career Paths and Salary Expectations",
+        "url": ""
+      }
+    ],
+    "keywords": [
+      "cybersecurity",
+      "network security",
+      "ethical hacking"
+    ],
+    "colleges": [
+      "IIT Delhi",
+      "IIT Mumbai",
+      "IIT Madras",
+      "BITS Pilani",
+      "IIIT Hyderabad"
+    ],
+    "industry": [
+      "Information Technology",
+      "Cybersecurity Firms",
+      "Government Agencies"
+    ]
+  },
+  {
+    "code": "it_project_manager",
+    "name": "IT Project Manager",
+    "minimum_skills_required": "Project Management, Leadership, Communication, Risk Management, Agile Methodologies",
+    "minimum_qualifications": [
+      "graduation in Computer Science, Information Technology, or related field",
+      "PMP or equivalent certification (preferred)"
+    ],
+    "preferred_streams": [
+      "Computer Science",
+      "Information Technology",
+      "Business Administration"
+    ],
+    "entrance_exam": [
+      "interview",
+      "project management assessment (if applicable)"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of an IT Project Manager",
+        "url": ""
+      },
+      {
+        "title": "Salary Expectations for IT Project Managers",
+        "url": ""
+      }
+    ],
+    "keywords": [
+      "IT project manager",
+      "project management",
+      "agile methodologies",
+      "risk management",
+      "leadership"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "XLRI Jamshedpur",
+      "SPJIMR Mumbai"
+    ],
+    "industry": [
+      "Information Technology",
+      "Software Development",
+      "Consulting"
     ]
   },
   {
@@ -1155,6 +1711,18 @@
       "laboratory research",
       "clinical trials",
       "biomedical research"
+    ],
+    "colleges": [
+      "AIIMS Delhi",
+      "JIPMER Puducherry",
+      "Christian Medical College Vellore",
+      "Kasturba Medical College Manipal",
+      "Amrita Institute of Medical Sciences Kochi"
+    ],
+    "industry": [
+      "Pharmaceuticals",
+      "Biotechnology",
+      "Healthcare"
     ]
   },
   {
@@ -1188,6 +1756,18 @@
       "hospital management",
       "healthcare leadership",
       "health services management"
+    ],
+    "colleges": [
+      "AIIMS Delhi",
+      "Tata Institute of Social Sciences Mumbai",
+      "Symbiosis Institute of Health Sciences Pune",
+      "Manipal College of Health Professions",
+      "Apollo Institute of Hospital Administration Hyderabad"
+    ],
+    "industry": [
+      "Healthcare",
+      "Hospitals",
+      "Public Health Organizations"
     ]
   },
   {
@@ -1227,6 +1807,18 @@
       "medicine",
       "surgery",
       "patient care"
+    ],
+    "colleges": [
+      "AIIMS Delhi",
+      "Christian Medical College Vellore",
+      "JIPMER Puducherry",
+      "Armed Forces Medical College Pune",
+      "Maulana Azad Medical College Delhi"
+    ],
+    "industry": [
+      "Hospitals",
+      "Clinics",
+      "Research Institutes"
     ]
   },
   {
@@ -1261,6 +1853,18 @@
       "financial accounting",
       "taxation",
       "auditing"
+    ],
+    "colleges": [
+      "Shri Ram College of Commerce Delhi",
+      "Loyola College Chennai",
+      "St. Xavier's College Kolkata",
+      "Christ University Bangalore",
+      "Hindu College Delhi"
+    ],
+    "industry": [
+      "Finance",
+      "Accounting Firms",
+      "Corporate Sector"
     ]
   },
   {
@@ -1295,6 +1899,18 @@
       "financial modeling",
       "investment analysis",
       "data analysis"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "SPJIMR Mumbai",
+      "FMS Delhi"
+    ],
+    "industry": [
+      "Finance",
+      "Investment Banking",
+      "Consulting"
     ]
   },
   {
@@ -1329,6 +1945,18 @@
       "investment banking",
       "financial analysis",
       "risk management"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "ISB Hyderabad",
+      "SPJIMR Mumbai"
+    ],
+    "industry": [
+      "Investment Banking",
+      "Finance",
+      "Consulting"
     ]
   },
   {
@@ -1363,6 +1991,20 @@
       "actuarial science",
       "risk assessment",
       "mathematical modeling"
+    ],
+    "colleges": [
+      "IIT Kharagpur",
+      "University of Mumbai",
+      "Christ University",
+      "University of Kerala",
+      "Delhi University"
+    ],
+    "industry": [
+      "Insurance",
+      "Finance",
+      "Consulting",
+      "Government",
+      "Healthcare"
     ]
   },
   {
@@ -1397,6 +2039,20 @@
       "financial planning",
       "investment management",
       "wealth management"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "ISB Hyderabad",
+      "XLRI Jamshedpur",
+      "SPJIMR Mumbai"
+    ],
+    "industry": [
+      "Finance",
+      "Banking",
+      "Wealth Management",
+      "Insurance",
+      "Consulting"
     ]
   },
   {
@@ -1431,6 +2087,20 @@
       "education administration",
       "educational leadership",
       "school management"
+    ],
+    "colleges": [
+      "Tata Institute of Social Sciences",
+      "University of Delhi",
+      "Banaras Hindu University",
+      "University of Calcutta",
+      "Jamia Millia Islamia"
+    ],
+    "industry": [
+      "Education",
+      "School Management",
+      "Government",
+      "Nonprofit",
+      "Consulting"
     ]
   },
   {
@@ -1465,6 +2135,20 @@
       "education assessment",
       "curriculum development",
       "education consulting"
+    ],
+    "colleges": [
+      "Tata Institute of Social Sciences",
+      "Jamia Millia Islamia",
+      "University of Delhi",
+      "Banaras Hindu University",
+      "University of Calcutta"
+    ],
+    "industry": [
+      "Education",
+      "Consulting",
+      "Nonprofit",
+      "Government",
+      "Research"
     ]
   },
   {
@@ -1499,6 +2183,20 @@
       "instructional design",
       "educational technology",
       "content development"
+    ],
+    "colleges": [
+      "University of Delhi",
+      "Jamia Millia Islamia",
+      "Banaras Hindu University",
+      "Tata Institute of Social Sciences",
+      "University of Calcutta"
+    ],
+    "industry": [
+      "Education",
+      "Publishing",
+      "EdTech",
+      "Nonprofit",
+      "Consulting"
     ]
   },
   {
@@ -1533,6 +2231,20 @@
       "marketing strategy",
       "market analysis",
       "leadership"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "ISB Hyderabad",
+      "XLRI Jamshedpur"
+    ],
+    "industry": [
+      "Marketing",
+      "Advertising",
+      "Consulting",
+      "Retail",
+      "Tech"
     ]
   },
   {
@@ -1567,6 +2279,20 @@
       "advertising campaign management",
       "creativity",
       "client management"
+    ],
+    "colleges": [
+      "MICA Ahmedabad",
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "ISB Hyderabad",
+      "XLRI Jamshedpur"
+    ],
+    "industry": [
+      "Advertising",
+      "Marketing",
+      "Media",
+      "Tech",
+      "Retail"
     ]
   },
   {
@@ -1601,6 +2327,20 @@
       "data analysis",
       "report writing",
       "statistical analysis"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "ISB Hyderabad",
+      "XLRI Jamshedpur"
+    ],
+    "industry": [
+      "Marketing",
+      "Consulting",
+      "Tech",
+      "Retail",
+      "Finance"
     ]
   },
   {
@@ -1635,6 +2375,20 @@
       "social media marketing",
       "content creation",
       "analytics"
+    ],
+    "colleges": [
+      "MICA Ahmedabad",
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "ISB Hyderabad",
+      "XLRI Jamshedpur"
+    ],
+    "industry": [
+      "Marketing",
+      "Advertising",
+      "Tech",
+      "Media",
+      "Retail"
     ]
   },
   {
@@ -1669,6 +2423,20 @@
       "media relations",
       "communication strategy",
       "crisis management"
+    ],
+    "colleges": [
+      "MICA Ahmedabad",
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "ISB Hyderabad",
+      "XLRI Jamshedpur"
+    ],
+    "industry": [
+      "Public Relations",
+      "Media",
+      "Marketing",
+      "Tech",
+      "Consulting"
     ]
   },
   {
@@ -1702,6 +2470,20 @@
       "structural design",
       "construction management",
       "project planning"
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IIT Madras",
+      "NIT Trichy",
+      "BITS Pilani"
+    ],
+    "industry": [
+      "Construction",
+      "Infrastructure",
+      "Consulting",
+      "Government",
+      "Real Estate"
     ]
   },
   {
@@ -1735,6 +2517,20 @@
       "mechanical design",
       "thermodynamics",
       "CAD/CAM"
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IIT Madras",
+      "NIT Trichy",
+      "BITS Pilani"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Automotive",
+      "Aerospace",
+      "Energy",
+      "Consulting"
     ]
   },
   {
@@ -1768,6 +2564,20 @@
       "electrical circuit design",
       "power systems",
       "electronics"
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IIT Madras",
+      "NIT Trichy",
+      "BITS Pilani"
+    ],
+    "industry": [
+      "Electronics",
+      "Power Systems",
+      "Telecommunications",
+      "Consulting",
+      "Manufacturing"
     ]
   },
   {
@@ -1801,6 +2611,20 @@
       "aerodynamics",
       "aerospace systems",
       "flight mechanics"
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Kanpur",
+      "IIT Madras",
+      "NIT Trichy",
+      "BITS Pilani"
+    ],
+    "industry": [
+      "Aerospace",
+      "Defense",
+      "Manufacturing",
+      "Consulting",
+      "Government"
     ]
   },
   {
@@ -1834,6 +2658,20 @@
       "chemical process design",
       "reaction engineering",
       "process control"
+    ],
+    "colleges": [
+      "IIT Bombay",
+      "IIT Delhi",
+      "IIT Madras",
+      "NIT Trichy",
+      "BITS Pilani"
+    ],
+    "industry": [
+      "Chemical",
+      "Pharmaceuticals",
+      "Biotechnology",
+      "Consulting",
+      "Manufacturing"
     ]
   },
   {
@@ -1867,6 +2705,12 @@
       "data analysis",
       "requirement gathering",
       "business acumen"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "ISB Hyderabad"
     ]
   },
   {
@@ -1900,6 +2744,18 @@
       "team leadership",
       "process improvement",
       "strategic planning"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "XLRI Jamshedpur",
+      "SPJIMR Mumbai"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Supply Chain Management",
+      "Consulting"
     ]
   },
   {
@@ -1933,6 +2789,18 @@
       "employee relations",
       "recruitment",
       "conflict resolution"
+    ],
+    "colleges": [
+      "TISS Mumbai",
+      "XLRI Jamshedpur",
+      "MDI Gurgaon",
+      "Symbiosis Institute of Business Management",
+      "IIM Ranchi"
+    ],
+    "industry": [
+      "Corporate",
+      "Consulting",
+      "Healthcare"
     ]
   },
   {
@@ -1966,6 +2834,18 @@
       "logistics",
       "inventory management",
       "supplier relationship"
+    ],
+    "colleges": [
+      "IIM Bangalore",
+      "NITIE Mumbai",
+      "IIM Udaipur",
+      "SPJIMR Mumbai",
+      "Great Lakes Institute of Management"
+    ],
+    "industry": [
+      "Logistics",
+      "Manufacturing",
+      "Retail"
     ]
   },
   {
@@ -1999,6 +2879,18 @@
       "strategic planning",
       "market research",
       "client relationship management"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "FMS Delhi",
+      "ISB Hyderabad"
+    ],
+    "industry": [
+      "Consulting",
+      "Information Technology",
+      "Startups"
     ]
   },
   {
@@ -2032,6 +2924,18 @@
       "graphic design software",
       "typography",
       "visual communication"
+    ],
+    "colleges": [
+      "National Institute of Design (NID)",
+      "Srishti Institute of Art, Design and Technology",
+      "Symbiosis Institute of Design",
+      "MIT Institute of Design",
+      "Pearl Academy"
+    ],
+    "industry": [
+      "Advertising",
+      "Media",
+      "IT Services"
     ]
   },
   {
@@ -2065,6 +2969,18 @@
       "illustration software",
       "drawing skills",
       "conceptualization"
+    ],
+    "colleges": [
+      "National Institute of Design (NID)",
+      "Srishti Institute of Art, Design and Technology",
+      "Symbiosis Institute of Design",
+      "MIT Institute of Design",
+      "Pearl Academy"
+    ],
+    "industry": [
+      "Advertising",
+      "Publishing",
+      "Media"
     ]
   },
   {
@@ -2098,6 +3014,18 @@
       "animation software",
       "storyboarding",
       "motion graphics"
+    ],
+    "colleges": [
+      "National Institute of Design (NID)",
+      "Srishti Institute of Art, Design and Technology",
+      "Whistling Woods International",
+      "Maya Academy of Advanced Cinematics (MAAC)",
+      "Arena Animation"
+    ],
+    "industry": [
+      "Media",
+      "Entertainment",
+      "Gaming"
     ]
   },
   {
@@ -2131,6 +3059,18 @@
       "photography techniques",
       "editing software",
       "lighting"
+    ],
+    "colleges": [
+      "National Institute of Design (NID)",
+      "Delhi College of Photography",
+      "Jawaharlal Nehru Architecture and Fine Arts University",
+      "AJ Kidwai Mass Communication Research Centre",
+      "Symbiosis School of Photography"
+    ],
+    "industry": [
+      "Media",
+      "Advertising",
+      "Fashion"
     ]
   },
   {
@@ -2164,6 +3104,20 @@
       "creative direction",
       "visual design",
       "project management"
+    ],
+    "colleges": [
+      "National Institute of Design",
+      "Srishti Institute of Art, Design and Technology",
+      "Symbiosis Institute of Design",
+      "MIT Institute of Design",
+      "Pearl Academy"
+    ],
+    "industry": [
+      "Advertising",
+      "Fashion",
+      "Media",
+      "Entertainment",
+      "Publishing"
     ]
   },
   {
@@ -2197,6 +3151,20 @@
       "sales techniques",
       "negotiation",
       "customer relationship management"
+    ],
+    "colleges": [
+      "National Institute of Design",
+      "Srishti Institute of Art, Design and Technology",
+      "Symbiosis Institute of Design",
+      "MIT Institute of Design",
+      "Pearl Academy"
+    ],
+    "industry": [
+      "Advertising",
+      "Fashion",
+      "Media",
+      "Entertainment",
+      "Publishing"
     ]
   },
   {
@@ -2230,6 +3198,20 @@
       "sales management",
       "strategic planning",
       "team building"
+    ],
+    "colleges": [
+      "Indian Institute of Management (IIM)",
+      "XLRI - Xavier School of Management",
+      "SP Jain Institute of Management and Research",
+      "Symbiosis Institute of Business Management",
+      "Narsee Monjee Institute of Management Studies (NMIMS)"
+    ],
+    "industry": [
+      "Retail",
+      "Pharmaceuticals",
+      "Insurance",
+      "Technology",
+      "Automotive"
     ]
   },
   {
@@ -2263,6 +3245,20 @@
       "account management",
       "client relationship management",
       "sales strategy"
+    ],
+    "colleges": [
+      "Indian Institute of Management (IIM)",
+      "XLRI - Xavier School of Management",
+      "SP Jain Institute of Management and Research",
+      "Symbiosis Institute of Business Management",
+      "Narsee Monjee Institute of Management Studies (NMIMS)"
+    ],
+    "industry": [
+      "Retail",
+      "Pharmaceuticals",
+      "Technology",
+      "Automotive",
+      "Financial Services"
     ]
   },
   {
@@ -2296,6 +3292,20 @@
       "retail operations",
       "team management",
       "inventory control"
+    ],
+    "colleges": [
+      "Indian Institute of Management (IIM)",
+      "XLRI - Xavier School of Management",
+      "SP Jain Institute of Management and Research",
+      "Symbiosis Institute of Business Management",
+      "Narsee Monjee Institute of Management Studies (NMIMS)"
+    ],
+    "industry": [
+      "Retail",
+      "Consumer Goods",
+      "E-commerce",
+      "Pharmaceuticals",
+      "Technology"
     ]
   },
   {
@@ -2329,6 +3339,20 @@
       "technical sales",
       "product knowledge",
       "problem-solving"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT)",
+      "National Institute of Technology (NIT)",
+      "Birla Institute of Technology and Science (BITS)",
+      "Vellore Institute of Technology (VIT)",
+      "Manipal Institute of Technology (MIT)"
+    ],
+    "industry": [
+      "Information Technology",
+      "Engineering",
+      "Telecommunications",
+      "Automotive",
+      "Manufacturing"
     ]
   },
   {
@@ -2360,6 +3384,20 @@
       "legal knowledge",
       "analytical skills",
       "advocacy"
+    ],
+    "colleges": [
+      "National Law School of India University (NLSIU)",
+      "National Academy of Legal Studies and Research (NALSAR)",
+      "National Law University (NLU)",
+      "Jindal Global Law School",
+      "Symbiosis Law School"
+    ],
+    "industry": [
+      "Legal Services",
+      "Corporate Law",
+      "Litigation",
+      "Intellectual Property",
+      "Government"
     ]
   },
   {
@@ -2392,6 +3430,20 @@
       "legal research",
       "writing skills",
       "case management"
+    ],
+    "colleges": [
+      "National Law School of India University (NLSIU)",
+      "National Academy of Legal Studies and Research (NALSAR)",
+      "National Law University (NLU)",
+      "Jindal Global Law School",
+      "Symbiosis Law School"
+    ],
+    "industry": [
+      "Legal Services",
+      "Corporate Law",
+      "Litigation",
+      "Intellectual Property",
+      "Government"
     ]
   },
   {
@@ -2423,6 +3475,20 @@
       "administrative skills",
       "legal documentation",
       "organizational skills"
+    ],
+    "colleges": [
+      "University of Delhi",
+      "National Law School of India University",
+      "Symbiosis Law School",
+      "Jindal Global Law School",
+      "NALSAR University of Law"
+    ],
+    "industries": [
+      "Legal Services",
+      "Corporate Law",
+      "Government",
+      "Non-Profit Organizations",
+      "Education"
     ]
   },
   {
@@ -2453,6 +3519,20 @@
       "legal expertise",
       "decision making",
       "impartiality"
+    ],
+    "colleges": [
+      "Harvard Law School",
+      "Yale Law School",
+      "Stanford Law School",
+      "Columbia Law School",
+      "University of Chicago Law School"
+    ],
+    "industries": [
+      "Judiciary",
+      "Legal Services",
+      "Government",
+      "Education",
+      "Consulting"
     ]
   },
   {
@@ -2484,6 +3564,20 @@
       "legal expertise",
       "client advisory",
       "research skills"
+    ],
+    "colleges": [
+      "University of Oxford",
+      "University of Cambridge",
+      "London School of Economics",
+      "University College London",
+      "King's College London"
+    ],
+    "industries": [
+      "Legal Consulting",
+      "Corporate Law",
+      "Government",
+      "Non-Profit Organizations",
+      "Finance"
     ]
   },
   {
@@ -2517,6 +3611,20 @@
       "analytical skills",
       "problem-solving",
       "project management"
+    ],
+    "colleges": [
+      "University of Oxford",
+      "University of Cambridge",
+      "London School of Economics",
+      "University College London",
+      "King's College London"
+    ],
+    "industries": [
+      "Legal Consulting",
+      "Corporate Law",
+      "Government",
+      "Non-Profit Organizations",
+      "Finance"
     ]
   },
   {
@@ -2550,6 +3658,20 @@
       "strategic thinking",
       "market analysis",
       "business acumen"
+    ],
+    "colleges": [
+      "University of California, Berkeley",
+      "University of Michigan",
+      "University of Chicago",
+      "Columbia University",
+      "University of Cambridge"
+    ],
+    "industries": [
+      "Strategy Consulting",
+      "Business Development",
+      "Corporate Strategy",
+      "Financial Services",
+      "Technology"
     ]
   },
   {
@@ -2583,6 +3705,20 @@
       "it knowledge",
       "client communication",
       "project management"
+    ],
+    "colleges": [
+      "Indian Institute of Technology Bombay (IITB)",
+      "Indian Institute of Technology Delhi (IITD)",
+      "Indian Institute of Technology Kanpur (IITK)",
+      "Indian Institute of Technology Madras (IITM)",
+      "National Institute of Technology Trichy (NITT)"
+    ],
+    "industries": [
+      "Information Technology",
+      "Consulting",
+      "Finance",
+      "Healthcare",
+      "Telecommunications"
     ]
   },
   {
@@ -2616,6 +3752,20 @@
       "financial analysis",
       "investment knowledge",
       "risk management"
+    ],
+    "colleges": [
+      "Indian Institute of Management Ahmedabad (IIMA)",
+      "Indian Institute of Management Bangalore (IIMB)",
+      "Indian Institute of Management Calcutta (IIMC)",
+      "Indian School of Business (ISB)",
+      "Indian Institute of Management Lucknow (IIML)"
+    ],
+    "industries": [
+      "Finance",
+      "Investment Banking",
+      "Financial Planning",
+      "Consulting",
+      "Insurance"
     ]
   },
   {
@@ -2649,6 +3799,20 @@
       "hr knowledge",
       "employee relations",
       "consulting skills"
+    ],
+    "colleges": [
+      "Indian Institute of Management Ahmedabad (IIMA)",
+      "Indian Institute of Management Bangalore (IIMB)",
+      "Indian Institute of Management Calcutta (IIMC)",
+      "Indian Institute of Management Lucknow (IIML)",
+      "XLRI Jamshedpur"
+    ],
+    "industries": [
+      "Human Resources",
+      "Consulting",
+      "Corporate Strategy",
+      "Healthcare",
+      "Education"
     ]
   },
   {
@@ -2682,6 +3846,20 @@
       "biology knowledge",
       "research skills",
       "laboratory techniques"
+    ],
+    "colleges": [
+      "Indian Institute of Science (IISc), Bangalore",
+      "Jawaharlal Nehru University (JNU), New Delhi",
+      "University of Delhi, Delhi",
+      "Panjab University, Chandigarh",
+      "University of Hyderabad, Hyderabad"
+    ],
+    "industry": [
+      "Biotechnology",
+      "Pharmaceuticals",
+      "Healthcare",
+      "Environmental Science",
+      "Academia"
     ]
   },
   {
@@ -2715,6 +3893,20 @@
       "chemistry knowledge",
       "analytical skills",
       "data interpretation"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT), Bombay",
+      "University of Mumbai, Mumbai",
+      "Jawaharlal Nehru Technological University (JNTU), Hyderabad",
+      "Institute of Chemical Technology (ICT), Mumbai",
+      "Delhi University, Delhi"
+    ],
+    "industry": [
+      "Pharmaceuticals",
+      "Chemicals",
+      "Cosmetics",
+      "Agriculture",
+      "Academia"
     ]
   },
   {
@@ -2748,6 +3940,20 @@
       "physics knowledge",
       "mathematical skills",
       "experimentation"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT), Delhi",
+      "Indian Institute of Science (IISc), Bangalore",
+      "University of Hyderabad, Hyderabad",
+      "Jawaharlal Nehru University (JNU), New Delhi",
+      "Banaras Hindu University (BHU), Varanasi"
+    ],
+    "industry": [
+      "Academia",
+      "Research",
+      "Healthcare",
+      "Energy",
+      "Technology"
     ]
   },
   {
@@ -2781,6 +3987,20 @@
       "environmental knowledge",
       "fieldwork",
       "environmental regulations"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT), Kharagpur",
+      "Jawaharlal Nehru University (JNU), New Delhi",
+      "University of Delhi, Delhi",
+      "Panjab University, Chandigarh",
+      "University of Hyderabad, Hyderabad"
+    ],
+    "industry": [
+      "Environmental Consulting",
+      "Government",
+      "Non-Profits",
+      "Research",
+      "Academia"
     ]
   },
   {
@@ -2812,6 +4032,20 @@
       "research skills",
       "experiment design",
       "scientific writing"
+    ],
+    "colleges": [
+      "Indian Institute of Science (IISc), Bangalore",
+      "Jawaharlal Nehru University (JNU), New Delhi",
+      "University of Delhi, Delhi",
+      "Panjab University, Chandigarh",
+      "University of Hyderabad, Hyderabad"
+    ],
+    "industry": [
+      "Research",
+      "Academia",
+      "Government",
+      "Pharmaceuticals",
+      "Technology"
     ]
   },
   {
@@ -2845,6 +4079,20 @@
       "writing skills",
       "investigative skills",
       "news reporting"
+    ],
+    "colleges": [
+      "Indian Institute of Mass Communication (IIMC), New Delhi",
+      "Symbiosis Institute of Media and Communication (SIMC), Pune",
+      "Jamia Millia Islamia, New Delhi",
+      "University of Delhi, Delhi",
+      "Panjab University, Chandigarh"
+    ],
+    "industry": [
+      "Media",
+      "Publishing",
+      "Broadcasting",
+      "Online Media",
+      "Public Relations"
     ]
   },
   {
@@ -2878,6 +4126,20 @@
       "editing skills",
       "attention to detail",
       "communication skills"
+    ],
+    "colleges": [
+      "Delhi University, Delhi",
+      "Jawaharlal Nehru University (JNU), New Delhi",
+      "University of Mumbai, Mumbai",
+      "Panjab University, Chandigarh",
+      "Jamia Millia Islamia, New Delhi"
+    ],
+    "industry": [
+      "Publishing",
+      "Media",
+      "Digital Content",
+      "Advertising",
+      "Public Relations"
     ]
   },
   {
@@ -2911,6 +4173,20 @@
       "news gathering",
       "writing skills",
       "investigative skills"
+    ],
+    "colleges": [
+      "Indian Institute of Mass Communication (IIMC), New Delhi",
+      "Symbiosis Institute of Media and Communication (SIMC), Pune",
+      "Jamia Millia Islamia, New Delhi",
+      "University of Delhi, Delhi",
+      "Panjab University, Chandigarh"
+    ],
+    "industry": [
+      "Media",
+      "Publishing",
+      "Broadcasting",
+      "Online Media",
+      "Public Relations"
     ]
   },
   {
@@ -2944,6 +4220,20 @@
       "writing skills",
       "research skills",
       "creativity"
+    ],
+    "colleges": [
+      "Shivaji University",
+      "Jadavpur University",
+      "University of Hyderabad",
+      "Delhi University",
+      "Jawaharlal Nehru University"
+    ],
+    "industry": [
+      "Publishing",
+      "Media",
+      "Marketing",
+      "Education",
+      "Advertising"
     ]
   },
   {
@@ -2977,6 +4267,20 @@
       "presentation skills",
       "communication skills",
       "news reporting"
+    ],
+    "colleges": [
+      "St. Xavier's College",
+      "Symbiosis International University",
+      "Jamia Millia Islamia",
+      "Banaras Hindu University",
+      "University of Mumbai"
+    ],
+    "industry": [
+      "Broadcasting",
+      "Journalism",
+      "Media",
+      "News",
+      "Entertainment"
     ]
   },
   {
@@ -3010,6 +4314,20 @@
       "communication skills",
       "problem-solving",
       "empathy"
+    ],
+    "colleges": [
+      "Christ University",
+      "Loyola College",
+      "University of Calcutta",
+      "Mysore University",
+      "Osmania University"
+    ],
+    "industry": [
+      "Customer Service",
+      "Call Centers",
+      "Retail",
+      "Technology",
+      "Telecommunications"
     ]
   },
   {
@@ -3043,6 +4361,20 @@
       "leadership",
       "performance management",
       "communication skills"
+    ],
+    "colleges": [
+      "NMIMS",
+      "Jamia Millia Islamia",
+      "Amity University",
+      "Institute of Management Technology",
+      "Jindal Global Business School"
+    ],
+    "industry": [
+      "Call Centers",
+      "Customer Service",
+      "BPO",
+      "Telecommunications",
+      "Technology"
     ]
   },
   {
@@ -3076,6 +4408,20 @@
       "client relationship management",
       "account management",
       "problem-solving"
+    ],
+    "colleges": [
+      "Shiv Nadar University",
+      "Narsee Monjee Institute of Management Studies",
+      "XLRI Jamshedpur",
+      "Tata Institute of Social Sciences",
+      "Indian School of Business"
+    ],
+    "industry": [
+      "Customer Success",
+      "Business Development",
+      "Marketing",
+      "Sales",
+      "Account Management"
     ]
   },
   {
@@ -3109,6 +4455,20 @@
       "troubleshooting",
       "technical knowledge",
       "communication skills"
+    ],
+    "colleges": [
+      "VIT University",
+      "Manipal Institute of Technology",
+      "Bharati Vidyapeeth",
+      "University of Pune",
+      "Techno India University"
+    ],
+    "industry": [
+      "Information Technology",
+      "Technical Support",
+      "Telecommunications",
+      "Customer Service",
+      "Software"
     ]
   },
   {
@@ -3142,6 +4502,20 @@
       "strategy development",
       "analytical skills",
       "customer relationship management"
+    ],
+    "colleges": [
+      "Symbiosis International University",
+      "IIM Bangalore",
+      "SDA Bocconi Asia Center",
+      "SP Jain Institute of Management",
+      "Great Lakes Institute of Management"
+    ],
+    "industry": [
+      "Customer Experience",
+      "Marketing",
+      "Business Development",
+      "Customer Service",
+      "Consulting"
     ]
   },
   {
@@ -3175,6 +4549,21 @@
       "hospitality management",
       "customer service",
       "operations management"
+    ],
+    "colleges": [
+      "IHM Mumbai",
+      "IHM Delhi",
+      "IHM Bangalore",
+      "IHM Chennai",
+      "IHM Hyderabad",
+      "IHM Kolkata",
+      "IHM Ahmedabad",
+      "IHM Pusa"
+    ],
+    "industry": [
+      "Hospitality",
+      "Hotel Management",
+      "Tourism"
     ]
   },
   {
@@ -3208,6 +4597,19 @@
       "destination knowledge",
       "sales skills",
       "travel planning"
+    ],
+    "colleges": [
+      "IHM Mumbai",
+      "IHM Delhi",
+      "IHM Bangalore",
+      "IHM Chennai",
+      "IHM Hyderabad",
+      "IHM Kolkata"
+    ],
+    "industry": [
+      "Travel",
+      "Tourism",
+      "Customer Service"
     ]
   },
   {
@@ -3241,6 +4643,18 @@
       "event coordination",
       "creativity",
       "budgeting"
+    ],
+    "colleges": [
+      "IHM Mumbai",
+      "IHM Delhi",
+      "IHM Bangalore",
+      "IHM Chennai",
+      "IHM Hyderabad"
+    ],
+    "industry": [
+      "Event Management",
+      "Hospitality",
+      "Marketing"
     ]
   },
   {
@@ -3274,6 +4688,18 @@
       "destination knowledge",
       "communication skills",
       "tour management"
+    ],
+    "colleges": [
+      "IHM Mumbai",
+      "IHM Delhi",
+      "IHM Bangalore",
+      "IHM Chennai",
+      "IHM Hyderabad"
+    ],
+    "industry": [
+      "Tourism",
+      "Travel",
+      "Hospitality"
     ]
   },
   {
@@ -3307,6 +4733,19 @@
       "restaurant operations",
       "customer service",
       "inventory management"
+    ],
+    "colleges": [
+      "IHM Mumbai",
+      "IHM Delhi",
+      "IHM Bangalore",
+      "IHM Chennai",
+      "IHM Hyderabad",
+      "IHM Kolkata"
+    ],
+    "industry": [
+      "Hospitality",
+      "Restaurant Management",
+      "Food Service"
     ]
   },
   {
@@ -3340,6 +4779,18 @@
       "empathy",
       "communication skills",
       "advocacy"
+    ],
+    "colleges": [
+      "Delhi University",
+      "TISS Mumbai",
+      "Jamia Millia Islamia",
+      "MSW Delhi",
+      "Ranchi University"
+    ],
+    "industry": [
+      "Social Services",
+      "Community Health",
+      "Nonprofit"
     ]
   },
   {
@@ -3373,6 +4824,18 @@
       "listening skills",
       "counseling techniques",
       "confidentiality"
+    ],
+    "colleges": [
+      "Delhi University",
+      "TISS Mumbai",
+      "Jamia Millia Islamia",
+      "Amity University",
+      "Ranchi University"
+    ],
+    "industry": [
+      "Counseling",
+      "Mental Health",
+      "Education"
     ]
   },
   {
@@ -3406,6 +4869,17 @@
       "health education",
       "community outreach",
       "cultural competency"
+    ],
+    "colleges": [
+      "Delhi University",
+      "Jawaharlal Nehru University",
+      "TISS Mumbai",
+      "Institute of Public Health Bangalore"
+    ],
+    "industry": [
+      "Public Health",
+      "Community Services",
+      "Health Education"
     ]
   },
   {
@@ -3439,6 +4913,18 @@
       "communication skills",
       "advocacy",
       "problem-solving"
+    ],
+    "colleges": [
+      "Delhi University",
+      "TISS Mumbai",
+      "Jamia Millia Islamia",
+      "Amity University",
+      "Ranchi University"
+    ],
+    "industry": [
+      "Social Services",
+      "Mental Health",
+      "Community Health"
     ]
   },
   {
@@ -3472,6 +4958,21 @@
       "youth development",
       "mentoring",
       "conflict resolution"
+    ],
+    "colleges": [
+      "Tata Institute of Social Sciences (TISS)",
+      "Delhi University",
+      "Jadavpur University",
+      "University of Calcutta",
+      "Jamia Millia Islamia",
+      "Banaras Hindu University (BHU)",
+      "Ambedkar University Delhi",
+      "Rajiv Gandhi National Institute of Youth Development (RGNIYD)"
+    ],
+    "industry": [
+      "Social Work",
+      "Youth Development",
+      "Education"
     ]
   },
   {
@@ -3505,6 +5006,20 @@
       "government procedures",
       "administrative skills",
       "legal knowledge"
+    ],
+    "colleges": [
+      "Lal Bahadur Shastri National Academy of Administration (LBSNAA)",
+      "Jawaharlal Nehru University (JNU)",
+      "Delhi University",
+      "University of Mumbai",
+      "Jadavpur University",
+      "Bharathiar University",
+      "University of Hyderabad"
+    ],
+    "industry": [
+      "Public Administration",
+      "Government Services",
+      "Policy Analysis"
     ]
   },
   {
@@ -3538,6 +5053,20 @@
       "negotiation skills",
       "diplomatic etiquette",
       "cross-cultural communication"
+    ],
+    "colleges": [
+      "Jawaharlal Nehru University (JNU)",
+      "Delhi University",
+      "Jadavpur University",
+      "Jawaharlal Nehru University (JNU)",
+      "Tata Institute of Social Sciences (TISS)",
+      "University of Mumbai",
+      "University of Hyderabad"
+    ],
+    "industry": [
+      "Diplomacy",
+      "International Relations",
+      "Foreign Affairs"
     ]
   },
   {
@@ -3571,6 +5100,18 @@
       "policy analysis",
       "research skills",
       "critical thinking"
+    ],
+    "colleges": [
+      "Delhi School of Economics",
+      "Jawaharlal Nehru University (JNU)",
+      "University of Mumbai",
+      "Tata Institute of Social Sciences (TISS)",
+      "University of Calcutta"
+    ],
+    "industry": [
+      "Public Policy",
+      "Government",
+      "Research"
     ]
   },
   {
@@ -3604,6 +5145,18 @@
       "administrative leadership",
       "policy implementation",
       "decision making"
+    ],
+    "colleges": [
+      "Delhi University",
+      "Jawaharlal Nehru University (JNU)",
+      "University of Mumbai",
+      "Tata Institute of Social Sciences (TISS)",
+      "University of Hyderabad"
+    ],
+    "industry": [
+      "Public Administration",
+      "Government Services",
+      "Policy"
     ]
   },
   {
@@ -3637,6 +5190,18 @@
       "analytical skills",
       "information security",
       "report writing"
+    ],
+    "colleges": [
+      "Jawaharlal Nehru University (JNU)",
+      "Delhi University",
+      "University of Mumbai",
+      "Tata Institute of Social Sciences (TISS)",
+      "University of Hyderabad"
+    ],
+    "industry": [
+      "Intelligence",
+      "Security Services",
+      "Government"
     ]
   },
   {
@@ -3670,6 +5235,20 @@
       "sales skills",
       "negotiation skills",
       "market knowledge"
+    ],
+    "colleges": [
+      "Indian Institute of Real Estate Management (IIREM)",
+      "National Academy of Real Estate (NARE)",
+      "Institute of Real Estate Management (IREM)",
+      "Jamia Millia Islamia",
+      "Delhi University",
+      "University of Mumbai",
+      "Jadavpur University"
+    ],
+    "industry": [
+      "Real Estate",
+      "Property Management",
+      "Sales"
     ]
   },
   {
@@ -3703,6 +5282,18 @@
       "property management",
       "communication skills",
       "financial management"
+    ],
+    "colleges": [
+      "Delhi University",
+      "University of Mumbai",
+      "Pune University",
+      "Jawaharlal Nehru University",
+      "Amity University"
+    ],
+    "industry": [
+      "Real Estate",
+      "Property Management",
+      "Financial Services"
     ]
   },
   {
@@ -3736,6 +5327,18 @@
       "appraisal techniques",
       "market analysis",
       "legal knowledge"
+    ],
+    "colleges": [
+      "Symbiosis International University",
+      "Institute of Management Technology (IMT) Ghaziabad",
+      "Loyola College Chennai",
+      "Narsee Monjee Institute of Management Studies",
+      "Jain University"
+    ],
+    "industry": [
+      "Real Estate",
+      "Appraisal",
+      "Finance"
     ]
   },
   {
@@ -3769,6 +5372,18 @@
       "leasing procedures",
       "customer service",
       "market knowledge"
+    ],
+    "colleges": [
+      "University of Delhi",
+      "Jadavpur University",
+      "Banaras Hindu University",
+      "Hindu College",
+      "Madras University"
+    ],
+    "industry": [
+      "Real Estate",
+      "Customer Service",
+      "Sales"
     ]
   },
   {
@@ -3802,6 +5417,18 @@
       "development planning",
       "finance knowledge",
       "risk management"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT) Delhi",
+      "Indian Institute of Management (IIM) Ahmedabad",
+      "Birla Institute of Technology and Science (BITS) Pilani",
+      "Indian Institute of Technology (IIT) Bombay",
+      "Institute of Management Technology (IMT) Ghaziabad"
+    ],
+    "industry": [
+      "Real Estate",
+      "Urban Development",
+      "Finance"
     ]
   },
   {
@@ -3835,6 +5462,18 @@
       "production planning",
       "leadership",
       "problem-solving"
+    ],
+    "colleges": [
+      "National Institute of Industrial Engineering (NITIE)",
+      "Indian Institute of Technology (IIT) Madras",
+      "Indian Institute of Technology (IIT) Kharagpur",
+      "Punjab Engineering College (PEC) Chandigarh",
+      "Vellore Institute of Technology (VIT)"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Production",
+      "Engineering"
     ]
   },
   {
@@ -3868,6 +5507,18 @@
       "quality assurance",
       "analytical skills",
       "technical knowledge"
+    ],
+    "colleges": [
+      "Sardar Patel College of Engineering",
+      "Government College of Engineering Pune",
+      "Shivaji University",
+      "Maulana Azad National Institute of Technology",
+      "Amrita Vishwa Vidyapeetham"
+    ],
+    "industry": [
+      "Quality Control",
+      "Manufacturing",
+      "Engineering"
     ]
   },
   {
@@ -3901,6 +5552,18 @@
       "process optimization",
       "CAD/CAM",
       "project management"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT) Kanpur",
+      "Nirma University",
+      "Indian Institute of Technology (IIT) Ropar",
+      "National Institute of Technology (NIT) Warangal",
+      "Institute of Chemical Technology (ICT) Mumbai"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Engineering",
+      "Process Optimization"
     ]
   },
   {
@@ -3934,6 +5597,18 @@
       "operations management",
       "strategic planning",
       "budgeting"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT) Roorkee",
+      "National Institute of Technology (NIT) Suratkal",
+      "Indian Institute of Management (IIM) Bangalore",
+      "Indian Institute of Technology (IIT) Guwahati",
+      "Bharati Vidyapeeth College of Engineering"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Operations",
+      "Engineering"
     ]
   },
   {
@@ -3967,6 +5642,18 @@
       "supervisory skills",
       "team management",
       "problem-solving"
+    ],
+    "colleges": [
+      "Indian Institute of Management (IIM) Lucknow",
+      "Institute of Management Technology (IMT) Nagpur",
+      "National Institute of Industrial Engineering (NITIE)",
+      "Indian Institute of Technology (IIT) Hyderabad",
+      "International Institute of Information Technology (IIIT) Bangalore"
+    ],
+    "industry": [
+      "Operations",
+      "Management",
+      "Logistics"
     ]
   },
   {
@@ -4000,6 +5687,18 @@
       "project management",
       "communication skills",
       "budget management"
+    ],
+    "colleges": [
+      "University of Calcutta",
+      "Anna University",
+      "Sikkim Manipal University",
+      "Gujarat University",
+      "Manipal Academy of Higher Education"
+    ],
+    "industry": [
+      "Program Management",
+      "Administration",
+      "Event Planning"
     ]
   },
   {
@@ -4033,6 +5732,18 @@
       "fundraising strategies",
       "relationship building",
       "event planning"
+    ],
+    "colleges": [
+      "Tata Institute of Social Sciences (TISS)",
+      "Indian Institute of Management (IIM) Indore",
+      "Jawaharlal Nehru University",
+      "University of Hyderabad",
+      "Delhi University"
+    ],
+    "industry": [
+      "Nonprofit",
+      "Public Relations",
+      "Marketing"
     ]
   },
   {
@@ -4066,6 +5777,18 @@
       "volunteer management",
       "communication skills",
       "community engagement"
+    ],
+    "colleges": [
+      "University of Delhi",
+      "Jamia Millia Islamia",
+      "Hamdard University",
+      "Jadavpur University",
+      "Banaras Hindu University"
+    ],
+    "industry": [
+      "Nonprofit",
+      "Event Planning",
+      "Administration"
     ]
   },
   {
@@ -4099,6 +5822,18 @@
       "research skills",
       "proposal development",
       "communication skills"
+    ],
+    "colleges": [
+      "Aligarh Muslim University",
+      "Panjab University",
+      "Jamia Millia Islamia",
+      "University of Lucknow",
+      "Bangalore University"
+    ],
+    "industry": [
+      "Nonprofit",
+      "Writing",
+      "Research"
     ]
   },
   {
@@ -4132,6 +5867,18 @@
       "strategic planning",
       "financial management",
       "program development"
+    ],
+    "colleges": [
+      "Tata Institute of Social Sciences (TISS)",
+      "Indian Institute of Management (IIM) Kozhikode",
+      "Jawaharlal Nehru University",
+      "University of Pune",
+      "Delhi University"
+    ],
+    "industry": [
+      "Nonprofit",
+      "Public Administration",
+      "Management"
     ]
   },
   {
@@ -4165,6 +5912,18 @@
       "electrical wiring",
       "troubleshooting",
       "safety practices"
+    ],
+    "colleges": [
+      "NIT Trichy",
+      "NIT Surathkal",
+      "VIT Vellore",
+      "BITS Pilani",
+      "SRM Institute of Science and Technology"
+    ],
+    "industry": [
+      "Electrical Services",
+      "Construction",
+      "Manufacturing"
     ]
   },
   {
@@ -4198,6 +5957,18 @@
       "pipefitting",
       "plumbing systems installation",
       "troubleshooting"
+    ],
+    "colleges": [
+      "PES University",
+      "Manipal Institute of Technology",
+      "Amity University",
+      "Shiv Nadar University",
+      "LPU Jalandhar"
+    ],
+    "industry": [
+      "Plumbing Services",
+      "Construction",
+      "Maintenance"
     ]
   },
   {
@@ -4232,6 +6003,18 @@
       "welding techniques",
       "metal fabrication",
       "safety practices"
+    ],
+    "colleges": [
+      "Government Polytechnic College",
+      "ITM University",
+      "JSS Academy of Technical Education",
+      "Dr. APJ Abdul Kalam Technical University",
+      "Kalinga Institute of Industrial Technology"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Construction",
+      "Automotive"
     ]
   },
   {
@@ -4266,6 +6049,18 @@
       "bricklaying",
       "masonry techniques",
       "concrete work"
+    ],
+    "colleges": [
+      "Builders Training Institute",
+      "Government Polytechnic",
+      "Shri Ram College of Engineering",
+      "Arya College of Engineering",
+      "Bhilai Institute of Technology"
+    ],
+    "industry": [
+      "Construction",
+      "Real Estate",
+      "Renovation"
     ]
   },
   {
@@ -4298,6 +6093,18 @@
       "manual dexterity",
       "attention to detail",
       "teamwork"
+    ],
+    "colleges": [
+      "Govt. Polytechnic College",
+      "BMS College of Engineering",
+      "NIT Warangal",
+      "BIT Mesra",
+      "Delhi Technical University"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Assembly",
+      "Production"
     ]
   },
   {
@@ -4331,6 +6138,18 @@
       "equipment maintenance",
       "troubleshooting",
       "attention to detail"
+    ],
+    "colleges": [
+      "Kumaraguru College of Technology",
+      "M.S. Ramaiah Institute of Technology",
+      "Sree Vidyanikethan Engineering College",
+      "R. V. College of Engineering",
+      "Sankara College of Engineering"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Heavy Machinery",
+      "Automotive"
     ]
   },
   {
@@ -4364,6 +6183,18 @@
       "quality assurance",
       "analytical skills",
       "technical knowledge"
+    ],
+    "colleges": [
+      "Indian Statistical Institute",
+      "University of Engineering and Management",
+      "Narula Institute of Technology",
+      "Shivaji College",
+      "Bhilai Institute of Technology"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Quality Assurance",
+      "Engineering"
     ]
   },
   {
@@ -4397,6 +6228,18 @@
       "safety procedures",
       "load handling",
       "warehouse management"
+    ],
+    "colleges": [
+      "Indian Institute of Logistics",
+      "Aligarh Muslim University",
+      "National Institute of Technical Teachers Training and Research",
+      "Mumbai University",
+      "Jadavpur University"
+    ],
+    "industry": [
+      "Logistics",
+      "Warehousing",
+      "Transportation"
     ]
   },
   {
@@ -4429,6 +6272,18 @@
       "manual labor",
       "attention to detail",
       "teamwork"
+    ],
+    "colleges": [
+      "NIIT University",
+      "Shiv Nadar University",
+      "Amity University",
+      "LPU Punjab",
+      "Jawaharlal Nehru Technological University"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Production",
+      "Logistics"
     ]
   },
   {
@@ -4462,6 +6317,18 @@
       "driving skills",
       "route navigation",
       "safety compliance"
+    ],
+    "colleges": [
+      "Indira Gandhi National Open University",
+      "Kalinga Institute of Industrial Technology",
+      "VIT University",
+      "Nirma University",
+      "Bharati Vidyapeeth"
+    ],
+    "industry": [
+      "Transportation",
+      "Logistics",
+      "Commercial Driving"
     ]
   },
   {
@@ -4495,6 +6362,18 @@
       "driving skills",
       "route navigation",
       "customer service"
+    ],
+    "colleges": [
+      "Indian Institute of Logistics",
+      "Aligarh Muslim University",
+      "National Institute of Technical Teachers Training and Research",
+      "Mumbai University",
+      "Jadavpur University"
+    ],
+    "industry": [
+      "Delivery Services",
+      "Logistics",
+      "Transportation"
     ]
   },
   {
@@ -4528,6 +6407,18 @@
       "inventory management",
       "forklift operation",
       "teamwork"
+    ],
+    "colleges": [
+      "Indian Institute of Logistics",
+      "Aligarh Muslim University",
+      "National Institute of Technical Teachers Training and Research",
+      "Mumbai University",
+      "Jadavpur University"
+    ],
+    "industry": [
+      "Warehousing",
+      "Logistics",
+      "Material Handling"
     ]
   },
   {
@@ -4561,6 +6452,18 @@
       "loading and unloading",
       "material handling",
       "inventory management"
+    ],
+    "colleges": [
+      "Indian Institute of Logistics",
+      "Aligarh Muslim University",
+      "National Institute of Technical Teachers Training and Research",
+      "Mumbai University",
+      "Jadavpur University"
+    ],
+    "industry": [
+      "Freight Handling",
+      "Logistics",
+      "Material Handling"
     ]
   },
   {
@@ -4594,6 +6497,18 @@
       "inventory management",
       "equipment operation",
       "attention to detail"
+    ],
+    "colleges": [
+      "Indian Institute of Logistics",
+      "Aligarh Muslim University",
+      "National Institute of Technical Teachers Training and Research",
+      "Mumbai University",
+      "Jadavpur University"
+    ],
+    "industry": [
+      "Material Handling",
+      "Logistics",
+      "Inventory Management"
     ]
   },
   {
@@ -4627,6 +6542,18 @@
       "landscaping techniques",
       "plant care",
       "hardscaping"
+    ],
+    "colleges": [
+      "Acharya N.G. Ranga Agricultural University",
+      "Tamil Nadu Agricultural University",
+      "Banaras Hindu University",
+      "University of Agricultural Sciences, Bangalore",
+      "Punjab Agricultural University"
+    ],
+    "industry": [
+      "Landscaping",
+      "Horticulture",
+      "Environmental Science"
     ]
   },
   {
@@ -4660,6 +6587,18 @@
       "plant care",
       "pruning",
       "soil management"
+    ],
+    "colleges": [
+      "Acharya N.G. Ranga Agricultural University",
+      "Tamil Nadu Agricultural University",
+      "Banaras Hindu University",
+      "University of Agricultural Sciences, Bangalore",
+      "Punjab Agricultural University"
+    ],
+    "industry": [
+      "Horticulture",
+      "Gardening",
+      "Botany"
     ]
   },
   {
@@ -4693,6 +6632,20 @@
       "lawn care",
       "landscape maintenance",
       "equipment operation"
+    ],
+    "colleges": [
+      "Indian Institute of Technology Kanpur (IIT Kanpur)",
+      "SRM Institute of Science and Technology, Chennai",
+      "University of Agricultural Sciences, Dharwad",
+      "Jawaharlal Nehru Technological University (JNTU), Hyderabad",
+      "GB Pant University of Agriculture and Technology, Pantnagar"
+    ],
+    "industry": [
+      "Grounds Maintenance",
+      "Landscaping",
+      "Horticulture",
+      "Facilities Management",
+      "Urban Development"
     ]
   },
   {
@@ -4726,6 +6679,20 @@
       "tree care",
       "pruning",
       "plant health care"
+    ],
+    "colleges": [
+      "Indian Institute of Technology Guwahati (IIT Guwahati)",
+      "Banaras Hindu University (BHU), Varanasi",
+      "Forest Research Institute (FRI), Dehradun",
+      "Dr. Balasaheb Sawant Konkan Krishi Vidyapeeth, Dapoli",
+      "Chaudhary Charan Singh Haryana Agricultural University, Hisar"
+    ],
+    "industry": [
+      "Arboriculture",
+      "Forestry",
+      "Horticulture",
+      "Environmental Services",
+      "Urban Development"
     ]
   },
   {
@@ -4759,6 +6726,20 @@
       "irrigation system installation",
       "maintenance",
       "water management"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT) Hyderabad",
+      "Tamil Nadu Agricultural University, Coimbatore",
+      "G.B. Pant University of Agriculture and Technology, Pantnagar",
+      "Anand Agricultural University, Anand",
+      "University of Agricultural Sciences, Raichur"
+    ],
+    "industry": [
+      "Irrigation Services",
+      "Agricultural Engineering",
+      "Horticulture",
+      "Water Management",
+      "Environmental Services"
     ]
   },
   {
@@ -4792,6 +6773,20 @@
       "cleaning techniques",
       "maintenance",
       "time management"
+    ],
+    "colleges": [
+      "Delhi Skill and Entrepreneurship University, New Delhi",
+      "Netaji Subhas University of Technology, Delhi",
+      "Maharashtra State Skill Development Society, Mumbai",
+      "Tamil Nadu Skill Development Corporation, Chennai",
+      "Karnataka Skill Development Authority, Bangalore"
+    ],
+    "industry": [
+      "Janitorial Services",
+      "Cleaning",
+      "Maintenance",
+      "Facility Management",
+      "Hospitality"
     ]
   },
   {
@@ -4825,6 +6820,20 @@
       "facility maintenance",
       "groundskeeping",
       "safety procedures"
+    ],
+    "colleges": [
+      "Chandigarh Skill Development Mission, Chandigarh",
+      "Uttarakhand Skill Development Society, Dehradun",
+      "Gujarat Skill Development Mission, Gandhinagar",
+      "Punjab Skill Development Mission, Chandigarh",
+      "Himachal Pradesh Kaushal Vikas Nigam, Shimla"
+    ],
+    "industry": [
+      "Facility Management",
+      "Custodial Services",
+      "Maintenance",
+      "Real Estate",
+      "Healthcare"
     ]
   },
   {
@@ -4858,6 +6867,20 @@
       "cleaning skills",
       "laundry",
       "organization"
+    ],
+    "colleges": [
+      "Institute of Hotel Management, Catering Technology & Applied Nutrition, Mumbai",
+      "National Institute of Hotel Management and Tourism, Bhubaneswar",
+      "Delhi Institute of Hotel Management, New Delhi",
+      "Institute of Hotel Management, Bangalore",
+      "Chennai Institute of Hotel Management, Chennai"
+    ],
+    "industry": [
+      "Hospitality",
+      "Housekeeping",
+      "Cleaning Services",
+      "Residential Services",
+      "Healthcare"
     ]
   },
   {
@@ -4891,6 +6914,20 @@
       "window cleaning techniques",
       "safety procedures",
       "equipment operation"
+    ],
+    "colleges": [
+      "Sardar Patel Institute of Technology, Mumbai",
+      "National Skill Training Institute, Kolkata",
+      "Lal Bahadur Shastri Institute of Management, New Delhi",
+      "NITTE Meenakshi Institute of Technology, Bangalore",
+      "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai"
+    ],
+    "industry": [
+      "Window Cleaning",
+      "Facility Maintenance",
+      "Cleaning Services",
+      "Residential Services",
+      "Hospitality"
     ]
   },
   {
@@ -4924,6 +6961,20 @@
       "carpet cleaning techniques",
       "stain removal",
       "customer service"
+    ],
+    "colleges": [
+      "Vishwakarma Institute of Technology, Pune",
+      "Government Industrial Training Institute, Chennai",
+      "Government Polytechnic College, Mumbai",
+      "State Institute of Hotel Management, Indore",
+      "Ambedkar Institute of Hotel Management, Chandigarh"
+    ],
+    "industry": [
+      "Carpet Cleaning",
+      "Cleaning Services",
+      "Maintenance",
+      "Residential Services",
+      "Hospitality"
     ]
   },
   {
@@ -4957,6 +7008,20 @@
       "physical strength",
       "manual dexterity",
       "equipment operation"
+    ],
+    "colleges": [
+      "Government Polytechnic, Mumbai",
+      "Guru Nanak Dev Engineering College, Ludhiana",
+      "R.V. College of Engineering, Bangalore",
+      "Veermata Jijabai Technological Institute, Mumbai",
+      "Indira Gandhi Delhi Technical University for Women, Delhi"
+    ],
+    "industry": [
+      "General Labor",
+      "Construction",
+      "Manufacturing",
+      "Warehouse Operations",
+      "Logistics"
     ]
   },
   {
@@ -4990,6 +7055,20 @@
       "inventory management",
       "forklift operation",
       "teamwork"
+    ],
+    "colleges": [
+      "Symbiosis Institute of Operations Management, Nashik",
+      "Indian Institute of Materials Management, Mumbai",
+      "Amity University, Noida",
+      "Loyola Institute of Business Administration, Chennai",
+      "School of Business, University of Petroleum and Energy Studies, Dehradun"
+    ],
+    "industry": [
+      "Warehousing",
+      "Logistics",
+      "Material Handling",
+      "Supply Chain Management",
+      "Retail"
     ]
   },
   {
@@ -5023,6 +7102,20 @@
       "construction techniques",
       "heavy lifting",
       "safety procedures"
+    ],
+    "colleges": [
+      "National Institute of Construction Management and Research, Pune",
+      "Delhi Technological University, Delhi",
+      "Indian Institute of Technology, Madras",
+      "Indian Institute of Technology, Bombay",
+      "Indian Institute of Technology, Delhi"
+    ],
+    "industry": [
+      "Construction",
+      "General Labor",
+      "Building Maintenance",
+      "Infrastructure Development",
+      "Real Estate"
     ]
   },
   {
@@ -5056,6 +7149,20 @@
       "production processes",
       "material handling",
       "quality control"
+    ],
+    "colleges": [
+      "Indian Institute of Technology, Kharagpur",
+      "Indian Institute of Technology, Roorkee",
+      "Birla Institute of Technology and Science, Pilani",
+      "National Institute of Technology, Trichy",
+      "National Institute of Technology, Surathkal"
+    ],
+    "industry": [
+      "Manufacturing",
+      "Production",
+      "Quality Control",
+      "Industrial Engineering",
+      "Automotive"
     ]
   },
   {
@@ -5089,6 +7196,20 @@
       "demolition techniques",
       "heavy machinery operation",
       "safety procedures"
+    ],
+    "colleges": [
+      "National Institute of Construction Management and Research, Pune",
+      "Delhi Technological University, Delhi",
+      "Indian Institute of Technology, Madras",
+      "Indian Institute of Technology, Bombay",
+      "Indian Institute of Technology, Delhi"
+    ],
+    "industry": [
+      "Construction",
+      "Demolition",
+      "Building Trades",
+      "Infrastructure Development",
+      "Real Estate"
     ]
   },
   {
@@ -5122,6 +7243,20 @@
       "crop cultivation",
       "animal care",
       "equipment operation"
+    ],
+    "colleges": [
+      "Punjab Agricultural University, Ludhiana",
+      "Indian Agricultural Research Institute, Delhi",
+      "Tamil Nadu Agricultural University, Coimbatore",
+      "Acharya N. G. Ranga Agricultural University, Guntur",
+      "University of Agricultural Sciences, Bangalore"
+    ],
+    "industry": [
+      "Agriculture",
+      "Farming",
+      "Horticulture",
+      "Animal Husbandry",
+      "Agro-Industry"
     ]
   },
   {
@@ -5155,6 +7290,18 @@
       "field work",
       "harvesting",
       "irrigation"
+    ],
+    "college": [
+      "Acharya N.G. Ranga Agricultural University, Guntur",
+      "Tamil Nadu Agricultural University, Coimbatore",
+      "Punjab Agricultural University, Ludhiana",
+      "Govind Ballabh Pant University of Agriculture and Technology, Pantnagar",
+      "University of Agricultural Sciences, Bangalore"
+    ],
+    "industry": [
+      "Agriculture",
+      "Farming",
+      "Horticulture"
     ]
   },
   {
@@ -5188,6 +7335,18 @@
       "animal husbandry",
       "feeding",
       "veterinary care"
+    ],
+    "college": [
+      "College of Veterinary and Animal Sciences, Bikaner",
+      "Tamil Nadu Veterinary and Animal Sciences University, Chennai",
+      "Govind Ballabh Pant University of Agriculture and Technology, Pantnagar",
+      "Kerala Veterinary and Animal Sciences University, Wayanad",
+      "College of Veterinary Science, Assam Agricultural University, Guwahati"
+    ],
+    "industry": [
+      "Animal Husbandry",
+      "Veterinary",
+      "Livestock Management"
     ]
   },
   {
@@ -5221,6 +7380,18 @@
       "harvesting techniques",
       "attention to detail",
       "physical endurance"
+    ],
+    "college": [
+      "Acharya N.G. Ranga Agricultural University, Guntur",
+      "Tamil Nadu Agricultural University, Coimbatore",
+      "Punjab Agricultural University, Ludhiana",
+      "Govind Ballabh Pant University of Agriculture and Technology, Pantnagar",
+      "University of Agricultural Sciences, Bangalore"
+    ],
+    "industry": [
+      "Agriculture",
+      "Farming",
+      "Horticulture"
     ]
   },
   {
@@ -5254,6 +7425,18 @@
       "equipment operation",
       "maintenance",
       "agricultural knowledge"
+    ],
+    "college": [
+      "Punjab Agricultural University, Ludhiana",
+      "Govind Ballabh Pant University of Agriculture and Technology, Pantnagar",
+      "University of Agricultural Sciences, Bangalore",
+      "Acharya N.G. Ranga Agricultural University, Guntur",
+      "Tamil Nadu Agricultural University, Coimbatore"
+    ],
+    "industry": [
+      "Agricultural Engineering",
+      "Mechanics",
+      "Equipment Operation"
     ]
   },
   {
@@ -5287,6 +7470,18 @@
       "repair skills",
       "troubleshooting",
       "equipment maintenance"
+    ],
+    "college": [
+      "Indian Institute of Technology (IIT) Delhi",
+      "Indian Institute of Technology (IIT) Bombay",
+      "National Institute of Technology (NIT) Trichy",
+      "Birla Institute of Technology and Science (BITS) Pilani",
+      "Delhi Technological University (DTU), New Delhi"
+    ],
+    "industry": [
+      "Maintenance",
+      "Mechanical Engineering",
+      "Technical Education"
     ]
   },
   {
@@ -5320,6 +7515,18 @@
       "HVAC systems",
       "installation",
       "maintenance"
+    ],
+    "college": [
+      "Indian Institute of Technology (IIT) Madras",
+      "Indian Institute of Technology (IIT) Kharagpur",
+      "National Institute of Technology (NIT) Calicut",
+      "Vellore Institute of Technology (VIT), Vellore",
+      "SRM Institute of Science and Technology, Chennai"
+    ],
+    "industry": [
+      "HVAC",
+      "Mechanical Engineering",
+      "Technical Education"
     ]
   },
   {
@@ -5353,6 +7560,18 @@
       "appliance diagnosis",
       "maintenance",
       "customer service"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT) Kanpur",
+      "Indian Institute of Technology (IIT) Roorkee",
+      "National Institute of Technology (NIT) Rourkela",
+      "Institute of Electrical and Electronics Engineers (IEEE), Hyderabad",
+      "College of Engineering, Pune"
+    ],
+    "industry": [
+      "Appliance Repair",
+      "Technical Education",
+      "Electronics"
     ]
   },
   {
@@ -5386,6 +7605,20 @@
       "automobile repair",
       "diagnostics",
       "problem-solving"
+    ],
+    "college": [
+      "Institute of Automotive Technology",
+      "ABC Technical Institute",
+      "XYZ Polytechnic College",
+      "PQR College of Engineering",
+      "LMN Technical Institute"
+    ],
+    "industry": [
+      "Automotive",
+      "Mechanical Engineering",
+      "Manufacturing",
+      "Transport",
+      "Electronics"
     ]
   },
   {
@@ -5419,6 +7652,20 @@
       "building systems",
       "repairs",
       "safety procedures"
+    ],
+    "colleges": [
+      "Institute of Building Technology",
+      "ABC Technical Institute",
+      "XYZ Polytechnic College",
+      "PQR College of Engineering",
+      "LMN Technical Institute"
+    ],
+    "industry": [
+      "Building Maintenance",
+      "Facilities Management",
+      "Real Estate",
+      "Construction",
+      "Engineering"
     ]
   },
   {
@@ -5452,6 +7699,20 @@
       "culinary skills",
       "food preparation",
       "time management"
+    ],
+    "colleges": [
+      "Culinary Institute of America",
+      "Le Cordon Bleu",
+      "International Culinary Center",
+      "Johnson & Wales University",
+      "Apicius Culinary Arts School"
+    ],
+    "industry": [
+      "Hospitality",
+      "Food Service",
+      "Catering",
+      "Restaurant",
+      "Tourism"
     ]
   },
   {
@@ -5485,6 +7746,20 @@
       "dishwashing",
       "cleaning",
       "kitchen organization"
+    ],
+    "colleges": [
+      "Hospitality Institute of America",
+      "ABC Technical Institute",
+      "XYZ Culinary School",
+      "PQR College of Hospitality",
+      "LMN Technical Institute"
+    ],
+    "industry": [
+      "Hospitality",
+      "Food Service",
+      "Restaurant",
+      "Catering",
+      "Tourism"
     ]
   },
   {
@@ -5518,6 +7793,20 @@
       "customer service",
       "order taking",
       "menu knowledge"
+    ],
+    "colleges": [
+      "Hospitality Institute of America",
+      "ABC Technical Institute",
+      "XYZ Culinary School",
+      "PQR College of Hospitality",
+      "LMN Technical Institute"
+    ],
+    "industry": [
+      "Hospitality",
+      "Food Service",
+      "Restaurant",
+      "Catering",
+      "Tourism"
     ]
   },
   {
@@ -5551,6 +7840,20 @@
       "coffee preparation",
       "espresso machine operation",
       "customer service"
+    ],
+    "colleges": [
+      "Barista Institute",
+      "ABC Technical Institute",
+      "XYZ Culinary School",
+      "PQR College of Hospitality",
+      "LMN Technical Institute"
+    ],
+    "industry": [
+      "Hospitality",
+      "Food Service",
+      "Coffee Shops",
+      "Cafes",
+      "Tourism"
     ]
   },
   {
@@ -5584,6 +7887,20 @@
       "food prep support",
       "cleaning",
       "organization"
+    ],
+    "colleges": [
+      "Institute of Hotel Management, Pusa",
+      "Welcomgroup Graduate School of Hotel Administration, Manipal",
+      "Institute of Hotel Management, Mumbai",
+      "Institute of Hotel Management, Bangalore",
+      "Christ University, Bangalore"
+    ],
+    "industries": [
+      "Hospitality",
+      "Food Service",
+      "Catering",
+      "Restaurant Management",
+      "Hotel Management"
     ]
   },
   {
@@ -5617,6 +7934,20 @@
       "patient care",
       "vital signs monitoring",
       "activities of daily living"
+    ],
+    "colleges": [
+      "All India Institute of Medical Sciences, New Delhi",
+      "Christian Medical College, Vellore",
+      "Armed Forces Medical College, Pune",
+      "JIPMER, Puducherry",
+      "Kasturba Medical College, Manipal"
+    ],
+    "industries": [
+      "Healthcare",
+      "Hospitals",
+      "Nursing Homes",
+      "Home Healthcare Services",
+      "Assisted Living Facilities"
     ]
   },
   {
@@ -5650,6 +7981,20 @@
       "patient transport",
       "hospital unit assistance",
       "cleaning"
+    ],
+    "colleges": [
+      "All India Institute of Medical Sciences, New Delhi",
+      "Christian Medical College, Vellore",
+      "Armed Forces Medical College, Pune",
+      "JIPMER, Puducherry",
+      "St. John's Medical College, Bangalore"
+    ],
+    "industries": [
+      "Healthcare",
+      "Hospitals",
+      "Patient Care",
+      "Nursing Homes",
+      "Clinical Services"
     ]
   },
   {
@@ -5683,6 +8028,20 @@
       "clinical tasks support",
       "medical records management",
       "patient care"
+    ],
+    "colleges": [
+      "All India Institute of Medical Sciences, New Delhi",
+      "Christian Medical College, Vellore",
+      "Armed Forces Medical College, Pune",
+      "JIPMER, Puducherry",
+      "Kasturba Medical College, Manipal"
+    ],
+    "industries": [
+      "Healthcare",
+      "Medical Clinics",
+      "Hospitals",
+      "Outpatient Care Centers",
+      "Primary Care"
     ]
   },
   {
@@ -5716,6 +8075,20 @@
       "in-home patient care",
       "personal assistance",
       "mobility assistance"
+    ],
+    "colleges": [
+      "All India Institute of Medical Sciences, New Delhi",
+      "Christian Medical College, Vellore",
+      "Armed Forces Medical College, Pune",
+      "JIPMER, Puducherry",
+      "St. John's Medical College, Bangalore"
+    ],
+    "industries": [
+      "Home Healthcare Services",
+      "Hospices",
+      "Elderly Care Facilities",
+      "Assisted Living Facilities",
+      "Rehabilitation Centers"
     ]
   },
   {
@@ -5749,6 +8122,20 @@
       "blood collection",
       "venipuncture",
       "specimen handling"
+    ],
+    "colleges": [
+      "All India Institute of Medical Sciences, New Delhi",
+      "Christian Medical College, Vellore",
+      "Armed Forces Medical College, Pune",
+      "JIPMER, Puducherry",
+      "Kasturba Medical College, Manipal"
+    ],
+    "industries": [
+      "Healthcare",
+      "Medical Laboratories",
+      "Hospitals",
+      "Blood Donation Centers",
+      "Clinical Research"
     ]
   },
   {
@@ -5782,6 +8169,20 @@
       "surveillance",
       "patrol",
       "access control"
+    ],
+    "colleges": [
+      "Tata Institute of Social Sciences, Mumbai",
+      "Jamia Millia Islamia, New Delhi",
+      "National Institute of Security Management, Bangalore",
+      "Sardar Vallabhbhai Patel National Police Academy, Hyderabad",
+      "Institute of Security and Safety Management, Noida"
+    ],
+    "industry": [
+      "Security Services",
+      "Corporate Security",
+      "Event Security",
+      "Public Safety",
+      "Law Enforcement"
     ]
   },
   {
@@ -5815,6 +8216,20 @@
       "crowd management",
       "venue security",
       "emergency response"
+    ],
+    "colleges": [
+      "Institute of Hotel Management, Pusa",
+      "Welcomgroup Graduate School of Hotel Administration, Manipal",
+      "Institute of Hotel Management, Mumbai",
+      "Institute of Hotel Management, Bangalore",
+      "Christ University, Bangalore"
+    ],
+    "industry": [
+      "Hospitality",
+      "Housekeeping Services",
+      "Facilities Management",
+      "Healthcare",
+      "Residential Cleaning"
     ]
   },
   {
@@ -5848,6 +8263,20 @@
       "asset protection",
       "investigation",
       "report writing"
+    ],
+    "colleges": [
+      "National Institute of Public Cooperation and Child Development, New Delhi",
+      "Lady Irwin College, New Delhi",
+      "Jamia Millia Islamia, New Delhi",
+      "Tata Institute of Social Sciences, Mumbai",
+      "IGNOU, New Delhi"
+    ],
+    "industry": [
+      "Child Care Services",
+      "Early Childhood Education",
+      "Family Support Services",
+      "Social Services",
+      "Healthcare"
     ]
   },
   {
@@ -5881,6 +8310,20 @@
       "close protection",
       "risk assessment",
       "emergency response"
+    ],
+    "colleges": [
+      "National Institute of Public Cooperation and Child Development, New Delhi",
+      "Lady Irwin College, New Delhi",
+      "Jamia Millia Islamia, New Delhi",
+      "Tata Institute of Social Sciences, Mumbai",
+      "IGNOU, New Delhi"
+    ],
+    "industry": [
+      "Retail",
+      "Security Services",
+      "Corporate Security",
+      "Hospitality",
+      "Healthcare"
     ]
   },
   {
@@ -5914,6 +8357,20 @@
       "parking management",
       "cash handling",
       "customer service"
+    ],
+    "colleges": [
+      "Institute of Management Technology (IMT) Ghaziabad",
+      "Loyola College, Chennai",
+      "Shri Ram College of Commerce (SRCC), Delhi",
+      "Xavier Labour Relations Institute (XLRI), Jamshedpur",
+      "Indian Institute of Management (IIM) Bangalore"
+    ],
+    "industry": [
+      "Parking Management",
+      "Customer Service",
+      "Hospitality",
+      "Event Management",
+      "Retail"
     ]
   },
   {
@@ -5947,6 +8404,20 @@
       "physical strength",
       "attention to detail",
       "teamwork"
+    ],
+    "colleges": [
+      "Event Management Institute, Delhi",
+      "National Institute of Design (NID), Ahmedabad",
+      "Institute of Hotel Management (IHM), Mumbai",
+      "Whistling Woods International, Mumbai",
+      "Delhi College of Art"
+    ],
+    "industry": [
+      "Event Management",
+      "Production",
+      "Logistics",
+      "Entertainment",
+      "Hospitality"
     ]
   },
   {
@@ -5980,6 +8451,19 @@
       "stage setup",
       "equipment handling",
       "safety procedures"
+    ],
+    "colleges": [
+      "National School of Drama (NSD), New Delhi",
+      "Film and Television Institute of India (FTII), Pune",
+      "Satyajit Ray Film and Television Institute (SRFTI), Kolkata",
+      "Whistling Woods International, Mumbai",
+      "Delhi College of Art, Delhi"
+    ],
+    "industry": [
+      "Event Production",
+      "Stage Management",
+      "Technical Theater",
+      "Entertainment"
     ]
   },
   {
@@ -6013,6 +8497,19 @@
       "fixture installation",
       "control systems operation",
       "troubleshooting"
+    ],
+    "colleges": [
+      "National Institute of Design (NID), Ahmedabad",
+      "Whistling Woods International, Mumbai",
+      "Film and Television Institute of India (FTII), Pune",
+      "Satyajit Ray Film and Television Institute (SRFTI), Kolkata",
+      "Pearl Academy, Delhi"
+    ],
+    "industry": [
+      "Event Production",
+      "Lighting Design",
+      "Theater Technology",
+      "Entertainment"
     ]
   },
   {
@@ -6046,6 +8543,19 @@
       "audio equipment operation",
       "mixing",
       "sound reinforcement"
+    ],
+    "colleges": [
+      "National Institute of Design (NID), Ahmedabad",
+      "Whistling Woods International, Mumbai",
+      "Film and Television Institute of India (FTII), Pune",
+      "Satyajit Ray Film and Television Institute (SRFTI), Kolkata",
+      "Pearl Academy, Delhi"
+    ],
+    "industry": [
+      "Audio Engineering",
+      "Event Production",
+      "Sound Design",
+      "Entertainment"
     ]
   },
   {
@@ -6079,6 +8589,14 @@
       "cleaning",
       "attention to detail",
       "stamina"
+    ],
+    "colleges": [
+      "None specific to this role"
+    ],
+    "industries": [
+      "Event Services",
+      "Janitorial Services",
+      "Hospitality"
     ]
   },
   {
@@ -6112,6 +8630,18 @@
       "farm work",
       "equipment operation",
       "animal care"
+    ],
+    "colleges": [
+      "Punjab Agricultural University, Ludhiana",
+      "Indian Agricultural Research Institute (IARI), Delhi",
+      "TNAU, Coimbatore",
+      "Dr. Y.S. Parmar University of Horticulture and Forestry, Solan",
+      "Acharya N.G. Ranga Agricultural University, Hyderabad"
+    ],
+    "industries": [
+      "Agriculture",
+      "Farm Management",
+      "Animal Husbandry"
     ]
   },
   {
@@ -6145,6 +8675,14 @@
       "livestock care",
       "fencing",
       "herding"
+    ],
+    "colleges": [
+      "None specific to this role"
+    ],
+    "industries": [
+      "Ranching",
+      "Livestock Management",
+      "Animal Husbandry"
     ]
   },
   {
@@ -6178,6 +8716,18 @@
       "animal handling",
       "feeding",
       "grooming"
+    ],
+    "colleges": [
+      "College of Veterinary Science and Animal Husbandry, Assam",
+      "Mumbai Veterinary College",
+      "Veterinary College, Bangalore",
+      "Guru Angad Dev Veterinary and Animal Sciences University, Ludhiana",
+      "Rajiv Gandhi Institute of Veterinary Education and Research, Puducherry"
+    ],
+    "industries": [
+      "Animal Care",
+      "Veterinary Science",
+      "Zoology"
     ]
   },
   {
@@ -6211,6 +8761,14 @@
       "horse care",
       "stall cleaning",
       "riding assistance"
+    ],
+    "colleges": [
+      "None specific to this role"
+    ],
+    "industries": [
+      "Equine Studies",
+      "Animal Husbandry",
+      "Veterinary Science"
     ]
   },
   {
@@ -6244,6 +8802,17 @@
       "animal care",
       "cleaning",
       "customer service"
+    ],
+    "colleges": [
+      "National Institute of Design, Ahmedabad",
+      "Central Institute of Plastics Engineering & Technology, Chennai",
+      "Institute of Hotel Management, Pusa",
+      "National Academy of Event Management and Development, Mumbai",
+      "Bharati Vidyapeeth Institute of Hotel Management and Catering Technology, Pune"
+    ],
+    "industry": [
+      "Animal Care Industry",
+      "Pet Services Industry"
     ]
   },
   {
@@ -6277,6 +8846,17 @@
       "equipment operation",
       "safety procedures",
       "maintenance knowledge"
+    ],
+    "colleges": [
+      "Indian Institute of Technology, Bombay",
+      "National Institute of Technology, Tiruchirappalli",
+      "Jawaharlal Nehru Engineering College, Aurangabad",
+      "Government College of Engineering, Pune",
+      "VIT University, Vellore"
+    ],
+    "industry": [
+      "Construction Industry",
+      "Heavy Equipment Industry"
     ]
   },
   {
@@ -6310,6 +8890,17 @@
       "crane operation",
       "load management",
       "rigging"
+    ],
+    "colleges": [
+      "Indian Institute of Technology, Delhi",
+      "Indian Institute of Technology, Kharagpur",
+      "National Institute of Technology, Warangal",
+      "Manipal Institute of Technology, Manipal",
+      "Amrita Vishwa Vidyapeetham, Coimbatore"
+    ],
+    "industry": [
+      "Construction Industry",
+      "Crane Operation Industry"
     ]
   },
   {
@@ -6343,6 +8934,17 @@
       "bulldozer operation",
       "terrain assessment",
       "safety procedures"
+    ],
+    "colleges": [
+      "Indian Institute of Technology, Guwahati",
+      "National Institute of Technology, Durgapur",
+      "Purdue University",
+      "Institute of Engineering and Management, Kolkata",
+      "Sri Jayachamarajendra College of Engineering, Mysore"
+    ],
+    "industry": [
+      "Construction Industry",
+      "Heavy Equipment Industry"
     ]
   },
   {
@@ -6376,6 +8978,17 @@
       "excavator operation",
       "trenching",
       "backfilling"
+    ],
+    "colleges": [
+      "Indian Institute of Technology, Kanpur",
+      "National Institute of Technology, Suratkal",
+      "Birla Institute of Technology and Science, Pilani",
+      "Delhi Technological University",
+      "Shiv Nadar University, Greater Noida"
+    ],
+    "industry": [
+      "Construction Industry",
+      "Heavy Equipment Industry"
     ]
   },
   {
@@ -6409,6 +9022,17 @@
       "loader operation",
       "material handling",
       "safety procedures"
+    ],
+    "colleges": [
+      "Indian Institute of Technology, Hyderabad",
+      "National Institute of Technology, Rourkela",
+      "Vellore Institute of Technology",
+      "Jadavpur University",
+      "Government Engineering College, Bikaner"
+    ],
+    "industry": [
+      "Construction Industry",
+      "Heavy Equipment Industry"
     ]
   },
   {
@@ -6442,6 +9066,20 @@
       "physical strength",
       "packing skills",
       "customer service"
+    ],
+    "colleges": [
+      "Delhi University",
+      "University of Mumbai",
+      "Banaras Hindu University",
+      "Anna University",
+      "Savitribai Phule Pune University"
+    ],
+    "industry": [
+      "Moving Services",
+      "Logistics",
+      "Customer Service",
+      "Transportation",
+      "Warehousing"
     ]
   },
   {
@@ -6475,6 +9113,20 @@
       "driving skills",
       "route planning",
       "customer service"
+    ],
+    "colleges": [
+      "IIT Delhi",
+      "IIT Bombay",
+      "NIT Trichy",
+      "IIT Kanpur",
+      "IIT Madras"
+    ],
+    "industry": [
+      "Transportation",
+      "Logistics",
+      "Customer Service",
+      "Automotive",
+      "Freight Services"
     ]
   },
   {
@@ -6508,6 +9160,20 @@
       "packing skills",
       "inventory management",
       "teamwork"
+    ],
+    "colleges": [
+      "IIM Ahmedabad",
+      "IIM Bangalore",
+      "IIM Calcutta",
+      "XLRI Jamshedpur",
+      "SPJIMR Mumbai"
+    ],
+    "industry": [
+      "Warehousing",
+      "Logistics",
+      "Inventory Management",
+      "Supply Chain",
+      "Retail"
     ]
   },
   {
@@ -6541,6 +9207,20 @@
       "assembly skills",
       "tool usage",
       "physical stamina"
+    ],
+    "colleges": [
+      "National Institute of Design, Ahmedabad",
+      "JJ School of Art, Mumbai",
+      "MIT Institute of Design, Pune",
+      "Srishti School of Art, Design and Technology, Bangalore",
+      "Symbiosis Institute of Design, Pune"
+    ],
+    "industry": [
+      "Furniture Assembly",
+      "Carpentry",
+      "Handyman Services",
+      "Manufacturing",
+      "Interior Design"
     ]
   },
   {
@@ -6574,6 +9254,20 @@
       "storage management",
       "facility maintenance",
       "security procedures"
+    ],
+    "colleges": [
+      "IIM Lucknow",
+      "IIM Kozhikode",
+      "MDI Gurgaon",
+      "FMS Delhi",
+      "NITIE Mumbai"
+    ],
+    "industry": [
+      "Storage Management",
+      "Customer Service",
+      "Facility Operations",
+      "Warehousing",
+      "Logistics"
     ]
   },
   {
@@ -6607,6 +9301,20 @@
       "painting techniques",
       "surface preparation",
       "attention to detail"
+    ],
+    "colleges": [
+      "Sir JJ School of Art, Mumbai",
+      "Kala Bhavana, Visva-Bharati University",
+      "Raja Ravi Varma College of Fine Arts, Kerala",
+      "College of Fine Arts, Karnataka Chitrakala Parishath, Bangalore",
+      "Banaras Hindu University, Varanasi"
+    ],
+    "industry": [
+      "Painting",
+      "Construction",
+      "Decorating",
+      "Interior Design",
+      "Art and Design"
     ]
   },
   {
@@ -6640,6 +9348,20 @@
       "spray painting techniques",
       "equipment operation",
       "safety procedures"
+    ],
+    "colleges": [
+      "MIT Institute of Design, Pune",
+      "IIT Bombay - Industrial Design Centre",
+      "National Institute of Design, Ahmedabad",
+      "Symbiosis Institute of Design, Pune",
+      "Srishti School of Art, Design and Technology, Bangalore"
+    ],
+    "industry": [
+      "Painting",
+      "Automotive",
+      "Manufacturing",
+      "Industrial Coating",
+      "Construction"
     ]
   },
   {
@@ -6673,6 +9395,20 @@
       "coating application",
       "quality inspection",
       "equipment maintenance"
+    ],
+    "colleges": [
+      "IIT Delhi",
+      "IIT Bombay",
+      "NIT Trichy",
+      "IIT Kanpur",
+      "IIT Madras"
+    ],
+    "industries": [
+      "Coating Technology",
+      "Manufacturing",
+      "Surface Treatment",
+      "Automotive",
+      "Aerospace"
     ]
   },
   {
@@ -6706,6 +9442,20 @@
       "sandblasting techniques",
       "equipment operation",
       "safety awareness"
+    ],
+    "colleges": [
+      "MIT Institute of Design, Pune",
+      "IIT Bombay - Industrial Design Centre",
+      "National Institute of Design, Ahmedabad",
+      "Symbiosis Institute of Design, Pune",
+      "Srishti School of Art, Design and Technology, Bangalore"
+    ],
+    "industries": [
+      "Painting",
+      "Automotive",
+      "Manufacturing",
+      "Industrial Coating",
+      "Construction"
     ]
   },
   {
@@ -6739,6 +9489,20 @@
       "surface preparation",
       "masking",
       "sanding"
+    ],
+    "colleges": [
+      "National Institute of Design, Ahmedabad",
+      "JJ School of Art, Mumbai",
+      "MIT Institute of Design, Pune",
+      "Srishti School of Art, Design and Technology, Bangalore",
+      "Symbiosis Institute of Design, Pune"
+    ],
+    "industries": [
+      "Cabinet Making",
+      "Carpentry",
+      "Woodworking",
+      "Furniture Manufacturing",
+      "Interior Design"
     ]
   },
   {
@@ -6772,6 +9536,20 @@
       "cabinet construction",
       "woodworking techniques",
       "blueprint reading"
+    ],
+    "colleges": [
+      "National Institute of Design, Ahmedabad",
+      "JJ School of Art, Mumbai",
+      "MIT Institute of Design, Pune",
+      "Srishti School of Art, Design and Technology, Bangalore",
+      "Symbiosis Institute of Design, Pune"
+    ],
+    "industries": [
+      "Cabinet Making",
+      "Carpentry",
+      "Woodworking",
+      "Furniture Manufacturing",
+      "Interior Design"
     ]
   },
   {
@@ -6805,6 +9583,20 @@
       "woodworking skills",
       "power tool operation",
       "design interpretation"
+    ],
+    "colleges": [
+      "National Institute of Design, Ahmedabad",
+      "JJ School of Art, Mumbai",
+      "MIT Institute of Design, Pune",
+      "Srishti School of Art, Design and Technology, Bangalore",
+      "Symbiosis Institute of Design, Pune"
+    ],
+    "industries": [
+      "Woodworking",
+      "Carpentry",
+      "Furniture Making",
+      "Manufacturing",
+      "Interior Design"
     ]
   },
   {
@@ -6838,6 +9630,20 @@
       "finishing techniques",
       "staining",
       "detailing"
+    ],
+    "colleges": [
+      "National Institute of Design, Ahmedabad",
+      "Government College of Engineering and Technology, Nagpur",
+      "Chandigarh College of Architecture, Chandigarh",
+      "CEPT University, Ahmedabad",
+      "Lovely Professional University, Phagwara"
+    ],
+    "industry": [
+      "Furniture Manufacturing",
+      "Interior Design",
+      "Home Decor",
+      "Woodworking",
+      "Custom Furniture"
     ]
   },
   {
@@ -6871,6 +9677,20 @@
       "joinery techniques",
       "precision cutting",
       "wood joining"
+    ],
+    "colleges": [
+      "Government Polytechnic, Mumbai",
+      "Jadavpur University, Kolkata",
+      "PSG College of Technology, Coimbatore",
+      "Manipal Institute of Technology, Manipal",
+      "Amrita Vishwa Vidyapeetham, Coimbatore"
+    ],
+    "industry": [
+      "Construction",
+      "Furniture Manufacturing",
+      "Carpentry",
+      "Interior Design",
+      "Woodworking"
     ]
   },
   {
@@ -6904,6 +9724,20 @@
       "tool handling",
       "safety awareness",
       "learning attitude"
+    ],
+    "colleges": [
+      "Vellore Institute of Technology, Vellore",
+      "Indian Institute of Technology, Madras",
+      "Birla Institute of Technology and Science, Pilani",
+      "National Institute of Technology, Tiruchirappalli",
+      "SRM Institute of Science and Technology, Chennai"
+    ],
+    "industry": [
+      "Construction",
+      "Woodworking",
+      "Furniture Manufacturing",
+      "Carpentry",
+      "Interior Design"
     ]
   },
   {
@@ -6937,6 +9771,20 @@
       "blueprint reading",
       "grinding",
       "welding"
+    ],
+    "colleges": [
+      "Indian Institute of Technology, Bombay",
+      "National Institute of Technology, Warangal",
+      "Indian Institute of Technology, Delhi",
+      "Vellore Institute of Technology, Vellore",
+      "Birla Institute of Technology and Science, Pilani"
+    ],
+    "industry": [
+      "Metal Fabrication",
+      "Manufacturing",
+      "Welding",
+      "Construction",
+      "Automotive"
     ]
   },
   {
@@ -6970,6 +9818,20 @@
       "HVAC ductwork",
       "metal cutting",
       "installation"
+    ],
+    "colleges": [
+      "College of Engineering, Pune",
+      "National Institute of Technology, Calicut",
+      "Indian Institute of Technology, Kharagpur",
+      "National Institute of Technology, Durgapur",
+      "Jadavpur University, Kolkata"
+    ],
+    "industry": [
+      "Sheet Metal Work",
+      "HVAC",
+      "Construction",
+      "Manufacturing",
+      "Metal Fabrication"
     ]
   },
   {
@@ -7003,6 +9865,20 @@
       "tool handling",
       "safety awareness",
       "learning attitude"
+    ],
+    "colleges": [
+      "Indian Institute of Technology, Kanpur",
+      "National Institute of Technology, Rourkela",
+      "Visvesvaraya National Institute of Technology, Nagpur",
+      "Birla Institute of Technology, Mesra",
+      "Thapar Institute of Engineering and Technology, Patiala"
+    ],
+    "industry": [
+      "Welding",
+      "Metal Fabrication",
+      "Construction",
+      "Automotive",
+      "Manufacturing"
     ]
   },
   {
@@ -7036,6 +9912,20 @@
       "buffing",
       "finishing",
       "quality inspection"
+    ],
+    "colleges": [
+      "College of Engineering, Guindy",
+      "Indian Institute of Technology, Roorkee",
+      "National Institute of Technology, Kurukshetra",
+      "Indian Institute of Technology, Bhubaneswar",
+      "PSG College of Technology, Coimbatore"
+    ],
+    "industry": [
+      "Metal Polishing",
+      "Manufacturing",
+      "Metalworking",
+      "Automotive",
+      "Construction"
     ]
   },
   {
@@ -7069,6 +9959,20 @@
       "casting techniques",
       "mold making",
       "metal pouring"
+    ],
+    "colleges": [
+      "Indian Institute of Technology, Guwahati",
+      "National Institute of Technology, Silchar",
+      "Malaviya National Institute of Technology, Jaipur",
+      "Indian Institute of Technology, Gandhinagar",
+      "Institute of Technology, Nirma University, Ahmedabad"
+    ],
+    "industry": [
+      "Foundry Operations",
+      "Metal Casting",
+      "Manufacturing",
+      "Automotive",
+      "Construction"
     ]
   },
   {
@@ -7102,6 +10006,20 @@
       "fabric handling",
       "quality control",
       "machine operation"
+    ],
+    "colleges": [
+      "National Institute of Fashion Technology, New Delhi",
+      "Institute of Chemical Technology, Mumbai",
+      "Bannari Amman Institute of Technology, Sathyamangalam",
+      "Government Polytechnic, Nagpur",
+      "Sardar Vallabhbhai Patel International School of Textiles & Management, Coimbatore"
+    ],
+    "industry": [
+      "Textile Manufacturing",
+      "Apparel Production",
+      "Fashion Design",
+      "Garment Manufacturing",
+      "Home Textiles"
     ]
   },
   {
@@ -7135,6 +10053,18 @@
       "fabric inspection",
       "quality assurance",
       "textile processing"
+    ],
+    "colleges": [
+      "National Institute of Fashion Technology (NIFT), Delhi",
+      "Sardar Vallabhbhai Patel Institute of Textile Management (SPVITM), Coimbatore",
+      "Pearl Academy, Jaipur",
+      "Banasthali Vidyapith, Rajasthan",
+      "L. S. Raheja School of Art, Mumbai"
+    ],
+    "industries": [
+      "Textile Manufacturing",
+      "Fashion Design",
+      "Apparel Industry"
     ]
   },
   {
@@ -7168,6 +10098,18 @@
       "pressing",
       "ironing",
       "detailing"
+    ],
+    "colleges": [
+      "National Institute of Fashion Technology (NIFT), Delhi",
+      "Sardar Vallabhbhai Patel Institute of Textile Management (SPVITM), Coimbatore",
+      "Pearl Academy, Jaipur",
+      "Banasthali Vidyapith, Rajasthan",
+      "L. S. Raheja School of Art, Mumbai"
+    ],
+    "industries": [
+      "Garment Manufacturing",
+      "Fashion Design",
+      "Textile Industry"
     ]
   },
   {
@@ -7201,6 +10143,18 @@
       "alterations",
       "fitting",
       "pattern making"
+    ],
+    "colleges": [
+      "National Institute of Fashion Technology (NIFT), Delhi",
+      "Pearl Academy, Jaipur",
+      "Banasthali Vidyapith, Rajasthan",
+      "Sardar Vallabhbhai Patel Institute of Textile Management (SPVITM), Coimbatore",
+      "L. S. Raheja School of Art, Mumbai"
+    ],
+    "industries": [
+      "Tailoring",
+      "Fashion Design",
+      "Textile Industry"
     ]
   },
   {
@@ -7234,6 +10188,18 @@
       "design interpretation",
       "thread selection",
       "detailing"
+    ],
+    "colleges": [
+      "National Institute of Fashion Technology (NIFT), Delhi",
+      "Pearl Academy, Jaipur",
+      "Sardar Vallabhbhai Patel Institute of Textile Management (SPVITM), Coimbatore",
+      "Banasthali Vidyapith, Rajasthan",
+      "L. S. Raheja School of Art, Mumbai"
+    ],
+    "industries": [
+      "Embroidery",
+      "Fashion Design",
+      "Textile Industry"
     ]
   },
   {
@@ -7267,6 +10233,18 @@
       "equipment operation",
       "safety protocols",
       "cleaning procedures"
+    ],
+    "colleges": [
+      "National Institute of Restoration (NIR), Mumbai",
+      "Indian Institute of Restoration and Conservation (IIRC), Delhi",
+      "Rajasthan College of Restoration, Jaipur",
+      "Sardar Patel Institute of Restoration, Ahmedabad",
+      "Central Institute of Restoration and Preservation, Bangalore"
+    ],
+    "industries": [
+      "Restoration",
+      "Construction",
+      "Cleaning Services"
     ]
   },
   {
@@ -7300,6 +10278,18 @@
       "drying techniques",
       "mold prevention",
       "structural assessment"
+    ],
+    "colleges": [
+      "National Institute of Water Damage Restoration (NIWDR), Delhi",
+      "Indian Institute of Disaster Management, Mumbai",
+      "Rajasthan Institute of Restoration and Reconstruction, Jaipur",
+      "Central Institute of Restoration Techniques, Bangalore",
+      "Sardar Patel Institute of Water Damage Control, Ahmedabad"
+    ],
+    "industries": [
+      "Water Damage Restoration",
+      "Construction",
+      "Cleaning Services"
     ]
   },
   {
@@ -7333,6 +10323,18 @@
       "containment",
       "safety compliance",
       "mold inspection"
+    ],
+    "colleges": [
+      "National Institute of Environmental Health, Delhi",
+      "Indian Institute of Disaster Management, Mumbai",
+      "Rajasthan Institute of Environmental Science, Jaipur",
+      "Central Institute of Mold Remediation, Bangalore",
+      "Sardar Patel Institute of Safety and Health, Ahmedabad"
+    ],
+    "industries": [
+      "Mold Remediation",
+      "Cleaning Services",
+      "Construction"
     ]
   },
   {
@@ -7366,6 +10368,18 @@
       "soot removal",
       "odor neutralization",
       "structural cleaning"
+    ],
+    "colleges": [
+      "National Institute of Fire and Safety Engineering, Mumbai",
+      "Fire Safety Institute, Delhi",
+      "Indian Institute of Fire Technology, Bangalore",
+      "Emergency Management Institute, Pune",
+      "Fire Protection and Safety Engineering Institute, Chennai"
+    ],
+    "industries": [
+      "Fire Damage Restoration",
+      "Cleaning Services",
+      "Construction"
     ]
   },
   {
@@ -7399,6 +10413,292 @@
       "forensic cleaning techniques",
       "discretion",
       "emotional resilience"
+    ],
+    "colleges": [
+      "Institute of Forensic Science, Delhi",
+      "Biohazard Cleanup Academy, Mumbai",
+      "National Forensic Training Institute, Bangalore",
+      "Crime Scene Investigation Institute, Chennai",
+      "Advanced Biohazard Training Center, Pune"
+    ],
+    "industries": [
+      "Crime Scene Cleanup",
+      "Forensic Cleaning",
+      "Cleaning Services"
+    ]
+  },
+  {
+    "code": "packaging_specialist",
+    "name": "Packaging Specialist",
+    "minimum_skills_required": "Knowledge of different types of packaging materials, machinery design and maintenance, flexible and rigid packaging solutions, cost analysis, sustainability practices, supply chain management",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "materials_science",
+      "chemical_engineering",
+      "mechanical_engineering",
+      "industrial_engineering"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Packaging Specialist",
+        "url": "https://youtu.be/bazkf6n3sKU?si=IPO3tVZVGaEYRCYG"
+      },
+      {
+        "title": "Career Prospects and Salary in the Packaging Industry",
+        "url": "https://youtu.be/bazkf6n3sKU?si=IPO3tVZVGaEYRCYG"
+      }
+    ],
+    "keywords": [
+      "packaging",
+      "packaging materials",
+      "packaging machinery",
+      "flexible packaging",
+      "rigid packaging"
+    ],
+    "colleges": [
+      "Indian Institute of Packaging, Mumbai",
+      "National Institute of Packaging Technology, Delhi",
+      "Institute of Packaging Science and Technology, Bangalore",
+      "Packaging and Logistics Institute, Chennai",
+      "Institute of Flexible Packaging, Pune"
+    ],
+    "industries": [
+      "Packaging",
+      "Materials Science",
+      "Supply Chain Management"
+    ]
+  },
+  {
+    "code": "food_beverage_specialist",
+    "name": "Food and Beverage Specialist",
+    "minimum_skills_required": "Knowledge of food processing, beverage manufacturing, food safety regulations, quality control, supply chain management, retail management, distribution logistics, sustainability practices",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "food_science",
+      "chemical_engineering",
+      "business_administration",
+      "supply_chain_management"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Food and Beverage Specialist",
+        "url": "https://youtu.be/51_Em-x5JLk?si=CfYkFFsep1Pur79x"
+      },
+      {
+        "title": "Career Prospects and Salary in the Food and Beverage Industry",
+        "url": "https://youtu.be/51_Em-x5JLk?si=CfYkFFsep1Pur79x"
+      }
+    ],
+    "keywords": [
+      "food processing",
+      "beverage manufacturing",
+      "food retail",
+      "food distribution"
+    ],
+    "colleges": [
+      "National Institute of Food Technology Entrepreneurship and Management, Delhi",
+      "Institute of Food and Beverage Management, Mumbai",
+      "Food Science and Technology Institute, Bangalore",
+      "Indian Institute of Food Processing Technology, Chennai",
+      "Food Engineering Institute, Pune"
+    ],
+    "industries": [
+      "Food Processing",
+      "Beverage Manufacturing",
+      "Food Retail"
+    ]
+  },
+  {
+    "code": "mining_metals_specialist",
+    "name": "Mining and Metals Specialist",
+    "minimum_skills_required": "Knowledge of metal ore mining, coal mining, mineral mining, metal fabrication, mining safety regulations, geological surveys, environmental impact assessments, mining equipment, and sustainability practices",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "geology",
+      "mining_engineering",
+      "metallurgical_engineering",
+      "environmental_engineering"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Mining and Metals Specialist",
+        "url": "https://youtu.be/qf7iPNXH7ms?si=PiF5jP5jjYgXIwPm"
+      },
+      {
+        "title": "Career Prospects and Salary in the Mining and Metals Industry",
+        "url": "https://youtu.be/qf7iPNXH7ms?si=PiF5jP5jjYgXIwPm"
+      }
+    ],
+    "keywords": [
+      "metal ore mining",
+      "coal mining",
+      "mineral mining",
+      "metal fabrication"
+    ],
+    "colleges": [
+      "Indian School of Mines, Dhanbad",
+      "National Institute of Mining Engineering, Delhi",
+      "Institute of Mineral Engineering, Mumbai",
+      "Geological Survey Institute, Bangalore",
+      "Mining and Metallurgy Institute, Pune"
+    ],
+    "industries": [
+      "Metal Ore Mining",
+      "Coal Mining",
+      "Mineral Mining"
+    ]
+  },
+  {
+    "code": "chemicals_specialist",
+    "name": "Chemicals Specialist",
+    "minimum_skills_required": "Knowledge of basic chemicals, specialty chemicals, petrochemicals, agrochemicals, chemical safety regulations, laboratory techniques, chemical analysis, environmental impact assessments, chemical engineering principles, and sustainability practices",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "chemical_engineering",
+      "chemistry",
+      "environmental_science",
+      "industrial_engineering"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Chemicals Specialist",
+        "url": "https://youtu.be/Ff2dX2ob9fU?si=gM8vObZkRxrBvTLw"
+      },
+      {
+        "title": "Career Prospects and Salary in the Chemicals Industry",
+        "url": "https://youtu.be/Ff2dX2ob9fU?si=gM8vObZkRxrBvTLw"
+      }
+    ],
+    "keywords": [
+      "basic chemicals",
+      "specialty chemicals",
+      "petrochemicals",
+      "agrochemicals"
+    ],
+    "colleges": [
+      "Indian Institute of Chemical Technology, Hyderabad",
+      "National Chemical Engineering Institute, Delhi",
+      "Institute of Chemistry and Chemical Engineering, Mumbai",
+      "Chemical Science and Technology Institute, Bangalore",
+      "Environmental Chemistry Institute, Pune"
+    ],
+    "industries": [
+      "Basic Chemicals",
+      "Specialty Chemicals",
+      "Petrochemicals"
+    ]
+  },
+  {
+    "code": "fitness_wellness_specialist",
+    "name": "Fitness and Wellness Specialist",
+    "minimum_skills_required": "Knowledge of gyms and fitness centers operations, wellness coaching techniques, sports equipment manufacturing processes, health food product development, nutrition, physical training, customer service, and wellness program design",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "sports_science",
+      "nutrition",
+      "physical_education",
+      "exercise_physiology",
+      "health_science"
+    ],
+    "entrance_exam": [
+      "interview"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Fitness and Wellness Specialist",
+        "url": "https://youtu.be/EjoldS6as0A?si=yWsGAapECf7VySM5"
+      },
+      {
+        "title": "Career Prospects and Salary in the Fitness and Wellness Industry",
+        "url": "https://youtu.be/EjoldS6as0A?si=yWsGAapECf7VySM5"
+      }
+    ],
+    "keywords": [
+      "gyms",
+      "fitness centers",
+      "wellness coaching",
+      "sports equipment",
+      "health food products"
+    ],
+    "colleges": [
+      "National Institute of Sports, Patiala",
+      "Institute of Fitness and Nutrition, Mumbai",
+      "Sports Science and Wellness Institute, Delhi",
+      "Health and Wellness Academy, Bangalore",
+      "Exercise Science Institute, Pune"
+    ],
+    "industries": [
+      "Fitness Coaching",
+      "Wellness Programs",
+      "Health Food Products"
+    ]
+  },
+  {
+    "code": "legal_services_specialist",
+    "name": "Legal Services Specialist",
+    "minimum_skills_required": "Knowledge of law firm operations, legal consulting practices, legal technology solutions, alternative dispute resolution methods, legal research, case management, client counseling, and contract negotiation",
+    "minimum_qualifications": [
+      "graduation"
+    ],
+    "preferred_streams": [
+      "law",
+      "legal_studies",
+      "political_science",
+      "public_policy"
+    ],
+    "entrance_exam": [
+      "interview",
+      "bar_exam"
+    ],
+    "life_style": [
+      {
+        "title": "A Day in the Life of a Legal Services Specialist",
+        "url": "https://youtu.be/dGYEE_fm64g?si=JiG5daA8nJ0IkGyG"
+      },
+      {
+        "title": "Career Prospects and Salary in the Legal Services Industry",
+        "url": "https://youtu.be/dGYEE_fm64g?si=JiG5daA8nJ0IkGyG"
+      }
+    ],
+    "keywords": [
+      "law",
+      "legal consulting",
+      "legal tech",
+      "alternative dispute resolution"
+    ],
+    "colleges": [
+      "Institute of Real Estate Management, Mumbai",
+      "National Real Estate Academy, Delhi",
+      "Real Estate Studies Institute, Bangalore",
+      "Property Management Institute, Chennai",
+      "Real Estate Investment Academy, Pune"
+    ],
+    "industries": [
+      "Real Estate",
+      "Property Management",
+      "Real Estate Investment"
     ]
   },
   {
@@ -7432,6 +10732,18 @@
       "waste management",
       "renewable energy",
       "environmental remediation"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT), Bombay",
+      "National Institute of Environmental Engineering, Delhi",
+      "Institute of Environmental Science and Technology, Bangalore",
+      "Indian Institute of Remote Sensing, Dehradun",
+      "Institute of Sustainability and Environmental Management, Chennai"
+    ],
+    "industries": [
+      "Environmental Consulting",
+      "Waste Management",
+      "Renewable Energy"
     ]
   },
   {
@@ -7465,6 +10777,19 @@
       "music industry",
       "digital media",
       "publishing"
+    ],
+    "colleges": [
+      "Film and Television Institute of India (FTII), Pune",
+      "National School of Drama (NSD), Delhi",
+      "Indian Institute of Mass Communication (IIMC), Delhi",
+      "Jawaharlal Nehru University (JNU), Delhi - School of Arts and Aesthetics",
+      "Mumbai University - Department of Media Studies"
+    ],
+    "industries": [
+      "Film Production",
+      "Music Industry",
+      "Digital Media",
+      "Publishing"
     ]
   },
   {
@@ -7498,6 +10823,18 @@
       "internet service providers",
       "telecom equipment manufacturing",
       "satellite communications"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT), Kanpur",
+      "National Institute of Technology (NIT), Trichy",
+      "Indian Institute of Information Technology (IIIT), Hyderabad",
+      "Indian Institute of Technology (IIT), Delhi - Department of Electrical Engineering",
+      "Institute of Telecom Management, Delhi"
+    ],
+    "industries": [
+      "Telecommunications",
+      "Internet Service Providers",
+      "Telecom Equipment Manufacturing"
     ]
   },
   {
@@ -7531,6 +10868,18 @@
       "renewable energy",
       "utilities management",
       "energy trading"
+    ],
+    "colleges": [
+      "Indian Institute of Technology (IIT), Bombay - Department of Energy Science",
+      "National Institute of Technology (NIT), Warangal - Department of Energy",
+      "Indian Institute of Technology (IIT), Kharagpur - Energy Science and Engineering",
+      "Institute of Energy and Environment Management, Delhi",
+      "Indian School of Business (ISB), Hyderabad - Energy Management Program"
+    ],
+    "industries": [
+      "Oil and Gas",
+      "Renewable Energy",
+      "Utilities Management"
     ]
   },
   {
@@ -7564,6 +10913,18 @@
       "restaurants and food services",
       "travel agencies",
       "event management"
+    ],
+    "colleges": [
+      "Institute of Hotel Management (IHM), Delhi",
+      "Welcomgroup Graduate School of Hotel Administration, Manipal",
+      "National Institute of Tourism and Hospitality Management (NITHM), Hyderabad",
+      "Institute of Hospitality Management, Mumbai",
+      "Indian Institute of Hospitality Management, Bangalore"
+    ],
+    "industries": [
+      "Hospitality Management",
+      "Tourism",
+      "Event Management"
     ]
   },
   {
@@ -7597,7 +10958,388 @@
       "pharmaceutical manufacturing",
       "biotechnology",
       "health insurance"
+    ],
+    "colleges": [
+      "All India Institute of Medical Sciences (AIIMS), Delhi",
+      "National Institute of Pharmaceutical Education and Research (NIPER), Mohali",
+      "Indian Institute of Technology (IIT), Kharagpur - Department of Biotechnology",
+      "Jawaharlal Nehru University (JNU), Delhi - School of Biotechnology",
+      "Institute of Medical Sciences, Banaras Hindu University (BHU), Varanasi"
+    ],
+    "industries": [
+      "Healthcare Administration",
+      "Pharmaceutical Manufacturing",
+      "Biotechnology"
     ]
   }
 ];
 
+    const skills_masterdata = [
+  {
+    "code": "html",
+    "name": "HTML"
+  },
+  {
+    "code": "css",
+    "name": "CSS"
+  },
+  {
+    "code": "javascript",
+    "name": "JavaScript"
+  },
+  {
+    "code": "typescript",
+    "name": "TypeScript"
+  },
+  {
+    "code": "react",
+    "name": "React"
+  },
+  {
+    "code": "angular",
+    "name": "Angular"
+  },
+  {
+    "code": "vue",
+    "name": "Vue.js"
+  },
+  {
+    "code": "svelte",
+    "name": "Svelte"
+  },
+  {
+    "code": "next",
+    "name": "Next.js"
+  },
+  {
+    "code": "nuxt",
+    "name": "Nuxt.js"
+  },
+  {
+    "code": "node",
+    "name": "Node.js"
+  },
+  {
+    "code": "express",
+    "name": "Express"
+  },
+  {
+    "code": "nest",
+    "name": "NestJS"
+  },
+  {
+    "code": "php",
+    "name": "PHP"
+  },
+  {
+    "code": "laravel",
+    "name": "Laravel"
+  },
+  {
+    "code": "symfony",
+    "name": "Symfony"
+  },
+  {
+    "code": "python",
+    "name": "Python"
+  },
+  {
+    "code": "django",
+    "name": "Django"
+  },
+  {
+    "code": "flask",
+    "name": "Flask"
+  },
+  {
+    "code": "ruby",
+    "name": "Ruby"
+  },
+  {
+    "code": "rails",
+    "name": "Ruby on Rails"
+  },
+  {
+    "code": "java",
+    "name": "Java"
+  },
+  {
+    "code": "spring",
+    "name": "Spring"
+  },
+  {
+    "code": "kotlin",
+    "name": "Kotlin"
+  },
+  {
+    "code": "groovy",
+    "name": "Groovy"
+  },
+  {
+    "code": "scala",
+    "name": "Scala"
+  },
+  {
+    "code": "csharp",
+    "name": "C#"
+  },
+  {
+    "code": "dotnet",
+    "name": ".NET"
+  },
+  {
+    "code": "go",
+    "name": "Go"
+  },
+  {
+    "code": "rust",
+    "name": "Rust"
+  },
+  {
+    "code": "swift",
+    "name": "Swift"
+  },
+  {
+    "code": "objectivec",
+    "name": "Objective-C"
+  },
+  {
+    "code": "sql",
+    "name": "SQL"
+  },
+  {
+    "code": "postgresql",
+    "name": "PostgreSQL"
+  },
+  {
+    "code": "mysql",
+    "name": "MySQL"
+  },
+  {
+    "code": "sqlite",
+    "name": "SQLite"
+  },
+  {
+    "code": "mongodb",
+    "name": "MongoDB"
+  },
+  {
+    "code": "firebase",
+    "name": "Firebase"
+  },
+  {
+    "code": "aws",
+    "name": "AWS"
+  },
+  {
+    "code": "azure",
+    "name": "Azure"
+  },
+  {
+    "code": "gcp",
+    "name": "Google Cloud Platform"
+  },
+  {
+    "code": "docker",
+    "name": "Docker"
+  },
+  {
+    "code": "kubernetes",
+    "name": "Kubernetes"
+  },
+  {
+    "code": "graphql",
+    "name": "GraphQL"
+  },
+  {
+    "code": "rest",
+    "name": "REST"
+  },
+  {
+    "code": "sass",
+    "name": "Sass"
+  },
+  {
+    "code": "less",
+    "name": "Less"
+  },
+  {
+    "code": "styledcomponents",
+    "name": "Styled Components"
+  },
+  {
+    "code": "tailwind",
+    "name": "Tailwind CSS"
+  },
+  {
+    "code": "bootstrap",
+    "name": "Bootstrap"
+  },
+  {
+    "code": "bulma",
+    "name": "Bulma"
+  },
+  {
+    "code": "foundation",
+    "name": "Foundation"
+  },
+  {
+    "code": "materialize",
+    "name": "Materialize"
+  },
+  {
+    "code": "semanticui",
+    "name": "Semantic UI"
+  },
+  {
+    "code": "gulp",
+    "name": "Gulp"
+  },
+  {
+    "code": "grunt",
+    "name": "Grunt"
+  },
+  {
+    "code": "webpack",
+    "name": "Webpack"
+  },
+  {
+    "code": "parcel",
+    "name": "Parcel"
+  },
+  {
+    "code": "rollup",
+    "name": "Rollup"
+  },
+  {
+    "code": "babel",
+    "name": "Babel"
+  },
+  {
+    "code": "eslint",
+    "name": "ESLint"
+  },
+  {
+    "code": "prettier",
+    "name": "Prettier"
+  },
+  {
+    "code": "git",
+    "name": "Git"
+  },
+  {
+    "code": "github",
+    "name": "GitHub"
+  },
+  {
+    "code": "gitlab",
+    "name": "GitLab"
+  },
+  {
+    "code": "bitbucket",
+    "name": "Bitbucket"
+  },
+  {
+    "code": "npm",
+    "name": "npm"
+  },
+  {
+    "code": "yarn",
+    "name": "Yarn"
+  },
+  {
+    "code": "pnpm",
+    "name": "pnpm"
+  },
+  {
+    "code": "jest",
+    "name": "Jest"
+  },
+  {
+    "code": "mocha",
+    "name": "Mocha"
+  },
+  {
+    "code": "chai",
+    "name": "Chai"
+  },
+  {
+    "code": "cypress",
+    "name": "Cypress"
+  },
+  {
+    "code": "jasmine",
+    "name": "Jasmine"
+  },
+  {
+    "code": "puppeteer",
+    "name": "Puppeteer"
+  },
+  {
+    "code": "selenium",
+    "name": "Selenium"
+  },
+  {
+    "code": "webdriverio",
+    "name": "WebdriverIO"
+  },
+  {
+    "code": "cucumber",
+    "name": "Cucumber"
+  },
+  {
+    "code": "perl",
+    "name": "Perl"
+  },
+  {
+    "code": "clojure",
+    "name": "Clojure"
+  },
+  {
+    "code": "haskell",
+    "name": "Haskell"
+  },
+  {
+    "code": "elixir",
+    "name": "Elixir"
+  },
+  {
+    "code": "fsharp",
+    "name": "F#"
+  },
+  {
+    "code": "dart",
+    "name": "Dart"
+  },
+  {
+    "code": "r",
+    "name": "R"
+  },
+  {
+    "code": "matlab",
+    "name": "MATLAB"
+  },
+  {
+    "code": "vb",
+    "name": "Visual Basic"
+  },
+  {
+    "code": "assembly",
+    "name": "Assembly"
+  },
+  {
+    "code": "lua",
+    "name": "Lua"
+  }
+];
+
+     module.exports = {
+        profile_masterdata,
+        category_masterdata,
+        subject_masterdata,
+        stream_masterdata,
+        qualification_masterdata,
+        jobtype_masterdata,
+        industry_masterdata,
+        skills_masterdata
+    };
