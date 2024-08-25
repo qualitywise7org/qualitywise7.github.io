@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ministries</title>
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/careeroptions/ministries/style.css"
+    />
+    <%- include('../../../partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../../../partials/navbar.ejs') %>
+
+    <h1>Ministries and Their Functions</h1>
+
+    <div id="data-container">
+      <% for (let i = 0; i < ministry_data.ministry_data.length; i++) { %>
+      <div>
+        <h2><%= ministry_data.ministry_data[i].name %></h2>
+        <ul class="centered-list">
+          <% for (let j = 0; j <
+          ministry_data.ministry_data[i].functions.length; j++) { %>
+          <li><%= ministry_data.ministry_data[i].functions[j] %></li>
+          <% } %>
+        </ul>
+      </div>
+      <% } %>
+    </div>
+
+    <%- include('../../../partials/footer.ejs') %>
+  </body>
+</html>
