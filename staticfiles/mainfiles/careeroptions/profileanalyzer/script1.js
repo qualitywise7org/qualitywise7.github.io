@@ -3,7 +3,7 @@ function displayJobProfiles(profiles, query = "") {
   const jobProfilesContainer = document.getElementById("jobProfiles");
 
   // Clear existing content
-  jobProfilesContainer.innerHTML = "";
+  jobProfilesContainer.innerHTML = " ";
 
   // Create a document fragment for better performance
   const fragment = document.createDocumentFragment();
@@ -17,7 +17,7 @@ function displayJobProfiles(profiles, query = "") {
     const card = document.createElement("div");
     card.className = "col-md-6 col-sm-12";
     card.innerHTML = `
-      <div class="card mb-3">
+      <div class="card mb-3 h-100">
         <div class="card-body">
           <h6 class="text-center card-title fs-5 fw-bold h6 text-white py-2 mb-3">
              ${serialNumber}. ${profile.name}
@@ -28,33 +28,55 @@ function displayJobProfiles(profiles, query = "") {
             )}
           </p>
           <p class="card-text">
-            <b>Minimum Skills Required:</b> ${profile.minimum_skills_required}
+            <b>Minimum Skills Required:</b> ${Array.isArray(profile.minimum_skills_required) ? profile.minimum_skills_required.join(", ") : profile.minimum_skills_required}
           </p>
           <p class="card-text">
-            <b>Preferred Streams:</b> ${profile.preferred_streams}
+            <b>Preferred Streams:</b> ${Array.isArray(profile.preferred_streams) ? profile.preferred_streams.join(", ") : (profile.preferred_streams || "N/A")}
           </p>
-          <p class="card-text">
-            <b>Entrance Exam:</b> ${profile.entrance_exam}
-          </p>
+          ${
+            profile.entrance_exam && profile.entrance_exam.length > 0
+              ? `<p class="card-text"><b>Entrance Exam:</b> ${profile.entrance_exam.join(", ")}</p>`
+              : ""
+          }
           ${
             profile.life_style && profile.life_style.length > 0
               ? `<p class="card-text">
                    <b>Lifestyle:</b>
                    <ul class="lifestyle-list">
-                     ${profile.life_style
-                       .map(
-                         (item) =>
-                           `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`
-                       )
-                       .join("")}
+                     <li><a href="${profile.life_style[0].url}" target="_blank">${profile.life_style[0].title}</a></li>
+                   </ul>
+                 </p>
+                 <p class="card-text">
+                   <b>Salary Range:</b> 
+                 </p>
+                 <p class="card-text">
+                   <ul class="lifestyle-list">
+                     <li><a href="${profile.life_style[1].url}" target="_blank">${profile.life_style[1].title}</a></li>
                    </ul>
                  </p>`
               : ""
           }
+          ${
+            profile.colleges && profile.colleges.length > 0
+              ? `<p class="card-text"><b>Top Colleges:</b>
+                  <ul class="college-list">
+                    ${profile.colleges.map((college, i) =>
+                      i % 3 === 0
+                        ? `<li>${profile.colleges.slice(i, i + 3).join(", ")}</li>`
+                        : ""
+                    ).join("")}
+                  </ul>
+                 </p>`
+              : ""
+          }
+          ${
+            profile.industries && profile.industries.length > 0
+              ? `<p class="card-text"><b>Industries:</b> ${profile.industries.join(", ")}</p>`
+              : ""
+          }
           <p class="text-center fw-bold">
-            Ready to seize the opportunity?<br/>
+            See Job Options?<br/>
             <a href="${profileUrl}" class="btn btn-outline-success mt-2 mx-2 clickHereBtn">Click here</a>
-            <button class="btn btn-success shareBtn mt-2 mx-2" data-url="${profileUrl}">Share</button>
           </p>
         </div>
       </div>
@@ -63,23 +85,6 @@ function displayJobProfiles(profiles, query = "") {
   });
 
   jobProfilesContainer.appendChild(fragment);
-
-  // Add event listeners to share buttons
-  document.querySelectorAll(".shareBtn").forEach((button) => {
-    button.addEventListener("click", function () {
-      const url = this.getAttribute("data-url");
-      if (navigator.share) {
-        navigator
-          .share({
-            title: "Job Profile",
-            url: url,
-          })
-          .catch(console.error);
-      } else {
-        alert("Web Share API not supported in this browser.");
-      }
-    });
-  });
 
   // Add event listeners to "Click here" buttons
   document.querySelectorAll(".clickHereBtn").forEach((button) => {

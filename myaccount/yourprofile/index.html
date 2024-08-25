@@ -56,14 +56,6 @@
           <a class="nav-link" href="/about/">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pricing/">Pricing</a>
-        </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="/register/"
-            >Get Demo classes
-          </a>
-        </li>-->
-        <li class="nav-item">
           <a class="nav-link" href="/apply/">Apply</a>
         </li>
         <li class="nav-item dropdown">
@@ -74,15 +66,37 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
+          Career Options
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="/careeroptions">Career Options</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/careeroptions/job-options/">Job Options</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/careeroptions/business-options/">Business Options</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/jobs_analysis/">Job Analysis</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
             Blogs
           </a>
           <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="/careeroptions">Career Options</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/jobs_analysis/">Jobs Analysis</a>
-            </li>
             <li>
               <a class="dropdown-item" href="/businessplans">Business Plans</a>
             </li>
@@ -91,6 +105,9 @@
             </li>
             <li>
               <a class="dropdown-item" href="/motivation">Motivation</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/healthy-diet">Heathy Diet</a>
             </li>
           </ul>
         </li>
@@ -102,6 +119,9 @@
         </li>
         <li class="nav-item login-btn">
           <a class="nav-link" id="login-button" href="/login">Login</a>
+        </li>
+        <li class="nav-item signup-btn" id="signup-button">
+          <a class="nav-link" href="/signup">Sign up</a>
         </li>
       </ul>
     </div>
@@ -139,7 +159,6 @@
   ></iframe
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
     <main class="main">
       <div class="body_content">
         <section id="about-sc" class="">
@@ -153,6 +172,16 @@
                   <div class="cv-form-row-title">
                     <h3>About section</h3>
                   </div>
+                  
+                  <!--profile completion bar-->
+                  <div id="completion-status">
+                    <div>
+                      <div class="progress">
+                        <div id="about-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                      </div>  
+                  </div>
+                  </div>
+                  
                   <div class="cv-form-row cv-form-row-blk">
                     <div class="single-row-data">
                       <div class="form-elem">
@@ -241,6 +270,15 @@
                   <div class="cv-form-row-title">
                     <h3>Education</h3>
                   </div>
+                  
+                  <!--profile completion bar-->
+                <div id="completion-status">
+                  <div>
+                    <div class="progress">
+                    <div id="education-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                 </div>
+                </div>
 
                   <div class="row-separator repeater">
                     <div class="repeater" data-repeater-list="group-education">
@@ -310,6 +348,16 @@
                   <div class="cv-form-row-title">
                     <h3>Experience</h3>
                   </div>
+
+                   <!--profile completion bar-->
+                <div id="completion-status">
+                  <div>
+                    <div class="progress">
+                       <div id="experience-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                  </div>
+                </div>
+
                   <div class="row-separator repeater">
                     <div class="repeater" data-repeater-list="group-experience">
                       <div data-repeater-item class="experience_box">
@@ -370,13 +418,23 @@
                 <div class="cv-form-blk">
                   <div class="cv-form-row-title">
                     <h3>Skills</h3>
+
+                    <!--profile completion bar-->
+                <div id="completion-status">
+                  <div>
+                    <div class="progress">
+                       <div id="skills-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                     </div>
+                  </div>
+               </div>
+
                     <p>
                       Start typing a skill and select from the dropdown. You can add multiple skills separated by commas:
                     </p>
                   </div>
                 
                   <form autocomplete="off" action="/action_page.php">
-                    <div class="autocomplete" style="width: 800px">
+                    <div class="autocomplete">
                       <input id="skillInput" type="text" name="skills" placeholder="Enter your Skills" />
                       <div id="autocomplete-list" class="autocomplete-items"></div>
                     </div>
@@ -828,26 +886,28 @@
 
 <script type="module" src="/staticfiles/db/dbconfig.js"></script>
 <script type="module">
-  // Check if the user is signed in
-  window.auth.onAuthStateChanged((user) => {
+ // Check if the user is signed in
+ window.auth.onAuthStateChanged((user) => {
+      const signupButton = document.getElementById('signup-button');
+      
       if (user) {
-        localStorage.setItem("email", user.email);
-        document.getElementById("login-button").innerHTML = "Logout";
-        document.getElementById("user-mail").innerHTML = user.email;
-        document.getElementById("welcome-text").innerHTML = "Welcome";
+          localStorage.setItem("email", user.email);
+          document.getElementById("login-button").innerHTML = "Logout";
+          signupButton.style.display = "none"; // Hide the signup button directly
+          document.getElementById("user-mail").innerHTML = user.email;
+          document.getElementById("welcome-text").innerHTML = "Welcome";
       } else {
-        const login_button = document.getElementById("login-button");
-        login_button.addEventListener("click", () => {
-          const email = localStorage.getItem("email");
-          if (email) {
-            localStorage.clear();
-          }
-          location.location.href = "/login";
-        });
+          const loginButton = document.getElementById("login-button");
+          loginButton.addEventListener("click", () => {
+              const email = localStorage.getItem("email");
+              if (email) {
+                  localStorage.clear();
+              }
+              location.href = "/login"; // Corrected 'location.location.href' to 'location.href'
+          });
+          signupButton.style.display = "block"; // Show the signup button when user is not signed in
       }
   });
-
-
   document.getElementById("login-button").addEventListener("click", function() {
     const email = localStorage.getItem("email");
     if (email) {
