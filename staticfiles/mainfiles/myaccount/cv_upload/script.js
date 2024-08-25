@@ -4,9 +4,9 @@ auth.onAuthStateChanged((user) => {
     if (user) {
         userEmail = user.email;
     } else {
-      // No user is signed in
-      console.log("No user is signed in");
-      window.location.href = "/login/?redirect_url=/myaccount/cv_upload";
+        // No user is signed in
+        console.log("No user is signed in");
+        window.location.href = "/login/?redirect_url=/myaccount/cv_upload";
     }
 });
 
@@ -23,7 +23,7 @@ async function uploadCV(file) {
 }
 
 async function saveCVToDatabase() {
-    const uploadButton = document.getElementById("btn")
+    const uploadButton = document.getElementById("btn");
     uploadButton.innerHTML = "Uploading...";
     uploadButton.disabled = true;
     const cvFile = document.getElementById("cv").files[0];
@@ -31,6 +31,13 @@ async function saveCVToDatabase() {
         cvUrl = await uploadCV(cvFile);
 
         const userProfileRef = doc(db, "user_profile", userEmail);
+        
+        // Ensure the user profile document exists before updating it
+        const docSnap = await getDoc(userProfileRef);
+        if (!docSnap.exists()) {
+            await setDoc(userProfileRef, { "about": {} });
+        }
+
         await updateDoc(userProfileRef, { "about.cv": cvUrl })
             .then(() => {
                 Toastify({

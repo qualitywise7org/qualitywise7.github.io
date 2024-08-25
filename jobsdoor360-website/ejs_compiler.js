@@ -11,6 +11,7 @@ const data = {
   societies_data: require("../staticfiles/mainfiles/careeroptions/societies/societies_data.json"),
   government_department_which_provide_jobs_data: require("../staticfiles/mainfiles/careeroptions/government-department-which-provide-jobs/government_department_which_provide_jobs_data.json"),
   ministry_data: require("../staticfiles/mainfiles/careeroptions/ministries/ministry_data.json"),
+  master_data: require('../website_data/website_masterdata.js')
 };
 
 function readFolder(dir) {
