@@ -101,3 +101,44 @@ function showToast(message) {
     },
   }).showToast();
 }
+
+
+
+async function checkIfUserExists(email) {
+  try {
+      const db = getFirestore();
+      const docRef = doc(db, "lead", email);
+      const docSnap = await getDoc(docRef);
+      return docSnap.exists();
+  } catch (error) {
+      throw new Error("Failed to check user existence: " + error.message);
+  }
+}
+
+
+const googleLogin = document.getElementById("google-login-btn");
+googleLogin.addEventListener("click", async () => {
+    try {
+        const provider = new GoogleAuthProvider();
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+
+        // Check if the email is already registered
+        const userExists = await checkIfUserExists(user.email);
+        if (userExists) {
+            window.location.href = "/";
+            return;
+        }
+
+        // Store user info in localStorage (consider security implications)
+        localStorage.setItem("uid", user.uid);
+        localStorage.setItem("email", user.email);
+
+       
+
+        // Redirect to home page
+        window.location.href = "/";
+    } catch (error) {
+        console.log("Error Logging in  with Google: ", error.message);
+    }
+});
