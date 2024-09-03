@@ -1,5 +1,6 @@
 const jobTypeSelect = document.getElementById("jobType");
 const locationSelect = document.getElementById("location");
+const qualificationInput = document.getElementById("qualification");
 // const profileSelect = document.getElementById("profile"); // Removed profile select element
 const submitButton = document.getElementById("submitButton");
 const resultsContainer = document.getElementById("results");
@@ -33,6 +34,7 @@ window.addEventListener("load", async () => {
   const urlJobType = urlSearchParams.get("jobType");
   const urlLocation = urlSearchParams.get("location");
   const urlProfile = urlSearchParams.get("profile");
+  const urlQualification = urlSearchParams.get("qualification");
 
   const currentPage = parseInt(urlSearchParams.get("page")) || 1;
 
@@ -43,18 +45,21 @@ window.addEventListener("load", async () => {
     if (urlLocation) {
       locationSelect.value = urlLocation;
     }
+    if (urlQualification) {
+      qualificationInput.value = urlQualification;
+    }
     // if (urlProfile) {
     //   profileSelect.value = urlProfile;
     // }
 
-    if (urlJobType || urlLocation /* || urlProfile */) {
+    if (urlJobType || urlLocation /* || urlProfile */|| urlQualification) {
       displayResults(urlJobType, urlLocation, currentPage);
     } else {
       displayJobs(currentPage);
     }
   }, 1000);
 
-  if (!urlJobType && !urlLocation /* && !urlProfile */) {
+  if (!urlJobType && !urlLocation /* && !urlProfile */&& !urlQualification) {
     displayJobs(1);
   }
 });
@@ -179,6 +184,7 @@ function getSearchParams() {
   const urlSearchParams = new URLSearchParams(window.location.search);
   const selectedJobType = jobTypeSelect.value;
   const selectedLocation = locationSelect.value;
+  const selectedQualification = qualificationInput.value;
   // const selectedProfile = profileSelect.value; // Removed profile parameter
 
   // Remove existing "page" parameter if it exists
@@ -186,6 +192,7 @@ function getSearchParams() {
 
   urlSearchParams.set("jobType", selectedJobType);
   urlSearchParams.set("location", selectedLocation);
+  urlSearchParams.set("qualification", selectedQualification);
   // urlSearchParams.set("profile", selectedProfile); // Removed profile parameter
 
   // Return the formatted search parameters
@@ -199,15 +206,17 @@ async function displayJobs(page) {
   renderPaginatedJobsAndControls(jobs, page);
 }
 
-async function displayResults(selectedJobType, selectedLocation, page) {
-  console.log("Filters:", selectedJobType, selectedLocation);
+async function displayResults(selectedJobType, selectedLocation, selectedQualification, page) {
+  console.log("Filters:", selectedJobType, selectedLocation , selectedQualification);
 
   const jobs = jobs_data.filter(job => {
     const jobTypeMatch = !selectedJobType || selectedJobType === "all" || job.job_type === selectedJobType;
     const locationMatch = !selectedLocation || selectedLocation.toLowerCase() === "india" ||
       job?.location?.trim() === "" || job?.location?.toLowerCase().includes(selectedLocation.toLowerCase());
+      const qualificationMatch = !selectedQualification || job?.qualification_eligibility?.toLowerCase().includes(selectedQualification.toLowerCase());
+  
 
-    return jobTypeMatch && locationMatch;
+    return jobTypeMatch && locationMatch  && qualificationMatch;
   });
 
   console.log("Filtered Jobs:", jobs); // Check filtered jobs in console
@@ -220,14 +229,15 @@ submitButton.addEventListener("click", async (e) => {
   e.preventDefault();
   const selectedJobType = jobTypeSelect.value;
   const selectedLocation = locationSelect.value;
+  const selectedQualification = qualificationInput.value;
   // const selectedProfile = profileSelect.value; // Removed profile parameter
 
-  console.log("Selected:", selectedJobType, selectedLocation /* , selectedProfile */);
+  console.log("Selected:", selectedJobType, selectedLocation /* , selectedProfile */,selectedQualification);
 
   // Update the URL with selected parameters
-  const url = `?jobType=${selectedJobType}&location=${selectedLocation}`; // Removed profile parameter
+  const url = `?jobType=${selectedJobType}&location=${selectedLocation}&qualification=${selectedQualification}`; // Removed profile parameter
   history.pushState(null, "", url);
 
   // Call displayResults function with selected parameters
-  displayResults(selectedJobType, selectedLocation, 1);
+  displayResults(selectedJobType, selectedLocation,selectedQualification, 1);
 });
