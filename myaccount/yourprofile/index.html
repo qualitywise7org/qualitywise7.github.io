@@ -12,480 +12,57 @@
   <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js"></script>
   <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/yourprofile/style.css" />
   <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="google-adsense-account" content="ca-pub-2075086355753452" />
-<link rel="icon" href="/fevicon.ico" type="profile" />
-<link rel="stylesheet" href="/staticfiles/style.css" />
-<link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-  crossorigin="anonymous"
-/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
+  <link rel="icon" href="/fevicon.ico" type="profile" />
+  <link rel="stylesheet" href="/staticfiles/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="brand" href="/">
-      <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div
-      class="collapse navbar-collapse"
-      id="navbarNavDropdown"
-      style="transition: height 1s ease"
-    >
-      <ul class="navbar-nav flex items-center">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="/page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about/">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/apply/">Apply</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-          Career Options
-        </a>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="/careeroptions">Career Options</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="/careeroptions/job-options/">Job Options</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="/careeroptions/business-options/">Business Options</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="/jobs_analysis/">Job Analysis</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-            Blogs
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="/businessplans">Business Plans</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/biographies">Biographies</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/motivation">Motivation</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/healthy-diet">Heathy Diet</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/myaccount/jobsforyou">Jobs for you</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/myaccount/">My account</a>
-        </li>
-        <li class="nav-item login-btn">
-          <a class="nav-link" id="login-button" href="/login">Login</a>
-        </li>
-        <li class="nav-item signup-btn" id="signup-button">
-          <a class="nav-link" href="/signup">Sign up</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<div
-  style="
+   
+  <!-- Navbar  -->
+  <div id="header"></div>
+  <!-- Navbar -->
+
+  <div style="
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 6px;
     margin-top: 5px;
-  "
->
-  <span style="font-weight: 500; margin-bottom: 8px" id="welcome-text"></span>
-  <span
-    id="user-mail"
-    style="
+  ">
+    <span style="font-weight: 500; margin-bottom: 8px" id="welcome-text"></span>
+    <span id="user-mail" style="
       color: #586ba6;
       font-weight: 600;
       font-size: 1.1rem;
       margin-bottom: 8px;
-    "
-  >
-  </span>
-</div>
+    ">
+    </span>
+  </div>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript
-  ><iframe
-    src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
-    height="0"
-    width="0"
-    style="display: none; visibility: hidden"
-  ></iframe
-></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <main class="main">
-      <div class="body_content">
-        <section id="about-sc" class="">
-          <div class="container">
-            <div class="about-cnt">
-              <form action="" class="cv-form" id="cv-form">
-                <div class="cv-form-blk">
-                  <div class="show_image_div">
-                    <img src="" id="show_image" alt="" />
-                  </div>
-                  <div class="cv-form-row-title">
-                    <h3>About section</h3>
-                  </div>
-                  
-                  <!--profile completion bar-->
-                  <div id="completion-status">
-                    <div>
-                      <div class="progress">
-                        <div id="about-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                      </div>  
-                  </div>
-                  </div>
-                  
-                  <div class="cv-form-row cv-form-row-blk">
-                    <div class="single-row-data">
-                      <div class="form-elem">
-                        <label for="firstname" class="form-label">First Name</label>
-                        <input id="firstname" type="text" class="form-control firstname" placeholder="e.g. John"
-                          required />
-                        <span class="form-text"></span>
-                      </div>
-                      <div class="form-elem">
-                        <label for="middlename" class="form-label">Middle Name
-                          <span class="opt-text">(optional)</span></label>
-                        <input id="middlename" type="text" class="form-control middlename" placeholder="e.g. Herbert" />
-                        <span class="form-text"></span>
-                      </div>
-                      <div class="form-elem">
-                        <label for="lastname" class="form-label">Last Name</label>
-                        <input id="lastname" type="text" class="form-control lastname" placeholder="e.g. Doe"
-                          required />
-                        <span class="form-text"></span>
-                      </div>
-                      <div class="form-elem">
-                        <div class="single-row-data">
-                          <div class="form-elem">
-                            <label for="image" class="form-label">Your Image</label>
-                            <input id="image" type="file" class="form-control image" accept="image/*" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-elem">
-                        <label for="email" class="form-label">Email</label>
-                        <input id="email" type="email" class="form-control email"
-                          placeholder="e.g. john.doe@example.com" required />
-                        <span class="form-text"></span>
-                      </div>
-                      <div class="form-elem">
-                        <label for="phoneno" class="form-label">Phone No</label>
-                        <input id="phoneno" type="integer" class="form-control phoneno"
-                          placeholder="e.g. 456-768-798, 567.654.002" required />
-                        <span class="form-text"></span>
-                      </div>
-                      <div class="form-elem">
-                        <label for="github" class="form-label">Github</label>
-                        <input id="github" type="text" class="form-control email" placeholder="e.g. xyz.github.com"
-                          required />
-                        <span class="form-text"></span>
-                      </div>
-                      <!-- <div class="form-elem">
-                        <label for="cv" class="form-label">Cover Letter</label>
-                        <input
-                          id="cv"
-                          type="file"
-                          class="form-control email"
-                          accept="cv/*"
-                          required
-                        />
-                        <span class="form-text"></span>
-                      </div> -->
-                      <div class="form-elem">
-                        <label for="gender" class="form-label">Gender</label>
-                        <select class="form-select" id="gender" name="gender" required>
-                          <option value="better not to say">None</option>
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-                        </select>
-                      </div>
-                      <div class="form-elem">
-                        <label for="category" class="form-label">Category</label>
-                        <select id="category" class="form-select" name="gender" required>
-                          <option value="none">None</option>
-                          <option value="General">General</option>
-                          <option value="OBC">OBC</option>
-                          <option value="ST">ST</option>
-                          <option value="SC">SC</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="form-elem">
-                      <label for="address" class="form-label">Address</label>
-                      <input id="address" type="text" class="form-control" placeholder="e.g. Lake Street-23" required />
-                      <span class="form-text"></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="cv-form-blk">
-                  <div class="cv-form-row-title">
-                    <h3>Education</h3>
-                  </div>
-                  
-                  <!--profile completion bar-->
-                <div id="completion-status">
-                  <div>
-                    <div class="progress">
-                    <div id="education-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                    </div>
-                 </div>
-                </div>
-
-                  <div class="row-separator repeater">
-                    <div class="repeater" data-repeater-list="group-education">
-                      <div data-repeater-item class="educations_box">
-                        <div class="cv-form-row cv-form-row-blk">
-                          <div class="form-elem">
-                            <label for="" class="form-label">School</label>
-                            <input name="school" type="text" class="form-control school" id="school"
-                              placeholder="Name of School" />
-                            <span class="form-text"></span>
-                          </div>
-                          <div class="form-elem">
-                            <label for="college" class="form-label">College</label>
-                            <input name="college" type="text" class="form-control college" id="college"
-                              placeholder="Name of College" required />
-                            <span class="form-text"></span>
-                          </div>
-                          <div class="form-elem">
-                            <label for="" class="form-label">Degree</label>
-                            <input name="edu_degree" type="text" class="form-control edu_degree" id="degree"
-                              placeholder="Degree" />
-                            <span class="form-text"></span>
-                          </div>
-                          <div class="single-row-data">
-                            <div class="form-elem">
-                              <label for="sdate" class="form-label">Start Date</label>
-                              <input name="edu_start_date" type="month" id="sdate" class="form-control edu_start_date"
-                                required />
-                              <span class="form-text"></span>
-                            </div>
-                            <div class="form-elem">
-                              <label for="edate" class="form-label">End Date</label>
-                              <input name="edu_graduation_date" type="month" id="edate"
-                                class="form-control edu_graduation_date" required />
-                              <span class="form-text"></span>
-                            </div>
-                          </div>
-                          <div class="single-row-data">
-                            <div class="form-elem">
-                              <label for="" class="form-label">City</label>
-                              <input name="edu_city" type="text" class="form-control edu_city" id="city"
-                                placeholder="City Name" />
-                              <span class="form-text"></span>
-                            </div>
-                            <div class="form-elem">
-                              <label for="" class="form-label">Percentage/CGPA</label>
-                              <input name="percentage" type="text" id="Percentage"
-                                class="form-control edu_description" />
-                              <span class="form-text"></span>
-                            </div>
-                          </div>
-                          <div class="remove_button">
-                            <button data-repeater-delete type="button" class="repeater-remove-btn">
-                              Remove
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button type="button" value="Add" id="addeducation" class="repeater-add-btn" data-repeater-create>
-                      Add
-                    </button>
-                  </div>
-                </div>
-
-                <div class="cv-form-blk">
-                  <div class="cv-form-row-title">
-                    <h3>Experience</h3>
-                  </div>
-
-                   <!--profile completion bar-->
-                <div id="completion-status">
-                  <div>
-                    <div class="progress">
-                       <div id="experience-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                    </div>
-                  </div>
-                </div>
-
-                  <div class="row-separator repeater">
-                    <div class="repeater" data-repeater-list="group-experience">
-                      <div data-repeater-item class="experience_box">
-                        <div class="cv-form-row cv-form-row-blk">
-                          <div class="form-elem">
-                            <label for="job_title" class="form-label">Job Title</label>
-                            <input name="job_title" type="text" class="form-control job_title" id="job_title"
-                              placeholder="e.g. Software Developer" required />
-                            <span class="form-text"></span>
-                          </div>
-                          <div class="form-elem">
-                            <label for="company" class="form-label">Company</label>
-                            <input name="company" type="text" class="form-control company" id="company"
-                              placeholder="e.g. Tech Corp" required />
-                            <span class="form-text"></span>
-                          </div>
-                          <div class="single-row-data">
-                            <div class="form-elem">
-                              <label for="exp_start_date" class="form-label">Start Date</label>
-                              <input name="exp_start_date" type="month" id="exp_start_date"
-                                class="form-control exp_start_date" required />
-                              <span class="form-text"></span>
-                            </div>
-                            <div class="form-elem">
-                              <label for="exp_end_date" class="form-label">End Date</label>
-                              <input name="exp_end_date" type="month" id="exp_end_date"
-                                class="form-control exp_end_date" required />
-                              <span class="form-text"></span>
-                            </div>
-                          </div>
-                          <div class="form-elem">
-                            <label for="exp_city" class="form-label">City</label>
-                            <input name="exp_city" type="text" class="form-control exp_city" id="exp_city"
-                              placeholder="e.g. New York" required />
-                            <span class="form-text"></span>
-                          </div>
-                          <div class="form-elem">
-                            <label for="exp_description" class="form-label">Description</label>
-                            <textarea name="exp_description" class="form-control exp_description" id="exp_description"
-                              placeholder="Describe your role" rows="3" required></textarea>
-                            <span class="form-text"></span>
-                          </div>
-                          <div class="remove_button">
-                            <button data-repeater-delete type="button" class="repeater-remove-btn">
-                              Remove
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button type="button" value="Add" id="addexperience" class="repeater-add-btn" data-repeater-create>
-                      Add
-                    </button>
-                  </div>
-                </div>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637" height="0" width="0"
+      style="display: none; visibility: hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
 
-                <div class="cv-form-blk">
-                  <div class="cv-form-row-title">
-                    <h3>Skills</h3>
+   <!-- Main section -->
+  <div id="main"></div>
+  <!-- Main section -->
 
-                    <!--profile completion bar-->
-                <div id="completion-status">
-                  <div>
-                    <div class="progress">
-                       <div id="skills-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                     </div>
-                  </div>
-               </div>
 
-                    <p>
-                      Start typing a skill and select from the dropdown. You can add multiple skills separated by commas:
-                    </p>
-                  </div>
-                
-                  <form autocomplete="off" action="/action_page.php">
-                    <div class="autocomplete">
-                      <input id="skillInput" type="text" name="skills" placeholder="Enter your Skills" />
-                      <div id="autocomplete-list" class="autocomplete-items"></div>
-                    </div>
-                    <div class="selected-skills" id="selectedSkills"></div>
-                    <!-- <input type="submit" /> -->
-                  </form>
-                </div>
-                <!-- <div class="row-separator repeater">
-                    <div class="repeater" data-repeater-list="group-skill">
-                      <div data-repeater-item>
-                        <div class="cv-form-row cv-form-row-skills">
-                          <div class="form-elem">
-                            <input
-                              name="skill"
-                              type="text"
-                              class="form-control skill"
-                              multiple
-                            />
-                            <span class="form-text"></span>
-                          </div> -->
-                <!-- <div class="remove_button">
-                            <button
-                              data-repeater-delete
-                              type="button"
-                              class="repeater-remove-btn"
-                            >
-                              Remove
-                            </button>
-                          </div> -->
-                <!-- </div>
-                      </div>
-                    </div>
-                  </div> -->
-            </div>
-            </form>
-            <section class="print-btn-sc">
-              <div class="container">
-                <button type="button" id="btn" class="print-btn btn btn-primary">
-                  Submit Details
-                </button>
-              </div>
-            </section>
-          </div>
-        </main>
-      <!-- </section> -->
+  <!-- </section> -->
 
-     
-      <!-- jquery cdn -->
 
-      <!-- custom js -->
-      <!-- <script>
+  <!-- jquery cdn -->
+
+  <!-- custom js -->
+  <!-- <script>
           function autocomplete(inp, arr) {
             var currentFocus;
             inp.addEventListener("input", function (e) {
@@ -626,389 +203,191 @@
           /initiate the autocomplete function on the "skillInput" element, and pass along the skills array as possible autocomplete values:/
           autocomplete(document.getElementById("skillInput"), skills);
         </script> -->
-     
 
-    <!-- Footer -->
 
-    <footer class="container-fluid bg-black">
-  <div class="text-white">
-    <div class="row pt-5 text-center" style="margin-right: 22px">
-      <div class="col-md-4 mb-3">
-        <ul class="footer">
-          <h4 class="fs-3">Quick-Links</h4>
-          <li><a href="/">Home</a></li>
-          <li>
-            <a href="/about/">About Us</a>
-          </li>
-          <li>
-            <a href="/results/">Our Results</a>
-          </li>
-          <li>
-            <a href="/pricing/">Pricing</a>
-          </li>
-          <li>
-            <a href="/campaign/workshop/registration/">Workshop</a>
-          </li>
-          <li>
-            <a href="/apply/">Apply</a>
-          </li>
-          <li>
-            <a href="/socialwork/donatebook/">Donate Books</a>
-          </li>
-          <li>
-            <a href="/contactus/">Contact us</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-4 mb-3">
-        <ul class="footer">
-          <h4 class="fs-3">Products</h4>
-          <li>
-            <a href="/myaccount/jobsforyou/">Jobs For You</a>
-          </li>
-          <li>
-            <a href="/myaccount/yourprofile/">Your Profile</a>
-          </li>
-          <li>
-            <a href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
-          </li>
-          <li>
-            <a href="/hiring/">Hiring</a>
-          </li>
-          <li>
-            <a href="/hirewithus/">Hire With Us</a>
-          </li>
-          <li>
-            <a href="/test/">Test Yourself</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-4 mb-3">
-        <ul class="footer">
-          <h4 class="fs-3">Other-Links</h4>
-          <li>
-            <a
-              href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund"
-              target="_blank"
-              >Cancellation & Refund Policy</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms"
-              target="_blank"
-              >Terms and Conditions
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping"
-              target="_blank"
-              >Shipping & Delivery Policy</a
-            >
-          </li>
-          <li>
-            <a href="/privacy/">Privacy Policy </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <!-- Footer -->
+  <div id="footer"></div>
+  <!-- Footer -->
 
-    <div class="row text-center">
-      <div class="col-md-12">
-        <div class="d-flex justify-content-center">
-          <a
-            href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-            target="_blank"
-            class="fb-icon"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="35"
-              height="35"
-              viewBox="0 0 48 48"
-            >
-              <path
-                fill="#fff"
-                d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
-              ></path>
-              <path
-                fill="#fff"
-                d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
-              ></path>
-              <path
-                fill="#cfd8dc"
-                d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
-              ></path>
-              <path
-                fill="#40c351"
-                d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
-              ></path>
-              <path
-                fill="#fff"
-                fill-rule="evenodd"
-                d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </a>
-          <a
-            href="https://www.facebook.com/profile.php?id=100093276582711"
-            target="_blank"
-            class="fb-icon"
-          >
-            <img
-              width="35"
-              height="35"
-              src="https://img.icons8.com/color/48/facebook-new.png"
-              alt="facebook-new"
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/jobsdoor360/"
-            target="_blank"
-            class="insta-icon"
-          >
-            <img
-              width="35"
-              height="35"
-              src="https://img.icons8.com/color/48/instagram-new--v1.png"
-              alt="instagram-new--v1"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/qualitywise-b05857275/"
-            target="_blank"
-            class="linkedin-icon"
-          >
-            <img
-              width="35"
-              height="35"
-              src="https://img.icons8.com/color/48/linkedin.png"
-              alt="linkedin"
-            />
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ"
-            target="_blank"
-            class="youtube-icon"
-          >
-            <img
-              width="35"
-              height="35"
-              src="https://img.icons8.com/color/48/youtube-play.png"
-              alt="youtube-play"
-          /></a>
-        </div>
-        <br />
-        <p style="font-size: 14px">
-          Copyright Jobsdoor360 © 2024. All rights reserved
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- WhatsApp Chat Button -->
-<div class="chat-back-to-top">
-  <!-- <button id="like-button">
+  <!-- WhatsApp Chat Button -->
+  <div class="chat-back-to-top">
+    <!-- <button id="like-button">
     <i class="fa-solid fa-thumbs-up"></i>
   </button>
   <button id="dislike-button">
     <i class="fa-solid fa-thumbs-down"></i>
   </button> -->
-  <!-- <span style="font-size: 15px">Any question or complaint</span> -->
- <a href= "https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
- target="_blank"   style="font-size: 14px; font-weight: 500; color: black"
-    >Any question or complaint</a
-  > 
-  <div class="whatsapp-chat">
-    <a
-      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-      target="_blank"
-    >
-      <i
-        class="fab fa-whatsapp"
-        style="font-size: 27px; margin-bottom: 13px"
-      ></i>
-       
-  </div>
-  <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
-    <i class="fa-solid fa-chevron-up"></i>
-  </button>
-</div>
+    <!-- <span style="font-size: 15px">Any question or complaint</span> -->
+    <a href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!" target="_blank"
+      style="font-size: 14px; font-weight: 500; color: black">Any question or complaint</a>
+    <div class="whatsapp-chat">
+      <a href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!" target="_blank">
+        <i class="fab fa-whatsapp" style="font-size: 27px; margin-bottom: 13px"></i>
 
-<!-- The Bootstrap Modal -->
-<div
-  class="modal fade"
-  id="myModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
-          What Can We Improve on Our Website?
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <textarea
-          id="feedback"
-          class="form-control"
-          placeholder="Your feedback..."
-        ></textarea>
-        <input
-          type="text"
-          id="phoneNumber"
-          class="form-control"
-          placeholder="Your phone number..."
-        />
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button id="submitFeedback" class="btn btn-primary">Submit</button>
+    </div>
+    <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <!-- The Bootstrap Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            What Can We Improve on Our Website?
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <textarea id="feedback" class="form-control" placeholder="Your feedback..."></textarea>
+          <input type="text" id="phoneNumber" class="form-control" placeholder="Your phone number..." />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button id="submitFeedback" class="btn btn-primary">Submit</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
+  <script>
+    async function loadHTML() {
+      document.getElementById('header').innerHTML = await fetch('navbar.html').then(response => response.text());
+      document.getElementById('main').innerHTML = await fetch('main.html').then(response => response.text());
+      document.getElementById('footer').innerHTML = await fetch('footer.html').then(response => response.text());
+    }
 
-<script type="module" src="/staticfiles/db/dbconfig.js"></script>
-<script type="module">
- // Check if the user is signed in
- window.auth.onAuthStateChanged((user) => {
+    loadHTML();
+  </script>
+  <script type="module" src="/staticfiles/db/dbconfig.js"></script>
+  <script type="module">
+    // Check if the user is signed in
+    window.auth.onAuthStateChanged((user) => {
       const signupButton = document.getElementById('signup-button');
-      
+
       if (user) {
-          localStorage.setItem("email", user.email);
-          document.getElementById("login-button").innerHTML = "Logout";
-          signupButton.style.display = "none"; // Hide the signup button directly
-          document.getElementById("user-mail").innerHTML = user.email;
-          document.getElementById("welcome-text").innerHTML = "Welcome";
+        localStorage.setItem("email", user.email);
+        document.getElementById("login-button").innerHTML = "Logout";
+        signupButton.style.display = "none"; // Hide the signup button directly
+        document.getElementById("user-mail").innerHTML = user.email;
+        document.getElementById("welcome-text").innerHTML = "Welcome";
       } else {
-          const loginButton = document.getElementById("login-button");
-          loginButton.addEventListener("click", () => {
-              const email = localStorage.getItem("email");
-              if (email) {
-                  localStorage.clear();
-              }
-              location.href = "/login"; // Corrected 'location.location.href' to 'location.href'
-          });
-          signupButton.style.display = "block"; // Show the signup button when user is not signed in
+        const loginButton = document.getElementById("login-button");
+        loginButton.addEventListener("click", () => {
+          const email = localStorage.getItem("email");
+          if (email) {
+            localStorage.clear();
+          }
+          location.href = "/login"; // Corrected 'location.location.href' to 'location.href'
+        });
+        signupButton.style.display = "block"; // Show the signup button when user is not signed in
       }
-  });
-  document.getElementById("login-button").addEventListener("click", function() {
-    const email = localStorage.getItem("email");
-    if (email) {
-      localStorage.clear();
-      auth.signOut()
-      .then(() => {
-        window.location.href = "/login/";
-      })
-      .catch((error) => {
-        console.error("Error signing out:", error);
-      });
+    });
+    document.getElementById("login-button").addEventListener("click", function () {
+      const email = localStorage.getItem("email");
+      if (email) {
+        localStorage.clear();
+        auth.signOut()
+          .then(() => {
+            window.location.href = "/login/";
+          })
+          .catch((error) => {
+            console.error("Error signing out:", error);
+          });
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      let scrollVal = window.scrollY;
+      if (scrollVal > 2000) {
+        document.getElementById("backToTopBtn").style.display = "block";
+      } else {
+        document.getElementById("backToTopBtn").style.display = "none";
+      }
+    });
+
+    function scrollToTop() {
+      document.documentElement.scrollTop = 0;
     }
-  });
-</script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-  crossorigin="anonymous"></script>
-
-<script>
-  window.addEventListener("scroll", () => {
-    let scrollVal = window.scrollY;
-    if (scrollVal > 2000) {
-    document.getElementById("backToTopBtn").style.display = "block";
-    } else {
-    document.getElementById("backToTopBtn").style.display = "none";
-    }
-  });
-
-  function scrollToTop() {
-    document.documentElement.scrollTop = 0;
-  }
-
-  document
-    .getElementById("backToTopBtn")
-    .addEventListener("click", scrollToTop);
-</script>
+    document
+      .getElementById("backToTopBtn")
+      .addEventListener("click", scrollToTop);
+  </script>
 
 
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
-<script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+  <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag("config", "G-1JQVXS3B5L");
-</script>
-<script>
-  (function (w, d, s, l, i) {
-    w[l] = w[l] || [];
-    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-    var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s),
-      dl = l != "dataLayer" ? "&l=" + l : "";
-    j.async = true;
-    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-    f.parentNode.insertBefore(j, f);
-  })(window, document, "script", "dataLayer", "GTM-MFBK5637");
-</script>
-<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452" crossorigin="anonymous"></script>-->
+    gtag("config", "G-1JQVXS3B5L");
+  </script>
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-MFBK5637");
+  </script>
+  <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452" crossorigin="anonymous"></script>-->
 
 
 
-      <script src="/website_data/website_masterdata.js"></script>
+  <script src="/website_data/website_masterdata.js"></script>
 
-      <script type="module" src="/staticfiles/mainfiles/myaccount/yourprofile/script.js"></script>
-      <script>
-        document.getElementById("firstname").focus();
-      </script>
-      <script>
-        $(document).ready(function () {
-          $(document).on("click", function (event) {
-            if (!$(event.target).closest(".accordion").length) {
-              $(".accordion-collapse").collapse("hide");
-            }
-          });
+  <script type="module" src="/staticfiles/mainfiles/myaccount/yourprofile/script.js"></script>
+  <script>
+    document.getElementById("firstname").focus();
+  </script>
+  <script>
+    $(document).ready(function () {
+      $(document).on("click", function (event) {
+        if (!$(event.target).closest(".accordion").length) {
+          $(".accordion-collapse").collapse("hide");
+        }
+      });
 
-          $(".accordion").on("click", function (event) {
-            event.stopPropagation();
-          });
-        });
-      </script>
-      <!-- jobsdoor360 -->
-      <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-2075086355753452" data-ad-slot="7339269701"
-        data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <script src="https://code.jquery.com/jquery-3.6.4.js"
-        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
-      <!-- jquery repeater cdn -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js"
-        integrity="sha512-bZAXvpVfp1+9AUHQzekEZaXclsgSlAeEnMJ6LfFAvjqYUVZfcuVXeQoN5LhD7Uw0Jy4NCY9q3kbdEXbwhZUmUQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+      $(".accordion").on("click", function (event) {
+        event.stopPropagation();
+      });
+    });
+  </script>
+  <!-- jobsdoor360 -->
+  <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-2075086355753452" data-ad-slot="7339269701"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+    crossorigin="anonymous"></script>
+  <!-- jquery repeater cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js"
+    integrity="sha512-bZAXvpVfp1+9AUHQzekEZaXclsgSlAeEnMJ6LfFAvjqYUVZfcuVXeQoN5LhD7Uw0Jy4NCY9q3kbdEXbwhZUmUQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>

@@ -1,0 +1,321 @@
+<main class="main">
+  <div class="body_content">
+    <section id="about-sc" class="">
+      <div class="container">
+        <div class="about-cnt">
+          <form action="" class="cv-form" id="cv-form">
+            <div class="cv-form-blk">
+              <div class="show_image_div">
+                <img src="" id="show_image" alt="" />
+              </div>
+              <div class="cv-form-row-title">
+                <h3>About section</h3>
+              </div>
+
+              <!--profile completion bar-->
+              <div id="completion-status">
+                <div>
+                  <div class="progress">
+                    <div id="about-progress" class="progress-bar" role="progressbar" style="width: 0%;"
+                      aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cv-form-row cv-form-row-blk">
+                <div class="single-row-data">
+                  <div class="form-elem">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input id="firstname" type="text" class="form-control firstname" placeholder="e.g. John" required />
+                    <span class="form-text"></span>
+                  </div>
+                  <div class="form-elem">
+                    <label for="middlename" class="form-label">Middle Name
+                      <span class="opt-text">(optional)</span></label>
+                    <input id="middlename" type="text" class="form-control middlename" placeholder="e.g. Herbert" />
+                    <span class="form-text"></span>
+                  </div>
+                  <div class="form-elem">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <input id="lastname" type="text" class="form-control lastname" placeholder="e.g. Doe" required />
+                    <span class="form-text"></span>
+                  </div>
+                  <div class="form-elem">
+                    <div class="single-row-data">
+                      <div class="form-elem">
+                        <label for="image" class="form-label">Your Image</label>
+                        <input id="image" type="file" class="form-control image" accept="image/*" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-elem">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" type="email" class="form-control email" placeholder="e.g. john.doe@example.com"
+                      required />
+                    <span class="form-text"></span>
+                  </div>
+                  <div class="form-elem">
+                    <label for="phoneno" class="form-label">Phone No</label>
+                    <input id="phoneno" type="integer" class="form-control phoneno"
+                      placeholder="e.g. 456-768-798, 567.654.002" required />
+                    <span class="form-text"></span>
+                  </div>
+                  <div class="form-elem">
+                    <label for="github" class="form-label">Github</label>
+                    <input id="github" type="text" class="form-control email" placeholder="e.g. xyz.github.com"
+                      required />
+                    <span class="form-text"></span>
+                  </div>
+                  <!-- <div class="form-elem">
+                      <label for="cv" class="form-label">Cover Letter</label>
+                      <input
+                        id="cv"
+                        type="file"
+                        class="form-control email"
+                        accept="cv/*"
+                        required
+                      />
+                      <span class="form-text"></span>
+                    </div> -->
+                  <div class="form-elem">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender" name="gender" required>
+                      <option value="better not to say">None</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div>
+                  <div class="form-elem">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" class="form-select" name="gender" required>
+                      <option value="none">None</option>
+                      <option value="General">General</option>
+                      <option value="OBC">OBC</option>
+                      <option value="ST">ST</option>
+                      <option value="SC">SC</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-elem">
+                  <label for="address" class="form-label">Address</label>
+                  <input id="address" type="text" class="form-control" placeholder="e.g. Lake Street-23" required />
+                  <span class="form-text"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cv-form-blk">
+              <div class="cv-form-row-title">
+                <h3>Education</h3>
+              </div>
+
+              <!--profile completion bar-->
+              <div id="completion-status">
+                <div>
+                  <div class="progress">
+                    <div id="education-progress" class="progress-bar" role="progressbar" style="width: 0%;"
+                      aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row-separator repeater">
+                <div class="repeater" data-repeater-list="group-education">
+                  <div data-repeater-item class="educations_box">
+                    <div class="cv-form-row cv-form-row-blk">
+                      <div class="form-elem">
+                        <label for="" class="form-label">School</label>
+                        <input name="school" type="text" class="form-control school" id="school"
+                          placeholder="Name of School" />
+                        <span class="form-text"></span>
+                      </div>
+                      <div class="form-elem">
+                        <label for="college" class="form-label">College</label>
+                        <input name="college" type="text" class="form-control college" id="college"
+                          placeholder="Name of College" required />
+                        <span class="form-text"></span>
+                      </div>
+                      <div class="form-elem">
+                        <label for="" class="form-label">Degree</label>
+                        <input name="edu_degree" type="text" class="form-control edu_degree" id="degree"
+                          placeholder="Degree" />
+                        <span class="form-text"></span>
+                      </div>
+                      <div class="single-row-data">
+                        <div class="form-elem">
+                          <label for="sdate" class="form-label">Start Date</label>
+                          <input name="edu_start_date" type="month" id="sdate" class="form-control edu_start_date"
+                            required />
+                          <span class="form-text"></span>
+                        </div>
+                        <div class="form-elem">
+                          <label for="edate" class="form-label">End Date</label>
+                          <input name="edu_graduation_date" type="month" id="edate"
+                            class="form-control edu_graduation_date" required />
+                          <span class="form-text"></span>
+                        </div>
+                      </div>
+                      <div class="single-row-data">
+                        <div class="form-elem">
+                          <label for="" class="form-label">City</label>
+                          <input name="edu_city" type="text" class="form-control edu_city" id="city"
+                            placeholder="City Name" />
+                          <span class="form-text"></span>
+                        </div>
+                        <div class="form-elem">
+                          <label for="" class="form-label">Percentage/CGPA</label>
+                          <input name="percentage" type="text" id="Percentage" class="form-control edu_description" />
+                          <span class="form-text"></span>
+                        </div>
+                      </div>
+                      <div class="remove_button">
+                        <button data-repeater-delete type="button" class="repeater-remove-btn">
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" value="Add" id="addeducation" class="repeater-add-btn" data-repeater-create>
+                  Add
+                </button>
+              </div>
+            </div>
+
+            <div class="cv-form-blk">
+              <div class="cv-form-row-title">
+                <h3>Experience</h3>
+              </div>
+
+              <!--profile completion bar-->
+              <div id="completion-status">
+                <div>
+                  <div class="progress">
+                    <div id="experience-progress" class="progress-bar" role="progressbar" style="width: 0%;"
+                      aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row-separator repeater">
+                <div class="repeater" data-repeater-list="group-experience">
+                  <div data-repeater-item class="experience_box">
+                    <div class="cv-form-row cv-form-row-blk">
+                      <div class="form-elem">
+                        <label for="job_title" class="form-label">Job Title</label>
+                        <input name="job_title" type="text" class="form-control job_title" id="job_title"
+                          placeholder="e.g. Software Developer" required />
+                        <span class="form-text"></span>
+                      </div>
+                      <div class="form-elem">
+                        <label for="company" class="form-label">Company</label>
+                        <input name="company" type="text" class="form-control company" id="company"
+                          placeholder="e.g. Tech Corp" required />
+                        <span class="form-text"></span>
+                      </div>
+                      <div class="single-row-data">
+                        <div class="form-elem">
+                          <label for="exp_start_date" class="form-label">Start Date</label>
+                          <input name="exp_start_date" type="month" id="exp_start_date"
+                            class="form-control exp_start_date" required />
+                          <span class="form-text"></span>
+                        </div>
+                        <div class="form-elem">
+                          <label for="exp_end_date" class="form-label">End Date</label>
+                          <input name="exp_end_date" type="month" id="exp_end_date" class="form-control exp_end_date"
+                            required />
+                          <span class="form-text"></span>
+                        </div>
+                      </div>
+                      <div class="form-elem">
+                        <label for="exp_city" class="form-label">City</label>
+                        <input name="exp_city" type="text" class="form-control exp_city" id="exp_city"
+                          placeholder="e.g. New York" required />
+                        <span class="form-text"></span>
+                      </div>
+                      <div class="form-elem">
+                        <label for="exp_description" class="form-label">Description</label>
+                        <textarea name="exp_description" class="form-control exp_description" id="exp_description"
+                          placeholder="Describe your role" rows="3" required></textarea>
+                        <span class="form-text"></span>
+                      </div>
+                      <div class="remove_button">
+                        <button data-repeater-delete type="button" class="repeater-remove-btn">
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" value="Add" id="addexperience" class="repeater-add-btn" data-repeater-create>
+                  Add
+                </button>
+              </div>
+            </div>
+
+
+            <div class="cv-form-blk">
+              <div class="cv-form-row-title">
+                <h3>Skills</h3>
+
+                <!--profile completion bar-->
+                <div id="completion-status">
+                  <div>
+                    <div class="progress">
+                      <div id="skills-progress" class="progress-bar" role="progressbar" style="width: 0%;"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                  </div>
+                </div>
+
+                <p>
+                  Start typing a skill and select from the dropdown. You can add multiple skills separated by commas:
+                </p>
+              </div>
+
+              <form autocomplete="off" action="/action_page.php">
+                <div class="autocomplete">
+                  <input id="skillInput" type="text" name="skills" placeholder="Enter your Skills" />
+                  <div id="autocomplete-list" class="autocomplete-items"></div>
+                </div>
+                <div class="selected-skills" id="selectedSkills"></div>
+                <!-- <input type="submit" /> -->
+              </form>
+            </div>
+            <!-- <div class="row-separator repeater">
+                  <div class="repeater" data-repeater-list="group-skill">
+                    <div data-repeater-item>
+                      <div class="cv-form-row cv-form-row-skills">
+                        <div class="form-elem">
+                          <input
+                            name="skill"
+                            type="text"
+                            class="form-control skill"
+                            multiple
+                          />
+                          <span class="form-text"></span>
+                        </div> -->
+            <!-- <div class="remove_button">
+                          <button
+                            data-repeater-delete
+                            type="button"
+                            class="repeater-remove-btn"
+                          >
+                            Remove
+                          </button>
+                        </div> -->
+            <!-- </div>
+                    </div>
+                  </div>
+                </div> -->
+        </div>
+        </form>
+        <section class="print-btn-sc">
+          <div class="container">
+            <button type="button" id="btn" class="print-btn btn btn-primary">
+              Submit Details
+            </button>
+          </div>
+        </section>
+      </div>
+</main>
