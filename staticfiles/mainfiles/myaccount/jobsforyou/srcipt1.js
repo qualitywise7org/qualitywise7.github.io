@@ -113,6 +113,10 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
                             : `
                         <p><strong>Post Date : </strong>${job?.post_date}</p>`
                         }
+
+                        ${
+                          `<p><strong> Profile : </strong>${job?.job_code}</p>`
+                        }
                          ${
                           job?.company
                             ? `
