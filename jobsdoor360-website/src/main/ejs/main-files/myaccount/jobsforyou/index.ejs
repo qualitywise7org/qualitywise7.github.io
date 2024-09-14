@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Jobs For You</title>
-    <meta
-      name="description"
-      content="Unlock remarkable opportunities with JobsDoor360's seamless resume upload. Elevate your career journey by submitting your comprehensive CV, and stay ahead as we expand to accommodate additional details. Join us on the path to success with streamlined job applications and personalized career development."
-    />
-    <link
-      rel="stylesheet"
-      href="/staticfiles/mainfiles/myaccount/jobsforyou/style.css"
-    />
-    <%- include('../../../partials/head.ejs') %>
-  </head>
 
-  <body>
-    <%- include('../../../partials/navbar.ejs') %>
+<head>
+  <title>Jobs For You</title>
+  <meta name="description"
+    content="Unlock remarkable opportunities with JobsDoor360's seamless resume upload. Elevate your career journey by submitting your comprehensive CV, and stay ahead as we expand to accommodate additional details. Join us on the path to success with streamlined job applications and personalized career development." />
+  <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/jobsforyou/style.css" />
+  <%- include('../../../partials/head.ejs') %>
+</head>
+
+<body>
+  <%- include('../../../partials/navbar.ejs') %>
     <section>
       <div class="container mt-3 mr-4 ml-4">
         <!-- <button id="openModalButton" class="btn btn-primary mt-3">
@@ -32,13 +28,7 @@
           <div class="row mt-3">
             <div class="col-md-4 mb-4">
               <label for="locationInput">Location:</label>
-              <input
-                class="form-control"
-                type="text"
-                name="location"
-                id="location"
-                placeholder="Desired location..."
-              />
+              <input class="form-control" type="text" name="location" id="location" placeholder="Desired location..." />
             </div>
             <div class="col-md-4 mb-4">
               <label for="jotbTypeInpu">Job Type:</label>
@@ -46,84 +36,59 @@
             </div>
             <div class="col-md-4 mb-4">
               <label for="qualificationInput">Qualification:</label>
-              <input
-                class="form-control"
-                type="text"
-                name="qualification"
-                id="qualification"
-                placeholder="Desired qualification..."
-              />
+              <input class="form-control" type="text" name="qualification" id="qualification"
+                placeholder="Desired qualification..." />
             </div>
             <div class="col-md-4 mb-4">
-              <label for="Profile">Work Profile:</label>
-              <div class="input-group">
-                <input
-                  class="form-control"
-                  type="text"
-                  name="profile"
-                  id="profile"
-                  placeholder="Desired work Profile..."
-                />
-                <button class="btn btn-info" type="submit" id="submitButton">
-                  Search
-                </button>
-              </div>
+              <label for="qualificationInput">Company:</label>
+              <input class="form-control" type="text" name="company" id="company"
+                placeholder="Desired Company..." />
             </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="container mt-3">
-            <div class="fs-3 text-center mt-5 fw-bold mb-2">Jobs...</div>
-            <div id="loading" class="loading">getting jobs for you...</div>
-            <div class="row">
-              <div class="col">
-                <div id="results" class="result-field"></div>
-              </div>
+    
+          <div class="col-md-4 mb-4">
+            <label for="Profile">Work Profile:</label>
+            <div class="input-group">
+              <input class="form-control" type="text" name="profile" id="profile"
+                placeholder="Desired work Profile..." />
+              <button class="btn btn-info" type="submit" id="submitButton">
+                Search
+              </button>
             </div>
           </div>
         </div>
       </div>
 
+      <div class="row">
+        <div class="container mt-3">
+          <div class="fs-3 text-center mt-5 fw-bold mb-2">Jobs...</div>
+          <div id="loading" class="loading">getting jobs for you...</div>
+          <div class="row">
+            <div class="col">
+              <div id="results" class="result-field"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
       <!-- Offcanvas -->
-      <div
-        class="offcanvas offcanvas-start"
-        tabindex="-1"
-        id="optionsOffcanvas"
-      >
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="optionsOffcanvas">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title">My Account</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
       </div>
     </section>
 
     <!-- Modal structure -->
-    <div
-      class="modal fade"
-      id="myModal1"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="myModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
               Education Details
             </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              id="closed1"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closed1"></button>
           </div>
           <div class="modal-body">
             <form>
@@ -132,22 +97,12 @@
                 <h3>12th*</h3>
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                    <label for="twelfthSubject" class="form-label"
-                      >Subject</label
-                    >
+                    <label for="twelfthSubject" class="form-label">Subject</label>
                     <select class="form-select" id="twelfthSubject"></select>
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="twelfthPercentage" class="form-label"
-                      >Percentage</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="twelfthPercentage"
-                      placeholder="e.g. 70"
-                      required
-                    />
+                    <label for="twelfthPercentage" class="form-label">Percentage</label>
+                    <input type="text" class="form-control" id="twelfthPercentage" placeholder="e.g. 70" required />
                   </div>
                 </div>
               </div>
@@ -161,9 +116,7 @@
                     <select class="form-select" id="diplomaStream"></select>
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="diplomaName" class="form-label"
-                      >Diploma Name</label
-                    >
+                    <label for="diplomaName" class="form-label">Diploma Name</label>
                     <select class="form-select" id="diplomaName"></select>
                   </div>
                 </div>
@@ -174,27 +127,16 @@
                 <h3>Graduation</h3>
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                    <label for="graduationStream" class="form-label"
-                      >Stream</label
-                    >
+                    <label for="graduationStream" class="form-label">Stream</label>
                     <select class="form-select" id="graduationStream"></select>
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="graduationDegree" class="form-label"
-                      >Degree</label
-                    >
+                    <label for="graduationDegree" class="form-label">Degree</label>
                     <select class="form-select" id="graduationDegree"></select>
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="graduationPercentage" class="form-label"
-                      >Percentage</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="graduationPercentage"
-                      placeholder="e.g. 80"
-                    />
+                    <label for="graduationPercentage" class="form-label">Percentage</label>
+                    <input type="text" class="form-control" id="graduationPercentage" placeholder="e.g. 80" />
                   </div>
                 </div>
               </div>
@@ -212,15 +154,8 @@
                     <select class="form-select" id="pgDegree"></select>
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="pgPercentage" class="form-label"
-                      >Percentage</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="pgPercentage"
-                      placeholder="e.g. 75"
-                    />
+                    <label for="pgPercentage" class="form-label">Percentage</label>
+                    <input type="text" class="form-control" id="pgPercentage" placeholder="e.g. 75" />
                   </div>
                 </div>
               </div>
@@ -246,13 +181,7 @@
 
           <!-- Buttons -->
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              id="closed2"
-            >
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" id="closed2">
               Close
             </button>
             <button type="submit" id="saveDetails" class="btn btn-primary">
@@ -264,9 +193,9 @@
     </div>
     <%- include('../../../partials/footer.ejs') %>
 
-    <script src="../../website_data/jobs_data.js"></script>
-    <script src="../../website_data/website_masterdata.js"></script>
-    <!-- <script
+      <script src="../../website_data/jobs_data.js"></script>
+      <script src="../../website_data/website_masterdata.js"></script>
+      <!-- <script
       type="module"
       src="/staticfiles/mainfiles/myaccount/script.js"
     ></script>
@@ -274,9 +203,7 @@
       type="module"
       src="/staticfiles/mainfiles/myaccount/jobsforyou/script.js"
     ></script> -->
-    <script
-      type="module"
-      src="/staticfiles/mainfiles/myaccount/jobsforyou/srcipt1.js"
-    ></script>
-  </body>
+      <script type="module" src="/staticfiles/mainfiles/myaccount/jobsforyou/srcipt1.js"></script>
+</body>
+
 </html>
