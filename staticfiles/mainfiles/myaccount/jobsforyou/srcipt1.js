@@ -1,8 +1,7 @@
 const jobTypeSelect = document.getElementById("jobType");
 const locationSelect = document.getElementById("location");
 const qualificationInput = document.getElementById("qualification");
-const profileSelect = document.getElementById("profile");
-const companySelect = document.getElementById("company");
+// const profileSelect = document.getElementById("profile"); // Removed profile select element
 const submitButton = document.getElementById("submitButton");
 const resultsContainer = document.getElementById("results");
 
@@ -27,7 +26,7 @@ window.addEventListener("load", async () => {
   // Call the function to populate select options from local storage
   populateSelectOptions(jobtype_masterdata, jobTypeSelect);
   populateSelectOptions(industry_masterdata, locationSelect);
-  populateSelectOptions(profile_masterdata, profileSelect); 
+  // populateSelectOptions(profile_masterdata, profileSelect); // Removed profile options
 
   // Check if URL parameters are present and apply them
   const urlSearchParams = new URLSearchParams(window.location.search);
@@ -35,7 +34,6 @@ window.addEventListener("load", async () => {
   const urlJobType = urlSearchParams.get("jobType");
   const urlLocation = urlSearchParams.get("location");
   const urlProfile = urlSearchParams.get("profile");
-  const urlCompany = urlSearchParams.get("company");
   const urlQualification = urlSearchParams.get("qualification");
 
   const currentPage = parseInt(urlSearchParams.get("page")) || 1;
@@ -50,29 +48,27 @@ window.addEventListener("load", async () => {
     if (urlQualification) {
       qualificationInput.value = urlQualification;
     }
-    if (urlProfile) {
-      profileSelect.value = urlProfile;
-    }
-    if (urlCompany) {
-      companySelect.value = urlProfile;
-    }
+    // if (urlProfile) {
+    //   profileSelect.value = urlProfile;
+    // }
 
-    if (urlJobType || urlLocation || urlProfile || urlQualification || urlCompany) {
-      displayResults(urlJobType, urlLocation, urlProfile, urlCompany, currentPage);
+    if (urlJobType || urlLocation /* || urlProfile */|| urlQualification) {
+      displayResults(urlJobType, urlLocation, currentPage);
     } else {
       displayJobs(currentPage);
     }
   }, 1000);
 
-  if (!urlJobType && !urlLocation && !urlProfile && !urlQualification && !urlCompany) {
+  if (!urlJobType && !urlLocation /* && !urlProfile */&& !urlQualification) {
     displayJobs(1);
   }
 });
 
 // Function to render paginated jobs and generate pagination controls
 function renderPaginatedJobsAndControls(jobs, currentPage) {
-  // console.log(jobs);
+  console.log(jobs);
   jobs.forEach((doc) => {
+    console.log(doc.posts_data.post_name, "location");
   });
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
@@ -100,53 +96,24 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
       const jobDiv = document.createElement("div");
       jobDiv.classList.add("col-md-4", "col-12");
       jobDiv.innerHTML = `
-                <div class="card h-100 w-100 overflow-hidden">
+                <div class="card h-100 overflow-hidden">
                     <div class="card-body " style=" background-color:rgb(244 242 255)">
-                        <h5 class="card-title text-center p-3">${
-                          job?.posts_data?.post_name
-                        }</h5>
+                        <h5 class="card-title text-center">${job?.posts_data?.post_name}</h5>
 
-                        ${
-                          job.last_date
-                            ? `
-                        <p><strong>Post Date : </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>`
-                            : `
-                        <p><strong>Post Date : </strong>${job?.post_date}</p>`
-                        }
+                        ${job.last_date ? `
+                        <p><strong>Post Date : </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>` : `
+                        <p><strong>Post Date : </strong>${job?.post_date}</p>`}
 
-                        ${
-                          `<p><strong> Profile : </strong>${job?.job_code}</p>`
-                        }
-                         ${
-                          job?.company
-                            ? `
-                        <p><strong>Company :</strong> ${job?.company}</p>`
-                            : ``
-                        }
+                        <p><strong>Eligibility : </strong>${job?.qualification_eligibility}</p>
 
-                        <p><strong>Eligibility : </strong>${
-                          job?.qualification_eligibility
-                        }</p>
-                        ${
-                          job?.recruitment_board
-                            ? `
-                        <p><strong>Recruitment Board :</strong> ${job?.recruitment_board}</p>`
-                            : `
-                        <p><strong>Location :</strong> ${job?.location}</p>`
-                        }
+                        ${job?.recruitment_board ? `
+                        <p><strong>Recruitment Board :</strong> ${job?.recruitment_board}</p>` : `
+                        <p><strong>Location :</strong> ${job?.location}</p>`}
 
-                        ${
-                          job?.minimum_age || job?.maximum_age
-                            ? `
-                        <p><strong>Minimum Age :</strong> ${job?.minimum_age} | <strong>Maximum Age :</strong> ${job?.maximum_age}</p>`
-                            : job?.company_name
-                            ? `
-                        <p><strong>Company Name : </strong>${job?.company_name}</p>`
-                            : ``
-                        }
-                        <a href="/careeroptions/jobdetails/?jobCode=${
-                          job?.job_code
-                        }" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
+                        ${job?.minimum_age || job?.maximum_age ? `
+                        <p><strong>Minimum Age :</strong> ${job?.minimum_age} | <strong>Maximum Age :</strong> ${job?.maximum_age}</p>` : job?.company_name ? `
+                        <p><strong>Company Name : </strong>${job?.company_name}</p>` : ``}
+                        <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code}" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
                     </div>
                 </div>    
             `;
@@ -218,8 +185,7 @@ function getSearchParams() {
   const selectedJobType = jobTypeSelect.value;
   const selectedLocation = locationSelect.value;
   const selectedQualification = qualificationInput.value;
-  const selectedProfile = profileSelect.value;
-  const selectedCompany = companySelect.value;
+  // const selectedProfile = profileSelect.value; // Removed profile parameter
 
   // Remove existing "page" parameter if it exists
   urlSearchParams.delete("page");
@@ -227,8 +193,7 @@ function getSearchParams() {
   urlSearchParams.set("jobType", selectedJobType);
   urlSearchParams.set("location", selectedLocation);
   urlSearchParams.set("qualification", selectedQualification);
-  urlSearchParams.set("profile", selectedProfile);
-  urlSearchParams.set("company", selectedCompany);
+  // urlSearchParams.set("profile", selectedProfile); // Removed profile parameter
 
   // Return the formatted search parameters
   return `&${urlSearchParams.toString()}`;
@@ -240,40 +205,18 @@ async function displayJobs(page) {
   console.log(jobs);
   renderPaginatedJobsAndControls(jobs, page);
 }
-// function to display results
-async function displayResults(
-  selectedJobType,
-  selectedLocation,
-  selectedQualification,
-  selectedProfile,
-  selectedCompany,
-  page
-) {
-  const jobs = jobs_data.filter((job) => {
-    const jobTypeMatch =
-      !selectedJobType ||
-      selectedJobType === "all" ||
-      job.job_type === selectedJobType;
-    const locationMatch =
-      !selectedLocation ||
-      selectedLocation.toLowerCase() === "india" ||
-      job?.location?.trim() === "" ||
-      job?.location?.toLowerCase().includes(selectedLocation.toLowerCase());
-    const qualificationMatch =
-      !selectedQualification ||
-      job?.qualification_eligibility
-        ?.toLowerCase()
-        .includes(selectedQualification.toLowerCase());
-    const ProfileMatch =
-      !selectedProfile ||
-      job?.job_code?.toLowerCase().includes(selectedProfile?.toLowerCase()) ||
-      job?.post_code?.toLowerCase().includes(selectedProfile?.toLowerCase());
-    const CompanyMatch =
-      !selectedCompany ||
-      job?.company?.toLowerCase().includes(selectedCompany?.toLowerCase()) ||
-      job?.recruitment_board?.toLowerCase().includes(selectedCompany?.toLowerCase());
 
-    return jobTypeMatch && locationMatch && qualificationMatch && ProfileMatch && CompanyMatch;
+async function displayResults(selectedJobType, selectedLocation, selectedQualification, page) {
+  console.log("Filters:", selectedJobType, selectedLocation , selectedQualification);
+
+  const jobs = jobs_data.filter(job => {
+    const jobTypeMatch = !selectedJobType || selectedJobType === "all" || job.job_type === selectedJobType;
+    const locationMatch = !selectedLocation || selectedLocation.toLowerCase() === "india" ||
+      job?.location?.trim() === "" || job?.location?.toLowerCase().includes(selectedLocation.toLowerCase());
+      const qualificationMatch = !selectedQualification || job?.qualification_eligibility?.toLowerCase().includes(selectedQualification.toLowerCase());
+  
+
+    return jobTypeMatch && locationMatch  && qualificationMatch;
   });
 
   console.log("Filtered Jobs:", jobs); // Check filtered jobs in console
@@ -287,20 +230,14 @@ submitButton.addEventListener("click", async (e) => {
   const selectedJobType = jobTypeSelect.value;
   const selectedLocation = locationSelect.value;
   const selectedQualification = qualificationInput.value;
-  const selectedProfile = profileSelect.value;
-  const selectedCompany = companySelect.value
-  
+  // const selectedProfile = profileSelect.value; // Removed profile parameter
+
+  console.log("Selected:", selectedJobType, selectedLocation /* , selectedProfile */,selectedQualification);
+
   // Update the URL with selected parameters
-  const url = `?jobType=${selectedJobType}&location=${selectedLocation}&qualification=${selectedQualification}&profile=${selectedProfile}&company=${selectedCompany}`;
+  const url = `?jobType=${selectedJobType}&location=${selectedLocation}&qualification=${selectedQualification}`; // Removed profile parameter
   history.pushState(null, "", url);
 
   // Call displayResults function with selected parameters
-  displayResults(
-    selectedJobType,
-    selectedLocation,
-    selectedQualification,
-    selectedProfile,
-    selectedCompany,
-    1
-  );
+  displayResults(selectedJobType, selectedLocation,selectedQualification, 1);
 });
