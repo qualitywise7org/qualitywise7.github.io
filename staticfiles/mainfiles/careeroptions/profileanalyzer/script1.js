@@ -28,14 +28,24 @@ function displayJobProfiles(profiles, query = "") {
             )}
           </p>
           <p class="card-text">
-            <b>Minimum Skills Required:</b> ${Array.isArray(profile.minimum_skills_required) ? profile.minimum_skills_required.join(", ") : profile.minimum_skills_required}
+            <b>Minimum Skills Required:</b> ${
+              Array.isArray(profile.minimum_skills_required)
+                ? profile.minimum_skills_required.join(", ")
+                : profile.minimum_skills_required
+            }
           </p>
           <p class="card-text">
-            <b>Preferred Streams:</b> ${Array.isArray(profile.preferred_streams) ? profile.preferred_streams.join(", ") : (profile.preferred_streams || "N/A")}
+            <b>Preferred Streams:</b> ${
+              Array.isArray(profile.preferred_streams)
+                ? profile.preferred_streams.join(", ")
+                : profile.preferred_streams || "N/A"
+            }
           </p>
           ${
             profile.entrance_exam && profile.entrance_exam.length > 0
-              ? `<p class="card-text"><b>Entrance Exam:</b> ${profile.entrance_exam.join(", ")}</p>`
+              ? `<p class="card-text"><b>Entrance Exam:</b> ${profile.entrance_exam.join(
+                  ", "
+                )}</p>`
               : ""
           }
           ${
@@ -53,27 +63,48 @@ function displayJobProfiles(profiles, query = "") {
                    <ul class="lifestyle-list">
                      <li><a href="${profile.life_style[1].url}" target="_blank">${profile.life_style[1].title}</a></li>
                    </ul>
-                 </p>`
+                 </p>
+                 `
               : ""
           }
+
           ${
             profile.colleges && profile.colleges.length > 0
               ? `<p class="card-text"><b>Top Colleges:</b>
                   <ul class="college-list">
-                    ${profile.colleges.map((college, i) =>
-                      i % 3 === 0
-                        ? `<li>${profile.colleges.slice(i, i + 3).join(", ")}</li>`
-                        : ""
-                    ).join("")}
+                    ${profile.colleges
+                      .map((college, i) =>
+                        i % 3 === 0
+                          ? `<li>${profile.colleges
+                              .slice(i, i + 3)
+                              .join(", ")}</li>`
+                          : ""
+                      )
+                      .join("")}
                   </ul>
                  </p>`
               : ""
           }
+               
           ${
             profile.industries && profile.industries.length > 0
-              ? `<p class="card-text"><b>Industries:</b> ${profile.industries.join(", ")}</p>`
+              ? `<p class="card-text"><b>Industries:</b> ${profile.industries.join(
+                  ", "
+                )}</p>`
               : ""
           }
+
+          <p class="card-text">
+                     <b>Syllabus</b>
+                     <ul class="lifestyle-list">
+                       <li>
+                         <a href="/careeroptions/profileanalyzer/syllabus.html?job=${profile.code}" target="_blank">
+                           Checkout the Syllabus
+                        </a>
+                       </li>
+                     </ul>
+               </p>
+
           <p class="text-center fw-bold">
             See Job Options?<br/>
             <a href="${profileUrl}" class="btn btn-outline-success mt-2 mx-2 clickHereBtn">Click here</a>
