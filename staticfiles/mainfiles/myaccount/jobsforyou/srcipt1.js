@@ -27,7 +27,7 @@ window.addEventListener("load", async () => {
   // Call the function to populate select options from local storage
   populateSelectOptions(jobtype_masterdata, jobTypeSelect);
   populateSelectOptions(industry_masterdata, locationSelect);
-  populateSelectOptions(profile_masterdata, profileSelect); 
+  populateSelectOptions(profile_masterdata, profileSelect);
 
   // Check if URL parameters are present and apply them
   const urlSearchParams = new URLSearchParams(window.location.search);
@@ -57,14 +57,32 @@ window.addEventListener("load", async () => {
       companySelect.value = urlProfile;
     }
 
-    if (urlJobType || urlLocation || urlProfile || urlQualification || urlCompany) {
-      displayResults(urlJobType, urlLocation, urlProfile, urlCompany, currentPage);
+    if (
+      urlJobType ||
+      urlLocation ||
+      urlProfile ||
+      urlQualification ||
+      urlCompany
+    ) {
+      displayResults(
+        urlJobType,
+        urlLocation,
+        urlProfile,
+        urlCompany,
+        currentPage
+      );
     } else {
       displayJobs(currentPage);
     }
   }, 1000);
 
-  if (!urlJobType && !urlLocation && !urlProfile && !urlQualification && !urlCompany) {
+  if (
+    !urlJobType &&
+    !urlLocation &&
+    !urlProfile &&
+    !urlQualification &&
+    !urlCompany
+  ) {
     displayJobs(1);
   }
 });
@@ -72,8 +90,7 @@ window.addEventListener("load", async () => {
 // Function to render paginated jobs and generate pagination controls
 function renderPaginatedJobsAndControls(jobs, currentPage) {
   // console.log(jobs);
-  jobs.forEach((doc) => {
-  });
+  jobs.forEach((doc) => {});
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
 
@@ -114,11 +131,11 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
                         <p><strong>Post Date : </strong>${job?.post_date}</p>`
                         }
                          ${
-                          job?.company
-                            ? `
+                           job?.company
+                             ? `
                         <p><strong>Company :</strong> ${job?.company}</p>`
-                            : ``
-                        }
+                             : ``
+                         }
 
                         <p><strong>Eligibility : </strong>${
                           job?.qualification_eligibility
@@ -236,7 +253,15 @@ async function displayJobs(page) {
   console.log(jobs);
   renderPaginatedJobsAndControls(jobs, page);
 }
-// function to display results
+
+// Array for filtering qualifications
+const qualificationMapping = {
+  graduation: ["b.a", "b.sc", "b.com", "b.tech", "b.e", "bba"],
+  postGraduation: ["m.a", "m.sc", "m.com", "m.tech", "mba"],
+  // Add other mappings as needed
+};
+
+// Function to display results based on user input
 async function displayResults(
   selectedJobType,
   selectedLocation,
@@ -245,52 +270,100 @@ async function displayResults(
   selectedCompany,
   page
 ) {
-  const jobs = jobs_data.filter((job) => {
-    const jobTypeMatch =
-      !selectedJobType ||
-      selectedJobType === "all" ||
-      job.job_type === selectedJobType;
-    const locationMatch =
-      !selectedLocation ||
-      selectedLocation.toLowerCase() === "india" ||
-      job?.location?.trim() === "" ||
-      job?.location?.toLowerCase().includes(selectedLocation.toLowerCase());
-    const qualificationMatch =
-      !selectedQualification ||
-      job?.qualification_eligibility
-        ?.toLowerCase()
-        .includes(selectedQualification.toLowerCase());
-    const ProfileMatch =
-      !selectedProfile ||
-      job?.job_code?.toLowerCase().includes(selectedProfile?.toLowerCase()) ||
-      job?.post_code?.toLowerCase().includes(selectedProfile?.toLowerCase());
-    const CompanyMatch =
-      !selectedCompany ||
-      job?.company?.toLowerCase().includes(selectedCompany?.toLowerCase()) ||
-      job?.recruitment_board?.toLowerCase().includes(selectedCompany?.toLowerCase());
+  // Split comma-separated values for each filter
+  const locationArray = selectedLocation
+    ? selectedLocation.split(",").map((loc) => loc.trim().toLowerCase())
+    : [];
+  const jobTypeArray = selectedJobType
+    ? selectedJobType.split(",").map((type) => type.trim().toLowerCase())
+    : [];
+  const profileArray = selectedProfile
+    ? selectedProfile.split(",").map((profile) => profile.trim().toLowerCase())
+    : [];
+  const companyArray = selectedCompany
+    ? selectedCompany.split(",").map((company) => company.trim().toLowerCase())
+    : [];
 
-    return jobTypeMatch && locationMatch && qualificationMatch && ProfileMatch && CompanyMatch;
+  // Check if "Graduation" is entered, and expand it to all relevant degrees
+  const qualificationArray = selectedQualification
+    ? selectedQualification.split(",").map((qual) => qual.trim().toLowerCase())
+    : [];
+  if (qualificationArray.includes("graduation")) {
+    qualificationArray.push(...qualificationMapping.graduation);
+  }
+  if (qualificationArray.includes("post graduation")) {
+    qualificationArray.push(...qualificationMapping.postGraduation);
+  }
+
+  const jobs = jobs_data.filter((job) => {
+    // Match job type
+    const jobTypeMatch =
+      !jobTypeArray.length ||
+      jobTypeArray.includes("all") ||
+      jobTypeArray.includes(job?.job_type?.toLowerCase());
+
+    // Match location
+    const locationMatch =
+      !locationArray.length ||
+      locationArray.includes("india") ||
+      job?.location?.trim() === "" ||
+      locationArray.some((loc) => job?.location?.toLowerCase().includes(loc));
+
+    // Match qualification (with expanded qualifications like Graduation)
+    const qualificationMatch =
+      !qualificationArray.length ||
+      qualificationArray.some((qual) =>
+        job?.qualification_eligibility?.toLowerCase().includes(qual)
+      );
+
+    // Match profile
+    const profileMatch =
+      !profileArray.length ||
+      profileArray.some(
+        (profile) =>
+          job?.job_code?.toLowerCase().includes(profile) ||
+          job?.post_code?.toLowerCase().includes(profile)
+      );
+
+    // Match company
+    const companyMatch =
+      !companyArray.length ||
+      companyArray.some(
+        (company) =>
+          job?.company?.toLowerCase().includes(company) ||
+          job?.recruitment_board?.toLowerCase().includes(company)
+      );
+
+    // Return true if all conditions match
+    return (
+      jobTypeMatch &&
+      locationMatch &&
+      qualificationMatch &&
+      profileMatch &&
+      companyMatch
+    );
   });
 
   console.log("Filtered Jobs:", jobs); // Check filtered jobs in console
 
+  // Render filtered and paginated jobs
   renderPaginatedJobsAndControls(jobs, page);
 }
 
-// Function to display results based on user selections
+// Event listener to apply filters when the user clicks the "submit" button
 submitButton.addEventListener("click", async (e) => {
   e.preventDefault();
   const selectedJobType = jobTypeSelect.value;
   const selectedLocation = locationSelect.value;
   const selectedQualification = qualificationInput.value;
   const selectedProfile = profileSelect.value;
-  const selectedCompany = companySelect.value
-  
+  const selectedCompany = companySelect.value;
+
   // Update the URL with selected parameters
   const url = `?jobType=${selectedJobType}&location=${selectedLocation}&qualification=${selectedQualification}&profile=${selectedProfile}&company=${selectedCompany}`;
   history.pushState(null, "", url);
 
-  // Call displayResults function with selected parameters
+  // Display results based on the selected filters
   displayResults(
     selectedJobType,
     selectedLocation,
