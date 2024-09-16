@@ -98,7 +98,7 @@ function displayJobProfiles(profiles, query = "") {
                      <b>Syllabus</b>
                      <ul class="lifestyle-list">
                        <li>
-                         <a href="/careeroptions/syllabus/index.html?job=${profile.code}" target="_blank">
+                         <a href="/careeroptions/profileanalyzer/syllabus/?profilecode=${profile.code}" target="_blank">
                            Checkout the Syllabus
                         </a>
                        </li>
