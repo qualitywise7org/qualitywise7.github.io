@@ -101,4 +101,7 @@ Object.assign(obj, {
 //assigning into windows so that in other files or places we can use like window.getAuth
 Object.assign(window,obj);
 //exporting default so that we can use like module as well [ import { getAuth } from "./dbconfig.js";) ]
+// Function to fetch user profile from Firebase
+
+
 export default obj;
