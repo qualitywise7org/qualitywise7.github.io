@@ -28,15 +28,17 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 
+              0 6px 20px rgba(0, 0, 0, 0.1); /* Improved shadow */
   padding: 20px;
   width: 300px;
+  margin-bottom: 40px; /* Add gap between the signup page and footer */
+  margin-top: 40px;
 }
 
 .signup-head {
   text-align: center;
   font-size: 24px;
-  /* font-family: serif; */
   color: #465684;
 }
 
@@ -47,10 +49,12 @@ form {
   text-align: start;
 }
 
+
+
 label {
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 8px;
-  color: #586ba6;
+  color: black; /* Darkened color for labels */
 }
 
 input {
@@ -58,20 +62,48 @@ input {
   margin-bottom: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease, border-width 0.2s;
 }
 
-button {
-  background-color: #586ba6;
-  color: white;
+input:focus {
+  border-color: #4a90e2;
+  border-width: 2px;
+}
+
+#signup-btn {
+  background-color: #00aaff; /* Darker sky blue */
+  color: #fff;
   border: none;
+  border-radius: 6px; /* Rounded corners */
   padding: 10px;
-  border-radius: 4px;
-  font-weight: bold;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  width: 100%;
 }
 
-button:hover {
-  background-color: #465684;
+#signup-btn:hover {
+  background-color: #008ccf; /* Slightly darker blue on hover */
+}
+
+#google-signup-btn {
+  background-color: #db4437; /* Red for Google button */
+  color: white;
+  border: none; /* Removes black border */
+  border-radius: 6px; /* Ensure rounded corners */
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+#google-signup-btn:hover {
+  background-color: #c3362b;
 }
 
 .lines-text {
@@ -95,11 +127,6 @@ button:hover {
   flex: 2 1;
   margin: 0 10px;
 }
-.lines-text span {
-  background-color: transparent;
-  position: relative;
-  z-index: 1;
-}
 
 .bottom-heading {
   margin-block: 10px;
@@ -115,5 +142,5 @@ button:hover {
 
 .bottom-heading span a {
   text-decoration: none;
-  color: #465684;
+  color: #00aaff; /* Light blue color for Log In link */
 }

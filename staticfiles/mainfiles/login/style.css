@@ -45,8 +45,9 @@ form {
 }
 
 label {
+  font-weight: 500;
   margin-bottom: 8px;
-  color: #3a4b6d; /* Darkened color for labels */
+  color: black; /* Darkened color for labels */
 }
 
 input {
