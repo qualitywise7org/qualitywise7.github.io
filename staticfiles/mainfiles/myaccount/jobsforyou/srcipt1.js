@@ -4,6 +4,7 @@ const qualificationInput = document.getElementById("qualification");
 const profileSelect = document.getElementById("profile");
 const companySelect = document.getElementById("company");
 const submitButton = document.getElementById("submitButton");
+const clearAllButton = document.getElementById("clearallButton");
 const resultsContainer = document.getElementById("results");
 
 // Function to populate select options
@@ -349,6 +350,17 @@ async function displayResults(
   // Render filtered and paginated jobs
   renderPaginatedJobsAndControls(jobs, page);
 }
+
+// Event listener to clear filters data when the user clicks the "clear All" button
+clearAllButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  jobTypeSelect.value = "all";
+  locationSelect.value = "";
+  qualificationInput.value = "";
+  profileSelect.value = "";
+  companySelect.value = "";
+})
+
 
 // Event listener to apply filters when the user clicks the "submit" button
 submitButton.addEventListener("click", async (e) => {

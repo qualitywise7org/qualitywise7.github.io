@@ -144,3 +144,11 @@ select:focus {
 .buttn i {
   margin-right: 8px;
 }
+
+#submitButton{
+  margin-left: 10px;
+  padding: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 20px;
+}
