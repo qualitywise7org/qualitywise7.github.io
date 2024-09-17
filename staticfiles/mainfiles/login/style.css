@@ -1,5 +1,3 @@
-/* login.css */
-
 body {
   width: 100%;
   font-family: Arial, sans-serif;
@@ -23,25 +21,20 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 
+              0 6px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 300px;
+  margin-bottom: 40px; /* Add gap between the login page and footer */
+  margin-top: 40px;
 }
+
 
 .login-head {
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
   color: #465684;
-  /* font-family: serif; */
-}
-
-#loginToast {
-  /* display: none; */
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  /* z-index: 1000; */
 }
 
 form {
@@ -52,9 +45,8 @@ form {
 }
 
 label {
-  /* font-weight: bold; */
   margin-bottom: 8px;
-  color: #586ba6;
+  color: #3a4b6d; /* Darkened color for labels */
 }
 
 input {
@@ -62,21 +54,55 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, border-width 0.2s;
 }
 
-button {
-  background-color: #586ba6;
+input:focus {
+  border-color: #4a90e2;
+  border-width: 2px;
+}
+
+/* Right aligned forgot password */
+.label-right {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+/* Ensure login button styling is applied */
+#login-btn {
+  background-color: #00aaff; /* Darker sky blue */
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px; /* Rounded corners */
   padding: 10px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s;
+  width: 100%; /* Make the button full width */
 }
 
-button:hover {
-  background-color: #465684;
+#login-btn:hover {
+  background-color: #008ccf; /* Slightly darker blue on hover */
+}
+
+#google-login-btn {
+  background-color: #db4437; /* Red for Google button */
+  color: white;
+  border-radius: 6px; /* Ensure rounded corners */
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border:none;
+}
+
+#google-login-btn:hover {
+  background-color: #c3362b;
 }
 
 .alert {
@@ -110,11 +136,6 @@ button:hover {
   flex: 2 1;
   margin: 0 10px;
 }
-.lines-text span {
-  background-color: transparent;
-  position: relative;
-  z-index: 1;
-}
 
 .bottom-heading {
   margin-block: 10px;
@@ -130,5 +151,5 @@ button:hover {
 
 .bottom-heading span a {
   text-decoration: none;
-  color: #465684;
+  color: #00aaff; /* Light blue color for Sign Up link */
 }

@@ -25,7 +25,7 @@
     <%- include('../../partials/navbar.ejs') %>
     <div class="login_parent">
       <div class="login-container" style="text-align: center">
-        <h2 class="login-head">Login</h2>
+        <h2 class="login-head">Login to Jobsdoor360</h2>
         <form id="login-form">
           <label for="email">Email:</label>
           <input
@@ -35,49 +35,41 @@
             required
             placeholder="Email"
           />
-
-          <label
-            style="margin-bottom: 8px"
-            class="password-container"
-            for="password"
-          >
-            Password:
-            <p class="label">
-              <a class="label" href="/forgotpassword/">Forgot password?</a>
-            </p>
-          </label>
+    
+          <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
-
+    
+          <p class="label-right">
+            <a class="label" href="/forgotpassword/">Forgot password?</a>
+          </p>
+    
           <button type="submit" id="login-btn" style="margin-top: 20px">
             Login
           </button>
         </form>
-
+    
         <button
           id="google-login-btn"
           class="google-button"
-          style="
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-          "
         >
-          <i class="fab fa-google"></i><span>Login with Google</span>
+          <span>Continue with Google</span>
         </button>
+    
         <div class="lines-text">
           <span>OR</span>
         </div>
-
+    
         <p class="bottom-heading">
-          Do not have an account?
+          Don't have an account?
           <span>
             <a href="/signup/">Sign Up</a>
           </span>
         </p>
       </div>
     </div>
+    
+    
+    
     <%- include('../../partials/footer.ejs') %>
 
     <script

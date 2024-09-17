@@ -105,6 +105,17 @@ function displayJobProfiles(profiles, query = "") {
                      </ul>
                </p>
 
+                <p class="card-text">
+                     <b>Assessment</b>
+                     <ul class="lifestyle-list">
+                       <li>
+                         <a href="/careeroptions/profileanalyzer/Assessment" target="_blank">
+                           Assess Yourself
+                        </a>
+                       </li>
+                     </ul>
+               </p>
+
           <p class="text-center fw-bold">
             See Job Options?<br/>
             <a href="${profileUrl}" class="btn btn-outline-success mt-2 mx-2 clickHereBtn">Click here</a>
