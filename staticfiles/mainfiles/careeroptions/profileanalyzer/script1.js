@@ -67,7 +67,6 @@ function displayJobProfiles(profiles, query = "") {
                  `
               : ""
           }
-
           ${
             profile.colleges && profile.colleges.length > 0
               ? `<p class="card-text"><b>Top Colleges:</b>
@@ -93,18 +92,36 @@ function displayJobProfiles(profiles, query = "") {
                 )}</p>`
               : ""
           }
-
+  
           <p class="card-text">
-                     <b>Syllabus</b>
-                     <ul class="lifestyle-list">
-                       <li>
-                         <a href="/careeroptions/profileanalyzer/syllabus/?profilecode=${profile.code}" target="_blank">
-                           Checkout the Syllabus
-                        </a>
-                       </li>
-                     </ul>
-               </p>
-
+             <b>Syllabus</b>
+             <ul class="lifestyle-list">
+               <li>
+                 <a href="/careeroptions/profileanalyzer/syllabus/?profilecode=${profile.code}" target="_blank">
+                   Checkout the Syllabus
+                </a>
+               </li>
+             </ul>
+          </p>
+  
+          ${
+            profile.code === "web_developer, software engineer, web developer, system engineer"
+              ? `<p class="card-text">
+                   <b>Assessment</b>
+                   <ul class="lifestyle-list">
+                     
+                       <a href="https://jobsdoor360.in/test/quiz/?quizcode=html" target="_blank">
+                         1. Html, Css, Javascript
+                       </a> </br>
+                        <a href="https://jobsdoor360.in/test/quiz/?quizcode=react" target="_blank">
+                         2. Reactjs
+                       </a>
+                    
+                   </ul>
+                 </p>`
+              : ""
+          }
+  
           <p class="text-center fw-bold">
             See Job Options?<br/>
             <a href="${profileUrl}" class="btn btn-outline-success mt-2 mx-2 clickHereBtn">Click here</a>
@@ -114,6 +131,9 @@ function displayJobProfiles(profiles, query = "") {
     `;
     fragment.appendChild(card);
   });
+  
+  
+  
 
   jobProfilesContainer.appendChild(fragment);
 

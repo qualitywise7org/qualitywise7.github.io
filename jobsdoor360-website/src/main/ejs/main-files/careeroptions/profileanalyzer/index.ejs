@@ -61,7 +61,6 @@
                   <%= profile.preferred_streams.join(', ') %>
                 <% } else { %>
                   <%= profile.preferred_streams || 'N/A' %> 
-                  <!-- Default to 'N/A' if profile.preferred_streams is null or undefined -->
                 <% } %>
               </p>
 
@@ -110,11 +109,26 @@
               <p class="card-text">
                 <b>Syllabus</b>
                 <ul class="lifestyle-list">
-                  <li><a href="<%= '/careeroptions/profileanalyzer/syllabus/?profilecode={profile.code}' %>" target="_blank">Checkout the Syllabus</a></li>
+                  <li><a href="<%= '/careeroptions/profileanalyzer/syllabus/?profilecode=' + profile.code %>" target="_blank">Checkout the Syllabus</a></li>
                 </ul>
               </p>
-              
 
+              <% if (profile.code === "web_developer, software engineer, web developer, system engineer") { %>
+                <p class="card-text">
+                  <b>Assessment</b>
+                  <ul class="lifestyle-list">
+                    
+                      <a href="https://jobsdoor360.in/test/quiz/?quizcode=html" target="_blank">
+                        1. Html, Css, Javascript
+                      </a> </br>
+              
+                      <a href="https://jobsdoor360.in/test/quiz/?quizcode=react" target="_blank">
+                        2. Reactjs
+                      </a>
+                    
+                  </ul>
+                </p>
+              <% } %>
 
               <p class="text-center fw-bold">
                 See Job Options?<br/>
