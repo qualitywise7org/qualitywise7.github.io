@@ -94,7 +94,7 @@ window.addEventListener("load", async () => {
 // Function to render paginated jobs and generate pagination controls
 function renderPaginatedJobsAndControls(jobs, currentPage) {
   // console.log(jobs);
-  jobs.forEach((doc) => {});
+  jobs.forEach((doc) => { });
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
 
@@ -123,47 +123,40 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
       jobDiv.innerHTML = `
                 <div class="card h-100 w-100 overflow-hidden">
                     <div class="card-body " style=" background-color:rgb(244 242 255)">
-                        <h5 class="card-title text-center p-3">${
-                          job?.posts_data?.post_name
-                        }</h5>
+                        <h5 class="card-title text-center p-3">${job?.posts_data?.post_name
+        }</h5>
 
-                        ${
-                          job.last_date
-                            ? `
+                        ${job.last_date
+          ? `
                         <p><strong>Post Date : </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>`
-                            : `
+          : `
                         <p><strong>Post Date : </strong>${job?.post_date}</p>`
-                        }
-                         ${
-                           job?.company
-                             ? `
+        }
+                         ${job?.company
+          ? `
                         <p><strong>Company :</strong> ${job?.company}</p>`
-                             : ``
-                         }
+          : ``
+        }
 
-                        <p><strong>Eligibility : </strong>${
-                          job?.qualification_eligibility
-                        }</p>
-                        ${
-                          job?.recruitment_board
-                            ? `
+                        <p><strong>Eligibility : </strong>${job?.qualification_eligibility
+        }</p>
+                        ${job?.recruitment_board
+          ? `
                         <p><strong>Recruitment Board :</strong> ${job?.recruitment_board}</p>`
-                            : `
+          : `
                         <p><strong>Location :</strong> ${job?.location}</p>`
-                        }
+        }
 
-                        ${
-                          job?.minimum_age || job?.maximum_age
-                            ? `
+                        ${job?.minimum_age || job?.maximum_age
+          ? `
                         <p><strong>Minimum Age :</strong> ${job?.minimum_age} | <strong>Maximum Age :</strong> ${job?.maximum_age}</p>`
-                            : job?.company_name
-                            ? `
+          : job?.company_name
+            ? `
                         <p><strong>Company Name : </strong>${job?.company_name}</p>`
-                            : ``
-                        }
-                        <a href="/careeroptions/jobdetails/?jobCode=${
-                          job?.job_code
-                        }" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
+            : ``
+        }
+                        <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code
+        }" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
                     </div>
                 </div>    
             `;
@@ -323,21 +316,68 @@ window.auth.onAuthStateChanged((user) => {
 function trackSearchResults(jobs) {
   jobs.length > 0
     ? gtag("event", "search_results", {
-        status: "jobs_found",
-        job_codes: jobs.map((job) => job.job_code), // Send job codes of found jobs
-        'debug_mode': true  // Enable debug mode for development
-      })
+      status: "jobs_found",
+      job_codes: jobs.map((job) => job.job_code), // Send job codes of found jobs
+      debug_mode: true, // Enable debug mode for development
+    })
     : gtag("event", "search_results", {
-        status: "no_jobs_found",
-        job_codes: "nojob", // Send 'nojob' if no jobs found
-        'debug_mode': true  // Enable debug mode for development
-      });
+      status: "no_jobs_found",
+      job_codes: "nojob", // Send 'nojob' if no jobs found
+      debug_mode: true, // Enable debug mode for development
+    });
 
   // Log the result for debugging purposes
   console.log(
-    jobs.length > 0 ? `Jobs Found: ${jobs.map((job) => job.job_code)}` : "No Jobs Found"
+    jobs.length > 0
+      ? `Jobs Found: ${jobs.map((job) => job.job_code)}`
+      : "No Jobs Found"
   );
 }
+
+// Function to track the filters that are applied
+function trackFiltersApplied(
+  selectedJobType,
+  selectedLocation,
+  selectedQualification,
+  selectedProfile,
+  selectedCompany
+) {
+  const appliedFilters = {};
+
+  // Check and add only applied filters to the event if they have a valid value
+  if (
+    selectedJobType &&
+    selectedJobType !== "none"
+  ) {
+    appliedFilters.job_type = selectedJobType;
+  }
+  if (selectedLocation && selectedLocation !== "none" && selectedLocation !== "") {
+    appliedFilters.location = selectedLocation;
+  }
+  if (selectedQualification && selectedQualification !== "none" && selectedQualification !== "") {
+    appliedFilters.qualification = selectedQualification;
+  }
+  if (selectedProfile && selectedProfile !== "none" && selectedProfile !== "") {
+    appliedFilters.profile = selectedProfile;
+  }
+  if (selectedCompany && selectedCompany !== "none" && selectedCompany !== "") {
+    appliedFilters.company = selectedCompany;
+  }
+
+  // Send event if at least one filter is applied
+  if (Object.keys(appliedFilters).length > 0) {
+    gtag("event", "filters_applied", {
+      ...appliedFilters,
+      debug_mode: true, // Enable debug mode for development
+    });
+
+    // Log the applied filters for debugging purposes
+    console.log(`Filters Applied: `, appliedFilters);
+  } else {
+    console.log("No filters applied.");
+  }
+}
+
 // Function to display results based on user input
 async function displayResults(
   selectedJobType,
@@ -450,6 +490,15 @@ submitButton.addEventListener("click", async (e) => {
   const selectedQualification = qualificationInput.value;
   const selectedProfile = profileSelect.value;
   const selectedCompany = companySelect.value;
+
+  // Track the filters applied by the user
+  trackFiltersApplied(
+    selectedJobType,
+    selectedLocation,
+    selectedQualification,
+    selectedProfile,
+    selectedCompany
+  );
 
   // Update the URL with selected parameters
   const url = `?jobType=${selectedJobType}&location=${selectedLocation}&qualification=${selectedQualification}&profile=${selectedProfile}&company=${selectedCompany}`;
