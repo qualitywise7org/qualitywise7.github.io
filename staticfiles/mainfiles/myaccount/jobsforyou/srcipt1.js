@@ -94,7 +94,7 @@ window.addEventListener("load", async () => {
 // Function to render paginated jobs and generate pagination controls
 function renderPaginatedJobsAndControls(jobs, currentPage) {
   // console.log(jobs);
-  jobs.forEach((doc) => { });
+  jobs.forEach((doc) => {});
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
 
@@ -123,40 +123,47 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
       jobDiv.innerHTML = `
                 <div class="card h-100 w-100 overflow-hidden">
                     <div class="card-body " style=" background-color:rgb(244 242 255)">
-                        <h5 class="card-title text-center p-3">${job?.posts_data?.post_name
-        }</h5>
+                        <h5 class="card-title text-center p-3">${
+                          job?.posts_data?.post_name
+                        }</h5>
 
-                        ${job.last_date
-          ? `
+                        ${
+                          job.last_date
+                            ? `
                         <p><strong>Post Date : </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>`
-          : `
+                            : `
                         <p><strong>Post Date : </strong>${job?.post_date}</p>`
-        }
-                         ${job?.company
-          ? `
+                        }
+                         ${
+                           job?.company
+                             ? `
                         <p><strong>Company :</strong> ${job?.company}</p>`
-          : ``
-        }
+                             : ``
+                         }
 
-                        <p><strong>Eligibility : </strong>${job?.qualification_eligibility
-        }</p>
-                        ${job?.recruitment_board
-          ? `
+                        <p><strong>Eligibility : </strong>${
+                          job?.qualification_eligibility
+                        }</p>
+                        ${
+                          job?.recruitment_board
+                            ? `
                         <p><strong>Recruitment Board :</strong> ${job?.recruitment_board}</p>`
-          : `
+                            : `
                         <p><strong>Location :</strong> ${job?.location}</p>`
-        }
+                        }
 
-                        ${job?.minimum_age || job?.maximum_age
-          ? `
+                        ${
+                          job?.minimum_age || job?.maximum_age
+                            ? `
                         <p><strong>Minimum Age :</strong> ${job?.minimum_age} | <strong>Maximum Age :</strong> ${job?.maximum_age}</p>`
-          : job?.company_name
-            ? `
+                            : job?.company_name
+                            ? `
                         <p><strong>Company Name : </strong>${job?.company_name}</p>`
-            : ``
-        }
-                        <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code
-        }" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
+                            : ``
+                        }
+                        <a href="/careeroptions/jobdetails/?jobCode=${
+                          job?.job_code
+                        }" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
                     </div>
                 </div>    
             `;
@@ -312,7 +319,6 @@ window.auth.onAuthStateChanged((user) => {
   }
 });
 
-
 // Function to display results based on user input
 async function displayResults(
   selectedJobType,
@@ -398,6 +404,26 @@ async function displayResults(
 
   console.log("Filtered Jobs:", jobs); // Check filtered jobs in console
 
+  // Send job codes of found jobs
+  if (jobs.length > 0) {
+    gtag("event", "search_results", {
+      status: "jobs_found",
+      job_codes: jobs.map((job) => job.job_code), // Send job codes of found jobs
+      'debug_mode': true  // Enable debug mode for development
+    });
+    console.log(
+      "Jobs Found Event Tracked",
+      jobs.map((job) => job.job_code)
+    );
+  } else {
+    gtag("event", "search_results", {
+      status: "no_jobs_found",
+      job_codes: "nojob", // Send 'nojob' if no jobs found
+      'debug_mode': true  // Enable debug mode for development
+    });
+    console.log("No Jobs Found Event Tracked");
+  }
+
   // Render filtered and paginated jobs
   renderPaginatedJobsAndControls(jobs, page);
 }
@@ -415,6 +441,7 @@ clearAllButton.addEventListener("click", (e) => {
 });
 
 // Event listener to apply filters when the user clicks the "submit" button
+
 submitButton.addEventListener("click", async (e) => {
   e.preventDefault();
   const selectedJobType = jobTypeSelect.value;
@@ -428,7 +455,7 @@ submitButton.addEventListener("click", async (e) => {
   history.pushState(null, "", url);
 
   // Display results based on the selected filters
-  displayResults(
+  const jobs = await displayResults(
     selectedJobType,
     selectedLocation,
     selectedQualification,
@@ -436,4 +463,19 @@ submitButton.addEventListener("click", async (e) => {
     selectedCompany,
     1
   );
+
+  // Google Analytics tracking event
+  gtag("event", "search", {
+    event_category: "Job Search",
+    event_label: "Search Filters",
+    filters: {
+      jobType: selectedJobType || "all",
+      location: selectedLocation || "all",
+      qualification: selectedQualification || "all",
+      profile: selectedProfile || "all",
+      company: selectedCompany || "all",
+      'debug_mode': true
+    },
+    results: jobs.length > 0 ? jobs.map((job) => job.job_code) : ["nojob"],
+  });
 });
