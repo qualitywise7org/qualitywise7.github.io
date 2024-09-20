@@ -319,6 +319,25 @@ window.auth.onAuthStateChanged((user) => {
   }
 });
 
+// Function to handle Google Analytics tracking
+function trackSearchResults(jobs) {
+  jobs.length > 0
+    ? gtag("event", "search_results", {
+        status: "jobs_found",
+        job_codes: jobs.map((job) => job.job_code), // Send job codes of found jobs
+        'debug_mode': true  // Enable debug mode for development
+      })
+    : gtag("event", "search_results", {
+        status: "no_jobs_found",
+        job_codes: "nojob", // Send 'nojob' if no jobs found
+        'debug_mode': true  // Enable debug mode for development
+      });
+
+  // Log the result for debugging purposes
+  console.log(
+    jobs.length > 0 ? `Jobs Found: ${jobs.map((job) => job.job_code)}` : "No Jobs Found"
+  );
+}
 // Function to display results based on user input
 async function displayResults(
   selectedJobType,
@@ -404,26 +423,8 @@ async function displayResults(
 
   console.log("Filtered Jobs:", jobs); // Check filtered jobs in console
 
-  // Send job codes of found jobs
-  if (jobs.length > 0) {
-    gtag("event", "search_results", {
-      status: "jobs_found",
-      job_codes: jobs.map((job) => job.job_code), // Send job codes of found jobs
-      'debug_mode': true  // Enable debug mode for development
-    });
-    console.log(
-      "Jobs Found Event Tracked",
-      jobs.map((job) => job.job_code)
-    );
-  } else {
-    gtag("event", "search_results", {
-      status: "no_jobs_found",
-      job_codes: "nojob", // Send 'nojob' if no jobs found
-      'debug_mode': true  // Enable debug mode for development
-    });
-    console.log("No Jobs Found Event Tracked");
-  }
-
+  // Track the filtered jobs (Google Analytics tracking)
+  trackSearchResults(jobs);
   // Render filtered and paginated jobs
   renderPaginatedJobsAndControls(jobs, page);
 }
@@ -455,7 +456,7 @@ submitButton.addEventListener("click", async (e) => {
   history.pushState(null, "", url);
 
   // Display results based on the selected filters
-  const jobs = await displayResults(
+  await displayResults(
     selectedJobType,
     selectedLocation,
     selectedQualification,
@@ -465,17 +466,4 @@ submitButton.addEventListener("click", async (e) => {
   );
 
   // Google Analytics tracking event
-  gtag("event", "search", {
-    event_category: "Job Search",
-    event_label: "Search Filters",
-    filters: {
-      jobType: selectedJobType || "all",
-      location: selectedLocation || "all",
-      qualification: selectedQualification || "all",
-      profile: selectedProfile || "all",
-      company: selectedCompany || "all",
-      'debug_mode': true
-    },
-    results: jobs.length > 0 ? jobs.map((job) => job.job_code) : ["nojob"],
-  });
 });
