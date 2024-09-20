@@ -94,7 +94,7 @@ window.addEventListener("load", async () => {
 // Function to render paginated jobs and generate pagination controls
 function renderPaginatedJobsAndControls(jobs, currentPage) {
   // console.log(jobs);
-  jobs.forEach((doc) => { });
+  jobs.forEach((doc) => {});
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
 
@@ -123,40 +123,47 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
       jobDiv.innerHTML = `
                 <div class="card h-100 w-100 overflow-hidden">
                     <div class="card-body " style=" background-color:rgb(244 242 255)">
-                        <h5 class="card-title text-center p-3">${job?.posts_data?.post_name
-        }</h5>
+                        <h5 class="card-title text-center p-3">${
+                          job?.posts_data?.post_name
+                        }</h5>
 
-                        ${job.last_date
-          ? `
+                        ${
+                          job.last_date
+                            ? `
                         <p><strong>Post Date : </strong>${job?.post_date} | <strong>Last Date: </strong>${job?.last_date}</p>`
-          : `
+                            : `
                         <p><strong>Post Date : </strong>${job?.post_date}</p>`
-        }
-                         ${job?.company
-          ? `
+                        }
+                         ${
+                           job?.company
+                             ? `
                         <p><strong>Company :</strong> ${job?.company}</p>`
-          : ``
-        }
+                             : ``
+                         }
 
-                        <p><strong>Eligibility : </strong>${job?.qualification_eligibility
-        }</p>
-                        ${job?.recruitment_board
-          ? `
+                        <p><strong>Eligibility : </strong>${
+                          job?.qualification_eligibility
+                        }</p>
+                        ${
+                          job?.recruitment_board
+                            ? `
                         <p><strong>Recruitment Board :</strong> ${job?.recruitment_board}</p>`
-          : `
+                            : `
                         <p><strong>Location :</strong> ${job?.location}</p>`
-        }
+                        }
 
-                        ${job?.minimum_age || job?.maximum_age
-          ? `
+                        ${
+                          job?.minimum_age || job?.maximum_age
+                            ? `
                         <p><strong>Minimum Age :</strong> ${job?.minimum_age} | <strong>Maximum Age :</strong> ${job?.maximum_age}</p>`
-          : job?.company_name
-            ? `
+                            : job?.company_name
+                            ? `
                         <p><strong>Company Name : </strong>${job?.company_name}</p>`
-            : ``
-        }
-                        <a href="/careeroptions/jobdetails/?jobCode=${job?.job_code
-        }" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
+                            : ``
+                        }
+                        <a href="/careeroptions/jobdetails/?jobCode=${
+                          job?.job_code
+                        }" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
                     </div>
                 </div>    
             `;
@@ -312,6 +319,56 @@ window.auth.onAuthStateChanged((user) => {
   }
 });
 
+// Function to track filters and job search results together
+function trackSearchResultsAndFilters(selectedFilters, jobResults) {
+  const appliedFilters = {};
+
+  // Check and add only applied filters to the event if they have a valid value
+  if (selectedFilters.jobType && selectedFilters.jobType !== "none") {
+    appliedFilters.job_type = selectedFilters.jobType;
+  }
+  if (
+    selectedFilters.location &&
+    selectedFilters.location !== "none" &&
+    selectedFilters.location !== ""
+  ) {
+    appliedFilters.location = selectedFilters.location;
+  }
+  if (
+    selectedFilters.qualification &&
+    selectedFilters.qualification !== "none" &&
+    selectedFilters.qualification !== ""
+  ) {
+    appliedFilters.qualification = selectedFilters.qualification;
+  }
+  if (
+    selectedFilters.profile &&
+    selectedFilters.profile !== "none" &&
+    selectedFilters.profile !== ""
+  ) {
+    appliedFilters.profile = selectedFilters.profile;
+  }
+  if (
+    selectedFilters.company &&
+    selectedFilters.company !== "none" &&
+    selectedFilters.company !== ""
+  ) {
+    appliedFilters.company = selectedFilters.company;
+  }
+
+  // Prepare the event data
+  const eventData = {
+    ...appliedFilters,
+    job_code:
+      jobResults.length > 0 ? jobResults?.map((job) => job.job_code) : "nojob",
+    debug_mode: true, // Enable debug mode for development
+  };
+
+  // Send event if at least one filter is applied or job results are available
+  if (Object.keys(appliedFilters).length > 0 || jobResults.length === 0) {
+    gtag("event", "job_search_with_filters", eventData);
+  }
+}
 
 // Function to display results based on user input
 async function displayResults(
@@ -400,6 +457,7 @@ async function displayResults(
 
   // Render filtered and paginated jobs
   renderPaginatedJobsAndControls(jobs, page);
+  return jobs;
 }
 
 // Event listener to clear filters data when the user clicks the "clear All" button
@@ -414,26 +472,33 @@ clearAllButton.addEventListener("click", (e) => {
   useProfileQualificationCheckbox.checked = false;
 });
 
-// Event listener to apply filters when the user clicks the "submit" button
+// Event listener to apply filters and search jobs
 submitButton.addEventListener("click", async (e) => {
   e.preventDefault();
-  const selectedJobType = jobTypeSelect.value;
-  const selectedLocation = locationSelect.value;
-  const selectedQualification = qualificationInput.value;
-  const selectedProfile = profileSelect.value;
-  const selectedCompany = companySelect.value;
+
+  // Get selected filters
+  const selectedFilters = {
+    jobType: jobTypeSelect.value,
+    location: locationSelect.value,
+    qualification: qualificationInput.value,
+    profile: profileSelect.value,
+    company: companySelect.value,
+  };
 
   // Update the URL with selected parameters
-  const url = `?jobType=${selectedJobType}&location=${selectedLocation}&qualification=${selectedQualification}&profile=${selectedProfile}&company=${selectedCompany}`;
+  const url = `?jobType=${selectedFilters.jobType}&location=${selectedFilters.location}&qualification=${selectedFilters.qualification}&profile=${selectedFilters.profile}&company=${selectedFilters.company}`;
   history.pushState(null, "", url);
 
-  // Display results based on the selected filters
-  displayResults(
-    selectedJobType,
-    selectedLocation,
-    selectedQualification,
-    selectedProfile,
-    selectedCompany,
+  // Display job results based on the selected filters
+  const jobResults = await displayResults(
+    selectedFilters.jobType,
+    selectedFilters.location,
+    selectedFilters.qualification,
+    selectedFilters.profile,
+    selectedFilters.company,
     1
   );
+
+  // Track filters and job search results together
+  trackSearchResultsAndFilters(selectedFilters, jobResults);
 });
