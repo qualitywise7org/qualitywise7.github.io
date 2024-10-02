@@ -9,7 +9,8 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
 import {
@@ -96,6 +97,7 @@ Object.assign(obj, {
   signInWithPopup,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail
 });
 
 //assigning into windows so that in other files or places we can use like window.getAuth

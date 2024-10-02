@@ -1,6 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
 const redirect_url = urlParams.get("redirect_url");
-
 const passwordResetEmail = async (email) => {
   try {
     await sendPasswordResetEmail(auth, email);
