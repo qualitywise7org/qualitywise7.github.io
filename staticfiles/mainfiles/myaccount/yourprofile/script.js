@@ -2,6 +2,26 @@ const email = localStorage.getItem("email");
 let imageUrl = "";
 let cvUrl = "";
 
+
+// $(document).ready(function(){
+
+//   $(".multistep .form-box .button-row .next").click(function()
+// {
+//   $(this).parents(".form-box").fadeout('fast');
+//   $(this).parents(".form-box").Nxext().fadein('fast');
+// });
+// })
+// ;
+// $(document).ready(function(){
+
+//   $(".multistep .form-box .button-row .prev").click(function()
+// {
+//   $(this).parents(".form-box").fadein('fast');
+//   $(this).parents(".form-box").perv().fadeout('fast');
+// });
+// });
+
+
 if (!email) {
   window.location.href = "/login/";
 }
@@ -374,3 +394,98 @@ const skillInput = document.getElementById('skillInput');
     skillInput.value = '';
     dataList.innerHTML = ''; // Clear the dropdown after adding a skill
   }
+
+
+  //progress 
+
+// const prevBtns = document.querySelectorAll(".prev")
+// const nextBtns = document.querySelectorAll(".Next")
+// const bars = document.getElementById(".bars")
+// const formSteps = document.querySelectorAll(".form-box")
+// const progressSteps = document.getElementById(".progress-step")
+
+// let formStepsNum = 0
+// nextBtns.forEach(btn => {
+//   btn.addEventListener("click", () => {
+//       formStepsNum++;
+//       updateFormSteps();
+//       updateProgressBars()
+//   })
+// })
+
+// prevBtns.forEach ((btn) => {
+//   btn.addEventListener("click", () => {
+//       formStepsNum--;
+//       updateFormSteps();
+//       updateProgressBars()
+//   })
+// })
+
+// function updateFormSteps(){
+
+//     formSteps.forEach ((formStep)  => {
+//       formStep.classList.contains("form-box-active")
+//       formStep.classList.remove("form-box-active")
+//     } )
+//     formSteps[formStepsNum].classList.add("form-box-active")
+// }
+
+//   function updateProgressBars(){
+//     progressSteps.forEach ((progressSteps, idx)  => {
+//       if(idx > formStepsNum + 1){
+//         progressSteps.classList.add("progress-step-active")
+//       }
+//       else{
+//         progressSteps.classList.remove("progress-step-active")
+//       }
+//     })
+//   }
+const prevBtns = document.querySelectorAll(".prev");
+const nextBtns = document.querySelectorAll(".Next"); // Fix class name to match the one in your HTML
+const barss = document.querySelectorAll(".bars"); // Use querySelectorAll for class-based selection
+const formSteps = document.querySelectorAll(".form-box");
+const progressSteps = document.querySelectorAll(".progress-step"); // Use querySelectorAll for multiple progress steps
+
+console.log(progressSteps)
+let formStepsNum = 0;
+
+nextBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    console.log(progressSteps)
+    formStepsNum++;
+    updateFormSteps();
+    updateProgressBarsss();
+
+  });
+});
+
+prevBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    formStepsNum--;
+    updateFormSteps();
+    updateProgressBarsss();
+  });
+});
+
+function updateFormSteps() {
+  formSteps.forEach((formStep, index) => {
+    formStep.classList.remove("form-box-active");
+  });
+  formSteps[formStepsNum].classList.add("form-box-active");
+}
+
+function updateProgressBarsss() {
+  progressSteps.forEach((progressStep, index) => {
+    if (index <= formStepsNum) {
+      progressStep.classList.add("progress-step-active");
+    } else {
+      progressStep.classList.remove("progress-step-active");
+    }
+  });
+
+  const barsActive = document.querySelectorAll(".progress-step-active");
+
+  bars.style.width =
+    ((barsActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+}
+
