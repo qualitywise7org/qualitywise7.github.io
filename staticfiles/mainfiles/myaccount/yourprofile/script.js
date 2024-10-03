@@ -2,6 +2,26 @@ const email = localStorage.getItem("email");
 let imageUrl = "";
 let cvUrl = "";
 
+
+// $(document).ready(function(){
+
+//   $(".multistep .form-box .button-row .next").click(function()
+// {
+//   $(this).parents(".form-box").fadeout('fast');
+//   $(this).parents(".form-box").Nxext().fadein('fast');
+// });
+// })
+// ;
+// $(document).ready(function(){
+
+//   $(".multistep .form-box .button-row .prev").click(function()
+// {
+//   $(this).parents(".form-box").fadein('fast');
+//   $(this).parents(".form-box").perv().fadeout('fast');
+// });
+// });
+
+
 if (!email) {
   window.location.href = "/login/";
 }
@@ -43,13 +63,15 @@ async function fetchFromLeadCollection() {
 function calculateCompletion(userData) {
   let completion = {
     about: 0,
+    address: 0,
+    social_links: 0,
     education: 0,
     experience: 0,
     skills: 0,
   };
 
   // About Section Completion
-  const aboutFields = ["firstName", "middleName", "lastName", "gender", "category", "address", "phoneNo", "linkedin", "github"];
+  const aboutFields = ["firstName", "middleName", "lastName", "gender", "category", "dob", "phoneNo", "email"];
   let filledAboutFields = aboutFields.filter(field => userData.about?.[field]).length;
   completion.about = (filledAboutFields / aboutFields.length) * 100;
 
@@ -72,6 +94,20 @@ function calculateCompletion(userData) {
     completion.skills = 100;
   }
 
+  // Adress Section Completion
+  if (userData.address?.length) {
+    let addCount = userData.address.length;
+    let filledAddress = userData.address.filter(add => add.local && add.perm && add.City && add.State).length;
+    completion.address = (filledAddress / addCount) * 100;
+  }
+
+  // Social links  Section Completion
+  if (userData.socialLinks?.length) {
+    let socialCount = userData.socialLinks.length;
+    let filledSocial_Links = userData.social_links.filter(social => social.github && social.leetcode && social.linkedin && social.insta).length;
+    completion.socialLinks = (filledSocial_Links / socialCount) * 100;
+  }
+
   return completion;
 }
 
@@ -81,6 +117,12 @@ function updateProgressBars(completion) {
 
   document.getElementById('education-progress').style.width = `${completion.education}%`;
   document.getElementById('education-progress').innerText = `${Math.round(completion.education)}%`;
+
+  document.getElementById('address-progress').style.width = `${completion.address}%`;
+  document.getElementById('address-progress').innerText = `${Math.round(completion.address)}%`;
+
+  document.getElementById('socialLinks-progress').style.width = `${completion.social_links}%`;
+  document.getElementById('socialLinks-progress').innerText = `${Math.round(completion.social_links)}%`;
 
   document.getElementById('experience-progress').style.width = `${completion.experience}%`;
   document.getElementById('experience-progress').innerText = `${Math.round(completion.experience)}%`;
@@ -95,11 +137,9 @@ function populateForm(userData) {
   $("#lastname").val(userData.about?.lastName || "");
   $("#gender").val(userData.about?.gender || "");
   $("#category").val(userData.about?.category || "");
-  $("#address").val(userData.about?.address || "");
-  $("#email").html(email);
+  $("#dob").val(userData.about?.dob || "");
+  $("#email").val(userData.about?.email || "");
   $("#phoneno").val(userData.about?.phoneNo || "");
-  $("#linkedin").val(userData.about?.linkedin || "");
-  $("#github").val(userData.about?.github || "");
   imageUrl = userData.about?.image || "https://www.pngall.com/wp-content/uploads/5/Profile.png";
   cvUrl = userData.about?.cv || "";
 
@@ -107,34 +147,77 @@ function populateForm(userData) {
   profileImage.src = imageUrl;
 
   // Update Education section
-  $('[data-repeater-list="group-education"]')
-    .find("[data-repeater-item]")
-    .each(function (index) {
-      var edu = userData?.education?.[index];
-      if (edu) {
-        $(this)
-          .find("#school")
-          .val(edu.school || "");
-        $(this)
-          .find("#college")
-          .val(edu.college || "");
-        $(this)
-          .find("#degree")
-          .val(edu.degree || "");
-        $(this)
-          .find("#sdate")
-          .val(edu.start_date || "");
-        $(this)
-          .find("#edate")
-          .val(edu.graduation_date || "");
-        $(this)
-          .find("#city")
-          .val(edu.city || "");
-        $(this)
-          .find("#Percentage")
-          .val(edu.percentage || "");
-      }
-    });
+$('[data-repeater-list="group-education"]')
+.find("[data-repeater-item]")
+.each(function (index) {
+  var edu = userData?.education?.[index];
+  if (edu) {
+    $(this)
+      .find("#school")
+      .val(edu.school || "");
+    $(this)
+      .find("#college")
+      .val(edu.college || "");
+    $(this)
+      .find("#degree")
+      .val(edu.degree || "");
+    $(this)
+      .find("#sdate")
+      .val(edu.start_date || "");
+    $(this)
+      .find("#edate")
+      .val(edu.graduation_date || "");
+    $(this)
+      .find("#city")
+      .val(edu.city || "");
+    $(this)
+      .find("#Percentage")
+      .val(edu.percentage || "");
+  }
+});
+
+// Update Address section
+$('[data-repeater-list="group-address"]')
+.find("[data-repeater-item]")
+.each(function (index) {
+  var add = userData?.address?.[index];
+  if (add) {
+    $(this)
+      .find("#local")
+      .val(add.local || "");
+    $(this)
+      .find("#perm")
+      .val(add.perm || "");
+    $(this)
+      .find("#City")
+      .val(add.City || "");
+    $(this)
+      .find("#State")
+      .val(add.State || "");
+  }
+});
+
+// Update Social Links section
+$('[data-repeater-list="group-socialLinks"]')
+.find("[data-repeater-item]")
+.each(function (index) {
+  var social = userData?.socialLinks?.[index];
+  if (social) {
+    $(this)
+      .find("#github")
+      .val(social.github || "");
+    $(this)
+      .find("#leetcode")
+      .val(social.leetcode || "");
+    $(this)
+      .find("#linkedin")
+      .val(social.linkedin || "");
+    $(this)
+      .find("#insta")
+      .val(social.insta || "");
+  }
+});
+
 
   // Update Experience section
   $('[data-repeater-list="group-experience"]')
@@ -176,7 +259,7 @@ function populateForm(userData) {
   // Calculate and update completion status
   const completion = calculateCompletion(userData);
   updateProgressBars(completion);
-  
+
   Toastify({
     text: "Fetching Details",
     duration: 3000,
@@ -217,13 +300,41 @@ function collectFormData() {
   aboutData.image = imageUrl || "";
   aboutData.gender = $("#gender").val() || "";
   aboutData.category = $("#category").val() || "";
-  aboutData.address = $("#address").val() || "";
-  aboutData.email = email;
+  aboutData.dob = $("#dob").val() || "";
+  aboutData.email = $("#email").val() || "";
   aboutData.phoneNo = $("#phoneno").val() || "";
-  aboutData.linkedin = $("#linkedin").val() || "";
-  aboutData.github = $("#github").val() || "";
   aboutData.cv = cvUrl || "";
   formData.about = aboutData;
+
+  // Collect data for the "Address" section
+var address = [];
+$('[data-repeater-list="group-address"]')
+  .find("[data-repeater-item]")
+  .each(function () {
+    var addItem = {};
+    addItem.local = $("#local", this).val() || "";
+    addItem.perm = $("#perm", this).val() || "";
+    addItem.City = $("#City", this).val() || "";
+    addItem.State = $("#State", this).val() || "";
+    address.push(addItem);
+  });
+
+formData.address = address;
+
+// Collect data for the "Social Links" section
+var socialLinks = [];
+$('[data-repeater-list="group-socialLinks"]')
+  .find("[data-repeater-item]")
+  .each(function () {
+    var socialItem = {};
+    socialItem.github = $("#github", this).val() || "";
+    socialItem.leetcode = $("#leetcode", this).val() || "";
+    socialItem.linkedin = $("#linkedin", this).val() || "";
+    socialItem.insta = $("#insta", this).val() || "";
+    socialLinks.push(socialItem);
+  });
+
+formData.socialLinks = socialLinks;
 
   // Collect data for the "Education" section
   var education = [];
@@ -325,52 +436,148 @@ $("#btn").on("click", function () {
 isUser();
 
 const skillInput = document.getElementById('skillInput');
-  const dataList = document.getElementById('autocomplete-list');
-  const selectedSkillsContainer = document.getElementById('selectedSkills');
+const dataList = document.getElementById('autocomplete-list');
+const selectedSkillsContainer = document.getElementById('selectedSkills');
 
-  skillInput.addEventListener('input', function () {
-    const inputValue = this.value.toLowerCase();
-    dataList.innerHTML = '';
+skillInput.addEventListener('input', function () {
+  const inputValue = this.value.toLowerCase();
+  dataList.innerHTML = '';
 
-    if (inputValue) {
-      const filteredSkills = skills_masterdata.filter(skill => skill.name.toLowerCase().includes(inputValue));
+  if (inputValue) {
+    const filteredSkills = skills_masterdata.filter(skill => skill.name.toLowerCase().includes(inputValue));
 
-      filteredSkills.forEach(skill => {
-        const item = document.createElement('div');
-        item.textContent = skill.name;
-        item.addEventListener('click', function () {
-          addSkill(skill.name);
-        });
-        dataList.appendChild(item);
+    filteredSkills.forEach(skill => {
+      const item = document.createElement('div');
+      item.textContent = skill.name;
+      item.addEventListener('click', function () {
+        addSkill(skill.name);
       });
-    }
-  });
-
-  skillInput.addEventListener('input', function (e) {
-    if (e.inputType === 'insertText' && e.data === ',') {
-      addSkill(e.target.value.slice(0, -1).trim());
-    }
-  });
-
-  skillInput.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      addSkill(e.target.value.trim());
-    }
-  });
-
-  function addSkill(skill) {
-    if (skill && !Array.from(selectedSkillsContainer.children).some(child => child.textContent.trim() === skill)) {
-      const skillTag = document.createElement('div');
-      skillTag.className = 'skill-tag';
-      skillTag.textContent = skill;
-      const removeButton = document.createElement('button');
-      removeButton.className = 'remove-skill';
-      removeButton.textContent = 'x';
-      removeButton.onclick = () => skillTag.remove();
-      skillTag.appendChild(removeButton);
-      selectedSkillsContainer.appendChild(skillTag);
-    }
-    skillInput.value = '';
-    dataList.innerHTML = ''; // Clear the dropdown after adding a skill
+      dataList.appendChild(item);
+    });
   }
+});
+
+skillInput.addEventListener('input', function (e) {
+  if (e.inputType === 'insertText' && e.data === ',') {
+    addSkill(e.target.value.slice(0, -1).trim());
+  }
+});
+
+skillInput.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    addSkill(e.target.value.trim());
+  }
+});
+
+function addSkill(skill) {
+  if (skill && !Array.from(selectedSkillsContainer.children).some(child => child.textContent.trim() === skill)) {
+    const skillTag = document.createElement('div');
+    skillTag.className = 'skill-tag';
+    skillTag.textContent = skill;
+    const removeButton = document.createElement('button');
+    removeButton.className = 'remove-skill';
+    removeButton.textContent = 'x';
+    removeButton.onclick = () => skillTag.remove();
+    skillTag.appendChild(removeButton);
+    selectedSkillsContainer.appendChild(skillTag);
+  }
+  skillInput.value = '';
+  dataList.innerHTML = ''; // Clear the dropdown after adding a skill
+}
+
+
+//progress 
+
+// const prevBtns = document.querySelectorAll(".prev")
+// const nextBtns = document.querySelectorAll(".Next")
+// const bars = document.getElementById(".bars")
+// const formSteps = document.querySelectorAll(".form-box")
+// const progressSteps = document.getElementById(".progress-step")
+
+// let formStepsNum = 0
+// nextBtns.forEach(btn => {
+//   btn.addEventListener("click", () => {
+//       formStepsNum++;
+//       updateFormSteps();
+//       updateProgressBars()
+//   })
+// })
+
+// prevBtns.forEach ((btn) => {
+//   btn.addEventListener("click", () => {
+//       formStepsNum--;
+//       updateFormSteps();
+//       updateProgressBars()
+//   })
+// })
+
+// function updateFormSteps(){
+
+//     formSteps.forEach ((formStep)  => {
+//       formStep.classList.contains("form-box-active")
+//       formStep.classList.remove("form-box-active")
+//     } )
+//     formSteps[formStepsNum].classList.add("form-box-active")
+// }
+
+//   function updateProgressBars(){
+//     progressSteps.forEach ((progressSteps, idx)  => {
+//       if(idx > formStepsNum + 1){
+//         progressSteps.classList.add("progress-step-active")
+//       }
+//       else{
+//         progressSteps.classList.remove("progress-step-active")
+//       }
+//     })
+//   }
+const prevBtns = document.querySelectorAll(".prev");
+const nextBtns = document.querySelectorAll(".Next"); // Fix class name to match the one in your HTML
+const barss = document.querySelectorAll(".bars"); // Use querySelectorAll for class-based selection
+const formSteps = document.querySelectorAll(".form-box");
+const progressSteps = document.querySelectorAll(".progress-step"); // Use querySelectorAll for multiple progress steps
+
+console.log(progressSteps)
+let formStepsNum = 0;
+
+nextBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    console.log(progressSteps)
+    formStepsNum++;
+    updateFormSteps();
+    updateProgressBarsss();
+
+  });
+});
+
+prevBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    formStepsNum--;
+    updateFormSteps();
+    updateProgressBarsss();
+  });
+});
+
+function updateFormSteps() {
+  formSteps.forEach((formStep, index) => {
+    formStep.classList.contains("form-box-active") &&
+      formStep.classList.remove("form-box-active");
+  });
+  formSteps[formStepsNum].classList.add("form-box-active");
+}
+
+function updateProgressBarsss() {
+  progressSteps.forEach((progressStep, index) => {
+    if (index <= formStepsNum) {
+      progressStep.classList.add("progress-step-active");
+    } else {
+      progressStep.classList.remove("progress-step-active");
+    }
+  });
+
+  const barsActive = document.querySelectorAll(".progress-step-active");
+
+  bars.style.width =
+    ((barsActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+}
+
