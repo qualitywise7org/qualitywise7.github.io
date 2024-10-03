@@ -71,7 +71,7 @@ function calculateCompletion(userData) {
   };
 
   // About Section Completion
-  const aboutFields = ["firstName", "middleName", "lastName", "gender", "category", "address", "phoneNo", "linkedin", "github"];
+  const aboutFields = ["firstName", "middleName", "lastName", "gender", "category", "dob", "phoneNo", "email"];
   let filledAboutFields = aboutFields.filter(field => userData.about?.[field]).length;
   completion.about = (filledAboutFields / aboutFields.length) * 100;
 
@@ -97,15 +97,15 @@ function calculateCompletion(userData) {
   // Adress Section Completion
   if (userData.address?.length) {
     let addCount = userData.address.length;
-    let filledAddress = userData.address.filter(add => add.local_address && add.permanent_address && add.city && add.state).length;
+    let filledAddress = userData.address.filter(add => add.local && add.perm && add.City && add.State).length;
     completion.address = (filledAddress / addCount) * 100;
   }
 
   // Social links  Section Completion
-  if (userData.social_links?.length) {
-    let socialCount = userData.social_links.length;
-    let filledSocial_Links = userData.social_links.filter(social => social.github_profile && social.leetcode_profile && social.linkedin_profile && social.instagram_profile).length;
-    completion.social_links = (filledSocial_Links / socialCount) * 100;
+  if (userData.socialLinks?.length) {
+    let socialCount = userData.socialLinks.length;
+    let filledSocial_Links = userData.social_links.filter(social => social.github && social.leetcode && social.linkedin && social.insta).length;
+    completion.socialLinks = (filledSocial_Links / socialCount) * 100;
   }
 
   return completion;
@@ -121,8 +121,8 @@ function updateProgressBars(completion) {
   document.getElementById('address-progress').style.width = `${completion.address}%`;
   document.getElementById('address-progress').innerText = `${Math.round(completion.address)}%`;
 
-  document.getElementById('social_links-progress').style.width = `${completion.social_links}%`;
-  document.getElementById('social_links-progress').innerText = `${Math.round(completion.social_links)}%`;
+  document.getElementById('socialLinks-progress').style.width = `${completion.social_links}%`;
+  document.getElementById('socialLinks-progress').innerText = `${Math.round(completion.social_links)}%`;
 
   document.getElementById('experience-progress').style.width = `${completion.experience}%`;
   document.getElementById('experience-progress').innerText = `${Math.round(completion.experience)}%`;
@@ -137,11 +137,9 @@ function populateForm(userData) {
   $("#lastname").val(userData.about?.lastName || "");
   $("#gender").val(userData.about?.gender || "");
   $("#category").val(userData.about?.category || "");
-  $("#address").val(userData.about?.address || "");
-  $("#email").html(email);
+  $("#dob").val(userData.about?.dob || "");
+  $("#email").val(userData.about?.email || "");
   $("#phoneno").val(userData.about?.phoneNo || "");
-  $("#linkedin").val(userData.about?.linkedin || "");
-  $("#github").val(userData.about?.github || "");
   imageUrl = userData.about?.image || "https://www.pngall.com/wp-content/uploads/5/Profile.png";
   cvUrl = userData.about?.cv || "";
 
@@ -185,61 +183,40 @@ $('[data-repeater-list="group-address"]')
   var add = userData?.address?.[index];
   if (add) {
     $(this)
-      .find("#local_address")
-      .val(add.local_address || "");
+      .find("#local")
+      .val(add.local || "");
     $(this)
-      .find("#permanent_address")
-      .val(add.permanent_address || "");
+      .find("#perm")
+      .val(add.perm || "");
     $(this)
-      .find("#city")
-      .val(add.city || "");
+      .find("#City")
+      .val(add.City || "");
     $(this)
-      .find("#state")
-      .val(add.state || "");
+      .find("#State")
+      .val(add.State || "");
   }
 });
 
 // Update Social Links section
-$('[data-repeater-list="group-social_links"]')
+$('[data-repeater-list="group-socialLinks"]')
 .find("[data-repeater-item]")
 .each(function (index) {
-  var social = userData?.social_links?.[index];
+  var social = userData?.socialLinks?.[index];
   if (social) {
     $(this)
-      .find("#github_profile")
-      .val(social.github_profile || "");
+      .find("#github")
+      .val(social.github || "");
     $(this)
-      .find("#leetcode_profile")
-      .val(social.leetcode_profile || "");
+      .find("#leetcode")
+      .val(social.leetcode || "");
     $(this)
-      .find("#linkedin_profile")
-      .val(social.linkedin_profile || "");
+      .find("#linkedin")
+      .val(social.linkedin || "");
     $(this)
-      .find("#instagram_profile")
-      .val(social.instagram_profile || "");
+      .find("#insta")
+      .val(social.insta || "");
   }
 });
-
-  // Update Social Links section
-  $('[data-repeater-list="group-social_links"]')
-    .find("[data-repeater-item]")
-    .each(function (index) {
-      var social = userData?.social_links?.[index];
-      if (social) {
-        $(this)
-          .find("#local_address")
-          .val(social.github_profile || "");
-        $(this)
-          .find("#ermanent_address")
-          .val(social.leetcode_profile || "");
-        $(this)
-          .find("#city")
-          .val(social.linkedin_profile || "");
-        $(this)
-          .find("#state")
-          .val(social.instagram_profile || "");
-      }
-    });
 
 
   // Update Experience section
@@ -323,11 +300,9 @@ function collectFormData() {
   aboutData.image = imageUrl || "";
   aboutData.gender = $("#gender").val() || "";
   aboutData.category = $("#category").val() || "";
-  aboutData.address = $("#address").val() || "";
-  aboutData.email = email;
+  aboutData.dob = $("#dob").val() || "";
+  aboutData.email = $("#email").val() || "";
   aboutData.phoneNo = $("#phoneno").val() || "";
-  aboutData.linkedin = $("#linkedin").val() || "";
-  aboutData.github = $("#github").val() || "";
   aboutData.cv = cvUrl || "";
   formData.about = aboutData;
 
@@ -337,29 +312,29 @@ $('[data-repeater-list="group-address"]')
   .find("[data-repeater-item]")
   .each(function () {
     var addItem = {};
-    addItem.local_address = $("#local_address", this).val() || "";
-    addItem.permanent_address = $("#permanent_address", this).val() || "";
-    addItem.city = $("#city", this).val() || "";
-    addItem.state = $("#state", this).val() || "";
+    addItem.local = $("#local", this).val() || "";
+    addItem.perm = $("#perm", this).val() || "";
+    addItem.City = $("#City", this).val() || "";
+    addItem.State = $("#State", this).val() || "";
     address.push(addItem);
   });
 
 formData.address = address;
 
 // Collect data for the "Social Links" section
-var social_links = [];
-$('[data-repeater-list="group-social_links"]')
+var socialLinks = [];
+$('[data-repeater-list="group-socialLinks"]')
   .find("[data-repeater-item]")
   .each(function () {
     var socialItem = {};
-    socialItem.github_profile = $("#github_profile", this).val() || "";
-    socialItem.leetcode_profile = $("#leetcode_profile", this).val() || "";
-    socialItem.linkedin_profile = $("#linkedin_profile", this).val() || "";
-    socialItem.instagram_profile = $("#instagram_profile", this).val() || "";
-    social_links.push(socialItem);
+    socialItem.github = $("#github", this).val() || "";
+    socialItem.leetcode = $("#leetcode", this).val() || "";
+    socialItem.linkedin = $("#linkedin", this).val() || "";
+    socialItem.insta = $("#insta", this).val() || "";
+    socialLinks.push(socialItem);
   });
 
-formData.social_links = social_links;
+formData.socialLinks = socialLinks;
 
   // Collect data for the "Education" section
   var education = [];
