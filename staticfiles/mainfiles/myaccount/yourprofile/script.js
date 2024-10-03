@@ -63,6 +63,8 @@ async function fetchFromLeadCollection() {
 function calculateCompletion(userData) {
   let completion = {
     about: 0,
+    address: 0,
+    social_links: 0,
     education: 0,
     experience: 0,
     skills: 0,
@@ -92,6 +94,20 @@ function calculateCompletion(userData) {
     completion.skills = 100;
   }
 
+  // Adress Section Completion
+  if (userData.address?.length) {
+    let addCount = userData.address.length;
+    let filledAddress = userData.address.filter(add => add.local_address && add.permanent_address && add.city && add.state).length;
+    completion.address = (filledAddress / addCount) * 100;
+  }
+
+  // Social links  Section Completion
+  if (userData.social_links?.length) {
+    let socialCount = userData.social_links.length;
+    let filledSocial_Links = userData.social_links.filter(social => social.github_profile && social.leetcode_profile && social.linkedin_profile && social.instagram_profile).length;
+    completion.social_links = (filledSocial_Links / socialCount) * 100;
+  }
+
   return completion;
 }
 
@@ -101,6 +117,12 @@ function updateProgressBars(completion) {
 
   document.getElementById('education-progress').style.width = `${completion.education}%`;
   document.getElementById('education-progress').innerText = `${Math.round(completion.education)}%`;
+
+  document.getElementById('address-progress').style.width = `${completion.address}%`;
+  document.getElementById('address-progress').innerText = `${Math.round(completion.address)}%`;
+
+  document.getElementById('social_links-progress').style.width = `${completion.social_links}%`;
+  document.getElementById('social_links-progress').innerText = `${Math.round(completion.social_links)}%`;
 
   document.getElementById('experience-progress').style.width = `${completion.experience}%`;
   document.getElementById('experience-progress').innerText = `${Math.round(completion.experience)}%`;
@@ -127,34 +149,98 @@ function populateForm(userData) {
   profileImage.src = imageUrl;
 
   // Update Education section
-  $('[data-repeater-list="group-education"]')
+$('[data-repeater-list="group-education"]')
+.find("[data-repeater-item]")
+.each(function (index) {
+  var edu = userData?.education?.[index];
+  if (edu) {
+    $(this)
+      .find("#school")
+      .val(edu.school || "");
+    $(this)
+      .find("#college")
+      .val(edu.college || "");
+    $(this)
+      .find("#degree")
+      .val(edu.degree || "");
+    $(this)
+      .find("#sdate")
+      .val(edu.start_date || "");
+    $(this)
+      .find("#edate")
+      .val(edu.graduation_date || "");
+    $(this)
+      .find("#city")
+      .val(edu.city || "");
+    $(this)
+      .find("#Percentage")
+      .val(edu.percentage || "");
+  }
+});
+
+// Update Address section
+$('[data-repeater-list="group-address"]')
+.find("[data-repeater-item]")
+.each(function (index) {
+  var add = userData?.address?.[index];
+  if (add) {
+    $(this)
+      .find("#local_address")
+      .val(add.local_address || "");
+    $(this)
+      .find("#permanent_address")
+      .val(add.permanent_address || "");
+    $(this)
+      .find("#city")
+      .val(add.city || "");
+    $(this)
+      .find("#state")
+      .val(add.state || "");
+  }
+});
+
+// Update Social Links section
+$('[data-repeater-list="group-social_links"]')
+.find("[data-repeater-item]")
+.each(function (index) {
+  var social = userData?.social_links?.[index];
+  if (social) {
+    $(this)
+      .find("#github_profile")
+      .val(social.github_profile || "");
+    $(this)
+      .find("#leetcode_profile")
+      .val(social.leetcode_profile || "");
+    $(this)
+      .find("#linkedin_profile")
+      .val(social.linkedin_profile || "");
+    $(this)
+      .find("#instagram_profile")
+      .val(social.instagram_profile || "");
+  }
+});
+
+  // Update Social Links section
+  $('[data-repeater-list="group-social_links"]')
     .find("[data-repeater-item]")
     .each(function (index) {
-      var edu = userData?.education?.[index];
-      if (edu) {
+      var social = userData?.social_links?.[index];
+      if (social) {
         $(this)
-          .find("#school")
-          .val(edu.school || "");
+          .find("#local_address")
+          .val(social.github_profile || "");
         $(this)
-          .find("#college")
-          .val(edu.college || "");
-        $(this)
-          .find("#degree")
-          .val(edu.degree || "");
-        $(this)
-          .find("#sdate")
-          .val(edu.start_date || "");
-        $(this)
-          .find("#edate")
-          .val(edu.graduation_date || "");
+          .find("#ermanent_address")
+          .val(social.leetcode_profile || "");
         $(this)
           .find("#city")
-          .val(edu.city || "");
+          .val(social.linkedin_profile || "");
         $(this)
-          .find("#Percentage")
-          .val(edu.percentage || "");
+          .find("#state")
+          .val(social.instagram_profile || "");
       }
     });
+
 
   // Update Experience section
   $('[data-repeater-list="group-experience"]')
@@ -196,7 +282,7 @@ function populateForm(userData) {
   // Calculate and update completion status
   const completion = calculateCompletion(userData);
   updateProgressBars(completion);
-  
+
   Toastify({
     text: "Fetching Details",
     duration: 3000,
@@ -244,6 +330,36 @@ function collectFormData() {
   aboutData.github = $("#github").val() || "";
   aboutData.cv = cvUrl || "";
   formData.about = aboutData;
+
+  // Collect data for the "Address" section
+var address = [];
+$('[data-repeater-list="group-address"]')
+  .find("[data-repeater-item]")
+  .each(function () {
+    var addItem = {};
+    addItem.local_address = $("#local_address", this).val() || "";
+    addItem.permanent_address = $("#permanent_address", this).val() || "";
+    addItem.city = $("#city", this).val() || "";
+    addItem.state = $("#state", this).val() || "";
+    address.push(addItem);
+  });
+
+formData.address = address;
+
+// Collect data for the "Social Links" section
+var social_links = [];
+$('[data-repeater-list="group-social_links"]')
+  .find("[data-repeater-item]")
+  .each(function () {
+    var socialItem = {};
+    socialItem.github_profile = $("#github_profile", this).val() || "";
+    socialItem.leetcode_profile = $("#leetcode_profile", this).val() || "";
+    socialItem.linkedin_profile = $("#linkedin_profile", this).val() || "";
+    socialItem.instagram_profile = $("#instagram_profile", this).val() || "";
+    social_links.push(socialItem);
+  });
+
+formData.social_links = social_links;
 
   // Collect data for the "Education" section
   var education = [];
@@ -345,58 +461,58 @@ $("#btn").on("click", function () {
 isUser();
 
 const skillInput = document.getElementById('skillInput');
-  const dataList = document.getElementById('autocomplete-list');
-  const selectedSkillsContainer = document.getElementById('selectedSkills');
+const dataList = document.getElementById('autocomplete-list');
+const selectedSkillsContainer = document.getElementById('selectedSkills');
 
-  skillInput.addEventListener('input', function () {
-    const inputValue = this.value.toLowerCase();
-    dataList.innerHTML = '';
+skillInput.addEventListener('input', function () {
+  const inputValue = this.value.toLowerCase();
+  dataList.innerHTML = '';
 
-    if (inputValue) {
-      const filteredSkills = skills_masterdata.filter(skill => skill.name.toLowerCase().includes(inputValue));
+  if (inputValue) {
+    const filteredSkills = skills_masterdata.filter(skill => skill.name.toLowerCase().includes(inputValue));
 
-      filteredSkills.forEach(skill => {
-        const item = document.createElement('div');
-        item.textContent = skill.name;
-        item.addEventListener('click', function () {
-          addSkill(skill.name);
-        });
-        dataList.appendChild(item);
+    filteredSkills.forEach(skill => {
+      const item = document.createElement('div');
+      item.textContent = skill.name;
+      item.addEventListener('click', function () {
+        addSkill(skill.name);
       });
-    }
-  });
-
-  skillInput.addEventListener('input', function (e) {
-    if (e.inputType === 'insertText' && e.data === ',') {
-      addSkill(e.target.value.slice(0, -1).trim());
-    }
-  });
-
-  skillInput.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      addSkill(e.target.value.trim());
-    }
-  });
-
-  function addSkill(skill) {
-    if (skill && !Array.from(selectedSkillsContainer.children).some(child => child.textContent.trim() === skill)) {
-      const skillTag = document.createElement('div');
-      skillTag.className = 'skill-tag';
-      skillTag.textContent = skill;
-      const removeButton = document.createElement('button');
-      removeButton.className = 'remove-skill';
-      removeButton.textContent = 'x';
-      removeButton.onclick = () => skillTag.remove();
-      skillTag.appendChild(removeButton);
-      selectedSkillsContainer.appendChild(skillTag);
-    }
-    skillInput.value = '';
-    dataList.innerHTML = ''; // Clear the dropdown after adding a skill
+      dataList.appendChild(item);
+    });
   }
+});
+
+skillInput.addEventListener('input', function (e) {
+  if (e.inputType === 'insertText' && e.data === ',') {
+    addSkill(e.target.value.slice(0, -1).trim());
+  }
+});
+
+skillInput.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    addSkill(e.target.value.trim());
+  }
+});
+
+function addSkill(skill) {
+  if (skill && !Array.from(selectedSkillsContainer.children).some(child => child.textContent.trim() === skill)) {
+    const skillTag = document.createElement('div');
+    skillTag.className = 'skill-tag';
+    skillTag.textContent = skill;
+    const removeButton = document.createElement('button');
+    removeButton.className = 'remove-skill';
+    removeButton.textContent = 'x';
+    removeButton.onclick = () => skillTag.remove();
+    skillTag.appendChild(removeButton);
+    selectedSkillsContainer.appendChild(skillTag);
+  }
+  skillInput.value = '';
+  dataList.innerHTML = ''; // Clear the dropdown after adding a skill
+}
 
 
-  //progress 
+//progress 
 
 // const prevBtns = document.querySelectorAll(".prev")
 // const nextBtns = document.querySelectorAll(".Next")
@@ -469,7 +585,8 @@ prevBtns.forEach(btn => {
 
 function updateFormSteps() {
   formSteps.forEach((formStep, index) => {
-    formStep.classList.remove("form-box-active");
+    formStep.classList.contains("form-box-active") &&
+      formStep.classList.remove("form-box-active");
   });
   formSteps[formStepsNum].classList.add("form-box-active");
 }

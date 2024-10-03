@@ -257,6 +257,12 @@ body{
   border: none;
 }
 
+h3{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10vh;
+}
+
 #btn{
   float: right;
   margin-right: 30vh;
