@@ -133,15 +133,17 @@
                 </div>
 
 
+               
                 <div class="bar">
                   <div class="bars" id="bars"></div>
 
                   <div class="progress-step progress-step-active" data-title="Personal Details">1</div>
-                  <div class="progress-step" data-title="Skills">2</div>
-                  <div class="progress-step" data-title="Address">3</div>
-                  <div class="progress-step" data-title="Education">4</div>
-                  <div class="progress-step" data-title="Experience">5</div>
-                  <div class="progress-step" data-title="Social links">6</div>
+                  <div class="progress-step" data-title="Social links">2</div>
+                  <div class="progress-step" data-title="Skills">3</div>
+                  <div class="progress-step" data-title="Address">4</div>
+                  <div class="progress-step" data-title="Education">5</div>
+                  <div class="progress-step" data-title="Experience">6</div>
+                  <div class="progress-step" data-title="Verification">7</div>
                 </div>
 
 
@@ -176,14 +178,14 @@
                         <span class="form-text"></span>
                       </div>
 
-                      <div class="form-elem">
+                      <!-- <div class="form-elem">
                         <div class="single-row-data">
                           <div class="form-elem">
                             <label for="image" class="form-label">Your Image</label>
                             <input id="image" type="file" class="form-control image" accept="image/*" />
                           </div>
                         </div>
-                      </div>
+                      </div> -->
 
                       <div class="form-elem">
                         <label for="email" class="form-label">Email</label>
@@ -233,7 +235,57 @@
 
                   </div>
 
+                  <div class="form-box">
 
+
+
+
+
+                    <h3>Social Section</h3>
+
+                    <form class="form -group">
+
+
+                      <div class="form-elem">
+                        <label for="github" class="form-label">Github Profile</label>
+                        <input id="github" type="text" class="form-control github"
+                          placeholder="e.g. https://github.com/xyz" required />
+                        <span class="form-text"></span>
+                      </div>
+
+                      <div class="form-elem">
+                        <label for="leetcode" class="form-label">Leetcode profile
+                          <span class="opt-text">(optional)</span></label>
+                        <input id="leetcode" type="text" class="form-control leetcode"
+                          placeholder="e.g. xyz.leetcode.com" />
+                        <span class="form-text"></span>
+                      </div>
+
+                      <div class="form-elem">
+                        <label for="linkedin" class="form-label">Linkedin Profile</label>
+                        <input id="linkedin" type="text" class="form-control linkedin"
+                          placeholder="e.g. xyz.linkedin.com" required />
+                        <span class="form-text"></span>
+                      </div>
+
+                      <div class="form-elem">
+                        <label for="insta" class="form-label">Instagram Profile</label>
+                        <input id="insta" type="insta" class="form-control insta" placeholder="e.g. xyz.instagram.com"
+                          required />
+                        <span class="form-text"></span>
+                      </div>
+
+
+                      <div class="button-row">
+                        <input type="button" value="Previous" class="prev">
+
+                        <input type="button" value="Next" class="Next">
+                      </div>
+
+                    </form>
+
+
+                  </div>
 
                   <div class="form-box">
 
@@ -248,23 +300,23 @@
                           <div data-repeater-item class="address_box">
                             <div class="cv-form-row cv-form-row-blk"> -->
 
-                              <p>
-                                Start typing a skill and select from the dropdown. You can add multiple skills separated
-                                by
-                                commas:
-                              </p>
+                    <p>
+                      Start typing a skill and select from the dropdown. You can add multiple skills separated
+                      by
+                      commas:
+                    </p>
 
 
-                              <form autocomplete="off" action="/action_page.php">
-                                <div class="autocomplete">
-                                  <input id="skillInput" type="text" name="skills" placeholder="Enter your Skills" />
-                                  <div id="autocomplete-list" class="autocomplete-items"></div>
-                                </div>
-                                <div class="selected-skills" id="selectedSkills"></div>
-                                <!-- <input type="submit" />  -->
-                              </form>
+                    <form autocomplete="off" action="/action_page.php">
+                      <div class="autocomplete">
+                        <input id="skillInput" type="text" name="skills" placeholder="Enter your Skills" />
+                        <div id="autocomplete-list" class="autocomplete-items"></div>
+                      </div>
+                      <div class="selected-skills" id="selectedSkills"></div>
+                      <!-- <input type="submit" />  -->
+                    </form>
 
-                              <!-- <div class="row-separator repeater">
+                    <!-- <div class="row-separator repeater">
           <div class="repeater" data-repeater-list="group-skill">
             <div data-repeater-item>
               <div class="cv-form-row cv-form-row-skills">
@@ -277,7 +329,7 @@
                   />
                   <span class="form-text"></span>
                 </div> -->
-                              <!-- <div class="remove_button">
+                    <!-- <div class="remove_button">
                   <button
                     data-repeater-delete
                     type="button"
@@ -286,26 +338,26 @@
                     Remove
                   </button>
                 </div> -->
-                              <!-- </div>
+                    <!-- </div>
             </div>
           </div>
         </div> -->
 
 
 
-                              <div class="button-row">
-                                <input type="button" value="Previous" class="prev">
-                                <input type="button" value="Next" class="Next">
+                    <div class="button-row">
+                      <input type="button" value="Previous" class="prev">
+                      <input type="button" value="Next" class="Next">
 
-                              </div>
-                            <!-- </div>
+                    </div>
+                    <!-- </div>
                           </div>
                         </div>
                       </div> -->
-                    </form>
-                  </div>
+            </form>
+          </div>
 
-                  <!-- <div class="form-box">
+          <!-- <div class="form-box">
 
 
                  
@@ -357,142 +409,141 @@
 
                   </div> -->
 
-                  <div class="form-box">
+          <div class="form-box">
 
 
 
 
-                    <h3>Address Section</h3>
+            <h3>Address Section</h3>
 
-                    <form class="form -group">
+            <form class="form -group">
 
-                      <div class="row-separator repeater">
-                        <div class="repeater" data-repeater-list="group-address">
-                          <div data-repeater-item class="address_box">
-                            <div class="cv-form-row cv-form-row-blk">
-                              <div class="form-elem">
-                                <label for="lacal" class="form-label">Local Address</label>
-                                <input id="local" type="text" class="form-control local" required />
-                                <span class="form-text"></span>
-                              </div>
+              <div class="row-separator repeater">
+                <div class="repeater" data-repeater-list="group-address">
+                  <div data-repeater-item class="address_box">
+                    <div class="cv-form-row cv-form-row-blk">
+                      <div class="form-elem">
+                        <label for="lacal" class="form-label">Local Address</label>
+                        <input id="local" type="text" class="form-control local" required />
+                        <span class="form-text"></span>
+                      </div>
 
-                              <div class="form-elem">
-                                <label for="perm" class="form-label">Permanent Address
-                                </label>
-                                <input id="perm" type="text" class="form-control perm" />
-                                <span class="form-text"></span>
-                              </div>
+                      <div class="form-elem">
+                        <label for="perm" class="form-label">Permanent Address
+                        </label>
+                        <input id="perm" type="text" class="form-control perm" />
+                        <span class="form-text"></span>
+                      </div>
 
-                              <div class="form-elem">
-                                <label for="City" class="form-label">City</label>
-                                <input id="City" type="text" class="form-control City" required />
-                                <span class="form-text"></span>
-                              </div>
+                      <div class="form-elem">
+                        <label for="City" class="form-label">City</label>
+                        <input id="City" type="text" class="form-control City" required />
+                        <span class="form-text"></span>
+                      </div>
 
-                              <div class="form-elem">
-                                <label for="State" class="form-label">State</label>
-                                <input id="State" type="text" class="form-control State" required />
-                                <span class="form-text"></span>
-                              </div>
+                      <div class="form-elem">
+                        <label for="State" class="form-label">State</label>
+                        <input id="State" type="text" class="form-control State" required />
+                        <span class="form-text"></span>
+                      </div>
 
 
-                              <div class="button-row">
-                                <input type="button" value="Previous" class="prev">
+                      <div class="button-row">
+                        <input type="button" value="Previous" class="prev">
 
-                                <input type="button" value="Next" class="Next">
-                              </div>
+                        <input type="button" value="Next" class="Next">
+                      </div>
 
-                    </form>
-                  </div>
-                </div>
-              </div>
+            </form>
           </div>
-
-
-
         </div>
-
-        <div class="form-box">
-
-
-
-          <h3>Education</h3>
-
-          <form class="form -group">
+    </div>
+    </div>
 
 
-            <div class="row-separator repeater">
-              <div class="repeater" data-repeater-list="group-education">
-                <div data-repeater-item class="educations_box">
-                  <div class="cv-form-row cv-form-row-blk">
-                    <div class="form-elem">
-                      <label for="" class="form-label">School</label>
-                      <input name="school" type="text" class="form-control school" id="school"
-                        placeholder="Name of School" />
-                      <span class="form-text"></span>
-                    </div>
-                    <div class="form-elem">
-                      <label for="college" class="form-label">College</label>
-                      <input name="college" type="text" class="form-control college" id="college"
-                        placeholder="Name of College" required />
-                      <span class="form-text"></span>
-                    </div>
-                    <div class="form-elem">
-                      <label for="" class="form-label">Degree</label>
-                      <input name="edu_degree" type="text" class="form-control edu_degree" id="degree"
-                        placeholder="Degree" />
-                      <span class="form-text"></span>
-                    </div>
-                    <div class="single-row-data">
-                      <div class="form-elem">
-                        <label for="sdate" class="form-label">Start Date</label>
-                        <input name="edu_start_date" type="month" id="sdate" class="form-control edu_start_date"
-                          required />
-                        <span class="form-text"></span>
-                      </div>
-                      <div class="form-elem">
-                        <label for="edate" class="form-label">End Date</label>
-                        <input name="edu_graduation_date" type="month" id="edate"
-                          class="form-control edu_graduation_date" required />
-                        <span class="form-text"></span>
-                      </div>
-                    </div>
-                    <div class="single-row-data">
-                      <div class="form-elem">
-                        <label for="" class="form-label">City</label>
-                        <input name="edu_city" type="text" class="form-control edu_city" id="city"
-                          placeholder="City Name" />
-                        <span class="form-text"></span>
-                      </div>
-                      <div class="form-elem">
-                        <label for="" class="form-label">Percentage/CGPA</label>
-                        <input name="percentage" type="text" id="Percentage" class="form-control edu_description" />
-                        <span class="form-text"></span>
-                      </div>
-                    </div>
-                    <div class="remove_button">
-                      <button data-repeater-delete type="button" class="repeater-remove-btn">
-                        Remove
-                      </button>
-                    </div>
+
+    </div>
+
+    <div class="form-box">
+
+
+
+      <h3>Education</h3>
+
+      <form class="form -group">
+
+
+        <div class="row-separator repeater">
+          <div class="repeater" data-repeater-list="group-education">
+            <div data-repeater-item class="educations_box">
+              <div class="cv-form-row cv-form-row-blk">
+                <div class="form-elem">
+                  <label for="" class="form-label">School</label>
+                  <input name="school" type="text" class="form-control school" id="school"
+                    placeholder="Name of School" />
+                  <span class="form-text"></span>
+                </div>
+                <div class="form-elem">
+                  <label for="college" class="form-label">College</label>
+                  <input name="college" type="text" class="form-control college" id="college"
+                    placeholder="Name of College" required />
+                  <span class="form-text"></span>
+                </div>
+                <div class="form-elem">
+                  <label for="" class="form-label">Degree</label>
+                  <input name="edu_degree" type="text" class="form-control edu_degree" id="degree"
+                    placeholder="Degree" />
+                  <span class="form-text"></span>
+                </div>
+                <div class="single-row-data">
+                  <div class="form-elem">
+                    <label for="sdate" class="form-label">Start Date</label>
+                    <input name="edu_start_date" type="month" id="sdate" class="form-control edu_start_date" required />
+                    <span class="form-text"></span>
+                  </div>
+                  <div class="form-elem">
+                    <label for="edate" class="form-label">End Date</label>
+                    <input name="edu_graduation_date" type="month" id="edate" class="form-control edu_graduation_date"
+                      required />
+                    <span class="form-text"></span>
                   </div>
                 </div>
+                <div class="single-row-data">
+                  <div class="form-elem">
+                    <label for="" class="form-label">City</label>
+                    <input name="edu_city" type="text" class="form-control edu_city" id="city"
+                      placeholder="City Name" />
+                    <span class="form-text"></span>
+                  </div>
+                  <div class="form-elem">
+                    <label for="" class="form-label">Percentage/CGPA</label>
+                    <input name="percentage" type="text" id="Percentage" class="form-control edu_description" />
+                    <span class="form-text"></span>
+                  </div>
+                </div>
+                <div class="remove_button">
+                  <button data-repeater-delete type="button" class="repeater-remove-btn">
+                    Remove
+                  </button>
+                </div>
               </div>
-              <button type="button" value="Add" id="addeducation" class="repeater-add-btn" data-repeater-create>
-                Add
-              </button>
             </div>
-
-
-
-            <div class="button-row">
-              <input type="button" value="Previous" class="prev">
-
-              <input type="button" value="Next" class="Next">
-            </div>
-
-          </form>
+          </div>
+          <button type="button" value="Add" id="addeducation" class="repeater-add-btn" data-repeater-create>
+            Add
+          </button>
         </div>
+
+
+
+        <div class="button-row">
+          <input type="button" value="Previous" class="prev">
+
+          <input type="button" value="Next" class="Next">
+        </div>
+
+      </form>
+    </div>
     </div>
 
     <div class="form-box">
@@ -575,7 +626,7 @@
 
 
 
-      <h3>Social Section</h3>
+      <h3>Verification</h3>
 
       <form class="form -group">
 
@@ -583,7 +634,7 @@
           <div class="repeater" data-repeater-list="group-socialLinks">
             <div data-repeater-item class="socialLinks_box">
               <div class="cv-form-row cv-form-row-blk">
-                <div class="form-elem">
+                <!-- <div class="form-elem">
                   <label for="github" class="form-label">Github Profile</label>
                   <input id="github" type="text" class="form-control github" placeholder="e.g. https://github.com/xyz"
                     required />
@@ -609,9 +660,30 @@
                   <input id="insta" type="insta" class="form-control insta" placeholder="e.g. xyz.instagram.com"
                     required />
                   <span class="form-text"></span>
+                </div> -->
+                <!-- <div class="form-elem">
+                  <div class="single-row-data">
+                    <div class="form-elem">
+                      <label for="image" class="form-label">Your Image</label>
+                      <input id="image" type="file" class="form-control image" accept="image/*" />
+                    </div>
+                  </div>
+                </div> -->
+                <div class="uploadCenter">
+                <div class="uploadBox">
+                  
+                   <label for="image" class="form-label" id="drop-area">
+                  
+                    <input id="image" type="file" class="form-control image" accept="image/*" required /> 
+                 
+                    <div class="IMG" id="IMG">
+                    <img src="assets/508-icon (1).png" alt="">
+                    <P>Click here to <br>upload your image</P>
+                  </div>
+                
+                  </label>
                 </div>
-
-
+              </div>
                 <div class="button-row">
                   <input type="button" value="Previous" class="prev">
 
@@ -619,7 +691,6 @@
                     Submit Details
                   </button>
                 </div>
-
       </form>
     </div>
     </div>
