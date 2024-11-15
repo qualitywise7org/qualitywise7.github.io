@@ -532,7 +532,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 550px) {
   .cv-form-row-title h3 {
     font-size: 1.2rem;
   }
@@ -570,4 +570,68 @@ body {
   .reapeater {
     margin: 20px;
   }
+  .bar{
+    margin: 4rem 1rem 2rem;
+    
+  }
+  .progress-step{
+    height: 20px;
+    width: 20px;
+  }
+  .progress-step::after{
+    font-size: 9.5px;
+  }
+  h3{
+    padding: 25px;
+  }
+  .Next{
+    margin: 20px 30px 0  ;
+    padding: 5px 35px;
+  }
+  .prev{
+    margin: 20px 0 0 30px;
+    width: 100px;
+    padding: 5px 0;
+  }
+  .uploadBox{
+    height: 250px;
+  }
+  .uploadBox img{
+    width: 100px;              
+    height: 100px;
+  }
+  .uploadBox input{
+    width: 80%;
+    margin-left: 25px;
+  }
+  .uploadBox p{
+    margin: 0;
+  }
+  .form-box .button-row #btn{
+    margin: 20px 30px 0  ;
+    font-size: 16px;
+    padding: 5px 10px;
+    width: 100px;
+    height: 35px;
+  }
+  .remove_button{
+    width: 159px;
+  }
+  .repeater-remove-btn{
+    float: left;
+  }
+  .repeater-add-btn{
+    float: right;
+    margin-top: -6vh;
+  }
+  #Percentage{
+    margin-bottom: 30px;
+  }
+  #exp_description{
+    margin-bottom: 30px;
+  }
+}
+.myaccount_option {
+  font-size: 20px;
+  text-align: center;
 }
