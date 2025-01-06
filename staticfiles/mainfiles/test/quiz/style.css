@@ -221,8 +221,8 @@ body {
 
 /* Guideline Popup Styling */
 .popup {
-  width: 90%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 90%;
   background: #fff;
   border-radius: 6px;
   position: fixed;
@@ -236,6 +236,10 @@ body {
   transition: transform 0.4s ease, visibility 0.4s ease;
   z-index: 1000;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-height: 80vh; /* Limit the height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 10px; /* Adjust padding if necessary for scrollbar */
+
 }
 
 /* Popup Open State */
