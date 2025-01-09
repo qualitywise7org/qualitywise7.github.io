@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Apply</title>
-    <link rel="stylesheet" href="/staticfiles/mainfiles/apply/style.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -21,7 +18,6 @@
 />
 
   </head>
-
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -155,146 +151,164 @@
   ></iframe
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <div class="main_container_signup">
-      <div class="signup-container">
-        <h2 class="signup-head">Apply</h2>
-        <form id="signup-form">
-          <label for="full_name">Full Name:</label>
-          <input
-            type="text"
-            id="username"
-            name="full_name"
-            required
-            autocomplete="name"
-          />
-
-          <label for="phone">Phone:</label>
-          <input
-            type="text"
-            id="phoneNumber"
-            name="phone"
-            required
-            autocomplete="phone"
-          />
-
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            autocomplete="email"
-          />
-          <fieldset>
-            <legend class="custom-legend">
-              Applying For : <span class="small-text">(Tick checkbox)</span>
-            </legend>
+    <div
+  class="modal fade"
+  id="editModal"
+  tabindex="-1"
+  aria-labelledby="editModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="edit-profile-form">
+          <div class="mb-3">
+            <label for="edit-name" class="form-label">Name:</label>
             <input
-              type="checkbox"
-              id="internship"
-              name="applying_for"
-              value="Software Engineer Internship"
+              type="text"
+              class="form-control"
+              id="edit-name"
+              name="ename"
+              placeholder="John Doe"
             />
-            
-            
-            <label for="Software Engineer Internship">Software Engineer Internship</label><br />
-
+          </div>
+          <div class="mb-3">
+            <label for="edit-email" class="form-label">Email:</label>
             <input
-              type="checkbox"
-              id="internship"
-              name="applying_for"
-              value="Product Manager Internship"
+              type="text"
+              class="form-control"
+              id="edit-email"
+              name="eemail"
+              placeholder="xyz@gmail.com"
+              disabled
             />
-            <label for="Product Manager Internship"> Product Manager Internship</label><br />
-
+          </div>
+          <div class="mb-3">
+            <label for="edit-phone" class="form-label">Phone No:</label>
             <input
-              type="checkbox"
-              id="interview_preparation"
-              name="applying_for"
-              value="Interview Preparation classes"
+              type="text"
+              class="form-control"
+              id="edit-phone"
+              name="ephone"
+              placeholder="1234567890"
+              disabled
             />
-            <label for="interview_preparation"
-              >Interview Preparation classes</label
-            ><br />
-
+          </div>
+          <div class="mb-3">
+            <label for="edit-gender" class="form-label">Gender:</label>
             <input
-              type="checkbox"
-              id="placement_classes"
-              name="applying_for"
-              value="Placement classes"
+              type="text"
+              class="form-control"
+              id="edit-gender"
+              name="egender"
+              placeholder="Male/Female"
             />
-            <label for="placement_classes">Placement classes</label><br />
-
+          </div>
+          <div class="mb-3">
+            <label for="edit-dob" class="form-label">Date of Birth:</label>
             <input
-              type="checkbox"
-              id="mock_interviews"
-              name="applying_for"
-              value="Mock Interviews"
+              type="text"
+              class="form-control"
+              id="edit-dob"
+              name="edob"
+              placeholder="2003-01-01"
             />
-            <label for="mock_interviews">Mock Interviews</label><br />
-
+          </div>
+          <div class="mb-3">
+            <label for="file-input" class="form-label">Upload Profile</label>
             <input
-              type="checkbox"
-              id="cv_making"
-              name="applying_for"
-              value="CV Making"
+              type="file"
+              class="form-control"
+              id="file-input"
+              accept="image/*"
             />
-            <label for="cv_making">CV Making</label><br />
-
-            <input
-              type="checkbox"
-              id="career_consultancy"
-              name="applying_for"
-              value="Career Consultancy"
-            />
-            <label for="career_consultancy">Career Consultancy</label><br />
-
-            <input
-              type="checkbox"
-              id="major_project"
-              name="applying_for"
-              value="Major project"
-            />
-            <label for="major_project">Major project</label><br />
-
-            <input
-              type="checkbox"
-              id="buy_projects"
-              name="applying_for"
-              value="Buy Projects"
-            />
-            <label for="buy_projects">Buy Projects</label><br />
-
-            <input
-              type="checkbox"
-              id="english_classes"
-              name="applying_for"
-              value="English classes"
-            />
-            <label for="english_classes">English classes</label><br />
-
-            <input
-              type="checkbox"
-              id="business_classes"
-              name="applying_for"
-              value="Business classes"
-            />
-            <label for="business_classes">Business classes</label><br />
-
-            <!--<input
-              type="checkbox"
-              id="looking_for_job"
-              name="applying_for"
-              value="Looking for job"
-            />
-            <label for="looking_for_job">Looking for job</label><br />-->
-          </fieldset>
-          <button type="submit" id="apply-btn" style="margin-top: 20px">
-            Apply
-          </button>
+          </div>
         </form>
       </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          id="cancel-button"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="save-button"
+        >
+          Save
+        </button>
+      </div>
     </div>
+  </div>
+</div>
+
+<section class="pt-5 pb-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Image Section -->
+      <div class="col-12 col-md-3 text-center mb-4 mb-md-0">
+        <img
+          src="https://www.pngall.com/wp-content/uploads/5/Profile.png"
+          alt="user-avatar-image"
+          class="border rounded-circle img-fluid shadow-sm"
+          style="height: 120px; width: 120px;"
+          id="show_image"
+        />
+      </div>
+
+      <!-- User Details Section -->
+      <div class="col-12 col-md-9">
+        <div class="row">
+          <div class="col-12 col-sm-6 mb-2">
+            <h6 class="fw-bold">Name:</h6>
+            <p class="fw-normal text-muted mb-0" id="fullname">John Doe</p>
+          </div>
+          <div class="col-12 col-sm-6 mb-2">
+            <h6 class="fw-bold">Email:</h6>
+            <p class="fw-normal text-muted mb-0" id="email">john.doe@example.com</p>
+          </div>
+          <div class="col-12 col-sm-6 mb-2">
+            <h6 class="fw-bold">DOB:</h6>
+            <p class="fw-normal text-muted mb-0" id="dob">2000-01-01</p>
+          </div>
+          <div class="col-12 col-sm-6 mb-2">
+            <h6 class="fw-bold">Gender:</h6>
+            <p class="fw-normal text-muted mb-0" id="gender">Male</p>
+          </div>
+          <div class="col-12 col-sm-6 mb-2">
+            <h6 class="fw-bold">Phone No:</h6>
+            <p class="fw-normal text-muted mb-0" id="mob">1234567890</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Button -->
+    <div class="row mt-4">
+      <div class="col-12 text-center">
+        <button class="btn btn-primary" id="edit-button">
+          <i class="bi bi-pencil"></i> Edit Profile
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
 
     <footer class="container-fluid bg-black">
   <div class="text-white">
@@ -642,9 +656,8 @@
 
 
     <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/toastify-js"
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/personalprofile/script.js"
     ></script>
-    <script type="module" src="/staticfiles/mainfiles/apply/script.js"></script>
   </body>
 </html>

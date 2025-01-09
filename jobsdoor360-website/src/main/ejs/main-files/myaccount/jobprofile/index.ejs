@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- TailwindCSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      #edit-modal-education{
+        z-index: 10;
+      }
+      
+    </style>
+
+    <%- include('../../../partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../../../partials/navbar.ejs') %>
+
+    <!-- Edit social link -->
+    <div
+      id="edit-form-social"
+      class="d-none position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-50 d-flex justify-content-center align-items-center z-3"
+    >
+      <!-- Form Container -->
+      <div class="bg-white p-4 rounded shadow-lg col-md-6 col-10">
+        <h2 class="h4 mb-4 text-center">Edit Social Links</h2>
+        <form>
+          <div class="mb-3">
+            <label for="edit-github" class="form-label">GitHub Profile:</label>
+            <input
+              type="text"
+              id="edit-github"
+              name="egithub"
+              class="form-control"
+              placeholder="e.g., https://github.com/username"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="edit-linkedin" class="form-label"
+              >LinkedIn Profile:</label
+            >
+            <input
+              type="text"
+              id="edit-linkedin"
+              name="elinkedin"
+              class="form-control"
+              placeholder="e.g., https://linkedin.com/in/username"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="edit-leetcode" class="form-label"
+              >LeetCode Profile:</label
+            >
+            <input
+              type="text"
+              id="edit-leetcode"
+              name="eleetcode"
+              class="form-control"
+              placeholder="e.g., https://leetcode.com/username"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="edit-instagram" class="form-label"
+              >Instagram Profile:</label
+            >
+            <input
+              type="text"
+              id="edit-instagram"
+              name="einstagram"
+              class="form-control"
+              placeholder="e.g., https://instagram.com/username"
+            />
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <button
+              type="button"
+              id="cancel-button-social"
+              class="btn btn-secondary"
+            >
+              Cancel
+            </button>
+            <button id="save-button-social" class="btn btn-primary">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Edit Skills Modal -->
+
+    <div
+      id="edit-skill-modal"
+      class="d-none position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-50 d-flex justify-content-center align-items-center z-3"
+    >
+      <!-- Modal Container -->
+      <div class="bg-white p-4 rounded shadow-lg col-md-6 col-10">
+        <h2 class="h5 mb-4 text-center">Add New Skills</h2>
+        <form id="edit-skill-form">
+          <div class="mb-3">
+            <label for="skill-name" class="form-label">Skill Name:</label>
+            <input
+              type="text"
+              id="skill-name"
+              class="form-control"
+              placeholder="e.g., JavaScript, Java, Python"
+              required
+            />
+          </div>
+          <div class="d-flex justify-content-between">
+            <button
+              type="button"
+              id="cancel-button-skills"
+              class="btn btn-secondary"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Address modal  -->
+
+    <div
+      id="edit-modal-address"
+      class="modal fade"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center w-100">Edit Address</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="edit-address-form">
+              <!-- Address Fields -->
+              <div class="mb-3">
+                <label for="address-input" class="form-label">Address</label>
+                <input
+                  type="text"
+                  id="address-input"
+                  class="form-control"
+                  placeholder="Enter your address"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="city-input" class="form-label">City</label>
+                <input
+                  type="text"
+                  id="city-input"
+                  class="form-control"
+                  placeholder="Enter your city"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="state-input" class="form-label">State</label>
+                <input
+                  type="text"
+                  id="state-input"
+                  class="form-control"
+                  placeholder="Enter your state"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="zip-input" class="form-label">Pin Code</label>
+                <input
+                  type="text"
+                  id="zip-input"
+                  class="form-control"
+                  placeholder="Enter your pin code"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="saveEditedAddress()"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--education Modal -->
+    <!-- Education Modal -->
+    <div
+  id="edit-modal-education"
+  class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center"
+>
+  <div class="bg-white rounded p-4 shadow-lg" style="max-width: 400px; width: 100%;">
+    <h2 class="h4 text-center fw-bold text-dark mb-3">
+      Add / Edit Education
+    </h2>
+    <form id="edit-form-education">
+      <!-- Degree Input -->
+      <div class="mb-3">
+        <label for="edit-degree" class="form-label">Degree</label>
+        <input
+          id="edit-degree"
+          type="text"
+          class="form-control"
+          placeholder="Enter your degree"
+          required
+        />
+      </div>
+      <!-- Institution Input -->
+      <div class="mb-3">
+        <label for="edit-institution" class="form-label">Institution</label>
+        <input
+          id="edit-institution"
+          type="text"
+          class="form-control"
+          placeholder="Enter institution name"
+          required
+        />
+      </div>
+      <!-- Year Input -->
+      <div class="mb-3">
+        <label for="edit-year" class="form-label">Year</label>
+        <input
+          id="edit-year"
+          type="text"
+          class="form-control"
+          placeholder="Enter graduation year"
+          required
+        />
+      </div>
+      <!-- Action Buttons -->
+      <div class="d-flex justify-content-between">
+        <button
+          type="button"
+          id="cancel-button-education"
+          class="btn btn-secondary"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+    <!-- Add Experience  -->
+    <div
+  id="edit-modal-experience"
+  class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center"
+>
+  <div
+    class="bg-white rounded p-4 shadow-lg"
+    style="max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto;"
+  >
+    <h2 class="h4 fw-bold text-center text-dark mb-4">Add / Edit Job Experience</h2>
+    <form id="edit-form-experience">
+      <!-- Job Title -->
+      <div class="mb-3">
+        <label for="job-title" class="form-label">Job Title</label>
+        <input
+          type="text"
+          id="job-title"
+          name="job-title"
+          class="form-control"
+          placeholder="Enter Job Title"
+          required
+        />
+      </div>
+
+      <!-- Company Name -->
+      <div class="mb-3">
+        <label for="company-name" class="form-label">Company Name</label>
+        <input
+          type="text"
+          id="company-name"
+          name="company-name"
+          class="form-control"
+          placeholder="Enter Company Name"
+          required
+        />
+      </div>
+
+      <!-- Start Date -->
+      <div class="mb-3">
+        <label for="start-date" class="form-label">Start Date</label>
+        <input
+          type="date"
+          id="start-date"
+          name="start-date"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- End Date -->
+      <div class="mb-3">
+        <label for="end-date" class="form-label">End Date</label>
+        <input
+          type="date"
+          id="end-date"
+          name="end-date"
+          class="form-control"
+        />
+      </div>
+
+      <!-- Job Description -->
+      <div class="mb-3">
+        <label for="job-description" class="form-label">Job Description</label>
+        <textarea
+          id="job-description"
+          name="description"
+          class="form-control"
+          rows="4"
+          placeholder="Describe your responsibilities"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="d-flex justify-content-end gap-2">
+        <button
+          type="button"
+          id="cancel-button-experience"
+          class="btn btn-secondary"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+    <!-- profile -->
+    <section class="pt-5 pb-5 bg-light">
+      <div class="container">
+        <!-- Profile Section -->
+        <div class="d-flex flex-column justify-content-center align-items-center mb-5 flex-md-row text-center text-md-center gx-2 gx-md-0">
+          <!-- Profile Image -->
+          <div class="d-flex justify-content-center mb-3 mb-md-0">
+            <img
+              src="https://www.pngall.com/wp-content/uploads/5/Profile.png"
+              alt="user-avatar-image"
+              class="border border-white rounded-circle shadow-lg img-fluid"
+              style="width: 150px; height: 150px;"
+              id="show_image"
+            />
+          </div>
+        
+          <!-- Welcome Text -->
+          <div class="d-flex align-items-center justify-content-center ms-md-3">
+            <h1 class="text-primary fw-bold mb-2">Welcome to My Profile</h1>
+          </div>
+        </div>
+        
+        
+        
+        
+
+        <!-- Navigation Buttons -->
+        <div class="text-center">
+          <ul class="nav nav-pills justify-content-center flex-wrap mb-4">
+            <li class="nav-item">
+              <a
+                href="#social-link"
+                class="btn btn-primary rounded-pill me-2 mb-2"
+                >Social</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#skills" class="btn btn-primary rounded-pill me-2 mb-2"
+                >Skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#address" class="btn btn-primary rounded-pill me-2 mb-2"
+                >Address</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="#education"
+                class="btn btn-primary rounded-pill me-2 mb-2"
+                >Education</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="#experience"
+                class="btn btn-primary rounded-pill me-2 mb-2"
+                >Experience</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div id="social-link" class="py-5">
+          <h2 class="text-center text-dark mb-4">Social Links</h2>
+          <p class="text-muted text-center mb-4">
+            Connect with me on these platforms:
+          </p>
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <a href="#" id="github" class="btn btn-outline-dark rounded-pill"
+              >GitHub</a
+            >
+            <a href="#" id="leetcode" class="btn btn-outline-dark rounded-pill"
+              >LeetCode</a
+            >
+            <a href="#" id="linkedin" class="btn btn-outline-dark rounded-pill"
+              >LinkedIn</a
+            >
+            <a href="#" id="instagram" class="btn btn-outline-dark rounded-pill"
+              >Instagram</a
+            >
+          </div>
+          <div class="text-center mt-4">
+            <button
+              id="edit-social-button"
+              class="btn btn-primary rounded-pill"
+            >
+              Edit Links
+            </button>
+          </div>
+        </div>
+        <hr class="w-50 mx-auto my-4 border-0" style="height: 1px; background-color: #e2e2e2;">
+
+
+        <!-- Skills Section -->
+        <div id="skills" class="py-5">
+          <h2 class="text-center text-dark mb-4">My Skills</h2>
+          <p class="text-muted text-center mb-4">
+            Discover my technical expertise
+          </p>
+          <div id="skills-container" class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 p-4">
+            <!-- Dynamically loaded skills will appear here -->
+          </div>
+          
+          <div class="text-center mt-4">
+            <button id="add-skill-button" class="btn btn-primary rounded-pill">
+              Add Skill
+            </button>
+          </div>
+        </div>
+        <hr class="mx-auto my-4 border-0" style="width: 80%; height: 1px; background-color: #e2e2e2;">
+
+
+
+        <!-- Address Section -->
+        <div id="address" class="py-5">
+          <h2 class="text-center text-dark mb-4">Address</h2>
+          <p class="text-muted text-center mb-4">
+            View and edit your current and permanent address:
+          </p>
+          <div class="row g-4">
+            <!-- Present Address -->
+            <div class="col-md-6">
+              <div class="card shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Current Address</h5>
+                  <p>
+                    <strong>Address:</strong>
+                    <span id="present-address-text"></span>
+                  </p>
+                  <p>
+                    <strong>City:</strong> <span id="present-city-text"></span>
+                  </p>
+                  <p>
+                    <strong>State:</strong>
+                    <span id="present-state-text"></span>
+                  </p>
+                  <p>
+                    <strong>Pin Code:</strong>
+                    <span id="present-zip-text"></span>
+                  </p>
+                  <button
+                    class="btn btn-primary btn-sm"
+                    onclick="openEditModal('present')"
+                  >
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Permanent Address -->
+            <div class="col-md-6">
+              <div class="card shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Permanent Address</h5>
+                  <p>
+                    <strong>Address:</strong>
+                    <span id="permanent-address-text"></span>
+                  </p>
+                  <p>
+                    <strong>City:</strong>
+                    <span id="permanent-city-text"></span>
+                  </p>
+                  <p>
+                    <strong>State:</strong>
+                    <span id="permanent-state-text"></span>
+                  </p>
+                  <p>
+                    <strong>Pin Code:</strong>
+                    <span id="permanent-zip-text"></span>
+                  </p>
+                  <button
+                    class="btn btn-primary btn-sm"
+                    onclick="openEditModal('permanent')"
+                  >
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center mb-3">
+            <input
+              type="checkbox"
+              id="copy-address-checkbox"
+              class="form-check-input me-2"
+              onchange="toggleCopyAddress()"
+            />
+            <label for="copy-address-checkbox" class="form-check-label">
+              Use the same address for Permanent Address
+            </label>
+          </div>
+
+          <!-- Overall Edit Button -->
+          <!-- <div class="text-center mt-4">
+            <button
+              id="save-button-both"
+              class="btn btn-primary px-5 py-2"
+              onclick="saveAddresses()"
+            >
+              Save Addresses
+            </button>
+          </div> -->
+        </div>
+        <hr class="w-50 mx-auto my-4 border-0" style="height: 1px; background-color: #e2e2e2;">
+
+
+        <!-- Education Section -->
+        <div id="education" class="py-5">
+          <h2 class="text-center text-dark mb-4">Education</h2>
+          <p class="text-muted text-center mb-4">
+            Manage your educational qualifications:
+          </p>
+          <div id="education-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Education details dynamically loaded -->
+          </div>
+          
+          <div class="text-center mt-4">
+            <button id="addEducation" class="btn btn-primary rounded-pill">
+              Add Education
+            </button>
+          </div>
+        </div>
+        <hr class="w-50 mx-auto my-4 border-0" style="height: 1px; background-color: #e2e2e2;">
+
+
+        <!-- Experience Section -->
+        <div id="experience" class="py-5">
+          <h2 class="text-center text-dark mb-4">Experience</h2>
+          <p class="text-muted text-center mb-4">
+            Manage your professional experiences:
+          </p>
+          <div id="experience-list" class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- Experience details dynamically loaded -->
+          </div>
+          <div class="text-center mt-4">
+            <button id="addExperience" class="btn btn-primary rounded-pill">
+              Add Experience
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include('../../../partials/footer.ejs') %>
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/jobprofile/script.js"
+    ></script>
+  </body>
+</html>
