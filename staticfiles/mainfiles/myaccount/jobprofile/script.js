@@ -61,6 +61,24 @@ function populateImage(Image) {
 
 isUser();
 
+function getCurrentDateTime() {
+  const now = new Date();
+
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    timeZoneName: "short",
+  };
+
+  const formattedDateTime = now.toLocaleString("en-US", options);
+  return formattedDateTime;
+}
+
 // Get references to the button and the form
 const editButton = document.getElementById("edit-social-button");
 const editForm = document.getElementById("edit-form-social");
@@ -97,13 +115,21 @@ async function saveFormDataToDatabase(event) {
   try {
     // Fetch the existing document data
     const docSnapshot = await getDoc(userProfileRef);
-
+    const auditForm = docSnapshot.data().auditField;
+    const currentDate = getCurrentDateTime();
+    var auditData = {
+      createdAt: auditForm.createdAt,
+      createdBy: docSnapshot.data().about.email,
+      updatedAt: currentDate,
+      updatedBy: docSnapshot.data().about.email,
+    };
     if (docSnapshot.exists()) {
       // If the document exists, merge the new social links with existing data
       const existingData = docSnapshot.data();
       const updatedData = {
         ...existingData,
         social: socialData, // Update only the "social" field
+        auditField: auditData,
       };
 
       // Save the merged data back to Firestore
@@ -222,13 +248,24 @@ async function deleteSkill(id) {
   // console.log("delete")
   const docSnap = await getDoc(skillsCollection);
   // console.log(docSnap.data());
+  const auditForm = docSnap.data().auditField;
+  const currentDate = getCurrentDateTime();
   if (docSnap.exists) {
+    var auditData = {
+      createdAt: auditForm.createdAt,
+      createdBy: docSnap.data().about.email,
+      updatedAt: currentDate,
+      updatedBy: docSnap.data().about.email,
+    };
     let skillList = docSnap.data().skills || [];
     skillList = skillList.filter((exp) => exp.id !== id);
 
     // Update Firestore
     //   await userDocRef.update({ experience: skillList });
-    await updateDoc(skillsCollection, { skills: skillList });
+    await updateDoc(skillsCollection, {
+      skills: skillList,
+      auditField: auditData,
+    });
     loadSkills();
   }
 }
@@ -304,9 +341,21 @@ editSkillForm.addEventListener("submit", async (e) => {
         // console.log(skillList);
       }
     }
+    const auditForm = docSnap.data().auditField;
+    const currentDate = getCurrentDateTime();
+
+    var auditData = {
+      createdAt: auditForm.createdAt,
+      createdBy: docSnap.data().about.email,
+      updatedAt: currentDate,
+      updatedBy: docSnap.data().about.email,
+    };
 
     // Update Firestore
-    await updateDoc(skillsCollection, { skills: skillList });
+    await updateDoc(skillsCollection, {
+      skills: skillList,
+      auditField: auditData,
+    });
     window.location.reload();
     //   console.log("skills success");
     loadSkills();
@@ -447,6 +496,15 @@ async function saveAddresses() {
   try {
     // Fetch the existing document data
     const docSnapshot = await getDoc(skillsCollection);
+    const auditForm = docSnapshot.data().auditField;
+    const currentDate = getCurrentDateTime();
+
+    var auditData = {
+      createdAt: auditForm.createdAt,
+      createdBy: docSnapshot.data().about.email,
+      updatedAt: currentDate,
+      updatedBy: docSnapshot.data().about.email,
+    };
 
     if (docSnapshot.exists()) {
       // If the document exists, merge the new social links with existing data
@@ -455,6 +513,7 @@ async function saveAddresses() {
       const updatedData = {
         ...existingData,
         address: addressData, // Update only the "social" field
+        auditField: auditData,
       };
       // console.log(updatedData)
 
@@ -575,6 +634,15 @@ document
     // console.log(docSnap.data());
     //     const docRef = doc(db, "user_profile", email);
     //
+    const auditForm = docSnap.data().auditField;
+    const currentDate = getCurrentDateTime();
+
+    var auditData = {
+      createdAt: auditForm.createdAt,
+      createdBy: docSnap.data().about.email,
+      updatedAt: currentDate,
+      updatedBy: docSnap.data().about.email,
+    };
     if (docSnap.exists) {
       const userData = docSnap.data();
       let educationList = userData.education || [];
@@ -598,7 +666,10 @@ document
       }
 
       // Update Firestore
-      await updateDoc(userProfileRef, { education: educationList });
+      await updateDoc(userProfileRef, {
+        education: educationList,
+        auditField: auditData,
+      });
       window.location.reload();
       //   console.log("education success");
       loadEducation();
@@ -609,13 +680,25 @@ document
 async function deleteEducation(id) {
   // console.log("delete")
   const docSnap = await getDoc(userProfileRef);
+  const auditForm = docSnap.data().auditField;
+  const currentDate = getCurrentDateTime();
+
+  var auditData = {
+    createdAt: auditForm.createdAt,
+    createdBy: docSnap.data().about.email,
+    updatedAt: currentDate,
+    updatedBy: docSnap.data().about.email,
+  };
   if (docSnap.exists) {
     let educationList = docSnap.data().education || [];
     educationList = educationList.filter((edu) => edu.id !== id);
 
     // Update Firestore
     //   await userDocRef.update({ education: educationList });
-    await updateDoc(userProfileRef, { education: educationList });
+    await updateDoc(userProfileRef, {
+      education: educationList,
+      auditField: auditData,
+    });
     loadEducation();
   }
 }
@@ -711,6 +794,15 @@ document
     //    console.log(jobTitle);
     const docSnap = await getDoc(userProfileRef);
     // console.log(docSnap.data());
+    const auditForm = docSnap.data().auditField;
+    const currentDate = getCurrentDateTime();
+
+    var auditData = {
+      createdAt: auditForm.createdAt,
+      createdBy: docSnap.data().about.email,
+      updatedAt: currentDate,
+      updatedBy: docSnap.data().about.email,
+    };
 
     if (docSnap.exists) {
       const userData = docSnap.data();
@@ -746,7 +838,10 @@ document
       }
 
       // Update Firestore
-      await updateDoc(userProfileRef, { experience: experienceList });
+      await updateDoc(userProfileRef, {
+        experience: experienceList,
+        auditField: auditData,
+      });
       window.location.reload();
       //   console.log("education success");
       loadExperience();
@@ -757,13 +852,22 @@ document
 async function deleteExperience(id) {
   // console.log("delete")
   const docSnap = await getDoc(userProfileRef);
+  const auditForm = docSnap.data().auditField;
+  const currentDate = getCurrentDateTime();
+
+  var auditData = {
+    createdAt: auditForm.createdAt,
+    createdBy: docSnap.data().about.email,
+    updatedAt: currentDate,
+    updatedBy: docSnap.data().about.email,
+  };
   if (docSnap.exists) {
     let experienceList = docSnap.data().experience || [];
     experienceList = experienceList.filter((exp) => exp.id !== id);
 
     // Update Firestore
     //   await userDocRef.update({ experience: experienceList });
-    await updateDoc(userProfileRef, { experience: experienceList });
+    await updateDoc(userProfileRef, { experience: experienceList , auditField : auditData});
     loadExperience();
   }
 }

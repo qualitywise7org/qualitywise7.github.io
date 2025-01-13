@@ -34,10 +34,32 @@ loginForm.addEventListener("submit", async (e) => {
   loginButton.disabled = false;
 });
 
+//current date and time
+function getCurrentDateTime() {
+  const now = new Date();
+
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    timeZoneName: "short",
+  };
+
+  const formattedDateTime = now.toLocaleString("en-US", options);
+  return formattedDateTime;
+}
 // Function to handle user login
 async function loginUser(email, password) {
   try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
     const user = userCredential.user;
 
     // Check if the user's email is verified
@@ -51,25 +73,61 @@ async function loginUser(email, password) {
 
       if (docSnap.exists()) {
         // Redirect to the account page if user profile exists
+        let formdata = {};
+        let userdata = docSnap.data();
+        // console.log(userdata);
+
+        if (!userdata.auditField) {
+          const currentDate = getCurrentDateTime();
+          let auditField = {
+            createdAt: currentDate,
+            createdBy : formdata.about.email,
+            updatedAt : "",
+            updatedBy : ""
+          };
+          formdata.auditField = auditField;
+          
+        }
+        formdata = userdata;
+        
+        // console.log(formdata);
+        // Create user profile document with merged data
+        await setDoc(docRef, formdata);
         localStorage.setItem("profile", true);
         window.location.href = "/myaccount/";
+
+        // console.log(docSnap.data());
       } else {
         // Fetch data from lead collection if user profile does not exist
         const leadDocRef = doc(db, "lead", email);
         const leadDocSnap = await getDoc(leadDocRef);
         let userData = { email, firstName: user.displayName };
+        let formdata = {};
 
         // Merge lead data with user data if lead document exists
         if (leadDocSnap.exists()) {
           userData = { ...userData, ...leadDocSnap.data() };
         }
+        formdata.about = userData;
+        if (!formdata.auditField) {
+          const currentDate = getCurrentDateTime();
+          let auditField = {
+            createdAt: currentDate,
+            createdBy : formdata.about.email,
+            updatedAt : "",
+            updatedBy : ""
+          };
+          formdata.auditField = auditField;
+        }
 
         // Create user profile document with merged data
-        await setDoc(docRef, userData);
+        await setDoc(docRef, formdata);
         localStorage.setItem("profile", true);
 
         // Redirect to either the redirect URL or CV upload page
-        window.location.href = redirect_url ? redirect_url : "/myaccount/cv_upload/";
+        window.location.href = redirect_url
+          ? redirect_url
+          : "/myaccount/cv_upload/";
       }
     } else {
       // Alert user if email is not verified
@@ -80,7 +138,12 @@ async function loginUser(email, password) {
     // Log error message and show error toast
     console.log("Error:", error.message);
     showToast(
-      error.message.split(" ")[2].split("(")[1].split(")")[0].split("/")[1].replaceAll("-", " ")
+      error.message
+        .split(" ")[2]
+        .split("(")[1]
+        .split(")")[0]
+        .split("/")[1]
+        .replaceAll("-", " ")
     );
   }
 }
@@ -102,43 +165,38 @@ function showToast(message) {
   }).showToast();
 }
 
-
-
 async function checkIfUserExists(email) {
   try {
-      const db = getFirestore();
-      const docRef = doc(db, "lead", email);
-      const docSnap = await getDoc(docRef);
-      return docSnap.exists();
+    const db = getFirestore();
+    const docRef = doc(db, "lead", email);
+    const docSnap = await getDoc(docRef);
+    return docSnap.exists();
   } catch (error) {
-      throw new Error("Failed to check user existence: " + error.message);
+    throw new Error("Failed to check user existence: " + error.message);
   }
 }
 
-
 const googleLogin = document.getElementById("google-login-btn");
 googleLogin.addEventListener("click", async () => {
-    try {
-        const provider = new GoogleAuthProvider();
-        const result = await signInWithPopup(auth, provider);
-        const user = result.user;
+  try {
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
 
-        // Check if the email is already registered
-        const userExists = await checkIfUserExists(user.email);
-        if (userExists) {
-            window.location.href = "/";
-            return;
-        }
-
-        // Store user info in localStorage (consider security implications)
-        localStorage.setItem("uid", user.uid);
-        localStorage.setItem("email", user.email);
-
-       
-
-        // Redirect to home page
-        window.location.href = "/";
-    } catch (error) {
-        console.log("Error Logging in  with Google: ", error.message);
+    // Check if the email is already registered
+    const userExists = await checkIfUserExists(user.email);
+    if (userExists) {
+      window.location.href = "/";
+      return;
     }
+
+    // Store user info in localStorage (consider security implications)
+    localStorage.setItem("uid", user.uid);
+    localStorage.setItem("email", user.email);
+
+    // Redirect to home page
+    window.location.href = "/";
+  } catch (error) {
+    console.log("Error Logging in  with Google: ", error.message);
+  }
 });

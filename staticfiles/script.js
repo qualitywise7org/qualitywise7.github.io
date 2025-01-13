@@ -1,3 +1,6 @@
+const email = localStorage.getItem("email");
+// console.log(email);
+
 const currentPageUrl = window.location.pathname;
 let docRefrencePage = currentPageUrl.replace(/\//g, "_");
 
