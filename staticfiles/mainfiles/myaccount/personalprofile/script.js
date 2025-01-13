@@ -1,6 +1,6 @@
 // import { getCurrentDateTime } from "../../../utils";
 var currentDate = window.getCurrentDateTime()
-// console.log(currentDate);
+console.log(currentDate);
 
 const email = localStorage.getItem("email");
 // console.log(email);
@@ -8,24 +8,7 @@ let imageUrl = "";
 let cvUrl = "";
 let editImageUrl = "";
 
-//current date
-// function getCurrentDateTime() {
-//   const now = new Date();
 
-//   const options = {
-//     weekday: "long",
-//     year: "numeric",
-//     month: "long",
-//     day: "numeric",
-//     hour: "2-digit",
-//     minute: "2-digit",
-//     second: "2-digit",
-//     timeZoneName: "short",
-//   };
-
-//   const formattedDateTime = now.toLocaleString("en-US", options);
-//   return formattedDateTime;
-// }
 
 if (!email) {
   window.location.href = "/login/";
@@ -201,8 +184,8 @@ async function saveFormDataToDatabase(event) {
     
     
     const docSnap = await getDoc(userProfileRef);
-    const auditForm = docSnap.data().auditField;
-    // console.log(auditForm);
+    const auditForm = docSnap.data().audit_fields;
+    console.log(auditForm);
     var auditData = {
       createdAt: auditForm.createdAt,
       createdBy: docSnap.data().about.email,
@@ -217,9 +200,9 @@ async function saveFormDataToDatabase(event) {
       // console.log(formData);
 
       await updateDoc(userProfileRef, { about: aboutData, // Updated 'about' data
-        auditField: auditData, });
+        audit_fields: auditData, });
     } else {
-      formData.auditField = auditData;
+      formData.audit_fields = auditData;
       await setDoc(userProfileRef, formData);
     }
     

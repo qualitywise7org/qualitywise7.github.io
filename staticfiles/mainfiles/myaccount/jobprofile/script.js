@@ -1,4 +1,3 @@
-var currentDate = window.getCurrentDateTime();
 var presentAddressDatabase = {};
 
 const email = localStorage.getItem("email");
@@ -100,8 +99,9 @@ async function saveFormDataToDatabase(event) {
   try {
     // Fetch the existing document data
     const docSnapshot = await getDoc(userProfileRef);
-    const auditForm = docSnapshot.data().auditField;
+    const auditForm = docSnapshot.data().audit_fields;
     // const currentDate = getCurrentDateTime();
+    var currentDate = window.getCurrentDateTime();
     var auditData = {
       createdAt: auditForm.createdAt,
       createdBy: docSnapshot.data().about.email,
@@ -114,7 +114,7 @@ async function saveFormDataToDatabase(event) {
       const updatedData = {
         ...existingData,
         social: socialData, // Update only the "social" field
-        auditField: auditData,
+        audit_fields: auditData,
       };
 
       // Save the merged data back to Firestore
@@ -233,8 +233,9 @@ async function deleteSkill(id) {
   // console.log("delete")
   const docSnap = await getDoc(skillsCollection);
   // console.log(docSnap.data());
-  const auditForm = docSnap.data().auditField;
-  // const currentDate = getCurrentDateTime();
+  const auditForm = docSnap.data().audit_fields;
+  
+  var currentDate = window.getCurrentDateTime();
   if (docSnap.exists) {
     var auditData = {
       createdAt: auditForm.createdAt,
@@ -249,7 +250,7 @@ async function deleteSkill(id) {
     //   await userDocRef.update({ experience: skillList });
     await updateDoc(skillsCollection, {
       skills: skillList,
-      auditField: auditData,
+      audit_fields: auditData,
     });
     loadSkills();
   }
@@ -326,8 +327,8 @@ editSkillForm.addEventListener("submit", async (e) => {
         // console.log(skillList);
       }
     }
-    const auditForm = docSnap.data().auditField;
-    // const currentDate = getCurrentDateTime();
+    const auditForm = docSnap.data().audit_fields;
+    var currentDate = window.getCurrentDateTime();
 
     var auditData = {
       createdAt: auditForm.createdAt,
@@ -339,7 +340,7 @@ editSkillForm.addEventListener("submit", async (e) => {
     // Update Firestore
     await updateDoc(skillsCollection, {
       skills: skillList,
-      auditField: auditData,
+      audit_fields: auditData,
     });
     window.location.reload();
     //   console.log("skills success");
@@ -462,7 +463,7 @@ function toggleCopyAddress() {
   const isChecked = document.getElementById("copy-address-checkbox").checked;
   if (isChecked) {
     permanentAddress = { ...presentAddress }; // Copy present to permanent
-    console.log(permanentAddress);
+    // console.log(permanentAddress);
     updateAddressDisplay("permanent");
     saveAddresses();
   }
@@ -481,8 +482,8 @@ async function saveAddresses() {
   try {
     // Fetch the existing document data
     const docSnapshot = await getDoc(skillsCollection);
-    const auditForm = docSnapshot.data().auditField;
-    // const currentDate = getCurrentDateTime();
+    const auditForm = docSnapshot.data().audit_fields;
+    var currentDate = window.getCurrentDateTime();
 
     var auditData = {
       createdAt: auditForm.createdAt,
@@ -498,7 +499,7 @@ async function saveAddresses() {
       const updatedData = {
         ...existingData,
         address: addressData, // Update only the "social" field
-        auditField: auditData,
+        audit_fields: auditData,
       };
       // console.log(updatedData)
 
@@ -619,8 +620,8 @@ document
     // console.log(docSnap.data());
     //     const docRef = doc(db, "user_profile", email);
     //
-    const auditForm = docSnap.data().auditField;
-    // const currentDate = getCurrentDateTime();
+    const auditForm = docSnap.data().audit_fields;
+    var currentDate = window.getCurrentDateTime();
 
     var auditData = {
       createdAt: auditForm.createdAt,
@@ -653,7 +654,7 @@ document
       // Update Firestore
       await updateDoc(userProfileRef, {
         education: educationList,
-        auditField: auditData,
+        audit_fields: auditData,
       });
       window.location.reload();
       //   console.log("education success");
@@ -665,8 +666,8 @@ document
 async function deleteEducation(id) {
   // console.log("delete")
   const docSnap = await getDoc(userProfileRef);
-  const auditForm = docSnap.data().auditField;
-  // const currentDate = getCurrentDateTime();
+  const auditForm = docSnap.data().audit_fields;
+  var currentDate = window.getCurrentDateTime();
 
   var auditData = {
     createdAt: auditForm.createdAt,
@@ -682,7 +683,7 @@ async function deleteEducation(id) {
     //   await userDocRef.update({ education: educationList });
     await updateDoc(userProfileRef, {
       education: educationList,
-      auditField: auditData,
+      audit_fields: auditData,
     });
     loadEducation();
   }
@@ -779,8 +780,8 @@ document
     //    console.log(jobTitle);
     const docSnap = await getDoc(userProfileRef);
     // console.log(docSnap.data());
-    const auditForm = docSnap.data().auditField;
-    // const currentDate = getCurrentDateTime();
+    const auditForm = docSnap.data().audit_fields;
+    var currentDate = window.getCurrentDateTime();
 
     var auditData = {
       createdAt: auditForm.createdAt,
@@ -825,7 +826,7 @@ document
       // Update Firestore
       await updateDoc(userProfileRef, {
         experience: experienceList,
-        auditField: auditData,
+        audit_fields: auditData,
       });
       window.location.reload();
       //   console.log("education success");
@@ -837,8 +838,8 @@ document
 async function deleteExperience(id) {
   // console.log("delete")
   const docSnap = await getDoc(userProfileRef);
-  const auditForm = docSnap.data().auditField;
-  // const currentDate = getCurrentDateTime();
+  const auditForm = docSnap.data().audit_fields;
+  var currentDate = window.getCurrentDateTime();
 
   var auditData = {
     createdAt: auditForm.createdAt,
@@ -852,7 +853,7 @@ async function deleteExperience(id) {
 
     // Update Firestore
     //   await userDocRef.update({ experience: experienceList });
-    await updateDoc(userProfileRef, { experience: experienceList , auditField : auditData});
+    await updateDoc(userProfileRef, { experience: experienceList , audit_fields : auditData});
     loadExperience();
   }
 }
