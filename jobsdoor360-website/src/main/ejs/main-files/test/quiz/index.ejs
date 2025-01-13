@@ -30,6 +30,7 @@
           <div id="result-container">
             <h2>Quiz Completed!</h2>
             <p>Your score: <span id="score"></span></p>
+            <p>unanswered : <span id="unansweredDisplay"></span></p>
             <p>Percentage correct: <span id="percentage"></span>%</p>
           </div>
           <button id="home-btn" class="btn"><i class="fas fa-home"></i> Home</button>
@@ -41,8 +42,8 @@
   <!-- Popup structure here -->
   <div class="popup" id="guidelinePopup">
     <h3>Assessment Guidelines</h3>
+    <p>Please read the following guidelines before starting the test:</p>
     <div>
-      <p>Please read the following guidelines before starting the test:</p>
       <ul>
         <li><b>Total Number of Questions:</b> Approximately 50</li>
         <li><b>Time Limit:</b> 30 minutes</li>
@@ -60,17 +61,13 @@
         <li>Answer all questions to the best of your ability.</li>
         <li>Focus: Minimize distractions to ensure you are fully concentrated on the assessment for its entire duration.</li>
       </ul>
-    </div>
-    <label>
-      <input type="checkbox" id="agree-checkbox">
-      </ul>
-    </div>
     <label>
       <input type="checkbox" id="agree-checkbox">
       I agree to the guidelines.
     </label>
     <button id="start-btn" class="btn-submit">Start</button>
   </div>
+</div>
 
   <!-- Overlay -->
 <div id="overlay" style="display: none;"></div>

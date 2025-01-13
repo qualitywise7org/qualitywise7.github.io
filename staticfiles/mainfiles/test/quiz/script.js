@@ -51,6 +51,7 @@ async function startQuiz() {
     
         let currentSubject = null;
         let currentQuestionIndex = 0;
+        let unansweredCount = 0;
         let score = 0;
         let timeLeft = TIME_LIMIT;
         let timerInterval = null;
@@ -62,6 +63,7 @@ async function startQuiz() {
         const questionContainer = document.getElementById("question-container");
         const scoreDisplay = document.getElementById("score");
         const percentageDisplay = document.getElementById("percentage");
+        const unansweredDisplay = document.getElementById("unansweredDisplay");
         const resultContainer = document.getElementById("result-container");
         const nextButton = document.getElementById("next-btn");
         const previousButton = document.getElementById("pre-btn");
@@ -123,7 +125,7 @@ async function startQuiz() {
     
             loadQuestion();
         }
-    
+        
         function loadQuestion() {
             const question = currentSubject.questions[currentQuestionIndex];
             if (questionContainer) {
@@ -151,17 +153,26 @@ async function startQuiz() {
     
         function nextQuestion() {
             const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
             if (!selectedAnswer) {
-                alert("Please select an answer.");
-                return;
+                // If no answer is selected, increase the unanswered count
+                if (selectedAnswers[currentQuestionIndex] === undefined) {
+                    unansweredCount++;
+                }
+            } else {
+                // If an answer is selected, save it and adjust the unanswered count if needed
+                const answerIndex = parseInt(selectedAnswer.value, 10);
+                if (selectedAnswers[currentQuestionIndex] === undefined) {
+                    unansweredCount--; // Reduce unanswered count if this was previously unanswered
+                }
+                selectedAnswers[currentQuestionIndex] = answerIndex;
+        
+                // Check if the selected answer is correct
+                if (answerIndex === currentSubject.questions[currentQuestionIndex].correctAnswer) {
+                    score++;
+                }
             }
-    
-            const answerIndex = parseInt(selectedAnswer.value, 10);
-            selectedAnswers[currentQuestionIndex] = answerIndex;
-    
-            if (answerIndex === currentSubject.questions[currentQuestionIndex].correctAnswer) {
-                score++;
-            }
+        
     
             currentQuestionIndex++;
     
@@ -187,49 +198,55 @@ async function startQuiz() {
             if (previousButton) previousButton.style.display = "none";
             if (resultContainer) resultContainer.style.display = "block";
             if (homeButton) homeButton.style.display = "block";
-    
+        
             stopTimer();
-    
-            const percentage = Math.round((score / currentSubject.questions.length) * 100);
+        
+            const totalQuestions = currentSubject.questions.length;
+            const percentage = Math.round((score / totalQuestions) * 100);
+            const unansweredCount = totalQuestions - Object.keys(selectedAnswers).length;
+        
             if (scoreDisplay) scoreDisplay.textContent = score;
             if (percentageDisplay) percentageDisplay.textContent = `${percentage}`;
-    
+            if (unansweredDisplay) unansweredDisplay.textContent = unansweredCount;
+        
             try {
                 const user = auth.currentUser;
                 if (user) {
                     const email = user.email;
-                    const userDocRef = doc(db, "user_assessment_results", email);
-    
-                    // Get existing results
-                    const userDocSnap = await getDoc(userDocRef);
-                    let results = [];
-                    if (userDocSnap.exists()) {
-                        results = userDocSnap.data().results || [];
-                    }
-    
-                    // Check if the quiz has been attempted before
-                    const existingResultIndex = results.findIndex(result => result.quizCode === currentSubject.title);
-                    if (existingResultIndex !== -1) {
-                        // Update the existing result
-                        results[existingResultIndex] = {
-                            ...results[existingResultIndex],
+        
+                    // Reference to the specific quiz results
+                    const userQuizRef = doc(db, "user_assessment_results", email, "assessment_results",  assessmentKey);
+        
+                    // Prepare the new attempt data
+                    const newAttempt = {
+                        score: {
                             score: score,
-                            percentage: percentage,
-                            timestamp: new Date()
-                        };
+                            timestamp: new Date(),
+                        },
+                        user_questions_with_answers: currentSubject.questions.map((q, index) => {
+                            const selectedAnswerIndex = selectedAnswers[index];
+                            const selectedAnswerText = selectedAnswerIndex !== undefined ? q.answers[selectedAnswerIndex] : null;
+                            return {
+                                question: q.question,
+                                answer: selectedAnswerText, // Save the full text of the selected answer
+                            };
+                        }),
+                    };
+        
+                    // Check if the document for this quiz already exists
+                    const existingDoc = await getDoc(userQuizRef);
+        
+                    if (existingDoc.exists()) {
+                        // Update the attempts array
+                        const existingData = existingDoc.data();
+                        const updatedAttempts = [...(existingData.attempts || []), newAttempt];
+                        await setDoc(userQuizRef, { attempts: updatedAttempts });
                     } else {
-                        // Add new result
-                        results.push({
-                            quizCode: currentSubject.title,
-                            score: score,
-                            percentage: percentage,
-                            timestamp: new Date()
-                        });
+                        // Create a new document with the first attempt
+                        await setDoc(userQuizRef, { attempts: [newAttempt] });
                     }
-    
-                    // Save updated results
-                    await setDoc(userDocRef, { results: results });
-                    console.log("Quiz results saved successfully.");
+        
+                    console.log("Quiz attempt saved successfully.");
                 } else {
                     console.error("No authenticated user found.");
                 }
@@ -237,6 +254,8 @@ async function startQuiz() {
                 console.error("Failed to save quiz results:", error);
             }
         }
+        
+        
     
         function startTimer() {
             timerInterval = setInterval(() => {

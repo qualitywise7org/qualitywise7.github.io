@@ -34,6 +34,7 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   max-width: 700px;
   width: 100%;
+  height: 60vh;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
 }
@@ -60,6 +61,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* width : 40px; */
 }
 
 #quiz {
@@ -68,13 +70,17 @@ body {
 
 /* Question Title */
 #question-title {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 20px;
   color: #fff;
   background-color: #667eea;
   padding: 10px;
   border-radius: 10px;
+  height: 85px;
+  display: flex;
+ align-items: center;
+  text-align: left;
 }
 
 /* Question Container Styling */
@@ -87,6 +93,8 @@ body {
   text-align: left;
   animation: slideIn 1s ease-in-out;
   font-size: 1.2rem;
+  height: 150px;
+  
 }
 
 /* Button Group Styling */
