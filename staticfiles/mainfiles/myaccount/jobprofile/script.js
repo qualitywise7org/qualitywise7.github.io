@@ -1,3 +1,4 @@
+var currentDate = window.getCurrentDateTime();
 var presentAddressDatabase = {};
 
 const email = localStorage.getItem("email");
@@ -61,23 +62,7 @@ function populateImage(Image) {
 
 isUser();
 
-function getCurrentDateTime() {
-  const now = new Date();
 
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    timeZoneName: "short",
-  };
-
-  const formattedDateTime = now.toLocaleString("en-US", options);
-  return formattedDateTime;
-}
 
 // Get references to the button and the form
 const editButton = document.getElementById("edit-social-button");
@@ -116,7 +101,7 @@ async function saveFormDataToDatabase(event) {
     // Fetch the existing document data
     const docSnapshot = await getDoc(userProfileRef);
     const auditForm = docSnapshot.data().auditField;
-    const currentDate = getCurrentDateTime();
+    // const currentDate = getCurrentDateTime();
     var auditData = {
       createdAt: auditForm.createdAt,
       createdBy: docSnapshot.data().about.email,
@@ -249,7 +234,7 @@ async function deleteSkill(id) {
   const docSnap = await getDoc(skillsCollection);
   // console.log(docSnap.data());
   const auditForm = docSnap.data().auditField;
-  const currentDate = getCurrentDateTime();
+  // const currentDate = getCurrentDateTime();
   if (docSnap.exists) {
     var auditData = {
       createdAt: auditForm.createdAt,
@@ -342,7 +327,7 @@ editSkillForm.addEventListener("submit", async (e) => {
       }
     }
     const auditForm = docSnap.data().auditField;
-    const currentDate = getCurrentDateTime();
+    // const currentDate = getCurrentDateTime();
 
     var auditData = {
       createdAt: auditForm.createdAt,
@@ -497,7 +482,7 @@ async function saveAddresses() {
     // Fetch the existing document data
     const docSnapshot = await getDoc(skillsCollection);
     const auditForm = docSnapshot.data().auditField;
-    const currentDate = getCurrentDateTime();
+    // const currentDate = getCurrentDateTime();
 
     var auditData = {
       createdAt: auditForm.createdAt,
@@ -635,7 +620,7 @@ document
     //     const docRef = doc(db, "user_profile", email);
     //
     const auditForm = docSnap.data().auditField;
-    const currentDate = getCurrentDateTime();
+    // const currentDate = getCurrentDateTime();
 
     var auditData = {
       createdAt: auditForm.createdAt,
@@ -681,7 +666,7 @@ async function deleteEducation(id) {
   // console.log("delete")
   const docSnap = await getDoc(userProfileRef);
   const auditForm = docSnap.data().auditField;
-  const currentDate = getCurrentDateTime();
+  // const currentDate = getCurrentDateTime();
 
   var auditData = {
     createdAt: auditForm.createdAt,
@@ -795,7 +780,7 @@ document
     const docSnap = await getDoc(userProfileRef);
     // console.log(docSnap.data());
     const auditForm = docSnap.data().auditField;
-    const currentDate = getCurrentDateTime();
+    // const currentDate = getCurrentDateTime();
 
     var auditData = {
       createdAt: auditForm.createdAt,
@@ -853,7 +838,7 @@ async function deleteExperience(id) {
   // console.log("delete")
   const docSnap = await getDoc(userProfileRef);
   const auditForm = docSnap.data().auditField;
-  const currentDate = getCurrentDateTime();
+  // const currentDate = getCurrentDateTime();
 
   var auditData = {
     createdAt: auditForm.createdAt,

@@ -1,3 +1,7 @@
+// import { getCurrentDateTime } from "../../../utils";
+var currentDate = window.getCurrentDateTime()
+// console.log(currentDate);
+
 const email = localStorage.getItem("email");
 // console.log(email);
 let imageUrl = "";
@@ -5,23 +9,23 @@ let cvUrl = "";
 let editImageUrl = "";
 
 //current date
-function getCurrentDateTime() {
-  const now = new Date();
+// function getCurrentDateTime() {
+//   const now = new Date();
 
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    timeZoneName: "short",
-  };
+//   const options = {
+//     weekday: "long",
+//     year: "numeric",
+//     month: "long",
+//     day: "numeric",
+//     hour: "2-digit",
+//     minute: "2-digit",
+//     second: "2-digit",
+//     timeZoneName: "short",
+//   };
 
-  const formattedDateTime = now.toLocaleString("en-US", options);
-  return formattedDateTime;
-}
+//   const formattedDateTime = now.toLocaleString("en-US", options);
+//   return formattedDateTime;
+// }
 
 if (!email) {
   window.location.href = "/login/";
@@ -123,8 +127,8 @@ isUser();
 //saving profile
 // References to elements
 const fileInput = document.getElementById("file-input");
-const imagePreview = document.getElementById("image-preview");
-const placeholder = document.getElementById("placeholder");
+// const imagePreview = document.getElementById("image-preview");
+// const placeholder = document.getElementById("placeholder");
 
 // Event listener for file input
 fileInput.addEventListener("change", (event) => {
@@ -132,18 +136,19 @@ fileInput.addEventListener("change", (event) => {
   editImageUrl = file;
   if (file) {
     const reader = new FileReader(); // FileReader for reading file content
-    reader.onload = (e) => {
-      imagePreview.src = e.target.result; // Set image preview source
-      imagePreview.classList.remove("hidden"); // Show the image preview
-      placeholder.classList.add("hidden"); // Hide the placeholder
-    };
+    // reader.onload = (e) => {
+    //   // imagePreview.src = e.target.result; // Set image preview source
+    //   // imagePreview.classList.remove("hidden"); // Show the image preview
+    //   // placeholder.classList.add("hidden"); // Hide the placeholder
+    // };
     reader.readAsDataURL(file); // Read the image file as a data URL
-  } else {
-    // Reset if no file is selected
-    imagePreview.src = "";
-    imagePreview.classList.add("hidden");
-    placeholder.classList.remove("hidden");
-  }
+  } 
+  // else {
+  //   // Reset if no file is selected
+  //   imagePreview.src = "";
+  //   imagePreview.classList.add("hidden");
+  //   placeholder.classList.remove("hidden");
+  // }
 });
 
 //getting hosted url for profile
@@ -193,7 +198,8 @@ async function saveFormDataToDatabase(event) {
   try {
     // Collect form data
     // const formData = collectFormData();
-    const currentDate = getCurrentDateTime();
+    
+    
     const docSnap = await getDoc(userProfileRef);
     const auditForm = docSnap.data().auditField;
     // console.log(auditForm);
@@ -216,8 +222,9 @@ async function saveFormDataToDatabase(event) {
       formData.auditField = auditData;
       await setDoc(userProfileRef, formData);
     }
+    
     //   console.log("Data successfully saved to Firestore");
-    // window.location.reload();
+    window.location.reload();
     // Show success message (uncomment if using Toastify)
     //   Toastify({
     //     text: "Details Successfully Submitted",

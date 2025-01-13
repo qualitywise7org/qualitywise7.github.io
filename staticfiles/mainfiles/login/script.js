@@ -1,4 +1,8 @@
 // Check if the user is already logged in by checking local storage
+var currentDate = window.getCurrentDateTime()
+// console.log(currentDate);
+
+
 const email = localStorage.getItem("email");
 if (email) {
   window.location.href = "/";
@@ -34,24 +38,7 @@ loginForm.addEventListener("submit", async (e) => {
   loginButton.disabled = false;
 });
 
-//current date and time
-function getCurrentDateTime() {
-  const now = new Date();
 
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    timeZoneName: "short",
-  };
-
-  const formattedDateTime = now.toLocaleString("en-US", options);
-  return formattedDateTime;
-}
 // Function to handle user login
 async function loginUser(email, password) {
   try {
@@ -78,7 +65,7 @@ async function loginUser(email, password) {
         // console.log(userdata);
 
         if (!userdata.auditField) {
-          const currentDate = getCurrentDateTime();
+          const currentDate = window.getCurrentDateTime();
           let auditField = {
             createdAt: currentDate,
             createdBy : formdata.about.email,
@@ -110,7 +97,7 @@ async function loginUser(email, password) {
         }
         formdata.about = userData;
         if (!formdata.auditField) {
-          const currentDate = getCurrentDateTime();
+          const currentDate = window.getCurrentDateTime();
           let auditField = {
             createdAt: currentDate,
             createdBy : formdata.about.email,
