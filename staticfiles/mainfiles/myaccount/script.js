@@ -1,4 +1,10 @@
 // Get the authenticated user's ID
+let auditField = {
+  createdAt : "",
+  updateAt : "",
+  createdBy : "",
+  updatedBy : ""
+}
 let userId = null;
 let userData = {};
 
@@ -13,7 +19,7 @@ onAuthStateChanged(auth, async (user) => {
       if (userDocSnapshot.exists()) {
         userData = userDocSnapshot.data();
         var userJSON = JSON.stringify(userData);
-        console.log(userJSON);
+        console.log(userData);
         localStorage.setItem("userDetails", userJSON);
         const userName1 = document.getElementById("userName1");
         userName1.innerText = userData.full_name;

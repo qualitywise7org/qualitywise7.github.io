@@ -1,4 +1,7 @@
 // Check if the user is already logged in by checking local storage
+
+
+
 const email = localStorage.getItem("email");
 if (email) {
   window.location.href = "/";
@@ -34,6 +37,7 @@ loginForm.addEventListener("submit", async (e) => {
   loginButton.disabled = false;
 });
 
+
 // Function to handle user login
 async function loginUser(email, password) {
   try {
@@ -41,49 +45,88 @@ async function loginUser(email, password) {
     const user = userCredential.user;
 
     // Check if the user's email is verified
-    if (user.emailVerified) {
-      // Store user information in local storage
-      localStorage.setItem("uid", user.uid);
-      localStorage.setItem("email", user.email);
-
-      const docRef = doc(db, "user_profile", email);
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        // Redirect to the account page if user profile exists
-        localStorage.setItem("profile", true);
-        window.location.href = "/myaccount/";
-      } else {
-        // Fetch data from lead collection if user profile does not exist
-        const leadDocRef = doc(db, "lead", email);
-        const leadDocSnap = await getDoc(leadDocRef);
-        let userData = { email, firstName: user.displayName };
-
-        // Merge lead data with user data if lead document exists
-        if (leadDocSnap.exists()) {
-          userData = { ...userData, ...leadDocSnap.data() };
-        }
-
-        // Create user profile document with merged data
-        await setDoc(docRef, userData);
-        localStorage.setItem("profile", true);
-
-        // Redirect to either the redirect URL or CV upload page
-        window.location.href = redirect_url ? redirect_url : "/myaccount/cv_upload/";
-      }
-    } else {
-      // Alert user if email is not verified
+    if (!user.emailVerified) {
       alert("Email is not verified");
       throw new Error("Email is not verified");
     }
+
+    // Store user information in local storage
+    localStorage.setItem("uid", user.uid);
+    localStorage.setItem("email", user.email);
+
+    // Reference to the user profile document
+    const docRef = doc(db, "user_profile", email);
+    const docSnap = await getDoc(docRef);
+    
+
+    if (docSnap.exists()) {
+      // If user profile exists, update or initialize audit fields
+      let formData = { ...docSnap.data() };
+      var currentDate = window.getCurrentDateTime()
+
+
+      if (!formData.audit_fields) {
+        formData.audit_fields = {
+          createdAt: currentDate,
+          createdBy: email,
+          updatedAt: "",
+          updatedBy: "",
+        };
+      }
+
+      // console.log("Existing User Profile:", formData);
+      // Uncomment this to update the user profile if needed
+      await setDoc(docRef, formData);
+      localStorage.setItem("profile", true);
+      window.location.href = "/myaccount/";
+    } else {
+      // If user profile does not exist, check the lead collection
+      const leadDocRef = doc(db, "lead", email);
+      const leadDocSnap = await getDoc(leadDocRef);
+      let formData = { about: { email, firstName: user.displayName } };
+      var currentDate = window.getCurrentDateTime()
+      // console.log(currentDate);
+      if (leadDocSnap.exists()) {
+        formData.about = { ...formData.about, ...leadDocSnap.data() };
+      }
+
+      // Add audit fields
+      formData.audit_fields = {
+        createdAt: currentDate,
+        createdBy: email,
+        updatedAt: "",
+        updatedBy: "",
+      };
+
+      // Create a new user profile document
+      await setDoc(docRef, formData);
+      localStorage.setItem("profile", true);
+
+      // Redirect to the appropriate page
+      const redirectUrl = localStorage.getItem("redirect_url");
+      window.location.href = redirectUrl || "/myaccount/cv_upload/";
+    }
   } catch (error) {
-    // Log error message and show error toast
-    console.log("Error:", error.message);
-    showToast(
-      error.message.split(" ")[2].split("(")[1].split(")")[0].split("/")[1].replaceAll("-", " ")
-    );
+    // Handle errors and show toast
+    console.error("Error:", error.message);
+    showToast(parseFirebaseError(error.message));
   }
 }
+
+// Utility to parse Firebase error messages
+function parseFirebaseError(message) {
+  try {
+    return message
+      .split(" ")[2]
+      .split("(")[1]
+      .split(")")[0]
+      .split("/")[1]
+      .replaceAll("-", " ");
+  } catch {
+    return "An unknown error occurred";
+  }
+}
+
 
 // Function to display toast notifications
 function showToast(message) {
@@ -102,43 +145,38 @@ function showToast(message) {
   }).showToast();
 }
 
-
-
 async function checkIfUserExists(email) {
   try {
-      const db = getFirestore();
-      const docRef = doc(db, "lead", email);
-      const docSnap = await getDoc(docRef);
-      return docSnap.exists();
+    const db = getFirestore();
+    const docRef = doc(db, "lead", email);
+    const docSnap = await getDoc(docRef);
+    return docSnap.exists();
   } catch (error) {
-      throw new Error("Failed to check user existence: " + error.message);
+    throw new Error("Failed to check user existence: " + error.message);
   }
 }
 
-
 const googleLogin = document.getElementById("google-login-btn");
 googleLogin.addEventListener("click", async () => {
-    try {
-        const provider = new GoogleAuthProvider();
-        const result = await signInWithPopup(auth, provider);
-        const user = result.user;
+  try {
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
 
-        // Check if the email is already registered
-        const userExists = await checkIfUserExists(user.email);
-        if (userExists) {
-            window.location.href = "/";
-            return;
-        }
-
-        // Store user info in localStorage (consider security implications)
-        localStorage.setItem("uid", user.uid);
-        localStorage.setItem("email", user.email);
-
-       
-
-        // Redirect to home page
-        window.location.href = "/";
-    } catch (error) {
-        console.log("Error Logging in  with Google: ", error.message);
+    // Check if the email is already registered
+    const userExists = await checkIfUserExists(user.email);
+    if (userExists) {
+      window.location.href = "/";
+      return;
     }
+
+    // Store user info in localStorage (consider security implications)
+    localStorage.setItem("uid", user.uid);
+    localStorage.setItem("email", user.email);
+
+    // Redirect to home page
+    window.location.href = "/";
+  } catch (error) {
+    console.log("Error Logging in  with Google: ", error.message);
+  }
 });
