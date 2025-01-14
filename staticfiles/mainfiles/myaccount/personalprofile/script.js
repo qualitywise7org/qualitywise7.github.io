@@ -1,6 +1,5 @@
 // import { getCurrentDateTime } from "../../../utils";
-var currentDate = window.getCurrentDateTime()
-console.log(currentDate);
+
 
 const email = localStorage.getItem("email");
 // console.log(email);
@@ -182,10 +181,10 @@ async function saveFormDataToDatabase(event) {
     // Collect form data
     // const formData = collectFormData();
     
-    
+    var currentDate = window.getCurrentDateTime()
     const docSnap = await getDoc(userProfileRef);
     const auditForm = docSnap.data().audit_fields;
-    console.log(auditForm);
+    // console.log(auditForm);
     var auditData = {
       createdAt: auditForm.createdAt,
       createdBy: docSnap.data().about.email,

@@ -1,6 +1,5 @@
 // Check if the user is already logged in by checking local storage
-var currentDate = window.getCurrentDateTime()
-// console.log(currentDate);
+
 
 
 const email = localStorage.getItem("email");
@@ -63,6 +62,8 @@ async function loginUser(email, password) {
     if (docSnap.exists()) {
       // If user profile exists, update or initialize audit fields
       let formData = { ...docSnap.data() };
+      var currentDate = window.getCurrentDateTime()
+
 
       if (!formData.audit_fields) {
         formData.audit_fields = {
@@ -83,7 +84,8 @@ async function loginUser(email, password) {
       const leadDocRef = doc(db, "lead", email);
       const leadDocSnap = await getDoc(leadDocRef);
       let formData = { about: { email, firstName: user.displayName } };
-
+      var currentDate = window.getCurrentDateTime()
+      // console.log(currentDate);
       if (leadDocSnap.exists()) {
         formData.about = { ...formData.about, ...leadDocSnap.data() };
       }
