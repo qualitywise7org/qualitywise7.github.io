@@ -181,7 +181,8 @@ async function saveFormDataToDatabase(event) {
     // Collect form data
     // const formData = collectFormData();
     
-    var currentDate = window.getCurrentDateTime()
+    var currentDate = window.getCurrentDateTime();
+    // console.log(currentDate);
     const docSnap = await getDoc(userProfileRef);
     const auditForm = docSnap.data().audit_fields;
     // console.log(auditForm);
