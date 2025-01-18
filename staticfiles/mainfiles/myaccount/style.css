@@ -126,3 +126,65 @@ body {
   width: 1px;
 }
 
+.circular-progress {
+  position: relative;
+  width: 100px; /* Larger size */
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #0d6efd calc(var(--progress) * 1%),
+    #e9ecef 0
+  );
+  margin: 0 auto; /* Center the progress bar */
+}
+.circular-progress .inner-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px; /* Smaller inner circle */
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem; /* Adjust font size */
+  font-weight: bold;
+  color: #0d6efd;
+}
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+}
+
+/* Style the table to reduce width and height */
+.custom-table {
+  max-width: 600px; /* Reduce the overall table width */
+  margin: 0 auto;   /* Center the table */
+}
+
+.table td, .table th {
+  padding: 8px; /* Reduce padding for smaller cells */
+}
+
+.circular-progress {
+  width: 80px;   /* Smaller circular progress bar */
+  height: 80px;
+  margin: 0 auto; /* Center the progress bar */
+}
+
+.circular-progress p {
+  margin-top: 10px;
+  font-size: 14px; /* Smaller text size for labels */
+}
+
+.action-buttons .btn {
+  font-size: 12px; /* Reduce button font size */
+  padding: 5px 10px; /* Smaller buttons */
+}
+
+.inner-circle {
+  font-size: 14px; /* Adjust text size inside progress bar */
+}
