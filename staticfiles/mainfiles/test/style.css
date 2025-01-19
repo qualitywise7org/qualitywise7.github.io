@@ -35,6 +35,7 @@ body.no-scroll {
   grid-template-columns: repeat(4, 1fr); /* Updated to 4 columns */
   gap: 20px; /* Reduced gap between cards */
   margin-bottom: 20px;
+  
 }
 
 .assessment-box {
@@ -56,7 +57,7 @@ body.no-scroll {
 }
 
 .assessment-title {
-  font-size: 2rem; /* Adjusted font size */
+  font-size: 1.5rem; /* Adjusted font size */
   color: #343a40;
   margin-bottom: 10px;
   text-align: center;
@@ -73,6 +74,7 @@ body.no-scroll {
   text-decoration: none;
   text-align: center;
   margin-top: auto; /* Align button at the bottom */
+  
 }
 
 .btn-start:hover {
@@ -116,4 +118,31 @@ body.no-scroll {
     padding: 8px 16px;
     font-size: 0.8rem;
   }
+}
+
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-box {
+  padding: 10px;
+  width: 60%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-search {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-search:hover {
+  background-color: #0056b3;
 }

@@ -9,6 +9,15 @@
   <%- include('../../partials/navbar.ejs') %>
   <section class="content">
     <h1 class="center">Master Your Skills: Assessments & Challenges</h1>
+    <div class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        class="search-box"
+        placeholder="Search Assessments..."
+      />
+      <button id="search-button" class="btn-search">Search</button>
+    </div>
     <div class="assessment-grid" id="assessment">
       Fetching Assessments ...!
     </div>
