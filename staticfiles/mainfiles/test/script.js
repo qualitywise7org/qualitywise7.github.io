@@ -1,3 +1,20 @@
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  getDoc,
+  query,
+  where,
+  doc,
+  writeBatch,
+  setDoc,
+  addDoc,
+  updateDoc,
+  orderBy // <-- Add this
+} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+
+
+
 let userId = null;
 let userData = {};
 
@@ -11,7 +28,8 @@ onAuthStateChanged(auth, (user) => {
 async function fetchAssessments() {
   try {
     console.log(`Fetching assessments`);
-    let querySnapshot = await getDocs(collection(db, "assessment"));
+    const assessmentsQuery = query(collection(db, "assessment"), orderBy("title", "asc"));
+    let querySnapshot = await getDocs(assessmentsQuery);
     console.log(`Assessments found`);
     displayCards(querySnapshot);
   } catch (error) {
@@ -37,6 +55,24 @@ function displayCards(assessments) {
     `);
   });
   divCont.innerHTML = content.join('');
+
+setupSearch();
 }
 
+
+
+function setupSearch() {
+  const searchInput = document.getElementById("search-input");
+  const assessmentBoxes = Array.from(document.getElementsByClassName("assessment-box"));
+
+  searchInput.addEventListener("input", () => {
+    const searchValue = searchInput.value.toLowerCase();
+    assessmentBoxes.forEach(box => {
+      const title = box.querySelector(".assessment-title").textContent.toLowerCase();
+      box.style.display = title.includes(searchValue) ? "flex" : "none";
+    });
+  });
+}
+
+// Initial fetch of assessments
 fetchAssessments();
