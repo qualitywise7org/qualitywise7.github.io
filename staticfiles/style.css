@@ -90,25 +90,32 @@ body {
   font-size: 1.1rem;
   font-weight: 500;
 }
+.navbar-nav .nav-item a:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out ;
+  color: #2b3990;
+}
 
 .login-btn .nav-link {
   color: white;
 }
 
 .login-btn .nav-link:hover {
-  color: white;
+  color: black;
 }
 
 .login-btn {
-  border: 1px solid #586ba6;
-  border-radius: 0.3rem;
+  border: 1px solid #2b3990;
+  border-radius: 1.5rem;
   padding: 0.1rem 0.5rem;
-  background-color: #586ba6;
+  background-color: #2b3990;
 }
 
 .login-btn:hover {
-  background-color: #465684;
-  transition: 0.3s ease-in-out;
+  background-color: white;
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out ;
+  
 }
 
 .signup-btn .nav-link {
@@ -116,21 +123,30 @@ body {
 }
 
 .signup-btn .nav-link:hover {
-  color: white;
+  color: black;
 }
 
 .signup-btn {
-  border: 1px solid #586ba6;
-  border-radius: 0.3rem;
+  border: 1px solid #2b3990;
+  border-radius: 1.5rem;
   padding: 0.1rem 0.5rem;
-  background-color: #586ba6;
+  background-color: #2b3990;
   transition: background-color 0.3s ease-in-out;
 }
 
 .signup-btn:hover {
-  background-color: #465684;
+  background-color: white;
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out ;
 }
 
+
+/* home page first div */
+.completeProfile:hover{
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out ;
+  color: #2b3990;
+}
 
 /* Hero Section */
 
@@ -859,6 +875,7 @@ body {
 }
 
 /* Media Queries */
+
 
 @media only screen and (max-width: 990px) {
   .navbar-nav {

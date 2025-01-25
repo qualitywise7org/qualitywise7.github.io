@@ -41,7 +41,9 @@ signupForm.addEventListener("submit", async (e) => {
             created_datetime: new Date().toISOString()
             
         }
-    
+        await setDoc(docRef, userData);
+
+        
         console.log("UserData being saved to Firestore:", userData);
         await setDoc(docRef,userData)
         Toastify({
