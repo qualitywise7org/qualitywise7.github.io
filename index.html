@@ -162,6 +162,33 @@
     </div>
   </div>
 </nav>
+
+<style>
+  /* Custom breakpoint for 1240px */
+  @media (max-width: 1240px) {
+    .navbar-expand-lg {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    /*  */
+    .navbar-collapse.show {
+      display: block; /* Show when toggled */
+    }
+
+  }
+  
+  
+.navbar-toggler.collapsed .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+} 
+  </style>
 <div
   style="
     display: flex;
@@ -180,7 +207,7 @@
       font-size: 1.1rem;
       margin-bottom: 8px;
     "
-  >
+  ><a class="nav-link" href="/myaccount/">My Account</a></span>
   </span>
 </div>
 
@@ -194,42 +221,10 @@
   ></iframe
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <section>
-      <div
-        style="
-          display: flex;
-          gap: 8px;
-          align-items: center;
-          justify-content: center;
-          margin-top: 10px;
-          
-        "
-      ></div>
-      <div id="strip" class="strip" style="margin-bottom: 15px">
-        <div id="profile">
-          <a href="/myaccount/cv_upload/"
-        
-            >Complete your profile to get jobs</a
-          >
-        </div>
-      </div>
-      <div id="strip" class="strip" style="margin-bottom: 15px">
-        <div id="profile">
-          <!--<label for="email">Email:</label>
-          <input type="email" id="email" name="email" value="user@example.com">-->
-          <a href="/myaccount/" style="margin-left: 10px">Go to Your Account</a>
-        </div>
-      </div>
-      <div class="search-container">
-        <div class="searchbox" id="searchbox">
-            <input type="text" id="job-title" class="search-input" placeholder="Search jobs here">
-          
-            <a id="search-button" class="search-button" href="/myaccount/jobsforyou/"><i class="fas fa-search"></i></a>
-        </div>
-      </div>
-        
-    </div>
-    <div id="search-results"></div>
+
+
+   
+    
 
       <!-- <h1
         style="
@@ -242,12 +237,136 @@
         Job Oriented Courses
       </h1> -->
       <section>
-        <div class="testimonial" style="width: 100%; margin-bottom: 10px">
-          <div
+        <div class="testimonial" style="width: 100%; margin-bottom: 10px; ">
+        
+
+          <div id="landing-page" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 20px; font-family: Arial, sans-serif; margin: 0 auto; max-width: 1350px; gap: 30px;">
+            <!-- Left Section: Texts and Demo Class -->
+            <div style="flex: 1; min-width: 300px; margin-right: 20px; padding: 0 10px;">
+              <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 15px; font-weight: 800; line-height: 1.2;">
+                Your Skills, Our Mentorship, Infinite Possibilities!
+              </h1>
+              <p style="font-size: clamp(0.8rem, 3vw, 1.2rem); margin-bottom: 10px; line-height: 1.5;">
+                Unlock Your Future: Register for Jobs, Internships, and Our Placement Assistance Program
+              </p>
+              <button class="completeProfile" style="padding: 10px 20px; background-color: #2b3990; color: white; border: none; border-radius: 2rem; cursor: pointer; font-size: clamp(0.5rem, 2.5vw, 1.2rem);  ">
+                <a href="/myaccount/cv_upload/" style="color: #fff; text-decoration: none; " >
+                  Complete your profile to get jobs</a>
+              </button>
+            </div>
+          
+            <!-- Right Section: Numbers and Search Bar -->
+            <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 30px; padding: 20px 20px;">
+              <!-- Boxes Section -->
+              <!-- clamp(minimum, preferred value, maximum)  -->
+              <div id= "greyBox"style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: space-between; width: 100%;">
+                <div style="background-color: #ecf0f3; padding: 30px; border-radius: 30px; box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px; text-align: center; flex: 1; min-width: 150px; max-width: 48%;">
+                  <strong class="fs-2 counter" id="counter1" style="font-size: clamp(1.5rem, 4vw, 2rem);">60</strong>
+                  <span style="font-size: clamp(1.5rem, 4vw, 2rem);">+</span>
+                  <p style="margin: 0; font-size: clamp(0.8rem, 2vw, 1rem);">Total placement class conducted</p>
+                </div>
+                <div style="background-color: #ecf0f3; padding: 30px; border-radius: 30px; box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px; text-align: center; flex: 1; min-width: 150px; max-width: 48%;">
+                  <strong class="fs-2 counter" id="counter2" style="font-size: clamp(1.5rem, 4vw, 2rem);">80</strong>
+                  <span style="font-size: clamp(1.5rem, 4vw, 2rem);">+</span>
+                  <p style="margin: 0; font-size: clamp(0.8rem, 2vw, 1rem);">Total consultancy provided</p>
+                </div>
+              </div>
+          
+              <!-- Search Bar Section -->
+              <a href="/myaccount/jobsforyou/" style="text-decoration: none; display: inline-block; width: 100%; max-width: 500px;">
+                <div
+                  style="display: flex; align-items: center; width: 100%; background-color: #f8f9fa; border-radius: 30px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; border: 2px solid #2b3990; cursor: pointer;"
+                >
+                  <span
+                    style="flex: 1; padding: 10px; font-size: clamp(0.8rem, 2vw, 1rem); color: #6c757d; display: flex; align-items: center;"
+                  >
+                    Search Jobs here
+                  </span>
+                  <div
+                    style="background-color: #2b3990; color: white; padding: 10px 20px; border-radius: 0 30px 30px 0; display: flex; align-items: center; justify-content: center; height: 50px;"
+                  >
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+              </a>
+              
+            </div>
+          </div>
+
+
+          <!-- <div class="resultbox">
+            <div class="grid-container">
+             
+              <div class="grid-item">
+                <h3>Title 1</h3>
+                <p>Details about item 1.</p>
+              </div>
+              <div class="grid-item">
+                <h3>Title 2</h3>
+                <p>Details about item 2.</p>
+              </div>
+              <div class="grid-item">
+                <h3>Title 3</h3>
+                <p>Details about item 3.</p>
+              </div>
+              <div class="grid-item">
+                <h3>Title 4</h3>
+                <p>Details about item 4.</p>
+              </div>
+              <div class="grid-item">
+                <h3>Title 5</h3>
+                <p>Details about item 5.</p>
+              </div>
+            </div>
+          </div> -->
+          
+          <!-- <style>
+            .resultbox {
+              width: 100%;
+              height: 30vh;
+              background-color: #1a73e8; /* Professional blue color */
+              overflow-x: auto; /* Enable horizontal scrolling */
+              white-space: nowrap; /* Prevent wrapping */
+              display: flex; /* Flex container to enable horizontal flow */
+              align-items: center;
+              padding: 10px;
+              box-sizing: border-box;
+            }
+          
+            .grid-container {
+              display: flex; /* Horizontal layout */
+              gap: 10px; /* Space between items */
+            }
+          
+            .grid-item {
+              background: white; /* Card-like look */
+              color: black;
+              min-width: 200px; /* Minimum size for grid item */
+              height: 100%; /* Stretch to parent height */
+              border-radius: 8px; /* Rounded corners */
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+              padding: 10px; /* Inner padding */
+              display: flex;
+              flex-direction: column; /* Stack content vertically */
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+            }
+          
+            .grid-item:hover {
+              transform: scale(1.05); /* Zoom effect on hover */
+              transition: transform 0.3s ease;
+            }
+          </style> -->
+          
+
+
+
+           <!-- <div
             id="carouselExampleSlidesOnly"
             class="carousel"
             data-bs-ride="carousel"
-            style="width: 100%"
+            style="width: 100%; margin: 30px 0 30px 0; "
           >
             <div class="carousel-inner" style="width: 100%">
               <div
@@ -255,7 +374,7 @@
                 data-bs-interval=" 3000"
                 style="width: 100%"
               >
-                <div class="d-block" style="width: 100%">
+                <div class="d-block" style="width: 100% ;">
                   <div class="container" style="width: 100%">
                     <div class="content" style="width: 100%">
                       <a href="/results/" style="width: 100%">
@@ -323,347 +442,22 @@
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <!-- <div
-                class="carousel-item"
-                data-bs-interval="3000"
-                style="width: 100%"
-              >
-                <div class="d-block" style="width: 100%">
-                  <div class="container" style="width: 100%">
-                    <div class="content" style="width: 100%">
-                      <a href="/results/" style="width: 100%">
-                        <img
-                          src="/assets/sakshi3.png"
-                          alt=""
-                          class="full-width-image img"
-                        />
-                        <img
-                          src="/assets/sakshi3.png"
-                          alt=""
-                          class="full-width-image img1"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-             <div
-              class="carousel-item"
-              data-bs-interval="3000"
-              style="width: 100%"
-            >-->
-              <!--<div class="d-block" style="width: 100%">
-                <div class="container" style="width: 100%">
-                  <div class="content" style="width: 100%">
-                    <a href="/careeroptions/profileanalyzer/" style="width: 100%">
-                      <img
-                        src="/assets/profileanalyzernish.png"
-                        alt=""
-                        class="full-width-image img"
-                      />
-                      <img
-                        src="/assets/profileanalyzernish.png"
-                        alt=""
-                        class="full-width-image img1"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-            class="carousel-item"
-            data-bs-interval="3000"
-            style="width: 100%"
-          >
-            <div class="d-block" style="width: 100%">
-              <div class="container" style="width: 100%">
-                <div class="content" style="width: 100%">
-                  <a href="/buyproject/" style="width: 100%">
-                    <img
-                      src="/assets/Buyprojectnish.png"
-                      alt=""
-                      class="full-width-image img"
-                    />
-                    <img
-                      src="/assets/Buyprojectnish.png"
-                      alt=""
-                      class="full-width-image img1"
-                    />
-                  </a>
-                </div>
-              </div>
+              </div>    
             </div>
           </div>
-
-          <div
-            class="carousel-item"
-            data-bs-interval="3000"
-            style="width: 100%"
-          >
-            <div class="d-block" style="width: 100%">
-              <div class="container" style="width: 100%">
-                <div class="content" style="width: 100%">
-                  <a href="/details/?productcode=mockinterview/" style="width: 100%">
-                    <img
-                      src="/assets/Mockinterviewnish.png"
-                      alt=""
-                      class="full-width-image img"
-                    />
-                    <img
-                      src="/assets/Mockinterviewnish.png"
-                      alt=""
-                      class="full-width-image img1"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="carousel-item"
-            data-bs-interval="3000"
-            style="width: 100%"
-          >
-            <div class="d-block" style="width: 100%">
-              <div class="container" style="width: 100%">
-                <div class="content" style="width: 100%">
-                  <a href="/results/" style="width: 100%">
-                    <img
-                      src="/assets/ourresultsnish.png"
-                      alt=""
-                      class="full-width-image img"
-                    />
-                    <img
-                      src="/assets/ourresultsnish.png"
-                      alt=""
-                      class="full-width-image img1"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-          class="carousel-item"
-          data-bs-interval="3000"
-          style="width: 100%"
-        >
-          <div class="d-block" style="width: 100%">
-            <div class="container" style="width: 100%">
-              <div class="content" style="width: 100%">
-                <a href="/pricing/" style="width: 100%">
-                  <img
-                    src="/assets/pricingnish.png"
-                    alt=""
-                    class="full-width-image img"
-                  />
-                  <img
-                    src="/assets/pricingnish.png"
-                    alt=""
-                    class="full-width-image img1"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-              <div
-                class="carousel-item"
-                data-bs-interval="3000"
-                style="width: 100%"
-              >
-                <div class="d-block" style="width: 100%">
-                  <div class="container" style="width: 100%">
-                    <div class="content" style="width: 100%">
-                      <a href="/cv_creation/" style="width: 100%">
-                        <img
-                          src="/assets/cvcreationnish.png"
-                          alt=""
-                          class="full-width-image img"
-                        />
-                        <img
-                          src="/assets/cvcreationnish.png"
-                          alt=""
-                          class="full-width-image img1"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>-->
-            </div>
-          </div>
-
-          <!--<div class="" style="width: 100%">
-        <div class="d-block" style="width: 100%">
-          <div class="container" style="width: 100%">
-            <div
-              class="content"
-              style="
-                width: 100%;
-                align-items: center;
-                justify-content: center;
-                background-color: #bcd6f1;
-                border-radius: 10px;
-              "
-            >
-              <a
-                href="/hiring/"
-                style="
-                  text-align: center;
-                  color: #676b6e;
-                  text-decoration: none;
-                "
-              >
-                <h2 class="banner">Jobsdoor360 is hiring, click here..</h2>
-                <h2 class="banner1">Jobsdoor360 is hiring, click here..</h2>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>-->
-          <br />
-          <div class="container">
-            <div class="show-lg text-center" style="margin-top: -15px">
-              <div class="rounded reg">
-                <a
-                  href="/apply/"
-                  class="apply-link"
-                  style="
-                    text-decoration: none;
-                    color: black;
-                    font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-                      'Helvetica Neue', sans-serif;
-                  "
-                >
-                  Demo class available
-                </a>
-                <button id="apply-button">Apply Now</button>
-                <style>
-                  /* Basic styles for the button and container */
-                  .reg .apply-link {
-                    font-size: 30px;
-                  }
-
-                  .rounded {
-                    border-radius: 5px;
-                    padding: 10px;
-                    background-color: #f0f0f0;
-                    display: inline-block;
-                    width: 80%; /* Adjust the width as needed */
-                  }
-
-                  .apply-link {
-                    text-decoration: none;
-                    color: black;
-                    font-family: Courier New, Courier, monospace;
-                    font-size: 24px;
-                  }
-
-            #apply-button {
-             margin-left: 10px;
-              padding: 10px 20px;
-               background-color: #586ba6;
-               color: white;
-               border: none;
-                border-radius: 0.3rem;
-                cursor: pointer;
-                 font-family:  "Ysabeau SC", sans-serif;
-                 font-size: 24px;
-                }
-
-           
-        </style>
-
-            
-          </div>
-
-              <!-- <div class="rounded reg1">
-            <a
-              href="/apply/"
-              style="
-                text-decoration: none;
-                color: black;
-                font-family: Courier New, Courier, monospace;
-              "
-            >
-               Demo class available <i
-                class="fa-solid  fa-computer-mouse"
-              ></i
-            </a>
-            <button
-          id="apply-button"
-        >
-          Apply Now
-        </button>
-        <style>
-          /* Basic styles for the button and container */
-.rounded {
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    display: inline-block;
-}
-
-.apply-link {
-    text-decoration: none;
-    color: black;
-    font-family: Courier New, Courier, monospace;
-}
-
-#apply-button {
-    margin-left: 10px;
-    padding: 10px 20px;
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: Courier New, Courier, monospace;
-}
-
-#apply-button:hover {
-    background-color: #e65c00;
-}
-
-        </style>
-        <script>// Wait until the DOM is fully loaded before attaching the event listener
-          document.addEventListener('DOMContentLoaded', function() {
-              const applyButton = document.getElementById('apply-button');
+           -->
           
-              if (applyButton) {
-                  applyButton.addEventListener('click', function() {
-                      window.location.href = '/apply/';
-                  });
-              }
-          });
-          </script>
-            
-          </div>-->
-            </div>
-          </div>
+          
+        
 
-          <div class="hero-section" id="home">
+
+          <div class="hero-section"  id="home">
             <!--left accordion -->
 
             <div class="my-4 mx-2">
               <h4
                 class="p-3 text-center shadow-lg text-white"
-                style="background-color: rgb(57 66 68) !important"
+                style="background-color: rgb(39, 37, 37) !important"
               >
                 For Students
               </h4>
@@ -679,7 +473,7 @@
                       aria-expanded="false"
                       aria-controls="collapseOne"
                     >
-                      Placement Classes
+                      Placement Assistance
                     </button>
                   </h2>
                   <div
@@ -719,7 +513,7 @@
                       aria-expanded="false"
                       aria-controls="collapseTwo1"
                     >
-                      Interview Classes
+                      Interview Assistance
                     </button>
                   </h2>
                   <div
@@ -1330,10 +1124,10 @@
 
             <!-- right accordion -->
 
-            <div class="my-4 mx-2">
+            <div class="my-4 mx-2 ">
               <h4
                 class="p-3 text-center shadow-lg text-white"
-                style="background-color: rgb(57 66 68) !important"
+                style="background-color: rgb(39, 37, 37) !important"
               >
                 Business Services
               </h4>
@@ -1650,24 +1444,19 @@
       </div>
     </section>
 
+
+<!-- results -->
+  
+          
+            
+
     <!-- promotion  -->
-    <div
+    <!-- <div
       class="container-fluid text-center py-4"
-      style="background-color: rgb(146 155 157 / 62%)"
+      style="background-color: rgba(0, 0, 0); "
     >
-      <div class="container" id="promoContent">
-        <div class="row">
-          <div class="col-md-3 my-3 pt-2">
-            <strong class="fs-2 counter" id="counter1">60</strong>
-            <span class="fs-1">+</span>
-            <p class="fs-5">Total placement class conducted</p>
-          </div>
-          <div class="col-md-3 my-3 pt-2">
-            <strong class="fs-2 counter" id="counter2">80</strong>
-            <span class="fs-1">+</span>
-            <p class="fs-5">Total consultancy provided</p>
-          </div>
-          <div class="col-md-6 my-3">
+      
+          <div class="col-md-6 my-3 text-white">
             <strong class="fs-3"> Vinay Kumar</strong>
             <p
               style="text-align: center; font-size: 18px; margin-top: 8px"
@@ -1680,7 +1469,7 @@
               <strong>10 year experience in IT companies</strong>
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -1764,184 +1553,234 @@
             </div>
           </section>
 
-          <footer class="container-fluid bg-black">
-  <div class="text-white">
-    <div class="row pt-5 text-center" style="margin-right: 22px">
-      <div class="col-md-4 mb-3">
-        <ul class="footer">
-          <h4 class="fs-3">Quick-Links</h4>
-          <li><a href="/">Home</a></li>
-          <li>
-            <a href="/about/">About Us</a>
-          </li>
-          <li>
-            <a href="/results/">Our Results</a>
-          </li>
-          <li>
-            <a href="/pricing/">Pricing</a>
-          </li>
-          <li>
-            <a href="/campaign/workshop/registration/">Workshop</a>
-          </li>
-          <li>
-            <a href="/apply/">Apply</a>
-          </li>
-          <li>
-            <a href="/socialwork/donatebook/">Donate Books</a>
-          </li>
-          <li>
-            <a href="/contactus/">Contact us</a>
-          </li>
+          <div
+            id="carouselExampleSlidesOnly"
+            class="carousel"
+            data-bs-ride="carousel"
+            style="width: 100%; margin: 30px 0 30px 0; "
+          >
+            <div class="carousel-inner" style="width: 100%">
+              <div
+                class="carousel-item active"
+                data-bs-interval=" 3000"
+                style="width: 100%"
+              >
+                <div class="d-block" style="width: 100% ;">
+                  <div class="container" style="width: 100%">
+                    <div class="content" style="width: 100%">
+                      <a href="/results/" style="width: 100%">
+                        <img
+                          src="assets/image_result.png"
+                          alt=""
+                          class="full-width-image img"
+                        />
+                        <img
+                          src="assets/image_result.png"
+                          alt=""
+                          class="full-width-image img1"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="carousel-item"
+                data-bs-interval="3000"
+                style="width: 100%"
+              >
+                <div class="d-block" style="width: 100%">
+                  <div class="container" style="width: 100%">
+                    <div class="content" style="width: 100%">
+                      <a href="/results/" style="width: 100%">
+                        <img
+                          src="assets/new_poster1.png"
+                          alt=""
+                          class="full-width-image img"
+                        />
+                        <img
+                          src="assets/new_poster1.png"
+                          alt=""
+                          class="full-width-image img1"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="carousel-item"
+                data-bs-interval="3000"
+                style="width: 100%"
+              >
+                <div class="d-block" style="width: 100%">
+                  <div class="container" style="width: 100%">
+                    <div class="content" style="width: 100%">
+                      <a href="/results/" style="width: 100%">
+                        <img
+                          src="assets/new_poster2.png"
+                          alt=""
+                          class="full-width-image img"
+                        />
+                        <img
+                          src="assets/new_poster2.png"
+                          alt=""
+                          class="full-width-image img1"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+            </div>
+          </div>
+
+          <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
+  <div class="container">
+    <div class="row" >
+      <!-- Quick Links Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Quick Links</h5>
+        <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">
+          <li><a href="/" class="footer-link">Home</a></li>
+          <li><a href="/about/" class="footer-link">About Us</a></li>
+          <li><a href="/results/" class="footer-link">Our Results</a></li>
+          <li><a href="/pricing/" class="footer-link">Pricing</a></li>
+          <li><a href="/campaign/workshop/registration/" class="footer-link">Workshop</a></li>
+          <li><a href="/apply/" class="footer-link">Apply</a></li>
+          <li><a href="/socialwork/donatebook/" class="footer-link">Donate Books</a></li>
+          <li><a href="/contactus/" class="footer-link">Contact Us</a></li>
         </ul>
       </div>
-      <div class="col-md-4 mb-3">
-        <ul class="footer">
-          <h4 class="fs-3">Products</h4>
-          <li>
-            <a href="/myaccount/jobsforyou/">Jobs For You</a>
-          </li>
-          <li>
-            <a href="/myaccount/yourprofile/">Your Profile</a>
-          </li>
-          <li>
-            <a href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
-          </li>
-         
-          <li>
-            <a href="/hirewithus/">Hire With Us</a>
-          </li>
-          <li>
-            <a href="/test/">Test Yourself</a>
-          </li>
+
+      <!-- Products Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Products</h5>
+        <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+          <li><a href="/myaccount/jobsforyou/" class="footer-link">Jobs For You</a></li>
+          <li><a href="/myaccount/yourprofile/" class="footer-link">Your Profile</a></li>
+          <li><a href="/careeroptions/profileanalyzer/" class="footer-link">Profile Analyzer</a></li>
+          <li><a href="/hirewithus/" class="footer-link">Hire With Us</a></li>
+          <li><a href="/test/" class="footer-link">Test Yourself</a></li>
         </ul>
       </div>
-      <div class="col-md-4 mb-3">
-        <ul class="footer">
-          <h4 class="fs-3">Other-Links</h4>
-          <li>
-            <a
-              href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund"
-              target="_blank"
-              >Cancellation & Refund Policy</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms"
-              target="_blank"
-              >Terms and Conditions
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping"
-              target="_blank"
-              >Shipping & Delivery Policy</a
-            >
-          </li>
-          <li>
-            <a href="/privacy/">Privacy Policy </a>
-          </li>
+
+      <!-- Other Links Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Other Links</h5>
+        <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+          <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund" target="_blank" class="footer-link">Cancellation & Refund Policy</a></li>
+          <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms" target="_blank" class="footer-link">Terms and Conditions</a></li>
+          <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping" target="_blank" class="footer-link">Shipping & Delivery Policy</a></li>
+          <li><a href="/privacy/" class="footer-link">Privacy Policy</a></li>
         </ul>
+      </div>
+
+      <!-- Social Media Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Follow Us</h5>
+        <div class="d-flex justify-content-center justify-content-md-start">
+          <a
+  href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+  target="_blank"
+  class="fb-icon"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px"
+    y="0px"
+    width="35"
+    height="35"
+    viewBox="0 0 48 48"
+  ><path
+  fill="#fff"
+  d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
+></path>
+<path
+  fill="#fff"
+  d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
+></path>
+<path
+  fill="#cfd8dc"
+  d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
+></path>
+<path
+  fill="#40c351"
+  d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
+></path>
+<path
+  fill="#fff"
+  fill-rule="evenodd"
+  d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+  clip-rule="evenodd"
+></path>
+</svg>
+</a>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100093276582711" target="_blank" class="social-icon mr-3">
+            <img src="https://img.icons8.com/color/48/facebook-new.png" width="30" height="30" />
+          </a>
+          <a href="https://www.instagram.com/jobsdoor360/" target="_blank" class="social-icon mr-3">
+            <img src="https://img.icons8.com/color/48/instagram-new--v1.png" width="30" height="30" />
+          </a>
+          <a href="https://www.linkedin.com/in/qualitywise-b05857275/" target="_blank" class="social-icon mr-3">
+            <img src="https://img.icons8.com/color/48/linkedin.png" width="30" height="30" />
+          </a>
+          <a href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ" target="_blank" class="social-icon">
+            <img src="https://img.icons8.com/color/48/youtube-play.png" width="30" height="30" />
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="row text-center">
+    <!-- Footer Bottom -->
+    <div class="row text-center mt-1">
       <div class="col-md-12">
-        <div class="d-flex justify-content-center">
-          <a
-            href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-            target="_blank"
-            class="fb-icon"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="35"
-              height="35"
-              viewBox="0 0 48 48"
-            >
-              <path
-                fill="#fff"
-                d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
-              ></path>
-              <path
-                fill="#fff"
-                d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
-              ></path>
-              <path
-                fill="#cfd8dc"
-                d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
-              ></path>
-              <path
-                fill="#40c351"
-                d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
-              ></path>
-              <path
-                fill="#fff"
-                fill-rule="evenodd"
-                d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </a>
-          <a
-            href="https://www.facebook.com/profile.php?id=100093276582711"
-            target="_blank"
-            class="fb-icon"
-          >
-            <img
-              width="35"
-              height="35"
-              src="https://img.icons8.com/color/48/facebook-new.png"
-              alt="facebook-new"
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/jobsdoor360/"
-            target="_blank"
-            class="insta-icon"
-          >
-            <img
-              width="35"
-              height="35"
-              src="https://img.icons8.com/color/48/instagram-new--v1.png"
-              alt="instagram-new--v1"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/qualitywise-b05857275/"
-            target="_blank"
-            class="linkedin-icon"
-          >
-            <img
-              width="35"
-              height="35"
-              src="https://img.icons8.com/color/48/linkedin.png"
-              alt="linkedin"
-            />
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ"
-            target="_blank"
-            class="youtube-icon"
-          >
-            <img
-              width="35"
-              height="35"
-              src="https://img.icons8.com/color/48/youtube-play.png"
-              alt="youtube-play"
-          /></a>
-        </div>
-        <br />
-        <p style="font-size: 14px">
-          Copyright Jobsdoor360 © 2024. All rights reserved
+        <p class="small mb-0">Copyright Jobsdoor360 © 2024. All rights reserved</p>
+        <p class="small">
+          <strong class="fs-6">Vinay Kumar</strong><br>
+          AIEEE AIR 10630, State Rank 602, BTech + MTech from ABV-IIITM Gwalior<br>
+          <strong>10 years experience in IT companies</strong>
         </p>
       </div>
     </div>
   </div>
 </footer>
+
+<style>
+  .row ul li a{
+    text-decoration: none;
+    color: white;
+  }
+  .footer-link {
+    display: block;
+    padding: 2px 0;
+    transition: color 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: #40c351;
+  }
+
+  .social-icon {
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .bg-gradient-to-r {
+    background: linear-gradient(to right, #1E3A8A, #3B82F6);
+  }
+
+  .text-white {
+    color: #fff !important;
+  }
+</style>
 <!-- WhatsApp Chat Button -->
 <div class="chat-back-to-top">
   <!-- <button id="like-button">
@@ -2020,40 +1859,73 @@
 <script type="module" src="/staticfiles/script.js"></script>
 <script type="module">
  // Check if the user is signed in
- window.auth.onAuthStateChanged((user) => {
-      const signupButton = document.getElementById('signup-button');
-      
-      if (user) {
-          localStorage.setItem("email", user.email);
-          document.getElementById("login-button").innerHTML = "Logout";
-          signupButton.style.display = "none"; // Hide the signup button directly
-          document.getElementById("user-mail").innerHTML = user.email;
-          document.getElementById("welcome-text").innerHTML = "Welcome";
-      } else {
-          const loginButton = document.getElementById("login-button");
-          loginButton.addEventListener("click", () => {
-              const email = localStorage.getItem("email");
-              if (email) {
-                  localStorage.clear();
-              }
-              location.href = "/login"; // Corrected 'location.location.href' to 'location.href'
-          });
-          signupButton.style.display = "block"; // Show the signup button when user is not signed in
-      }
-  });
-  document.getElementById("login-button").addEventListener("click", function() {
-    const email = localStorage.getItem("email");
-    if (email) {
-      localStorage.clear();
-      auth.signOut()
-      .then(() => {
-        window.location.href = "/login/";
-      })
-      .catch((error) => {
-        console.error("Error signing out:", error);
-      });
-    }
-  });
+ window.auth.onAuthStateChanged(async (user) => {
+        const signupButton = document.getElementById('signup-button');
+        const welcomeText = document.getElementById("welcome-text");
+        const userMail = document.getElementById("user-mail");
+
+        if (user) {
+            // Save email to localStorage
+            localStorage.setItem("email", user.email);
+
+            // Hide the signup button and show "Logout"
+            document.getElementById("login-button").innerHTML = "Logout";
+            signupButton.style.display = "none";
+
+            // Retrieve the display name (username)
+            let username = user.displayName; // For Google Sign-In or if saved during registration
+
+            // If username is not available in displayName, fetch it from Firestore
+            if (!username) {
+                const docRef = doc(db, "lead", user.email);
+                try {
+                    const docSnap = await getDoc(docRef);
+                    if (docSnap.exists()) {
+                        username = docSnap.data().full_name || user.email; // Fallback to email if full_name is missing
+                    }
+                } catch (error) {
+                    console.error("Error fetching username:", error);
+                    username = user.email; // Fallback
+                }
+            }
+
+            // Save username to localStorage for later use
+            localStorage.setItem("username", username);
+
+            // Update welcome text with the username
+          if(username)
+            welcomeText.innerHTML = `Hii, ${username}`;
+            else{
+              userMail.innerHTML = username; // Optionally update email 
+            }
+              // display to username
+        } else {
+            const loginButton = document.getElementById("login-button");
+            loginButton.addEventListener("click", () => {
+                const email = localStorage.getItem("email");
+                if (email) {
+                    localStorage.clear();
+                }
+                location.href = "/login"; // Corrected 'location.location.href' to 'location.href'
+            });
+            signupButton.style.display = "block"; // Show the signup button when user is not signed in
+        }
+    });
+
+    // Logout logic
+    document.getElementById("login-button").addEventListener("click", function () {
+        const email = localStorage.getItem("email");
+        if (email) {
+            localStorage.clear();
+            auth.signOut()
+                .then(() => {
+                    window.location.href = "/login/";
+                })
+                .catch((error) => {
+                    console.error("Error signing out:", error);
+                });
+        }
+    });
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

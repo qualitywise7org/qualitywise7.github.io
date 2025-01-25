@@ -98,6 +98,33 @@
     </div>
   </div>
 </nav>
+
+<style>
+  /* Custom breakpoint for 1240px */
+  @media (max-width: 1240px) {
+    .navbar-expand-lg {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    /*  */
+    .navbar-collapse.show {
+      display: block; /* Show when toggled */
+    }
+
+  }
+  
+  
+.navbar-toggler.collapsed .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+} 
+  </style>
 <div
   style="
     display: flex;
@@ -116,7 +143,7 @@
       font-size: 1.1rem;
       margin-bottom: 8px;
     "
-  >
+  ><a class="nav-link" href="/myaccount/">My Account</a></span>
   </span>
 </div>
 
@@ -130,3 +157,4 @@
   ></iframe
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
+

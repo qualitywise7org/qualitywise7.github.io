@@ -52,42 +52,8 @@
   <body>
     <!-- Navbar -->
     <%- include('../partials/navbar.ejs') %>
-    <section>
-      <div
-        style="
-          display: flex;
-          gap: 8px;
-          align-items: center;
-          justify-content: center;
-          margin-top: 10px;
-          
-        "
-      ></div>
-      <div id="strip" class="strip" style="margin-bottom: 15px">
-        <div id="profile">
-          <a href="/myaccount/cv_upload/"
-        
-            >Complete your profile to get jobs</a
-          >
-        </div>
-      </div>
-      <div id="strip" class="strip" style="margin-bottom: 15px">
-        <div id="profile">
-          <!--<label for="email">Email:</label>
-          <input type="email" id="email" name="email" value="user@example.com">-->
-          <a href="/myaccount/" style="margin-left: 10px">Go to Your Account</a>
-        </div>
-      </div>
-      <div class="search-container">
-        <div class="searchbox" id="searchbox">
-            <input type="text" id="job-title" class="search-input" placeholder="Search jobs here">
-          
-            <a id="search-button" class="search-button" href="/myaccount/jobsforyou/"><i class="fas fa-search"></i></a>
-        </div>
-      </div>
-        
-    </div>
-    <div id="search-results"></div>
+   
+    
 
       <!-- <h1
         style="
@@ -100,12 +66,136 @@
         Job Oriented Courses
       </h1> -->
       <section>
-        <div class="testimonial" style="width: 100%; margin-bottom: 10px">
-          <div
+        <div class="testimonial" style="width: 100%; margin-bottom: 10px; ">
+        
+
+          <div id="landing-page" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 20px; font-family: Arial, sans-serif; margin: 0 auto; max-width: 1350px; gap: 30px;">
+            <!-- Left Section: Texts and Demo Class -->
+            <div style="flex: 1; min-width: 300px; margin-right: 20px; padding: 0 10px;">
+              <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 15px; font-weight: 800; line-height: 1.2;">
+                Your Skills, Our Mentorship, Infinite Possibilities!
+              </h1>
+              <p style="font-size: clamp(0.8rem, 3vw, 1.2rem); margin-bottom: 10px; line-height: 1.5;">
+                Unlock Your Future: Register for Jobs, Internships, and Our Placement Assistance Program
+              </p>
+              <button class="completeProfile" style="padding: 10px 20px; background-color: #2b3990; color: white; border: none; border-radius: 2rem; cursor: pointer; font-size: clamp(0.5rem, 2.5vw, 1.2rem);  ">
+                <a href="/myaccount/cv_upload/" style="color: #fff; text-decoration: none; " >
+                  Complete your profile to get jobs</a>
+              </button>
+            </div>
+          
+            <!-- Right Section: Numbers and Search Bar -->
+            <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 30px; padding: 20px 20px;">
+              <!-- Boxes Section -->
+              <!-- clamp(minimum, preferred value, maximum)  -->
+              <div id= "greyBox"style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: space-between; width: 100%;">
+                <div style="background-color: #ecf0f3; padding: 30px; border-radius: 30px; box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px; text-align: center; flex: 1; min-width: 150px; max-width: 48%;">
+                  <strong class="fs-2 counter" id="counter1" style="font-size: clamp(1.5rem, 4vw, 2rem);">60</strong>
+                  <span style="font-size: clamp(1.5rem, 4vw, 2rem);">+</span>
+                  <p style="margin: 0; font-size: clamp(0.8rem, 2vw, 1rem);">Total placement class conducted</p>
+                </div>
+                <div style="background-color: #ecf0f3; padding: 30px; border-radius: 30px; box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px; text-align: center; flex: 1; min-width: 150px; max-width: 48%;">
+                  <strong class="fs-2 counter" id="counter2" style="font-size: clamp(1.5rem, 4vw, 2rem);">80</strong>
+                  <span style="font-size: clamp(1.5rem, 4vw, 2rem);">+</span>
+                  <p style="margin: 0; font-size: clamp(0.8rem, 2vw, 1rem);">Total consultancy provided</p>
+                </div>
+              </div>
+          
+              <!-- Search Bar Section -->
+              <a href="/myaccount/jobsforyou/" style="text-decoration: none; display: inline-block; width: 100%; max-width: 500px;">
+                <div
+                  style="display: flex; align-items: center; width: 100%; background-color: #f8f9fa; border-radius: 30px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; border: 2px solid #2b3990; cursor: pointer;"
+                >
+                  <span
+                    style="flex: 1; padding: 10px; font-size: clamp(0.8rem, 2vw, 1rem); color: #6c757d; display: flex; align-items: center;"
+                  >
+                    Search Jobs here
+                  </span>
+                  <div
+                    style="background-color: #2b3990; color: white; padding: 10px 20px; border-radius: 0 30px 30px 0; display: flex; align-items: center; justify-content: center; height: 50px;"
+                  >
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+              </a>
+              
+            </div>
+          </div>
+
+
+          <!-- <div class="resultbox">
+            <div class="grid-container">
+             
+              <div class="grid-item">
+                <h3>Title 1</h3>
+                <p>Details about item 1.</p>
+              </div>
+              <div class="grid-item">
+                <h3>Title 2</h3>
+                <p>Details about item 2.</p>
+              </div>
+              <div class="grid-item">
+                <h3>Title 3</h3>
+                <p>Details about item 3.</p>
+              </div>
+              <div class="grid-item">
+                <h3>Title 4</h3>
+                <p>Details about item 4.</p>
+              </div>
+              <div class="grid-item">
+                <h3>Title 5</h3>
+                <p>Details about item 5.</p>
+              </div>
+            </div>
+          </div> -->
+          
+          <!-- <style>
+            .resultbox {
+              width: 100%;
+              height: 30vh;
+              background-color: #1a73e8; /* Professional blue color */
+              overflow-x: auto; /* Enable horizontal scrolling */
+              white-space: nowrap; /* Prevent wrapping */
+              display: flex; /* Flex container to enable horizontal flow */
+              align-items: center;
+              padding: 10px;
+              box-sizing: border-box;
+            }
+          
+            .grid-container {
+              display: flex; /* Horizontal layout */
+              gap: 10px; /* Space between items */
+            }
+          
+            .grid-item {
+              background: white; /* Card-like look */
+              color: black;
+              min-width: 200px; /* Minimum size for grid item */
+              height: 100%; /* Stretch to parent height */
+              border-radius: 8px; /* Rounded corners */
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+              padding: 10px; /* Inner padding */
+              display: flex;
+              flex-direction: column; /* Stack content vertically */
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+            }
+          
+            .grid-item:hover {
+              transform: scale(1.05); /* Zoom effect on hover */
+              transition: transform 0.3s ease;
+            }
+          </style> -->
+          
+
+
+
+           <!-- <div
             id="carouselExampleSlidesOnly"
             class="carousel"
             data-bs-ride="carousel"
-            style="width: 100%"
+            style="width: 100%; margin: 30px 0 30px 0; "
           >
             <div class="carousel-inner" style="width: 100%">
               <div
@@ -113,7 +203,7 @@
                 data-bs-interval=" 3000"
                 style="width: 100%"
               >
-                <div class="d-block" style="width: 100%">
+                <div class="d-block" style="width: 100% ;">
                   <div class="container" style="width: 100%">
                     <div class="content" style="width: 100%">
                       <a href="/results/" style="width: 100%">
@@ -181,347 +271,22 @@
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <!-- <div
-                class="carousel-item"
-                data-bs-interval="3000"
-                style="width: 100%"
-              >
-                <div class="d-block" style="width: 100%">
-                  <div class="container" style="width: 100%">
-                    <div class="content" style="width: 100%">
-                      <a href="/results/" style="width: 100%">
-                        <img
-                          src="/assets/sakshi3.png"
-                          alt=""
-                          class="full-width-image img"
-                        />
-                        <img
-                          src="/assets/sakshi3.png"
-                          alt=""
-                          class="full-width-image img1"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-             <div
-              class="carousel-item"
-              data-bs-interval="3000"
-              style="width: 100%"
-            >-->
-              <!--<div class="d-block" style="width: 100%">
-                <div class="container" style="width: 100%">
-                  <div class="content" style="width: 100%">
-                    <a href="/careeroptions/profileanalyzer/" style="width: 100%">
-                      <img
-                        src="/assets/profileanalyzernish.png"
-                        alt=""
-                        class="full-width-image img"
-                      />
-                      <img
-                        src="/assets/profileanalyzernish.png"
-                        alt=""
-                        class="full-width-image img1"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-            class="carousel-item"
-            data-bs-interval="3000"
-            style="width: 100%"
-          >
-            <div class="d-block" style="width: 100%">
-              <div class="container" style="width: 100%">
-                <div class="content" style="width: 100%">
-                  <a href="/buyproject/" style="width: 100%">
-                    <img
-                      src="/assets/Buyprojectnish.png"
-                      alt=""
-                      class="full-width-image img"
-                    />
-                    <img
-                      src="/assets/Buyprojectnish.png"
-                      alt=""
-                      class="full-width-image img1"
-                    />
-                  </a>
-                </div>
-              </div>
+              </div>    
             </div>
           </div>
-
-          <div
-            class="carousel-item"
-            data-bs-interval="3000"
-            style="width: 100%"
-          >
-            <div class="d-block" style="width: 100%">
-              <div class="container" style="width: 100%">
-                <div class="content" style="width: 100%">
-                  <a href="/details/?productcode=mockinterview/" style="width: 100%">
-                    <img
-                      src="/assets/Mockinterviewnish.png"
-                      alt=""
-                      class="full-width-image img"
-                    />
-                    <img
-                      src="/assets/Mockinterviewnish.png"
-                      alt=""
-                      class="full-width-image img1"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="carousel-item"
-            data-bs-interval="3000"
-            style="width: 100%"
-          >
-            <div class="d-block" style="width: 100%">
-              <div class="container" style="width: 100%">
-                <div class="content" style="width: 100%">
-                  <a href="/results/" style="width: 100%">
-                    <img
-                      src="/assets/ourresultsnish.png"
-                      alt=""
-                      class="full-width-image img"
-                    />
-                    <img
-                      src="/assets/ourresultsnish.png"
-                      alt=""
-                      class="full-width-image img1"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-          class="carousel-item"
-          data-bs-interval="3000"
-          style="width: 100%"
-        >
-          <div class="d-block" style="width: 100%">
-            <div class="container" style="width: 100%">
-              <div class="content" style="width: 100%">
-                <a href="/pricing/" style="width: 100%">
-                  <img
-                    src="/assets/pricingnish.png"
-                    alt=""
-                    class="full-width-image img"
-                  />
-                  <img
-                    src="/assets/pricingnish.png"
-                    alt=""
-                    class="full-width-image img1"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-              <div
-                class="carousel-item"
-                data-bs-interval="3000"
-                style="width: 100%"
-              >
-                <div class="d-block" style="width: 100%">
-                  <div class="container" style="width: 100%">
-                    <div class="content" style="width: 100%">
-                      <a href="/cv_creation/" style="width: 100%">
-                        <img
-                          src="/assets/cvcreationnish.png"
-                          alt=""
-                          class="full-width-image img"
-                        />
-                        <img
-                          src="/assets/cvcreationnish.png"
-                          alt=""
-                          class="full-width-image img1"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>-->
-            </div>
-          </div>
-
-          <!--<div class="" style="width: 100%">
-        <div class="d-block" style="width: 100%">
-          <div class="container" style="width: 100%">
-            <div
-              class="content"
-              style="
-                width: 100%;
-                align-items: center;
-                justify-content: center;
-                background-color: #bcd6f1;
-                border-radius: 10px;
-              "
-            >
-              <a
-                href="/hiring/"
-                style="
-                  text-align: center;
-                  color: #676b6e;
-                  text-decoration: none;
-                "
-              >
-                <h2 class="banner">Jobsdoor360 is hiring, click here..</h2>
-                <h2 class="banner1">Jobsdoor360 is hiring, click here..</h2>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>-->
-          <br />
-          <div class="container">
-            <div class="show-lg text-center" style="margin-top: -15px">
-              <div class="rounded reg">
-                <a
-                  href="/apply/"
-                  class="apply-link"
-                  style="
-                    text-decoration: none;
-                    color: black;
-                    font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-                      'Helvetica Neue', sans-serif;
-                  "
-                >
-                  Demo class available
-                </a>
-                <button id="apply-button">Apply Now</button>
-                <style>
-                  /* Basic styles for the button and container */
-                  .reg .apply-link {
-                    font-size: 30px;
-                  }
-
-                  .rounded {
-                    border-radius: 5px;
-                    padding: 10px;
-                    background-color: #f0f0f0;
-                    display: inline-block;
-                    width: 80%; /* Adjust the width as needed */
-                  }
-
-                  .apply-link {
-                    text-decoration: none;
-                    color: black;
-                    font-family: Courier New, Courier, monospace;
-                    font-size: 24px;
-                  }
-
-            #apply-button {
-             margin-left: 10px;
-              padding: 10px 20px;
-               background-color: #586ba6;
-               color: white;
-               border: none;
-                border-radius: 0.3rem;
-                cursor: pointer;
-                 font-family:  "Ysabeau SC", sans-serif;
-                 font-size: 24px;
-                }
-
-           
-        </style>
-
-            
-          </div>
-
-              <!-- <div class="rounded reg1">
-            <a
-              href="/apply/"
-              style="
-                text-decoration: none;
-                color: black;
-                font-family: Courier New, Courier, monospace;
-              "
-            >
-               Demo class available <i
-                class="fa-solid  fa-computer-mouse"
-              ></i
-            </a>
-            <button
-          id="apply-button"
-        >
-          Apply Now
-        </button>
-        <style>
-          /* Basic styles for the button and container */
-.rounded {
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    display: inline-block;
-}
-
-.apply-link {
-    text-decoration: none;
-    color: black;
-    font-family: Courier New, Courier, monospace;
-}
-
-#apply-button {
-    margin-left: 10px;
-    padding: 10px 20px;
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: Courier New, Courier, monospace;
-}
-
-#apply-button:hover {
-    background-color: #e65c00;
-}
-
-        </style>
-        <script>// Wait until the DOM is fully loaded before attaching the event listener
-          document.addEventListener('DOMContentLoaded', function() {
-              const applyButton = document.getElementById('apply-button');
+           -->
           
-              if (applyButton) {
-                  applyButton.addEventListener('click', function() {
-                      window.location.href = '/apply/';
-                  });
-              }
-          });
-          </script>
-            
-          </div>-->
-            </div>
-          </div>
+          
+        
 
-          <div class="hero-section" id="home">
+
+          <div class="hero-section"  id="home">
             <!--left accordion -->
 
             <div class="my-4 mx-2">
               <h4
                 class="p-3 text-center shadow-lg text-white"
-                style="background-color: rgb(57 66 68) !important"
+                style="background-color: rgb(39, 37, 37) !important"
               >
                 For Students
               </h4>
@@ -537,7 +302,7 @@
                       aria-expanded="false"
                       aria-controls="collapseOne"
                     >
-                      Placement Classes
+                      Placement Assistance
                     </button>
                   </h2>
                   <div
@@ -577,7 +342,7 @@
                       aria-expanded="false"
                       aria-controls="collapseTwo1"
                     >
-                      Interview Classes
+                      Interview Assistance
                     </button>
                   </h2>
                   <div
@@ -1188,10 +953,10 @@
 
             <!-- right accordion -->
 
-            <div class="my-4 mx-2">
+            <div class="my-4 mx-2 ">
               <h4
                 class="p-3 text-center shadow-lg text-white"
-                style="background-color: rgb(57 66 68) !important"
+                style="background-color: rgb(39, 37, 37) !important"
               >
                 Business Services
               </h4>
@@ -1508,24 +1273,19 @@
       </div>
     </section>
 
+
+<!-- results -->
+  
+          
+            
+
     <!-- promotion  -->
-    <div
+    <!-- <div
       class="container-fluid text-center py-4"
-      style="background-color: rgb(146 155 157 / 62%)"
+      style="background-color: rgba(0, 0, 0); "
     >
-      <div class="container" id="promoContent">
-        <div class="row">
-          <div class="col-md-3 my-3 pt-2">
-            <strong class="fs-2 counter" id="counter1">60</strong>
-            <span class="fs-1">+</span>
-            <p class="fs-5">Total placement class conducted</p>
-          </div>
-          <div class="col-md-3 my-3 pt-2">
-            <strong class="fs-2 counter" id="counter2">80</strong>
-            <span class="fs-1">+</span>
-            <p class="fs-5">Total consultancy provided</p>
-          </div>
-          <div class="col-md-6 my-3">
+      
+          <div class="col-md-6 my-3 text-white">
             <strong class="fs-3"> Vinay Kumar</strong>
             <p
               style="text-align: center; font-size: 18px; margin-top: 8px"
@@ -1538,7 +1298,7 @@
               <strong>10 year experience in IT companies</strong>
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -1621,6 +1381,90 @@
               </div>
             </div>
           </section>
+
+          <div
+            id="carouselExampleSlidesOnly"
+            class="carousel"
+            data-bs-ride="carousel"
+            style="width: 100%; margin: 30px 0 30px 0; "
+          >
+            <div class="carousel-inner" style="width: 100%">
+              <div
+                class="carousel-item active"
+                data-bs-interval=" 3000"
+                style="width: 100%"
+              >
+                <div class="d-block" style="width: 100% ;">
+                  <div class="container" style="width: 100%">
+                    <div class="content" style="width: 100%">
+                      <a href="/results/" style="width: 100%">
+                        <img
+                          src="assets/image_result.png"
+                          alt=""
+                          class="full-width-image img"
+                        />
+                        <img
+                          src="assets/image_result.png"
+                          alt=""
+                          class="full-width-image img1"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="carousel-item"
+                data-bs-interval="3000"
+                style="width: 100%"
+              >
+                <div class="d-block" style="width: 100%">
+                  <div class="container" style="width: 100%">
+                    <div class="content" style="width: 100%">
+                      <a href="/results/" style="width: 100%">
+                        <img
+                          src="assets/new_poster1.png"
+                          alt=""
+                          class="full-width-image img"
+                        />
+                        <img
+                          src="assets/new_poster1.png"
+                          alt=""
+                          class="full-width-image img1"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="carousel-item"
+                data-bs-interval="3000"
+                style="width: 100%"
+              >
+                <div class="d-block" style="width: 100%">
+                  <div class="container" style="width: 100%">
+                    <div class="content" style="width: 100%">
+                      <a href="/results/" style="width: 100%">
+                        <img
+                          src="assets/new_poster2.png"
+                          alt=""
+                          class="full-width-image img"
+                        />
+                        <img
+                          src="assets/new_poster2.png"
+                          alt=""
+                          class="full-width-image img1"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+            </div>
+          </div>
 
           <%- include('../partials/footer.ejs') %>
 
