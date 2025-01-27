@@ -113,7 +113,7 @@
           <a class="nav-link" href="/myaccount/jobsforyou">Jobs for you</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/myaccount/">My account</a>
+          <a class="nav-link" id="myaccount-2" href="/myaccount/">My account</a>
         </li>
         <li class="nav-item login-btn">
           <a class="nav-link" id="login-button" href="/login">Login</a>
@@ -170,7 +170,7 @@
       font-size: 1.1rem;
       margin-bottom: 8px;
     "
-  ><a class="nav-link" href="/myaccount/">My Account</a></span>
+  ><a class="nav-link" id="myaccount-1" href="/myaccount/">My Account</a></span>
   </span>
 </div>
 
@@ -822,7 +822,8 @@
             signupButton.style.display = "none";
 
             // Retrieve the display name (username)
-            let username = user.displayName; // For Google Sign-In or if saved during registration
+            let username = user.displayName;
+            // console.log(username) // For Google Sign-In or if saved during registration
 
             // If username is not available in displayName, fetch it from Firestore
             if (!username) {

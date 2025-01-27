@@ -365,7 +365,7 @@ async function assessmentsPercentage(){
       }));
   
       const totalAssessments = Object.keys(assessments).length;
-      const totalUserAssessment = Object.keys(userAssessment).length;
+      const totalUserAssessment = await fetchAllAssessmentResults();
       
       const assessmentPercent = Math.floor((totalUserAssessment / totalAssessments) * 100); // Calculate percentage
       showProgress(3, 3, assessmentPercent);
@@ -378,6 +378,57 @@ async function assessmentsPercentage(){
     console.error("Error getting user data from user_profile:", error);
   }
 }
+
+
+async function fetchAllAssessmentResults() {
+    try {
+        // Reference to the 'user_assessment_results' collection
+        const userAssessmentResultsRef = collection(db, "user_assessment_results");
+
+        // Fetch all documents from 'user_assessment_results'
+        const userDocsSnapshot = await getDocs(userAssessmentResultsRef);
+
+        let allAssessmentResults = [];
+
+        // Iterate through each document in 'user_assessment_results'
+        for (const userDoc of userDocsSnapshot.docs) {
+            const userId = userDoc.id; // Get the document ID (user ID)
+
+           if(userId === email){
+             // Reference to the 'assessment_results' subcollection of the current document
+            const assessmentResultsRef = collection(db, `user_assessment_results/${email}/assessment_results`);
+
+            // Fetch all documents from the 'assessment_results' subcollection
+            const assessmentResultsSnapshot = await getDocs(assessmentResultsRef);
+
+            // Map the assessment results
+            const assessmentResults = assessmentResultsSnapshot.docs.map((doc) => ({
+              id: doc.id, // Document ID
+              ...doc.data(), // Document data
+            }));
+            
+            allAssessmentResults.push({
+              userId,
+              assessmentResults,
+            });
+           }
+          }
+          
+          // console.log("All Assessment Results:", allAssessmentResults[0].assessmentResults);
+          const assessmentsList = allAssessmentResults[0].assessmentResults;
+          const assessmentLength = Object.keys(assessmentsList).length;
+          // console.log(assessmentLength);
+          return assessmentLength;
+
+      
+    } catch (error) {
+        console.error("Error fetching assessment results:", error);
+    }
+}
+
+
+
+
 
 async function isUser() {
   // console.log("isUser");
@@ -426,20 +477,20 @@ async function isUser() {
       await assessmentsPercentage();
       showProgress(1 , 1 , personalProfilePercent);
       showProgress(2 , 2 , jobProfilePercent);
-
       
     } else {
       console.log("No user profile found!");
     }
     
-   
-
-
     
-
+    
+    
+    
+    
   } catch (error) {
     console.error("Error getting user data from user_profile:", error);
   }
 }
 isUser();
+
 

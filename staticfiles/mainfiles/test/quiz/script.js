@@ -216,7 +216,7 @@ async function startQuiz() {
         
                     // Reference to the specific quiz results
                     const userQuizRef = doc(db, "user_assessment_results", email, "assessment_results",  assessmentKey);
-        
+                    // console.log(userQuizRef);
                     // Prepare the new attempt data
                     const newAttempt = {
                         score: {
@@ -235,15 +235,17 @@ async function startQuiz() {
         
                     // Check if the document for this quiz already exists
                     const existingDoc = await getDoc(userQuizRef);
-        
+                    // console.log(existingDoc.data());
                     if (existingDoc.exists()) {
                         // Update the attempts array
                         const existingData = existingDoc.data();
                         const updatedAttempts = [...(existingData.attempts || []), newAttempt];
                         await setDoc(userQuizRef, { attempts: updatedAttempts });
+                        
                     } else {
                         // Create a new document with the first attempt
                         await setDoc(userQuizRef, { attempts: [newAttempt] });
+                    
                     }
         
                     console.log("Quiz attempt saved successfully.");

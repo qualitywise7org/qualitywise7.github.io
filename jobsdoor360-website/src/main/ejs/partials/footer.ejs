@@ -234,7 +234,8 @@
             signupButton.style.display = "none";
 
             // Retrieve the display name (username)
-            let username = user.displayName; // For Google Sign-In or if saved during registration
+            let username = user.displayName;
+            // console.log(username) // For Google Sign-In or if saved during registration
 
             // If username is not available in displayName, fetch it from Firestore
             if (!username) {
