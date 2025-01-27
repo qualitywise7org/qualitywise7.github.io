@@ -33,12 +33,11 @@ async function isUser() {
 }
 
 async function fetchFromLeadCollection() {
-  const leadRef = collection(db, "lead");
-  const leadQuery = query(leadRef, where("email", "==", email));
+  const leadRef = doc(db, "lead", email);
   try {
-    const leadSnapshot = await getDocs(leadQuery);
+    const leadSnapshot = await getDoc(leadRef);
     if (!leadSnapshot.empty) {
-      const leadData = leadSnapshot.docs[0].data();
+      const leadData = leadSnapshot.data();
       // console.log(leadData);
       populateForm(leadData);
     } else {
@@ -51,32 +50,42 @@ async function fetchFromLeadCollection() {
 
 function populateForm(userData) {
   // console.log(userData.about)
-  if (userData.about.full_name) {
+  if(userData.full_name){
+    console.log("fullname");
+    document.getElementById("fullname").innerText =
+      userData?.full_name || "";
+    document.getElementById("edit-name").value =
+      userData?.full_name || "John Doe";
+  }
+  else if (userData.about.full_name) {
+    console.log("about");
     document.getElementById("fullname").innerText =
       userData.about?.full_name || "";
     document.getElementById("edit-name").value =
       userData.about?.full_name || "John Doe";
-  } else {
+  }
+  
+  else {
     const fullName = userData.about.firstname + " " + userData.about.lastname;
     document.getElementById("fullname").innerText = fullName;
     document.getElementById("edit-name").value = fullName || "John Doe";
   }
-  // console.log(userData);
+  console.log(userData);
 
-  document.getElementById("email").innerText = userData.about?.email || "";
-  document.getElementById("dob").innerText = userData.about?.dob || "";
+  document.getElementById("email").innerText = userData.about?.email || userData?.email || "";
+  document.getElementById("dob").innerText = userData.about?.dob || userData?.dob || "";
   document.getElementById("mob").innerText =
-    userData.about?.phoneNo || userData.about?.phonenumber || "";
+    userData.about?.phoneNo || userData.about?.phonenumber || userData.phonenumber || "";
   document.getElementById("gender").innerText = userData.about?.gender || "";
   document.getElementById("edit-email").value =
-    userData.about?.email || "xyz@gmail.com";
+    userData.about?.email || userData?.email || "xyz@gmail.com";
   document.getElementById("edit-phone").value =
-    userData.about?.phoneNo || userData.about?.phonenumber || "1234567890";
+    userData.about?.phoneNo || userData.about.phonenumber || userData.phonenumber || "1234567890";
 
   document.getElementById("edit-dob").value =
-    userData.about?.dob || "2000-01-02";
+    userData.about?.dob || userData?.dob ||  "2000-01-02";
   document.getElementById("edit-gender").value =
-    userData.about?.gender || "Male / Female";
+    userData.about?.gender || userData?.gender || "Male / Female";
 
   imageUrl =
     userData.about?.image ||
@@ -185,7 +194,7 @@ async function saveFormDataToDatabase(event) {
     // console.log(currentDate);
     const docSnap = await getDoc(userProfileRef);
     const auditForm = docSnap.data().audit_fields;
-    // console.log(auditForm);
+    console.log(docSnap.data());
     var auditData = {
       createdAt: auditForm.createdAt,
       createdBy: docSnap.data().about.email,
@@ -197,7 +206,7 @@ async function saveFormDataToDatabase(event) {
     // Save data to Firestore
     if (docSnap.exists) {
       formData = { ...formData, ...docSnap.data() };
-      // console.log(formData);
+      console.log(formData);
 
       await updateDoc(userProfileRef, { about: aboutData, // Updated 'about' data
         audit_fields: auditData, });

@@ -326,17 +326,24 @@
 const email = localStorage.getItem("email");
 
 function loopingForUserdata(data, count, n) {
+  // console.log(data);
+
   if (!data || Object.keys(data).length === 0) {
     return 0; // If the data is empty or undefined, return 0%
   }
+
   for (const key in data) {
-    if (data[key] !== "") {
+    // console.log(data[key]);
+    if (data[key] !== "" && data[key] !== undefined) {
       count++;
     }
   }
+
   const percent = Math.floor((count / n) * 100); // Calculate percentage
+  // console.log(percent);
   return percent;
 }
+
 
 function showProgress(progressId , textId , personalProfilePercent){
   const progressBarPersonalProfile = document.getElementById(`progress-${progressId}`);
@@ -356,75 +363,96 @@ async function assessmentsPercentage(){
 
     // Fetch all documents from the collection
     const docSnapAssessment = await getDocs(assessmentsRef);
-    const docSnapUserAssessments = await getDoc(doc(db, "user_assessment_results", email));
-    if (docSnapUserAssessments.exists()) {
-      const userAssessment = docSnapUserAssessments.data();
+    
+    
+
       const assessments = docSnapAssessment.docs.map((doc) => ({
         id: doc.id, // Add document ID for reference
         ...doc.data(), // Spread the document data
       }));
   
       const totalAssessments = Object.keys(assessments).length;
-      const totalUserAssessment = await fetchAllAssessmentResults();
-      
+      // console.log(totalAssessments);
+      const totalUserAssessment = await fetchAllAssessmentResults(email);
+      console.log(totalUserAssessment);
       const assessmentPercent = Math.floor((totalUserAssessment / totalAssessments) * 100); // Calculate percentage
       showProgress(3, 3, assessmentPercent);
       
       
-    } else {
-      console.log("No user profile found!");
-    }
+    
   }catch (error) {
     console.error("Error getting user data from user_profile:", error);
   }
 }
 
 
-async function fetchAllAssessmentResults() {
-    try {
-        // Reference to the 'user_assessment_results' collection
-        const userAssessmentResultsRef = collection(db, "user_assessment_results");
+async function fetchAllAssessmentResults(email) {
+  try {
+      if (!email) {
+          throw new Error("Email is required to fetch assessment results.");
+      }
 
-        // Fetch all documents from 'user_assessment_results'
-        const userDocsSnapshot = await getDocs(userAssessmentResultsRef);
+      // Reference to the 'user_assessment_results' collection
+      const userAssessmentResultsRef = collection(db, "user_assessment_results");
 
-        let allAssessmentResults = [];
-
-        // Iterate through each document in 'user_assessment_results'
-        for (const userDoc of userDocsSnapshot.docs) {
-            const userId = userDoc.id; // Get the document ID (user ID)
-
-           if(userId === email){
-             // Reference to the 'assessment_results' subcollection of the current document
-            const assessmentResultsRef = collection(db, `user_assessment_results/${email}/assessment_results`);
-
-            // Fetch all documents from the 'assessment_results' subcollection
-            const assessmentResultsSnapshot = await getDocs(assessmentResultsRef);
-
-            // Map the assessment results
-            const assessmentResults = assessmentResultsSnapshot.docs.map((doc) => ({
-              id: doc.id, // Document ID
-              ...doc.data(), // Document data
-            }));
-            
-            allAssessmentResults.push({
-              userId,
-              assessmentResults,
-            });
-           }
-          }
-          
-          // console.log("All Assessment Results:", allAssessmentResults[0].assessmentResults);
-          const assessmentsList = allAssessmentResults[0].assessmentResults;
-          const assessmentLength = Object.keys(assessmentsList).length;
-          // console.log(assessmentLength);
-          return assessmentLength;
-
+      // Fetch all documents from 'user_assessment_results'
+      const userDocsSnapshot = await getDocs(userAssessmentResultsRef);
+      // console.log(userDocsSnapshot);
       
-    } catch (error) {
-        console.error("Error fetching assessment results:", error);
-    }
+
+      let allAssessmentResults = [];
+
+      // Iterate through each document in 'user_assessment_results'
+      for (const userDoc of userDocsSnapshot.docs) {
+          const userId = userDoc.id; // Get the document ID (user ID)
+          console.log(userId);
+          // console.log(email);
+
+          // Check if the document ID matches the email
+          if (userId === email) {
+              // Reference to the 'assessment_results' subcollection
+              
+              const assessmentResultsRef = collection(
+                  db,
+                  `user_assessment_results/${email}/assessment_results`
+              );
+
+              // Fetch all documents from the 'assessment_results' subcollection
+              const assessmentResultsSnapshot = await getDocs(assessmentResultsRef);
+              console.log(assessmentResultsSnapshot);
+              // Map the assessment results
+              const assessmentResults = assessmentResultsSnapshot.docs.map((doc) => ({
+                  id: doc.id, // Document ID
+                  ...doc.data(), // Document data
+              }));
+
+              allAssessmentResults.push({
+                  userId,
+                  assessmentResults,
+              });
+
+              break; // Exit loop once matching email is found
+          }
+      }
+
+      if (allAssessmentResults.length === 0) {
+          console.log("No assessment results found for the provided email.");
+          return 0; // No results found
+      }
+
+      console.log("All Assessment Results:", allAssessmentResults[0].assessmentResults);
+
+      const assessmentsList = allAssessmentResults[0].assessmentResults;
+      const assessmentLength = assessmentsList.length; // Directly get the length
+      console.log("Assessment Length:", assessmentLength);
+      return assessmentLength;
+
+  } catch (error) {
+      console.error("Error fetching assessment results:", error);
+      return 0; // Return 0 in case of an error
+  }
 }
+
 
 
 
@@ -437,6 +465,7 @@ async function isUser() {
     if (docSnap.exists()) {
       const userData = docSnap.data();
       // console.log(userData);
+      
       
       document.getElementById("view_cv").href = userData.about.cv || "#";
 
