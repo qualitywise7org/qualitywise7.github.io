@@ -324,6 +324,24 @@
 
 const email = localStorage.getItem("email");
 // console.log(email);
+function loopingForUserdataabout(data, count, n) {
+  // console.log(data);
+
+  if (!data || Object.keys(data).length === 0) {
+    return 0; // If the data is empty or undefined, return 0%
+  }
+
+  for (const key in data) {
+    // console.log(data[key]);
+    if (data[key] !== "" && data[key] !== undefined) {
+      count++;
+    }
+  }
+
+  const percent = Math.floor((count / n) * 100); // Calculate percentage
+  // console.log(percent);
+  return percent;
+}
 
 function loopingForUserdata(data, count, n) {
   // console.log(data);
@@ -401,7 +419,7 @@ async function fetchAllAssessmentResults(email) {
     // Iterate through each document in 'user_assessment_results'
     for (const userDoc of userDocsSnapshot.docs) {
       const userId = userDoc.id; // Get the document ID (user ID)
-      console.log(userId);
+      // console.log(userId);
       // console.log(email);
 
       // Check if the document ID matches the email
@@ -432,7 +450,7 @@ async function fetchAllAssessmentResults(email) {
     }
 
     if (allAssessmentResults.length === 0) {
-      console.log("No assessment results found for the provided email.");
+      // console.log("No assessment results found for the provided email.");
       return 0; // No results found
     }
 
@@ -470,17 +488,19 @@ async function isUser() {
       let experienceData = userData.experience || {};
 
       // Combine first and last name for aboutData
-      aboutData.fullname = aboutData.firstname + " " + aboutData.lastname;
+      // if(aboutData.firstname )
+      aboutData.fullname = aboutData.firstname + " " + aboutData.lastname || "";
 
       // Removing unnecessary fields
-      const { firstname, lastname, email, phoneNo, ...updatedAboutData } =
+      const {cv , firstname, lastname, email, phoneNo, ...updatedAboutData } =
         aboutData;
+        // console.log(updatedAboutData);
 
       // Calculate completion percentages for each section
       const personalProfilePercent = loopingForUserdata(
         updatedAboutData,
         0,
-        Object.keys(updatedAboutData).length
+        4
       );
       const socialPercent = loopingForUserdata(
         socialData,
@@ -533,7 +553,7 @@ async function isUser() {
       let v = userData.full_name.split(" ");
       // console.log(v);
       const firstName = v[0];
-      const lastName = v[1];
+      const lastName = v[1] || "";
       
       let formData = { about: { email : userData.email, firstname: firstName , lastname : lastName } };
       var currentDate = window.getCurrentDateTime();
@@ -550,16 +570,12 @@ async function isUser() {
         updatedAt: "",
         updatedBy: "",
       };
-      console.log(formData);
+      // console.log(formData);
 
       // // Create a new user profile document
       await setDoc(userDocRef, formData);
-      console.log("success");
-      // localStorage.setItem("profile", true);
-
-      // // Redirect to the appropriate page
-      // const redirectUrl = localStorage.getItem("redirect_url");
-      // window.location.href = redirectUrl || "/myaccount/cv_upload/";
+      // console.log("success");
+      
     }
   } catch (error) {
     console.error("Error getting user data from user_profile:", error);

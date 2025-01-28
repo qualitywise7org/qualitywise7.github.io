@@ -420,9 +420,17 @@
         const welcomeText = document.getElementById("welcome-text");
         const userMail = document.getElementById("user-mail");
 
+        
+
         if (user) {
             // Save email to localStorage
             localStorage.setItem("email", user.email);
+            const userProfileRef = doc(db, "user_profile", user.email);
+  const docSnap = await getDoc(userProfileRef);
+  let name = "";
+  if(docSnap.exists()){
+    name = docSnap.data().about.firstname + " " + docSnap.data().about.lastname || "";
+  }
 
             // Hide the signup button and show "Logout"
             document.getElementById("login-button").innerHTML = "Logout";
@@ -450,7 +458,10 @@
             localStorage.setItem("username", username);
 
             // Update welcome text with the username
-          if(username)
+            if(name){
+              welcomeText.innerHTML = `Hii, ${name}`;
+            }
+          else if(username)
             welcomeText.innerHTML = `Hii, ${username}`;
             else{
               userMail.innerHTML = username; // Optionally update email 

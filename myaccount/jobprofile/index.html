@@ -453,7 +453,7 @@
     <!-- Add Experience  -->
     <div
   id="edit-modal-experience"
-  class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center"
+  class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center z-3"
 >
   <div
     class="bg-white rounded p-4 shadow-lg"
@@ -1017,9 +1017,17 @@
         const welcomeText = document.getElementById("welcome-text");
         const userMail = document.getElementById("user-mail");
 
+        
+
         if (user) {
             // Save email to localStorage
             localStorage.setItem("email", user.email);
+            const userProfileRef = doc(db, "user_profile", user.email);
+  const docSnap = await getDoc(userProfileRef);
+  let name = "";
+  if(docSnap.exists()){
+    name = docSnap.data().about.firstname + " " + docSnap.data().about.lastname || "";
+  }
 
             // Hide the signup button and show "Logout"
             document.getElementById("login-button").innerHTML = "Logout";
@@ -1047,7 +1055,10 @@
             localStorage.setItem("username", username);
 
             // Update welcome text with the username
-          if(username)
+            if(name){
+              welcomeText.innerHTML = `Hii, ${name}`;
+            }
+          else if(username)
             welcomeText.innerHTML = `Hii, ${username}`;
             else{
               userMail.innerHTML = username; // Optionally update email 

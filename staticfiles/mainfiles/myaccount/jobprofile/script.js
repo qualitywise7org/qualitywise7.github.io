@@ -42,6 +42,14 @@ function populateImage(Image) {
     document.getElementById("linkedin").href = userData.social.linkedin || "#";
     document.getElementById("instagram").href =
       userData.social.instagram || "#";
+
+      document.getElementById("edit-github").value = userData.social.github || "";  
+    document.getElementById("edit-linkedin").value = userData.social.linkedin || ""; 
+    document.getElementById("edit-leetcode").value = userData.social.leetcode || ""; 
+    document.getElementById("edit-instagram").value = userData.social.instagram || ""; 
+    
+    
+
   }
 
   if (userData.address) {
@@ -370,6 +378,7 @@ function openEditModal(addressType) {
   const addressData =
     addressType === "present" ? presentAddress : permanentAddress;
   // console.log(currentEditing);
+  console.log(addressData);
   // Set the input fields with current data
   document.getElementById("address-input").value = addressData.address || "";
   document.getElementById("city-input").value = addressData.city || "";
@@ -422,6 +431,8 @@ async function loadAddress() {
     const userAddress = docSnapshot.data().address;
     // console.log(userAddress);
     // permanentAddressDatabase = userAddress.permanent;
+    presentAddress = userAddress.present;
+    permanentAddress = userAddress.permanent;
     document.getElementById(`present-address-text`).innerText =
       userAddress.present.address || "";
     document.getElementById(`present-city-text`).innerText =
@@ -567,6 +578,7 @@ document
 
 //load education
 async function loadEducation() {
+  const userProfileRef = doc(db, "user_profile", email);
   const docSnap = await getDoc(userProfileRef);
   // console.log(docSnap.data());
   if (docSnap.exists) {
@@ -616,6 +628,7 @@ document
       .value.trim();
     const year = document.getElementById("edit-year").value.trim();
     //    console.log(degree);
+    const userProfileRef = doc(db, "user_profile", email);
     const docSnap = await getDoc(userProfileRef);
     // console.log(docSnap.data());
     //     const docRef = doc(db, "user_profile", email);

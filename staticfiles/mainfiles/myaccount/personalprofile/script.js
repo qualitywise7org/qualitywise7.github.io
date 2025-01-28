@@ -70,7 +70,7 @@ function populateForm(userData) {
     document.getElementById("fullname").innerText = fullName;
     document.getElementById("edit-name").value = fullName || "John Doe";
   }
-  console.log(userData);
+  // console.log(userData);
 
   document.getElementById("email").innerText = userData.about?.email || userData?.email || "";
   document.getElementById("dob").innerText = userData.about?.dob || userData?.dob || "";
@@ -89,7 +89,7 @@ function populateForm(userData) {
 
   imageUrl =
     userData.about?.image ||
-    "https://www.pngall.com/wp-content/uploads/5/Profile.png";
+    "";
   // cvUrl = userData.about?.cv || "";
 
   const profileImage = document.getElementById("show_image");
@@ -178,7 +178,7 @@ async function saveFormDataToDatabase(event) {
   // console.log(imageFile);
   const newImageUrl = await uploadImageAndGetURL(imageFile);
   aboutData.image = newImageUrl || "";
-  //   console.log(aboutData);
+    // console.log(newImageUrl);
 
   formData.about = aboutData;
   // console.log(formData);
@@ -194,7 +194,7 @@ async function saveFormDataToDatabase(event) {
     // console.log(currentDate);
     const docSnap = await getDoc(userProfileRef);
     const auditForm = docSnap.data().audit_fields;
-    console.log(docSnap.data());
+    // console.log(docSnap.data());
     var auditData = {
       createdAt: auditForm.createdAt,
       createdBy: docSnap.data().about.email,
@@ -206,7 +206,7 @@ async function saveFormDataToDatabase(event) {
     // Save data to Firestore
     if (docSnap.exists) {
       formData = { ...formData, ...docSnap.data() };
-      console.log(formData);
+      // console.log(formData);
 
       await updateDoc(userProfileRef, { about: aboutData, // Updated 'about' data
         audit_fields: auditData, });
