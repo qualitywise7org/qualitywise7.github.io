@@ -19,8 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 async function fetchAndDisplayResults(userId) {
   try {
     console.log(`Fetching assessment results for user: ${userId}`);
+  
     const resultsRef = doc(db, "user_assessment_results", userId);
     const resultsDoc = await getDoc(resultsRef);
+    
 
     if (resultsDoc.exists()) {
       const resultsData = resultsDoc.data();
