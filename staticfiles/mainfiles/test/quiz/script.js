@@ -214,38 +214,36 @@ async function startQuiz() {
                 if (user) {
                     const email = user.email;
         
-                    // Reference to the specific quiz results
-                    const userQuizRef = doc(db, "user_assessment_results", email, "assessment_results",  assessmentKey);
-                    // console.log(userQuizRef);
-                    // Prepare the new attempt data
+                    // Reference to the user's assessment results
+                    const userResultsRef = doc(db, "user_assessment_results", email);
+        
+                    // New attempt data
                     const newAttempt = {
-                        score: {
-                            score: score,
-                            timestamp: new Date(),
-                        },
+                        quizCode: assessmentKey, // Quiz identifier
+                        score: score,
+                        percentage: percentage,
+                        timestamp: new Date(),
                         user_questions_with_answers: currentSubject.questions.map((q, index) => {
                             const selectedAnswerIndex = selectedAnswers[index];
                             const selectedAnswerText = selectedAnswerIndex !== undefined ? q.answers[selectedAnswerIndex] : null;
                             return {
                                 question: q.question,
-                                answer: selectedAnswerText, // Save the full text of the selected answer
+                                answer: selectedAnswerText, // Save full text of the selected answer
                             };
                         }),
                     };
         
-                    // Check if the document for this quiz already exists
-                    const existingDoc = await getDoc(userQuizRef);
-                    // console.log(existingDoc.data());
+                    // Fetch existing results
+                    const existingDoc = await getDoc(userResultsRef);
+        
                     if (existingDoc.exists()) {
-                        // Update the attempts array
+                        // Append new attempt to the existing results array
                         const existingData = existingDoc.data();
-                        const updatedAttempts = [...(existingData.attempts || []), newAttempt];
-                        await setDoc(userQuizRef, { attempts: updatedAttempts });
-                        
+                        const updatedResults = [...(existingData.results || []), newAttempt];
+                        await setDoc(userResultsRef, { results: updatedResults }, { merge: true });
                     } else {
                         // Create a new document with the first attempt
-                        await setDoc(userQuizRef, { attempts: [newAttempt] });
-                    
+                        await setDoc(userResultsRef, { results: [newAttempt] });
                     }
         
                     console.log("Quiz attempt saved successfully.");
@@ -256,6 +254,8 @@ async function startQuiz() {
                 console.error("Failed to save quiz results:", error);
             }
         }
+        
+        
         
         
     
