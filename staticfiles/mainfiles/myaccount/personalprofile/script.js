@@ -80,7 +80,7 @@ function populateForm(userData) {
   document.getElementById("edit-email").value =
     userData.about?.email || userData?.email || "xyz@gmail.com";
   document.getElementById("edit-phone").value =
-    userData.about?.phoneNo || userData.about.phonenumber || userData.phonenumber || "1234567890";
+    userData.about?.phoneNo || userData.about?.phonenumber || userData?.phonenumber || "1234567890";
 
   document.getElementById("edit-dob").value =
     userData.about?.dob || userData?.dob ||  "2000-01-02";
@@ -142,6 +142,9 @@ fileInput.addEventListener("change", (event) => {
   // }
 });
 
+
+
+
 //getting hosted url for profile
 async function uploadImageAndGetURL(file) {
   const imageRef = ref(storage, "user_images/" + file.name);
@@ -163,11 +166,12 @@ async function saveFormDataToDatabase(event) {
   // console.log(aboutData.firstName);
 
   const fullname = $("#edit-name").val() || "";
-  const separate = fullname;
+  const separate = fullname.trim();
+  console.log(separate);
   var arr = separate.split(" ");
-  // console.log(arr[1]);
+  console.log(arr[0]);
   aboutData.firstname = arr[0];
-  aboutData.lastname = arr[1];
+  aboutData.lastname = arr[1] || "";
   aboutData.gender = $("#edit-gender").val() || "";
   aboutData.email = email;
   aboutData.dob = $("#edit-dob").val();
@@ -193,25 +197,28 @@ async function saveFormDataToDatabase(event) {
     var currentDate = window.getCurrentDateTime();
     // console.log(currentDate);
     const docSnap = await getDoc(userProfileRef);
-    const auditForm = docSnap.data().audit_fields;
+    const auditForm = docSnap.data()?.audit_fields || {};
     // console.log(docSnap.data());
     var auditData = {
-      createdAt: auditForm.createdAt,
-      createdBy: docSnap.data().about.email,
+      createdAt: auditForm?.createdAt || currentDate,
+      createdBy: docSnap.data()?.about?.email || email,
       updatedAt: currentDate,
-      updatedBy: docSnap.data().about.email,
+      updatedBy: docSnap.data()?.about?.email || email,
     };
 
     // console.log(auditData);
     // Save data to Firestore
-    if (docSnap.exists) {
+    if (docSnap.exists()) {
       formData = { ...formData, ...docSnap.data() };
       // console.log(formData);
-
+      // console.log("exist");
+      
       await updateDoc(userProfileRef, { about: aboutData, // Updated 'about' data
         audit_fields: auditData, });
-    } else {
+      } else {
+      // console.log("noy exist");
       formData.audit_fields = auditData;
+      // console.log(formData);
       await setDoc(userProfileRef, formData);
     }
     
