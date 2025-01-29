@@ -46,6 +46,16 @@ const firebaseConfig = {
   measurementId: "G-60RHEMJNM6",
 };
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyB50M8vFXcbkJ_SGNncFzzK0RHMLQpNIzU",
+//   authDomain: "jd360-testing.firebaseapp.com",
+//   databaseURL: "https://jd360-testing-default-rtdb.firebaseio.com",
+//   projectId: "jd360-testing",
+//   storageBucket: "jd360-testing.firebasestorage.app",
+//   messagingSenderId: "576496756828",
+//   appId: "1:576496756828:web:4482903b8db23a66285e99",
+//   measurementId: "G-GN8843MVDG"
+// };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);

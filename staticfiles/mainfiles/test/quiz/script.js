@@ -257,6 +257,7 @@ async function startQuiz() {
         
         
         
+        
     
         function startTimer() {
             timerInterval = setInterval(() => {
