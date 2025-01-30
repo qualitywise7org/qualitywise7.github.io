@@ -37,11 +37,12 @@ function populateImage(Image) {
   }
   // console.log(userData);
   if (userData.social) {
-    document.getElementById("github").href = userData.social.github || "#";
-    document.getElementById("leetcode").href = userData.social.leetcode || "#";
-    document.getElementById("linkedin").href = userData.social.linkedin || "#";
-    document.getElementById("instagram").href =
-      userData.social.instagram || "#";
+    // document.getElementById("github").href = userData.social.github || "#";
+    // document.getElementById("leetcode").href = userData.social.leetcode || "#";
+    // document.getElementById("linkedin").href = userData.social.linkedin || "#";
+    // document.getElementById("instagram").href =
+    //   userData.social.instagram || "#";
+    loadSocial();
 
       document.getElementById("edit-github").value = userData.social.github || "";  
     document.getElementById("edit-linkedin").value = userData.social.linkedin || ""; 
@@ -71,6 +72,10 @@ isUser();
 
 
 
+
+
+
+
 // Get references to the button and the form
 const editButton = document.getElementById("edit-social-button");
 const editForm = document.getElementById("edit-form-social");
@@ -85,6 +90,37 @@ editButton.addEventListener("click", () => {
 cancelButton.addEventListener("click", () => {
   editForm.classList.add("d-none"); // Hide the form overlay
 });
+const socialLinkList = document.getElementById("social-profile")
+//load skills
+async function loadSocial() {
+  const docRef = doc(db, "user_profile", email);
+  const docSnap = await getDoc(docRef);
+  // console.log(docSnap.data());
+  if (docSnap.exists) {
+    const userData = docSnap.data();
+    const socialLinks = userData.social || [];
+    // console.log(socialLinks)
+
+    socialLinkList.innerHTML = "";
+    // const totalSocial = Object.keys(socialLinks).length;
+    // console.log(totalSocial);
+
+   
+    
+    for (let key in socialLinks) {
+       // Prints key and value
+       if(socialLinks[key]){
+
+         socialLinkList.innerHTML += `
+            <a href=${socialLinks[key]} id="github" class="btn btn-outline-dark rounded-pill"
+                >${key}</a
+              >`;
+       }
+    }
+    
+    
+  }
+}
 
 async function saveFormDataToDatabase(event) {
   event.preventDefault(); // Prevent default form submission behavior
