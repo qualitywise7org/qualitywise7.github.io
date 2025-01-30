@@ -414,9 +414,14 @@ async function fetchAllAssessmentResults(email) {
     // Fetch all documents from 'user_assessment_results'
     
     // console.log(docSnap.data().results);
-    const userResults = docSnap.data().results;
-    console.log(userResults.length);
-    return userResults.length;
+    const userResults = docSnap.data()?.results || [];
+
+    // console.log(userResults);
+    let uniqueItems = Array.from(new Map(userResults.map(item => [item.quizCode.toLowerCase(), item])).values());
+
+    // console.log(uniqueItems);  
+    return uniqueItems.length;
+    
     
 
     // Iterate through each document in 'user_assessment_results'
