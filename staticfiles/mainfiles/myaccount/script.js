@@ -408,61 +408,24 @@ async function fetchAllAssessmentResults(email) {
     }
 
     // Reference to the 'user_assessment_results' collection
-    const userAssessmentResultsRef = collection(db, "user_assessment_results");
+    
+    const docSnap = await getDoc(doc(db, "user_assessment_results", email));
 
     // Fetch all documents from 'user_assessment_results'
-    const userDocsSnapshot = await getDocs(userAssessmentResultsRef);
-    // console.log(userDocsSnapshot);
-
-    let allAssessmentResults = [];
+    
+    // console.log(docSnap.data().results);
+    const userResults = docSnap.data().results;
+    console.log(userResults.length);
+    return userResults.length;
+    
 
     // Iterate through each document in 'user_assessment_results'
-    for (const userDoc of userDocsSnapshot.docs) {
-      const userId = userDoc.id; // Get the document ID (user ID)
-      // console.log(userId);
-      // console.log(email);
+    
 
-      // Check if the document ID matches the email
-      if (userId === email) {
-        // Reference to the 'assessment_results' subcollection
+    
 
-        const assessmentResultsRef = collection(
-          db,
-          `user_assessment_results/${email}/assessment_results`
-        );
-
-        // Fetch all documents from the 'assessment_results' subcollection
-        const assessmentResultsSnapshot = await getDocs(assessmentResultsRef);
-        console.log(assessmentResultsSnapshot);
-        // Map the assessment results
-        const assessmentResults = assessmentResultsSnapshot.docs.map((doc) => ({
-          id: doc.id, // Document ID
-          ...doc.data(), // Document data
-        }));
-
-        allAssessmentResults.push({
-          userId,
-          assessmentResults,
-        });
-
-        break; // Exit loop once matching email is found
-      }
-    }
-
-    if (allAssessmentResults.length === 0) {
-      // console.log("No assessment results found for the provided email.");
-      return 0; // No results found
-    }
-
-    console.log(
-      "All Assessment Results:",
-      allAssessmentResults[0].assessmentResults
-    );
-
-    const assessmentsList = allAssessmentResults[0].assessmentResults;
-    const assessmentLength = assessmentsList.length; // Directly get the length
-    console.log("Assessment Length:", assessmentLength);
-    return assessmentLength;
+    
+    // return assessmentLength;
   } catch (error) {
     console.error("Error fetching assessment results:", error);
     return 0; // Return 0 in case of an error
