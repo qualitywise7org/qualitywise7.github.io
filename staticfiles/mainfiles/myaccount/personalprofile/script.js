@@ -1,13 +1,11 @@
 // import { getCurrentDateTime } from "../../../utils";
 
-
 const email = localStorage.getItem("email");
 // console.log(email);
 let imageUrl = "";
 let cvUrl = "";
 let editImageUrl = "";
-
-
+let userPhoneNumber = "";
 
 if (!email) {
   window.location.href = "/login/";
@@ -23,6 +21,7 @@ async function isUser() {
     if (docSnap.exists()) {
       var userData = docSnap.data();
       // console.log(userData);
+      userPhoneNumber = userData.about.phoneNo;
       populateForm(userData);
     } else {
       await fetchFromLeadCollection();
@@ -39,6 +38,7 @@ async function fetchFromLeadCollection() {
     if (!leadSnapshot.empty) {
       const leadData = leadSnapshot.data();
       // console.log(leadData);
+      userPhoneNumber = leadData.phonenumber;
       populateForm(leadData);
     } else {
       console.log("No data found in lead collection either.");
@@ -50,46 +50,42 @@ async function fetchFromLeadCollection() {
 
 function populateForm(userData) {
   // console.log(userData.about)
-  if(userData.full_name){
+  if (userData.full_name) {
     console.log("fullname");
-    document.getElementById("fullname").innerText =
-      userData?.full_name || "";
+    document.getElementById("fullname").innerText = userData?.full_name || "";
     document.getElementById("edit-name").value =
       userData?.full_name || "John Doe";
-  }
-  else if (userData.about.full_name) {
-    console.log("about");
-    document.getElementById("fullname").innerText =
-      userData.about?.full_name || "";
-    document.getElementById("edit-name").value =
-      userData.about?.full_name || "John Doe";
-  }
-  
-  else {
-    const fullName = userData.about.firstname + " " + userData.about.lastname;
+  } else {
+    const fullName = userData.about.firstName + " " + userData.about.lastName;
     document.getElementById("fullname").innerText = fullName;
     document.getElementById("edit-name").value = fullName || "John Doe";
   }
   // console.log(userData);
 
-  document.getElementById("email").innerText = userData.about?.email || userData?.email || "";
-  document.getElementById("dob").innerText = userData.about?.dob || userData?.dob || "";
+  document.getElementById("email").innerText =
+    userData.about?.email || userData?.email || "";
+  document.getElementById("dob").innerText =
+    userData.about?.dob || userData?.dob || "";
   document.getElementById("mob").innerText =
-    userData.about?.phoneNo || userData.about?.phonenumber || userData.phonenumber || "";
+    userData.about?.phoneNo ||
+    userData.about?.phonenumber ||
+    userData.phonenumber ||
+    "";
   document.getElementById("gender").innerText = userData.about?.gender || "";
   document.getElementById("edit-email").value =
     userData.about?.email || userData?.email || "xyz@gmail.com";
   document.getElementById("edit-phone").value =
-    userData.about?.phoneNo || userData.about?.phonenumber || userData?.phonenumber || "1234567890";
+    userData.about?.phoneNo ||
+    userData.about?.phonenumber ||
+    userData?.phonenumber ||
+    "1234567890";
 
   document.getElementById("edit-dob").value =
-    userData.about?.dob || userData?.dob ||  "2000-01-02";
+    userData.about?.dob || userData?.dob || "2000-01-02";
   document.getElementById("edit-gender").value =
     userData.about?.gender || userData?.gender || "Male / Female";
 
-  imageUrl =
-    userData.about?.image ||
-    "";
+  imageUrl = userData.about?.image || "";
   // cvUrl = userData.about?.cv || "";
 
   const profileImage = document.getElementById("show_image");
@@ -107,6 +103,16 @@ const cancelButton = document.getElementById("cancel-button");
 editButton.addEventListener("click", () => {
   const editModal = new bootstrap.Modal(document.getElementById("editModal"));
   editModal.show();
+  // Example: If user has no phone number
+
+  const phoneInput = document.getElementById("edit-phone");
+
+  if (userPhoneNumber.trim() !== "") {
+    phoneInput.value = userPhoneNumber;
+    phoneInput.disabled = true; // Disable input if phone exists
+  } else {
+    phoneInput.disabled = false; // Enable input if no phone exists
+  }
 });
 cancelButton.addEventListener("click", () => {
   const editModal = new bootstrap.Modal(document.getElementById("editModal"));
@@ -133,7 +139,7 @@ fileInput.addEventListener("change", (event) => {
     //   // placeholder.classList.add("hidden"); // Hide the placeholder
     // };
     reader.readAsDataURL(file); // Read the image file as a data URL
-  } 
+  }
   // else {
   //   // Reset if no file is selected
   //   imagePreview.src = "";
@@ -141,9 +147,6 @@ fileInput.addEventListener("change", (event) => {
   //   placeholder.classList.remove("hidden");
   // }
 });
-
-
-
 
 //getting hosted url for profile
 async function uploadImageAndGetURL(file) {
@@ -161,7 +164,6 @@ async function saveFormDataToDatabase(event) {
 
   var formData = {};
   var aboutData = {};
-  
 
   // console.log(aboutData.firstName);
 
@@ -170,8 +172,8 @@ async function saveFormDataToDatabase(event) {
   console.log(separate);
   var arr = separate.split(" ");
   console.log(arr[0]);
-  aboutData.firstname = arr[0];
-  aboutData.lastname = arr[1] || "";
+  aboutData.firstName = arr[0];
+  aboutData.lastName = arr[1] || "";
   aboutData.gender = $("#edit-gender").val() || "";
   aboutData.email = email;
   aboutData.dob = $("#edit-dob").val();
@@ -182,7 +184,7 @@ async function saveFormDataToDatabase(event) {
   // console.log(imageFile);
   const newImageUrl = await uploadImageAndGetURL(imageFile);
   aboutData.image = newImageUrl || "";
-    // console.log(newImageUrl);
+  // console.log(newImageUrl);
 
   formData.about = aboutData;
   // console.log(formData);
@@ -193,7 +195,7 @@ async function saveFormDataToDatabase(event) {
   try {
     // Collect form data
     // const formData = collectFormData();
-    
+
     var currentDate = window.getCurrentDateTime();
     // console.log(currentDate);
     const docSnap = await getDoc(userProfileRef);
@@ -212,16 +214,18 @@ async function saveFormDataToDatabase(event) {
       formData = { ...formData, ...docSnap.data() };
       // console.log(formData);
       // console.log("exist");
-      
-      await updateDoc(userProfileRef, { about: aboutData, // Updated 'about' data
-        audit_fields: auditData, });
-      } else {
+
+      await updateDoc(userProfileRef, {
+        about: aboutData, // Updated 'about' data
+        audit_fields: auditData,
+      });
+    } else {
       // console.log("noy exist");
       formData.audit_fields = auditData;
       // console.log(formData);
       await setDoc(userProfileRef, formData);
     }
-    
+
     //   console.log("Data successfully saved to Firestore");
     window.location.reload();
     // Show success message (uncomment if using Toastify)

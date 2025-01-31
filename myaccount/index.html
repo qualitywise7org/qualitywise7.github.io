@@ -233,12 +233,25 @@
                 <div class="circular-progress" id="progress-3" style="--progress: 0;">
                   <div class="inner-circle" id="text-3">0%</div>
                 </div>
-                <p>Assessment Completed</p>
+                <p class="mb-1 text-center">Assessment Completed</p>
+                <p id="progress-count" class="text-muted small text-center">0/0</p> <!-- Dynamic Progress Count -->
               </td>
               <td>
-                <div class="action-buttons">
-                  <a href="../test/"><button type="button" class="btn btn-secondary btn-sm">Update</button></a>
-                  <a href="/myaccount/test-report/"><button type="button" class="btn btn-primary btn-sm">View</button></a>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                  <!-- Buttons -->
+                  <div class="d-flex gap-2 mb-2">
+                    <a href="../test/">
+                      <button type="button" class="btn btn-secondary btn-sm">Update</button>
+                    </a>
+                    <a href="/myaccount/test-report/">
+                      <button type="button" class="btn btn-primary btn-sm">View</button>
+                    </a>
+                  </div>
+            
+                  <!-- Ordered List for Skills (Centered & Wrapped) -->
+                  <div id="skills-list" class="d-flex flex-wrap justify-content-center gap-3 container-sm">
+                    <!-- Dynamic Skill Items will go here -->
+                  </div>
                 </div>
               </td>
             </tr>
@@ -584,7 +597,7 @@
   const docSnap = await getDoc(userProfileRef);
   let name = "";
   if(docSnap.exists()){
-    name = docSnap.data().about.firstname + " " + docSnap.data().about.lastname || "";
+    name = docSnap.data().about.firstName + " " + docSnap.data().about.lastName || "";
   }
 
             // Hide the signup button and show "Logout"
@@ -611,13 +624,15 @@
 
             // Save username to localStorage for later use
             localStorage.setItem("username", username);
-
+            // console.log(username);
             // Update welcome text with the username
             if(name){
               welcomeText.innerHTML = `Hii, ${name}`;
             }
           else if(username)
             welcomeText.innerHTML = `Hii, ${username}`;
+          
+            
             else{
               userMail.innerHTML = username; // Optionally update email 
             }

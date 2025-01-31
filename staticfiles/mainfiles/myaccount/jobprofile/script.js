@@ -334,10 +334,12 @@ editSkillForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   // console.log("clikc");
 
-  const skillname = document.getElementById("skill-name").value.split(",");
+  let skillname = document.getElementById("skill-name").value.split(",");
   // console.log(skillName.length);
 
-  //    console.log(skillName);
+  skillname = skillname.map(skill => skill.trim());
+  // skillname = [' python' , '  dsa']
+    //  console.log(skillname);
   const docSnap = await getDoc(skillsCollection);
 
   if (docSnap.exists) {
@@ -355,7 +357,7 @@ editSkillForm.addEventListener("submit", async (e) => {
         // console.log("one");
         const newSkills = {
           id: new Date().getTime().toString(),
-          skillName: skillname,
+          skillName: skillname[0],
         };
         skillList.push(newSkills);
       } else {
@@ -370,7 +372,26 @@ editSkillForm.addEventListener("submit", async (e) => {
         }
         // console.log(skillList);
       }
+
     }
+    
+
+    skillList = [
+      ...new Map(
+        skillList.map(skill => [skill.skillName.toLowerCase(), { ...skill, skillName: skill.skillName.toLowerCase() }])
+      ).values()
+    ];
+    
+    // console.log(skillList);
+    
+    // console.log(skillList);
+    // skillList = skillList.map(item.skillName => item.skillName.toLowerCase());
+    // console.log(skillList);
+    // skillList = [...new Set(skillList)];
+    // skillList = Array.from(new Map(skillList.map(item => [item.skillName.toLowerCase(), item])).values());
+
+    // console.log(skillList);  
+    
     const auditForm = docSnap.data().audit_fields;
     var currentDate = window.getCurrentDateTime();
 

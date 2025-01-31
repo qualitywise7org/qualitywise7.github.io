@@ -322,8 +322,17 @@
 //   }
 // }
 
+
+
 const email = localStorage.getItem("email");
+const username = localStorage.getItem("username");
+const phonenumber = localStorage.getItem("phonenumber");
 // console.log(email);
+// console.log(username);
+let totalUserAssessment;
+let uniqueItems;
+let totalAssessments;
+
 function loopingForUserdataabout(data, count, n) {
   // console.log(data);
 
@@ -388,14 +397,16 @@ async function assessmentsPercentage() {
       ...doc.data(), // Spread the document data
     }));
 
-    const totalAssessments = Object.keys(assessments).length;
+    totalAssessments = Object.keys(assessments).length;
     // console.log(totalAssessments);
-    const totalUserAssessment = await fetchAllAssessmentResults(email);
-    console.log(totalUserAssessment);
+    totalUserAssessment = await fetchAllAssessmentResults(email);
+    // console.log(totalUserAssessment);
     const assessmentPercent = Math.floor(
       (totalUserAssessment / totalAssessments) * 100
     ); // Calculate percentage
+
     showProgress(3, 3, assessmentPercent);
+    
   } catch (error) {
     console.error("Error getting user data from user_profile:", error);
   }
@@ -408,28 +419,26 @@ async function fetchAllAssessmentResults(email) {
     }
 
     // Reference to the 'user_assessment_results' collection
-    
+
     const docSnap = await getDoc(doc(db, "user_assessment_results", email));
 
     // Fetch all documents from 'user_assessment_results'
-    
+
     // console.log(docSnap.data().results);
     const userResults = docSnap.data()?.results || [];
 
     // console.log(userResults);
-    let uniqueItems = Array.from(new Map(userResults.map(item => [item.quizCode.toLowerCase(), item])).values());
+    uniqueItems = Array.from(
+      new Map(
+        userResults.map((item) => [item.quizCode.toLowerCase(), item])
+      ).values()
+    );
 
-    // console.log(uniqueItems);  
+    // console.log(uniqueItems);
     return uniqueItems.length;
-    
-    
 
     // Iterate through each document in 'user_assessment_results'
-    
 
-    
-
-    
     // return assessmentLength;
   } catch (error) {
     console.error("Error fetching assessment results:", error);
@@ -440,10 +449,12 @@ async function fetchAllAssessmentResults(email) {
 async function isUser() {
   // console.log("isUser");
   try {
+    const leadDocSnap = await getDoc(doc(db, "lead", email));
     const docSnap = await getDoc(doc(db, "user_profile", email));
     if (docSnap.exists()) {
-      const userData = docSnap.data();
-      // console.log(userData);
+      const userData = docSnap?.data() || {};
+      // console.log(docSnap.data());
+      console.log("userprofle");
 
       document.getElementById("view_cv").href = userData.about.cv || "#";
 
@@ -456,20 +467,19 @@ async function isUser() {
       let experienceData = userData.experience || {};
 
       // Combine first and last name for aboutData
-      // if(aboutData.firstname )
-      aboutData.fullname = aboutData.firstname + " " + aboutData.lastname || "";
+      // if(aboutData.firstName )
+      // console.log(aboutData.firstName);
+      // console.log(aboutData.lastName);
+      aboutData.fullname = aboutData?.firstName + aboutData?.lastName || "";
+      // console.log(aboutData.fullname);
 
       // Removing unnecessary fields
-      const {cv , firstname, lastname, email, phoneNo, ...updatedAboutData } =
+      const { cv, firstName, lastName, email, phoneNo, ...updatedAboutData } =
         aboutData;
-        // console.log(updatedAboutData);
+      // console.log(updatedAboutData);
 
       // Calculate completion percentages for each section
-      const personalProfilePercent = loopingForUserdata(
-        updatedAboutData,
-        0,
-        4
-      );
+      const personalProfilePercent = loopingForUserdata(updatedAboutData, 0, 4);
       const socialPercent = loopingForUserdata(
         socialData,
         0,
@@ -510,27 +520,76 @@ async function isUser() {
       await assessmentsPercentage();
       showProgress(1, 1, personalProfilePercent);
       showProgress(2, 2, jobProfilePercent);
-    } else {
+      
+      
+      
+      // Skills Data (replace with actual dynamic data)
+      // console.log(skillData);
+      let skills = [];
+      
+      // Populate skills list dynamically with flex-wrap
+      if(Object.keys(skillData).length !== 0){
+        console.log(Object.keys(skillData).length);
+        // console.log(skills);
+        
+        // console.log(uniqueItems);
+        
+        // console.log(totalUserAssessment);
+        // console.log(totalAssessments);
+        skillData.forEach(item => {
+          if (!skills.includes(item.skillName)) {
+            skills.push(item.skillName);
+          }
+        });
+        skills = skills.map(skill => skill.trim());
+        // Log the updated skills array
+        let matchingCount = skills.filter(skill => 
+          uniqueItems.some(item => item.quizCode.toLowerCase() === skill.toLowerCase())
+        ).length;
+        
+        // console.log(matchingCount);
+        document.getElementById("progress-count").textContent = `${matchingCount}/${totalAssessments}`; 
+        
+        const skillsList = document.getElementById("skills-list");
+        skills.forEach((skill, index) => {
+          const skillItem = document.createElement("span");
+          // skillItem.className = "badge bg-primary text-light px-3 py-2"; // Bootstrap badge styling
+          skillItem.textContent = `${index + 1}. ${skill}`;
+          skillsList.appendChild(skillItem);
+        });
+      }
+
+      
+    } else if (leadDocSnap.exists()) {
+      console.log("lead");
       // If user profile does not exist, check the lead collection
       // const docSnap = await getDoc(doc(db, "user_profile", email));
       const userDocRef = doc(db, "user_profile", email);
-      const leadDocRef = doc(db, "lead", email);
-      const leadDocSnap = await getDoc(leadDocRef);
+      // const leadDocSnap = await getDoc(leadDocRef);
       const userData = leadDocSnap.data();
       // console.log(userData);
+      // console.log(leadDocSnap.data());
       let v = userData.full_name.split(" ");
       // console.log(v);
-      const firstName = v[0];
-      const lastName = v[1] || "";
-      
-      let formData = { about: { email : userData.email, firstname: firstName , lastname : lastName } };
+      const firstname = v[0];
+      const lastname = v[1] || "";
+
+      let formData = {
+        about: {
+          email: userData.email,
+          firstName: firstname,
+          lastName: lastname,
+          phoneNo: userData.phonenumber,
+        },
+      };
       var currentDate = window.getCurrentDateTime();
       // console.log(currentDate);
       if (leadDocSnap.exists()) {
-        formData.about = { ...formData.about, ...leadDocSnap.data()};
+        formData.about = { ...formData.about, ...leadDocSnap.data() };
         delete formData.about.full_name;
+        delete formData.about.phonenumber;
       }
-      
+
       // // Add audit fields
       formData.audit_fields = {
         createdAt: currentDate,
@@ -538,12 +597,49 @@ async function isUser() {
         updatedAt: "",
         updatedBy: "",
       };
-      // console.log(formData);
+      formData.remark = null;
+      console.log(formData);
 
       // // Create a new user profile document
       await setDoc(userDocRef, formData);
       // console.log("success");
-      
+    } else {
+      const userDocRef = doc(db, "user_profile", email);
+      const leadDocRef = doc(db, "lead", email);
+      console.log("no");
+      const userEmail = email;
+      const userName = username;
+      let phoneNumber = phonenumber;
+      if (phoneNumber === "null") {
+        phoneNumber = "";
+      }
+      // console.log(userEmail, userName, phoneNumber);
+      const separate = userName.trim();
+      var arr = separate.split(" ");
+      // console.log(arr[1]);
+      let formData = {
+        about: {
+          firstName: arr[0],
+          lastName: arr[1],
+          email: userEmail,
+          phoneNo: phoneNumber,
+        },
+      };
+      var currentDate = window.getCurrentDateTime();
+      formData.audit_fields = {
+        createdAt: currentDate,
+        createdBy: userEmail,
+        updatedAt: "",
+        updatedBy: "",
+      };
+      formData.remark = null;
+      console.log(formData);
+      await setDoc(userDocRef, formData);
+      await setDoc(leadDocRef, {
+        full_name: userName,
+        email: userEmail,
+        phonenumber: phoneNumber,
+      });
     }
   } catch (error) {
     console.error("Error getting user data from user_profile:", error);

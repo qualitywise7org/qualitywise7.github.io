@@ -70,7 +70,7 @@ async function saveUserDataToFirestore(userId, username, email, phoneNumber) {
 
         await setDoc(leadDocRef, {
             full_name: username,
-            phonenumber: phoneNumber,
+            phonenumber: phoneNumber || "",
             email: email,
         });
     } catch (error) {
@@ -114,7 +114,7 @@ googleSignUp.addEventListener("click", async () => {
         await saveUserDataToFirestore(user.uid, user.displayName, user.email, user.phoneNumber);
 
         // Redirect to account page
-        window.location.href = "/myaccount/cv_upload/";
+        window.location.href = "/myaccount";
     } catch (error) {
         console.log("Error signing up with Google: ", error.message);
     }

@@ -485,7 +485,7 @@
   const docSnap = await getDoc(userProfileRef);
   let name = "";
   if(docSnap.exists()){
-    name = docSnap.data().about.firstname + " " + docSnap.data().about.lastname || "";
+    name = docSnap.data().about.firstName + " " + docSnap.data().about.lastName || "";
   }
 
             // Hide the signup button and show "Logout"
@@ -512,13 +512,15 @@
 
             // Save username to localStorage for later use
             localStorage.setItem("username", username);
-
+            // console.log(username);
             // Update welcome text with the username
             if(name){
               welcomeText.innerHTML = `Hii, ${name}`;
             }
           else if(username)
             welcomeText.innerHTML = `Hii, ${username}`;
+          
+            
             else{
               userMail.innerHTML = username; // Optionally update email 
             }

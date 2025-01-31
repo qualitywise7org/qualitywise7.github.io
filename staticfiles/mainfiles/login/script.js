@@ -162,6 +162,7 @@ googleLogin.addEventListener("click", async () => {
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
+    // console.log(user.email);
 
     // Check if the email is already registered
     const userExists = await checkIfUserExists(user.email);
@@ -173,6 +174,7 @@ googleLogin.addEventListener("click", async () => {
     // Store user info in localStorage (consider security implications)
     localStorage.setItem("uid", user.uid);
     localStorage.setItem("email", user.email);
+    localStorage.setItem("phonenumber", user.phoneNumber);
 
     // Redirect to home page
     window.location.href = "/";
