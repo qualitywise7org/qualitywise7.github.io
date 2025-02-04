@@ -80,8 +80,14 @@ body {
   font-family: "Figtree", sans-serif;
   font-size: 1.2rem;
   line-height: 1.6rem;
-  background-image: linear-gradient(#b5b682, #fff, #b5b682);
-  min-height: 90vh;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  min-height: 100vh;
+
+}
+.table{
+  border-radius: 5px;
+  /* border: solid 5px rgb(8, 8, 67); */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .articles {
@@ -161,7 +167,7 @@ body {
 
 /* Style the table to reduce width and height */
 .custom-table {
-  max-width: 600px; /* Reduce the overall table width */
+  max-width: 700px; /* Reduce the overall table width */
   margin: 0 auto;   /* Center the table */
 }
 
