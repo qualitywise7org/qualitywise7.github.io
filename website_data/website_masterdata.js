@@ -1,6 +1,6 @@
 
 
-const category_masterdata = [
+    const category_masterdata = [
   {
     "code": "general",
     "name": "General"
@@ -203,7 +203,7 @@ const category_masterdata = [
     
     const profile_masterdata = [
   {
-    "code": "web_developer, software engineer, web developer, system engineer",
+    "code": "web_developer",
     "name": "Web Developer(Reactjs, html, css, js etc)",
     "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
     "minimum_qualifications": [
@@ -229,8 +229,7 @@ const category_masterdata = [
       "web",
       "frontend_developer",
       "frontend",
-      "react",
-      "software engineer"
+      "react"
     ],
     "colleges": [
       "mits",
@@ -11344,3 +11343,4 @@ const category_masterdata = [
         industry_masterdata,
         skills_masterdata
     };
+    

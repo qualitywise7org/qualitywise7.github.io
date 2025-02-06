@@ -6,7 +6,7 @@
       name="description"
       content="Explore our Courses: Web Development, Backend Development, and Full Stack Development. Mock Interviews and Career Consultancy Services. Affordable Pricing and Expert Guidance. Contact us on WhatsApp to Buy Now!"
     />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/details/style.css" />
+    <!-- <link rel="stylesheet" href="/staticfiles/mainfiles/details/style.css" /> -->
     <%- include('../../partials/head.ejs') %>
     <script>
       function trackBuyButtonClick(buttonName) {
@@ -23,585 +23,594 @@
 
   <body>
     <%- include('../../partials/navbar.ejs') %>
+
+    <!-- webdevelopment -->
+    <div class="container-fluid p-3" id="webdevelopment" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Learn the skills you need to become a web development .
+          </h5>
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  <a
+                    href="../curriculum/?productcode=webdevelopment"
+                    id="linkbutton"
+                    >Go the details about our courses</a
+                  >
+                </li>
+                <li>
+                  <strong>Description:</strong> HTML, CSS, JavaScript, Reactjs,
+                  Nodejs, MERN Stack, Data Structure and Algorithms, C language
+                </li>
+                <li>You will get a T-shirt.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backend development  -->
+    <div class="container-fluid p-3" id="backendjava" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Learn the skills you need to become a Backend Java .
+          </h5>
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  <a href="../curriculum/?productcode=backendjava"
+                    >Go the details about our courses</a
+                  >
+                </li>
+                <li>
+                  <strong>Description:</strong> Java, Nodejs, MySQL, Mongodb,
+                  SQL, Data Structure and Algorithms, C language.
+                </li>
+                <li>You will get a T-shirt.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullstack Web Developer  -->
+    <div class="container-fluid p-3" id="fullstack" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Learn the skills you need to become a Full Stack Web Development .
+          </h5>
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  <a href="../curriculum/?productcode=fullstack"
+                    >Go the details about our courses</a
+                  >
+                </li>
+                <li>
+                  <strong>Description:</strong>HTML, CSS, JavaScript, Reactjs,
+                  Nodejs (with deep focus), MERN Stack, Data Structure and
+                  Algorithms, C language.
+                </li>
+                <!-- <li>Learn the full stack, from front-end (React) to back-end (Node.js and Express) and the database
+                                (MongoDB), making you a versatile developer.</li> -->
+                <li>
+                  Full Stack/MERN developers are in high demand, making it a
+                  valuable skill in the job market.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quality Assurance  -->
+    <div class="container-fluid p-3" id="qa" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Learn the skills you need to become a Quality Assurance (QA)
+            Engineer .
+          </h5>
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  <a href="../curriculum/?productcode=qa"
+                    >Go the details about our courses</a
+                  >
+                </li>
+                <li>
+                  Develop skills in manual and automated testing, test planning,
+                  and defect management.
+                </li>
+                <li>
+                  Gain a valuable QA certification that boosts your credibility
+                  with potential employers.
+                </li>
+                <li><strong>Duration :</strong> 6 months</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Major Project  -->
+    <div class="container-fluid p-3" id="majorproject" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Creating a clones of swiggy, Flipkart, Amazon.
+          </h5>
+
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <!-- <li><a href="../curriculum/?productcode=fullstack">Go the details about our courses</a></li> -->
+                <li>
+                  <strong>Description:</strong> Clones of swiggy, Flipkart,
+                  Amazon, etc.
+                </li>
+                <li>
+                  Creating a project similar to popular platforms like Swiggy,
+                  Flipkart, Amazon, or any other e-commerce or food delivery
+                  service can be a great learning experience.
+                </li>
+                <!-- <li> Full Stack/MERN developers are in high demand, making it a valuable skill in the job market.
+                          </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CV creation  -->
+    <div class="container-fluid p-3" id="cvcreation" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Resume: Your Guide to Creating Impressive CVs
+          </h5>
+
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  I plan to create your CV through a series of instructional
+                  videos that guide you in crafting an effective resume.
+                </li>
+                <li>
+                  Host live or recorded webinars where you provide insights into
+                  CV creation and interact directly with potential students.
+                </li>
+                <li>
+                  Offer downloadable resources, such as templates and
+                  checklists, to help students create their CVs.
+                </li>
+                <li>
+                  <a href="../cv_creation/index.html"
+                    >To See Sample Cv and Resume</a
+                  >
+                </li>
+                <li><strong>Duration :</strong> 1 Day</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Video creation  -->
+    <div class="container-fluid p-3" id="videoprofile" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Video Profile: Your Guide to Crafting Impressive Video Profiles
+          </h5>
+
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <!-- <li><a href="../pricing/?productcode=videocreation">Go the details about our courses</a></li> -->
+                <!-- <li>Create an informative and visually appealing course website, providing essential details about
+                                the
+                                course, such as its content, instructors, and pricing.</li>
+                            <li>Create a sense of urgency by offering time-limited discounts or exclusive bonuses for early
+                                enrollees,
+                                encouraging potential students to take action.</li> -->
+                <li>we will make a video profile for us.</li>
+                <li><strong>Duration :</strong> 1 Day</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mock Interview  -->
+    <div class="container-fluid p-3" id="mockinterview" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Mock Interview: Your Easy Guide to Improving Interview Skills
+          </h5>
+
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <!-- <li><a href="../pricing/?productcode=mockinterview">Go the details about our courses</a></li> -->
+                <li>
+                  Your course improves interview skills, boosts confidence, and
+                  prepares students for real interviews.
+                </li>
+                <!-- <li>Feature authentic testimonials from students who have benefited from your course, showcasing
+                                real-world
+                                success stories.</li> -->
+                <li><strong>Duration :</strong> 1 Day</li>
+                <li>
+                  When you purchase 10 mock interview sessions with us, you can
+                  enjoy a discount of up to ₹4000.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jobs for you  -->
+    <div class="container-fluid p-3" id="jobsforyou" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Find jobs relevant to your qualifications
+          </h5>
+
+          <div class="text-center p-2">
+            <!-- <h4>I want to search for jobs related to a specific domain. Please provide me with information on how to do
+                    that.</h4> -->
+            <h4>Login to see your jobs</h4>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="showjobsforyou()"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Chargeable Internship  -->
     <div
-      class="card text-center container"
-      id="webdevelopment"
-      style="display: none"
-    >
-      <p>Learn the skills you need to become a web development .</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              <a
-                href="../curriculum/?productcode=webdevelopment"
-                id="linkbutton"
-                >Go the details about our courses</a
-              >
-            </li>
-            <li>
-              <strong>Description:</strong> HTML, CSS, JavaScript, Reactjs,
-              Nodejs, MERN Stack, Data Structure and Algorithms, C language
-            </li>
-            <li>You will get a T-shirt.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- backend java -->
-    <div
-      class="card text-center container"
-      id="backendjava"
-      style="display: none"
-    >
-      <!-- <h1>Enroll in Our Backend Java Course</h1> -->
-      <p>Learn the skills you need to become a Backend Java .</p>
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              <a href="../curriculum/?productcode=backendjava"
-                >Go the details about our courses</a
-              >
-            </li>
-            <li>
-              <strong>Description:</strong> Java, Nodejs, MySQL, Mongodb, SQL,
-              Data Structure and Algorithms, C language.
-            </li>
-            <li>You will get a T-shirt.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- fullstack development -->
-    <div
-      class="card text-center container"
-      id="fullstack"
-      style="display: none"
-    >
-      <!-- <h1>Enroll in Full Stack Development</h1> -->
-      <p>Learn the skills you need to become a Full Stack development .</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              <a href="../curriculum/?productcode=fullstack"
-                >Go the details about our courses</a
-              >
-            </li>
-            <li>
-              <strong>Description:</strong>HTML, CSS, JavaScript, Reactjs,
-              Nodejs (with deep focus), MERN Stack, Data Structure and
-              Algorithms, C language.
-            </li>
-            <!-- <li>Learn the full stack, from front-end (React) to back-end (Node.js and Express) and the database
-                        (MongoDB), making you a versatile developer.</li> -->
-            <li>
-              Full Stack/MERN developers are in high demand, making it a
-              valuable skill in the job market.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- QA Engineer-->
-    <div class="card text-center container" id="qa" style="display: none">
-      <!-- <h1>Enroll in Full Stack Development</h1> -->
-      <p>
-        Learn the skills you need to become a Quality Assurance (QA) Engineer.
-      </p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              <a href="../curriculum/?productcode=qa"
-                >Go the details about our courses</a
-              >
-            </li>
-            <li>
-              Develop skills in manual and automated testing, test planning, and
-              defect management.
-            </li>
-            <li>
-              Gain a valuable QA certification that boosts your credibility with
-              potential employers.
-            </li>
-            <li><strong>Duration :</strong> 6 months</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Major Project Development -->
-    <div
-      class="card text-center container"
-      id="majorproject"
-      style="display: none"
-    >
-      <!-- <h1>Enroll in Full Stack Development</h1> -->
-      <p>Creating a clones of swiggy, Flipkart, Amazon.</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <!-- <li><a href="../curriculum/?productcode=fullstack">Go the details about our courses</a></li> -->
-            <li>
-              <strong>Description:</strong> Clones of swiggy, Flipkart, Amazon,
-              etc.
-            </li>
-            <li>
-              Creating a project similar to popular platforms like Swiggy,
-              Flipkart, Amazon, or any other e-commerce or food delivery service
-              can be a great learning experience.
-            </li>
-            <!-- <li> Full Stack/MERN developers are in high demand, making it a valuable skill in the job market.
-                    </li> -->
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- CV creation -->
-    <div
-      class="card text-center container"
-      id="cvcreation"
-      style="display: none"
-    >
-      <p>Resume: Your Guide to Creating Impressive CVs</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              I plan to create your CV through a series of instructional videos
-              that guide you in crafting an effective resume.
-            </li>
-            <li>
-              Host live or recorded webinars where you provide insights into CV
-              creation and interact directly with potential students.
-            </li>
-            <li>
-              Offer downloadable resources, such as templates and checklists, to
-              help students create their CVs.
-            </li>
-            <li>
-              <a href="../cv_creation/index.html"
-                >To See Sample Cv and Resume</a
-              >
-            </li>
-            <li><strong>Duration :</strong> 1 Day</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div class="body_content" id="displaycv" style="display: none;">
-    <div class="container text-center">
-      <h1>Sample CVs</h1>
-      <div class="row align-items-start">
-        <div class="col-md-4">
-          <embed src="../assets/sample_cvs/Rachit Goel, IIITM, Gwalior.pdf#view=fit&toolbar=0" type="application/pdf"
-            class="pdf-embed" width="90%" height="380px" />
-        </div>
-        <div class="col-md-4">
-          <embed src="../assets/sample_cvs/good cv Ayush_Meena_SDE.pdf#view=fit&toolbar=0" type="application/pdf"
-            class="pdf-embed" width="90%" height="380px" />
-        </div>
-        <div class="col-md-4">
-          <embed src="../assets/sample_cvs/Rohit Prajapati_cv pattern.pdf#view=fit&toolbar=0" type="application/pdf"
-            class="pdf-embed" width="90%" height="380x" />
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-    <!-- Videocreation -->
-    <div
-      class="card text-center container"
-      id="videoprofile"
-      style="display: none"
-    >
-      <!-- <h1>Enroll in Videos Creation</h1> -->
-      <p>Video Profile: Your Guide to Crafting Impressive Video Profiles</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <!-- <li><a href="../pricing/?productcode=videocreation">Go the details about our courses</a></li> -->
-            <!-- <li>Create an informative and visually appealing course website, providing essential details about
-                        the
-                        course, such as its content, instructors, and pricing.</li>
-                    <li>Create a sense of urgency by offering time-limited discounts or exclusive bonuses for early
-                        enrollees,
-                        encouraging potential students to take action.</li> -->
-            <li>we will make a video profile for us.</li>
-            <li><strong>Duration :</strong> 1 Day</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- mockinterview -->
-    <div
-      class="card text-center container"
-      id="mockinterview"
-      style="display: none"
-    >
-      <!-- <h1>Enroll in mock Interview</h1> -->
-      <p>Mock Interview: Your Easy Guide to Improving Interview Skills</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <!-- <li><a href="../pricing/?productcode=mockinterview">Go the details about our courses</a></li> -->
-            <li>
-              Your course improves interview skills, boosts confidence, and
-              prepares students for real interviews.
-            </li>
-            <!-- <li>Feature authentic testimonials from students who have benefited from your course, showcasing
-                        real-world
-                        success stories.</li> -->
-            <li><strong>Duration :</strong> 1 Day</li>
-            <li>
-              When you purchase 10 mock interview sessions with us, you can
-              enjoy a discount of up to ₹4000.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- jobsforyou -->
-    <div
-      class="card text-center container"
-      id="jobsforyou"
-      style="display: none; padding: 50px"
-    >
-      <!-- <h1>Enroll in Jobs For You</h1> -->
-      <!-- <h2>Search for jobs related to specific Qualification</h2> -->
-      <h2>Find jobs relevant to your qualifications</h2>
-
-      <!-- <ul>
-            <li>Clearly communicate the value of your course in helping students secure suitable job positions.
-                Emphasize how it addresses their specific career needs and goals.</li>
-            <li> Identify and define your course's ideal audience. Understand their job search challenges and tailor
-                your marketing to address their unique needs.</li>
-            <li>Highlight the expertise of your instructors or career coaches. Showcase their qualifications and
-                experience to build trust.</li>
-            <li>Craft persuasive course descriptions that detail how the course improves job search skills, including
-                resume building, interview preparation, and networking strategies.</li>
-            <li>Feature authentic testimonials and success stories from students who have successfully landed jobs after
-                taking your course. These provide social proof and build credibility.</li>
-        </ul> -->
-
-      <div class="text-center p-2">
-        <!-- <h4>I want to search for jobs related to a specific domain. Please provide me with information on how to do
-                that.</h4> -->
-        <h4>Login to see your jobs</h4>
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="showjobsforyou()"
-        >
-          Login
-        </button>
-      </div>
-    </div>
-
-    <!-- chargeableinternship -->
-    <div
-      class="card text-center container"
+      class="container-fluid p-3"
       id="chargeableinternship"
       style="display: none"
     >
-      <!-- <h1>Enroll in Chargeable Internship</h1> -->
-      <p>Chargeable Internship</p>
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">Chargable Internship</h5>
 
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <!-- <li><a href="../pricing/?productcode=chargeableinternship">Go the details about our courses</a></li> -->
-            <!-- <li>Define your ideal participants, such as students or early career professionals.</li> -->
-            <!-- <li> Your marketing to address their specific career goals and needs.</li> -->
-            <!-- <li>Emphasize the quality of the internship program, including the companies.</li>
-                    <li>Be transparent about the cost of the internship and provide flexible payment options.</li> -->
-            <!-- <li> Justify the price by highlighting the benefits and opportunities provided.</li> -->
-            <li>
-              Participants will have the opportunity to acquire a wealth of
-              knowledge and skills related to the field.
-            </li>
-            <li>Student will be paying for the internship.</li>
-            <li><strong>Duration :</strong> 3-6 months</li>
-          </ul>
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <!-- <li><a href="../pricing/?productcode=chargeableinternship">Go the details about our courses</a></li> -->
+                <!-- <li>Define your ideal participants, such as students or early career professionals.</li> -->
+                <!-- <li> Your marketing to address their specific career goals and needs.</li> -->
+                <!-- <li>Emphasize the quality of the internship program, including the companies.</li>
+                        <li>Be transparent about the cost of the internship and provide flexible payment options.</li> -->
+                <!-- <li> Justify the price by highlighting the benefits and opportunities provided.</li> -->
+                <li>
+                  Participants will have the opportunity to acquire a wealth of
+                  knowledge and skills related to the field.
+                </li>
+                <li>Student will be paying for the internship.</li>
+                <li><strong>Duration :</strong> 3-6 months</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- Free Internship  -->
+    <div class="container-fluid p-3" id="freeinternship" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">Free Internship</h5>
 
-    <!-- freeinternship -->
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <!-- <li><a href="../pricing/?productcode=freeinternship">Go the details about our courses</a></li> -->
+                <!-- <li>Clearly state the value and benefits of your course, emphasizing the real-world experience and skills.</li>
+                        <li> Define the specific group of students or professionals who would benefit most from your internship program.</li> -->
+                <li>
+                  Provide a clear and detailed description of the internship
+                  role, including the main responsibilities and tasks involved.
+                </li>
+                <li>The apply option that is available on the homepage.</li>
+                <li><strong>Duration :</strong> 4-6 months</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- English assessments  -->
+    <div class="container-fluid p-3" id="english" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            English Assessment: Your Path to Improving Language Skills
+          </h5>
+
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  I plan to conduct comprehensive English assessments through a
+                  series of exercises and tests that evaluate various language
+                  skills.
+                </li>
+                <li>
+                  Host live or recorded sessions where I provide insights into
+                  language learning strategies and interact directly with
+                  participants.
+                </li>
+                <li>
+                  Offer downloadable resources, such as grammar guides and
+                  vocabulary lists, to aid participants in their language
+                  improvement journey.
+                </li>
+                <li><strong>Duration:</strong> 2 Days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Devops  -->
+    <div class="container-fluid p-3" id="devops" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            DevOps Service: Streamline Your Development and Operations
+          </h5>
+
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  I plan to provide comprehensive DevOps services through a
+                  series of tutorials and practical demonstrations that cover
+                  automation, continuous integration, and deployment strategies.
+                </li>
+                <li>
+                  Host live or recorded sessions where I offer insights into
+                  DevOps best practices, tools, and techniques, and engage
+                  directly with participants to address their specific needs and
+                  challenges.
+                </li>
+                <li>
+                  Offer downloadable resources, such as scripts, configuration
+                  files, and workflow diagrams, to support participants in
+                  implementing DevOps practices in their projects.
+                </li>
+                <li><strong>Duration:</strong> 3 Days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- marketing  -->
+    <div class="container-fluid p-3" id="social-media" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Social Media Marketing: Boost Your Online Presence
+          </h5>
+
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  Offer targeted social media marketing strategies to enhance
+                  your online visibility and engagement.
+                </li>
+                <li>
+                  Provide personalized consultations and insights on effective
+                  social media practices and content creation.
+                </li>
+                <li>
+                  Access downloadable resources including content calendars and
+                  engagement tips to support your social media efforts.
+                </li>
+                <li><strong>Duration:</strong> 3 Days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SEO  -->
+    <div class="container-fluid p-3" id="seo" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            SEO Service: Optimize Your Website for Better Rankings
+          </h5>
+
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  Implement proven SEO strategies to improve your website's
+                  search engine rankings and visibility.
+                </li>
+                <li>
+                  Offer tailored advice and best practices for on-page and
+                  off-page optimization techniques.
+                </li>
+                <li>
+                  Access downloadable resources including keyword research
+                  guides and SEO audit templates.
+                </li>
+                <li><strong>Duration:</strong> 3 Days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Computer Operator  -->
     <div
-      class="card text-center container"
-      id="freeinternship"
-      style="display: none"
-    >
-      <!-- <h1>Enroll in Free Internship</h1> -->
-      <p>Free Internship</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <!-- <li><a href="../pricing/?productcode=freeinternship">Go the details about our courses</a></li> -->
-            <!-- <li>Clearly state the value and benefits of your course, emphasizing the real-world experience and skills.</li>
-                    <li> Define the specific group of students or professionals who would benefit most from your internship program.</li> -->
-            <li>
-              Provide a clear and detailed description of the internship role,
-              including the main responsibilities and tasks involved.
-            </li>
-            <li>The apply option that is available on the homepage.</li>
-            <li><strong>Duration :</strong> 4-6 months</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- English Assessment -->
-    <div class="card text-center container" id="english" style="display: none">
-      <p>English Assessment: Your Path to Improving Language Skills</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              I plan to conduct comprehensive English assessments through a
-              series of exercises and tests that evaluate various language
-              skills.
-            </li>
-            <li>
-              Host live or recorded sessions where I provide insights into
-              language learning strategies and interact directly with
-              participants.
-            </li>
-            <li>
-              Offer downloadable resources, such as grammar guides and
-              vocabulary lists, to aid participants in their language
-              improvement journey.
-            </li>
-            <li><strong>Duration:</strong> 2 Days</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- DevOps Service -->
-    <div class="card text-center container" id="devops" style="display: none">
-      <p>DevOps Service: Streamline Your Development and Operations</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              I plan to provide comprehensive DevOps services through a series
-              of tutorials and practical demonstrations that cover automation,
-              continuous integration, and deployment strategies.
-            </li>
-            <li>
-              Host live or recorded sessions where I offer insights into DevOps
-              best practices, tools, and techniques, and engage directly with
-              participants to address their specific needs and challenges.
-            </li>
-            <li>
-              Offer downloadable resources, such as scripts, configuration
-              files, and workflow diagrams, to support participants in
-              implementing DevOps practices in their projects.
-            </li>
-            <li><strong>Duration:</strong> 3 Days</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Social Media Marketing Service -->
-    <div
-      class="card text-center container"
-      id="social-media"
-      style="display: none"
-    >
-      <p>Social Media Marketing: Boost Your Online Presence</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              Offer targeted social media marketing strategies to enhance your
-              online visibility and engagement.
-            </li>
-            <li>
-              Provide personalized consultations and insights on effective
-              social media practices and content creation.
-            </li>
-            <li>
-              Access downloadable resources including content calendars and
-              engagement tips to support your social media efforts.
-            </li>
-            <li><strong>Duration:</strong> 3 Days</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- SEO Service -->
-    <div class="card text-center container" id="seo" style="display: none">
-      <p>SEO Service: Optimize Your Website for Better Rankings</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              Implement proven SEO strategies to improve your website's search
-              engine rankings and visibility.
-            </li>
-            <li>
-              Offer tailored advice and best practices for on-page and off-page
-              optimization techniques.
-            </li>
-            <li>
-              Access downloadable resources including keyword research guides
-              and SEO audit templates.
-            </li>
-            <li><strong>Duration:</strong> 3 Days</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Computer Operator Service -->
-    <div
-      class="card text-center container"
+      class="container-fluid p-3"
       id="computer-operator"
       style="display: none"
     >
-      <p>Computer Operator: Excel & PowerPoint Skills</p>
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Computer Operator: Excel & PowerPoint Skills
+          </h5>
 
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              Enhance your Excel and PowerPoint skills with practical
-              demonstrations and tutorials.
-            </li>
-            <li>
-              Learn time-saving tips and tricks for data analysis,
-              visualization, and presentation design.
-            </li>
-            <li>
-              Access downloadable resources including Excel templates and
-              PowerPoint slide designs.
-            </li>
-            <li><strong>Duration:</strong> 3 Days</li>
-          </ul>
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  Enhance your Excel and PowerPoint skills with practical
+                  demonstrations and tutorials.
+                </li>
+                <li>
+                  Learn time-saving tips and tricks for data analysis,
+                  visualization, and presentation design.
+                </li>
+                <li>
+                  Access downloadable resources including Excel templates and
+                  PowerPoint slide designs.
+                </li>
+                <li><strong>Duration:</strong> 3 Days</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Business Analysis Service -->
+    <!-- businees analysis  -->
     <div
-      class="card text-center container"
+      class="container-fluid p-3"
       id="business-analysis"
       style="display: none"
     >
-      <p>Business Analysis Service: Data Analysis & Strategy</p>
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Business Analysis Service: Data Analysis & Strategy
+          </h5>
 
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              Master data analysis techniques crucial for effective
-              decision-making and strategy development.
-            </li>
-            <li>
-              Learn methods for gathering and interpreting business data to
-              identify trends and insights.
-            </li>
-            <li>
-              Access practical case studies and real-world scenarios to apply
-              your skills.
-            </li>
-            <li><strong>Duration:</strong> 5 Days</li>
-          </ul>
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  Master data analysis techniques crucial for effective
+                  decision-making and strategy development.
+                </li>
+                <li>
+                  Learn methods for gathering and interpreting business data to
+                  identify trends and insights.
+                </li>
+                <li>
+                  Access practical case studies and real-world scenarios to
+                  apply your skills.
+                </li>
+                <li><strong>Duration:</strong> 5 Days</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- UI/UX course  -->
+    <div class="container-fluid p-3" id="ux-course" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Master the Art of User Experience: Enroll in Our Comprehensive
+            Course Today!
+          </h5>
 
-    <!-- UX course addition -->
-    <div
-      class="card text-center container"
-      id="ux-course"
-      style="display: none"
-    >
-      <p>
-        Master the Art of User Experience: Enroll in Our Comprehensive Course
-        Today!
-      </p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>Enhance your digital prowess! with us.</li>
-            <li>Craft seamless user experiences with our UX course.</li>
-            <li>Level up your design skills! Enroll in our UX course today.</li>
-            <li>Unlock the secrets of user-centric design in our UX course.</li>
-            <li>Elevate your career with our comprehensive UX course.</li>
-            <li><strong>Duration:</strong> 3 Month</li>
-          </ul>
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>Enhance your digital prowess! with us.</li>
+                <li>Craft seamless user experiences with our UX course.</li>
+                <li>
+                  Level up your design skills! Enroll in our UX course today.
+                </li>
+                <li>
+                  Unlock the secrets of user-centric design in our UX course.
+                </li>
+                <li>Elevate your career with our comprehensive UX course.</li>
+                <li><strong>Duration:</strong> 3 Month</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- paid Internship  -->
+    <div class="container-fluid p-3" id="paidinternship" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">Paid Internship</h5>
 
-    <!-- paid internship -->
-    <div
-      class="card text-center container"
-      id="paidinternship"
-      style="display: none"
-    >
-      <!-- <h1>Enroll in Paid Internship</h1> -->
-      <p>Paid Internship</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              <strong>Description:</strong
-              ><a href="../career/?productcode=paidinternship">
-                Please check paid internship on career page
-              </a>
-            </li>
-            <li>You will get a T-shirt.</li>
-          </ul>
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  <strong>Description:</strong
+                  ><a href="../career/?productcode=paidinternship">
+                    Please check paid internship on career page
+                  </a>
+                </li>
+                <li>You will get a T-shirt.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- Maths, Aptitute & Reasoning  -->
+    <div class="container-fluid p-3" id="math" style="display: none">
+      <div class="card full-width-card">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-semibold">
+            Math, Aptitude & Reasoning
+          </h5>
 
-    <!-- math apptitude & restioning -->
-    <div class="card text-center container" id="math" style="display: none">
-      <!-- <h1>Enroll in Paid Internship</h1> -->
-      <p>Math, Aptitude & Reasoning</p>
-
-      <div class="card_details">
-        <div class="col-md-6 left">
-          <ul>
-            <li>
-              <strong>Description:</strong> Comprehensive coverage of
-              mathematical concepts, aptitude skills, and reasoning abilities.
-              Topics include algebra, geometry, calculus, numerical reasoning,
-              logical reasoning, and problem-solving techniques.
-            </li>
-            <li>You will get a T-shirt.</li>
-          </ul>
+          <div class="card_details">
+            <div class="col-md-6 left">
+              <ul>
+                <li>
+                  <strong>Description:</strong> Comprehensive coverage of
+                  mathematical concepts, aptitude skills, and reasoning
+                  abilities. Topics include algebra, geometry, calculus,
+                  numerical reasoning, logical reasoning, and problem-solving
+                  techniques.
+                </li>
+                <li>You will get a T-shirt.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

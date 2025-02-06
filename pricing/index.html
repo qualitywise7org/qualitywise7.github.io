@@ -506,7 +506,86 @@
 
         <!-- Footer -->
 
-        <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
+        
+
+        <!-- WhatsApp Chat Button -->
+        <div class="chat-back-to-top">
+          <!-- <button id="like-button">
+            <i class="fa-solid fa-thumbs-up"></i>
+          </button>
+          <button id="dislike-button">
+            <i class="fa-solid fa-thumbs-down"></i>
+          </button> -->
+          <div class="whatsapp-chat">
+            <a
+              href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+              target="_blank"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+          <button
+            id="backToTopBtn"
+            class="back-to-top-btn"
+            onclick="scrollToTop()"
+          >
+            <i class="fa-solid fa-chevron-up"></i>
+          </button>
+        </div>
+
+        <!-- The Bootstrap Modal -->
+        <div
+          class="modal fade"
+          id="myModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  What Can We Improve on Our Website?
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <textarea
+                  id="feedback"
+                  class="form-control"
+                  placeholder="Your feedback..."
+                ></textarea>
+                <input
+                  type="text"
+                  id="phoneNumber"
+                  class="form-control"
+                  placeholder="Your phone number..."
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button id="submitFeedback" class="btn btn-primary">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="module" src="/staticfiles/mainfiles/pricing/script.js"></script>
+      </div>
+    </section>
+    <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
   <div class="container">
     <div class="row" >
       <!-- Quick Links Section -->
@@ -515,6 +594,7 @@
         <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">
           <li><a href="/" class="footer-link">Home</a></li>
           <li><a href="/about/" class="footer-link">About Us</a></li>
+          <li><a href="/demo/" class="footer-link">Demo</a></li>
           <li><a href="/results/" class="footer-link">Our Results</a></li>
           <li><a href="/pricing/" class="footer-link">Pricing</a></li>
           <li><a href="/campaign/workshop/registration/" class="footer-link">Workshop</a></li>
@@ -529,7 +609,7 @@
         <h5 class="text-uppercase font-weight-bold">Products</h5>
         <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
           <li><a href="/myaccount/jobsforyou/" class="footer-link">Jobs For You</a></li>
-          <li><a href="/myaccount/yourprofile/" class="footer-link">Your Profile</a></li>
+          <li><a href="/myaccount/jobprofile/" class="footer-link">Job Profile</a></li>
           <li><a href="/careeroptions/profileanalyzer/" class="footer-link">Profile Analyzer</a></li>
           <li><a href="/hirewithus/" class="footer-link">Hire With Us</a></li>
           <li><a href="/test/" class="footer-link">Test Yourself</a></li>
@@ -865,83 +945,5 @@
 
 
 
-
-        <!-- WhatsApp Chat Button -->
-        <div class="chat-back-to-top">
-          <!-- <button id="like-button">
-            <i class="fa-solid fa-thumbs-up"></i>
-          </button>
-          <button id="dislike-button">
-            <i class="fa-solid fa-thumbs-down"></i>
-          </button> -->
-          <div class="whatsapp-chat">
-            <a
-              href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-              target="_blank"
-            >
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
-          <button
-            id="backToTopBtn"
-            class="back-to-top-btn"
-            onclick="scrollToTop()"
-          >
-            <i class="fa-solid fa-chevron-up"></i>
-          </button>
-        </div>
-
-        <!-- The Bootstrap Modal -->
-        <div
-          class="modal fade"
-          id="myModal"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  What Can We Improve on Our Website?
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <textarea
-                  id="feedback"
-                  class="form-control"
-                  placeholder="Your feedback..."
-                ></textarea>
-                <input
-                  type="text"
-                  id="phoneNumber"
-                  class="form-control"
-                  placeholder="Your phone number..."
-                />
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button id="submitFeedback" class="btn btn-primary">
-                  Submit
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script type="module" src="/staticfiles/mainfiles/pricing/script.js"></script>
-      </div>
-    </section>
   </body>
 </html>

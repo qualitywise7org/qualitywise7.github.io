@@ -21,6 +21,7 @@ signupForm.addEventListener("submit", async (e) => {
     document.querySelectorAll('input[name="applying_for"]:checked').forEach((checkbox) => {
         applyingFor.push(checkbox.value);
     });
+    console.log(applyingFor);
   
   
     localStorage.setItem("full_name", username);

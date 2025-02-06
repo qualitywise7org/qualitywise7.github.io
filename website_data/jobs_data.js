@@ -27,7 +27,14 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "NA"
+        ],
+        "industry": [
+          "Government",
+          "Public Sector"
+        ]
       }
     }
   },
@@ -59,7 +66,20 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Sports, Patiala",
+          "Lal Bahadur Shastri Sports Complex, Delhi",
+          "Jawaharlal Nehru Stadium, Delhi",
+          "University of Mumbai - Sports Department",
+          "University of Delhi - Sports Department",
+          "Indian Institute of Sports Management, Mumbai"
+        ],
+        "industry": [
+          "Sports",
+          "Fitness",
+          "Recreation"
+        ]
       }
     }
   },
@@ -91,7 +111,17 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Defence Academy (NDA)",
+          "Indian Military Academy (IMA)",
+          "Officers Training Academy (OTA)",
+          "Various State Universities"
+        ],
+        "industry": [
+          "Defense",
+          "Military"
+        ]
       }
     }
   },
@@ -123,7 +153,15 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Various State Universities",
+          "Various Private Universities"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support"
+        ]
       }
     }
   },
@@ -163,6 +201,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -202,7 +252,20 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Sports, Patiala",
+          "Lal Bahadur Shastri Sports Complex, Delhi",
+          "Jawaharlal Nehru Stadium, Delhi",
+          "University of Mumbai - Sports Department",
+          "University of Delhi - Sports Department",
+          "Indian Institute of Sports Management, Mumbai"
+        ],
+        "industry": [
+          "Sports",
+          "Fitness",
+          "Recreation"
+        ]
       }
     }
   },
@@ -234,7 +297,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Government ITI, Mumbai",
+          "Government ITI, Delhi",
+          "Government ITI, Bangalore",
+          "Government ITI, Chennai",
+          "Government ITI, Kolkata"
+        ],
+        "industry": [
+          "Technical",
+          "Vocational Training"
+        ]
       }
     }
   },
@@ -266,7 +340,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Administrative",
+          "Government",
+          "Corporate"
+        ]
       }
     }
   },
@@ -298,7 +383,17 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Police Academy, Hyderabad",
+          "Sardar Vallabhbhai Patel National Police Academy, Hyderabad",
+          "State Police Training Academies"
+        ],
+        "industry": [
+          "Law Enforcement",
+          "Public Safety",
+          "Security"
+        ]
       }
     }
   },
@@ -330,7 +425,17 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Police Academy, Hyderabad",
+          "Sardar Vallabhbhai Patel National Police Academy, Hyderabad",
+          "State Police Training Academies"
+        ],
+        "industry": [
+          "Law Enforcement",
+          "Public Safety",
+          "Security"
+        ]
       }
     }
   },
@@ -362,7 +467,17 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Police Academy, Hyderabad",
+          "Sardar Vallabhbhai Patel National Police Academy, Hyderabad",
+          "State Police Training Academies"
+        ],
+        "industry": [
+          "Law Enforcement",
+          "Public Safety",
+          "Security"
+        ]
       }
     }
   },
@@ -394,7 +509,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
       }
     }
   },
@@ -426,7 +552,17 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Delhi Administrative Service Academy",
+          "Administrative Staff College of India (ASCI), Hyderabad",
+          "State Administrative Training Institutes"
+        ],
+        "industry": [
+          "Government Administration",
+          "Public Sector",
+          "Management"
+        ]
       }
     }
   },
@@ -458,7 +594,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
       }
     }
   },
@@ -501,6 +648,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -533,7 +692,17 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Technical Teachers Training and Research (NITTTR), Chennai",
+          "Government Industrial Training Institutes (ITIs)",
+          "Private Industrial Training Institutes"
+        ],
+        "industry": [
+          "Manufacturing",
+          "Engineering",
+          "Technical Training"
+        ]
       }
     }
   },
@@ -565,7 +734,17 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Technical Teachers Training and Research (NITTTR), Chennai",
+          "Government Industrial Training Institutes (ITIs)",
+          "Private Industrial Training Institutes"
+        ],
+        "industry": [
+          "Manufacturing",
+          "Engineering",
+          "Technical Training"
+        ]
       }
     }
   },
@@ -612,6 +791,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -644,7 +835,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Administrative",
+          "Government",
+          "Corporate"
+        ]
       }
     }
   },
@@ -676,7 +878,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Administrative",
+          "Government",
+          "Corporate"
+        ]
       }
     }
   },
@@ -708,7 +921,17 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Defence Academy (NDA)",
+          "Indian Military Academy (IMA)",
+          "Officers Training Academy (OTA)",
+          "Various State Universities"
+        ],
+        "industry": [
+          "Defense",
+          "Military"
+        ]
       }
     }
   },
@@ -740,7 +963,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Government ITI, Mumbai",
+          "Government ITI, Delhi",
+          "Government ITI, Bangalore",
+          "Government ITI, Chennai",
+          "Government ITI, Kolkata"
+        ],
+        "industry": [
+          "Technical",
+          "Vocational Training"
+        ]
       }
     }
   },
@@ -772,7 +1006,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
       }
     }
   },
@@ -804,7 +1049,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
       }
     }
   },
@@ -836,7 +1092,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Government ITI, Mumbai",
+          "Government ITI, Delhi",
+          "Government ITI, Bangalore",
+          "Government ITI, Chennai",
+          "Government ITI, Kolkata"
+        ],
+        "industry": [
+          "Technical",
+          "Vocational Training"
+        ]
       }
     }
   },
@@ -890,7 +1157,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
       }
     }
   },
@@ -922,7 +1200,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
       }
     }
   },
@@ -954,7 +1243,17 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Technical Teachers Training and Research (NITTTR), Chennai",
+          "Government Industrial Training Institutes (ITIs)",
+          "Private Industrial Training Institutes"
+        ],
+        "industry": [
+          "Manufacturing",
+          "Engineering",
+          "Technical Training"
+        ]
       }
     }
   },
@@ -986,7 +1285,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
       }
     }
   },
@@ -1062,7 +1372,904 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Technical Teachers Training and Research (NITTTR), Chennai",
+          "Government Industrial Training Institutes (ITIs)",
+          "Private Industrial Training Institutes"
+        ],
+        "industry": [
+          "Manufacturing",
+          "Engineering",
+          "Technical Training"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date.",
+    "post_code": "exam___post_name",
+    "job_code": "exam___post_name_postdate_",
+    "recruitment_board": "Recruitment Board",
+    "qualification_eligibility": "Qualification",
+    "last_date": "Last Date",
+    "brief_info": null,
+    "minimum_age": null,
+    "maximum_age": null,
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name",
+      "post_name": "Exam / Post Name",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "Post Date31_01_202531_01_202530_01_202530_01_202523_01_202525_01_202510_01_202526_12_202416_12_202424_12_2024",
+    "post_code": "exam___post_name_____home_guard",
+    "job_code": "exam___post_name_____home_guard_postdate_",
+    "recruitment_board": "Recruitment BoardBihar PoliceDRDO ISSAMPESBAFMCAssam PSCBDLDRDOMizoram PoliceBihar PoliceOdisha Police",
+    "qualification_eligibility": "Qualification12THAny Graduate, B.Tech/B.E, Diploma12TH, 10THAny GraduateAny DegreeB.E/B.Tech/MBA/ MA/Post Graduate Diploma/ICAI/ICWAIITIHSLC/ 12th Class, ITI (Relevant Trade)Inter (10+2)–",
+    "last_date": "Last Date-17-02-202501-03-202515-02-202501-03-202521-02-202531-01-202522-01-202517-01-202510-02-2025",
+    "brief_info": "Bihar Police has given an employment notification for the recruitment of Home Guard Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": null,
+    "maximum_age": null,
+    "job_link": "https://www.freejobalert.com/articles/bihar-police-recruitment-2025-apply-online-for-15000-home-guard-vacancies-apply-now-3000066",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____home_guard",
+      "post_name": "Exam / Post Name\n    Home Guard",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date31_01_202527_01_202525_01_202523_01_202521_01_202518_01_202522_01_202521_01_202529_11_202411_01_202504_12_202413_12_202414_12_202402_01_202519_12_202428_12_202430_12_202430_12_202410_01_2025",
+    "post_code": "exam___post_name_____58th_ssc_____________assistant_master",
+    "job_code": "exam___post_name_____58th_ssc_____________assistant_master_postdate_",
+    "recruitment_board": "Recruitment BoardIndian ArmyRashtriya Military School, BengaluruBDLCRPFDIBER-DRDOOrdnance Factory, ChandaCISFSainik School TilaiyaITBPOrdnance Factory, VarangaonOrdnance Factory Board, NalandaIndian ArmyIndian ArmyBROIndian Air ForceIndian ArmyOrdnance Factory, Dehu RoadIndian Air ForceDRDO",
+    "qualification_eligibility": "QualificationNot mentionedAny DegreeB.E/B.Tech/MBA/ MA/Post Graduate Diploma/ICAI/ICWAIClass V/Any Degree with Nursery TrainingITIITI10thGraduate/Master Degree/MBBS in Relevant Discipline10th,12th, ITI (Relevant Trade), Diploma (Automobile Engg)Diploma/Any DegreeITI, AOCP (NCVT)10th Class––Intermediate/10+2/ Diploma (Relevant Engg).Engineering DegreeITI (AOCP Trade), NCTVT10+2/ Intermediate Diploma/B.Sc (Pharmacy)ITI",
+    "last_date": "Last Date15-03-202507-03-202521-02-202520-02-202525-01-202531-01-202504-03-202531-01-202522-01-202529-01-202531-01-202528-02-202515-03-2025-21-01-202505-02-202517-01-202505-02-202531-01-2025",
+    "brief_info": "Indian Army has given an employment notification for the recruitment of 58th SSC Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": null,
+    "maximum_age": null,
+    "job_link": "https://www.freejobalert.com/articles/indian-army-recruitment-2025-apply-online-for-58th-ssc-vacancy-apply-now-3000087",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____58th_ssc_____________assistant_master",
+      "post_name": "Exam / Post Name\n    58th SSC        \n    Assistant Master",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "assistant",
+        "name": "Assistant",
+        "minimum_skills_required": "assistant to manager",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Assistant",
+            "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Assistant",
+            "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
+          }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date03_02_202501_02_202501_02_202501_02_202531_01_202530_01_202529_01_202527_01_202525_01_202525_01_202525_01_202524_01_202523_01_202522_01_202527_01_202504_01_202503_01_202507_01_202516_12_202413_01_202516_01_202516_01_202512_07_202424_12_202428_12_202430_12_202430_12_202430_12_202403_01_202508_01_202509_01_202510_01_2025",
+    "post_code": "exam___post_name_____gdmo",
+    "job_code": "exam___post_name_____gdmo_postdate_",
+    "recruitment_board": "Recruitment BoardRRC, Northern RailwayRailway Recruitment Cell (RRC), Northern RailwayRITESRITESRITESRITESRITESRRC, North Eastern RailwayRRC East Central RailwayEast Coast RailwayCMRLRRC, Southern RailwayRail Coach Factory, KapurthalaSouth East Central RailwayNorth Central RailwaySouth Central RailwayIRCONRRC, North Central RailwayRailway Recruitment BoardRail Coach Factory, KapurthalaMumbai Railway Vikas Corporation LimitedCMRLMetro Railway, KolkataRRBRRC, South Central RailwayRITESMPMRCLRRC – South Central RailwayMetro Railway, KolkataRail India Technical and Economic ServiceRITESCMRL",
+    "qualification_eligibility": "QualificationMBBSMBBSMBA/PGDM, PGDBM, PGDBAB.Tech/B.EB.Arch, B.Tech/B.E, M.E/M.Tech, MBA/PGDMB.Tech/B.E, M.E/M.Tech, MBA/PGDMB.Tech/B.E10th Class & ITI10th, 12th, ITI (relevant trade)12th/ITIAny Degree, B.E / B.Tech (Relevant Field)DM/DNB or PG Diploma12th/ITI/Diploma/DegreeSenior Secondary/Diploma/ Degree/PG Degree10th Pass/ITI/ degree10th/12th/ITI/ Equivalent or National Apprenticeship CertificateB.E/B.Tech, Diploma (Engineering/Technology)10th Pass/Intermediate/ITI or Equivalent/ Degree–10th/12th/ITI(BE/B.Tech) In Civil EnggB.L / LLB/B.E / B.Tech/B.Arch10th Class/ ITI (NCVT/SCVT)–10th Class, ITIB.E/ B.Tech, Diploma (Relevant Engg)Any Degree, B.E/ B.Tech (Relevant Subjects)10th, 12th, ITI, Diploma, Any Degree12th/ITI/Diploma/Any Degree (Relevant Discipline)B.E/ B.Tech, B. Arch, M.E/ M.TechCA/ICMA/M. Com / MBA/PGDBA/ PGDBM/ PGDM/PGDHRMB. E / B. Tech (Civil)",
+    "last_date": "Last Date05-02-202511-02-202524-02-202524-02-202520-02-202513-02-202513-02-202523-02-202514-02-202524-02-202512-02-202502-02-202522-02-202520-02-202507-02-202503-02-202525-01-202507-02-202506-02-202503-02-202512-02-202520-01-202522-01-202522-02-202527-01-202517-01-202517-01-202527-01-202530-01-202502-02-202504-02-202510-02-2025",
+    "brief_info": "RRC (Railway Recruitment Cell) Northern Railway has announced a notification for the recruitment of GDMO Vacancy on Contract basis. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & attend for Interview.",
+    "minimum_age": null,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/articles/rrc-northern-railway-recruitment-2025-walkin-for-04-gdmo-vacancy-3000138",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____gdmo",
+      "post_name": "Exam / Post Name\n    GDMO",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date03_02_202503_02_202501_02_202531_01_202531_01_202531_01_202530_01_202530_01_202530_01_202529_01_202529_01_202529_01_202524_01_202524_01_202524_01_202525_01_202525_01_202525_01_202523_01_202523_01_202523_01_202523_01_202523_01_202523_01_202524_01_202523_01_202524_01_202524_01_202522_01_202521_01_202521_01_202522_01_202517_01_202518_01_202518_01_202518_01_202521_01_202522_01_202521_01_202521_01_202516_01_202509_01_202509_01_202508_01_202509_01_202510_01_202510_01_202510_01_202510_01_202510_01_202513_01_202513_01_202516_01_202516_01_202507_01_202503_01_202506_01_202516_01_202506_01_202503_01_202528_12_202427_12_202426_12_202424_12_202416_01_2025",
+    "post_code": "exam___post_name_____psychologist_____________authorised_doctor_____________manager__deputy_manager",
+    "job_code": "exam___post_name_____psychologist_____________authorised_doctor_____________manager__deputy_manager_postdate_",
+    "recruitment_board": "Bank NamePunjab and Sind BankIndian BankSBIKVBSBIIndian BankPunjab and Sind BankPunjab and Sind BankCBIBOMTMBBOBBank of BarodaIDRBTIDRBTRBIPunjab and Sind BankSIDBIIndian BankIndian BankIndian BankSBIReserve Bank of IndiaCanara Bank Securities LtdBOIGondia DCCBRBISBIIBPSCentral Bank of IndiaPSCBSIDBIPunjab and Sind BankPMCBLCentral Bank of IndiaNABARDUtkal Cooperative Bank LtdCentral Bank of IndiaUCO BankCanara Bank Securities LimitedTamluk Ghatal Central Co-Operative Bank LimitedAPCOBAssam Co-operative Apex BankIDBI BankSaraswat Cooperative Bank LtdPUCBIPPBCentral Bank of IndiaBihar State Cooperative Bank LtdMeghalaya Cooperative Apex Bank LtdGuntur DCCBGuntur DCCBUCO BankThe District Cooperative Central Bank LimitedTMBSBICFSLKrishna DCCBCanara BankPunjab National BankUCO BankBank of BarodaSBIRBIKurnool DCCB",
+    "qualification_eligibility": "QualificationM.A, M.Phil/Ph.DMBBSB.Tech/B.E, M.A, M.Sc, M.E/M.Tech, MCAAny Graduate, Any Post GraduateNot mentionedMBBSMBBS, BHMS, MS/MDBPT, MPTAny GraduateB.Arch, B.Tech/B.E, M.Com, M.Sc, MCAAny Graduate, Any Post GraduateAny GraduateDegree, LLB, MBA, CA/CS/ICWAGraduate Degree in Engineering or Master in Computer Application.B.E/ B.TechPG degreeMBBS/BHMS/MDMSW/M.AMBBSMBBSMBBSPGDM/PGDBM/MBAMBBSCA (ICAI)/ ICWA/MBA Finance7th, Any Degree10th, Any DegreeMBBS, PG Degree in General MedicineAny DegreeAny DegreeAny DegreeMBA (Relevant Discipline)Any DegreeBachelor or Master’s degree in PhysiotherapyAny DegreeB.E/B.Tech/ MCA /MSc-IT/MBAMBBSDiploma /graduate in Relevant discipline10th/Graduate/PG degreeB.E./B.Tech/MBA/MCA (Relevant Discipline)Graduation in any discipline10thGraduate (Relevant Subject)Any DegreeMBBS/MD.M.Com/M.B.AB.E./B. Tech/MCA/Post graduate/CA/BSc/MSc7th/10TH/Any Degree/MSW/MA/BSc (Agri.)/BA with B.EdB. Tech/BCA/MBA/B.com/BSWAny DegreeGraduation in any disciplineGraduate from a recognized university (or) commerce graduate.Any DegreeAny GraduateDegree, PG, PhD (Relevant Discipline)Any DegreeGraduate/MBA Finance or CA/CA Intern (Relevant Discipline)Any GraduateEngineering/Technology degree in Computer Science/IT/ElectronicsXII pass, Any DegreeAny Degree, B.E/ B.Tech, CAB.E/ B.Tech/ CA/CMA/CFA/Diploma/Degree/PG/PG Diploma/MBA/PGDMAny DegreeDiplomaAny Graduate",
+    "last_date": "Last Date08-02-202520-02-202524-02-202509-02-202524-02-202515-02-202515-02-202515-02-202520-02-202517-02-202509-02-202508-02-202504-02-202525-02-202525-02-202521-02-202513-02-202507-02-202511-02-202512-02-202508-02-202513-02-202525-02-202505-02-202527-01-202530-01-202514-02-202503-02-202505-02-202509-02-202531-01-202504-02-202530-01-202525-01-202526-01-202524-01-202507-02-202525-01-202510-02-202531-01-202521-01-202522-01-202531-01-202522-01-202517-01-202520-01-202530-01-202524-01-202523-01-202515-01-202522-01-202522-01-202505-02-202522-01-202515-01-202523-01-202515-01-202522-01-202524-01-202524-01-202520-01-202517-01-202516-01-202520-01-202522-01-2025",
+    "brief_info": "Punjab and Sind Bank has given an employment notification for the recruitment of Psychologist Vacancy on Contractual Basis. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply.",
+    "minimum_age": null,
+    "maximum_age": null,
+    "job_link": "https://www.freejobalert.com/articles/punjab-and-sind-bank-recruitment-2025-apply-offline-for-psychologist-vacancy-apply-now-3000154",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____psychologist_____________authorised_doctor_____________manager__deputy_manager",
+      "post_name": "Exam / Post Name\n    Psychologist        \n    Authorised Doctor        \n    Manager, Deputy Manager",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date30_01_202529_01_202524_01_202523_01_202527_01_202513_01_202510_01_202504_01_202530_12_202409_01_202510_01_202528_12_2024",
+    "post_code": "exam___post_name_____engineering_executive_trainee",
+    "job_code": "exam___post_name_____engineering_executive_trainee_postdate_",
+    "recruitment_board": "Recruitment BoardNTPC LimitedRITESBMTUAssam PSCAndrew Yule & Company Limited (AYCL)HURLONGCOrdnance Factory ItarsiRITESAIIMSBELIndian Army",
+    "qualification_eligibility": "QualificationB.Tech/B.EB.Tech/B.EDiploma/Bachelor‟s Degree/ Master‟s DegreeDiploma in Civil EngineeringDegree in Mechanical Engg (Relevant Discipline)Engineering Degree/CA or CMA/MBAB.E/B.Tech/M.Sc/M.TechDiploma/B.E/B.Tech (Relevant Discipline)B.E/ B.Tech, Diploma (Relevant Engg)10TH/12TH/ITI/Diploma/Any Degree/B.E/B.Tech (Relevant discipline)B.E / B.Tech / B.ScEngineering Degree",
+    "last_date": "Last Date11-02-202513-02-202507-03-202504-03-202514-02-202529-01-202524-01-202531-01-202517-01-202531-01-202531-01-202505-02-2025",
+    "brief_info": "National Thermal Power Corporation Limited (NTPC Limited) has given an employment notification for the recruitment of Engineering Executive Trainee Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": null,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/articles/ntpc-limited-recruitment-2025-apply-online-for-475-engineering-executive-trainee-vacancy-apply-now-3000022",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____engineering_executive_trainee",
+      "post_name": "Exam / Post Name\n    Engineering Executive Trainee",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date30_01_202520_01_202513_12_2024",
+    "post_code": "exam___post_name_____junior_engineers_i__junior_chemists",
+    "job_code": "exam___post_name_____junior_engineers_i__junior_chemists_postdate_",
+    "recruitment_board": "Recruitment BoardRVUNLHRRLRSMSSB",
+    "qualification_eligibility": "QualificationB.Tech/B.E, M.ScDiploma in Engineering or B.Sc/B.E / B.TechDiploma/Any Degree",
+    "last_date": "Last Date20-02-202508-02-202506-02-2025",
+    "brief_info": "Rajasthan Rajya Vidyut Utpadan Nigam Limited (RVUNL) has given an employment notification for the recruitment of Junior Engineers I, Junior Chemists Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": 21,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/articles/rvunl-recruitment-2025-apply-online-for-271-junior-engineers-junior-chemists-vacancies-apply-now-3000035",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____junior_engineers_i__junior_chemists",
+      "post_name": "Exam / Post Name\n    Junior Engineers I, Junior Chemists",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date30_01_2025",
+    "post_code": "exam___post_name_____field_engineer__medical_officer",
+    "job_code": "exam___post_name_____field_engineer__medical_officer_postdate_",
+    "recruitment_board": "Recruitment BoardNHPC",
+    "qualification_eligibility": "QualificationB.Sc, B.Tech/B.E, MBBS",
+    "last_date": "Last Date18-02-2025",
+    "brief_info": "National Hydroelectric Power Corporation Limited (NHPC) has given an employment notification for the recruitment of Field Engineer, Medical Officer Vacancy on Fixed Tenure Basis. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": null,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/articles/nhpc-recruitment-2025-apply-online-for-16-field-engineer-medical-officer-vacancies-apply-now-3000042",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____field_engineer__medical_officer",
+      "post_name": "Exam / Post Name\n    Field Engineer, Medical Officer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "industry_masterdata": {
+        "code": "medical",
+        "name": "Medical and Healthcare",
+        "keywords": [
+          "medical"
+        ]
+      },
+      "profile_masterdata": {
+        "code": "medical_officer",
+        "name": "Medical Officer",
+        "keywords": [
+          "medical officer"
+        ],
+        "minimum_skills_required": "mbbs, assistant to doctor in medication",
+        "minimum_qualifications": [
+          "mbbs"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Medical Officer",
+            "url": "https://www.youtube.com/watch?v=LYDOfrbg8kU&ab_channel=DrChandrashekharVerma"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Medical Officer",
+            "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
+          }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date31_01_202530_01_2025",
+    "post_code": "exam___post_name_____graduate_project_engineer",
+    "job_code": "exam___post_name_____graduate_project_engineer_postdate_",
+    "recruitment_board": "Recruitment BoardHigh Explosives Factory, KhadkiBEL",
+    "qualification_eligibility": "QualificationB.Tech/B.EB.Tech/B.E",
+    "last_date": "Last Date14-02-202524-02-2025",
+    "brief_info": "High Explosives Factory, Khadki has given an employment notification for the recruitment of Graduate Project Engineer Vacancy on Tenure Basis. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply.",
+    "minimum_age": null,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/articles/high-explosives-factory-khadki-recruitment-2025-apply-offline-for-15-graduate-project-engineer-vacancies-apply-now-3000096",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____graduate_project_engineer",
+      "post_name": "Exam / Post Name\n    Graduate Project Engineer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date23_01_2025",
+    "post_code": "exam___post_name_____junior_engineer__civil_",
+    "job_code": "exam___post_name_____junior_engineer__civil__postdate_",
+    "recruitment_board": "Recruitment BoardAssam PSC",
+    "qualification_eligibility": "QualificationDiploma in Civil Engineering",
+    "last_date": "Last Date04-03-2025",
+    "brief_info": "Assam Public Service Commission (PSC) has given an employment notification for the recruitment of Junior Engineer (Civil) Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": 21,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/assam-psc-junior-engineer-civil-2025/1139371/",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____junior_engineer__civil_",
+      "post_name": "Exam / Post Name\n    Junior Engineer (Civil)",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date24_01_2025",
+    "post_code": "exam___post_name_____exchange_server_administrator___associates",
+    "job_code": "exam___post_name_____exchange_server_administrator___associates_postdate_",
+    "recruitment_board": "Bank NameIDRBT",
+    "qualification_eligibility": "QualificationGraduate Degree in Engineering or Master in Computer Application.",
+    "last_date": "Last Date25-02-2025",
+    "brief_info": null,
+    "minimum_age": null,
+    "maximum_age": null,
+    "job_link": "https://www.freejobalert.com/idrbt-exchange-server-administrator-associates-2025/1139723/",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____exchange_server_administrator___associates",
+      "post_name": "Exam / Post Name\n    Exchange Server Administrator / Associates",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "Post Date01_02_202531_01_202513_01_2025",
+    "post_code": "exam___post_name_____project_engineer__project_manager___other",
+    "job_code": "exam___post_name_____project_engineer__project_manager___other_postdate_",
+    "recruitment_board": "Recruitment BoardC-DACRITESHURL",
+    "qualification_eligibility": "QualificationAny Graduate, B.Tech/B.E, Any Post Graduate, M.E/M.Tech, M.Phil/Ph.DB.Arch, B.Tech/B.E, M.E/M.Tech, MBA/PGDMEngineering Degree/CA or CMA/MBA",
+    "last_date": "Last Date20-02-202520-02-202529-01-2025",
+    "brief_info": "Centre for Development of Advanced Computing (C-DAC) has given an employment notification for the recruitment of Project Engineer, Project Manager & Other Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": 35,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/articles/c-dac-recruitment-2025-apply-online-for-124-project-engineer-project-manager-and-other-vacancies-apply-now-3000132",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____project_engineer__project_manager___other",
+      "post_name": "Exam / Post Name\n    Project Engineer, Project Manager & Other",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date20_12_2024",
+    "post_code": "exam___post_name_____non_faculty_group_b___c",
+    "job_code": "exam___post_name_____non_faculty_group_b___c_postdate_",
+    "recruitment_board": "Recruitment BoardRajiv Gandhi National Aviation University (RGNAU)",
+    "qualification_eligibility": "QualificationDiploma/Any Degree/PG Diploma/MCA (Relevant discipline)",
+    "last_date": "Last Date10-02-2025",
+    "brief_info": "Rajiv Gandhi National Aviation University (RGNAU) has announced notification for the recruitment of Non Faculty Group B & C Vacancy on direct recruitment, failing which by deputation basis. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": null,
+    "maximum_age": null,
+    "job_link": "https://www.freejobalert.com/rgnau-non-faculty-group-b-c-2024/1132295/",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____non_faculty_group_b___c",
+      "post_name": "Exam / Post Name\n    Non Faculty Group B & C",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "civil_aviation_officer",
+        "name": "Civil Aviation Officer",
+        "minimum_skills_required": "Knowledge of aviation regulations, flight operations, air traffic control, airport management, safety protocols, and aviation technology",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "aviation",
+          "aeronautical_engineering"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Civil Aviation Officer",
+            "url": "https://www.youtube.com/watch?v=nX1tEZmcInE"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Civil Aviation Officer",
+            "url": "https://www.youtube.com/watch?v=nX1tEZmcInE"
+          }
+        ],
+        "keywords": [
+          "civil aviation",
+          "aviation officer",
+          "aviation",
+          "flight operations",
+          "air traffic control"
+        ],
+        "colleges": [
+          "Indian Institute of Aeronautics (IIA), New Delhi",
+          "Indira Gandhi Institute of Aeronautics (IGIA), Chennai",
+          "Hindustan Aviation Academy, Bangalore"
+        ],
+        "industry": [
+          "Civil Aviation",
+          "Airlines",
+          "Airport Management",
+          "Government Aviation Agencies"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date24_01_2025",
+    "post_code": "exam___post_name_____trade_technician_graduate_apprentice",
+    "job_code": "exam___post_name_____trade_technician_graduate_apprentice_postdate_",
+    "recruitment_board": "Recruitment BoardIOCL",
+    "qualification_eligibility": "Qualification10th pass, ITI, Diploma, Any Degree",
+    "last_date": "Last Date14-02-2025",
+    "brief_info": "Indian Oil Corporation Limited (IOCL) has given an employment notification for the recruitment of Trade/Technician/Graduate Apprentice Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": 18,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/iocl-trade-graduate-technician-apprentices-2025/1139688/",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____trade_technician_graduate_apprentice",
+      "post_name": "Exam / Post Name\n    Trade/Technician/Graduate Apprentice",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "apprentice",
+        "name": "Apprentice",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Technical Teachers Training and Research (NITTTR), Chennai",
+          "Government Industrial Training Institutes (ITIs)",
+          "Private Industrial Training Institutes"
+        ],
+        "industry": [
+          "Manufacturing",
+          "Engineering",
+          "Technical Training"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date31_01_202510_01_2025",
+    "post_code": "exam___post_name_____engineering_professionals",
+    "job_code": "exam___post_name_____engineering_professionals_postdate_",
+    "recruitment_board": "Recruitment BoardRITESWAPCOS",
+    "qualification_eligibility": "QualificationB.Arch, B.Tech/B.E, M.E/M.Tech, MBA/PGDMB.E/ B.Tech",
+    "last_date": "Last Date20-02-202529-01-2025",
+    "brief_info": "Rail India Technical and Economic Service (RITES) has given an employment notification for the recruitment of Engineering Professionals Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": null,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/articles/rites-recruitment-2025-apply-online-for-300-engineering-professionals-vacancy-apply-now-3000101",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____engineering_professionals",
+      "post_name": "Exam / Post Name\n    Engineering Professionals",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date31_01_202522_01_202511_01_202508_01_2025",
+    "post_code": "exam___post_name_____assistant_engineer__executive_engineer___other",
+    "job_code": "exam___post_name_____assistant_engineer__executive_engineer___other_postdate_",
+    "recruitment_board": "Recruitment BoardGPSCDeenDayal Port AuthorityGPCLGujarat State Electricity Corporation Ltd",
+    "qualification_eligibility": "QualificationAny Graduate, B.Com, B.Tech/B.E, Other, Any Post Graduate, M.Sc, MCAB.E/ B.Tech (Civil)lTl/Diploma/Engg Degree/MBBS/MSWB.Sc, B.Pharma or D.Pharma, M.Sc, CA / ICWA B.E./B.Tech, MBBS",
+    "last_date": "Last Date17-02-202511-02-202505-02-202516-04-2025",
+    "brief_info": "Gujarat Public Service Commission (GPSC) has given an employment notification for the recruitment of Assistant Engineer, Executive Engineer & Other Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": null,
+    "maximum_age": null,
+    "job_link": "https://www.freejobalert.com/articles/gpsc-recruitment-2025-apply-online-for-496-ae-executive-engineer-and-other-vacancies-apply-now-3000100",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____assistant_engineer__executive_engineer___other",
+      "post_name": "Exam / Post Name\n    Assistant Engineer, Executive Engineer & Other",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "assistant",
+        "name": "Assistant",
+        "minimum_skills_required": "assistant to manager",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Assistant",
+            "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Assistant",
+            "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
+          }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date03_02_2025",
+    "post_code": "exam___post_name_____project_engineer___technical_officer",
+    "job_code": "exam___post_name_____project_engineer___technical_officer_postdate_",
+    "recruitment_board": "Recruitment BoardECIL",
+    "qualification_eligibility": "QualificationB.Tech/B.E",
+    "last_date": "Last Date14-02-2025",
+    "brief_info": "Electronic Corporation Of India (ECIL) has given an employment notification for the recruitment of Project Engineer & Technical Officer Vacancy on Contract basis. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply.",
+    "minimum_age": null,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/articles/ecil-recruitment-2025-apply-offline-for-09-project-engineer-and-technical-officer-vacancy-apply-now-3000140",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____project_engineer___technical_officer",
+      "post_name": "Exam / Post Name\n    Project Engineer & Technical Officer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "officer",
+        "name": "Officer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Administrative",
+          "Government",
+          "Corporate"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date23_01_202504_01_202521_12_202403_01_2025",
+    "post_code": "exam___post_name_____software_engineer__junior_developer_and_other_posts",
+    "job_code": "exam___post_name_____software_engineer__junior_developer_and_other_posts_postdate_",
+    "recruitment_board": "Recruitment BoardState Digital Health Mission KeralaFACTKerala PSCKerala PSC",
+    "qualification_eligibility": "QualificationDegree, BE/ B.Tech, ME/ M.Tech, MCA, M.ScDegree in Civil Engineering7th/10th/12th/ITI/Diploma/Degree/PG (Relevant Discipline)10th/12th/ITI/Diploma/Degree/PG (Relevant Discipline)",
+    "last_date": "Last Date31-01-202514-01-202515-01-202529-01-2025",
+    "brief_info": "State Digital Health Mission (SDHM) Kerala has given an employment Notification for the Recruitment of Software Engineer, Junior Developer And Other Posts Vacancy on contract Basis. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply.",
+    "minimum_age": 32,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/sdhm-kerala-software-engineer-junior-developer-and-other-posts-2025/1139494/",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____software_engineer__junior_developer_and_other_posts",
+      "post_name": "Exam / Post Name\n    Software Engineer, Junior Developer And Other Posts",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date04_01_202524_12_202412_11_2024",
+    "post_code": "exam___post_name_____tenure_based_diploma_project_engineer",
+    "job_code": "exam___post_name_____tenure_based_diploma_project_engineer_postdate_",
+    "recruitment_board": "Recruitment BoardOrdnance Factory ItarsiWAPCOS LtdMPPKVCCL",
+    "qualification_eligibility": "QualificationDiploma/B.E/B.Tech (Relevant Discipline)B.E/ B.Tech, Master or PhD, MBA, LLB10th, 12th, ITI, Diploma, Degree, PG (Relevant Discipline)",
+    "last_date": "Last Date31-01-202515-01-202523-01-2025",
+    "brief_info": "Ordnance Factory, Itarsi has given an employment notification for the recruitment of Tenure Based Diploma Project Engineer Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": 18,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/ordnance-factory-itarsi-tenure-based-diploma-project-engineer-2025/1134928/",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____tenure_based_diploma_project_engineer",
+      "post_name": "Exam / Post Name\n    Tenure Based Diploma Project Engineer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "ui",
+        "name": "UI",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "Post Date03_02_2025",
+    "post_code": "exam___post_name_____assistant_executive_engineer__junior_executive",
+    "job_code": "exam___post_name_____assistant_executive_engineer__junior_executive_postdate_",
+    "recruitment_board": "Recruitment BoardIPA",
+    "qualification_eligibility": "QualificationB.Tech/B.E",
+    "last_date": "Last Date10-02-2025",
+    "brief_info": "Indian Ports Association (IPA) has given an employment notification for the recruitment of Assistant Executive Engineer, Junior Executive Vacancy. Those Candidates who are interested in the vacancy details & completed all eligibility criteria can read the Notification & Apply Online.",
+    "minimum_age": null,
+    "maximum_age": 2025,
+    "job_link": "https://www.freejobalert.com/articles/ipa-recruitment-2025-apply-online-for-3-assistant-executive-engineer-junior-executive-vacancies-apply-now-3000143",
+    "job_type": "government",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "exam___post_name_____assistant_executive_engineer__junior_executive",
+      "post_name": "Exam / Post Name\n    Assistant Executive Engineer, Junior Executive",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "assistant",
+        "name": "Assistant",
+        "minimum_skills_required": "assistant to manager",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Assistant",
+            "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Assistant",
+            "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
+          }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
+        ]
       }
     }
   },
@@ -1091,7 +2298,19 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Bombay",
+          "National Institute of Technology (NIT), Trichy",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Mobile App Development"
+        ]
       }
     }
   },
@@ -1137,6 +2356,19 @@ const jobs_data=[
         ],
         "keywords": [
           "java,"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
         ]
       }
     }
@@ -1166,7 +2398,17 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Technical Teachers Training and Research (NITTTR), Chennai",
+          "Government Industrial Training Institutes (ITIs)",
+          "Private Industrial Training Institutes"
+        ],
+        "industry": [
+          "Manufacturing",
+          "Engineering",
+          "Technical Training"
+        ]
       }
     }
   },
@@ -1211,6 +2453,20 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Quality Assurance",
             "url": "https://www.youtube.com/shorts/f2Nu_lHMi8M"
           }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy",
+          "VIT Vellore",
+          "SRM University"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -1257,6 +2513,19 @@ const jobs_data=[
         ],
         "keywords": [
           "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
         ]
       }
     }
@@ -1286,7 +2555,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National Institute of Design (NID), Ahmedabad",
+          "Indian Institute of Technology (IIT), Bombay",
+          "Srishti Manipal Institute of Art, Design and Technology, Bangalore",
+          "MIT Institute of Design, Pune"
+        ],
+        "industry": [
+          "Information Technology",
+          "Design",
+          "User Experience"
+        ]
       }
     }
   },
@@ -1319,6 +2599,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -1348,7 +2640,19 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Bombay",
+          "National Institute of Technology (NIT), Trichy",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Mobile App Development"
+        ]
       }
     }
   },
@@ -1382,6 +2686,18 @@ const jobs_data=[
           "big_data",
           "big data",
           "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
         ]
       }
     }
@@ -1411,7 +2727,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Kanpur",
+          "National Institute of Technology (NIT), Rourkela",
+          "Institute of Technical Education and Research (ITER), Bhubaneswar",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Information Technology",
+          "Computer Hardware",
+          "Electronics"
+        ]
       }
     }
   },
@@ -1444,6 +2771,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -1493,6 +2832,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -1526,6 +2872,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -1559,6 +2917,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -1588,7 +2958,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Indian Institute of Management (IIM), Ahmedabad",
+          "Indian Institute of Management (IIM), Bangalore",
+          "Indian School of Business (ISB), Hyderabad",
+          "Xavier Labour Relations Institute (XLRI), Jamshedpur"
+        ],
+        "industry": [
+          "Consulting",
+          "Management",
+          "Business Strategy"
+        ]
       }
     }
   },
@@ -1621,6 +3002,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -1654,6 +3047,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -1687,6 +3092,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -1721,6 +3138,18 @@ const jobs_data=[
           "big_data",
           "big data",
           "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
         ]
       }
     }
@@ -1750,7 +3179,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Indian Institute of Management (IIM), Bangalore",
+          "Indian School of Business (ISB), Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Information Technology"
+        ]
       }
     }
   },
@@ -1783,6 +3223,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -1874,6 +3326,18 @@ const jobs_data=[
           "big_data",
           "big data",
           "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
         ]
       }
     }
@@ -1907,6 +3371,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -1956,6 +3432,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -2008,6 +3491,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -2041,6 +3536,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -2074,6 +3581,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -2120,6 +3639,19 @@ const jobs_data=[
         ],
         "keywords": [
           "java,"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
         ]
       }
     }
@@ -2166,6 +3698,19 @@ const jobs_data=[
         ],
         "keywords": [
           "java,"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
         ]
       }
     }
@@ -2200,6 +3745,18 @@ const jobs_data=[
           "big_data",
           "big data",
           "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
         ]
       }
     }
@@ -2233,6 +3790,18 @@ const jobs_data=[
         "keywords": [
           "developer",
           "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
@@ -2262,7 +3831,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Indian Institute of Management (IIM), Bangalore",
+          "Indian School of Business (ISB), Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Information Technology"
+        ]
       }
     }
   },
@@ -2308,6 +3888,19 @@ const jobs_data=[
         ],
         "keywords": [
           "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
         ]
       }
     }
@@ -2328,6 +3921,1582 @@ const jobs_data=[
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "web_development_jobs_opening_in_dolphin_ad_world_private_limited_at_mumbailess",
+    "job_code": "web_development_jobs_opening_in_dolphin_ad_world_private_limited_at_mumbailess_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Dolphin Ad World Private Limited",
+    "job_type": "private",
+    "location": "Mumbai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "web_development_jobs_opening_in_dolphin_ad_world_private_limited_at_mumbailess",
+      "post_name": "Web Development Jobs Opening in Dolphin Ad World Private Limited at MumbaiLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "network_automation_and_qa_intern_jobs_opening_in_cosgrid_systems_private_limited_at_chennailess",
+    "job_code": "network_automation_and_qa_intern_jobs_opening_in_cosgrid_systems_private_limited_at_chennailess_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "COSGrid Systems Private Limited",
+    "job_type": "private",
+    "location": "Chennai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "network_automation_and_qa_intern_jobs_opening_in_cosgrid_systems_private_limited_at_chennailess",
+      "post_name": "Network Automation And QA Intern Jobs Opening in COSGrid Systems Private Limited at ChennaiLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "qa",
+        "name": "QA - Quality Assurance",
+        "minimum_skills_required": "test case writing, manual testing, automation testing, selenium, jmeter, bug tracking, test planning, regression testing, performance testing, quality assurance, CI/CD, API testing, exploratory testing, agile methodology, defect management, test strategy, smoke testing, acceptance testing, black box testing, white box testing, load testing, usability testing, security testing, TDD (Test-Driven Development), BDD (Behavior-Driven Development), code review, test automation framework, SQL, continuous integration, web testing, mobile testing, cross-browser testing, test documentation, validation, verification, root cause analysis, test reporting",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "Computer Science",
+          "Information Technology",
+          "Engineering"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Quality Assurance",
+            "url": "https://www.youtube.com/watch?v=BPcbisSxxzQ&ab_channel=TheTestLead"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Quality Assurance",
+            "url": "https://www.youtube.com/shorts/f2Nu_lHMi8M"
+          }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy",
+          "VIT Vellore",
+          "SRM University"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "php_intern_developer_jobs_opening_in_iamlogic___upsso_private_limited_at_domlur__bangaloreless",
+    "job_code": "php_intern_developer_jobs_opening_in_iamlogic___upsso_private_limited_at_domlur__bangaloreless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech(CSE), BSc(CS), MCA, MSc(CS)",
+    "salary": "6000 Monthly",
+    "company_name": "IamLogic - UPSSO Private Limited",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "php_intern_developer_jobs_opening_in_iamlogic___upsso_private_limited_at_domlur__bangaloreless",
+      "post_name": "PHP Intern Developer Jobs Opening in IamLogic - UPSSO Private Limited at Domlur, BangaloreLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "python_development_jobs_opening_in_charmeuse_technologies_private_limited_at_ahmedabadless",
+    "job_code": "python_development_jobs_opening_in_charmeuse_technologies_private_limited_at_ahmedabadless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Charmeuse Technologies Private Limited",
+    "job_type": "private",
+    "location": "Ahmedabad",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "python_development_jobs_opening_in_charmeuse_technologies_private_limited_at_ahmedabadless",
+      "post_name": "Python Development Jobs Opening in Charmeuse Technologies Private Limited at AhmedabadLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "python_developer",
+        "name": "Python Developer",
+        "minimum_skills_required": "python, Analytics, http api, Django",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote python developer",
+            "url": "https://www.youtube.com/watch?v=2QByYtPEGIs&ab_channel=CleverProgrammer"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=QiJ20NDOpSc&ab_channel=Simplilearn"
+          }
+        ],
+        "keywords": [
+          "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "qa_testing_jobs_opening_in_evision_it_solution_private_limited_at_ahmedabadless",
+    "job_code": "qa_testing_jobs_opening_in_evision_it_solution_private_limited_at_ahmedabadless_postdate_",
+    "qualification_eligibility": "BE/B.Tech, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "EVision IT Solution Private Limited",
+    "job_type": "private",
+    "location": "Ahmedabad",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "qa_testing_jobs_opening_in_evision_it_solution_private_limited_at_ahmedabadless",
+      "post_name": "QA Testing Jobs Opening in EVision IT Solution Private Limited at AhmedabadLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "qa",
+        "name": "QA - Quality Assurance",
+        "minimum_skills_required": "test case writing, manual testing, automation testing, selenium, jmeter, bug tracking, test planning, regression testing, performance testing, quality assurance, CI/CD, API testing, exploratory testing, agile methodology, defect management, test strategy, smoke testing, acceptance testing, black box testing, white box testing, load testing, usability testing, security testing, TDD (Test-Driven Development), BDD (Behavior-Driven Development), code review, test automation framework, SQL, continuous integration, web testing, mobile testing, cross-browser testing, test documentation, validation, verification, root cause analysis, test reporting",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "Computer Science",
+          "Information Technology",
+          "Engineering"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Quality Assurance",
+            "url": "https://www.youtube.com/watch?v=BPcbisSxxzQ&ab_channel=TheTestLead"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Quality Assurance",
+            "url": "https://www.youtube.com/shorts/f2Nu_lHMi8M"
+          }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy",
+          "VIT Vellore",
+          "SRM University"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "software_testing_jobs_opening_in_alluvium_iot_solutions_private_limited_at_ahmedabadless",
+    "job_code": "software_testing_jobs_opening_in_alluvium_iot_solutions_private_limited_at_ahmedabadless_postdate_",
+    "qualification_eligibility": "BE/B.Tech, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Alluvium IoT Solutions Private Limited",
+    "job_type": "private",
+    "location": "Ahmedabad",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "software_testing_jobs_opening_in_alluvium_iot_solutions_private_limited_at_ahmedabadless",
+      "post_name": "Software Testing Jobs Opening in Alluvium IoT Solutions Private Limited at AhmedabadLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "wordpress_development_jobs_opening_in_lets_meet_bro_at_bangaloreless",
+    "job_code": "wordpress_development_jobs_opening_in_lets_meet_bro_at_bangaloreless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Lets Meet Bro",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "wordpress_development_jobs_opening_in_lets_meet_bro_at_bangaloreless",
+      "post_name": "WordPress Development Jobs Opening in Lets Meet Bro at BangaloreLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "software_development_engineering___web_intern_jobs_opening_in_pisence_technologies_llp_at_chennailess",
+    "job_code": "software_development_engineering___web_intern_jobs_opening_in_pisence_technologies_llp_at_chennailess_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "PiSence Technologies LLP",
+    "job_type": "private",
+    "location": "Chennai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "software_development_engineering___web_intern_jobs_opening_in_pisence_technologies_llp_at_chennailess",
+      "post_name": "Software Development Engineering - Web Intern Jobs Opening in PiSence Technologies LLP at ChennaiLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "flutter_development_jobs_opening_in_mobioxy_at_ahmedabadless",
+    "job_code": "flutter_development_jobs_opening_in_mobioxy_at_ahmedabadless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Mobioxy",
+    "job_type": "private",
+    "location": "Ahmedabad",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "flutter_development_jobs_opening_in_mobioxy_at_ahmedabadless",
+      "post_name": "Flutter Development Jobs Opening in Mobioxy at AhmedabadLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "java_full_stack_development_jobs_opening_in_techeirkonseptrix_analytics_private_limited_at_across_indialess",
+    "job_code": "java_full_stack_development_jobs_opening_in_techeirkonseptrix_analytics_private_limited_at_across_indialess_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "TecheirKonseptrix Analytics Private Limited",
+    "job_type": "private",
+    "location": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "java_full_stack_development_jobs_opening_in_techeirkonseptrix_analytics_private_limited_at_across_indialess",
+      "post_name": "Java Full Stack Development Jobs Opening in TecheirKonseptrix Analytics Private Limited at Across IndiaLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "social_media_manager",
+        "name": "Social Media Manager",
+        "minimum_skills_required": "Social Media Marketing, Content Creation, Analytics, Communication Skills",
+        "minimum_qualifications": [
+          "Bachelor's degree in Marketing, Communication, or related field",
+          "Experience in social media management or digital marketing (preferred)"
+        ],
+        "preferred_streams": [
+          "Marketing",
+          "Communication",
+          "Digital Marketing"
+        ],
+        "entrance_exam": [
+          "interview",
+          "social media portfolio review (if applicable)"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Social Media Manager",
+            "url": ""
+          },
+          {
+            "title": "Salary Expectations for Social Media Managers",
+            "url": ""
+          }
+        ],
+        "keywords": [
+          "social media manager",
+          "social media marketing",
+          "content creation",
+          "analytics"
+        ],
+        "colleges": [
+          "MICA Ahmedabad",
+          "IIM Ahmedabad",
+          "IIM Bangalore",
+          "ISB Hyderabad",
+          "XLRI Jamshedpur"
+        ],
+        "industry": [
+          "Marketing",
+          "Advertising",
+          "Tech",
+          "Media",
+          "Retail"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "android_app_development_jobs_opening_in_one_card_solution_pvt_limited_at_delhiless",
+    "job_code": "android_app_development_jobs_opening_in_one_card_solution_pvt_limited_at_delhiless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "One Card Solution Pvt Limited",
+    "job_type": "private",
+    "location": "Delhi",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "android_app_development_jobs_opening_in_one_card_solution_pvt_limited_at_delhiless",
+      "post_name": "Android App Development Jobs Opening in One Card Solution Pvt Limited at DelhiLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "backend_development_jobs_opening_in_aracknoid_future_labs_at_jaipurless",
+    "job_code": "backend_development_jobs_opening_in_aracknoid_future_labs_at_jaipurless_postdate_",
+    "qualification_eligibility": "BE/B.Tech, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Aracknoid Future Labs",
+    "job_type": "private",
+    "location": "Jaipur",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "backend_development_jobs_opening_in_aracknoid_future_labs_at_jaipurless",
+      "post_name": "Backend Development Jobs Opening in Aracknoid Future Labs at JaipurLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "flutter_development_jobs_opening_in_vigorous_healthtech_private_limited_at_jaipurless",
+    "job_code": "flutter_development_jobs_opening_in_vigorous_healthtech_private_limited_at_jaipurless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Vigorous Healthtech Private Limited",
+    "job_type": "private",
+    "location": "Jaipur",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "flutter_development_jobs_opening_in_vigorous_healthtech_private_limited_at_jaipurless",
+      "post_name": "Flutter Development Jobs Opening in Vigorous Healthtech Private Limited at JaipurLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "python_development_jobs_opening_in_akash_startup_at_delhiless",
+    "job_code": "python_development_jobs_opening_in_akash_startup_at_delhiless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Akash startup",
+    "job_type": "private",
+    "location": "Delhi",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "python_development_jobs_opening_in_akash_startup_at_delhiless",
+      "post_name": "Python Development Jobs Opening in Akash startup at DelhiLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "python_developer",
+        "name": "Python Developer",
+        "minimum_skills_required": "python, Analytics, http api, Django",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote python developer",
+            "url": "https://www.youtube.com/watch?v=2QByYtPEGIs&ab_channel=CleverProgrammer"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=QiJ20NDOpSc&ab_channel=Simplilearn"
+          }
+        ],
+        "keywords": [
+          "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "manual_testing_jobs_opening_in_antwalk_at_bangaloreless",
+    "job_code": "manual_testing_jobs_opening_in_antwalk_at_bangaloreless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "AntWalk",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "manual_testing_jobs_opening_in_antwalk_at_bangaloreless",
+      "post_name": "Manual Testing Jobs Opening in AntWalk at BangaloreLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "ai_research_jobs_opening_in_elementals_at_bangaloreless",
+    "job_code": "ai_research_jobs_opening_in_elementals_at_bangaloreless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Elementals",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "ai_research_jobs_opening_in_elementals_at_bangaloreless",
+      "post_name": "AI Research Jobs Opening in Elementals at BangaloreLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "research",
+        "name": "Research",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "Indian Institute of Science (IISc), Bangalore",
+          "Jawaharlal Nehru University (JNU), Delhi",
+          "Indian Statistical Institute (ISI), Kolkata",
+          "University of Delhi - Research Programs"
+        ],
+        "industry": [
+          "Academic Research",
+          "Scientific Research",
+          "Technology Research"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "web_development_jobs_opening_in_elecnovo_private_limited_at_bangaloreless",
+    "job_code": "web_development_jobs_opening_in_elecnovo_private_limited_at_bangaloreless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Elecnovo Private Limited",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "web_development_jobs_opening_in_elecnovo_private_limited_at_bangaloreless",
+      "post_name": "Web Development Jobs Opening in Elecnovo Private Limited at BangaloreLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "network_engineering_jobs_opening_in_filoffee_software_pvt_ltd_at_bangaloreless",
+    "job_code": "network_engineering_jobs_opening_in_filoffee_software_pvt_ltd_at_bangaloreless_postdate_",
+    "qualification_eligibility": "BE/B.Tech, MBA/PGDM, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Filoffee Software PVT LTD",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "network_engineering_jobs_opening_in_filoffee_software_pvt_ltd_at_bangaloreless",
+      "post_name": "Network Engineering Jobs Opening in Filoffee Software PVT LTD at BangaloreLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "android_app_development_jobs_opening_in_eka_care_at_bangaloreless",
+    "job_code": "android_app_development_jobs_opening_in_eka_care_at_bangaloreless_postdate_",
+    "qualification_eligibility": "BE/B.Tech, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Eka.Care",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "android_app_development_jobs_opening_in_eka_care_at_bangaloreless",
+      "post_name": "Android App Development Jobs Opening in Eka.Care at BangaloreLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-10",
+    "post_code": "wordpress_development_jobs_opening_in_confluencr_at_bangaloreless",
+    "job_code": "wordpress_development_jobs_opening_in_confluencr_at_bangaloreless_postdate_",
+    "qualification_eligibility": "BCA, BE/B.Tech, BSc, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "Confluencr",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "wordpress_development_jobs_opening_in_confluencr_at_bangaloreless",
+      "post_name": "WordPress Development Jobs Opening in Confluencr at BangaloreLess",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "web_development_jobs",
+    "job_code": "web_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Dolphin Ad World Private Limited",
+    "job_type": "private",
+    "location": "Mumbai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "web_development_jobs",
+      "post_name": "Web Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "network_automation_and_qa_intern_jobs",
+    "job_code": "network_automation_and_qa_intern_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "COSGrid Systems Private Limited",
+    "job_type": "private",
+    "location": "Chennai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "network_automation_and_qa_intern_jobs",
+      "post_name": "Network Automation And QA Intern Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "qa",
+        "name": "QA - Quality Assurance",
+        "minimum_skills_required": "test case writing, manual testing, automation testing, selenium, jmeter, bug tracking, test planning, regression testing, performance testing, quality assurance, CI/CD, API testing, exploratory testing, agile methodology, defect management, test strategy, smoke testing, acceptance testing, black box testing, white box testing, load testing, usability testing, security testing, TDD (Test-Driven Development), BDD (Behavior-Driven Development), code review, test automation framework, SQL, continuous integration, web testing, mobile testing, cross-browser testing, test documentation, validation, verification, root cause analysis, test reporting",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "Computer Science",
+          "Information Technology",
+          "Engineering"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Quality Assurance",
+            "url": "https://www.youtube.com/watch?v=BPcbisSxxzQ&ab_channel=TheTestLead"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Quality Assurance",
+            "url": "https://www.youtube.com/shorts/f2Nu_lHMi8M"
+          }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy",
+          "VIT Vellore",
+          "SRM University"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "php_intern_developer_jobs",
+    "job_code": "php_intern_developer_jobs_postdate_",
+    "salary": "6000 Monthly",
+    "company_name": "IamLogic - UPSSO Private Limited",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "php_intern_developer_jobs",
+      "post_name": "PHP Intern Developer Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "python_development_jobs",
+    "job_code": "python_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Charmeuse Technologies Private Limited",
+    "job_type": "private",
+    "location": "Ahmedabad",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "python_development_jobs",
+      "post_name": "Python Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "python_developer",
+        "name": "Python Developer",
+        "minimum_skills_required": "python, Analytics, http api, Django",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote python developer",
+            "url": "https://www.youtube.com/watch?v=2QByYtPEGIs&ab_channel=CleverProgrammer"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=QiJ20NDOpSc&ab_channel=Simplilearn"
+          }
+        ],
+        "keywords": [
+          "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "qa_testing_jobs",
+    "job_code": "qa_testing_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "EVision IT Solution Private Limited",
+    "job_type": "private",
+    "location": "Ahmedabad",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "qa_testing_jobs",
+      "post_name": "QA Testing Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "qa",
+        "name": "QA - Quality Assurance",
+        "minimum_skills_required": "test case writing, manual testing, automation testing, selenium, jmeter, bug tracking, test planning, regression testing, performance testing, quality assurance, CI/CD, API testing, exploratory testing, agile methodology, defect management, test strategy, smoke testing, acceptance testing, black box testing, white box testing, load testing, usability testing, security testing, TDD (Test-Driven Development), BDD (Behavior-Driven Development), code review, test automation framework, SQL, continuous integration, web testing, mobile testing, cross-browser testing, test documentation, validation, verification, root cause analysis, test reporting",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "Computer Science",
+          "Information Technology",
+          "Engineering"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Quality Assurance",
+            "url": "https://www.youtube.com/watch?v=BPcbisSxxzQ&ab_channel=TheTestLead"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Quality Assurance",
+            "url": "https://www.youtube.com/shorts/f2Nu_lHMi8M"
+          }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy",
+          "VIT Vellore",
+          "SRM University"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "software_testing_jobs",
+    "job_code": "software_testing_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Alluvium IoT Solutions Private Limited",
+    "job_type": "private",
+    "location": "Ahmedabad",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "software_testing_jobs",
+      "post_name": "Software Testing Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "wordpress_development_jobs",
+    "job_code": "wordpress_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Lets Meet Bro",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "wordpress_development_jobs",
+      "post_name": "WordPress Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "software_development_engineering___web_intern_jobs",
+    "job_code": "software_development_engineering___web_intern_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "PiSence Technologies LLP",
+    "job_type": "private",
+    "location": "Chennai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "software_development_engineering___web_intern_jobs",
+      "post_name": "Software Development Engineering - Web Intern Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "flutter_development_jobs",
+    "job_code": "flutter_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Mobioxy",
+    "job_type": "private",
+    "location": "Ahmedabad",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "flutter_development_jobs",
+      "post_name": "Flutter Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "java_full_stack_development_jobs",
+    "job_code": "java_full_stack_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "TecheirKonseptrix Analytics Private Limited",
+    "job_type": "private",
+    "location": "Anywhere in India",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "java_full_stack_development_jobs",
+      "post_name": "Java Full Stack Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "android_app_development_jobs",
+    "job_code": "android_app_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "One Card Solution Pvt Limited",
+    "job_type": "private",
+    "location": "Delhi",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "android_app_development_jobs",
+      "post_name": "Android App Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "backend_development_jobs",
+    "job_code": "backend_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Aracknoid Future Labs",
+    "job_type": "private",
+    "location": "Jaipur",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "backend_development_jobs",
+      "post_name": "Backend Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "manual_testing_jobs",
+    "job_code": "manual_testing_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "AntWalk",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "manual_testing_jobs",
+      "post_name": "Manual Testing Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "ai_research_jobs",
+    "job_code": "ai_research_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Elementals",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "ai_research_jobs",
+      "post_name": "AI Research Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "research",
+        "name": "Research",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "colleges": [
+          "Indian Institute of Science (IISc), Bangalore",
+          "Jawaharlal Nehru University (JNU), Delhi",
+          "Indian Statistical Institute (ISI), Kolkata",
+          "University of Delhi - Research Programs"
+        ],
+        "industry": [
+          "Academic Research",
+          "Scientific Research",
+          "Technology Research"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-11",
+    "post_code": "network_engineering_jobs",
+    "job_code": "network_engineering_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Filoffee Software PVT LTD",
+    "job_type": "private",
+    "location": "Bangalore",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "network_engineering_jobs",
+      "post_name": "Network Engineering Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-13",
+    "post_code": "golang_developer_jobs",
+    "job_code": "golang_developer_jobs_postdate_",
+    "qualification_eligibility": "BE/B.Tech, CS",
+    "salary": "Salary not disclosed",
+    "company_name": "LineupX",
+    "job_type": "private",
+    "location": "Mumbai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "golang_developer_jobs",
+      "post_name": "Golang Developer Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-16",
+    "post_code": "asp_net_development_jobs",
+    "job_code": "asp_net_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Quantasis Private Limited",
+    "job_type": "private",
+    "location": "Mumbai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "asp_net_development_jobs",
+      "post_name": "Asp.net Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-16",
+    "post_code": "full_stack_development_jobs",
+    "job_code": "full_stack_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Faith App",
+    "job_type": "private",
+    "location": "Mumbai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "full_stack_development_jobs",
+      "post_name": "Full Stack Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-16",
+    "post_code": "front_end_development_jobs",
+    "job_code": "front_end_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Faith App",
+    "job_type": "private",
+    "location": "Mumbai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "front_end_development_jobs",
+      "post_name": "Front End Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-16",
+    "post_code": "embedded_systems_jobs",
+    "job_code": "embedded_systems_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Improvians",
+    "job_type": "private",
+    "location": "Mumbai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "embedded_systems_jobs",
+      "post_name": "Embedded Systems Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-17",
+    "post_code": "zoho_developer_intern_jobs",
+    "job_code": "zoho_developer_intern_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Providian Global Solutions Privet Limited",
+    "job_type": "private",
+    "location": "Akola",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "zoho_developer_intern_jobs",
+      "post_name": "Zoho Developer Intern Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-17",
+    "post_code": "mobile_app_development_jobs",
+    "job_code": "mobile_app_development_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Center For International Promotion Of Sports & Arts CIPSA",
+    "job_type": "private",
+    "location": "Pune",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "mobile_app_development_jobs",
+      "post_name": "Mobile App Development Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-19",
+    "post_code": "product_testing_jobs",
+    "job_code": "product_testing_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "ISAMAY",
+    "job_type": "private",
+    "location": "Mumbai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "product_testing_jobs",
+      "post_name": "Product Testing Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-19",
+    "post_code": "front_end_developers_jobs",
+    "job_code": "front_end_developers_jobs_postdate_",
+    "salary": "Salary not disclosed",
+    "company_name": "Kenmark ITan Solutions",
+    "job_type": "private",
+    "location": "Mumbai",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "front_end_developers_jobs",
+      "post_name": "Front-End Developers Jobs",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
       }
     }
   },
@@ -2385,6 +5554,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -2443,6 +5619,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -2501,6 +5684,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -2559,6 +5749,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -2617,6 +5814,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -2675,6 +5879,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -2733,6 +5944,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -2791,6 +6009,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -2837,6 +6062,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -2883,6 +6120,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -2929,6 +6178,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -2975,6 +6236,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3021,6 +6294,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3067,6 +6352,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3117,6 +6414,19 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Developer",
             "url": "https://www.youtube.com/watch?v=EiAZVCBsx30&ab_channel=PandeyGuruji"
           }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Database Management",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -3163,6 +6473,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3209,6 +6531,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3252,6 +6586,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3298,6 +6644,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3344,6 +6702,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3400,6 +6770,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -3446,6 +6823,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3492,6 +6881,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3538,6 +6939,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -3587,6 +7000,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -3636,6 +7061,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -3685,6 +7122,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -3734,6 +7183,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -3780,6 +7241,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -3829,6 +7302,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -3878,6 +7363,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -3927,6 +7424,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -3976,6 +7485,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -4025,6 +7546,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -4081,6 +7614,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -4130,6 +7675,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -4188,6 +7745,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -4248,6 +7817,19 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Developer",
             "url": "https://www.youtube.com/watch?v=EiAZVCBsx30&ab_channel=PandeyGuruji"
           }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Database Management",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -4303,6 +7885,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -4361,6 +7955,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -4419,6 +8025,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -4477,6 +8095,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -4535,6 +8165,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -4593,6 +8235,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -4651,6 +8305,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -4710,6 +8376,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -4775,6 +8453,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -4834,6 +8519,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -4893,6 +8590,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -4952,6 +8661,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5011,6 +8732,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5070,6 +8803,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5129,6 +8874,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5188,6 +8945,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5247,6 +9016,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5306,6 +9087,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5365,6 +9158,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5424,6 +9229,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5483,6 +9300,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Medical Officer",
             "url": "https://www.youtube.com/watch?v=UL6NJt3a2oY&ab_channel=DrChandrashekharVerma"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "King George's Medical University Lucknow",
+          "JIPMER Puducherry"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5532,6 +9361,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Pharmacist",
             "url": "https://www.youtube.com/shorts/ptR3zD14Wa0"
           }
+        ],
+        "colleges": [
+          "Jamia Hamdard University",
+          "Manipal College of Pharmaceutical Sciences",
+          "University Institute of Pharmaceutical Sciences Chandigarh",
+          "BITS Pilani",
+          "Poona College of Pharmacy"
+        ],
+        "industry": [
+          "Healthcare",
+          "Pharmacies",
+          "Pharmaceutical Companies"
         ]
       }
     }
@@ -5581,6 +9422,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Pharmacist",
             "url": "https://www.youtube.com/shorts/ptR3zD14Wa0"
           }
+        ],
+        "colleges": [
+          "Jamia Hamdard University",
+          "Manipal College of Pharmaceutical Sciences",
+          "University Institute of Pharmaceutical Sciences Chandigarh",
+          "BITS Pilani",
+          "Poona College of Pharmacy"
+        ],
+        "industry": [
+          "Healthcare",
+          "Pharmacies",
+          "Pharmaceutical Companies"
         ]
       }
     }
@@ -5637,6 +9490,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Pharmacist",
             "url": "https://www.youtube.com/shorts/ptR3zD14Wa0"
           }
+        ],
+        "colleges": [
+          "Jamia Hamdard University",
+          "Manipal College of Pharmaceutical Sciences",
+          "University Institute of Pharmaceutical Sciences Chandigarh",
+          "BITS Pilani",
+          "Poona College of Pharmacy"
+        ],
+        "industry": [
+          "Healthcare",
+          "Pharmacies",
+          "Pharmaceutical Companies"
         ]
       }
     }
@@ -5686,6 +9551,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Pharmacist",
             "url": "https://www.youtube.com/shorts/ptR3zD14Wa0"
           }
+        ],
+        "colleges": [
+          "Jamia Hamdard University",
+          "Manipal College of Pharmaceutical Sciences",
+          "University Institute of Pharmaceutical Sciences Chandigarh",
+          "BITS Pilani",
+          "Poona College of Pharmacy"
+        ],
+        "industry": [
+          "Healthcare",
+          "Pharmacies",
+          "Pharmaceutical Companies"
         ]
       }
     }
@@ -5742,6 +9619,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Pharmacist",
             "url": "https://www.youtube.com/shorts/ptR3zD14Wa0"
           }
+        ],
+        "colleges": [
+          "Jamia Hamdard University",
+          "Manipal College of Pharmaceutical Sciences",
+          "University Institute of Pharmaceutical Sciences Chandigarh",
+          "BITS Pilani",
+          "Poona College of Pharmacy"
+        ],
+        "industry": [
+          "Healthcare",
+          "Pharmacies",
+          "Pharmaceutical Companies"
         ]
       }
     }
@@ -5791,6 +9680,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Pharmacist",
             "url": "https://www.youtube.com/shorts/ptR3zD14Wa0"
           }
+        ],
+        "colleges": [
+          "Jamia Hamdard University",
+          "Manipal College of Pharmaceutical Sciences",
+          "University Institute of Pharmaceutical Sciences Chandigarh",
+          "BITS Pilani",
+          "Poona College of Pharmacy"
+        ],
+        "industry": [
+          "Healthcare",
+          "Pharmacies",
+          "Pharmaceutical Companies"
         ]
       }
     }
@@ -5840,6 +9741,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Pharmacist",
             "url": "https://www.youtube.com/shorts/ptR3zD14Wa0"
           }
+        ],
+        "colleges": [
+          "Jamia Hamdard University",
+          "Manipal College of Pharmaceutical Sciences",
+          "University Institute of Pharmaceutical Sciences Chandigarh",
+          "BITS Pilani",
+          "Poona College of Pharmacy"
+        ],
+        "industry": [
+          "Healthcare",
+          "Pharmacies",
+          "Pharmaceutical Companies"
         ]
       }
     }
@@ -5896,6 +9809,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -5958,6 +9883,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6019,6 +9956,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6081,6 +10030,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6143,6 +10104,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6205,6 +10178,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6267,6 +10252,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6326,6 +10323,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6388,6 +10397,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6450,6 +10471,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6512,6 +10545,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6574,6 +10619,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6636,6 +10693,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6698,6 +10767,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6760,6 +10841,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6822,6 +10915,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6884,6 +10989,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -6942,6 +11059,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -6990,6 +11114,14 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As a helper",
             "url": "https://www.youtube.com/watch?v=KSDToclQPss"
           }
+        ],
+        "colleges": [
+          "NA"
+        ],
+        "industry": [
+          "Construction",
+          "Manufacturing",
+          "Retail"
         ]
       }
     }
@@ -7039,6 +11171,14 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As a helper",
             "url": "https://www.youtube.com/watch?v=KSDToclQPss"
           }
+        ],
+        "colleges": [
+          "NA"
+        ],
+        "industry": [
+          "Construction",
+          "Manufacturing",
+          "Retail"
         ]
       }
     }
@@ -7088,6 +11228,14 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As a helper",
             "url": "https://www.youtube.com/watch?v=KSDToclQPss"
           }
+        ],
+        "colleges": [
+          "NA"
+        ],
+        "industry": [
+          "Construction",
+          "Manufacturing",
+          "Retail"
         ]
       }
     }
@@ -7137,6 +11285,14 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As a helper",
             "url": "https://www.youtube.com/watch?v=KSDToclQPss"
           }
+        ],
+        "colleges": [
+          "NA"
+        ],
+        "industry": [
+          "Construction",
+          "Manufacturing",
+          "Retail"
         ]
       }
     }
@@ -7186,6 +11342,14 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As a helper",
             "url": "https://www.youtube.com/watch?v=KSDToclQPss"
           }
+        ],
+        "colleges": [
+          "NA"
+        ],
+        "industry": [
+          "Construction",
+          "Manufacturing",
+          "Retail"
         ]
       }
     }
@@ -7235,6 +11399,14 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As a helper",
             "url": "https://www.youtube.com/watch?v=KSDToclQPss"
           }
+        ],
+        "colleges": [
+          "NA"
+        ],
+        "industry": [
+          "Construction",
+          "Manufacturing",
+          "Retail"
         ]
       }
     }
@@ -7284,6 +11456,14 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As a helper",
             "url": "https://www.youtube.com/watch?v=KSDToclQPss"
           }
+        ],
+        "colleges": [
+          "NA"
+        ],
+        "industry": [
+          "Construction",
+          "Manufacturing",
+          "Retail"
         ]
       }
     }
@@ -7333,6 +11513,14 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As a helper",
             "url": "https://www.youtube.com/watch?v=KSDToclQPss"
           }
+        ],
+        "colleges": [
+          "NA"
+        ],
+        "industry": [
+          "Construction",
+          "Manufacturing",
+          "Retail"
         ]
       }
     }
@@ -7379,6 +11567,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -7425,6 +11625,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -7471,6 +11683,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -7517,6 +11741,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -7563,6 +11799,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -7609,6 +11857,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -7655,6 +11915,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -7701,6 +11973,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -7750,6 +12034,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -7799,6 +12095,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -7848,6 +12156,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -7897,6 +12217,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -7946,6 +12278,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -7995,6 +12339,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -8044,6 +12400,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher nurse",
             "url": "https://www.youtube.com/shorts/JP5DcXERK2E"
           }
+        ],
+        "colleges": [
+          "AIIMS Delhi",
+          "Christian Medical College Vellore",
+          "Armed Forces Medical College Pune",
+          "Tata Memorial Hospital Mumbai",
+          "Apollo College of Nursing"
+        ],
+        "industry": [
+          "Healthcare",
+          "Hospitals",
+          "Clinics"
         ]
       }
     }
@@ -8102,6 +12470,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -8160,6 +12540,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -8218,6 +12610,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Librarian",
             "url": "https://www.youtube.com/watch?v=1Mw8V_WB-T8&ab_channel=LibraryDoctors"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "IGNOU",
+          "Jamia Millia Islamia",
+          "University of Calcutta",
+          "University of Mumbai"
+        ],
+        "industry": [
+          "Education",
+          "Public Libraries",
+          "Research Institutions"
         ]
       }
     }
@@ -8276,6 +12680,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -8334,6 +12745,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -8392,6 +12810,71 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-07-17",
+    "post_code": "product_manager",
+    "job_code": "product_manager_postdate_",
+    "qualification_eligibility": "B.Tech/B.E. in Mechanical",
+    "brief_info": "",
+    "job_link": "https://www.naukri.com/job-listings-product-manager-bosch-global-software-technologies-private-limited-bengaluru-3-to-7-years-170724906140",
+    "salary": "Not disclosed",
+    "company_name": "Bosch Global Software Technologies",
+    "job_type": "private",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "product_manager",
+      "post_name": "Product Manager",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "product_manager",
+        "name": "Product Manager",
+        "minimum_skills_required": "product case studies, profit loss of product, usecase writing, market fitment, product cost, break even",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Product Manager",
+            "url": "https://www.youtube.com/shorts/eyOIXtmf-gI"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Product manager",
+            "url": "https://www.youtube.com/shorts/ycMqZTYhgvc"
+          }
+        ],
+        "colleges": [
+          "IIM Ahmedabad",
+          "IIM Bangalore",
+          "IIM Calcutta",
+          "XLRI Jamshedpur",
+          "SPJIMR Mumbai",
+          "FMS Delhi",
+          "MDI Gurgaon"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -8435,6 +12918,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -8478,6 +12973,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -8521,6 +13028,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -8564,6 +13083,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -8607,6 +13138,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -8653,6 +13196,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -8705,6 +13260,19 @@ const jobs_data=[
         ],
         "keywords": [
           "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
         ]
       }
     }
@@ -8754,6 +13322,19 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Developer",
             "url": "https://www.youtube.com/watch?v=EiAZVCBsx30&ab_channel=PandeyGuruji"
           }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Database Management",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -8809,6 +13390,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -8855,6 +13443,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -8898,6 +13498,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -8941,6 +13553,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -8987,6 +13611,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -9033,6 +13669,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -9083,6 +13731,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9132,6 +13792,19 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Developer",
             "url": "https://www.youtube.com/watch?v=EiAZVCBsx30&ab_channel=PandeyGuruji"
           }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Database Management",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -9175,6 +13848,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9230,6 +13915,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -9285,6 +13977,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -9328,6 +14027,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9374,6 +14085,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -9417,6 +14140,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9460,6 +14195,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9503,6 +14250,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9546,6 +14305,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9589,6 +14360,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9632,6 +14415,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9675,6 +14470,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9718,6 +14525,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9769,6 +14588,20 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Quality Assurance",
             "url": "https://www.youtube.com/shorts/f2Nu_lHMi8M"
           }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy",
+          "VIT Vellore",
+          "SRM University"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -9812,6 +14645,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9855,6 +14700,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9910,6 +14767,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -9953,6 +14817,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -9996,6 +14872,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10042,6 +14930,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -10091,6 +14991,19 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Developer",
             "url": "https://www.youtube.com/watch?v=EiAZVCBsx30&ab_channel=PandeyGuruji"
           }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Database Management",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -10137,6 +15050,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -10180,6 +15105,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10226,6 +15163,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -10272,6 +15221,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -10318,6 +15279,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -10380,6 +15353,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -10426,6 +15406,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -10469,6 +15461,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10512,6 +15516,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10567,6 +15583,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -10610,6 +15633,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10653,6 +15688,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10696,6 +15743,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10731,7 +15790,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Aptech Learning",
+          "NIIT",
+          "ITIs offering Office Management Courses",
+          "Various Private Institutes offering Receptionist Training"
+        ],
+        "industry": [
+          "Administration",
+          "Customer Service",
+          "Corporate Office"
+        ]
       }
     }
   },
@@ -10780,6 +15850,20 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Product manager",
             "url": "https://www.youtube.com/shorts/ycMqZTYhgvc"
           }
+        ],
+        "colleges": [
+          "IIM Ahmedabad",
+          "IIM Bangalore",
+          "IIM Calcutta",
+          "XLRI Jamshedpur",
+          "SPJIMR Mumbai",
+          "FMS Delhi",
+          "MDI Gurgaon"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -10823,6 +15907,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10866,6 +15962,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10909,6 +16017,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10952,6 +16072,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -10995,6 +16127,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11044,6 +16188,20 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Product manager",
             "url": "https://www.youtube.com/shorts/ycMqZTYhgvc"
           }
+        ],
+        "colleges": [
+          "IIM Ahmedabad",
+          "IIM Bangalore",
+          "IIM Calcutta",
+          "XLRI Jamshedpur",
+          "SPJIMR Mumbai",
+          "FMS Delhi",
+          "MDI Gurgaon"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -11087,6 +16245,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11122,7 +16292,21 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Indian Institute of Management (IIM)",
+          "Indian School of Business (ISB)",
+          "Xavier School of Management (XLRI)",
+          "Symbiosis Institute of Business Management (SIBM)",
+          "Narsee Monjee Institute of Management Studies (NMIMS)"
+        ],
+        "industries": [
+          "Healthcare",
+          "Education",
+          "Corporate",
+          "Non-Profit",
+          "Government"
+        ]
       }
     }
   },
@@ -11171,6 +16355,20 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Product manager",
             "url": "https://www.youtube.com/shorts/ycMqZTYhgvc"
           }
+        ],
+        "colleges": [
+          "IIM Ahmedabad",
+          "IIM Bangalore",
+          "IIM Calcutta",
+          "XLRI Jamshedpur",
+          "SPJIMR Mumbai",
+          "FMS Delhi",
+          "MDI Gurgaon"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -11214,6 +16412,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11257,6 +16467,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11300,6 +16522,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11335,7 +16569,21 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Indian Institute of Management (IIM)",
+          "Indian School of Business (ISB)",
+          "Xavier School of Management (XLRI)",
+          "Symbiosis Institute of Business Management (SIBM)",
+          "Narsee Monjee Institute of Management Studies (NMIMS)"
+        ],
+        "industries": [
+          "Healthcare",
+          "Education",
+          "Corporate",
+          "Non-Profit",
+          "Government"
+        ]
       }
     }
   },
@@ -11378,6 +16626,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11413,7 +16673,21 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "National School of Drama (NSD)",
+          "Film and Television Institute of India (FTII)",
+          "Indian Institute of Mass Communication (IIMC)",
+          "Symbiosis Institute of Media and Communication (SIMC)",
+          "Asian Academy of Film and Television (AAFT)"
+        ],
+        "industries": [
+          "Entertainment",
+          "Corporate",
+          "Education",
+          "Customer Service",
+          "Public Relations"
+        ]
       }
     }
   },
@@ -11456,6 +16730,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11499,6 +16785,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11542,6 +16840,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11585,6 +16895,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11628,6 +16950,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11671,6 +17005,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11714,6 +17060,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11757,6 +17115,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11800,6 +17170,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11835,7 +17217,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Aptech Learning",
+          "NIIT",
+          "ITIs offering Office Management Courses",
+          "Various Private Institutes offering Receptionist Training"
+        ],
+        "industry": [
+          "Administration",
+          "Customer Service",
+          "Corporate Office"
+        ]
       }
     }
   },
@@ -11884,6 +17277,19 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Developer",
             "url": "https://www.youtube.com/watch?v=EiAZVCBsx30&ab_channel=PandeyGuruji"
           }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Database Management",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -11927,6 +17333,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -11970,6 +17388,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12013,6 +17443,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12056,6 +17498,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12099,6 +17553,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12142,6 +17608,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12177,7 +17655,18 @@ const jobs_data=[
         "preferred_streams": [
           "any"
         ],
-        "life_style": []
+        "life_style": [],
+        "colleges": [
+          "Aptech Learning",
+          "NIIT",
+          "ITIs offering Office Management Courses",
+          "Various Private Institutes offering Receptionist Training"
+        ],
+        "industry": [
+          "Administration",
+          "Customer Service",
+          "Corporate Office"
+        ]
       }
     }
   },
@@ -12220,6 +17709,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12263,6 +17764,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12306,6 +17819,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12349,6 +17874,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12392,6 +17929,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12435,6 +17984,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12478,6 +18039,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12521,6 +18094,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12564,6 +18149,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12614,6 +18211,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A School Teacher",
             "url": "https://www.youtube.com/watch?v=49Bq1eEHtzE&ab_channel=KNowYourTeacherWithNupur"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Jamia Millia Islamia",
+          "Banaras Hindu University",
+          "Aligarh Muslim University",
+          "University of Calcutta"
+        ],
+        "industry": [
+          "Education",
+          "Schools",
+          "Coaching Centers"
         ]
       }
     }
@@ -12657,6 +18266,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12700,6 +18321,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12743,6 +18376,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12786,6 +18431,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12829,6 +18486,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12872,6 +18541,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12915,6 +18596,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -12964,6 +18657,19 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Fresher Developer",
             "url": "https://www.youtube.com/watch?v=EiAZVCBsx30&ab_channel=PandeyGuruji"
           }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Database Management",
+          "Software Development",
+          "Startups"
         ]
       }
     }
@@ -13007,6 +18713,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -13062,6 +18780,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -13105,6 +18830,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -13151,6 +18888,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -13206,6 +18955,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -13252,6 +19008,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Professor",
             "url": "https://www.youtube.com/shorts/RMg8fupVg7c "
           }
+        ],
+        "colleges": [
+          "IITs",
+          "NITs",
+          "IISERs",
+          "Delhi University",
+          "Jawaharlal Nehru University"
+        ],
+        "industry": [
+          "Academia",
+          "Research Institutions",
+          "Think Tanks"
         ]
       }
     }
@@ -13320,6 +19088,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -13363,6 +19143,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -13418,6 +19210,13 @@ const jobs_data=[
           "frontend_developer",
           "frontend",
           "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
         ]
       }
     }
@@ -13461,6 +19260,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -13504,6 +19315,18 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
@@ -13547,137 +19370,2915 @@ const jobs_data=[
             "title": "How Much Salary Should You Expect As A Assistant",
             "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
           }
+        ],
+        "colleges": [
+          "Delhi University",
+          "Mumbai University",
+          "Bangalore University",
+          "University of Hyderabad",
+          "University of Madras"
+        ],
+        "industry": [
+          "Corporate",
+          "Business Support",
+          "Administrative Services"
         ]
       }
     }
   },
   {
-    "post_date": "2024-09-12",
-    "post_code": "Software Engineer",
-    "job_code": "Software Engineer",
+    "post_date": "2024-05-29",
+    "post_code": "data_scientist__support_platform__data_science",
+    "job_code": "data_scientist__support_platform__data_science_postdate_",
     "recruitment_board": "",
-    "qualification_eligibility": "BE/B.TECH",
+    "qualification_eligibility": "",
     "last_date": "",
     "brief_info": "",
     "minimum_age": "",
     "maximum_age": "",
-    "job_link": "https://unstop.com/o/4elrxA0?lb=ElnLy4K&utm_medium=Share&utm_source=shortUrl",
+    "job_link": "https://in.linkedin.com/jobs/view/data-scientist-support-platform-data-science-at-google-3918428732?position=1&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=jjP1fH0ZO4rR1DEKK4nx%2BA%3D%3D&trk=public_jobs_jserp-result_search-card",
     "salary": "",
     "job_type": "private",
-    "location": "PAN India",
+    "location": "Hyderabad, Telangana, India",
     "preferred_candidate": "",
     "posts_data": {
       "post_id": 1,
-      "post_code": "Software Development Engineer",
-      "post_name": "Software Development Engineer",
+      "post_code": "data_scientist__support_platform__data_science",
+      "post_name": "Data Scientist, Support Platform, Data Science",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant",
-        "minimum_skills_required": "C++, Javascript, Linux",
-        "minimum_qualifications": [
-          "graduation"
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
         ],
-        "life_style": [
-          {
-            "title": "A Day in the Life of a Assistant",
-            "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
-          },
-          {
-            "title": "How Much Salary Should You Expect As A Assistant",
-            "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
-          }
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
         ]
       }
     }
   },
   {
-    "post_date": "2024-09-12",
-    "post_code": "Software Engineer",
-    "job_code": "Software Engineer",
+    "post_date": "2024-05-24",
+    "post_code": "data_scientist",
+    "job_code": "data_scientist_postdate_",
     "recruitment_board": "",
-    "qualification_eligibility": "BE/B.TECH",
+    "qualification_eligibility": "",
     "last_date": "",
     "brief_info": "",
     "minimum_age": "",
     "maximum_age": "",
-    "company": "Rubrik",
-    "job_link": "https://unstop.com/o/y9PvMOt?lb=ElnLy4K&utm_medium=Share&utm_source=shortUrl",
+    "job_link": "https://in.linkedin.com/jobs/view/data-scientist-at-adidas-3932168343?position=2&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=rL6S89WtPrKbQ77h%2FqQS%2Bw%3D%3D&trk=public_jobs_jserp-result_search-card",
     "salary": "",
     "job_type": "private",
-    "location": "PAN India",
+    "location": "Gurgaon, Haryana, India",
     "preferred_candidate": "",
     "posts_data": {
       "post_id": 1,
-      "post_code": "Software Development Engineer",
-      "post_name": "Software Development Engineer",
+      "post_code": "data_scientist",
+      "post_name": "Data Scientist",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant",
-        "minimum_skills_required": "C++, Javascript, Linux",
-        "minimum_qualifications": [
-          "graduation"
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
         ],
-        "life_style": [
-          {
-            "title": "A Day in the Life of a Assistant",
-            "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
-          },
-          {
-            "title": "How Much Salary Should You Expect As A Assistant",
-            "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
-          }
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
         ]
       }
     }
   },
   {
-    "post_date": "2024-09-12",
-    "post_code": "Software Engineer",
-    "job_code": "Software Engineer",
+    "post_date": "2024-05-17",
+    "post_code": "junior_data_scientist",
+    "job_code": "junior_data_scientist_postdate_",
     "recruitment_board": "",
-    "qualification_eligibility": "BE/B.TECH",
+    "qualification_eligibility": "",
     "last_date": "",
-    "brief_info": "",
+    "brief_info": "div class\"showmorelesshtml__markup showmorelesshtml__markupclampafter5            relative overflowhidden\"          pemAB InBev GCC was incorporated in 2014 as a strategic partner for AnheuserBusch InBev The center leverages the power of data and analytics to drive growth for critical business functions such as operations finance people and technology The teams are transforming Operations through Tech and AnalyticsemppbrppemDo You Dream BigemppemWe Need YouemppbrppstrongJob Title Junior Data ScientiststrongppstrongLocation BangalorestrongppstrongReporting to Manager Analytics Senior ManagerAnalyticsstrongppbrppstrong1Purpose of the rolestrongppAnheuserBusch InBev AB InBevʼs Logistics Analytics team is responsible for transforming the companys Supply Chain by embedding intelligence across key process areas in Inventory Planning Transportation amp WarehousingppAs an Associate data scientist you will work at the intersection ofpulliMaking actionable insights out of large sets of diverse dataliliDeveloping and deploying MLAI models models using cuttingedge Data Science AlgorithmsliliTesting and evaluating model performance based on statistical testliulpbrppstrong2KEY TASKS AND ACCOUNTABILITIESstrongpulliYou will collaborate with product owners from business functions to translate business problem into Data Science use caseliliYou are expected to explore and develop MLAI algorithms to solve new business problem or improve the existing methodology model accuracy etcliliYou will work on building code that will deploy into production using code design and style standardsliliYou will document your thought process and create artefacts on team repowiki that can be used to share with business and engineering for signoffliliYou will significantly improve the performance and reliability of our code that create high quality and reproducible resultsliliYou will collaborate with other team members to advance teamʼs ability to ship high quality code fastliliYou will maintain basic developer hygiene that includes but not limited to writing tests using loggers readme to name a fewliulpbrpp3 strongQualifications Experience SkillsstrongpulliAcademic degree in but not limited to Bachelors or Masters in engineering CS BTechBE Masters in data science statistics applied mathematics mathematics economics etcliliMinimum 1 3 years of relevant experience in Analytics amp Data science  building ML modelsliliPreferred industry exposure  CPG or Supply Chain domain amp capability of successfully deploying analytics solutions and products for internal or external clientsliliLanguage skills required  English FluentliulpbrppYou should have expertise in followingpulliHandson experience in data manipulation using Excel Python SQLliliExpert level proficiency in Pythonknowledge of objectoriented design concepts amp able to write endtoend ML or data pipelines in pythonliliProficient in application of one or more and has exposure to others  ML concepts like regression classification clustering time series forecasting and optimization techniques to solve endtoend business problemliliFamiliarity with Azure Tech Stack Databricks ML Flow in any cloud platformliulpbrppOther Skills requiredpulliPassion for solving problems using dataliliDetail oriented analytical and inquisitiveliliAbility to learn on the goliliAbility to effectively communicate and present information at various levels of an organizationliliAbility to work independently and with othersliulpbrppemAnd above all of this an undying love for beeremppemWe dream big to create future with more cheersemp        div",
     "minimum_age": "",
     "maximum_age": "",
-    "company": "JUSPAY",
-    "job_link": "https://unstop.com/o/4elrxA0?lb=ElnLy4K&utm_medium=Share&utm_source=shortUrl",
+    "job_link": "https://in.linkedin.com/jobs/view/junior-data-scientist-at-ab-inbev-gcc-india-3926013819?position=4&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=3w%2FyDG1s5WZe6mgeoU6T9g%3D%3D&trk=public_jobs_jserp-result_search-card",
     "salary": "",
     "job_type": "private",
-    "location": "PAN India",
+    "location": "Bengaluru, Karnataka, India",
     "preferred_candidate": "",
     "posts_data": {
       "post_id": 1,
-      "post_code": "Software Development Engineer",
-      "post_name": "Software Development Engineer",
+      "post_code": "junior_data_scientist",
+      "post_name": "Junior Data Scientist",
       "jobtype_masterdata": {
         "code": "private",
         "name": "Private"
       },
       "profile_masterdata": {
-        "code": "assistant",
-        "name": "Assistant",
-        "minimum_skills_required": "C++, Javascript, Linux",
+        "code": "python_developer",
+        "name": "Python Developer",
+        "minimum_skills_required": "python, Analytics, http api, Django",
         "minimum_qualifications": [
           "graduation"
         ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
         "life_style": [
           {
-            "title": "A Day in the Life of a Assistant",
-            "url": "https://www.youtube.com/shorts/_yX7lFNTokU"
+            "title": "A Day in the Life of a Remote python developer",
+            "url": "https://www.youtube.com/watch?v=2QByYtPEGIs&ab_channel=CleverProgrammer"
           },
           {
-            "title": "How Much Salary Should You Expect As A Assistant",
-            "url": "https://www.youtube.com/shorts/MHlFJRBVazU"
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=QiJ20NDOpSc&ab_channel=Simplilearn"
           }
+        ],
+        "keywords": [
+          "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-30",
+    "post_code": "senior_data_scientist",
+    "job_code": "senior_data_scientist_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/senior-data-scientist-at-flipkart-3937531488?position=5&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=%2FXd8S8x5A2rUIe02s4vcgw%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Greater Bengaluru Area",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "senior_data_scientist",
+      "post_name": "Senior Data Scientist",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-26",
+    "post_code": "ai_data_scientist__ai_safety_protection",
+    "job_code": "ai_data_scientist__ai_safety_protection_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/ai-data-scientist-ai-safety-protection-at-google-3916967127?position=6&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=6bQaGli%2B7q8RnAbLl2%2FBMQ%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "ai_data_scientist__ai_safety_protection",
+      "post_name": "AI Data Scientist, AI Safety Protection",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-24",
+    "post_code": "data_scientist__product__analytics_and_operations",
+    "job_code": "data_scientist__product__analytics_and_operations_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/data-scientist-product-analytics-and-operations-at-google-3911842145?position=7&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=bPT7P3Ox4p9DFaqx2%2BK70A%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "data_scientist__product__analytics_and_operations",
+      "post_name": "Data Scientist, Product, Analytics and Operations",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-26",
+    "post_code": "ai_data_scientist__trust_and_safety",
+    "job_code": "ai_data_scientist__trust_and_safety_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/ai-data-scientist-trust-and-safety-at-google-3916963569?position=11&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=SVhHrGNEwdctwaROCPOFbg%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "ai_data_scientist__trust_and_safety",
+      "post_name": "AI Data Scientist, Trust and Safety",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-24",
+    "post_code": "decision_scientist",
+    "job_code": "decision_scientist_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/decision-scientist-at-tesco-bengaluru-3932764925?position=12&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=7qa6L3aF0JfdAR8gLvrJNw%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "decision_scientist",
+      "post_name": "Decision Scientist",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-17",
+    "post_code": "machine_learning_engineer",
+    "job_code": "machine_learning_engineer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/machine-learning-engineer-at-iqvia-3920676329?position=17&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=sP8Ev0nV1mQEayPb8f2OHw%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "machine_learning_engineer",
+      "post_name": "Machine Learning Engineer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_scientist",
+        "name": "Data Scientist",
+        "minimum_skills_required": "Data Analysis, Machine Learning, Statistical Modeling, Programming (Python/R), Data Visualization",
+        "minimum_qualifications": [
+          "graduation in Computer Science, Statistics, Mathematics, or related field"
+        ],
+        "preferred_streams": [
+          "Computer Science",
+          "Statistics",
+          "Mathematics",
+          "Data Science"
+        ],
+        "entrance_exam": [
+          "interview",
+          "technical assessment"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Data Scientist",
+            "url": ""
+          },
+          {
+            "title": "Career Paths and Salary Expectations for Data Scientists",
+            "url": ""
+          }
+        ],
+        "keywords": [
+          "data scientist",
+          "data analysis",
+          "machine learning",
+          "statistical modeling",
+          "data visualization"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI)",
+          "Indian Institute of Technology (IIT)",
+          "Indian Institute of Science (IISc)",
+          "Jawaharlal Nehru University (JNU)",
+          "University of Delhi"
+        ],
+        "industry": [
+          "Technology",
+          "Finance",
+          "Healthcare",
+          "E-commerce",
+          "Research and Development"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-30",
+    "post_code": "senior_data_scientist___india",
+    "job_code": "senior_data_scientist___india_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/senior-data-scientist-india-at-netflix-3920853908?position=18&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=BEjcgVPh71Z%2B%2FooeMwVIEQ%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Mumbai Metropolitan Region",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "senior_data_scientist___india",
+      "post_name": "Senior Data Scientist - India",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-28",
+    "post_code": "operational_data_scientist",
+    "job_code": "operational_data_scientist_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/operational-data-scientist-at-microsoft-3915727211?position=20&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=99KnRwFAP1EIeXKg%2F3by0g%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "operational_data_scientist",
+      "post_name": "Operational Data Scientist",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-25",
+    "post_code": "data_scientist___ii",
+    "job_code": "data_scientist___ii_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/data-scientist-ii-at-swiggy-3931200567?position=24&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=gJs6852NOwKDFMWsmzeCEg%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "data_scientist___ii",
+      "post_name": "Data Scientist - II",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-10",
+    "post_code": "data_scientist__bangalore_gurgaon_",
+    "job_code": "data_scientist__bangalore_gurgaon__postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "div class\"showmorelesshtml__markup showmorelesshtml__markupclampafter5            relative overflowhidden\"          pPOSITION  Data ScientistppbrppJOB LOCATION  BangaloreGurgaonppbrppEXPERIENCE REQUIREMENT  5ppbrppResponsibilitiesppUnderstand business process business problems and device Machine Learning solutions to optimize business processes wherever possibleppFormulating machine learning solutions to business metrics designing features from the data available from many large data sources training evaluating and deploying models in productionppDeveloping highperformance algorithms for precision targeting testing and implementing these algorithms in scalable productionready code Interacting with other teams to define interfaces and understanding and resolving dependenciesppDeveloping coding in highlevel languages such as R Python JavappArchitect ML solutions in cloud infrastructureppLead team of Junior ML engineers and Data Scientists for PoC and AIML solution prototypesppbrppTechnical SkillsppBachelors or higher computational science with an emphasis in Machine LearningppExperience with traditional as well as modern statistical techniques including Regression Support Vector Machines Regularization Boosting Random Forests and other Ensemble MethodsppExperience with endtoend modelling projects emerging from research effortsppExperience in creating large data feature stores for Machine learning in Teradata or similar databasesppAdequate presentation and communication skills to explain results and methodologies to nontechnical stakeholdersppExperience with data visualization tools such as D3jsppYour GitHubKaggle profile showing a project or problems youve tackledppBasic understanding of the banking industryppp        div",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/data-scientist-bangalore-gurgaon-at-tata-consultancy-services-3918316770?position=25&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=NlatGuqAK%2Ft3LcyTDheijQ%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "data_scientist__bangalore_gurgaon_",
+      "post_name": "Data Scientist (Bangalore/Gurgaon)",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "python_developer",
+        "name": "Python Developer",
+        "minimum_skills_required": "python, Analytics, http api, Django",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote python developer",
+            "url": "https://www.youtube.com/watch?v=2QByYtPEGIs&ab_channel=CleverProgrammer"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=QiJ20NDOpSc&ab_channel=Simplilearn"
+          }
+        ],
+        "keywords": [
+          "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-28",
+    "post_code": "ai_ml_engineer",
+    "job_code": "ai_ml_engineer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/ai-ml-engineer-at-zamp-3935696615?position=26&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=8iKLNALnqVWRDkjxWehkbQ%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bangalore Urban district, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "ai_ml_engineer",
+      "post_name": "AI/ML Engineer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-28",
+    "post_code": "ml_engineer",
+    "job_code": "ml_engineer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/ml-engineer-at-acme-services-3935175668?position=34&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=2zRubXoeUSEmDmuIwG3TTg%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Mumbai Metropolitan Region",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "ml_engineer",
+      "post_name": "ML Engineer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-30",
+    "post_code": "data_scientist__product__support_platform_data_science",
+    "job_code": "data_scientist__product__support_platform_data_science_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/data-scientist-product-support-platform-data-science-at-google-3919259478?position=37&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=tUA2MfXwn67UN6okr8mtIQ%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Hyderabad, Telangana, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "data_scientist__product__support_platform_data_science",
+      "post_name": "Data Scientist, Product, Support Platform Data Science",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-10",
+    "post_code": "consultant___data_scientist",
+    "job_code": "consultant___data_scientist_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/consultant-data-scientist-at-axa-3920850313?position=42&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=eI%2BWISkmv%2BJgt7ig%2FGAQ3A%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bangalore Urban, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "consultant___data_scientist",
+      "post_name": "Consultant - Data Scientist",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-24",
+    "post_code": "senior_machine_learning_engineer",
+    "job_code": "senior_machine_learning_engineer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/senior-machine-learning-engineer-at-razorpay-3923119444?position=52&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=7hj7NyVc9YaWrtXy5GZOMQ%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "senior_machine_learning_engineer",
+      "post_name": "Senior Machine Learning Engineer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_scientist",
+        "name": "Data Scientist",
+        "minimum_skills_required": "Data Analysis, Machine Learning, Statistical Modeling, Programming (Python/R), Data Visualization",
+        "minimum_qualifications": [
+          "graduation in Computer Science, Statistics, Mathematics, or related field"
+        ],
+        "preferred_streams": [
+          "Computer Science",
+          "Statistics",
+          "Mathematics",
+          "Data Science"
+        ],
+        "entrance_exam": [
+          "interview",
+          "technical assessment"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Data Scientist",
+            "url": ""
+          },
+          {
+            "title": "Career Paths and Salary Expectations for Data Scientists",
+            "url": ""
+          }
+        ],
+        "keywords": [
+          "data scientist",
+          "data analysis",
+          "machine learning",
+          "statistical modeling",
+          "data visualization"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI)",
+          "Indian Institute of Technology (IIT)",
+          "Indian Institute of Science (IISc)",
+          "Jawaharlal Nehru University (JNU)",
+          "University of Delhi"
+        ],
+        "industry": [
+          "Technology",
+          "Finance",
+          "Healthcare",
+          "E-commerce",
+          "Research and Development"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-10",
+    "post_code": "data_scientist_walk_in_interview",
+    "job_code": "data_scientist_walk_in_interview_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/data-scientist-walk-in-interview-at-tata-consultancy-services-3913859888?position=54&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=DP94uUGnGZzxH%2FnOSljZyw%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Noida, Uttar Pradesh, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "data_scientist_walk_in_interview",
+      "post_name": "Data Scientist Walk in Interview",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-30",
+    "post_code": "python_developer",
+    "job_code": "python_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "div class\"showmorelesshtml__markup showmorelesshtml__markupclampafter5            relative overflowhidden\"          pstrongLOOKING FOR IMMEDIATE JOINEE 30 DAYS OR LESSstrongppbrppstrong5 to 8yrs exp strongppbrppstrongF2F Interview In BangalorestrongppbrppstrongLocation Bangalore Chennai and Hyderabadstrongppstrong strongppstrongDomainBanking strongppbrppstrongJob DescriptionstrongppbrppstrongPythonstrongppPython developer with application programming experience including OOPS concepts not Python scriptingppGood in advanced python core python database and codingppPreferable  Banking domainppbrppRegardsppPavithraKppp        div",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/python-developer-at-wipro-3936981508?position=56&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=Wa9dhVlqJsm5AAfcCpIbFw%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "python_developer",
+      "post_name": "Python Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "python_developer",
+        "name": "Python Developer",
+        "minimum_skills_required": "python, Analytics, http api, Django",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote python developer",
+            "url": "https://www.youtube.com/watch?v=2QByYtPEGIs&ab_channel=CleverProgrammer"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=QiJ20NDOpSc&ab_channel=Simplilearn"
+          }
+        ],
+        "keywords": [
+          "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-17",
+    "post_code": "data_scientist__llm_",
+    "job_code": "data_scientist__llm__postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/data-scientist-llm-at-algoscale-3919313340?position=57&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=nXVPBktZl7NmPPYJU1sZYw%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "data_scientist__llm_",
+      "post_name": "Data Scientist (LLM)",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-24",
+    "post_code": "associate_data_scientist",
+    "job_code": "associate_data_scientist_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/associate-data-scientist-at-times-internet-3932140742?position=60&pageNum=0&refId=jlzs%2BTdtcscCyTf74Rc2ng%3D%3D&trackingId=58nDVLuz2c8M%2BxQzG2rgCw%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Noida, Uttar Pradesh, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "associate_data_scientist",
+      "post_name": "Associate Data Scientist",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "data_science",
+        "name": "Data Science",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "big_data",
+          "big data",
+          "data scientist"
+        ],
+        "colleges": [
+          "Indian Statistical Institute (ISI), Kolkata",
+          "Indian Institute of Technology (IIT), Bombay",
+          "University of Hyderabad",
+          "Delhi University - Department of Computer Science",
+          "Vellore Institute of Technology (VIT), Vellore"
+        ],
+        "industry": [
+          "Data Science",
+          "Analytics",
+          "Big Data"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-24",
+    "post_code": "frontend_developer",
+    "job_code": "frontend_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/frontend-developer-at-jio-3936896769?position=1&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=XcRuvTPBP4icIs6aB1v7NA%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "frontend_developer",
+      "post_name": "Frontend Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-01",
+    "post_code": "front_end_developer",
+    "job_code": "front_end_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/front-end-developer-at-codeclouds-3918704464?position=2&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=9MVeBrtqo3ACH1eMXZf58g%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Greater Kolkata Area",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "front_end_developer",
+      "post_name": "Front End Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-10",
+    "post_code": "jr_front_end_developer___goa",
+    "job_code": "jr_front_end_developer___goa_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/jr-front-end-developer-goa-at-sj-innovation-llc-3917581036?position=3&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=hHXUrhUAr2Y%2BopG50Ukm%2FA%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Goa, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "jr_front_end_developer___goa",
+      "post_name": "Jr Front End Developer - Goa",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-04-01",
+    "post_code": "php_developer",
+    "job_code": "php_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/php-developer-at-petpooja-3893295467?position=5&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=tvXERkw1YZkeyggg%2BIzggg%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Ahmedabad, Gujarat, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "php_developer",
+      "post_name": "PHP Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-29",
+    "post_code": "software_engineer__front_end__google_cloud",
+    "job_code": "software_engineer__front_end__google_cloud_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/software-engineer-front-end-google-cloud-at-google-3918664773?position=8&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=C%2FAFOYQSTgCIxmY9aDHCMg%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "software_engineer__front_end__google_cloud",
+      "post_name": "Software Engineer, Front End, Google Cloud",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-04-01",
+    "post_code": "hindustan_times___software_development_engineer_ii_iii___python",
+    "job_code": "hindustan_times___software_development_engineer_ii_iii___python_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/hindustan-times-software-development-engineer-ii-iii-python-at-hindustan-times-3844373903?position=9&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=CJdJbQtSLAnujuPvB8OTHg%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Gurugram, Haryana, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "hindustan_times___software_development_engineer_ii_iii___python",
+      "post_name": "Hindustan Times - Software Development Engineer II/III - Python",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "python_developer",
+        "name": "Python Developer",
+        "minimum_skills_required": "python, Analytics, http api, Django",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote python developer",
+            "url": "https://www.youtube.com/watch?v=2QByYtPEGIs&ab_channel=CleverProgrammer"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=QiJ20NDOpSc&ab_channel=Simplilearn"
+          }
+        ],
+        "keywords": [
+          "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-17",
+    "post_code": "frontend_engineer__react_js",
+    "job_code": "frontend_engineer__react_js_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/frontend-engineer-react-js-at-makemytrip-3832341489?position=17&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=XuRufKT5GgYSQMQGMz5Tow%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "frontend_engineer__react_js",
+      "post_name": "Frontend Engineer- React.JS",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-10",
+    "post_code": "front_end_developer_in_pune",
+    "job_code": "front_end_developer_in_pune_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/front-end-developer-in-pune-at-mentorbeep-3919404194?position=20&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=eL%2FQ2uWS29N2OJpMUAsZBQ%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Pune, Maharashtra, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "front_end_developer_in_pune",
+      "post_name": "Front End Developer in Pune",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-01",
+    "post_code": "website_developer_job_opening",
+    "job_code": "website_developer_job_opening_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/website-developer-job-opening-at-codeclouds-3918707312?position=21&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=azaGJ8C67f4gH1c5NHAkWA%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Greater Kolkata Area",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "website_developer_job_opening",
+      "post_name": "Website Developer Job Opening",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-01",
+    "post_code": "react_js_html_developer",
+    "job_code": "react_js_html_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/react-js-html-developer-at-ais-technolabs-pvt-ltd-3909030734?position=23&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=t6%2BjO%2BmEAG8CF6rJWbbBqg%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Ahmedabad, Gujarat, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "react_js_html_developer",
+      "post_name": "React JS HTML Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-17",
+    "post_code": "junior_website_developer",
+    "job_code": "junior_website_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": "",
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/junior-website-developer-at-zysk-technologies-3924543662?position=24&pageNum=0&refId=CEV4StoUCUUcSDYSYzzH6Q%3D%3D&trackingId=rUqde6BzjMQ0yl7W0vo1eg%3D%3D&trk=public_jobs_jserp-result_search-card",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": "",
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "junior_website_developer",
+      "post_name": "Junior Website Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-12-06",
+    "post_code": "hindustan_times___senior_developer___html_css",
+    "job_code": "hindustan_times___senior_developer___html_css_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/hindustan-times-senior-developer-html-css-at-hindustan-times-4072323199?position=1&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=MSqhJqCJucFP3QeJKhqZdQ%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Gurugram, Haryana, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "hindustan_times___senior_developer___html_css",
+      "post_name": "Hindustan Times - Senior Developer - HTML/CSS",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-14",
+    "post_code": "full_stack_developer",
+    "job_code": "full_stack_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/full-stack-developer-at-easebuzz-4117168692?position=4&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=hjQOAxfQYRGbEMkpJHanhA%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Pune, Maharashtra, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "full_stack_developer",
+      "post_name": "Full Stack Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "fullstack_developer",
+        "name": "Full Stack Developer",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress, nodejs, javascript, http api",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Full Stack developer",
+            "url": "https://www.youtube.com/shorts/1l7crR4wi2U"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/shorts/qm5sJsy3dBE"
+          }
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-02-03",
+    "post_code": "html_developer",
+    "job_code": "html_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/html-developer-at-cn-solutions-4141746563?position=7&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=NeEbG3J%2BbVSVP97k6lTH1Q%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "html_developer",
+      "post_name": "Html Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-12-06",
+    "post_code": "junior_frontend_developer__react_",
+    "job_code": "junior_frontend_developer__react__postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/junior-frontend-developer-react-at-gyaan-4076663600?position=12&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=f2txGO9HkypUTasNYSDraw%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Pune, Maharashtra, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "junior_frontend_developer__react_",
+      "post_name": "Junior Frontend Developer (React)",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-21",
+    "post_code": "react_developer",
+    "job_code": "react_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/react-developer-at-persistent-systems-4051638673?position=13&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=qUT0wU4WrcUxVnXHR2AejQ%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "react_developer",
+      "post_name": "React Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-12-06",
+    "post_code": "frontend_developer___html5_css3_javascript",
+    "job_code": "frontend_developer___html5_css3_javascript_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/frontend-developer-html5-css3-javascript-at-awign-4072321678?position=17&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=Ot46Z4CQ0fTg0RI4qMIivw%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Itanagar, Arunachal Pradesh, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "frontend_developer___html5_css3_javascript",
+      "post_name": "Frontend Developer - HTML5/CSS3/Javascript",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-12-06",
+    "post_code": "front_end_developer___sde_2",
+    "job_code": "front_end_developer___sde_2_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/front-end-developer-sde-2-at-radius-4077411956?position=18&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=hq6e%2BgeAsY7bRbtyPjO9oA%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru East, Karnataka, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "front_end_developer___sde_2",
+      "post_name": "Front End Developer - SDE 2",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-11-06",
+    "post_code": "full_stack_engineer",
+    "job_code": "full_stack_engineer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/full-stack-engineer-at-google-4075203693?position=20&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=oF2vZVFXUFm4mWRBp4WstA%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "full_stack_engineer",
+      "post_name": "Full Stack Engineer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-05",
+    "post_code": "full_stack_developer__fresher_",
+    "job_code": "full_stack_developer__fresher__postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/full-stack-developer-fresher-at-3ri-technologies-pvt-ltd-4101206313?position=21&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=N%2FQnyucroyQgimrMpxWNqg%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Pune, Maharashtra, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "full_stack_developer__fresher_",
+      "post_name": "Full-Stack Developer (Fresher)",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-14",
+    "post_code": "front_end_engineer",
+    "job_code": "front_end_engineer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/front-end-engineer-at-amazon-4119777950?position=23&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=VHo4OtkDGaRWaGRDlqhNNg%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Hyderabad, Telangana, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "front_end_engineer",
+      "post_name": "Front End Engineer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-14",
+    "post_code": "senior_front_end_developer",
+    "job_code": "senior_front_end_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/senior-front-end-developer-at-easebuzz-4117165935?position=24&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=VnqiUQgThwz%2Bbt%2B3F9nI%2Fg%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Pune, Maharashtra, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "senior_front_end_developer",
+      "post_name": "Senior Front-end Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-12-06",
+    "post_code": "front_end___html_developer",
+    "job_code": "front_end___html_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/front-end-html-developer-at-unimity-solutions-private-limited-4074131051?position=25&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=ZDx1n3h2%2Fry%2BjO8%2FXDvajw%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Chennai, Tamil Nadu, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "front_end___html_developer",
+      "post_name": "Front-end / HTML Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-02-01",
+    "post_code": "front_end_developer__bangalore",
+    "job_code": "front_end_developer__bangalore_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/front-end-developer-bangalore-at-landmark-group-4140135997?position=27&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=uby7AAPBxQJJchyx2JxxvA%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "front_end_developer__bangalore",
+      "post_name": "Front End Developer_ Bangalore",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-14",
+    "post_code": "junior_frontend_developer",
+    "job_code": "junior_frontend_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/junior-frontend-developer-at-hitachi-digital-services-4097326238?position=29&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=AaZY%2BLJZk9O0WG6nit%2FjnQ%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Hyderabad, Telangana, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "junior_frontend_developer",
+      "post_name": "Junior Frontend Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-11-06",
+    "post_code": "junior_web_developer",
+    "job_code": "junior_web_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/junior-web-developer-at-synergos-4048224832?position=33&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=hKZZw2eg%2BJAufpJ2G7lQng%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Bengaluru, Karnataka, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "junior_web_developer",
+      "post_name": "Junior Web Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-28",
+    "post_code": "elearning_front_end_developer",
+    "job_code": "elearning_front_end_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/elearning-front-end-developer-at-vestas-4104751823?position=41&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=jVtzBA8KEUXVBetRl2Nu9Q%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Chennai, Tamil Nadu, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "elearning_front_end_developer",
+      "post_name": "eLearning Front-End Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-29",
+    "post_code": "frontend_engineer___intern__india_remote_",
+    "job_code": "frontend_engineer___intern__india_remote__postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/frontend-engineer-intern-india-remote-at-peakflo-yc-w22-4136217576?position=44&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=DdbC4avGw%2FCDDHb7Y9oB5w%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "frontend_engineer___intern__india_remote_",
+      "post_name": "Frontend Engineer - Intern (India/Remote)",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-28",
+    "post_code": "web_developer_in_lucknow",
+    "job_code": "web_developer_in_lucknow_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/web-developer-in-lucknow-at-ubiqcure-4130662347?position=45&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=cTW19z3bPcBCJU0ZapN5iA%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Lucknow, Uttar Pradesh, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "web_developer_in_lucknow",
+      "post_name": "Web Developer in Lucknow",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "web_developer",
+        "name": "Web Developer(Reactjs, html, css, js etc)",
+        "minimum_skills_required": "HTML, CSS, Javascript, Reactjs, jQuery, Responsive website development, api integration, http, websocket, developer tool, SEO, wordpress",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote Web developer",
+            "url": "https://www.youtube.com/watch?v=NtDclT4c8No"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=pTelIKAEadI"
+          }
+        ],
+        "keywords": [
+          "web",
+          "frontend_developer",
+          "frontend",
+          "react"
+        ],
+        "colleges": [
+          "mits",
+          "prestige"
+        ],
+        "industry": [
+          "cs_it_engineering"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2024-05-10",
+    "post_code": "front_end_developer__front_end__css__html__design_",
+    "job_code": "front_end_developer__front_end__css__html__design__postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/front-end-developer-front-end-css-html-design-at-grazitti-interactive-3912192944?position=47&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=%2FYBiaSyEfbcSDIQR1YTQ0w%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Panchkula, Haryana, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "front_end_developer__front_end__css__html__design_",
+      "post_name": "Front End Developer (Front End, CSS, HTML, Design)",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-21",
+    "post_code": "java_and_python_full_stack_developer",
+    "job_code": "java_and_python_full_stack_developer_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/java-and-python-full-stack-developer-at-tata-technologies-4129154022?position=50&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=OlPb9fEGoexbDiAKWPm67A%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Pune, Maharashtra, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "java_and_python_full_stack_developer",
+      "post_name": "JAVA and python Full stack Developer",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "python_developer",
+        "name": "Python Developer",
+        "minimum_skills_required": "python, Analytics, http api, Django",
+        "minimum_qualifications": [
+          "graduation"
+        ],
+        "preferred_streams": [
+          "any"
+        ],
+        "entrance_exam": [
+          "interview"
+        ],
+        "life_style": [
+          {
+            "title": "A Day in the Life of a Remote python developer",
+            "url": "https://www.youtube.com/watch?v=2QByYtPEGIs&ab_channel=CleverProgrammer"
+          },
+          {
+            "title": "How Much Salary Should You Expect As A Fresher Developer",
+            "url": "https://www.youtube.com/watch?v=QiJ20NDOpSc&ab_channel=Simplilearn"
+          }
+        ],
+        "keywords": [
+          "python"
+        ],
+        "colleges": [
+          "IIT Bombay",
+          "IIT Delhi",
+          "IIIT Hyderabad",
+          "BITS Pilani",
+          "NIT Trichy"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "E-commerce",
+          "Startups"
+        ]
+      }
+    }
+  },
+  {
+    "post_date": "2025-01-05",
+    "post_code": "full_stack_software_engineer___msol",
+    "job_code": "full_stack_software_engineer___msol_postdate_",
+    "recruitment_board": "",
+    "qualification_eligibility": null,
+    "last_date": "",
+    "brief_info": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "job_link": "https://in.linkedin.com/jobs/view/full-stack-software-engineer-msol-at-emerson-4108528760?position=52&pageNum=0&refId=WW4yfsHVxuCyxmOma%2Bktvw%3D%3D&trackingId=LEU0rO2YoHpI1Y3b41OLlw%3D%3D",
+    "salary": "",
+    "job_type": "private",
+    "location": "Chandigarh, Chandigarh, India",
+    "preferred_candidate": null,
+    "posts_data": {
+      "post_id": 1,
+      "post_code": "full_stack_software_engineer___msol",
+      "post_name": "Full Stack Software Engineer - MSOL",
+      "jobtype_masterdata": {
+        "code": "private",
+        "name": "Private"
+      },
+      "profile_masterdata": {
+        "code": "software_engineer",
+        "name": "Software Engineer",
+        "minimum_skills_required": "",
+        "minimum_qualifications": [],
+        "preferred_streams": [
+          "any"
+        ],
+        "life_style": [],
+        "keywords": [
+          "developer",
+          "wordpress"
+        ],
+        "colleges": [
+          "Indian Institute of Technology (IIT), Delhi",
+          "National Institute of Technology (NIT), Warangal",
+          "Birla Institute of Technology and Science (BITS), Pilani",
+          "Vellore Institute of Technology (VIT), Vellore",
+          "Delhi Technological University (DTU), Delhi"
+        ],
+        "industry": [
+          "Information Technology",
+          "Software Development",
+          "Tech Startups"
         ]
       }
     }
