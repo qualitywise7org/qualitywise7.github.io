@@ -332,6 +332,54 @@ const phonenumber = localStorage.getItem("phonenumber");
 let totalUserAssessment;
 let uniqueItems;
 let totalAssessments;
+// var currdate = window.getCurrentDateTime();
+// console.log(currdate);
+// Function to fetch all user profiles
+
+
+
+// ✅ Example Usage
+
+async function updateAuditFields() {
+  try {
+    var currentDate = window.getCurrentDateTime();
+    const querySnapshot = await getDocs(collection(db, "user_profile")); // Fetch all users
+
+    for (const userDoc of querySnapshot.docs) {
+      const userRef = doc(db, "user_profile", userDoc.id);
+      const docSnap = await getDoc(userRef);
+      // const dat = convertToISOAndAdjustTime("January 31, 2025 at 07:27:41 PM UTC")
+      // console.log(dat);
+      // Audit fields
+      if(!docSnap.data().audit_fields){
+        // console.log(docSnap.data());
+        const updatedData = {
+          createdAt: currentDate,
+          createdBy: docSnap.data().about.email,
+          updatedAt: "",
+          updatedBy: "",
+        }
+        console.log(updatedData);
+  
+      
+        
+  
+        // Update the document
+        // await updateDoc(userRef, {
+        //   audit_fields: updatedData,
+        // });
+      
+        // console.log(`Updated user: ${userDoc.id}`);
+      }
+  
+      console.log("✅ All user profiles updated successfully.");
+      }
+  } catch (error) {
+    console.error("❌ Error updating user profiles:", error);
+  }
+}
+
+// updateAuditFields();
 
 function loopingForUserdataabout(data, count, n) {
   // console.log(data);
