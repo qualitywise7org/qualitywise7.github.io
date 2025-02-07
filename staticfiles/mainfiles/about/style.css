@@ -10,7 +10,7 @@ body {
   font-family: "Figtree", sans-serif;
   font-size: 1.2rem;
   line-height: 1.6rem;
-  background-image: linear-gradient(#b5b682, #fff, #b5b682);
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -37,7 +37,7 @@ body {
 article {
   position: relative;
   border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   background: #fff;
   overflow: hidden;
   transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
