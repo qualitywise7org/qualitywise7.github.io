@@ -135,22 +135,24 @@ window.updateProgress = updateProgress;
 
 // global.js
 window.getCurrentDateTime = function () {
-  const now = new Date();
+  // const now = new Date();
 
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    timeZone: "UTC", // Specify UTC explicitly
-    timeZoneName: "short",
-  };
+  // const options = {
+  //   weekday: "long",
+  //   year: "numeric",
+  //   month: "long",
+  //   day: "numeric",
+  //   hour: "2-digit",
+  //   minute: "2-digit",
+  //   second: "2-digit",
+  //   timeZone: "UTC", // Specify UTC explicitly
+  //   timeZoneName: "short",
+  // };
 
-  const formattedDateTime = now.toLocaleString("en-US", options);
-  return formattedDateTime;
+  // const formattedDateTime = now.toLocaleString("en-US", options);
+  // return formattedDateTime;
+  const now = new Date(); // Get current UTC time
+  return now.toISOString().replace(/\.\d{3}Z$/, "Z"); // Format as "YYYY-MM-DDTHH:mm:ssZ"
 };
 
 

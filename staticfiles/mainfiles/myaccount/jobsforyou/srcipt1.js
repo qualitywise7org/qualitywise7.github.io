@@ -68,13 +68,16 @@ window.addEventListener("load", async () => {
       urlQualification ||
       urlCompany
     ) {
-      displayResults(
-        urlJobType,
-        urlLocation,
-        urlProfile,
-        urlCompany,
-        currentPage
-      );
+      displayResults(urlJobType, urlLocation, urlQualification, urlProfile, 
+        Array.isArray(urlCompany) ? urlCompany.join(",") : urlCompany, 
+        currentPage);
+      // displayResults(
+      //   urlJobType,
+      //   urlLocation,
+      //   urlProfile,
+      //   urlCompany,
+      //   currentPage
+      // );
     } else {
       displayJobs(currentPage);
     }
@@ -142,7 +145,7 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
                          }
 
                         <p><strong>Eligibility : </strong>${
-                          job?.qualification_eligibility
+                          job?.qualification_eligibility || "Not Mention"
                         }</p>
                         ${
                           job?.recruitment_board
@@ -370,6 +373,14 @@ function trackSearchResultsAndFilters(selectedFilters, jobResults) {
   }
 }
 
+
+function replaceNullsInJobs(jobs) {
+  return jobs.map(job =>
+    Object.fromEntries(
+      Object.entries(job).map(([key, value]) => [key, value === null ? "Not Mention" : value])
+    )
+  );
+}
 // Function to display results based on user input
 async function displayResults(
   selectedJobType,
@@ -380,6 +391,7 @@ async function displayResults(
   page
 ) {
   // Split comma-separated values for each filter
+
   const locationArray = selectedLocation
     ? selectedLocation.split(",").map((loc) => loc.trim().toLowerCase())
     : [];
@@ -389,9 +401,10 @@ async function displayResults(
   const profileArray = selectedProfile
     ? selectedProfile.split(",").map((profile) => profile.trim().toLowerCase())
     : [];
-  const companyArray = selectedCompany
+    const companyArray = (typeof selectedCompany === "string" && selectedCompany)
     ? selectedCompany.split(",").map((company) => company.trim().toLowerCase())
     : [];
+  
 
   // Check if "Graduation" is entered, and expand it to all relevant degrees
   const qualificationArray = selectedQualification
@@ -404,7 +417,7 @@ async function displayResults(
     qualificationArray.push(...qualificationMapping.postGraduation);
   }
 
-  const jobs = jobs_data.filter((job) => {
+  let jobs = jobs_data.filter((job) => {
     // Match job type
     const jobTypeMatch =
       !jobTypeArray.length ||
@@ -452,8 +465,9 @@ async function displayResults(
       companyMatch
     );
   });
-
-  console.log("Filtered Jobs:", jobs); // Check filtered jobs in console
+  
+  jobs = replaceNullsInJobs(jobs);
+  // console.log("Filtered Jobs:", jobs); // Check filtered jobs in console
 
   // Render filtered and paginated jobs
   renderPaginatedJobsAndControls(jobs, page);
