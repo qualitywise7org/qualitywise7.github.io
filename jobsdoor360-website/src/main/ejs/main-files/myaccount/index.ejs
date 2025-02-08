@@ -18,9 +18,22 @@
     <!-- Navbar -->
     <%- include('../../partials/navbar.ejs') %>
 
-    <div class="container my-4">
+    <div class="container mt-5">
+      <!-- Centered Flex Column -->
+      <div class="d-flex flex-row gap-5 align-items-center justify-content-center mb-4">
+          <label class="form-check">
+              <input type="checkbox" id="internship" value="internship" class="form-check-input" onchange="updateSelection(this)">
+              Looking for Internship
+          </label>
+          <label class="form-check">
+              <input type="checkbox" id="job" value="job" class="form-check-input" onchange="updateSelection(this)">
+              Looking for Job
+          </label>
+      </div>
+  
+      <!-- Table -->
       <div class="custom-table">
-        <table class="table table-bordered text-center align-middle">
+        <table class="table table-bordered text-center align-middle p-4">
           <thead class="table-light">
             <tr>
               <th>Progress</th>
@@ -114,6 +127,10 @@
         </table>
       </div>
     </div>
+  </div>
+
+ 
+      
     
     
     <!-- <div class="d-flex justify-content-center mt-4 myaccount_option">
