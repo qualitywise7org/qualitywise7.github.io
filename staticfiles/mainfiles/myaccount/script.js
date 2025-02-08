@@ -322,8 +322,6 @@
 //   }
 // }
 
-
-
 const email = localStorage.getItem("email");
 const username = localStorage.getItem("username");
 const phonenumber = localStorage.getItem("phonenumber");
@@ -335,8 +333,6 @@ let totalAssessments;
 // var currdate = window.getCurrentDateTime();
 // console.log(currdate);
 // Function to fetch all user profiles
-
-
 
 // ✅ Example Usage
 
@@ -351,29 +347,26 @@ async function updateAuditFields() {
       // const dat = convertToISOAndAdjustTime("January 31, 2025 at 07:27:41 PM UTC")
       // console.log(dat);
       // Audit fields
-      if(!docSnap.data().audit_fields){
+      if (!docSnap.data().audit_fields) {
         // console.log(docSnap.data());
         const updatedData = {
           createdAt: currentDate,
           createdBy: docSnap.data().about.email,
           updatedAt: "",
           updatedBy: "",
-        }
+        };
         console.log(updatedData);
-  
-      
-        
-  
+
         // Update the document
         // await updateDoc(userRef, {
         //   audit_fields: updatedData,
         // });
-      
+
         // console.log(`Updated user: ${userDoc.id}`);
       }
-  
+
       console.log("✅ All user profiles updated successfully.");
-      }
+    }
   } catch (error) {
     console.error("❌ Error updating user profiles:", error);
   }
@@ -454,7 +447,6 @@ async function assessmentsPercentage() {
     ); // Calculate percentage
 
     showProgress(3, 3, assessmentPercent);
-    
   } catch (error) {
     console.error("Error getting user data from user_profile:", error);
   }
@@ -494,6 +486,49 @@ async function fetchAllAssessmentResults(email) {
   }
 }
 
+//checkbox
+let selections = [];
+window.updateSelection = updateSelection;
+
+async function updateSelection(checkbox) {
+  if (checkbox.checked) {
+    selections.push(checkbox.value);
+  } else {
+    selections = selections.filter((item) => item !== checkbox.value); // ✅ Remove item properly
+  }
+
+  selections = [...new Set(selections)]; // ✅ Remove duplicates
+
+  const userProfileRef = doc(db, "user_profile", email);
+  try {
+    const docSnapshot = await getDoc(userProfileRef);
+    const auditForm = docSnapshot.data().audit_fields;
+
+    var currentDate = window.getCurrentDateTime();
+    var auditData = {
+      createdAt: auditForm.createdAt,
+      createdBy: docSnapshot.data().about.email,
+      updatedAt: currentDate,
+      updatedBy: docSnapshot.data().about.email,
+    };
+
+    if (docSnapshot.exists()) {
+      const existingData = docSnapshot.data();
+      const updatedData = {
+        ...existingData,
+        preferences: selections, // ✅ Save updated selections array
+        audit_fields: auditData,
+      };
+
+      await setDoc(userProfileRef, updatedData);
+    }
+  } catch (error) {
+    console.error("Error updating user data: ", error);
+  }
+}
+
+// let selection = new Set();
+
 async function isUser() {
   // console.log("isUser");
   try {
@@ -513,6 +548,13 @@ async function isUser() {
       let addressData = userData.address || {};
       let educationData = userData.education || {};
       let experienceData = userData.experience || {};
+      const storedSelections = userData?.preferences || []; // Default to empty array
+      storedSelections.forEach((item) => selections.push(item)); // ✅ Push items to array
+
+      // ✅ Use .includes() instead of .has() for an array
+      document.getElementById("job").checked = selections.includes("job");
+      document.getElementById("internship").checked =
+        selections.includes("internship");
 
       // Combine first and last name for aboutData
       // if(aboutData.firstName )
@@ -568,36 +610,38 @@ async function isUser() {
       await assessmentsPercentage();
       showProgress(1, 1, personalProfilePercent);
       showProgress(2, 2, jobProfilePercent);
-      
-      
-      
+
       // Skills Data (replace with actual dynamic data)
       // console.log(skillData);
       let skills = [];
-      
+
       // Populate skills list dynamically with flex-wrap
-      if(Object.keys(skillData).length !== 0){
+      if (Object.keys(skillData).length !== 0) {
         console.log(Object.keys(skillData).length);
         // console.log(skills);
-        
+
         // console.log(uniqueItems);
-        
+
         // console.log(totalUserAssessment);
         // console.log(totalAssessments);
-        skillData.forEach(item => {
+        skillData.forEach((item) => {
           if (!skills.includes(item.skillName)) {
             skills.push(item.skillName);
           }
         });
-        skills = skills.map(skill => skill.trim());
+        skills = skills.map((skill) => skill.trim());
         // Log the updated skills array
-        let matchingCount = skills.filter(skill => 
-          uniqueItems.some(item => item.quizCode.toLowerCase() === skill.toLowerCase())
+        let matchingCount = skills.filter((skill) =>
+          uniqueItems.some(
+            (item) => item.quizCode.toLowerCase() === skill.toLowerCase()
+          )
         ).length;
-        
+
         // console.log(matchingCount);
-        document.getElementById("progress-count").textContent = `${matchingCount}/${totalAssessments}`; 
-        
+        document.getElementById(
+          "progress-count"
+        ).textContent = `${matchingCount}/${totalAssessments}`;
+
         const skillsList = document.getElementById("skills-list");
         skills.forEach((skill, index) => {
           const skillItem = document.createElement("span");
@@ -606,8 +650,6 @@ async function isUser() {
           skillsList.appendChild(skillItem);
         });
       }
-
-      
     } else if (leadDocSnap.exists()) {
       console.log("lead");
       // If user profile does not exist, check the lead collection
@@ -646,6 +688,7 @@ async function isUser() {
         updatedBy: "",
       };
       formData.remark = null;
+      formData.preferences = selections;
       console.log(formData);
 
       // // Create a new user profile document
@@ -681,6 +724,7 @@ async function isUser() {
         updatedBy: "",
       };
       formData.remark = null;
+      formData.preferences = selections;
       console.log(formData);
       await setDoc(userDocRef, formData);
       await setDoc(leadDocRef, {
