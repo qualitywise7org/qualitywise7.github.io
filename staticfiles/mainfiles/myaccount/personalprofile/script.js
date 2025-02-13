@@ -14,8 +14,8 @@ if (!email) {
 async function isUser() {
   // console.log("isUser");
 
-  const docRef = doc(db, "user_profile", email);
   try {
+    const docRef = doc(db, "user_profile", email);
     const docSnap = await getDoc(docRef);
     //   console.log(docSnap);
     if (docSnap.exists()) {

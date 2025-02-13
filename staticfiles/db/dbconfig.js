@@ -14,6 +14,9 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
 import {
+  orderBy,
+  arrayUnion,
+  Timestamp,
   getFirestore,
   collection,
   getDocs,
@@ -85,6 +88,9 @@ Object.assign(obj, {
 });
 
 Object.assign(obj, {
+  orderBy,
+  arrayUnion,
+  Timestamp,
   getFirestore,
   collection,
   getDocs,
