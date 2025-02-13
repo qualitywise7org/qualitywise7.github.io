@@ -1,0 +1,127 @@
+body {
+    overflow: auto;
+  }
+  
+  /* Table */
+  #userProfilesTable {
+    width: auto; /* Allow the table to adjust its width based on content */
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+   
+  /* Table Header */
+  #userProfilesTable th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Table Body */
+  #userProfilesTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  /* Profile Photo */
+  #userProfilesTable img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+  }
+  
+  /* Name */
+  #userProfilesTable .name-cell {
+    font-weight: bold;
+  }
+  
+  /* Skills */
+  #userProfilesTable .skills-cell {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* School and Education */
+  #userProfilesTable .school-cell,
+  #userProfilesTable .education-cell {
+    font-style: italic;
+    color: #888;
+  }
+  
+  
+  /* Submit Button */
+  #userProfilesTable td button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #userProfilesTable td button:hover {
+    background-color: #0056b3;
+  }
+  
+  .action {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }.search-container {
+    text-align: center; /* Center-align contents horizontally */
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+    position: sticky;
+    top: 0;
+    background-color: white; /* Optional: Set background color */
+    z-index: 100; /* Optional: Ensure it appears above other content */
+    padding: 10px; /* Add padding for better spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  }
+  
+  .search-container input[type="text"],
+  .search-container button {
+    /* Optional: Adjust input and button styles */
+    padding: 10px;
+    margin: 5px;
+    width: 60%; /* Adjust width for better visibility */
+    max-width: 300px; /* Limit max-width for small screens */
+  }
+  
+  /* Optional: Style for the button */
+  .search-container button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    width: 30%; /* Adjust width for better visibility */
+    max-width: 150px; /* Limit max-width for small screens */
+  }
+  
+  .search-container button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Media Query for responsiveness */
+  @media screen and (max-width: 768px) {
+    .search-container input[type="text"],
+    .search-container button {
+      width: 100%; /* Full width on smaller screens */
+      max-width: none; /* No max-width on smaller screens */
+    }
+    
+    .search-container button {
+      margin-left: 0; /* Remove left margin on smaller screens */
+      width: 30%; /* Full width for button on smaller screens */
+      max-width: none; /* No max-width on smaller screens */
+    }
+  }
+  
