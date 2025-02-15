@@ -255,9 +255,11 @@ window.filterByNameEmail = async function filterByNameEmail() {
       users = users.filter(user => {
         const email = user?.about?.email || "";
         const firstName = user?.about?.firstName || "";
+        const lowerSearch = searchInput.toLowerCase();
+      
         return searchInput.includes("@")
-          ? email.startsWith(searchInput)
-          : firstName.startsWith(searchInput);
+          ? email.toLowerCase().startsWith(lowerSearch)
+          : firstName.toLowerCase().startsWith(lowerSearch);
       });
 
       console.log("Filtered Users (Date, Gender & Name/Email):", users);
@@ -290,9 +292,11 @@ window.filterByNameEmail = async function filterByNameEmail() {
       users = users.filter(user => {
         const email = user?.about?.email || "";
         const firstName = user?.about?.firstName || "";
+        const lowerSearch = searchInput.toLowerCase();
+      
         return searchInput.includes("@")
-          ? email.startsWith(searchInput)
-          : firstName.startsWith(searchInput);
+          ? email.toLowerCase().startsWith(lowerSearch)
+          : firstName.toLowerCase().startsWith(lowerSearch);
       });
 
       console.log("Filtered Users (Date & Name/Email):", users);
@@ -332,7 +336,23 @@ window.filterByNameEmail = async function filterByNameEmail() {
           where("about.firstName", "<=", searchInput + "\uf8ff")
         );
       }
-    }
+      // Fetch users from Firebase
+      const querySnapshot = await getDocs(q);
+      let users = querySnapshot.docs.map(doc => doc.data());
+    
+      // Perform case-insensitive filtering in JavaScript
+      const lowerSearch = searchInput.toLowerCase();
+      users = users.filter(user => {
+        const email = user?.about?.email?.toLowerCase() || "";
+        const firstName = user?.about?.firstName?.toLowerCase() || "";
+    
+        return searchInput.includes("@")
+          ? email.startsWith(lowerSearch)
+          : firstName.startsWith(lowerSearch);
+    });
+      console.log("Filtered Users (name):", users);
+      return populateUserProfilesTable(users);
+  }
 
     //  Case 6: Only Gender is selected 
     else if (selectedGender && selectedGender !== "all") {
