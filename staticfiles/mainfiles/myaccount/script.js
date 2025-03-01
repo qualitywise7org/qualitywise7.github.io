@@ -327,6 +327,9 @@ const username = localStorage.getItem("username");
 const phonenumber = localStorage.getItem("phonenumber");
 // console.log(email);
 // console.log(username);
+if (!email) {
+  window.location.href = "/login/";
+}
 let totalUserAssessment;
 let uniqueItems;
 let totalAssessments;
@@ -531,6 +534,7 @@ async function updateSelection(checkbox) {
 
 async function isUser() {
   // console.log("isUser");
+  
   try {
     const leadDocSnap = await getDoc(doc(db, "lead", email));
     const docSnap = await getDoc(doc(db, "user_profile", email));
