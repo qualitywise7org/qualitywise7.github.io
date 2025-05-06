@@ -1,0 +1,81 @@
+.motivation-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+.motivation-item {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+}
+
+.motivation-item h2 {
+  color: #1a1a1a;
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: math;
+}
+
+.motivation-item p {
+  color: #666;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.motivation-item ol {
+  padding-left: 1.5rem;
+  font-size: 1rem;
+  color: #444;
+  font-family: sans-serif;
+}
+
+.motivation-item a {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.motivation-item img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+/* Responsive styling for mobile devices */
+@media screen and (max-width: 600px) {
+  .motivation-content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .motivation-item h2 {
+    font-size: 22px;
+  }
+
+  .motivation-item p,
+  .motivation-item ol {
+    font-size: 1rem;
+  }
+
+  .motivation-item a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
