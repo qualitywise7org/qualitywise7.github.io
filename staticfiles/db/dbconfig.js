@@ -28,6 +28,7 @@ import {
   setDoc,
   addDoc,
   updateDoc,
+  deleteDoc,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 import {
@@ -102,6 +103,7 @@ Object.assign(obj, {
   setDoc,
   addDoc,
   updateDoc,
+  deleteDoc,
 });
 
 Object.assign(obj, {
