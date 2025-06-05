@@ -608,7 +608,7 @@ async function populateUserProfilesTable(data) {
       const editButton = document.createElement("button");
       editButton.textContent = "Applied_Job";
       editButton.addEventListener("click", () => {
-        window.open("jobs_applied/?user=" + user.about.email, "_blank");
+        window.open("jobs-applied/?user=" + user.about.email, "_blank");
       });
 
       const reviewButton = document.createElement("button");

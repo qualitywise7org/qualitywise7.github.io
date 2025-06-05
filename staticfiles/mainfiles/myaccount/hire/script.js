@@ -5,21 +5,21 @@ console.log("🔧 Script loaded...");
 
 const firestore = getFirestore(app);
 
-async function checkAdmin() {
-  const userDocRef = doc(firestore, "users", localStorage.getItem("uid"));
-  const userDocSnapshot = await getDoc(userDocRef);
+// async function checkAdmin() {
+//   const userDocRef = doc(firestore, "users", localStorage.getItem("uid"));
+//   const userDocSnapshot = await getDoc(userDocRef);
 
-  if (userDocSnapshot.exists() && userDocSnapshot.data().isAdmin) {
-    console.log("✅ User is admin");
-  } else {
-    console.warn("❌ User is not admin");
-    alert("Please login as admin to access this page.");
-    window.location.href = "/admin";
-  }
-}
+//   if (userDocSnapshot.exists() && userDocSnapshot.data().isAdmin) {
+//     console.log("✅ User is admin");
+//   } else {
+//     console.warn("❌ User is not admin");
+//     alert("Please login as admin to access this page.");
+//     window.location.href = "/";
+//   }
+// }
 
 // Run this at page load
-checkAdmin();
+// checkAdmin();
 
 const openBtn = document.getElementById("openModalBtn");
 const closeBtn = document.getElementById("closeModalBtn");

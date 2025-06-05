@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/jdmasterpanel/users-record/jobs-applied/style.css" />
+    <%- include('../../partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../../partials/navbar.ejs') %>
+    <table id="jobTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Role</th>
+          <th>Location</th>
+          <th>Stipend</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Jobs will be displayed here -->
+      </tbody>
+    </table>
+    <script type="module" src="/staticfiles/mainfiles/myaccount/jdmasterpanel/users-record/jobs-applied/script.js"></script>
+    <%- include('../../partials/footer.ejs') %>
+  </body>
+</html>
