@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Hire</title>
     <link
       rel="stylesheet"
-      href="/staticfiles/mainfiles/jdmasterpanel/users-record/jobs-applied/script.css"
+      href="/staticfiles/mainfiles/myaccount/hire/style.css"
     />
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,7 +20,6 @@
 
   </head>
   <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="brand" href="/">
@@ -187,26 +184,72 @@
 <!-- End Google Tag Manager (noscript) -->
 
 
+   <h1>Job Postings</h1>
+    <button class="button" id="openModalBtn">+ Post New Job</button>
 
-    <!-- Job Table -->
-    <div class="container">
-      <table id="jobTable" class="table-auto border-collapse border border-gray-400">
-        <thead>
-          <tr class="bg-gray-200">
-            <th class="border border-gray-400 px-4 py-2">ID</th>
-            <th class="border border-gray-400 px-4 py-2">Title</th>
-            <th class="border border-gray-400 px-4 py-2">Role</th>
-            <th class="border border-gray-400 px-4 py-2">Location</th>
-            <th class="border border-gray-400 px-4 py-2">Stipend</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Jobs will be dynamically rendered here -->
-        </tbody>
-      </table>
+    <div id="jobList" class="job-list-container"></div>
+
+    <!-- Modal Form -->
+    <div class="modal" id="jobModal">
+      <div class="modal-content">
+        <h2 id="modalTitle">Post a New Job</h2>
+        <form id="jobForm">
+          <div class="form-group">
+            <label>Job Title*</label>
+            <input type="text" id="jobTitle" required />
+          </div>
+          <div class="form-group">
+            <label>Company Name*</label>
+            <input type="text" id="company" required />
+          </div>
+          <div class="form-group">
+            <label>Job Type*</label>
+            <select id="jobType" required>
+              <option value="Full-time">Full-time</option>
+              <option value="Part-time">Part-time</option>
+              <option value="Internship">Internship</option>
+              <option value="Contract">Contract</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Location*</label>
+            <input type="text" id="location" required />
+          </div>
+          <div class="form-group">
+            <label>Qualification Eligibility*</label>
+            <input type="text" id="qualification" required />
+          </div>
+          <div class="form-group">
+            <label>Education Board</label>
+            <input type="text" id="board" />
+          </div>
+          <div class="form-group">
+            <label>Minimum Age</label>
+            <input type="number" id="minAge" />
+          </div>
+          <div class="form-group">
+            <label>Maximum Age</label>
+            <input type="number" id="maxAge" />
+          </div>
+          <div class="form-group">
+            <label>Application Deadline*</label>
+            <input type="date" id="deadline" required />
+          </div>
+          <div class="form-group">
+            <label>Profile Code (for filtering)</label>
+            <input type="text" id="profile" />
+          </div>
+          <div class="form-group">
+            <label>Job Description*</label>
+            <textarea id="description" required></textarea>
+          </div>
+          <button type="submit" class="button">Submit</button>
+          <button type="button" class="button" style="background:#6b7280" id="closeModalBtn">Cancel</button>
+        </form>
+      </div>
     </div>
 
-    <!-- Footer -->
+
     <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
   <div class="container">
     <div class="row" >
@@ -567,11 +610,11 @@
 
 
 
-
-    <!-- Scripts -->
-    <script
-      type="module"
-      src="/staticfiles/mainfiles/jdmasterpanel/users-record/jobs-applied/script.js"
+    
+    <script type="module" 
+    src="/staticfiles/mainfiles/myaccount/hire/script.js"
     ></script>
   </body>
 </html>
+
+
