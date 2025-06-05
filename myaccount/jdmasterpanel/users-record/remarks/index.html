@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="/staticfiles/mainfiles/jdmasterpanel/users-record/jobs-applied/script.css"
-    />
-    <meta charset="utf-8" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Users Data</title>
+  <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
 <link rel="icon" href="/fevicon.ico" type="profile" />
@@ -20,10 +16,40 @@
   crossorigin="anonymous"
 />
 
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    img {
+      border-radius: 50%;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="brand" href="/">
       <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
@@ -187,27 +213,10 @@
 <!-- End Google Tag Manager (noscript) -->
 
 
-
-    <!-- Job Table -->
-    <div class="container">
-      <table id="jobTable" class="table-auto border-collapse border border-gray-400">
-        <thead>
-          <tr class="bg-gray-200">
-            <th class="border border-gray-400 px-4 py-2">ID</th>
-            <th class="border border-gray-400 px-4 py-2">Title</th>
-            <th class="border border-gray-400 px-4 py-2">Role</th>
-            <th class="border border-gray-400 px-4 py-2">Location</th>
-            <th class="border border-gray-400 px-4 py-2">Stipend</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Jobs will be dynamically rendered here -->
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Footer -->
-    <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
+  <div id="userDetails">
+    <!-- All user data will be displayed here -->
+  </div>
+  <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
   <div class="container">
     <div class="row" >
       <!-- Quick Links Section -->
@@ -567,11 +576,6 @@
 
 
 
-
-    <!-- Scripts -->
-    <script
-      type="module"
-      src="/staticfiles/mainfiles/jdmasterpanel/users-record/jobs_applied/script.js"
-    ></script>
-  </body>
+  <script type="module" src="/staticfiles/mainfiles/jdmasterpanel/users-record/remarks/script.js"></script>
+</body>
 </html>
