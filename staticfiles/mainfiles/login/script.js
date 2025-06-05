@@ -182,3 +182,20 @@ googleLogin.addEventListener("click", async () => {
     console.log("Error Logging in  with Google: ", error.message);
   }
 });
+
+
+// onAuthStateChanged(auth, async (user) => {
+//   if (user) {
+//     const roleDoc = await getDoc(doc(db, "login_roles", user.uid));  // or "login_roles"
+//     if (roleDoc.exists()) {
+//       const role = roleDoc.data().role;
+//       console.log("User role:", role);
+//       // Save role in state or context
+//       // Show/hide UI accordingly
+//     } else {
+//       console.log("No role found for this user");
+//     }
+//   } else {
+//     // User logged out
+//   }
+// });
