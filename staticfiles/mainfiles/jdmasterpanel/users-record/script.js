@@ -6,7 +6,7 @@ if (!email) {
 }
 
 async function mainData(){
-  setDefaultDateFilters
+  setDefaultDateFilters()
   document.getElementById("searchButton").addEventListener("click", filterByNameEmail);
   document.getElementById("genderDropdown").addEventListener("change", filterByNameEmail);
   document.getElementById("startDate").addEventListener("change", () => {
@@ -263,7 +263,7 @@ window.filterByNameEmail = async function filterByNameEmail() {
       });
 
       console.log("Filtered Users (Date, Gender & Name/Email):", users);
-      return populateUserProfilesTable(users);
+      return users;
     }
     // Case 2: Both Date & Gender are selected (First filter by date, then filter gender)
     else if (startDate && endDate && selectedGender !== "all") {
@@ -280,7 +280,7 @@ window.filterByNameEmail = async function filterByNameEmail() {
         return userGender === selectedGenderValue;
       });
       console.log("Filtered Users (Date & Gender):", users);
-      return populateUserProfilesTable(users);
+      return users;
     }
     //  Case 3: Both Date & Name/Email are selected (First filter by date, then search locally)
     else if (searchInput && startDate && endDate) {
@@ -300,7 +300,7 @@ window.filterByNameEmail = async function filterByNameEmail() {
       });
 
       console.log("Filtered Users (Date & Name/Email):", users);
-      return populateUserProfilesTable(users);
+      return users;
     }
     //Case 4: Both Gender & Name/Email are selected(First filter by gender, then search locally)
     if (searchInput && selectedGender !== "all") {
@@ -319,7 +319,7 @@ window.filterByNameEmail = async function filterByNameEmail() {
       });
 
       console.log("Filtered Users (gender / name):", users);
-      return populateUserProfilesTable(users);
+      return users;
     }
     // Case 5: Only Name/Email is provided 
     else if (searchInput) {
@@ -351,7 +351,7 @@ window.filterByNameEmail = async function filterByNameEmail() {
           : firstName.startsWith(lowerSearch);
     });
       console.log("Filtered Users (name):", users);
-      return populateUserProfilesTable(users);
+      return users;
   }
 
     //  Case 6: Only Gender is selected 
@@ -369,7 +369,7 @@ window.filterByNameEmail = async function filterByNameEmail() {
     let users = querySnapshot.docs.map(doc => doc.data());
 
     console.log("Filtered Users (Name / email):", users);
-    return populateUserProfilesTable(users);
+    return users;
   } catch (error) {
     console.error("Error fetching users:", error);
     return [];
@@ -540,7 +540,7 @@ async function populateUserProfilesTable(data) {
 
   try {
     let selectedRating = document.getElementById("ratingDropdown").value; // Get selected rating
-    let filteredUsers;
+    let filteredUsers = [];
 
     if (selectedRating && selectedRating !== "all") {
       filteredUsers = await filterByRating(); // Fetch users based on rating filter
@@ -548,8 +548,10 @@ async function populateUserProfilesTable(data) {
       filteredUsers = data ? data : await filterByNameEmail(); // Default: fetch by name/email
     }
     
+    console.log("Selected Rating:", selectedRating);
+console.log("Filtered Users:", filteredUsers);
 
-    if (!filteredUsers.length) {
+    if (!Array.isArray(filteredUsers)||filteredUsers.length === 0) {
       tableBody.innerHTML = "<tr><td colspan='14'>No users found</td></tr>";
       updatePaginationControls(0);
       return;
