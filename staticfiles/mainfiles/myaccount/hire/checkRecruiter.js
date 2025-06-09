@@ -1,112 +1,3 @@
-// // checkRecruiter.js
-// import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
-// import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
-
-// const auth = getAuth();
-// const db = getFirestore();
-
-// onAuthStateChanged(auth, async (user) => {
-//   if (!user) {
-//     window.location.href = "/login/";
-//     return;
-//   }
-
-//   try {
-//     const roleDocRef = doc(db, "login_roles", user.email);
-//     const roleDocSnap = await getDoc(roleDocRef);
-
-//     if (!roleDocSnap.exists() || (roleDocSnap.data().role !== "recruiter" && roleDocSnap.data().role !== "master_admin")) {
-//       alert("Access denied. Recruiter or Master Admin role required.");
-//       window.location.href = "/";
-//     }
-//   } catch (error) {
-//     console.error("Error checking role:", error);
-//     alert("Error verifying user role. Please contact support.");
-//     window.location.href = "/login/";
-//   }
-// });
-
-
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
-
-const auth = getAuth();
-const db = getFirestore();
-
-
-// // initHirePortal(window.companyData);
-// onAuthStateChanged(auth, async (user) => {
-//   if (!user) {
-//     console.warn("❌ No user logged in. Redirecting to login.");
-//     window.location.href = "/login/";
-//     return;
-//   }
-
-//   console.log("✅ User logged in:", user.email);
-
-//   try {
-//     const roleDocRef = doc(db, "login_roles", user.email);
-//     const roleDocSnap = await getDoc(roleDocRef);
-
-//     if (!roleDocSnap.exists()) {
-//       console.warn("❌ Role document not found for:", user.email);
-//       alert("Access denied. Role not found.");
-//       window.location.href = "/";
-//       return;
-//     }
-
-//     const userRole = roleDocSnap.data().role;
-//     const companyName = roleDocSnap.data().company;
-
-//     console.log("🔐 Role found:", userRole, "| Company:", companyName);
-
-//     if (userRole !== "recruiter" && userRole !== "master_admin") {
-//       alert("Access denied. Recruiter or Master Admin role required.");
-//       window.location.href = "/";
-//       return;
-//     }
-
-    // ✅ Fetching company data
-//   try {
-//   console.log("🔍 Fetching company profile for:", companyName);
-
-//   const companyRef = collection(db, "company_profile");
-//   const q = query(companyRef, where("name", "==", companyName));
-  
-//   const snapshot = await getDocs(q);
-
-//   console.log("📦 Query executed. Docs found:", snapshot.size);
-
-//   if (snapshot.empty) {
-//     console.warn("❌ No matching company profile found for:", companyName);
-//     alert("Company profile not found.");
-//     return;
-//   }
-
-//   window.companyData = snapshot.docs[0].data();
-
-//   snapshot.forEach(doc => {
-//     console.log("✅ Company doc found:", doc.id, doc.data());
-//   });
-
-//   const companyData = snapshot.docs[0].data();
-//   console.log("🏢 Loaded company data:", companyData);
-
-  
-  
-// } catch (error) {
-//   console.error("🚨 Error fetching company profile:", error.message, error.stack);
-//   alert("Error occurred while fetching company. Please contact support.");
-// }
-
-//   } catch (error) {
-//     console.error("❌ Error verifying role or fetching company:", error);
-//     alert("An error occurred. Please contact support.");
-//     window.location.href = "/login/";
-//   }
-// });
-
-// Auth check and company job load
 onAuthStateChanged(auth, async (user) => {
   if (!user) {
     console.warn("❌ No user logged in. Redirecting to login.");
@@ -121,16 +12,28 @@ onAuthStateChanged(auth, async (user) => {
     const roleDocSnap = await getDoc(roleDocRef);
 
     if (!roleDocSnap.exists()) {
-      console.warn("❌ Role document not found for:", user.email);
       alert("Access denied. Role not found.");
       window.location.href = "/";
       return;
     }
 
-    const userRole = roleDocSnap.data().role;
-    const companyName = roleDocSnap.data().company;
+    const roleData = roleDocSnap.data();
+    const userRole = roleData.role;
+    const companyCode = roleData.company_code;
 
-    console.log("🔐 Role found:", userRole, "| Company:", companyName);
+    if (!userRole) throw new Error("Missing role in role document.");
+
+    // Save role for later use
+    localStorage.setItem("userRole", userRole);
+
+    // If user is recruiter, also save company info
+    if (userRole === "recruiter") {
+      if (!companyCode) throw new Error("Missing company code for recruiter.");
+      localStorage.setItem(
+        "companyData",
+        JSON.stringify({ code: companyCode, name: companyCode })
+      );
+    }
 
     if (userRole !== "recruiter" && userRole !== "master_admin") {
       alert("Access denied. Recruiter or Master Admin role required.");
@@ -138,21 +41,19 @@ onAuthStateChanged(auth, async (user) => {
       return;
     }
 
-    // ✅ Load jobs of that company
-    await loadRecruiterJobs(companyName);
-
+    // ✅ Successfully handled
+    console.log("🔐 Role validated:", userRole);
+    
   } catch (error) {
-    console.error("❌ Error verifying role or fetching company:", error);
+    console.error("❌ Error verifying role:", error.message);
     alert("An error occurred. Please contact support.");
     window.location.href = "/login/";
   }
 });
 
 
-// 📦 Function to load jobs for recruiter from companies/{company}/jobs[]
-async function loadRecruiterJobs(companyName) {
-  const companyKey = companyName.toLowerCase().replace(/\s+/g, "_");
-
+async function loadRecruiterJobs(companyCode) {
+  const companyKey = companyCode.toLowerCase().replace(/\s+/g, "_");
   const companyDocRef = doc(db, "companies", companyKey);
   const companySnap = await getDoc(companyDocRef);
 
@@ -162,26 +63,41 @@ async function loadRecruiterJobs(companyName) {
     return;
   }
 
-  const jobIds = companySnap.data().jobs || [];
+  const jobRefs = companySnap.data().jobs || [];
 
-  if (jobIds.length === 0) {
+  if (jobRefs.length === 0) {
     console.log("📭 No jobs posted by this company.");
-    return;
+  } else {
+    console.log(`📦 Found ${jobRefs.length} job(s) for ${companyCode}`);
   }
 
-  console.log(`🧾 Found ${jobIds.length} job(s) for ${companyName}`);
+  for (const jobRef of jobRefs) {
+    const jobId = typeof jobRef === "string" ? jobRef : jobRef.jobId;
 
-  for (const jobId of jobIds) {
-    const jobDocRef = doc(db, "jobs", jobId);
-    const jobSnap = await getDoc(jobDocRef);
+    if (!jobId || typeof jobId !== "string") {
+      console.warn("⚠️ Skipping invalid job reference:", jobRef);
+      continue;
+    }
 
-    if (jobSnap.exists()) {
-      const jobData = jobSnap.data();
-      // renderJobCard(jobData);
-      // loadJobs(companyData);
-    } else {
-      console.warn(`⚠️ Job ${jobId} not found.`);
+    try {
+      const jobDocRef = doc(db, "jobs", jobId);
+      const jobSnap = await getDoc(jobDocRef);
+
+      if (jobSnap.exists()) {
+        const jobData = jobSnap.data();
+
+        if (jobData.timestamp && typeof jobData.timestamp.toDate === "function") {
+          jobData.timestamp = jobData.timestamp.toDate();
+        } else {
+          jobData.timestamp = new Date();
+        }
+
+        jobData.jobId = jobId;
+        renderJob(jobData);
+      }
+    } catch (err) {
+      console.error(`❌ Error loading job ${jobId}:`, err);
     }
   }
-}
 
+}

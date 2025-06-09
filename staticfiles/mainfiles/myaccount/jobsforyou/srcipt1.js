@@ -10,6 +10,9 @@ const useProfileQualificationCheckbox = document.getElementById(
 );
 const resultsContainer = document.getElementById("results");
 
+window.applyToJob = applyToJob;
+
+
 
 const jobsPerPage = 30;
 
@@ -19,22 +22,32 @@ const qualificationMapping = {
   postGraduation: ["m.a", "m.sc", "m.com", "m.tech", "mba"],
 };
 
-// Fetch Firebase jobs
+
 async function loadFirebaseJobs() {
-  const q = query(collection(db, "jobs"), orderBy("timestamp", "desc"));
-  const snapshot = await getDocs(q);
-  const firebaseJobs = [];
+  const companiesRef = collection(db, "jobs_company_wise");
+  const companySnapshots = await getDocs(companiesRef);
 
-  snapshot.forEach((doc) => {
-    const data = doc.data();
-    data.job_code = doc.id;
-    data.source = "firebase";
-    data.post_date = data.timestamp?.toDate()?.toISOString().split("T")[0];
-    firebaseJobs.push(data);
-  });
+  let allJobs = [];
 
-  return firebaseJobs;
+  for (const docSnap of companySnapshots.docs) {
+    const companyData = docSnap.data();
+    const companyJobs = companyData.jobs || [];
+
+    // Tag each job with its companyCode (doc ID)
+    const jobsWithCompany = companyJobs.map((job) => ({
+      ...job,
+      companyCode: docSnap.id,
+      source: "firebase",
+    }));
+
+    allJobs = allJobs.concat(jobsWithCompany);
+  }
+  
+
+  console.log("Fetched Firebase Jobs:", allJobs); // ✅ Log to console
+  return allJobs;
 }
+
 
 // Get all URL parameters
 function getSearchParams() {
@@ -126,8 +139,13 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
                 : ""
             }
             <a href="/careeroptions/jobdetails/?jobCode=${job.jobId}" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
-<a href="#" class="btn mt-2 btn-sm btn-primary apply-btn" data-jobcode="${job.job_code || job.jobId}">Apply</a>
-
+<a href="#" 
+   class="btn mt-2 btn-sm btn-primary apply-btn"
+   data-jobcode="${job.jobId}"
+   data-companycode="${job.companyCode}" 
+   onclick="applyToJob('${job.jobId}', '${job.companyCode}')">
+   Apply
+</a>
           </div>
         </div>
       `;
@@ -244,32 +262,77 @@ applyButtons.forEach((btn) => {
   markAlreadyAppliedJobs();
   
 }
-async function applyToJob(jobCode, uid, userEmail) {
-  const jobDocRef = doc(db, "jobs", jobCode);
-  const jobDocSnap = await getDoc(jobDocRef);
-  const resumeUrl = localStorage.getItem("resumeUrl") || "";
+async function applyToJob(jobId, companyCode) {
+  const userEmail = localStorage.getItem("email");
+  const uid = localStorage.getItem("uid");
   const name = localStorage.getItem("userName") || "";
+  const resumeUrl = localStorage.getItem("resumeUrl") || "";
 
-  if (!jobDocSnap.exists()) {
-    throw new Error("Job not found");
+  if (!userEmail || !uid) {
+    alert("You need to be logged in to apply.");
+    return;
   }
 
-  // Optional: check if user already applied to avoid duplicates
-  const jobData = jobDocSnap.data();
-  const applicants = jobData.applicants || [];
+  try {
+    const companyRef = doc(db, "jobs_company_wise", companyCode);
+    const companySnap = await getDoc(companyRef);
 
-  const alreadyApplied = applicants.some(
-    (applicant) => applicant.uid === uid || applicant.email === userEmail
-  );
+    if (!companySnap.exists()) {
+      console.error("Company not found:", companyCode);
+      return;
+    }
 
-  if (alreadyApplied) {
-    throw new Error("You have already applied to this job.");
+    const companyData = companySnap.data();
+    const jobs = companyData.jobs || [];
+
+    const jobIndex = jobs.findIndex((job) => job.jobId === jobId);
+    if (jobIndex === -1) {
+      console.error("Job not found in company:", jobId);
+      return;
+    }
+
+    const job = jobs[jobIndex];
+    const alreadyApplied = (job.applicants || []).some(
+      (applicant) => applicant.uid === uid || applicant.email === userEmail
+    );
+
+    if (alreadyApplied) {
+      alert("You've already applied to this job.");
+      return;
+    }
+
+    // Add applicant to the job's applicants array
+    const newApplicant = {
+      uid,
+      email: userEmail,
+      name,
+      resumeUrl,
+      appliedAt: new Date().toISOString(),
+    };
+
+    if (!job.applicants) job.applicants = [];
+    job.applicants.push(newApplicant);
+
+    // Update the job in the jobs array
+    jobs[jobIndex] = job;
+
+    // Update the company document with the new jobs array
+    await updateDoc(companyRef, {
+      jobs: jobs,
+    });
+
+    alert("Application submitted successfully.");
+   const btn = document.querySelector(`[data-jobcode="${jobId}"]`);
+    if (btn) {
+      btn.innerText = "Applied";
+      btn.disabled = true;
+      btn.classList.remove("btn-primary");
+      btn.classList.add("btn-success");
+    }
+  } catch (error) {
+    console.error("Error applying to job:", error);
+    alert("Something went wrong while applying.");
   }
-
-  // Add applicant to applicants array in Firestore
-  await updateDoc(jobDocRef, {
-    applicants: arrayUnion({ uid, email: userEmail, appliedAt: new Date(), resumeUrl, name }),
-  });
 }
 
 async function markAlreadyAppliedJobs() {
@@ -325,6 +388,8 @@ async function displayJobs(currentPage) {
 
   const filteredJobs = filterJobs(allJobs);
   renderPaginatedJobsAndControls(filteredJobs, currentPage);
+
+  markAlreadyAppliedJobs();
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -368,3 +433,19 @@ useProfileQualificationCheckbox.addEventListener("change", () => {
     qualificationInput.value = "";
   }
 });
+// need only one company name 
+// async function loadCompanyJobs(companyId) {
+//   const companyRef = doc(db, "jobs_company_wise", companyId);
+//   const companySnap = await getDoc(companyRef);
+
+//   if (!companySnap.exists()) return [];
+
+//   const companyData = companySnap.data();
+//   const companyJobs = companyData.jobs || [];
+
+//   return companyJobs.map((job) => ({
+//     ...job,
+//     companyCode: companyId,
+//     source: "firebase",
+//   }));
+// }

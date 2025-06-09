@@ -1,8 +1,4 @@
 
-
-
-console.log("🔧 Script loaded...");
-
 const firestore = getFirestore(app);
 
 const openBtn = document.getElementById("openModalBtn");
@@ -14,30 +10,37 @@ const modalTitle = document.getElementById("modalTitle");
 
 let editMode = false;
 let editJobId = null;
-let currentCompanyData = null; // to store companyData from initHirePortal
+let currentCompanyData = null;
+let editingJob = null;
 
 openBtn.onclick = () => {
-  console.log("📝 Opening modal to post new job");
+  console.log("Open modal button clicked.");
   modalTitle.textContent = "Post a New Job";
   form.reset();
   modal.style.display = "flex";
   editMode = false;
   editJobId = null;
+  editingJob = null;
 };
 
 closeBtn.onclick = () => {
-  console.log("❌ Closing modal");
+  console.log("Close modal button clicked.");
   modal.style.display = "none";
 };
 
 window.onclick = e => {
   if (e.target === modal) {
-    console.log("❌ Clicked outside modal - closing");
+    console.log("Clicked outside modal, closing.");
     modal.style.display = "none";
   }
 };
 
 function timeAgo(date) {
+  if (!date || typeof date.toDate !== 'function') {
+    console.log("Invalid or missing timestamp in timeAgo.");
+    return "unknown time";
+  }
+
   const seconds = Math.floor((new Date() - date.toDate()) / 1000);
   const intervals = [
     { label: "year", seconds: 31536000 },
@@ -54,274 +57,254 @@ function timeAgo(date) {
   return "just now";
 }
 
-function renderJob(doc) {
-  const data = doc.data();
-  console.log("📦 Rendering job:", data);
-
+function renderJob(job) {
+  console.log("Rendering job:", job.jobId);
   const div = document.createElement("div");
   div.className = "job-card";
 
   div.innerHTML = `
-    <h3>${data.title}</h3>
-    <p><strong>${data.company}</strong> • ${data.location}</p>
+    <h3>${job.title}</h3>
+    <p><strong>${job.company}</strong> • ${job.location}</p>
     <p>
-      <span class="badge">${data.type}</span>
-      <span class="badge">${data.salary || "N/A"}</span>
+      <span class="badge">${job.type}</span>
+      <span class="badge">${job.salary || "N/A"}</span>
     </p>
-    <p>${data.description}</p>
-    <p><em>Posted ${timeAgo(data.timestamp)}</em></p>
+    <p>${job.description}</p>
+    <p><em>Posted ${timeAgo(job.timestamp)}</em></p>
     <div class="actions">
       <button class="viewBtn">🔍</button>
-      <button class="editBtn">✏️</button>
-      <button class="deleteBtn">🗑️</button> 
-      
+      <button class="editBtn" data-job-id="${job.jobId}" data-company-code="${job.companyCode}">✏️</button>
+      <button class="deleteBtn" data-job-id="${job.jobId}" data-company-code="${job.companyCode}">🗑️</button>
     </div>
-    <p><strong>Applicants:</strong> ${data.applicants?.length || 0}</p>
+    <p><strong>Applicants:</strong> ${job.applicants?.length || 0}</p>
   `;
 
   jobList.appendChild(div);
 
-  // Add event listeners for buttons:
-  div.querySelector(".viewBtn").addEventListener("click", () => viewDetails(doc.id));
-  div.querySelector(".editBtn").addEventListener("click", () => editJob(doc.id));
-  div.querySelector(".deleteBtn").addEventListener("click", () => deleteJob(doc.id));
-  // div.querySelector(".applyBtn").addEventListener("click", () => applyToJob(doc.id));
+  div.querySelector(".viewBtn").addEventListener("click", () =>
+    viewDetails(job.jobId)
+  );
+  div.querySelector(".editBtn").addEventListener("click", e => {
+    console.log(`Edit clicked for jobId: ${e.target.dataset.jobId}, companyCode: ${e.target.dataset.companyCode}`);
+    editJob(e.target.dataset.jobId, e.target.dataset.companyCode);
+  });
+  div.querySelector(".deleteBtn").addEventListener("click", e => {
+    console.log(`Delete clicked for jobId: ${e.target.dataset.jobId}, companyCode: ${e.target.dataset.companyCode}`);
+    deleteJob(e.target.dataset.jobId, e.target.dataset.companyCode);
+  });
 }
 
-// async function loadJobs() {
-//   console.log("🔄 Loading jobs...");
-//   jobList.innerHTML = "";
-
-//   try {
-//     const q = query(collection(firestore, "jobs"), orderBy("timestamp", "desc"));
-//     const querySnapshot = await getDocs(q);
-//     console.log(`📁 ${querySnapshot.size} job(s) found`);
-//     querySnapshot.forEach(renderJob);
-//   } catch (err) {
-//     console.error("❌ Failed to load jobs:", err);
-//   }
-// }
-
-// Load jobs for only this company
-// async function loadJobs(companyData) {
-//   console.log("🔄 Loading jobs for:", companyData.name, "| Code:", companyData.code);
-
-//   try {
-//     const jobsRef = collection(firestore, "jobs");
-//     const q = query(jobsRef, where("companyCode", "==", companyData.code));
-//     const snapshot = await getDocs(q);
-
-//     console.log(`📁 ${snapshot.size} job(s) found`);
-//     jobList.innerHTML = "";
-
-//     snapshot.forEach(renderJob);
-//   } catch (err) {
-//     console.error("❌ Failed to load jobs:", err);
-//     alert("Error loading jobs. Try again later.");
-//   }
-// }
-
-async function loadJobs(companyData) {
-  console.log("🔄 Loading jobs for:", companyData.name, "| Code:", companyData.code);
+async function loadJobs(companyData, isMasterAdmin = false) {
+  console.log("Loading jobs for companyData:", companyData, "isMasterAdmin:", isMasterAdmin);
   jobList.innerHTML = "";
 
-  try {
-    // Get company document from 'companys' collection
-    const companyRef = doc(firestore, "companies", companyData.code);
-    const companySnap = await getDoc(companyRef);
+  if (isMasterAdmin) {
+    const querySnapshot = await getDocs(collection(firestore, "jobs_company_wise"));
 
-    if (!companySnap.exists()) {
-      console.warn("❌ Company not found:", companyData.code);
-      alert("Company data not found.");
-      return;
-    }
+    let allJobs = [];
+    querySnapshot.forEach(docSnap => {
+      const companyJobs = docSnap.data().jobs || [];
+      allJobs = allJobs.concat(companyJobs);
+    });
 
-    const companyDocData = companySnap.data();
-    const jobIds = companyDocData.jobs || [];
-
-    if (jobIds.length === 0) {
+    if (allJobs.length === 0) {
+      console.log("No jobs found across all companies.");
       jobList.innerHTML = "<p>No jobs posted yet.</p>";
       return;
     }
 
-    // For each jobId, fetch the job document
-    const jobPromises = jobIds.map(jobId => getDoc(doc(firestore, "jobs", jobId)));
-    const jobDocs = await Promise.all(jobPromises);
-
-    jobDocs.forEach(jobDoc => {
-      if (jobDoc.exists()) {
-        renderJob(jobDoc);
-      } else {
-        console.warn("⚠️ Job ID not found:", jobDoc.id);
-      }
-    });
-  } catch (err) {
-    console.error("❌ Failed to load jobs:", err);
-    alert("Error loading jobs. Try again later.");
+    console.log(`🔎 Master Admin: Loaded ${allJobs.length} jobs across all companies.`);
+    allJobs.forEach(renderJob);
+    return;
   }
-}
 
+  const companyRef = doc(firestore, "jobs_company_wise", companyData.code);
+  const companySnap = await getDoc(companyRef);
 
-function viewDetails(id) {
-  console.log("🔍 Viewing job details for ID:", id);
-  window.location.href = `/hire/candidates?jobId=${id}`;
-}
-
-async function editJob(id) {
-  console.log("✏️ Editing job with ID:", id);
-  try {
-    const jobDocRef = doc(firestore, "jobs", id);
-    const jobDoc = await getDoc(jobDocRef);
-
-    if (!jobDoc.exists()) {
-      console.warn(`❌ Job with ID ${id} does not exist`);
-      alert("Job not found.");
-      return;
-    }
-
-    const data = jobDoc.data(); // ✅ Ensure this is declared
-  document.getElementById("jobTitle").value = data.title || "";
-document.getElementById("company").value = data.company || "";
-document.getElementById("location").value = data.location || "";
-document.getElementById("jobType").value = data.type || "";
-document.getElementById("description").value = data.description || "";
-document.getElementById("qualification").value = data.qualification || "";
-document.getElementById("board").value = data.RecruitmentBoard || "";
-document.getElementById("minAge").value = data.minAge || "";
-document.getElementById("maxAge").value = data.maxAge || "";
-document.getElementById("deadline").value = data.applicationDeadline || "";
-document.getElementById("profile").value = data.profileCode || "";
-
-  modal.style.display = "flex";
-  editMode = true;
-  editJobId = id;
-  modalTitle.textContent = "Edit Job";
-}
-catch (error) {
-    console.error("❌ Error editing job:", error);
-    alert("Something went wrong while editing the job.");
+  if (!companySnap.exists()) {
+    console.warn("Company not found:", companyData.code);
+    alert("Company not found.");
+    return;
   }
-}
 
-async function deleteJob(id) {
-  if (confirm("Are you sure you want to delete this job?")) {
-    console.log("🗑️ Deleting job with ID:", id);
-    try {
-      await deleteDoc(doc(firestore, "jobs", id));
-      console.log("✅ Job deleted");
-      loadJobs();
-    } catch (err) {
-      console.error("❌ Failed to delete job:", err);
-      alert("Failed to delete job.");
-    }
+  const jobArray = companySnap.data().jobs || [];
+
+  if (jobArray.length === 0) {
+    console.log(`No jobs found for company ${companyData.code}.`);
+    jobList.innerHTML = "<p>No jobs posted yet.</p>";
+    return;
   }
+
+  console.log(`Loaded ${jobArray.length} jobs for company ${companyData.code}.`);
+  jobArray.forEach(renderJob);
 }
 
-// Helper: Create a safe, unique jobId based on company, title and timestamp
+function viewDetails(jobId) {
+  console.log("View details for jobId:", jobId);
+  window.location.href = `/hire/candidates?jobId=${jobId}`;
+}
+
 function generateJobId(company, title) {
   const clean = str =>
     str.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
-  const companyPart = clean(company);
-  const titlePart = clean(title);
-  const timestampPart = Date.now();
-  return `${companyPart}_${titlePart}_${timestampPart}`;
-} 
-
-// 🆕 Add job to company document
-async function addJobToCompanyCollection(companyCode, jobId) {
-  try {
-    const companyRef = doc(firestore, "companies", companyCode.toLowerCase());
-    await updateDoc(companyRef, {
-      jobs: arrayUnion(jobId)
-    });
-    console.log("✅ Job ID added to companys collection");
-  } catch (err) {
-    console.error("❌ Failed to update company document:", err);
-  }
+  const id = `${clean(company)}_${clean(title)}_${Date.now()}`;
+  console.log("Generated jobId:", id);
+  return id;
 }
 
+function fillFormWithJob(job) {
+  console.log("Filling form with job data:", job.jobId);
+  document.getElementById("jobTitle").value = job.title || "";
+  document.getElementById("company").value = job.companyCode || "";
+  document.getElementById("location").value = job.location || "";
+  document.getElementById("jobType").value = job.type || "";
+  document.getElementById("description").value = job.description || "";
+  document.getElementById("qualification").value = job.qualification || "";
+  document.getElementById("board").value = job.RecruitmentBoard || "";
+  document.getElementById("minAge").value = job.minAge || "";
+  document.getElementById("maxAge").value = job.maxAge || "";
+  document.getElementById("deadline").value = job.applicationDeadline || "";
+  document.getElementById("profile").value = job.profileCode || "";
+}
+
+async function editJob(jobId, companyCode) {
+  console.log("Editing job with jobId:", jobId, "companyCode:", companyCode);
+  const companyRef = doc(firestore, "jobs_company_wise", companyCode);
+  const companySnap = await getDoc(companyRef);
+
+  const jobList = companySnap.data().jobs || [];
+  const job = jobList.find(j => j.jobId === jobId);
+
+  if (!job) {
+    console.warn("Job not found in company record:", jobId);
+    alert("Job not found in company record.");
+    return;
+  }
+
+  fillFormWithJob(job);
+  modal.style.display = "flex";
+  editMode = true;
+  editJobId = jobId;
+  editingJob = job;
+  modalTitle.textContent = "Edit Job";
+}
+
+async function deleteJob(jobId, companyCode) {
+  console.log("Deleting job with jobId:", jobId, "companyCode:", companyCode);
+  if (!confirm("Are you sure you want to delete this job?")) {
+    console.log("Delete cancelled.");
+    return;
+  }
+
+  const companyRef = doc(firestore, "jobs_company_wise", companyCode);
+  const companySnap = await getDoc(companyRef);
+  const companyData = companySnap.data();
+  const updatedJobs = (companyData.jobs || []).filter(j => j.jobId !== jobId);
+
+  await updateDoc(companyRef, { jobs: updatedJobs });
+  console.log(`Job ${jobId} deleted successfully.`);
+
+  const userRole = localStorage.getItem("userRole");
+  const isMasterAdmin = userRole === "master_admin";
+  loadJobs(currentCompanyData, isMasterAdmin);
+}
 
 form.addEventListener("submit", async e => {
   e.preventDefault();
+  console.log("Form submitted.");
 
-  // Read selected company doc ID from dropdown
   const selectedCompanyCode = document.getElementById("company").value;
+  const selectedCompanyName =
+    document.getElementById("company").selectedOptions[0].text;
 
-  // Also read company name (optional)
-  const selectedCompanyName = document.getElementById("company").selectedOptions[0].text;
-    const job = {
+  let job = {
+    jobId: editMode ? editJobId : generateJobId(selectedCompanyName, document.getElementById("jobTitle").value),
     title: document.getElementById("jobTitle").value.trim(),
-    // company: document.getElementById("company").value.trim(),
-    company: selectedCompanyName,    // Company name for display
-    companyCode: selectedCompanyCode, // Store company doc ID to query later
+    company: selectedCompanyName,
+    companyCode: selectedCompanyCode,
     location: document.getElementById("location").value.trim(),
     type: document.getElementById("jobType").value,
-    salary: "", // no salary  in your form
+    salary: "",
     description: document.getElementById("description").value.trim(),
-    requirements: "", // you can add a field or leave empty
-    // You can also add qualification, board, age limits, deadline, profileCode here:
+    requirements: "",
     qualification: document.getElementById("qualification").value.trim(),
     RecruitmentBoard: document.getElementById("board").value.trim(),
-    minAge: document.getElementById("minAge").value ? Number(document.getElementById("minAge").value) : null,
-    maxAge: document.getElementById("maxAge").value ? Number(document.getElementById("maxAge").value) : null,
+    minAge: Number(document.getElementById("minAge").value) || null,
+    maxAge: Number(document.getElementById("maxAge").value) || null,
     applicationDeadline: document.getElementById("deadline").value,
-    profileCode: document.getElementById("profile").value.trim(),
+    profileCode: document.getElementById("profile").value,
     timestamp: new Date(),
-    applicants: []
+    applicants: editingJob?.applicants || []
   };
-  // If editing, use existing jobId, else generate new
-  let jobId;
-  if (editMode && editJobId) {
-    jobId = editJobId;
-    console.log("🛠️ Updating job with ID:", jobId);
+
+  console.log("Job object to save:", job);
+
+  const companyRef = doc(firestore, "jobs_company_wise", selectedCompanyCode);
+  const companySnap = await getDoc(companyRef);
+  let jobsArray = companySnap.data().jobs || [];
+
+  if (editMode) {
+    jobsArray = jobsArray.map(j => (j.jobId === editJobId ? job : j));
+    console.log("Updated job in array.");
   } else {
-    jobId = generateJobId(job.company, job.title);
-    console.log("📤 Posting new job with generated ID:", jobId);
+    jobsArray.push(job);
+    console.log("Added new job to array.");
   }
 
-  job.jobId = jobId; // store inside document for redundancy
+  await updateDoc(companyRef, { jobs: jobsArray });
+  console.log("Jobs array updated in Firestore.");
 
-   const jobRef = doc(firestore, "jobs", jobId);
-  try {
-    // If new job, check if ID already exists to avoid overwrite
-    if (!editMode) {
-      const existingDoc = await getDoc(jobRef);
-      if (existingDoc.exists()) {
-        alert("A job with similar company and title was recently posted. Please modify your job title or company.");
-        console.warn("⚠️ Duplicate jobId detected:", jobId);
-        return;
-      }
-    }
-
-    await setDoc(jobRef, job);
-
-      // 🆕 Add to companys collection
-    if (!editMode) {
-    //   await addJobToCompanyCollection(currentCompanyData.code, jobId);
-    // }
-
-
-      // Add jobId to the selected company's jobs array
-       const companyRef = doc(firestore, "companies", selectedCompanyCode);
-      await updateDoc(companyRef, {
-        jobs: arrayUnion(jobId)
-      });
-      console.log(`✅ Added job ID ${jobId} to company ${selectedCompanyCode}`);
-    }
-
-
-    modal.style.display = "none";
-    // loadJobs(currentCompanyData);
-    loadJobs({ code: selectedCompanyCode, name: selectedCompanyName });
-  } catch (err) {
-    console.error("❌ Failed to save job:", err);
-    alert("Failed to save job. Please try again.");
-  }
+  modal.style.display = "none";
+  loadJobs({ code: selectedCompanyCode, name: selectedCompanyName }, localStorage.getItem("userRole") === "master_admin");
 });
 
-// loadJobs();
-function initHirePortal(companyData) {
-  console.log("🚀 Initializing Hire Portal with company:", companyData);
-   currentCompanyData = companyData;
-  loadJobs(companyData); // now we have full control and context
+function initHirePortal(companyData, isMasterAdmin = false) {
+  console.log("Initializing hire portal with companyData:", companyData, "isMasterAdmin:", isMasterAdmin);
+  currentCompanyData = companyData;
+  loadJobs(companyData, isMasterAdmin);
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+  console.log("DOM fully loaded, initializing...");
+
+  let companyData = JSON.parse(localStorage.getItem("companyData"));
+  let userRole = null;
+  let email = localStorage.getItem("email");
+  let isMasterAdmin = false;
+
+  if (!companyData && email) {
+    console.log("No companyData in localStorage, fetching role for email:", email);
+    const roleDocRef = doc(firestore, "login_roles", email);
+    const roleDocSnap = await getDoc(roleDocRef);
+
+    if (roleDocSnap.exists()) {
+      const roleInfo = roleDocSnap.data();
+      userRole = roleInfo.role;
+
+      console.log("User role fetched:", userRole);
+
+      if (userRole === "master_admin") {
+        isMasterAdmin = true;
+        companyData = { name: "All Companies", code: "all" };
+        console.log("User is master_admin.");
+      } else {
+        const companyCode = roleInfo.company_code;
+        companyData = { name: companyCode, code: companyCode };
+        console.log(`User is recruiter for company: ${companyCode}`);
+      }
+
+      localStorage.setItem("companyData", JSON.stringify(companyData));
+      localStorage.setItem("userRole", userRole);
+    } else {
+      console.warn("Role document does not exist for email:", email);
+    }
+  }
+
+  if (!companyData) {
+    alert("No company data found. Please login again.");
+    window.location.href = "/login/";
+    return;
+  }
+
+  initHirePortal(companyData, localStorage.getItem("userRole") === "master_admin");
+});
