@@ -19,6 +19,21 @@
         window.location.href = "/myaccount/jobsforyou";
       }
     </script>
+    <style>
+      .benefits {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .benefitul {
+      margin-top: 10px;
+    }
+    .benefitul li {
+      margin-bottom: 10px;
+    }
+    </style>
+    
   </head>
 
   <body>
@@ -290,60 +305,74 @@
       </div>
     </div>
     <!-- Chargeable Internship  -->
-    <div
-      class="container-fluid p-3"
-      id="chargeableinternship"
-      style="display: none"
-    >
-      <div class="card full-width-card">
-        <div class="card-body">
-          <h5 class="card-title display-6 fw-semibold">Chargable Internship</h5>
+    <div class="container my-5" id="chargeableinternship" style="display: none;">
+  <div class="card shadow-lg rounded-4 p-4">
+    <div class="card-body">
+      <h5 class="card-title display-6 fw-semibold text-warning mb-4">Chargeable Internship</h5>
 
-          <div class="card_details">
-            <div class="col-md-6 left">
-              <ul>
-                <!-- <li><a href="../pricing/?productcode=chargeableinternship">Go the details about our courses</a></li> -->
-                <!-- <li>Define your ideal participants, such as students or early career professionals.</li> -->
-                <!-- <li> Your marketing to address their specific career goals and needs.</li> -->
-                <!-- <li>Emphasize the quality of the internship program, including the companies.</li>
-                        <li>Be transparent about the cost of the internship and provide flexible payment options.</li> -->
-                <!-- <li> Justify the price by highlighting the benefits and opportunities provided.</li> -->
-                <li>
-                  Participants will have the opportunity to acquire a wealth of
-                  knowledge and skills related to the field.
-                </li>
-                <li>Student will be paying for the internship.</li>
-                <li><strong>Duration :</strong> 3-6 months</li>
-              </ul>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-unstyled">
+            <!-- Persuasive Description -->
+            <li class="mb-4">
+              <strong>
+                Chargeable internships provide structured, high-quality training programs designed to maximize your career potential. 
+              </strong>
+              <span> —
+                <a href="../pricing/?productcode=chargeableinternship" class="link-warning text-decoration-none">
+                  
+                </a>
+              </span>
+            </li>
+
+            <!-- Value-Driven Benefits -->
+            <li class="mb-3"><strong>Mentorship Access:</strong> Get guided by industry professionals and subject matter experts.</li>
+            <li class="mb-3"><strong>Skill Mastery:</strong> Gain hands-on experience with tools, technologies, and workflows used in top companies.</li>
+            <li class="mb-3"><strong>Portfolio Development:</strong> Build real projects you can showcase to future employers or clients.</li>
+            <li class="mb-3"><strong>Certification:</strong> Receive an accredited certificate upon successful completion.</li>
+            <li class="mb-3"><strong>Career Boost:</strong> Increase your chances of landing interviews and job offers.</li>
+            <li class="mb-3"><strong>Flexible Scheduling:</strong> Balance your academic or personal commitments with part-time or weekend options.</li>
+            <li class="mb-3"><strong>Affordable Investment:</strong> Priced competitively with flexible payment plans to suit your needs.</li>
+            <li class="mb-3"><strong>Future-Ready:</strong> Perfect for students and early-career professionals seeking guided career acceleration.</li>
+          </ul>
         </div>
       </div>
     </div>
-    <!-- Free Internship  -->
-    <div class="container-fluid p-3" id="freeinternship" style="display: none">
-      <div class="card full-width-card">
-        <div class="card-body">
-          <h5 class="card-title display-6 fw-semibold">Free Internship</h5>
+  </div>
+</div>
 
-          <div class="card_details">
-            <div class="col-md-6 left">
-              <ul>
-                <!-- <li><a href="../pricing/?productcode=freeinternship">Go the details about our courses</a></li> -->
-                <!-- <li>Clearly state the value and benefits of your course, emphasizing the real-world experience and skills.</li>
-                        <li> Define the specific group of students or professionals who would benefit most from your internship program.</li> -->
-                <li>
-                  Provide a clear and detailed description of the internship
-                  role, including the main responsibilities and tasks involved.
-                </li>
-                <li>The apply option that is available on the homepage.</li>
-                <li><strong>Duration :</strong> 4-6 months</li>
-              </ul>
-            </div>
-          </div>
+    <!-- unpaid Internship  -->
+    <div class="container my-5" id="freeinternship" style="display: none;">
+      <div class="card shadow-lg rounded-4 p-4">
+        <div class="card-body">
+      <h5 class="card-title display-6 fw-semibold text-primary mb-4">Unpaid Internship</h5>
+
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-unstyled">
+            <strong>
+                Nothing beats gaining real experience — it's way better than doing nothing, easy coaching work, or passive projects.
+              </strong>
+            <li class="mb-4">
+              
+            </li>
+
+            <!-- Benefits -->
+            <li class="mb-3"><strong>Real-World Experience:</strong> Gain hands-on experience in your field of interest.</li>
+            <li class="mb-3"><strong>Skill Development:</strong> Improve technical and soft skills that are highly valued by employers.</li>
+            <li class="mb-3"><strong>Networking Opportunities:</strong> Build connections with industry professionals and potential mentors.</li>
+            <li class="mb-3"><strong>Resume Building:</strong> Add credible experience to your resume to stand out to future employers.</li>
+            <li class="mb-3"><strong>Insight into the Industry:</strong> Learn how the industry operates and discover what roles interest you most.</li>
+            <li class="mb-3"><strong>Improved Job Prospects:</strong> Internships often lead to full-time job offers or strong letters of recommendation.</li>
+            <li class="mb-3"><strong>Personal Growth:</strong> Develop confidence, time management, and workplace etiquette.</li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+
     <!-- English assessments  -->
     <div class="container-fluid p-3" id="english" style="display: none">
       <div class="card full-width-card">
@@ -568,27 +597,35 @@
       </div>
     </div>
     <!-- paid Internship  -->
-    <div class="container-fluid p-3" id="paidinternship" style="display: none">
-      <div class="card full-width-card">
-        <div class="card-body">
-          <h5 class="card-title display-6 fw-semibold">Paid Internship</h5>
+    <div class="container my-5" id="paidinternship" style="display: none;">
+  <div class="card shadow-lg rounded-4 p-4">
+    <div class="card-body">
+      <h5 class="card-title display-6 fw-semibold text-primary mb-4">Paid Internship</h5>
 
-          <div class="card_details">
-            <div class="col-md-6 left">
-              <ul>
-                <li>
-                  <strong>Description:</strong
-                  ><a href="../career/?productcode=paidinternship">
-                    Please check paid internship on career page
-                  </a>
-                </li>
-                <li>You will get a T-shirt.</li>
-              </ul>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-unstyled">
+            <strong>
+      Paid internships offer financial compensation along with numerous professional advantages. Here are some of the key benefits:
+    </strong>
+            <li class="mb-3">
+              <a href="../career/?productcode=paidinternship" class="link-primary text-decoration-none">
+
+              </a>
+            </li>
+            <li class="mb-3"><strong>Financial Support:</strong> Earn income while gaining valuable work experience.</li>
+      <li class="mb-3"><strong>Increased Motivation:</strong> Payment can boost commitment and performance in a professional setting.</li>
+      <li class="mb-3"><strong>Professional Experience:</strong> Work on real projects that contribute meaningfully to a company or organization.</li>
+      <li class="mb-3"><strong>Competitive Edge:</strong> Paid roles often indicate a higher level of responsibility and skill, strengthening your resume.</li>
+      <li class="mb-3"><strong>Industry Exposure:</strong> Understand industry standards, tools, and workflows while getting compensated.</li>
+      <li class="mb-3"><strong>Career Opportunities:</strong> Paid internships frequently transition into long-term employment.</li>
+      <li class="mb-3"><strong>Professional Confidence:</strong> Develop independence and professionalism in a structured work environment.</li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
+</div>
     <!-- Maths, Aptitute & Reasoning  -->
     <div class="container-fluid p-3" id="math" style="display: none">
       <div class="card full-width-card">
