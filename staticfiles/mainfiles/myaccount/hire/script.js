@@ -5,22 +5,6 @@ console.log("🔧 Script loaded...");
 
 const firestore = getFirestore(app);
 
-// async function checkAdmin() {
-//   const userDocRef = doc(firestore, "users", localStorage.getItem("uid"));
-//   const userDocSnapshot = await getDoc(userDocRef);
-
-//   if (userDocSnapshot.exists() && userDocSnapshot.data().isAdmin) {
-//     console.log("✅ User is admin");
-//   } else {
-//     console.warn("❌ User is not admin");
-//     alert("Please login as admin to access this page.");
-//     window.location.href = "/";
-//   }
-// }
-
-// Run this at page load
-// checkAdmin();
-
 const openBtn = document.getElementById("openModalBtn");
 const closeBtn = document.getElementById("closeModalBtn");
 const modal = document.getElementById("jobModal");
@@ -30,6 +14,7 @@ const modalTitle = document.getElementById("modalTitle");
 
 let editMode = false;
 let editJobId = null;
+let currentCompanyData = null; // to store companyData from initHirePortal
 
 openBtn.onclick = () => {
   console.log("📝 Opening modal to post new job");
@@ -103,19 +88,79 @@ function renderJob(doc) {
   // div.querySelector(".applyBtn").addEventListener("click", () => applyToJob(doc.id));
 }
 
-async function loadJobs() {
-  console.log("🔄 Loading jobs...");
+// async function loadJobs() {
+//   console.log("🔄 Loading jobs...");
+//   jobList.innerHTML = "";
+
+//   try {
+//     const q = query(collection(firestore, "jobs"), orderBy("timestamp", "desc"));
+//     const querySnapshot = await getDocs(q);
+//     console.log(`📁 ${querySnapshot.size} job(s) found`);
+//     querySnapshot.forEach(renderJob);
+//   } catch (err) {
+//     console.error("❌ Failed to load jobs:", err);
+//   }
+// }
+
+// Load jobs for only this company
+// async function loadJobs(companyData) {
+//   console.log("🔄 Loading jobs for:", companyData.name, "| Code:", companyData.code);
+
+//   try {
+//     const jobsRef = collection(firestore, "jobs");
+//     const q = query(jobsRef, where("companyCode", "==", companyData.code));
+//     const snapshot = await getDocs(q);
+
+//     console.log(`📁 ${snapshot.size} job(s) found`);
+//     jobList.innerHTML = "";
+
+//     snapshot.forEach(renderJob);
+//   } catch (err) {
+//     console.error("❌ Failed to load jobs:", err);
+//     alert("Error loading jobs. Try again later.");
+//   }
+// }
+
+async function loadJobs(companyData) {
+  console.log("🔄 Loading jobs for:", companyData.name, "| Code:", companyData.code);
   jobList.innerHTML = "";
 
   try {
-    const q = query(collection(firestore, "jobs"), orderBy("timestamp", "desc"));
-    const querySnapshot = await getDocs(q);
-    console.log(`📁 ${querySnapshot.size} job(s) found`);
-    querySnapshot.forEach(renderJob);
+    // Get company document from 'companys' collection
+    const companyRef = doc(firestore, "companies", companyData.code);
+    const companySnap = await getDoc(companyRef);
+
+    if (!companySnap.exists()) {
+      console.warn("❌ Company not found:", companyData.code);
+      alert("Company data not found.");
+      return;
+    }
+
+    const companyDocData = companySnap.data();
+    const jobIds = companyDocData.jobs || [];
+
+    if (jobIds.length === 0) {
+      jobList.innerHTML = "<p>No jobs posted yet.</p>";
+      return;
+    }
+
+    // For each jobId, fetch the job document
+    const jobPromises = jobIds.map(jobId => getDoc(doc(firestore, "jobs", jobId)));
+    const jobDocs = await Promise.all(jobPromises);
+
+    jobDocs.forEach(jobDoc => {
+      if (jobDoc.exists()) {
+        renderJob(jobDoc);
+      } else {
+        console.warn("⚠️ Job ID not found:", jobDoc.id);
+      }
+    });
   } catch (err) {
     console.error("❌ Failed to load jobs:", err);
+    alert("Error loading jobs. Try again later.");
   }
 }
+
 
 function viewDetails(id) {
   console.log("🔍 Viewing job details for ID:", id);
@@ -180,14 +225,35 @@ function generateJobId(company, title) {
   const titlePart = clean(title);
   const timestampPart = Date.now();
   return `${companyPart}_${titlePart}_${timestampPart}`;
+} 
+
+// 🆕 Add job to company document
+async function addJobToCompanyCollection(companyCode, jobId) {
+  try {
+    const companyRef = doc(firestore, "companies", companyCode.toLowerCase());
+    await updateDoc(companyRef, {
+      jobs: arrayUnion(jobId)
+    });
+    console.log("✅ Job ID added to companys collection");
+  } catch (err) {
+    console.error("❌ Failed to update company document:", err);
+  }
 }
+
 
 form.addEventListener("submit", async e => {
   e.preventDefault();
 
+  // Read selected company doc ID from dropdown
+  const selectedCompanyCode = document.getElementById("company").value;
+
+  // Also read company name (optional)
+  const selectedCompanyName = document.getElementById("company").selectedOptions[0].text;
     const job = {
     title: document.getElementById("jobTitle").value.trim(),
-    company: document.getElementById("company").value.trim(),
+    // company: document.getElementById("company").value.trim(),
+    company: selectedCompanyName,    // Company name for display
+    companyCode: selectedCompanyCode, // Store company doc ID to query later
     location: document.getElementById("location").value.trim(),
     type: document.getElementById("jobType").value,
     salary: "", // no salary  in your form
@@ -215,9 +281,8 @@ form.addEventListener("submit", async e => {
 
   job.jobId = jobId; // store inside document for redundancy
 
+   const jobRef = doc(firestore, "jobs", jobId);
   try {
-    const jobRef = doc(firestore, "jobs", jobId);
-
     // If new job, check if ID already exists to avoid overwrite
     if (!editMode) {
       const existingDoc = await getDoc(jobRef);
@@ -229,78 +294,34 @@ form.addEventListener("submit", async e => {
     }
 
     await setDoc(jobRef, job);
+
+      // 🆕 Add to companys collection
+    if (!editMode) {
+    //   await addJobToCompanyCollection(currentCompanyData.code, jobId);
+    // }
+
+
+      // Add jobId to the selected company's jobs array
+       const companyRef = doc(firestore, "companies", selectedCompanyCode);
+      await updateDoc(companyRef, {
+        jobs: arrayUnion(jobId)
+      });
+      console.log(`✅ Added job ID ${jobId} to company ${selectedCompanyCode}`);
+    }
+
+
     modal.style.display = "none";
-    loadJobs();
+    // loadJobs(currentCompanyData);
+    loadJobs({ code: selectedCompanyCode, name: selectedCompanyName });
   } catch (err) {
     console.error("❌ Failed to save job:", err);
     alert("Failed to save job. Please try again.");
   }
 });
 
-loadJobs();
-
-// async function applyToJob(jobId) {
-//   const email = localStorage.getItem("email"); // Make sure you store user email on login
-//   const userId = localStorage.getItem("uid");
-//   const name = localStorage.getItem("userName") || "";
-//   const resumeUrl = localStorage.getItem("resumeUrl") || "";
-
-//   if (!email) {
-//     alert("You need to be logged in to apply.");
-//     return;
-//   }
-
-//    if (!userId) {
-//     alert("You need to be logged in to apply.");
-//     return;
-//   }
-
-//   const jobRef = doc(firestore, "jobs", jobId);
-//   const jobSnap = await getDoc(jobRef);
-
-//   if (!jobSnap.exists()) {
-//     alert("Job not found.");
-//     return;
-//   }
-
-//   const jobData = jobSnap.data();
-
-//   const alreadyApplied = jobData.applicants?.some(a => a.userId === userId);
-  
-//   if (alreadyApplied) {
-//     alert("You have already applied for this job.");
-//     return;
-//   }
-//   const applicant = {
-//     userId,
-//     name,
-//     resumeUrl,
-//     appliedAt: new Date().toISOString(),
-//     status: "applied"
-//     email
-//   };
-
-//   try {
-//     await updateDoc(jobRef, {
-//       applicants: arrayUnion(applicant)
-//     });
-//     alert("✅ Application successful!");
-//     loadJobs(); // refresh counts
-//   } catch (error) {
-//     console.error("❌ Failed to apply:", error);
-//     alert("Failed to apply. Please try again.");
-//   }
-// }
-
-
-//   try {
-//     await updateDoc(doc(firestore, "jobs", jobId), {
-//       applicants: arrayUnion(email)
-//     });
-//     alert("✅ Application successful!");
-//     loadJobs(); // Refresh the jobs list to update applicant count
-//   } catch (error) {
-//     console.error("❌ Failed to apply:", error);
-//     alert("Failed to apply. Please try again.");
-//   }
-// }
+// loadJobs();
+function initHirePortal(companyData) {
+  console.log("🚀 Initializing Hire Portal with company:", companyData);
+   currentCompanyData = companyData;
+  loadJobs(companyData); // now we have full control and context
+}
