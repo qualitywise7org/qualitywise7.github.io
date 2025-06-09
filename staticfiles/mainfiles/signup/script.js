@@ -1,8 +1,22 @@
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 // Check if the user is already logged in
 const email = localStorage.getItem("email");
 if (email) {
     window.location.href = "/";
 }
+
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // Reload user to get latest verification status
+    user.reload().then(() => {
+      if (user.emailVerified) {
+        window.location.href = "/"; // Redirect to home if verified
+      }
+    });
+  }
+});
 
 const signupButton = document.getElementById("signup-btn");
 const signupForm = document.getElementById("signup-form");
