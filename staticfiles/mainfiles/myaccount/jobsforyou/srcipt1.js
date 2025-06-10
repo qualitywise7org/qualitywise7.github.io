@@ -138,7 +138,10 @@ function renderPaginatedJobsAndControls(jobs, currentPage) {
                 ? `<p><strong>Minimum Age:</strong> ${job.minAge || "-"} | <strong>Maximum Age:</strong> ${job.maxAge || "-"}</p>`
                 : ""
             }
-            <a href="/careeroptions/jobdetails/?jobCode=${job.jobId}" target="_blank" class="btn btn-sm btn-secondary">Know More</a>
+      <a href="/careeroptions/jobdetails/?jobId=${job.jobId}&companyCode=${job.companyCode}" 
+        target="_blank" 
+        class="btn btn-sm btn-secondary">Know More</a>
+
 <a href="#" 
    class="btn mt-2 btn-sm btn-primary apply-btn"
    data-jobcode="${job.jobId}"
