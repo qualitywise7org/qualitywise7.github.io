@@ -1,13 +1,15 @@
-// Check if the user is already logged in
-const email = localStorage.getItem("email");
-if (email) {
+// Redirect if user is already logged in
+const existingEmail = localStorage.getItem("email");
+if (existingEmail) {
     window.location.href = "/";
 }
 
+// Elements
 const signupButton = document.getElementById("signup-btn");
 const signupForm = document.getElementById("signup-form");
+const googleSignUpButton = document.getElementById("google-signup-btn");
 
-// Handle form submission
+// Handle signup form submission
 signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -17,11 +19,9 @@ signupForm.addEventListener("submit", async (e) => {
     const phoneNumber = document.getElementById("phoneNo").value;
 
     try {
-        // Provide user feedback
         signupButton.innerHTML = "Signing up...";
         signupButton.disabled = true;
 
-        // Check if the email is already registered
         const userExists = await checkIfUserExists(email);
         if (userExists) {
             alert("User already registered. Redirecting to login page.");
@@ -29,28 +29,21 @@ signupForm.addEventListener("submit", async (e) => {
             return;
         }
 
-        // Clear form fields
         signupForm.reset();
 
-        // Sign up user
         const userCredential = await signUpUser(username, phoneNumber, email, password);
-
-        // Send email verification
         await sendEmailVerification(auth.currentUser);
 
-        // Redirect to email verification page
         window.location.href = "/resend_email_verification/";
     } catch (error) {
-        // Display error message
         alert("Error signing up: " + error.message);
+    } finally {
+        signupButton.innerHTML = "Sign Up";
+        signupButton.disabled = false;
     }
-
-    // Reset signup button
-    signupButton.innerHTML = "Sign Up";
-    signupButton.disabled = false;
 });
 
-// Function to sign up user
+// Sign up user and update profile
 async function signUpUser(username, phoneNumber, email, password) {
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -62,12 +55,11 @@ async function signUpUser(username, phoneNumber, email, password) {
     }
 }
 
-// Function to save user data to Firestore
+// Save user data to Firestore
 async function saveUserDataToFirestore(userId, username, email, phoneNumber) {
     try {
         const db = getFirestore();
         const leadDocRef = doc(db, "lead", email);
-
         await setDoc(leadDocRef, {
             full_name: username,
             phonenumber: phoneNumber || "",
@@ -78,7 +70,7 @@ async function saveUserDataToFirestore(userId, username, email, phoneNumber) {
     }
 }
 
-// Function to check if user already exists
+// Check if user already exists in Firestore
 async function checkIfUserExists(email) {
     try {
         const db = getFirestore();
@@ -90,15 +82,13 @@ async function checkIfUserExists(email) {
     }
 }
 
-// Google signup button event listener
-const googleSignUp = document.getElementById("google-signup-btn");
-googleSignUp.addEventListener("click", async () => {
+// Handle Google sign up
+googleSignUpButton.addEventListener("click", async () => {
     try {
         const provider = new GoogleAuthProvider();
         const result = await signInWithPopup(auth, provider);
         const user = result.user;
 
-        // Check if the email is already registered
         const userExists = await checkIfUserExists(user.email);
         if (userExists) {
             alert("This email is already registered with us. Signing in you.");
@@ -106,16 +96,13 @@ googleSignUp.addEventListener("click", async () => {
             return;
         }
 
-        // Store user info in localStorage (consider security implications)
         localStorage.setItem("uid", user.uid);
         localStorage.setItem("email", user.email);
 
-        // Save user data to Firestore
         await saveUserDataToFirestore(user.uid, user.displayName, user.email, user.phoneNumber);
 
-        // Redirect to account page
         window.location.href = "/myaccount";
     } catch (error) {
-        console.log("Error signing up with Google: ", error.message);
+        console.error("Error signing up with Google:", error.message);
     }
 });
