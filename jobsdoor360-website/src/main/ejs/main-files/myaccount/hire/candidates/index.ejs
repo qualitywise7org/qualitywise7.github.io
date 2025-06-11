@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Job Listings</title>
+    <%- include('../../../../partials/head.ejs') %>
+    <style>
+      @media (max-width: 576px) {
+        .table-responsive {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+          max-width: 100%; /* Prevent table from overflowing its container */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('../../../../partials/navbar.ejs') %>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <h4 class="text-center text-white bg-dark p-2 mb-4">
+            Candidate List
+          </h4>
+        </div>
+      </div>
+      <!-- Search bar -->
+      <div class="row mb-3">
+        <div class="col">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="Search candidates..."
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="table-responsive">
+            <!-- Use table-responsive class -->
+            <table class="table table-bordered table-striped bg-light">
+              <thead class="text-white text-center">
+                <tr>
+                  <th class="text-center">Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Applied for</th>
+                   <th>Role</th>
+                  <th>Resmue</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="users_data" class="text-center">
+                <!-- Users' data will be added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('../../../../partials/footer.ejs') %>
+    <script type="module">
+   const email = localStorage.getItem("email");
+  if (!email) {
+    window.location.href = "/login/?redirect_url=hiring";
+  }
+
+  document.addEventListener("DOMContentLoaded", async function () {
+    const jobListings = document.getElementById("users_data");
+    const searchInput = document.getElementById("searchInput");
+    const paginationControls = document.createElement("div");
+    paginationControls.className = "d-flex justify-content-between mt-3";
+
+    let allRows = [];
+    let currentPage = 1;
+    const rowsPerPage = 10;
+
+    function renderTable(page = 1) {
+      jobListings.innerHTML = "";
+      const start = (page - 1) * rowsPerPage;
+      const end = start + rowsPerPage;
+      const rowsToShow = allRows.slice(start, end);
+      rowsToShow.forEach((row) => jobListings.appendChild(row));
+
+      // Pagination buttons
+      paginationControls.innerHTML = `
+        <button class="btn btn-sm btn-secondary" ${page === 1 ? "disabled" : ""} id="prevPage">Previous</button>
+        <span class="align-self-center">Page ${currentPage} of ${Math.ceil(allRows.length / rowsPerPage)}</span>
+        <button class="btn btn-sm btn-secondary" ${end >= allRows.length ? "disabled" : ""} id="nextPage">Next</button>
+      `;
+    }
+
+    function attachPaginationListeners() {
+      paginationControls.addEventListener("click", (e) => {
+        if (e.target.id === "prevPage" && currentPage > 1) {
+          currentPage--;
+          renderTable(currentPage);
+        }
+        if (e.target.id === "nextPage" && currentPage * rowsPerPage < allRows.length) {
+          currentPage++;
+          renderTable(currentPage);
+        }
+      });
+    }
+
+   function addActionButtons(row, applicant, jobIndex, companyId, jobListings, jobs) {
+  const actionTd = document.createElement("td");
+  actionTd.className = "text-center";
+
+  const shortlistBtn = document.createElement("button");
+  shortlistBtn.textContent = "Shortlist";
+  shortlistBtn.className = "btn btn-success btn-sm me-2";
+
+  const rejectBtn = document.createElement("button");
+  rejectBtn.textContent = "Reject";
+  rejectBtn.className = "btn btn-danger btn-sm";
+
+  // ✅ Fix: reject function now has access to jobIndex
+  rejectBtn.onclick = async () => {
+    if (!confirm(`Are you sure you want to reject ${applicant.email}?`)) return;
+
+    try {
+      const companyRef = doc(db, "jobs_company_wise", companyId);
+      const companySnap = await getDoc(companyRef);
+
+      if (companySnap.exists()) {
+        const companyData = companySnap.data();
+        const jobs = companyData.jobs || [];
+
+        // ✅ Remove the applicant from the correct job
+        const updatedApplicants = jobs[jobIndex].applicants.filter(
+          (a) => a.email !== applicant.email
+        );
+        jobs[jobIndex].applicants = updatedApplicants;
+
+        // ✅ Update Firestore
+        await updateDoc(companyRef, { jobs });
+
+        // ✅ Remove row from UI and re-render
+        row.remove();
+        allRows = allRows.filter((r) => r !== row);
+        renderTable(currentPage);
+      }
+    } catch (err) {
+      console.error("❌ Error rejecting applicant:", err);
+      alert("Failed to reject applicant.");
+    }
+  };
+
+  // Attach buttons
+  actionTd.appendChild(shortlistBtn);
+  actionTd.appendChild(rejectBtn);
+  row.appendChild(actionTd);
+}
+
+
+    try {
+      const companySnapshot = await getDocs(collection(db, "jobs_company_wise"));
+      let id = 1;
+
+      for (const companyDoc of companySnapshot.docs) {
+        const companyId = companyDoc.id;
+        const companyData = companyDoc.data();
+        const jobs = companyData.jobs || [];
+
+        jobs.forEach((job, jobIndex) => {
+  const applicants = job.applicants || [];
+
+  applicants.forEach((applicant) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${id++}</td>
+      <td>${applicant.name || "N/A"}</td>
+      <td>${applicant.email || "N/A"}</td>
+      <td>${companyId}</td>
+      <td>${job.post_name || job.title || "N/A"}</td>
+      <td>${
+        applicant.resumeUrl
+          ? `<a href="${applicant.resumeUrl}" target="_blank">View Resume</a>`
+          : "No resume"
+      }</td>
+    `;
+
+    // Pass jobIndex into the action button helper
+    addActionButtons(row, applicant, jobIndex, companyId, jobListings, jobs);
+    allRows.push(row); // include in pagination
+  });
+});
+
+      }
+
+      renderTable(currentPage);
+      attachPaginationListeners();
+      jobListings.parentNode.appendChild(paginationControls);
+
+      // Search functionality
+      searchInput.addEventListener("input", function () {
+        const query = searchInput.value.toLowerCase();
+        allRows.forEach((row) => {
+          const cells = row.querySelectorAll("td");
+          const matches = Array.from(cells).some((cell) =>
+            cell.textContent.toLowerCase().includes(query)
+          );
+          row.style.display = matches ? "" : "none";
+        });
+      });
+    } catch (error) {
+      console.error("Error retrieving applicants:", error);
+    }
+  });
+</script>
