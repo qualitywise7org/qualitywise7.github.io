@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>My Professional Profile - JobsDoor360</title>
     <!-- TailwindCSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet"> -->
     <!-- Bootstrap -->
@@ -11,16 +11,220 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
-      #edit-modal-education{
+      #edit-modal-education {
         z-index: 10;
       }
-      
+
+      /* Add loading indicator styles */
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        display: none;
+      }
+
+      /* Improved toast notifications */
+      .status-alert {
+        transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+      }
+
+      .toast-header {
+        border-bottom: none !important;
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+      }
+
+      /* Animation for toast messages */
+      @keyframes slideInRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideOutRight {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+      }
+
+      .status-alert.show {
+        animation: slideInRight 0.3s forwards;
+      }
+
+      .status-alert.hide {
+        animation: slideOutRight 0.3s forwards;
+      }
+
+      /* Mobile responsiveness for modals */
+      @media (max-width: 576px) {
+        .modal-dialog {
+          margin: 0.5rem;
+          max-width: calc(100% - 1rem);
+        }
+
+        /* Adjust toast position on mobile */
+        .status-alert {
+          max-width: 90% !important;
+          right: 5% !important;
+        }
+
+        .modal-content {
+          padding: 1rem;
+        }
+
+        .modal-header {
+          padding: 0.75rem 1rem;
+        }
+
+        .modal-body {
+          padding: 1rem 0.75rem;
+        }
+
+        .modal-footer {
+          padding: 0.75rem 1rem;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .modal-footer .btn {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+
+      /* Accessibility improvements */
+      :focus-visible {
+        outline: 3px solid #007bff;
+        outline-offset: 2px;
+      }
+
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        transition: outline-color 0.2s ease;
+      }
+      .btn:focus,
+      .form-control:focus {
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      }
+
+      /* Form validation styling */
+      .form-control.is-invalid {
+        background-image: none;
+        padding-right: 0.75rem;
+        border-color: #dc3545;
+      }
+
+      .form-control.is-valid {
+        background-image: none;
+        padding-right: 0.75rem;
+        border-color: #198754;
+      }
+
+      .invalid-feedback {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 0.875rem;
+        color: #dc3545;
+      }
+      /* Animation for validation feedback */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .invalid-feedback {
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      /* Validation summary styling */
+      #validation-summary {
+        background-color: #f8f9fa;
+        border-left: 5px solid #6c757d;
+        animation: fadeIn 0.4s ease-out;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease;
+      }
+
+      #validation-summary:not(.d-none) {
+        max-height: 300px;
+        padding: 1rem;
+      }
+
+      #validation-summary .alert {
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 1rem;
+      }
+
+      #validation-summary .alert:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Enhanced input group styling */
+      .input-group-text {
+        background-color: #f8f9fa;
+        border-right: none;
+      }
+
+      .input-group .form-control {
+        border-left: none;
+      }
+
+      .input-group.is-invalid .input-group-text {
+        border-color: #dc3545;
+        color: #dc3545;
+      }
+
+      .input-group.is-valid .input-group-text {
+        border-color: #198754;
+        color: #198754;
+      }
     </style>
 
     <%- include('../../../partials/head.ejs') %>
   </head>
   <body>
+    <!-- Loading overlay for operations -->
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
     <%- include('../../../partials/navbar.ejs') %>
 
     <!-- Edit social link -->
@@ -33,50 +237,89 @@
         <h2 class="h4 mb-4 text-center">Edit Social Links</h2>
         <form>
           <div class="mb-3">
-            <label for="edit-github" class="form-label">GitHub Profile:</label>
-            <input
-              type="text"
-              id="edit-github"
-              name="egithub"
-              class="form-control"
-              placeholder="e.g., https://github.com/username"
-            />
+            <label for="edit-github" class="form-label">
+             </i> GitHub Profile:
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"
+                ><i class="fab fa-github"></i
+              ></span>
+              <input
+                type="text"
+                id="edit-github"
+                name="egithub"
+                class="form-control"
+                placeholder="e.g., https://github.com/username"
+                aria-describedby="githubHelp"
+                pattern="https?://(www\.)?github\.com/.*"
+              />            </div>
+            <small id="githubHelp" class="form-text text-muted">
+              Enter your GitHub profile URL or leave blank
+            </small>
           </div>
           <div class="mb-3">
-            <label for="edit-linkedin" class="form-label"
-              >LinkedIn Profile:</label
-            >
-            <input
-              type="text"
-              id="edit-linkedin"
-              name="elinkedin"
-              class="form-control"
-              placeholder="e.g., https://linkedin.com/in/username"
-            />
+            <label for="edit-linkedin" class="form-label">
+              </i> LinkedIn Profile:
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"
+                ><i class="fab fa-linkedin"></i
+              ></span>
+              <input
+                type="text"
+                id="edit-linkedin"
+                name="elinkedin"
+                class="form-control"
+                placeholder="e.g., https://linkedin.com/in/username"
+                aria-describedby="linkedinHelp"
+                pattern="https?://(www\.)?linkedin\.com/.*"
+              />            </div>
+            <small id="linkedinHelp" class="form-text text-muted">
+              Enter your LinkedIn profile URL or leave blank
+            </small>
           </div>
           <div class="mb-3">
-            <label for="edit-leetcode" class="form-label"
-              >LeetCode Profile:</label
-            >
-            <input
-              type="text"
-              id="edit-leetcode"
-              name="eleetcode"
-              class="form-control"
-              placeholder="e.g., https://leetcode.com/username"
-            />
+            <label for="edit-leetcode" class="form-label">
+              </i> LeetCode Profile:
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-code"></i></span>
+              <input
+                type="text"
+                id="edit-leetcode"
+                name="eleetcode"
+                class="form-control"
+                placeholder="e.g., https://leetcode.com/username"
+                aria-describedby="leetcodeHelp"
+                pattern="https?://(www\.)?leetcode\.com/.*"
+              />            </div>
+            <small id="leetcodeHelp" class="form-text text-muted">
+              Enter your LeetCode profile URL or leave blank
+            </small>
           </div>
           <div class="mb-3">
-            <label for="edit-instagram" class="form-label"
-              >Instagram Profile:</label
-            >
-            <input
-              type="text"
-              id="edit-instagram"
-              name="einstagram"
-              class="form-control"
-              placeholder="e.g., https://instagram.com/username"
-            />
+            <label for="edit-instagram" class="form-label">
+              </i> Instagram Profile:
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"
+                ><i class="fab fa-instagram"></i
+              ></span>
+              <input
+                type="text"
+                id="edit-instagram"
+                name="einstagram"
+                class="form-control"
+                placeholder="e.g., https://instagram.com/username"
+                aria-describedby="instagramHelp"
+                pattern="https?://(www\.)?instagram\.com/.*"
+              />            </div>
+            <small id="instagramHelp" class="form-text text-muted">
+              Enter your Instagram profile URL or leave blank
+            </small>
+          </div>
+          <div id="validation-summary" class="mb-3 p-3 rounded d-none">
+            <div class="validation-summary-content"></div>
           </div>
 
           <div class="d-flex justify-content-between">
@@ -85,10 +328,10 @@
               id="cancel-button-social"
               class="btn btn-secondary"
             >
-              Cancel
+              <i class="fas fa-times me-1"></i> Cancel
             </button>
             <button id="save-button-social" class="btn btn-primary">
-              Save
+              <i class="fas fa-save me-1"></i> Save
             </button>
           </div>
         </form>
@@ -216,188 +459,185 @@
     <!--education Modal -->
     <!-- Education Modal -->
     <div
-  id="edit-modal-education"
-  class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center"
->
-  <div class="bg-white rounded p-4 shadow-lg" style="max-width: 400px; width: 100%;">
-    <h2 class="h4 text-center fw-bold text-dark mb-3">
-      Add / Edit Education
-    </h2>
-    <form id="edit-form-education">
-      <!-- Degree Input -->
-      <div class="mb-3">
-        <label for="edit-degree" class="form-label">Degree</label>
-        <input
-          id="edit-degree"
-          type="text"
-          class="form-control"
-          placeholder="Enter your degree"
-          required
-        />
+      id="edit-modal-education"
+      class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center"
+    >
+      <div
+        class="bg-white rounded p-4 shadow-lg"
+        style="max-width: 400px; width: 100%"
+      >
+        <h2 class="h4 text-center fw-bold text-dark mb-3">
+          Add / Edit Education
+        </h2>
+        <form id="edit-form-education">
+          <!-- Degree Input -->
+          <div class="mb-3">
+            <label for="edit-degree" class="form-label">Degree</label>
+            <input
+              id="edit-degree"
+              type="text"
+              class="form-control"
+              placeholder="Enter your degree"
+              required
+            />
+          </div>
+          <!-- Institution Input -->
+          <div class="mb-3">
+            <label for="edit-institution" class="form-label">Institution</label>
+            <input
+              id="edit-institution"
+              type="text"
+              class="form-control"
+              placeholder="Enter institution name"
+              required
+            />
+          </div>
+          <!-- Year Input -->
+          <div class="mb-3">
+            <label for="edit-year" class="form-label">Year</label>
+            <input
+              id="edit-year"
+              type="text"
+              class="form-control"
+              placeholder="Enter graduation year"
+              required
+            />
+          </div>
+          <!-- Action Buttons -->
+          <div class="d-flex justify-content-between">
+            <button
+              type="button"
+              id="cancel-button-education"
+              class="btn btn-secondary"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
       </div>
-      <!-- Institution Input -->
-      <div class="mb-3">
-        <label for="edit-institution" class="form-label">Institution</label>
-        <input
-          id="edit-institution"
-          type="text"
-          class="form-control"
-          placeholder="Enter institution name"
-          required
-        />
-      </div>
-      <!-- Year Input -->
-      <div class="mb-3">
-        <label for="edit-year" class="form-label">Year</label>
-        <input
-          id="edit-year"
-          type="text"
-          class="form-control"
-          placeholder="Enter graduation year"
-          required
-        />
-      </div>
-      <!-- Action Buttons -->
-      <div class="d-flex justify-content-between">
-        <button
-          type="button"
-          id="cancel-button-education"
-          class="btn btn-secondary"
-        >
-          Cancel
-        </button>
-        <button
-          type="submit"
-          class="btn btn-primary"
-        >
-          Save
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-
+    </div>
 
     <!-- Add Experience  -->
     <div
-  id="edit-modal-experience"
-  class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center z-3"
->
-  <div
-    class="bg-white rounded p-4 shadow-lg"
-    style="max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto;"
-  >
-    <h2 class="h4 fw-bold text-center text-dark mb-4">Add / Edit Job Experience</h2>
-    <form id="edit-form-experience">
-      <!-- Job Title -->
-      <div class="mb-3">
-        <label for="job-title" class="form-label">Job Title</label>
-        <input
-          type="text"
-          id="job-title"
-          name="job-title"
-          class="form-control"
-          placeholder="Enter Job Title"
-          required
-        />
-      </div>
+      id="edit-modal-experience"
+      class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center z-3"
+    >
+      <div
+        class="bg-white rounded p-4 shadow-lg"
+        style="
+          max-width: 500px;
+          width: 100%;
+          max-height: 90vh;
+          overflow-y: auto;
+        "
+      >
+        <h2 class="h4 fw-bold text-center text-dark mb-4">
+          Add / Edit Job Experience
+        </h2>
+        <form id="edit-form-experience">
+          <!-- Job Title -->
+          <div class="mb-3">
+            <label for="job-title" class="form-label">Job Title</label>
+            <input
+              type="text"
+              id="job-title"
+              name="job-title"
+              class="form-control"
+              placeholder="Enter Job Title"
+              required
+            />
+          </div>
 
-      <!-- Company Name -->
-      <div class="mb-3">
-        <label for="company-name" class="form-label">Company Name</label>
-        <input
-          type="text"
-          id="company-name"
-          name="company-name"
-          class="form-control"
-          placeholder="Enter Company Name"
-          required
-        />
-      </div>
+          <!-- Company Name -->
+          <div class="mb-3">
+            <label for="company-name" class="form-label">Company Name</label>
+            <input
+              type="text"
+              id="company-name"
+              name="company-name"
+              class="form-control"
+              placeholder="Enter Company Name"
+              required
+            />
+          </div>
 
-      <!-- Start Date -->
-      <div class="mb-3">
-        <label for="start-date" class="form-label">Start Date</label>
-        <input
-          type="date"
-          id="start-date"
-          name="start-date"
-          class="form-control"
-          required
-        />
-      </div>
+          <!-- Start Date -->
+          <div class="mb-3">
+            <label for="start-date" class="form-label">Start Date</label>
+            <input
+              type="date"
+              id="start-date"
+              name="start-date"
+              class="form-control"
+              required
+            />
+          </div>
 
-      <!-- End Date -->
-      <div class="mb-3">
-        <label for="end-date" class="form-label">End Date</label>
-        <input
-          type="date"
-          id="end-date"
-          name="end-date"
-          class="form-control"
-        />
-      </div>
+          <!-- End Date -->
+          <div class="mb-3">
+            <label for="end-date" class="form-label">End Date</label>
+            <input
+              type="date"
+              id="end-date"
+              name="end-date"
+              class="form-control"
+            />
+          </div>
 
-      <!-- Job Description -->
-      <div class="mb-3">
-        <label for="job-description" class="form-label">Job Description</label>
-        <textarea
-          id="job-description"
-          name="description"
-          class="form-control"
-          rows="4"
-          placeholder="Describe your responsibilities"
-          required
-        ></textarea>
-      </div>
+          <!-- Job Description -->
+          <div class="mb-3">
+            <label for="job-description" class="form-label"
+              >Job Description</label
+            >
+            <textarea
+              id="job-description"
+              name="description"
+              class="form-control"
+              rows="4"
+              placeholder="Describe your responsibilities"
+              required
+            ></textarea>
+          </div>
 
-      <!-- Buttons -->
-      <div class="d-flex justify-content-end gap-2">
-        <button
-          type="button"
-          id="cancel-button-experience"
-          class="btn btn-secondary"
-        >
-          Cancel
-        </button>
-        <button
-          type="submit"
-          class="btn btn-primary"
-        >
-          Save
-        </button>
+          <!-- Buttons -->
+          <div class="d-flex justify-content-end gap-2">
+            <button
+              type="button"
+              id="cancel-button-experience"
+              class="btn btn-secondary"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-</div>
-
+    </div>
 
     <!-- profile -->
     <section class="pt-5 pb-5 bg-light">
       <div class="container">
         <!-- Profile Section -->
-        <div class="d-flex flex-column justify-content-center align-items-center mb-5 flex-md-row text-center text-md-center gx-2 gx-md-0">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center mb-5 flex-md-row text-center text-md-center gx-2 gx-md-0"
+        >
           <!-- Profile Image -->
           <div class="d-flex justify-content-center mb-3 mb-md-0">
             <img
               src="https://www.pngall.com/wp-content/uploads/5/Profile.png"
               alt="user-avatar-image"
               class="border border-white rounded-circle shadow-lg img-fluid"
-              style="width: 150px; height: 150px;"
+              style="width: 150px; height: 150px"
               id="show_image"
             />
           </div>
-        
+
           <!-- Welcome Text -->
           <div class="d-flex align-items-center justify-content-center ms-md-3">
             <h1 class="text-primary fw-bold mb-2">Welcome to My Profile</h1>
           </div>
         </div>
-        
-        
-        
-        
 
         <!-- Navigation Buttons -->
         <div class="text-center">
@@ -442,10 +682,10 @@
           <p class="text-muted text-center mb-4">
             Connect with me on these platforms:
           </p>
-          <div class="d-flex justify-content-center flex-wrap gap-3" id="social-profile">
-            
-           
-          </div>
+          <div
+            class="d-flex justify-content-center flex-wrap gap-3"
+            id="social-profile"
+          ></div>
           <div class="text-center mt-4">
             <button
               id="edit-social-button"
@@ -455,8 +695,10 @@
             </button>
           </div>
         </div>
-        <hr class="w-50 mx-auto my-4 border-0" style="height: 1px; background-color: #e2e2e2;">
-
+        <hr
+          class="w-50 mx-auto my-4 border-0"
+          style="height: 1px; background-color: #e2e2e2"
+        />
 
         <!-- Skills Section -->
         <div id="skills" class="py-5">
@@ -464,19 +706,23 @@
           <p class="text-muted text-center mb-4">
             Discover my technical expertise
           </p>
-          <div id="skills-container" class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 p-4">
+          <div
+            id="skills-container"
+            class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 p-4"
+          >
             <!-- Dynamically loaded skills will appear here -->
           </div>
-          
+
           <div class="text-center mt-4">
             <button id="add-skill-button" class="btn btn-primary rounded-pill">
               Add Skill
             </button>
           </div>
         </div>
-        <hr class="mx-auto my-4 border-0" style="width: 80%; height: 1px; background-color: #e2e2e2;">
-
-
+        <hr
+          class="mx-auto my-4 border-0"
+          style="width: 80%; height: 1px; background-color: #e2e2e2"
+        />
 
         <!-- Address Section -->
         <div id="address" class="py-5">
@@ -569,8 +815,10 @@
             </button>
           </div> -->
         </div>
-        <hr class="w-50 mx-auto my-4 border-0" style="height: 1px; background-color: #e2e2e2;">
-
+        <hr
+          class="w-50 mx-auto my-4 border-0"
+          style="height: 1px; background-color: #e2e2e2"
+        />
 
         <!-- Education Section -->
         <div id="education" class="py-5">
@@ -578,18 +826,23 @@
           <p class="text-muted text-center mb-4">
             Manage your educational qualifications:
           </p>
-          <div id="education-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div
+            id="education-list"
+            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
+          >
             <!-- Education details dynamically loaded -->
           </div>
-          
+
           <div class="text-center mt-4">
             <button id="addEducation" class="btn btn-primary rounded-pill">
               Add Education
             </button>
           </div>
         </div>
-        <hr class="w-50 mx-auto my-4 border-0" style="height: 1px; background-color: #e2e2e2;">
-
+        <hr
+          class="w-50 mx-auto my-4 border-0"
+          style="height: 1px; background-color: #e2e2e2"
+        />
 
         <!-- Experience Section -->
         <div id="experience" class="py-5">
@@ -614,6 +867,5 @@
       type="module"
       src="/staticfiles/mainfiles/myaccount/jobprofile/script.js"
     ></script>
-   
   </body>
 </html>
