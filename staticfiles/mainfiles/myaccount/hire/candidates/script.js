@@ -586,8 +586,44 @@ console.log("Filtered Users:", filteredUsers);
           }
         </td>
         <td>${user.education?.[0]?.graduation_date || "N/A"}</td>
+        <td>${user.about?.dob ? calculateAge(user.about.dob) + " years" : "N/A"}</td>
         <td>${user.skills?.join(", ") || "N/A"}</td>
-      `;
+      <td>
+      ${user.social?.github ? `<a href="${user.social.github}" target="_blank">GitHub</a><br>` : ""}
+      ${user.social?.instagram ? `<a href="${user.social.instagram}" target="_blank">Instagram</a><br>` : ""}
+      ${user.social?.leetcode ? `<a href="${user.social.leetcode}" target="_blank">LeetCode</a><br>` : ""}
+      ${user.social?.linkedin ? `<a href="${user.social.linkedin}" target="_blank">LinkedIn</a>` : ""}
+    </td>
+    <td>
+      ${user.experience?.map(exp => {
+        const duration = calculateExperience(exp.startDate, exp.endDate);
+        return `<div><strong>${exp.companyName}</strong>: ${duration}</div>`;
+      }).join("") || "N/A"}
+    </td>
+    <td>
+      <strong>Present:</strong><br>
+      ${user.address?.present?.address || ""} ${user.address?.present?.city || ""} ${user.address?.present?.state || ""} ${user.address?.present?.zip || ""} <br><br>
+      <strong>Permanent:</strong><br>
+      ${user.address?.permanent?.address || ""} ${user.address?.permanent?.city || ""} ${user.address?.permanent?.state || ""} ${user.address?.permanent?.zip || ""}
+    </td>
+
+     `;
+
+    //  calculating experience
+        function calculateExperience(start, end) {
+      const startDate = new Date(start);
+      const endDate = new Date(end);
+      if (isNaN(startDate) || isNaN(endDate)) return "Invalid dates";
+
+      const months =
+        (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+        (endDate.getMonth() - startDate.getMonth());
+
+      if (months < 12) return `${months} months`;
+      const years = Math.floor(months / 12);
+      const remMonths = months % 12;
+      return `${years} year${years > 1 ? "s" : ""}${remMonths ? ` ${remMonths} months` : ""}`;
+    }
 
       // Rating Dropdown
       const ratingCell = document.createElement("td");
@@ -708,6 +744,20 @@ console.log("Filtered Users:", filteredUsers);
   } catch (error) {
     console.error("Error getting user profiles:", error);
   }
+}
+
+// calculating age from dob
+function calculateAge(dob) {
+  if (!dob) return "N/A";
+  const birthDate = new Date(dob);
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
 }
 
 // Function to update user rating in Firestore
