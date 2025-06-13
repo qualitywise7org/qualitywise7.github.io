@@ -229,17 +229,17 @@ window.filterByNameEmail = async function filterByNameEmail() {
     }
     // date filter if both start and end dates are selected
     if (startDate && endDate) {
-      filters.push(where("audit_fields.createdAt", ">=", startDate));
-      filters.push(where("audit_fields.createdAt", "<=", endDate));
+      filters.push(where("audit_fields.updatedAt", ">=", startDate));
+      filters.push(where("audit_fields.updatedAt", "<=", endDate));
     }
 
     let q;
 
     //Case 1: Filter by Date, Gender, and Name/Email
     if (startDate && endDate && selectedGender !== "all" && searchInput) {
-      const dateQuery = query(usersRef, where("audit_fields.createdAt", ">=", startDate),
-        where("audit_fields.createdAt", "<=", endDate),
-        orderBy("audit_fields.createdAt"));
+      const dateQuery = query(usersRef, where("audit_fields.updatedAt", ">=", startDate),
+        where("audit_fields.updatedAt", "<=", endDate),
+        orderBy("audit_fields.updatedAt"));
       const dateSnapshot = await getDocs(dateQuery);
       let users = dateSnapshot.docs.map(doc => doc.data());
 
@@ -267,9 +267,9 @@ window.filterByNameEmail = async function filterByNameEmail() {
     }
     // Case 2: Both Date & Gender are selected (First filter by date, then filter gender)
     else if (startDate && endDate && selectedGender !== "all") {
-      const dateQuery = query(usersRef, where("audit_fields.createdAt", ">=", startDate),
-        where("audit_fields.createdAt", "<=", endDate),
-        orderBy("audit_fields.createdAt"));
+      const dateQuery = query(usersRef, where("audit_fields.updatedAt", ">=", startDate),
+        where("audit_fields.updatedAt", "<=", endDate),
+        orderBy("audit_fields.updatedAt"));
       const dateSnapshot = await getDocs(dateQuery);
       let users = dateSnapshot.docs.map(doc => doc.data());
       // Apply gender filtering in JavaScript
@@ -392,8 +392,8 @@ window.filterByRating = async function filterByRating() {
       filters.push(where("about.gender", "==", selectedGender));
     }
     if (startDate && endDate) {
-      filters.push(where("audit_fields.createdAt", ">=", startDate));
-      filters.push(where("audit_fields.createdAt", "<=", endDate));
+      filters.push(where("audit_fields.updatedAt", ">=", startDate));
+      filters.push(where("audit_fields.updatedAt", "<=", endDate));
     }
 
     let q;
@@ -401,9 +401,9 @@ window.filterByRating = async function filterByRating() {
     //  Case 1: Both Date, Gender & Rating are selected → First filter by date, then filter by gender, then filter by rating
     if (startDate && endDate && selectedGender !== "all" && selectedRating !== "all") {
 
-      const dateQuery = query(usersRef, where("audit_fields.createdAt", ">=", startDate),
-        where("audit_fields.createdAt", "<=", endDate),
-        orderBy("audit_fields.createdAt"));
+      const dateQuery = query(usersRef, where("audit_fields.updatedAt", ">=", startDate),
+        where("audit_fields.updatedAt", "<=", endDate),
+        orderBy("audit_fields.updatedAt"));
       const dateSnapshot = await getDocs(dateQuery);
       let users = dateSnapshot.docs.map(doc => doc.data());
 
@@ -426,7 +426,7 @@ window.filterByRating = async function filterByRating() {
     // Case 2: Both Date & Gender are selected → First filter by date, then filter by gender
     else if (startDate && endDate && selectedGender !== "all") {
       console.log("Selected Gender:", selectedGender);
-      const dateQuery = query(usersRef, ...filters, orderBy("audit_fields.createdAt"));
+      const dateQuery = query(usersRef, ...filters, orderBy("audit_fields.updatedAt"));
       const dateSnapshot = await getDocs(dateQuery);
       let users = dateSnapshot.docs.map(doc => doc.data());
 
@@ -443,7 +443,7 @@ window.filterByRating = async function filterByRating() {
     }
     //case 3: Both Date & Rating are selected → First filter by date, then search locally
     else if (startDate && endDate && selectedRating !== "all") {
-      const dateQuery = query(usersRef, ...filters, orderBy("audit_fields.createdAt"));
+      const dateQuery = query(usersRef, ...filters, orderBy("audit_fields.updatedAt"));
       const dateSnapshot = await getDocs(dateQuery);
       let users = dateSnapshot.docs.map(doc => doc.data());
       // Apply rating filtering in JavaScript
@@ -531,7 +531,7 @@ function getCommonFilter() {
 
 
 let currentPage = 1;
-const rowsPerPage = 2;
+const rowsPerPage = 5;
 
 //function to populate table
 async function populateUserProfilesTable(data) {
@@ -566,12 +566,25 @@ console.log("Filtered Users:", filteredUsers);
       // Serial Number
       row.innerHTML = `
         <td>${index + 1}</td>
-        <td><img src="${user.about?.image || 'https://th.bing.com/th/id/OIP.yYUwl3GDU07Q5J5ttyW9fQHaHa?rs=1&pid=ImgDetMain'}" width="50"></td>
+        <td><img 
+      src="${user.about?.image || '/staticfiles/mainfiles/myaccount/hire/candidates/default_profile.jpg'}" 
+      width="50" height="50" 
+      alt="Profile"
+      onerror="this.onerror=null;this.src='/staticfiles/mainfiles/myaccount/hire/candidates/default_profile.jpg';"
+      style="object-fit:cover;border-radius:50%;background:#f3f3f3;"
+    ></td>
         <td>${user.about?.firstName || "N/A"} ${user.about?.lastName || ""}</td>
         <td>${user.about?.email || "N/A"}</td>
         <td>${user.about?.gender || "N/A"}</td>
         <td>${user.education?.[0]?.school || "N/A"}</td>
         <td>${user.education?.[0]?.degree || "N/A"}</td>
+        <td>
+          ${
+            user.about?.cv
+              ? `<a href="${user.about.cv}" target="_blank" rel="noopener noreferrer">View CV</a>`
+              : "N/A"
+          }
+        </td>
         <td>${user.education?.[0]?.graduation_date || "N/A"}</td>
         <td>${user.skills?.join(", ") || "N/A"}</td>
       `;
@@ -597,21 +610,21 @@ console.log("Filtered Users:", filteredUsers);
       row.appendChild(ratingCell);
 
       // Remarks Textarea
-      const remarksCell = document.createElement("td");
-      const remarksInput = document.createElement("textarea");
-      remarksInput.rows = 3;
-      remarksInput.value = user.remarks || "";
-      remarksInput.placeholder = "Enter remarks...";
-      remarksCell.appendChild(remarksInput);
-      row.appendChild(remarksCell);
+      // const remarksCell = document.createElement("td");
+      // const remarksInput = document.createElement("textarea");
+      // remarksInput.rows = 3;
+      // remarksInput.value = user.remarks || "";
+      // remarksInput.placeholder = "Enter remarks...";
+      // remarksCell.appendChild(remarksInput);
+      // row.appendChild(remarksCell);
 
       // Action Buttons (Edit, Show Remarks, Submit)
       const actionCell = document.createElement("td");
-      const editButton = document.createElement("button");
-      editButton.textContent = "Applied_Job";
-      editButton.addEventListener("click", () => {
-        window.open("jobs-applied/?user=" + user.about.email, "_blank");
-      });
+      // const editButton = document.createElement("button");
+      // editButton.textContent = "Applied_Job";
+      // editButton.addEventListener("click", () => {
+      //   window.open("jobs-applied/?user=" + user.about.email, "_blank");
+      // });
 
       const reviewButton = document.createElement("button");
       reviewButton.textContent = "Show Remarks";
@@ -619,52 +632,52 @@ console.log("Filtered Users:", filteredUsers);
         window.open("remarks/?user=" + encodeURIComponent(user.about.email), "_blank");
       });
 
-      const submitButton = document.createElement("button");
-      submitButton.textContent = "Submit";
-      submitButton.addEventListener("click", async () => {
-        try {
-          const userProfileRef = doc(db, "user_profile", user.about.email);
-          const newRemark = remarksInput.value.trim();
-          if (!newRemark) {
-            alert("Please enter a remark before submitting.");
-            return;
-          }
-          await updateDoc(userProfileRef, {
-            remark: newRemark
-          });
-          alert("You have submitted successfully!");
-        } catch (error) {
-          console.error("Error updating user profile:", error);
-        }
-      });
+      // const submitButton = document.createElement("button");
+      // submitButton.textContent = "Submit";
+      // submitButton.addEventListener("click", async () => {
+      //   try {
+      //     const userProfileRef = doc(db, "user_profile", user.about.email);
+      //     const newRemark = remarksInput.value.trim();
+      //     if (!newRemark) {
+      //       alert("Please enter a remark before submitting.");
+      //       return;
+      //     }
+      //     await updateDoc(userProfileRef, {
+      //       remark: newRemark
+      //     });
+      //     alert("You have submitted successfully!");
+      //   } catch (error) {
+      //     console.error("Error updating user profile:", error);
+      //   }
+      // });
 
-      actionCell.appendChild(editButton);
-      actionCell.appendChild(submitButton);
+      // actionCell.appendChild(editButton);
+      // actionCell.appendChild(submitButton);
       actionCell.appendChild(reviewButton);
       row.appendChild(actionCell);
 
       // Consultancy Remarks
-      const consultancyCell = document.createElement("td");
-      const consultancyDateInput = document.createElement("input");
-      consultancyDateInput.type = "date";
-      consultancyDateInput.value = new Date().toISOString().slice(0, 10);
+      // const consultancyCell = document.createElement("td");
+      // const consultancyDateInput = document.createElement("input");
+      // consultancyDateInput.type = "date";
+      // consultancyDateInput.value = new Date().toISOString().slice(0, 10);
 
-      const consultancyTextarea = document.createElement("textarea");
-      consultancyTextarea.rows = 3;
-      consultancyTextarea.placeholder = "Enter consultancy remark...";
+      // const consultancyTextarea = document.createElement("textarea");
+      // consultancyTextarea.rows = 3;
+      // consultancyTextarea.placeholder = "Enter consultancy remark...";
 
-      const consultancyButton = document.createElement("button");
-      consultancyButton.textContent = "Add Remark";
-      consultancyButton.addEventListener("click", async () => {
-        await addConsultancyRemark(user.about.email, consultancyTextarea.value.trim(), consultancyDateInput.value);
-        consultancyTextarea.value = "";
-        consultancyDateInput.value = new Date().toISOString().slice(0, 10);
-      });
+      // const consultancyButton = document.createElement("button");
+      // consultancyButton.textContent = "Add Remark";
+      // consultancyButton.addEventListener("click", async () => {
+      //   await addConsultancyRemark(user.about.email, consultancyTextarea.value.trim(), consultancyDateInput.value);
+      //   consultancyTextarea.value = "";
+      //   consultancyDateInput.value = new Date().toISOString().slice(0, 10);
+      // });
 
-      consultancyCell.appendChild(consultancyDateInput);
-      consultancyCell.appendChild(consultancyTextarea);
-      consultancyCell.appendChild(consultancyButton);
-      row.appendChild(consultancyCell);
+      // consultancyCell.appendChild(consultancyDateInput);
+      // consultancyCell.appendChild(consultancyTextarea);
+      // consultancyCell.appendChild(consultancyButton);
+      // row.appendChild(consultancyCell);
 
       // Interview Form
       const interviewCell = document.createElement("td");
