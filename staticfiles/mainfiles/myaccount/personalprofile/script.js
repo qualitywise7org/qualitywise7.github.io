@@ -4,7 +4,7 @@ const email = localStorage.getItem("email");
 // console.log(email);
 let imageUrl = "";
 let cvUrl = "";
-let editImageUrl = "";
+let editImageUrl = null; // Initialize as null to properly detect if a new image is selected
 let userPhoneNumber = "";
 
 if (!email) {
@@ -81,9 +81,21 @@ function populateForm(userData) {
     "1234567890";
 
   document.getElementById("edit-dob").value =
-    userData.about?.dob || userData?.dob || "2000-01-02";
-  document.getElementById("edit-gender").value =
-    userData.about?.gender || userData?.gender || "Male / Female";
+    userData.about?.dob || userData?.dob || "2000-01-02"; // Set gender radio button based on stored value
+  const storedGender = userData.about?.gender || userData?.gender || "";
+  document.getElementById("edit-gender").value = storedGender;
+
+  // Check the appropriate radio button based on stored gender
+  if (storedGender === "Male") {
+    document.getElementById("gender-male").checked = true;
+  } else if (storedGender === "Female") {
+    document.getElementById("gender-female").checked = true;
+  } else if (storedGender === "Other") {
+    document.getElementById("gender-other").checked = true;
+  } else {
+    // Default to male if no gender is stored
+    document.getElementById("gender-male").checked = true;
+  }
 
   imageUrl = userData.about?.image || "";
   // cvUrl = userData.about?.cv || "";
@@ -103,8 +115,12 @@ const cancelButton = document.getElementById("cancel-button");
 editButton.addEventListener("click", () => {
   const editModal = new bootstrap.Modal(document.getElementById("editModal"));
   editModal.show();
-  // Example: If user has no phone number
+  // Reset editImageUrl to null each time modal is opened
+  editImageUrl = null;
+  // Reset the file input value
+  document.getElementById("file-input").value = "";
 
+  // Example: If user has no phone number
   const phoneInput = document.getElementById("edit-phone");
 
   if (userPhoneNumber.trim() !== "") {
@@ -130,22 +146,25 @@ const fileInput = document.getElementById("file-input");
 // Event listener for file input
 fileInput.addEventListener("change", (event) => {
   const file = event.target.files[0]; // Get the selected file
-  editImageUrl = file;
   if (file) {
+    editImageUrl = file; // Only set editImageUrl if a file is selected
     const reader = new FileReader(); // FileReader for reading file content
-    // reader.onload = (e) => {
-    //   // imagePreview.src = e.target.result; // Set image preview source
-    //   // imagePreview.classList.remove("hidden"); // Show the image preview
-    //   // placeholder.classList.add("hidden"); // Hide the placeholder
-    // };
+    // Optional: Show a preview of the selected image in the modal
+    reader.onload = (e) => {
+      // You could add a preview image in the modal if desired
+      // For now we're just reading the file to ensure it's valid
+    };
     reader.readAsDataURL(file); // Read the image file as a data URL
+  } else {
+    editImageUrl = null; // Reset if no file is selected
   }
-  // else {
-  //   // Reset if no file is selected
-  //   imagePreview.src = "";
-  //   imagePreview.classList.add("hidden");
-  //   placeholder.classList.remove("hidden");
-  // }
+});
+
+// Event listeners for gender radio buttons
+document.querySelectorAll('input[name="gender-option"]').forEach((radio) => {
+  radio.addEventListener("change", function () {
+    document.getElementById("edit-gender").value = this.value;
+  });
 });
 
 //getting hosted url for profile
@@ -166,7 +185,6 @@ async function saveFormDataToDatabase(event) {
   var aboutData = {};
 
   // console.log(aboutData.firstName);
-
   const fullname = $("#edit-name").val() || "";
   const separate = fullname.trim();
   console.log(separate);
@@ -174,16 +192,28 @@ async function saveFormDataToDatabase(event) {
   console.log(arr[0]);
   aboutData.firstName = arr[0];
   aboutData.lastName = arr[1] || "";
-  aboutData.gender = $("#edit-gender").val() || "";
+
+  // Get selected gender from radio buttons
+  const selectedGender = document.querySelector(
+    'input[name="gender-option"]:checked'
+  );
+  aboutData.gender = selectedGender ? selectedGender.value : "Male";
+  // Update the hidden input with the selected gender
+  document.getElementById("edit-gender").value = aboutData.gender;
+
   aboutData.email = email;
   aboutData.dob = $("#edit-dob").val();
-
   aboutData.phoneNo = $("#edit-phone").val();
   // aboutData.cv = cvUrl || "";
-  const imageFile = editImageUrl;
-  // console.log(imageFile);
-  const newImageUrl = await uploadImageAndGetURL(imageFile);
-  aboutData.image = newImageUrl || "";
+
+  // Only upload and update image if a new one is selected
+  if (editImageUrl) {
+    const newImageUrl = await uploadImageAndGetURL(editImageUrl);
+    aboutData.image = newImageUrl;
+  } else {
+    // Keep the existing image URL if no new image is selected
+    aboutData.image = imageUrl;
+  }
   // console.log(newImageUrl);
 
   formData.about = aboutData;
