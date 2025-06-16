@@ -48,7 +48,7 @@ signupForm.addEventListener("submit", async (e) => {
         await sendEmailVerification(auth.currentUser);
 
         window.location.href = "/resend_email_verification/";
-    } catch (error) {
+    } catch (error) {.
         alert("Error signing up: " + error.message);
     } finally {
         signupButton.innerHTML = "Sign Up";
