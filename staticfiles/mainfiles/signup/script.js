@@ -98,24 +98,26 @@ async function checkIfUserExists(email) {
 // Handle Google sign up
 googleSignUpButton.addEventListener("click", async () => {
     try {
-        const provider = new GoogleAuthProvider();
-        const result = await signInWithPopup(auth, provider);
-        const user = result.user;
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+    // console.log(user.email);
 
-        const userExists = await checkIfUserExists(user.email);
-        if (userExists) {
-            alert("This email is already registered with us. Signing in you.");
-            window.location.href = "/login";
-            return;
-        }
-
-        localStorage.setItem("uid", user.uid);
-        localStorage.setItem("email", user.email);
-
-        await saveUserDataToFirestore(user.uid, user.displayName, user.email, user.phoneNumber);
-
-        window.location.href = "/myaccount";
-    } catch (error) {
-        console.error("Error signing up with Google:", error.message);
+    // Check if the email is already registered
+    const userExists = await checkIfUserExists(user.email);
+    if (userExists) {
+      window.location.href = "/login ";
+      return;
     }
+
+    // Store user info in localStorage (consider security implications)
+    localStorage.setItem("uid", user.uid);
+    localStorage.setItem("email", user.email);
+    localStorage.setItem("phonenumber", user.phoneNumber);
+
+    // Redirect to home page
+    window.location.href = "/";
+  } catch (error) {
+    console.log("Error Logging in  with Google: ", error.message);
+  }
 });
