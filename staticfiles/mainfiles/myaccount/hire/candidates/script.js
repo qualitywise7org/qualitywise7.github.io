@@ -56,7 +56,7 @@ async function isUser() {
 
       console.log("User Role from Firestore:", userRole);
 
-      if (userRole === "master_admin" || "recruiter") {
+      if (userRole === "master_admin" || userRole === "recruiter") {
         await mainData();
         console.log("Admin access granted.");
       } else {
@@ -495,23 +495,6 @@ window.filterByRating = async function filterByRating() {
   }
 };
 
-// Event listeners for filter by rating
-// document.addEventListener("DOMContentLoaded", () => {
-//   document.getElementById("filter_button").addEventListener("click", filterByRating);
-//   document.getElementById("genderDropdown").addEventListener("change", filterByRating);
-//   document.getElementById("startDate").addEventListener("change", () => {
-//     if (document.getElementById("startDate").value && document.getElementById("endDate").value) {
-//       filterByRating();
-//     }
-//   });
-
-//   document.getElementById("endDate").addEventListener("change", () => {
-//     if (document.getElementById("startDate").value && document.getElementById("endDate").value) {
-//       filterByRating();
-//     }
-//   });
-
-// });
 
 //function to format date for firestore
 function formatDateForFirestore(date) {
@@ -626,41 +609,32 @@ console.log("Filtered Users:", filteredUsers);
     }
 
       // Rating Dropdown
+      // const ratingCell = document.createElement("td");
+      // const ratingSelect = document.createElement("select");
+
+      // for (let i = 0; i <= 5; i++) {
+      //   const option = document.createElement("option");
+      //   option.value = i;
+      //   option.textContent = i;
+      //   if (user.rating === i) option.selected = true;
+      //   ratingSelect.appendChild(option);
+      // }
+
+      // ratingSelect.addEventListener("change", async function () {
+      //   user.rating = parseInt(ratingSelect.value);
+      //   await updateUserRating(user.about.email, user.rating);
+      // });
+
+      // ratingCell.appendChild(ratingSelect);
+      // row.appendChild(ratingCell);
+
+
       const ratingCell = document.createElement("td");
-      const ratingSelect = document.createElement("select");
-
-      for (let i = 0; i <= 5; i++) {
-        const option = document.createElement("option");
-        option.value = i;
-        option.textContent = i;
-        if (user.rating === i) option.selected = true;
-        ratingSelect.appendChild(option);
-      }
-
-      ratingSelect.addEventListener("change", async function () {
-        user.rating = parseInt(ratingSelect.value);
-        await updateUserRating(user.about.email, user.rating);
-      });
-
-      ratingCell.appendChild(ratingSelect);
-      row.appendChild(ratingCell);
-
-      // Remarks Textarea
-      // const remarksCell = document.createElement("td");
-      // const remarksInput = document.createElement("textarea");
-      // remarksInput.rows = 3;
-      // remarksInput.value = user.remarks || "";
-      // remarksInput.placeholder = "Enter remarks...";
-      // remarksCell.appendChild(remarksInput);
-      // row.appendChild(remarksCell);
+ratingCell.textContent = user.rating != null ? user.rating : "N/A";
+row.appendChild(ratingCell);
 
       // Action Buttons (Edit, Show Remarks, Submit)
       const actionCell = document.createElement("td");
-      // const editButton = document.createElement("button");
-      // editButton.textContent = "Applied_Job";
-      // editButton.addEventListener("click", () => {
-      //   window.open("jobs-applied/?user=" + user.about.email, "_blank");
-      // });
 
       const reviewButton = document.createElement("button");
       reviewButton.textContent = "Show Remarks";
@@ -668,52 +642,10 @@ console.log("Filtered Users:", filteredUsers);
         window.open("remarks/?user=" + encodeURIComponent(user.about.email), "_blank");
       });
 
-      // const submitButton = document.createElement("button");
-      // submitButton.textContent = "Submit";
-      // submitButton.addEventListener("click", async () => {
-      //   try {
-      //     const userProfileRef = doc(db, "user_profile", user.about.email);
-      //     const newRemark = remarksInput.value.trim();
-      //     if (!newRemark) {
-      //       alert("Please enter a remark before submitting.");
-      //       return;
-      //     }
-      //     await updateDoc(userProfileRef, {
-      //       remark: newRemark
-      //     });
-      //     alert("You have submitted successfully!");
-      //   } catch (error) {
-      //     console.error("Error updating user profile:", error);
-      //   }
-      // });
-
-      // actionCell.appendChild(editButton);
-      // actionCell.appendChild(submitButton);
+     
       actionCell.appendChild(reviewButton);
       row.appendChild(actionCell);
 
-      // Consultancy Remarks
-      // const consultancyCell = document.createElement("td");
-      // const consultancyDateInput = document.createElement("input");
-      // consultancyDateInput.type = "date";
-      // consultancyDateInput.value = new Date().toISOString().slice(0, 10);
-
-      // const consultancyTextarea = document.createElement("textarea");
-      // consultancyTextarea.rows = 3;
-      // consultancyTextarea.placeholder = "Enter consultancy remark...";
-
-      // const consultancyButton = document.createElement("button");
-      // consultancyButton.textContent = "Add Remark";
-      // consultancyButton.addEventListener("click", async () => {
-      //   await addConsultancyRemark(user.about.email, consultancyTextarea.value.trim(), consultancyDateInput.value);
-      //   consultancyTextarea.value = "";
-      //   consultancyDateInput.value = new Date().toISOString().slice(0, 10);
-      // });
-
-      // consultancyCell.appendChild(consultancyDateInput);
-      // consultancyCell.appendChild(consultancyTextarea);
-      // consultancyCell.appendChild(consultancyButton);
-      // row.appendChild(consultancyCell);
 
       // Interview Form
       const interviewCell = document.createElement("td");

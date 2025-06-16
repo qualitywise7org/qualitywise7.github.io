@@ -6,7 +6,8 @@ auth.onAuthStateChanged((user) => {
     } else {
         // No user is signed in
         console.log("No user is signed in");
-        window.location.href = "/login/?redirect_url=/myaccount/cv_upload";
+       window.location.href = `/login/?redirect_url=${encodeURIComponent(window.location.href)}`;
+
     }
 });
 
