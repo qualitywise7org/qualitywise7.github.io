@@ -17,7 +17,7 @@ async function isUser() {
 
       console.log("User Role from Firestore:", userRole);
 
-      if (userRole === "master_admin") {
+      if (userRole === "master_admin" || userRole === "recruiter") {
         await getAllData();
         console.log("Admin access granted.");
       } else {
