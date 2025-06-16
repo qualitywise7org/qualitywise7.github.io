@@ -85,49 +85,49 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 //Function to add consultancy feedback (stored as an array)
 
-async function addConsultancyRemark(email, remark, date) {
-  if (!email || !remark || !date) {
-    alert("Please enter a remark and select a valid date.");
-    return;
-  }
+// async function addConsultancyRemark(email, remark, date) {
+//   if (!email || !remark || !date) {
+//     alert("Please enter a remark and select a valid date.");
+//     return;
+//   }
 
-  try {
-    const userRef = doc(db, "user_consultancies", email); // Use email as document ID
-    const userDoc = await getDoc(userRef);
-    console.log(userDoc);
+//   try {
+//     const userRef = doc(db, "user_consultancies", email); // Use email as document ID
+//     const userDoc = await getDoc(userRef);
+//     console.log(userDoc);
 
-    if (userDoc.exists()) {
-      // Update existing document: push new remark to array
-      await updateDoc(userRef, {
-        remarks: arrayUnion({
-          text: remark,
-          date: Timestamp.fromDate(new Date(date)),
-          createdAt: Timestamp.now()
-        }),
-        updatedAt: Timestamp.now()
-      });
-    } else {
-      // Create new document with remarks array
-      await setDoc(userRef, {
-        email: email,
-        remarks: [
-          {
-            text: remark,
-            date: Timestamp.fromDate(new Date(date)),
-            createdAt: Timestamp.now()
-          }
-        ],
-        createdAt: Timestamp.now(),
-        updatedAt: Timestamp.now()
-      });
-    }
+//     if (userDoc.exists()) {
+//       // Update existing document: push new remark to array
+//       await updateDoc(userRef, {
+//         remarks: arrayUnion({
+//           text: remark,
+//           date: Timestamp.fromDate(new Date(date)),
+//           createdAt: Timestamp.now()
+//         }),
+//         updatedAt: Timestamp.now()
+//       });
+//     } else {
+//       // Create new document with remarks array
+//       await setDoc(userRef, {
+//         email: email,
+//         remarks: [
+//           {
+//             text: remark,
+//             date: Timestamp.fromDate(new Date(date)),
+//             createdAt: Timestamp.now()
+//           }
+//         ],
+//         createdAt: Timestamp.now(),
+//         updatedAt: Timestamp.now()
+//       });
+//     }
 
-    alert("Remark added successfully!");
-  } catch (error) {
-    console.error("Error adding consultancy remark:", error);
-    alert("Failed to add remark. Please try again.");
-  }
-}
+//     alert("Remark added successfully!");
+//   } catch (error) {
+//     console.error("Error adding consultancy remark:", error);
+//     alert("Failed to add remark. Please try again.");
+//   }
+// }
 
 //Function to add interview feedback (stored as an array)
 
@@ -517,12 +517,14 @@ let currentPage = 1;
 const rowsPerPage = 5;
 
 //function to populate table
+
 async function populateUserProfilesTable(data) {
   const tableBody = document.querySelector("#userProfilesTable tbody");
   tableBody.innerHTML = ""; // Clear existing rows
 
   try {
     let selectedRating = document.getElementById("ratingDropdown").value; // Get selected rating
+     const globalSearchValue = document.getElementById("globalSearch").value.toLowerCase().trim();
     let filteredUsers = [];
 
     if (selectedRating && selectedRating !== "all") {
@@ -533,6 +535,65 @@ async function populateUserProfilesTable(data) {
     
     console.log("Selected Rating:", selectedRating);
 console.log("Filtered Users:", filteredUsers);
+
+     //  calculating experience
+        function calculateExperience(start, end) {
+      const startDate = new Date(start);
+      const endDate = new Date(end);
+      if (isNaN(startDate) || isNaN(endDate)) return "Invalid dates";
+
+      const months =
+        (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+        (endDate.getMonth() - startDate.getMonth());
+
+      if (months < 12) return `${months} months`;
+      const years = Math.floor(months / 12);
+      const remMonths = months % 12;
+      return `${years} year${years > 1 ? "s" : ""}${remMonths ? ` ${remMonths} months` : ""}`;
+    }
+     //  Apply Global Search Filtering (after all other filters)
+    if (globalSearchValue) {
+      filteredUsers = filteredUsers.filter(user => {
+        const values = [
+          user.about?.firstName,
+          user.about?.lastName,
+          user.about?.email,
+          user.about?.gender,
+          user.education?.[0]?.school,
+          user.education?.[0]?.degree,
+          user.education?.[0]?.graduation_date,
+          user.about?.dob ? calculateAge(user.about.dob).toString() + " years" : "",
+          user.skills?.join(", "),
+          user.social?.github,
+          user.social?.instagram,
+          user.social?.linkedin,
+          user.social?.leetcode,
+           ...(user.experience || []).map(exp => {
+            const duration = calculateExperience(exp.startDate, exp.endDate);
+            return `${exp.companyName} ${duration}`;
+          }),
+          user.address?.present?.address,
+          user.address?.present?.city,
+          user.address?.present?.state,
+          user.address?.present?.zip,
+          user.address?.permanent?.address,
+          user.address?.permanent?.city,
+          user.address?.permanent?.state,
+          user.address?.permanent?.zip,
+          user.rating?.toString(),
+          user.interview?.feedback || ""
+      ]; 
+      return values.filter(Boolean).some(field =>
+  typeof field === "string" && field.toLowerCase().includes(globalSearchValue)
+);
+
+
+        // Check if any field includes the search term
+        return values.some(field =>
+          typeof field === "string" && field.toLowerCase().includes(globalSearchValue)
+        );
+      });
+    }
 
     if (!Array.isArray(filteredUsers)||filteredUsers.length === 0) {
       tableBody.innerHTML = "<tr><td colspan='14'>No users found</td></tr>";
@@ -592,21 +653,7 @@ console.log("Filtered Users:", filteredUsers);
 
      `;
 
-    //  calculating experience
-        function calculateExperience(start, end) {
-      const startDate = new Date(start);
-      const endDate = new Date(end);
-      if (isNaN(startDate) || isNaN(endDate)) return "Invalid dates";
-
-      const months =
-        (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-        (endDate.getMonth() - startDate.getMonth());
-
-      if (months < 12) return `${months} months`;
-      const years = Math.floor(months / 12);
-      const remMonths = months % 12;
-      return `${years} year${years > 1 ? "s" : ""}${remMonths ? ` ${remMonths} months` : ""}`;
-    }
+   
 
       // Rating Dropdown
       // const ratingCell = document.createElement("td");
@@ -677,6 +724,12 @@ row.appendChild(ratingCell);
     console.error("Error getting user profiles:", error);
   }
 }
+function handleGlobalSearch() {
+  populateUserProfilesTable();
+}
+window.handleGlobalSearch = handleGlobalSearch;
+
+
 
 // calculating age from dob
 function calculateAge(dob) {

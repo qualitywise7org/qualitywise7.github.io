@@ -96,6 +96,31 @@
 
  */
 
+ #globalSearch {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  /* border-radius: 6px; */
+  width: 250px;
+}
+
+#globalSearchBtn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  margin-left: 10px;
+  /* border-radius: 6px; */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#globalSearchBtn:hover {
+  background-color: #218838;
+}
+
+
 
     </style>
 
@@ -313,6 +338,12 @@
     My Company
   </label>
 </div> -->
+
+<input type="text" id="globalSearch" placeholder="Search all fields..." />
+<button type="button" id="globalSearchBtn" onclick="handleGlobalSearch()">Search All Fields</button>
+
+
+
     </div>
     <!-- User profiles table -->
   
