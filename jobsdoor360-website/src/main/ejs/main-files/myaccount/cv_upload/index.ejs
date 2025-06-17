@@ -1,55 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Cv upload</title>
-    <link
-      rel="stylesheet"
-      href="/staticfiles/mainfiles/myaccount/cv_upload/style.css"
-    />
-    <%- include('../../../partials/head.ejs') %>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-    />
+    <title>Software Development Training - Web, FullStack, Java, ReactJS</title>
+    <meta name="description" content="Unlock Your Career Potential with JobsDoor360. Learn Full Stack, Java, and Web Development. Practice Interviews, Build Your CV, and Land Your Dream Job!" />
+
+    <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/style.css" />
+    <%- include('../../partials/head.ejs') %>
   </head>
+
   <body>
-    <%- include('../../../partials/navbar.ejs') %>
-    <div
-      class="d-flex justify-content-center align-items-center flex-column gap-4"
-      style="margin-block: 100px"
-    >
-      <h2>UPLOAD YOUR RESUME</h2>
-      <form action="" class="d-flex flex-column justify-content-center gap-3">
-        <div class="d-flex justify-content-center flex-column">
-          <input
-            id="cv"
-            type="file"
-            class="form-control cv"
-            accept="cv/*"
-            required
-          />
-          <span class="form-text"></span>
-        </div>
-        <button type="button" id="btn" class="print-btn btn btn-primary">
-          UPLOAD RESUME
-        </button>
-        <div class="px-1">
-          <a href="/myaccount/jobprofile/" class="text-decoration-none d-flex justify-content-end align-items-center gap-2">
-            <span>Skip</span>
-            <i class="fa-solid fa-arrow-right mt-1"></i>
-          </a>
-        </div>
-      </form>
+    <!-- Navbar -->
+    <%- include('../../partials/navbar.ejs') %>
+
+    <div class="container mt-5">
+     
+      <!-- Profile Progress Table -->
+      <div class="custom-table">
+        <table class="table table-bordered text-center align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Progress</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Personal Profile -->
+            <tr>
+              <td>
+                <div class="circular-progress" id="progress-1" style="--progress: 0;">
+                  <div class="inner-circle" id="text-1">0%</div>
+                </div>
+                <p>Personal Profile</p>
+              </td>
+              <td>
+                <a href="personalprofile/" class="btn btn-secondary btn-sm me-1">Update</a>
+                <a href="personalprofile/" class="btn btn-primary btn-sm">View</a>
+              </td>
+            </tr>
+
+            <!-- Job Profile -->
+            <tr>
+              <td>
+                <div class="circular-progress" id="progress-2" style="--progress: 0;">
+                  <div class="inner-circle" id="text-2">0%</div>
+                </div>
+                <p>Job Profile</p>
+              </td>
+              <td>
+                <a href="/myaccount/jobprofile/" class="btn btn-secondary btn-sm me-1">Update</a>
+                <a href="/myaccount/jobprofile/" class="btn btn-primary btn-sm">View</a>
+              </td>
+            </tr>
+
+            <!-- Assessment -->
+            <tr>
+              <td>
+                <div class="circular-progress" id="progress-3" style="--progress: 0;">
+                  <div class="inner-circle" id="text-3">0%</div>
+                </div>
+                <p class="mb-1 text-center">Assessment Completed</p>
+                <p id="progress-count" class="text-muted small text-center">0/0</p>
+              </td>
+              <td>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="d-flex gap-2 mb-2">
+                    <a href="../test/" class="btn btn-secondary btn-sm">Update</a>
+                    <a href="/myaccount/test-report/" class="btn btn-primary btn-sm">View</a>
+                  </div>
+                  <div id="skills-list" class="d-flex flex-wrap justify-content-center gap-3 container-sm">
+                    <!-- Skills will be dynamically added here -->
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- CV Upload -->
+            <tr>
+              <td><p class="mb-0">CV</p></td>
+              <td>
+                <a href="/myaccount/cv_upload/" class="btn btn-secondary btn-sm me-1">Update</a>
+                <a id="view_cv" href="" class="btn btn-primary btn-sm">View</a>
+              </td>
+            </tr>
+
+            <!-- Explore Jobs -->
+            <tr>
+              <td><p class="mb-0">Explore Jobs / Internships</p></td>
+              <td>
+                <a href="/myaccount/jobsforyou/" class="btn btn-secondary btn-sm">Explore</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <%- include('../../../partials/footer.ejs') %>
-    <script
-      type="module"
-      src="/staticfiles/mainfiles/myaccount/cv_upload/script.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/toastify-js"
-    ></script>
+
+    <!-- Footer -->
+    <%- include('../../partials/footer.ejs') %>
+
+    <!-- Scripts -->
+
+    <script type="module" src="/staticfiles/mainfiles/myaccount/script.js"></script>
+
+    <!-- Google Ads -->
+    <ins class="adsbygoogle"
+         style="display: block"
+         data-ad-client="ca-pub-2075086355753452"
+         data-ad-slot="7339269701"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </body>
 </html>
