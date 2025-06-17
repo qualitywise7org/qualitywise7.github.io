@@ -18,7 +18,7 @@ import {
   getDownloadURL
 } from "firebase/storage";
 
-// Firebase initialization (you must already have this in your main project setup)
+// Firebase initialization
 const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
@@ -31,7 +31,6 @@ onAuthStateChanged(auth, (user) => {
     userEmail = user.email;
   } else {
     console.log("No user is signed in");
-    // Redirect to login with return URL
     const currentUrl = encodeURIComponent(window.location.href);
     window.location.href = `/login/?redirect_url=${currentUrl}`;
   }
@@ -52,7 +51,11 @@ async function saveCVToDatabase() {
   const file = fileInput.files[0];
 
   if (!file) {
-    Toastify({ text: "Please select a file", duration: 3000, style: { background: "red" } }).showToast();
+    Toastify({
+      text: "Please select a file",
+      duration: 3000,
+      style: { background: "red" }
+    }).showToast();
     return;
   }
 
@@ -62,8 +65,8 @@ async function saveCVToDatabase() {
   try {
     const cvUrl = await uploadCV(file);
     const userRef = doc(db, "user_profile", userEmail);
-
     const userSnap = await getDoc(userRef);
+
     if (!userSnap.exists()) {
       await setDoc(userRef, { about: {} });
     }
@@ -90,7 +93,11 @@ async function saveCVToDatabase() {
 
   } catch (err) {
     console.error("Upload failed:", err);
-    Toastify({ text: "Upload failed", duration: 3000, style: { background: "red" } }).showToast();
+    Toastify({
+      text: "Upload failed",
+      duration: 3000,
+      style: { background: "red" }
+    }).showToast();
   }
 
   uploadButton.disabled = false;
