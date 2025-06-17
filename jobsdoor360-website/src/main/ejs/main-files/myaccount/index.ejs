@@ -10,6 +10,117 @@
       content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!"
     />
     <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">    <style>
+       body {
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto; /* Center the card */
+  padding: 20px 15px;
+}
+
+.card-section {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.progress-bar-custom {
+  background-color: #28a745 !important;
+  transition: width 0.6s ease;
+  height: 100%;
+}
+
+.toggle-label {
+  font-size: 1rem;
+  color: #666;
+}
+
+.progress {
+  height: 6px;
+  background-color: #e9ecef;
+  margin-bottom: 5px;
+}
+
+.btn-view-cv {
+  padding: 3px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  background-color: rgba(40, 167, 69, 0.08);
+}
+
+.btn-view-cv:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-arrow {
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: #6c757d;
+}
+
+.btn-arrow:hover {
+  background-color: rgba(108, 117, 125, 0.1);
+  color: #28a745;
+  transform: translateX(2px);
+}
+
+/* Mobile Optimization */
+@media (max-width: 576px) {
+  .profile-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-section {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+      .card-style {
+        border-radius: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+      .progress-bar {
+        transition: width 0.4s ease;
+      }
+      .toggle-label {
+        font-weight: 500;
+        color: #4b5563;
+      }
+    </style>
     
     <%- include('../../partials/head.ejs') %>
   </head>
@@ -18,116 +129,125 @@
     <!-- Navbar -->
     <%- include('../../partials/navbar.ejs') %>
 
-    <div class="container mt-5">
-      <!-- Centered Flex Column -->
-      <div class="d-flex flex-row gap-5 align-items-center justify-content-center mb-4">
-        <label class="form-check">
-          <input type="radio" name="preference" id="internship" value="internship" class="form-check-input">
-           Looking for Internship
-        </label>
-        <label class="form-check">
-          <input type="radio" name="preference" id="job" value="job" class="form-check-input">
-           Looking for Job
-        </label>
-      </div>
-
-  
-      <!-- Table -->
-      <div class="custom-table">
-        <table class="table table-bordered text-center align-middle p-4">
-          <thead class="table-light">
-            <tr>
-              <th>Progress</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Dynamic Rows -->
-            <tr>
-              <td>
-                <div class="circular-progress" id="progress-1" style="--progress: 0;">
-                  <div class="inner-circle" id="text-1">0%</div>
-                </div>
-                <p>Personal Profile</p>
-              </td>
-              <td>
-                <div class="action-buttons">
-                  <a href="personalprofile/"><button type="button" class="btn btn-secondary btn-sm">Update</button></a>
-                  <a href="personalprofile/"><button type="button" class="btn btn-primary btn-sm">View</button></a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="circular-progress" id="progress-2" style="--progress: 0;">
-                  <div class="inner-circle" id="text-2">0%</div>
-                </div>
-                <p>Job Profile</p>
-              </td>
-              <td>
-                <div class="action-buttons">
-                  <a href="/myaccount/jobprofile/"><button type="button" class="btn btn-secondary btn-sm">Update</button></a>
-                  <a href="/myaccount/jobprofile/"><button type="button" class="btn btn-primary btn-sm">View</button></a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="circular-progress" id="progress-3" style="--progress: 0;">
-                  <div class="inner-circle" id="text-3">0%</div>
-                </div>
-                <p class="mb-1 text-center">Assessment Completed</p>
-                <p id="progress-count" class="text-muted small text-center">0/0</p> <!-- Dynamic Progress Count -->
-              </td>
-              <td>
-                <div class="d-flex flex-column justify-content-center align-items-center">
-                  <!-- Buttons -->
-                  <div class="d-flex gap-2 mb-2">
-                    <a href="../test/">
-                      <button type="button" class="btn btn-secondary btn-sm">Update</button>
-                    </a>
-                    <a href="/myaccount/test-report/">
-                      <button type="button" class="btn btn-primary btn-sm">View</button>
-                    </a>
-                  </div>
-            
-                  <!-- Ordered List for Skills (Centered & Wrapped) -->
-                  <div id="skills-list" class="d-flex flex-wrap justify-content-center gap-3 container-sm">
-                    <!-- Dynamic Skill Items will go here -->
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p class="mb-0">CV</p>
-              </td>
-              
-              <td>
-                <div class="action-buttons">
-                  <a href="/myaccount/cv_upload/"><button type="button" class="btn btn-secondary btn-sm">Update</button></a>
-                  <a href="" id="view_cv"><button type="button" class="btn btn-primary btn-sm">View</button></a>
-                  
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p class="mb-0">Explore jobs</p>
-              </td>
-              
-              <td>
-                <div class="action-buttons">
-                  <a href="/myaccount/jobsforyou/"><button type="button" class="btn btn-secondary btn-sm">Explore</button></a>
-                  <!-- <a href="" id="view_cv"><button type="button" class="btn btn-primary btn-sm me-2">View / Download</button></a> -->
-                  
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="container mt-1">
+      <div class="card-section">
+        <div class="bg-white px-3 py-3 d-flex align-items-center justify-content-between ">
+          <i class="bi bi-arrow-left-short fs-3 text-dark"></i>
+          <h5 class="mb-0">My Account</h5>
+          <span style="width: 24px;"></span> <!-- Spacer to balance arrow icon -->
+        </div>
+        <!-- Profile -->
+        <div class="d-flex align-items-center mb-4">
+          <img src="https://i.pravatar.cc/150?img=3" alt="Profile" class="profile-img me-3" />
+          <div>
+            <h5 class="mb-0">John Smith</h5>
+          </div>
+        </div>
+    
+        <!-- Personal Profile -->
+        <a href="personalprofile/" class="text-decoration-none text-dark">
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bi bi-person-circle me-2"></i>Personal Profile
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="text-success" id="text-1">0%</span>
+                <i class="bi bi-chevron-right text-muted"></i>
+              </div>
+            </div>            <div class="progress mt-1">
+              <div class="progress-bar progress-bar-custom" id="progress-1" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+          </div>
+        </a>
+    
+        <!-- Job Profile -->
+        <a href="/myaccount/jobprofile/" class="text-decoration-none text-dark">
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bi bi-briefcase-fill me-2"></i>Job Profile
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="text-success" id="text-2">0%</span>
+                <i class="bi bi-chevron-right text-muted"></i>
+              </div>
+            </div>            <div class="progress mt-1">
+              <div class="progress-bar progress-bar-custom" id="progress-2" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+          </div>
+        </a>
+    
+        <!-- Assessment Progress -->
+        <a href="/myaccount/test-report/" class="text-decoration-none text-dark">
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bi bi-clipboard-check me-2"></i>Assessment Completed
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="text-success" id="text-3">0%</span>
+                <i class="bi bi-chevron-right text-muted"></i>
+              </div>
+            </div>            <div class="progress mt-1">
+              <div class="progress-bar progress-bar-custom" id="progress-3" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+            <p id="progress-count" class="text-muted small mt-1">0/0</p>
+          </div>
+        </a>        <!-- Updating CV -->
+        <div class="mb-4 d-flex align-items-center justify-content-between">
+          <span><i class="bi bi-file-earmark-arrow-up me-2"></i>Updating CV</span>
+          <div class="d-flex align-items-center">
+            <a href="#" id="view_cv" class="text-decoration-none text-success me-2 btn-view-cv">View</a>
+            <a href="/myaccount/cv_upload/" class="text-decoration-none">
+              <i class="bi bi-chevron-right btn-arrow"></i>
+            </a>
+          </div>
+        </div>        <!-- Explore Jobs -->
+        <div class="mb-4 d-flex align-items-center justify-content-between">
+          <span><i class="bi bi-search me-2"></i>Explore Jobs</span>
+          <a href="/myaccount/jobsforyou/" class="text-decoration-none">
+            <i class="bi bi-chevron-right btn-arrow"></i>
+          </a>
+        </div>
+    
+        <!-- Switches -->
+        <!-- Looking for Internship -->          <div class="d-flex justify-content-between align-items-center py-1">
+    <label class="form-check-label toggle-label mb-0" for="internSwitch">Looking for Internship</label>
+    <div class="form-check form-switch m-0">
+      <input class="form-check-input" type="checkbox" role="switch" id="internSwitch" value="internship" onchange="updateSelection(this)" />
     </div>
+  </div>
+  
+  <!-- Looking for Job -->
+  <div class="d-flex justify-content-between align-items-center py-1">
+    <label class="form-check-label toggle-label mb-0" for="jobSwitch">Looking for Job</label>
+    <div class="form-check form-switch m-0">
+      <input class="form-check-input" type="checkbox" role="switch" id="jobSwitch" value="job" onchange="updateSelection(this)" />
+    </div>
+  </div>      </div>
+    </div>
+      <br><br>    <!-- Footer -->
+    <%- include('../../partials/footer.ejs') %>    <!-- Import scripts -->
+    <script type="module" src="/staticfiles/mainfiles/myaccount/script.js"></script>
+    <script src="/staticfiles/mainfiles/myaccount/progress.js"></script>
+    <!-- Extra initialization to ensure progress bars render correctly -->    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Force a recalculation of progress bars after a delay
+        setTimeout(function() {
+          const bars = document.querySelectorAll('.progress-bar-custom');
+          bars.forEach(function(bar) {
+            const currentWidth = bar.style.width;
+            bar.style.width = '0%';
+            setTimeout(function() {
+              bar.style.width = currentWidth;
+            }, 50);
+          });
+        }, 200);
+      });
+    </script>
+
+
   </div>
 
  
@@ -149,7 +269,6 @@
     <div class="d-flex justify-content-center mt-4 myaccount_option">
       <a href="/myaccount/jobprofile/" class="text-decoration-none px-4 bg-white py-1 rounded-4" style="text-align: center;">Job profile
       </a>
-    </div>
   
     <div style="color: grey; text-align: center; margin-top: 20px;">Complete profile to get jobs</div>
 
@@ -158,59 +277,7 @@
 
     <div class="d-flex justify-content-center mt-4 myaccount_option">
       <a href="/myaccount/jobsforyou/" class="text-decoration-none px-4 bg-white py-1 rounded-4">Jobs for you</a>
-    </div> -->
-
-    <br><br><br><br><br><br><br>
-<!--    <section class="articles">
-      <article>
-        <a href="/myaccount/yourprofile/">
-          <div class="article-wrapper">
-            <div class="article-body">
-              <h2>Your profile</h2>
-              <div class="article-content">
-                <p>
-                 Complete profile to get jobs
-                </p>
-                <div class="img">
-                  <img
-                    src="https://cdn.dribbble.com/users/1223630/screenshots/8115260/media/8145a871d9c4d67ec06e047ccc6574b4.gif"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </article>
-
-      <article>
-        <a href="../myaccount/jobsforyou/">
-          <div class="article-wrapper">
-            <div class="article-body">
-              <h2>Jobs for you</h2>
-              <div class="article-content">
-                <p>
-                  
-                </p>
-                <div class="img">
-                  <img
-                    src="https://img.freepik.com/premium-vector/businessman-works-laptop-man-jacket-isolated-vector_174639-19644.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </article>
-    </section>
--->
-
-    <!-- Footer -->
-
-    <%- include('../../partials/footer.ejs') %>
-
-    <script>
+    </div> -->    <script>
       $(document).ready(function () {
         $(document).on("click", function (event) {
           if (!$(event.target).closest(".accordion").length) {
@@ -222,15 +289,7 @@
           event.stopPropagation();
         });
       });
-
-      
-
     </script>
-
-<script
-      type="module"
-      src="/staticfiles/mainfiles/myaccount/script.js"
-    ></script>
     
     <!-- jobsdoor360 -->
     <ins

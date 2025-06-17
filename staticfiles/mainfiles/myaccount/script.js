@@ -330,6 +330,17 @@ const phonenumber = localStorage.getItem("phonenumber");
 let totalUserAssessment;
 let uniqueItems;
 let totalAssessments;
+
+// Initialize progress data with default values or load from localStorage
+const profile1Percent = localStorage.getItem("profile1Percent") || 35;
+const profile2Percent = localStorage.getItem("profile2Percent") || 25;
+const profile3Percent = localStorage.getItem("profile3Percent") || 50;
+
+// Store in localStorage for persistence across page refreshes
+localStorage.setItem("profile1Percent", profile1Percent);
+localStorage.setItem("profile2Percent", profile2Percent);
+localStorage.setItem("profile3Percent", profile3Percent);
+
 // var currdate = window.getCurrentDateTime();
 // console.log(currdate);
 // Function to fetch all user profiles
@@ -355,7 +366,7 @@ async function updateAuditFields() {
           updatedAt: "",
           updatedBy: "",
         };
-        console.log(updatedData);
+        // console.log(updatedData);
 
         // Update the document
         // await updateDoc(userRef, {
@@ -365,10 +376,10 @@ async function updateAuditFields() {
         // console.log(`Updated user: ${userDoc.id}`);
       }
 
-      console.log("✅ All user profiles updated successfully.");
+      // console.log("✅ All user profiles updated successfully.");
     }
   } catch (error) {
-    console.error("❌ Error updating user profiles:", error);
+    // console.error("❌ Error updating user profiles:", error);
   }
 }
 
@@ -412,18 +423,40 @@ function loopingForUserdata(data, count, n) {
   return percent;
 }
 
-function showProgress(progressId, textId, personalProfilePercent) {
-  const progressBarPersonalProfile = document.getElementById(
-    `progress-${progressId}`
-  );
-  progressBarPersonalProfile.style.setProperty(
-    "--progress",
-    personalProfilePercent
-  );
+function showProgress(progressId, textId, percent) {
+  // console.log(`Updating progress for ID ${progressId} to ${percent}%`);
 
-  // Update the text inside the circle
-  const progressTextPersonalProfile = document.getElementById(`text-${textId}`);
-  progressTextPersonalProfile.textContent = `${personalProfilePercent}%`;
+  // Update the progress bar width directly
+  const progressBar = document.getElementById(`progress-${progressId}`);
+  if (progressBar) {
+    // console.log(`Found progress bar element: ${progressBar.id}`);
+    progressBar.style.width = `${percent}%`;
+  } else {
+    // console.log(
+    //   `Progress bar element with ID progress-${progressId} not found`
+    // );
+  }
+  // Update the text percentage  const progressText = document.getElementById(`text-${textId}`);
+  if (progressText) {
+    // console.log(`Found text element: ${progressText.id}`);
+    progressText.textContent = `${percent}%`;
+  } else {
+    // console.log(`Text element with ID text-${textId} not found`);
+  }
+  // Update the specific progress bar
+  const specificBar = document.getElementById(`progress-${textId}`);
+  if (specificBar) {
+    // console.log(`Updating progress bar ${specificBar.id} to ${percent}%`);
+    specificBar.style.width = `${percent}%`;
+  } else {
+    // console.log(`Progress bar with ID progress-${textId} not found`);
+  }
+
+  // Update any related text elements
+  const allProgTexts = document.querySelectorAll(`[id$="text-${textId}"]`);
+  allProgTexts.forEach((text) => {
+    text.textContent = `${percent}%`;
+  });
 }
 
 async function assessmentsPercentage() {
@@ -446,9 +479,26 @@ async function assessmentsPercentage() {
       (totalUserAssessment / totalAssessments) * 100
     ); // Calculate percentage
 
+    // Store assessment percent in localStorage
+    localStorage.setItem("profile3Percent", assessmentPercent);
+
+    setTimeout(() => {
+      try {
+        // Update assessment progress bar directly
+        const progressBar3 = document.getElementById("progress-3");
+        if (progressBar3) {
+          progressBar3.style.width = assessmentPercent + "%";
+          document.getElementById("text-3").textContent =
+            assessmentPercent + "%";
+          // console.log("Set progress-3 width to", assessmentPercent + "%");
+        }
+      } catch (err) {
+        // console.error("Error updating assessment progress bar:", err);
+      }
+    }, 500);
     showProgress(3, 3, assessmentPercent);
   } catch (error) {
-    console.error("Error getting user data from user_profile:", error);
+    // console.error("Error getting user data from user_profile:", error);
   }
 }
 
@@ -537,7 +587,35 @@ async function isUser() {
     if (docSnap.exists()) {
       const userData = docSnap?.data() || {};
       // console.log(docSnap.data());
-      console.log("userprofle");
+      // console.log("userprofle");
+      // Update profile image if available
+      const profileImgElement = document.querySelector(".profile-img");
+      if (profileImgElement && userData.about && userData.about.image) {
+        // console.log("Setting profile image:", userData.about.image);
+        profileImgElement.src = userData.about.image;
+      }
+
+      // Update user name in the header
+      const profileNameElement = document.querySelector(
+        ".d-flex.align-items-center.mb-4 h5"
+      );
+      if (profileNameElement && userData.about) {
+        const fullName =
+          (userData.about.firstName || "") +
+          " " +
+          (userData.about.lastName || "");
+        if (fullName.trim()) {
+          // console.log("Setting user name:", fullName);
+          profileNameElement.textContent = fullName;
+        }
+      }
+
+      // Update user email display if it exists
+      const userEmailElement = document.getElementById("user-email");
+      if (userEmailElement && userData.about && userData.about.email) {
+        console.log("Setting user email:", userData.about.email);
+        userEmailElement.textContent = userData.about.email;
+      }
 
       document.getElementById("view_cv").href = userData.about.cv || "#";
 
@@ -549,12 +627,18 @@ async function isUser() {
       let educationData = userData.education || {};
       let experienceData = userData.experience || {};
       const storedSelections = userData?.preferences || []; // Default to empty array
-      storedSelections.forEach((item) => selections.push(item)); // ✅ Push items to array
+      storedSelections.forEach((item) => selections.push(item)); // ✅ Push items to array      // Update all job/internship checkboxes in both layouts
+      const jobCheckboxes = document.querySelectorAll('input[value="job"]');
+      jobCheckboxes.forEach((checkbox) => {
+        checkbox.checked = selections.includes("job");
+      });
 
-      // ✅ Use .includes() instead of .has() for an array
-      document.getElementById("job").checked = selections.includes("job");
-      document.getElementById("internship").checked =
-        selections.includes("internship");
+      const internshipCheckboxes = document.querySelectorAll(
+        'input[value="internship"]'
+      );
+      internshipCheckboxes.forEach((checkbox) => {
+        checkbox.checked = selections.includes("internship");
+      });
 
       // Combine first and last name for aboutData
       // if(aboutData.firstName )
@@ -606,10 +690,44 @@ async function isUser() {
           500) *
           100
       );
-
       await assessmentsPercentage();
-      showProgress(1, 1, personalProfilePercent);
-      showProgress(2, 2, jobProfilePercent);
+      console.log("Personal Profile Percent:", personalProfilePercent);
+      console.log("Job Profile Percent:", jobProfilePercent);
+
+      // Set a slightly longer timeout to ensure DOM is fully rendered and ready
+      setTimeout(() => {
+        try {
+          console.log("Setting progress bars with timeout");
+          // Store percentages in localStorage for persistence
+          localStorage.setItem("profile1Percent", personalProfilePercent);
+          localStorage.setItem("profile2Percent", jobProfilePercent);
+
+          // Force progress bar update with direct DOM manipulation
+          const progressBar1 = document.getElementById("progress-1");
+          if (progressBar1) {
+            progressBar1.style.width = personalProfilePercent + "%";
+            document.getElementById("text-1").textContent =
+              personalProfilePercent + "%";
+            console.log(
+              "Set progress-1 width to",
+              personalProfilePercent + "%"
+            );
+          }
+
+          const progressBar2 = document.getElementById("progress-2");
+          if (progressBar2) {
+            progressBar2.style.width = jobProfilePercent + "%";
+            document.getElementById("text-2").textContent =
+              jobProfilePercent + "%"; // console.log("Set progress-2 width to", jobProfilePercent + "%");
+          }
+
+          // Use the function too as a fallback
+          showProgress(1, 1, personalProfilePercent);
+          showProgress(2, 2, jobProfilePercent);
+        } catch (err) {
+          // console.error("Error updating progress bars:", err);
+        }
+      }, 500); // Longer delay to ensure DOM is ready
 
       // Skills Data (replace with actual dynamic data)
       // console.log(skillData);
