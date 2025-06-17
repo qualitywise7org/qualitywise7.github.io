@@ -55,7 +55,7 @@ async function saveCVToDatabase() {
                 }).showToast();
                 setTimeout(() => {
                     window.location.href = "/myaccount/";
-                }, 3000);
+                }, 2000);
             })
             .catch((error) => {
                 console.error("Error writing document: ", error);
