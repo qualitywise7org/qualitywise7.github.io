@@ -1,134 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Software Development Training - Web development, FullStack, Backend, Java, Reactjs</title>
-  <meta name="description" content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!">
-  <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/style.css" />
-  <%- include('../../partials/head.ejs') %>
-</head>
+  <head>
+    <title>Software Development Training - Web, FullStack, Java, ReactJS</title>
+    <meta name="description" content="Unlock Your Career Potential with JobsDoor360. Learn Full Stack, Java, and Web Development. Practice Interviews, Build Your CV, and Land Your Dream Job!" />
 
-<body>
-  <!-- Navbar -->
-  <%- include('../../partials/navbar.ejs') %>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/style.css" />
+    <%- include('../../partials/head.ejs') %>
+  </head>
 
-  <div class="container mt-5">
-    <!-- Table -->
-    <div class="custom-table">
-      <table class="table table-bordered text-center align-middle p-4">
-        <thead class="table-light">
-          <tr>
-            <th>Progress</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Dynamic Rows -->
-          <tr>
-            <td>
-              <div class="circular-progress" id="progress-1" style="--progress: 0;">
-                <div class="inner-circle" id="text-1">0%</div>
-              </div>
-              <p>Personal Profile</p>
-            </td>
-            <td>
-              <div class="action-buttons">
-                <a href="personalprofile/"><button type="button" class="btn btn-secondary btn-sm">Update</button></a>
-                <a href="personalprofile/"><button type="button" class="btn btn-primary btn-sm">View</button></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="circular-progress" id="progress-2" style="--progress: 0;">
-                <div class="inner-circle" id="text-2">0%</div>
-              </div>
-              <p>Job Profile</p>
-            </td>
-            <td>
-              <div class="action-buttons">
-                <a href="/myaccount/jobprofile/"><button type="button" class="btn btn-secondary btn-sm">Update</button></a>
-                <a href="/myaccount/jobprofile/"><button type="button" class="btn btn-primary btn-sm">View</button></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="circular-progress" id="progress-3" style="--progress: 0;">
-                <div class="inner-circle" id="text-3">0%</div>
-              </div>
-              <p class="mb-1 text-center">Assessment Completed</p>
-              <p id="progress-count" class="text-muted small text-center">0/0</p>
-            </td>
-            <td>
-              <div class="d-flex flex-column justify-content-center align-items-center">
-                <div class="d-flex gap-2 mb-2">
-                  <a href="../test/">
-                    <button type="button" class="btn btn-secondary btn-sm">Update</button>
-                  </a>
-                  <a href="/myaccount/test-report/">
-                    <button type="button" class="btn btn-primary btn-sm">View</button>
-                  </a>
+  <body>
+    <!-- Navbar -->
+    <%- include('../../partials/navbar.ejs') %>
+
+    <div class="container mt-5">
+      <!-- Selection Checkboxes -->
+      <div class="d-flex flex-row gap-5 align-items-center justify-content-center mb-4">
+        <label class="form-check">
+          <input type="checkbox" id="internship" class="form-check-input" onchange="updateSelection(this)" />
+          Looking for Internship
+        </label>
+        <label class="form-check">
+          <input type="checkbox" id="job" class="form-check-input" onchange="updateSelection(this)" />
+          Looking for Job
+        </label>
+      </div>
+
+      <!-- Profile Progress Table -->
+      <div class="custom-table">
+        <table class="table table-bordered text-center align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Progress</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Personal Profile -->
+            <tr>
+              <td>
+                <div class="circular-progress" id="progress-1" style="--progress: 0;">
+                  <div class="inner-circle" id="text-1">0%</div>
                 </div>
-                <div id="skills-list" class="d-flex flex-wrap justify-content-center gap-3 container-sm">
-                  <!-- Skills go here -->
+                <p>Personal Profile</p>
+              </td>
+              <td>
+                <a href="personalprofile/" class="btn btn-secondary btn-sm me-1">Update</a>
+                <a href="personalprofile/" class="btn btn-primary btn-sm">View</a>
+              </td>
+            </tr>
+
+            <!-- Job Profile -->
+            <tr>
+              <td>
+                <div class="circular-progress" id="progress-2" style="--progress: 0;">
+                  <div class="inner-circle" id="text-2">0%</div>
                 </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><p class="mb-0">CV</p></td>
-            <td>
-              <div class="action-buttons">
-                <a href="/myaccount/cv_upload/"><button type="button" class="btn btn-secondary btn-sm">Update</button></a>
-                <a href="" id="view_cv"><button type="button" class="btn btn-primary btn-sm">View</button></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><p class="mb-0">Explore jobs / Internships </p></td>
-            <td>
-              <div class="action-buttons">
-                <a href="/myaccount/jobsforyou/"><button type="button" class="btn btn-secondary btn-sm">Explore</button></a>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                <p>Job Profile</p>
+              </td>
+              <td>
+                <a href="/myaccount/jobprofile/" class="btn btn-secondary btn-sm me-1">Update</a>
+                <a href="/myaccount/jobprofile/" class="btn btn-primary btn-sm">View</a>
+              </td>
+            </tr>
+
+            <!-- Assessment -->
+            <tr>
+              <td>
+                <div class="circular-progress" id="progress-3" style="--progress: 0;">
+                  <div class="inner-circle" id="text-3">0%</div>
+                </div>
+                <p class="mb-1 text-center">Assessment Completed</p>
+                <p id="progress-count" class="text-muted small text-center">0/0</p>
+              </td>
+              <td>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="d-flex gap-2 mb-2">
+                    <a href="../test/" class="btn btn-secondary btn-sm">Update</a>
+                    <a href="/myaccount/test-report/" class="btn btn-primary btn-sm">View</a>
+                  </div>
+                  <div id="skills-list" class="d-flex flex-wrap justify-content-center gap-3 container-sm">
+                    <!-- Skills will be dynamically added here -->
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- CV Upload -->
+            <tr>
+              <td><p class="mb-0">CV</p></td>
+              <td>
+                <a href="/myaccount/cv_upload/" class="btn btn-secondary btn-sm me-1">Update</a>
+                <a id="view_cv" href="" class="btn btn-primary btn-sm">View</a>
+              </td>
+            </tr>
+
+            <!-- Explore Jobs -->
+            <tr>
+              <td><p class="mb-0">Explore Jobs</p></td>
+              <td>
+                <a href="/myaccount/jobsforyou/" class="btn btn-secondary btn-sm">Explore</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
 
-  <!-- Footer -->
-  <%- include('../../partials/footer.ejs') %>
+    <!-- Footer -->
+    <%- include('../../partials/footer.ejs') %>
 
-  <!-- jQuery (if not already included) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Scripts -->
+    <script>
+      function updateSelection(selected) {
+        document.querySelectorAll('.form-check-input').forEach(box => {
+          if (box !== selected) box.checked = false;
+        });
+      }
 
-  <!-- Script for closing accordions -->
-  <script>
-    $(document).ready(function () {
-      $(document).on("click", function (event) {
-        if (!$(event.target).closest(".accordion").length) {
-          $(".accordion-collapse").collapse("hide");
-        }
+      $(document).ready(function () {
+        $(document).on("click", function (e) {
+          if (!$(e.target).closest(".accordion").length) {
+            $(".accordion-collapse").collapse("hide");
+          }
+        });
+
+        $(".accordion").on("click", function (e) {
+          e.stopPropagation();
+        });
       });
+    </script>
 
-      $(".accordion").on("click", function (event) {
-        event.stopPropagation();
-      });
-    });
-  </script>
+    <script type="module" src="/staticfiles/mainfiles/myaccount/script.js"></script>
 
-  <!-- Main script module -->
-  <script type="module" src="/staticfiles/mainfiles/myaccount/script.js"></script>
-
-  <!-- Google Ads -->
-  <ins class="adsbygoogle"
-       style="display: block"
-       data-ad-client="ca-pub-2075086355753452"
-       data-ad-slot="7339269701"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-</body>
+    <!-- Google Ads -->
+    <ins class="adsbygoogle"
+         style="display: block"
+         data-ad-client="ca-pub-2075086355753452"
+         data-ad-slot="7339269701"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </body>
 </html>

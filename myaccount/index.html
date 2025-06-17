@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>
-      Software Development Training - Web development, FullStack, Backend, Java,
-      Reactjs
-    </title>
-    <meta
-      name="description"
-      content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!"
-    />
+    <title>Software Development Training - Web, FullStack, Java, ReactJS</title>
+    <meta name="description" content="Unlock Your Career Potential with JobsDoor360. Learn Full Stack, Java, and Web Development. Practice Interviews, Build Your CV, and Land Your Dream Job!" />
+
     <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/style.css" />
-    
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -193,21 +187,21 @@
 
 
     <div class="container mt-5">
-      <!-- Centered Flex Column -->
+      <!-- Selection Checkboxes -->
       <div class="d-flex flex-row gap-5 align-items-center justify-content-center mb-4">
-          <label class="form-check">
-              <input type="checkbox" id="internship" value="internship" class="form-check-input" onchange="updateSelection(this)">
-              Looking for Internship
-          </label>
-          <label class="form-check">
-              <input type="checkbox" id="job" value="job" class="form-check-input" onchange="updateSelection(this)">
-              Looking for Job
-          </label>
+        <label class="form-check">
+          <input type="checkbox" id="internship" class="form-check-input" onchange="updateSelection(this)" />
+          Looking for Internship
+        </label>
+        <label class="form-check">
+          <input type="checkbox" id="job" class="form-check-input" onchange="updateSelection(this)" />
+          Looking for Job
+        </label>
       </div>
-  
-      <!-- Table -->
+
+      <!-- Profile Progress Table -->
       <div class="custom-table">
-        <table class="table table-bordered text-center align-middle p-4">
+        <table class="table table-bordered text-center align-middle">
           <thead class="table-light">
             <tr>
               <th>Progress</th>
@@ -215,7 +209,7 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Dynamic Rows -->
+            <!-- Personal Profile -->
             <tr>
               <td>
                 <div class="circular-progress" id="progress-1" style="--progress: 0;">
@@ -224,12 +218,12 @@
                 <p>Personal Profile</p>
               </td>
               <td>
-                <div class="action-buttons">
-                  <a href="personalprofile/"><button type="button" class="btn btn-secondary btn-sm">Update</button></a>
-                  <a href="personalprofile/"><button type="button" class="btn btn-primary btn-sm">View</button></a>
-                </div>
+                <a href="personalprofile/" class="btn btn-secondary btn-sm me-1">Update</a>
+                <a href="personalprofile/" class="btn btn-primary btn-sm">View</a>
               </td>
             </tr>
+
+            <!-- Job Profile -->
             <tr>
               <td>
                 <div class="circular-progress" id="progress-2" style="--progress: 0;">
@@ -238,149 +232,55 @@
                 <p>Job Profile</p>
               </td>
               <td>
-                <div class="action-buttons">
-                  <a href="/myaccount/jobprofile/"><button type="button" class="btn btn-secondary btn-sm">Update</button></a>
-                  <a href="/myaccount/jobprofile/"><button type="button" class="btn btn-primary btn-sm">View</button></a>
-                </div>
+                <a href="/myaccount/jobprofile/" class="btn btn-secondary btn-sm me-1">Update</a>
+                <a href="/myaccount/jobprofile/" class="btn btn-primary btn-sm">View</a>
               </td>
             </tr>
+
+            <!-- Assessment -->
             <tr>
               <td>
                 <div class="circular-progress" id="progress-3" style="--progress: 0;">
                   <div class="inner-circle" id="text-3">0%</div>
                 </div>
                 <p class="mb-1 text-center">Assessment Completed</p>
-                <p id="progress-count" class="text-muted small text-center">0/0</p> <!-- Dynamic Progress Count -->
+                <p id="progress-count" class="text-muted small text-center">0/0</p>
               </td>
               <td>
-                <div class="d-flex flex-column justify-content-center align-items-center">
-                  <!-- Buttons -->
+                <div class="d-flex flex-column align-items-center">
                   <div class="d-flex gap-2 mb-2">
-                    <a href="../test/">
-                      <button type="button" class="btn btn-secondary btn-sm">Update</button>
-                    </a>
-                    <a href="/myaccount/test-report/">
-                      <button type="button" class="btn btn-primary btn-sm">View</button>
-                    </a>
+                    <a href="../test/" class="btn btn-secondary btn-sm">Update</a>
+                    <a href="/myaccount/test-report/" class="btn btn-primary btn-sm">View</a>
                   </div>
-            
-                  <!-- Ordered List for Skills (Centered & Wrapped) -->
                   <div id="skills-list" class="d-flex flex-wrap justify-content-center gap-3 container-sm">
-                    <!-- Dynamic Skill Items will go here -->
+                    <!-- Skills will be dynamically added here -->
                   </div>
                 </div>
               </td>
             </tr>
+
+            <!-- CV Upload -->
             <tr>
+              <td><p class="mb-0">CV</p></td>
               <td>
-                <p class="mb-0">CV</p>
-              </td>
-              
-              <td>
-                <div class="action-buttons">
-                  <a href="/myaccount/cv_upload/"><button type="button" class="btn btn-secondary btn-sm">Update</button></a>
-                  <a href="" id="view_cv"><button type="button" class="btn btn-primary btn-sm">View</button></a>
-                  
-                </div>
+                <a href="/myaccount/cv_upload/" class="btn btn-secondary btn-sm me-1">Update</a>
+                <a id="view_cv" href="" class="btn btn-primary btn-sm">View</a>
               </td>
             </tr>
+
+            <!-- Explore Jobs -->
             <tr>
+              <td><p class="mb-0">Explore Jobs</p></td>
               <td>
-                <p class="mb-0">Explore jobs</p>
-              </td>
-              
-              <td>
-                <div class="action-buttons">
-                  <a href="/myaccount/jobsforyou/"><button type="button" class="btn btn-secondary btn-sm">Explore</button></a>
-                  <!-- <a href="" id="view_cv"><button type="button" class="btn btn-primary btn-sm me-2">View / Download</button></a> -->
-                  
-                </div>
+                <a href="/myaccount/jobsforyou/" class="btn btn-secondary btn-sm">Explore</a>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-  </div>
-
- 
-      
-    
-    
-    <!-- <div class="d-flex justify-content-center mt-4 myaccount_option">
-      <a href="/myaccount/test-report/" class="text-decoration-none px-4 bg-white py-1 rounded-4">Test Report</a>
-    </div>
-    
-    <div class="d-flex justify-content-center mt-4 myaccount_option">
-      <a href="/myaccount/cv_upload/" class="text-decoration-none px-4 bg-white py-1 rounded-4">Update CV</a>
-    </div>
-    
-    <div class="d-flex justify-content-center mt-4 myaccount_option">
-      <a href="/myaccount/personalprofile/" class="text-decoration-none px-4 bg-white py-1 rounded-4" style="text-align: center;">Personal profile
-      </a>
-    </div>
-    <div class="d-flex justify-content-center mt-4 myaccount_option">
-      <a href="/myaccount/jobprofile/" class="text-decoration-none px-4 bg-white py-1 rounded-4" style="text-align: center;">Job profile
-      </a>
-    </div>
-  
-    <div style="color: grey; text-align: center; margin-top: 20px;">Complete profile to get jobs</div>
-
-
-    <div style="color: grey; text-align: center; margin-top: 20px;">Complete profile to get jobs</div>
-
-    <div class="d-flex justify-content-center mt-4 myaccount_option">
-      <a href="/myaccount/jobsforyou/" class="text-decoration-none px-4 bg-white py-1 rounded-4">Jobs for you</a>
-    </div> -->
-
-    <br><br><br><br><br><br><br>
-<!--    <section class="articles">
-      <article>
-        <a href="/myaccount/yourprofile/">
-          <div class="article-wrapper">
-            <div class="article-body">
-              <h2>Your profile</h2>
-              <div class="article-content">
-                <p>
-                 Complete profile to get jobs
-                </p>
-                <div class="img">
-                  <img
-                    src="https://cdn.dribbble.com/users/1223630/screenshots/8115260/media/8145a871d9c4d67ec06e047ccc6574b4.gif"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </article>
-
-      <article>
-        <a href="../myaccount/jobsforyou/">
-          <div class="article-wrapper">
-            <div class="article-body">
-              <h2>Jobs for you</h2>
-              <div class="article-content">
-                <p>
-                  
-                </p>
-                <div class="img">
-                  <img
-                    src="https://img.freepik.com/premium-vector/businessman-works-laptop-man-jacket-isolated-vector_174639-19644.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </article>
-    </section>
--->
 
     <!-- Footer -->
-
     <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
   <div class="container">
     <div class="row" >
@@ -742,39 +642,36 @@
 
 
 
+    <!-- Scripts -->
     <script>
+      function updateSelection(selected) {
+        document.querySelectorAll('.form-check-input').forEach(box => {
+          if (box !== selected) box.checked = false;
+        });
+      }
+
       $(document).ready(function () {
-        $(document).on("click", function (event) {
-          if (!$(event.target).closest(".accordion").length) {
+        $(document).on("click", function (e) {
+          if (!$(e.target).closest(".accordion").length) {
             $(".accordion-collapse").collapse("hide");
           }
         });
 
-        $(".accordion").on("click", function (event) {
-          event.stopPropagation();
+        $(".accordion").on("click", function (e) {
+          e.stopPropagation();
         });
       });
-
-      
-
     </script>
 
-<script
-      type="module"
-      src="/staticfiles/mainfiles/myaccount/script.js"
-    ></script>
-    
-    <!-- jobsdoor360 -->
-    <ins
-      class="adsbygoogle"
-      style="display: block"
-      data-ad-client="ca-pub-2075086355753452"
-      data-ad-slot="7339269701"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <script type="module" src="/staticfiles/mainfiles/myaccount/script.js"></script>
+
+    <!-- Google Ads -->
+    <ins class="adsbygoogle"
+         style="display: block"
+         data-ad-client="ca-pub-2075086355753452"
+         data-ad-slot="7339269701"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </body>
 </html>
