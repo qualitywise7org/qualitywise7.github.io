@@ -31,9 +31,8 @@ onAuthStateChanged(auth, (user) => {
     userEmail = user.email;
   } else {
     console.log("No user is signed in");
-    // Redirect to login with return URL
-    const currentUrl = encodeURIComponent(window.location.pathname);
-    window.location.href = `/login/?redirect_url=${currentUrl}`;
+    // Redirect to login with return URL (FULL URL for better redirect)
+    window.location.href = `/login/?redirect_url=${encodeURIComponent(window.location.href)}`;
   }
 });
 

@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Job Listings</title>
-    <meta charset="utf-8" />
+
+<head>
+  <title>Candidates</title>
+  <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.2.0/dist/css/coreui.min.css" rel="stylesheet"
+    integrity="sha384-u3h5SFn5baVOWbh8UkOrAaLXttgSF0vXI15ODtCSxl0v/VKivnCN6iHCcvlyTL7L" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/myaccount/hire/candidates/style.css"
+    />
+
+  <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
 <link rel="icon" href="/fevicon.ico" type="profile" />
@@ -15,17 +25,109 @@
 />
 
     <style>
-      @media (max-width: 576px) {
-        .table-responsive {
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
-          max-width: 100%; /* Prevent table from overflowing its container */
-        }
+      .filter1 {
+        display: flex;
+        gap: 10px;
+        justify-content: end;
+        margin-bottom: 10px;
       }
+
+      .pagination {
+        margin-top: 10px;
+      }
+
+      .pagination button {
+        margin: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .pagination span {
+        margin: 0 10px;
+      }
+
+      #paginationControls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .pagination-btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s ease;
+      }
+
+      .pagination-btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+
+      .pagination-btn i {
+        font-size: 18px;
+      }
+
+      .pagination-info {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+      }
+      /* .green-checkbox {
+      background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    width: 30%;
+    max-width: 150px;
+}
+
+ */
+
+ #globalSearch {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  /* border-radius: 6px; */
+  width: 250px;
+}
+
+#globalSearchBtn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  margin-left: 10px;
+  /* border-radius: 6px; */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#globalSearchBtn:hover {
+  background-color: #218838;
+}
+
+
+
     </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="brand" href="/">
       <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
@@ -190,49 +292,97 @@
 
 
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <h4 class="text-center text-white bg-dark p-2 mb-4">
-            Candidate List
-          </h4>
+    <!-- Search bar -->
+    <div class="search-container">
+      <div class="filter1">
+        <!-- Gender Filter -->
+        <label for="genderDropdown">Filter by Gender:</label>
+        <select id="genderDropdown">
+          <option value="all">All</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <!-- <button type="button" id="gender_button" onclick="">Search</button> -->
+        <!-- Date filter inputs -->
+        <div class="date-filter-container" id="dateFilterContainer">
+          <label for="startDate">From:</label>
+          <input type="date" id="startDate" placeholder="YYYY-MM-DD" />
+
+          <label for="endDate">To:</label>
+          <input type="date" id="endDate" placeholder="YYYY-MM-DD" />
         </div>
+
       </div>
-      <!-- Search bar -->
-      <div class="row mb-3">
-        <div class="col">
-          <input
-            type="text"
-            id="searchInput"
-            class="form-control"
-            placeholder="Search candidates..."
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="table-responsive">
-            <!-- Use table-responsive class -->
-            <table class="table table-bordered table-striped bg-light">
-              <thead class="text-white text-center">
-                <tr>
-                  <th class="text-center">Id</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Applied for</th>
-                   <th>Role</th>
-                  <th>Resmue</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody id="users_data" class="text-center">
-                <!-- Users' data will be added here -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+
+
+      <input type="text" id="searchInput" placeholder="Search the name/email" />
+      <button type="button" id="searchButton" onclick="filterByNameEmail()">Search</button>
+
+      <label for="ratingDropdown">Filter by Rating:</label>
+      <select id="ratingDropdown">
+        <option value="all">All</option>
+        <option value="rated">Rated</option>
+        <option value="unrated">Unrated</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button type="button" id="filter_button" onclick="filterByRating()">Search</button>
+    <!-- <div class="form-check" style="display: flex; align-items: center; gap: 8px;">
+  <input class="form-check-input " type="checkbox" id="myCompanyCheckbox" />
+  <label class="form-check-label green-checkbox" for="myCompanyCheckbox">
+    My Company
+  </label>
+</div> -->
+
+<input type="text" id="globalSearch" placeholder="Search all fields..." />
+<button type="button" id="globalSearchBtn" onclick="handleGlobalSearch()">Search All Fields</button>
+
+
+
     </div>
+    <!-- User profiles table -->
+  
+    <table id="userProfilesTable">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Profile Photo</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>School</th>
+          <th>Degree</th>
+          <th>Resume</th>
+          <th>Graduation Date</th>
+          <th>Age</th>
+          <th>Skills</th>
+          <th>Social Links</th>
+          <th>Experience</th>
+          <th>Address</th>
+          <th>Rating</th>
+          <!-- <th>Remarks</th> -->
+         
+          <th>Action</th>
+          <!-- <th>Consultancy Remark</th> -->
+          <th>Interview Form</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div id="paginationControls" class="pagination"></div>
+        <!-- User profiles dynamically inserted here -->
+      </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.2.0/dist/js/coreui.bundle.min.js"
+      integrity="sha384-JdRP5GRWP6APhoVS1OM/pOKMWe7q9q8hpl+J2nhCfVJKoS+yzGtELC5REIYKrymn"
+      crossorigin="anonymous"></script>
+    <script type="module" src="/staticfiles/mainfiles/myaccount/hire/candidates/script.js"></script>
+
+
     <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
   <div class="container">
     <div class="row" >
@@ -593,153 +743,7 @@
 
 
 
-    <script type="module">
-   const email = localStorage.getItem("email");
-  if (!email) {
-    window.location.href = "/login/?redirect_url=hiring";
-  }
+</body>
 
-  document.addEventListener("DOMContentLoaded", async function () {
-    const jobListings = document.getElementById("users_data");
-    const searchInput = document.getElementById("searchInput");
-    const paginationControls = document.createElement("div");
-    paginationControls.className = "d-flex justify-content-between mt-3";
+</html>
 
-    let allRows = [];
-    let currentPage = 1;
-    const rowsPerPage = 10;
-
-    function renderTable(page = 1) {
-      jobListings.innerHTML = "";
-      const start = (page - 1) * rowsPerPage;
-      const end = start + rowsPerPage;
-      const rowsToShow = allRows.slice(start, end);
-      rowsToShow.forEach((row) => jobListings.appendChild(row));
-
-      // Pagination buttons
-      paginationControls.innerHTML = `
-        <button class="btn btn-sm btn-secondary" ${page === 1 ? "disabled" : ""} id="prevPage">Previous</button>
-        <span class="align-self-center">Page ${currentPage} of ${Math.ceil(allRows.length / rowsPerPage)}</span>
-        <button class="btn btn-sm btn-secondary" ${end >= allRows.length ? "disabled" : ""} id="nextPage">Next</button>
-      `;
-    }
-
-    function attachPaginationListeners() {
-      paginationControls.addEventListener("click", (e) => {
-        if (e.target.id === "prevPage" && currentPage > 1) {
-          currentPage--;
-          renderTable(currentPage);
-        }
-        if (e.target.id === "nextPage" && currentPage * rowsPerPage < allRows.length) {
-          currentPage++;
-          renderTable(currentPage);
-        }
-      });
-    }
-
-   function addActionButtons(row, applicant, jobIndex, companyId, jobListings, jobs) {
-  const actionTd = document.createElement("td");
-  actionTd.className = "text-center";
-
-  const shortlistBtn = document.createElement("button");
-  shortlistBtn.textContent = "Shortlist";
-  shortlistBtn.className = "btn btn-success btn-sm me-2";
-
-  const rejectBtn = document.createElement("button");
-  rejectBtn.textContent = "Reject";
-  rejectBtn.className = "btn btn-danger btn-sm";
-
-  // ✅ Fix: reject function now has access to jobIndex
-  rejectBtn.onclick = async () => {
-    if (!confirm(`Are you sure you want to reject ${applicant.email}?`)) return;
-
-    try {
-      const companyRef = doc(db, "jobs_company_wise", companyId);
-      const companySnap = await getDoc(companyRef);
-
-      if (companySnap.exists()) {
-        const companyData = companySnap.data();
-        const jobs = companyData.jobs || [];
-
-        // ✅ Remove the applicant from the correct job
-        const updatedApplicants = jobs[jobIndex].applicants.filter(
-          (a) => a.email !== applicant.email
-        );
-        jobs[jobIndex].applicants = updatedApplicants;
-
-        // ✅ Update Firestore
-        await updateDoc(companyRef, { jobs });
-
-        // ✅ Remove row from UI and re-render
-        row.remove();
-        allRows = allRows.filter((r) => r !== row);
-        renderTable(currentPage);
-      }
-    } catch (err) {
-      console.error("❌ Error rejecting applicant:", err);
-      alert("Failed to reject applicant.");
-    }
-  };
-
-  // Attach buttons
-  actionTd.appendChild(shortlistBtn);
-  actionTd.appendChild(rejectBtn);
-  row.appendChild(actionTd);
-}
-
-
-    try {
-      const companySnapshot = await getDocs(collection(db, "jobs_company_wise"));
-      let id = 1;
-
-      for (const companyDoc of companySnapshot.docs) {
-        const companyId = companyDoc.id;
-        const companyData = companyDoc.data();
-        const jobs = companyData.jobs || [];
-
-        jobs.forEach((job, jobIndex) => {
-  const applicants = job.applicants || [];
-
-  applicants.forEach((applicant) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${id++}</td>
-      <td>${applicant.name || "N/A"}</td>
-      <td>${applicant.email || "N/A"}</td>
-      <td>${companyId}</td>
-      <td>${job.post_name || job.title || "N/A"}</td>
-      <td>${
-        applicant.resumeUrl
-          ? `<a href="${applicant.resumeUrl}" target="_blank">View Resume</a>`
-          : "No resume"
-      }</td>
-    `;
-
-    // Pass jobIndex into the action button helper
-    addActionButtons(row, applicant, jobIndex, companyId, jobListings, jobs);
-    allRows.push(row); // include in pagination
-  });
-});
-
-      }
-
-      renderTable(currentPage);
-      attachPaginationListeners();
-      jobListings.parentNode.appendChild(paginationControls);
-
-      // Search functionality
-      searchInput.addEventListener("input", function () {
-        const query = searchInput.value.toLowerCase();
-        allRows.forEach((row) => {
-          const cells = row.querySelectorAll("td");
-          const matches = Array.from(cells).some((cell) =>
-            cell.textContent.toLowerCase().includes(query)
-          );
-          row.style.display = matches ? "" : "none";
-        });
-      });
-    } catch (error) {
-      console.error("Error retrieving applicants:", error);
-    }
-  });
-</script>
