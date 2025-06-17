@@ -18,7 +18,7 @@ import {
   getDownloadURL
 } from "firebase/storage";
 
-// Firebase initialization (you must already have this in your main project setup)
+// Firebase initialization
 const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
@@ -31,8 +31,8 @@ onAuthStateChanged(auth, (user) => {
     userEmail = user.email;
   } else {
     console.log("No user is signed in");
-    // Redirect to login with full return URL
-    window.location.href = `/login/?redirect_url=${encodeURIComponent(window.location.href)}`;
+    const currentUrl = encodeURIComponent(window.location.href);
+    window.location.href = `/login/?redirect_url=${currentUrl}`;
   }
 });
 
@@ -65,8 +65,8 @@ async function saveCVToDatabase() {
   try {
     const cvUrl = await uploadCV(file);
     const userRef = doc(db, "user_profile", userEmail);
-
     const userSnap = await getDoc(userRef);
+
     if (!userSnap.exists()) {
       await setDoc(userRef, { about: {} });
     }
