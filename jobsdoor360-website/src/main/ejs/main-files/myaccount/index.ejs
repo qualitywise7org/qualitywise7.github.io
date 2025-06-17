@@ -13,18 +13,7 @@
     <%- include('../../partials/navbar.ejs') %>
 
     <div class="container mt-5">
-      <!-- Selection Checkboxes -->
-      <div class="d-flex flex-row gap-5 align-items-center justify-content-center mb-4">
-        <label class="form-check">
-          <input type="checkbox" id="internship" class="form-check-input" onchange="updateSelection(this)" />
-          Looking for Internship
-        </label>
-        <label class="form-check">
-          <input type="checkbox" id="job" class="form-check-input" onchange="updateSelection(this)" />
-          Looking for Job
-        </label>
-      </div>
-
+     
       <!-- Profile Progress Table -->
       <div class="custom-table">
         <table class="table table-bordered text-center align-middle">
@@ -96,7 +85,7 @@
 
             <!-- Explore Jobs -->
             <tr>
-              <td><p class="mb-0">Explore Jobs</p></td>
+              <td><p class="mb-0">Explore Jobs / Internships</p></td>
               <td>
                 <a href="/myaccount/jobsforyou/" class="btn btn-secondary btn-sm">Explore</a>
               </td>
@@ -110,25 +99,6 @@
     <%- include('../../partials/footer.ejs') %>
 
     <!-- Scripts -->
-    <script>
-      function updateSelection(selected) {
-        document.querySelectorAll('.form-check-input').forEach(box => {
-          if (box !== selected) box.checked = false;
-        });
-      }
-
-      $(document).ready(function () {
-        $(document).on("click", function (e) {
-          if (!$(e.target).closest(".accordion").length) {
-            $(".accordion-collapse").collapse("hide");
-          }
-        });
-
-        $(".accordion").on("click", function (e) {
-          e.stopPropagation();
-        });
-      });
-    </script>
 
     <script type="module" src="/staticfiles/mainfiles/myaccount/script.js"></script>
 
