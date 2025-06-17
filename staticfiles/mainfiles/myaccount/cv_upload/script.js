@@ -18,52 +18,56 @@ import {
   getDownloadURL
 } from "firebase/storage";
 
+// Firebase initialization (you must already have this in your main project setup)
 const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
 let userEmail = null;
 
-// Auth check
+// ✅ AUTH CHECK
 onAuthStateChanged(auth, (user) => {
   if (user) {
     userEmail = user.email;
   } else {
     console.log("No user is signed in");
+    // Redirect to login with return URL (FULL URL for better redirect)
     window.location.href = `/login/?redirect_url=${encodeURIComponent(window.location.href)}`;
   }
 });
 
+// ✅ UPLOAD CV TO STORAGE
 async function uploadCV(file) {
-  const fileName = `${userEmail.replace(/[^a-zA-Z0-9]/g, "_")}_${file.name}`;
-  const cvRef = ref(storage, "user_cv/" + fileName);
-  await uploadBytes(cvRef, file);
-  return await getDownloadURL(cvRef);
+  const sanitizedFileName = file.name.replace(/[^a-zA-Z0-9_.-]/g, "_");
+  const storageRef = ref(storage, `user_cv/${userEmail}_${sanitizedFileName}`);
+  await uploadBytes(storageRef, file);
+  return await getDownloadURL(storageRef);
 }
 
+// ✅ SAVE CV URL TO FIRESTORE
 async function saveCVToDatabase() {
   const uploadButton = document.getElementById("btn");
-  uploadButton.innerHTML = "Uploading...";
-  uploadButton.disabled = true;
+  const fileInput = document.getElementById("cv");
+  const file = fileInput.files[0];
 
-  const cvFile = document.getElementById("cv").files[0];
-  if (!cvFile) {
+  if (!file) {
     Toastify({ text: "Please select a file", duration: 3000, style: { background: "red" } }).showToast();
-    uploadButton.innerHTML = "UPLOAD RESUME";
-    uploadButton.disabled = false;
     return;
   }
 
-  try {
-    const cvUrl = await uploadCV(cvFile);
-    const userProfileRef = doc(db, "user_profile", userEmail);
+  uploadButton.disabled = true;
+  uploadButton.innerText = "Uploading...";
 
-    const docSnap = await getDoc(userProfileRef);
-    if (!docSnap.exists()) {
-      await setDoc(userProfileRef, { about: {} });
+  try {
+    const cvUrl = await uploadCV(file);
+    const userRef = doc(db, "user_profile", userEmail);
+
+    const userSnap = await getDoc(userRef);
+    if (!userSnap.exists()) {
+      await setDoc(userRef, { about: {} });
     }
 
-    await updateDoc(userProfileRef, {
+    await updateDoc(userRef, {
       "about.cv": cvUrl
     });
 
@@ -83,13 +87,14 @@ async function saveCVToDatabase() {
       window.location.href = "/myaccount/";
     }, 3000);
 
-  } catch (error) {
-    console.error("Upload error:", error);
+  } catch (err) {
+    console.error("Upload failed:", err);
     Toastify({ text: "Upload failed", duration: 3000, style: { background: "red" } }).showToast();
   }
 
-  uploadButton.innerHTML = "UPLOAD RESUME";
   uploadButton.disabled = false;
+  uploadButton.innerText = "UPLOAD RESUME";
 }
 
+// ✅ HANDLE BUTTON CLICK
 document.getElementById("btn").addEventListener("click", saveCVToDatabase);
