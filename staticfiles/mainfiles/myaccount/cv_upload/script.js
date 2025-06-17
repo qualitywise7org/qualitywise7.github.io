@@ -31,7 +31,7 @@ onAuthStateChanged(auth, (user) => {
     userEmail = user.email;
   } else {
     console.log("No user is signed in");
-    // Redirect to login with return URL (FULL URL for better redirect)
+    // Redirect to login with full return URL
     window.location.href = `/login/?redirect_url=${encodeURIComponent(window.location.href)}`;
   }
 });
@@ -51,7 +51,11 @@ async function saveCVToDatabase() {
   const file = fileInput.files[0];
 
   if (!file) {
-    Toastify({ text: "Please select a file", duration: 3000, style: { background: "red" } }).showToast();
+    Toastify({
+      text: "Please select a file",
+      duration: 3000,
+      style: { background: "red" }
+    }).showToast();
     return;
   }
 
@@ -89,7 +93,11 @@ async function saveCVToDatabase() {
 
   } catch (err) {
     console.error("Upload failed:", err);
-    Toastify({ text: "Upload failed", duration: 3000, style: { background: "red" } }).showToast();
+    Toastify({
+      text: "Upload failed",
+      duration: 3000,
+      style: { background: "red" }
+    }).showToast();
   }
 
   uploadButton.disabled = false;
