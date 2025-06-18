@@ -32,6 +32,54 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "/apply/";
     });
   }
+
+  // Hide WhatsApp icon when any modal or custom form is open
+  const chatBackToTop = document.querySelector('.chat-back-to-top');
+
+  // For Bootstrap modals (already present)
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('show.bs.modal', () => {
+      if (chatBackToTop) chatBackToTop.style.display = 'none';
+    });
+    modal.addEventListener('hidden.bs.modal', () => {
+      if (chatBackToTop) chatBackToTop.style.display = '';
+    }); 
+  });
+
+  // Update these IDs to match your actual HTML
+  const customModals = [
+    { open: 'edit-social-button', close: 'cancel-button-social', form: 'edit-form-social' },
+    { open: 'add-skill-button', close: 'cancel-button-social', form: 'add-skill-form' },
+    { open: 'add-experience-button', close: 'cancel-button-social', form: 'add-experience-form' },
+    { open: 'add-education-button', close: 'cancel-button-social', form: 'add-education-form' }
+    // Add more as needed
+  ];
+
+  customModals.forEach(({ open, close, form }) => {
+    const openBtn = document.getElementById(open);
+    const closeBtn = document.getElementById(close);
+    const modalForm = document.getElementById(form);
+
+    if (openBtn && chatBackToTop) {
+      openBtn.addEventListener('click', () => {
+        chatBackToTop.style.display = 'none';
+      });
+    }
+    if (closeBtn && chatBackToTop) {
+      closeBtn.addEventListener('click', () => {
+        chatBackToTop.style.display = '';
+      });
+    }
+    // If the form is closed by other means (like clicking outside), observe class changes
+    if (modalForm && chatBackToTop) {
+      const observer = new MutationObserver(() => {
+        if (modalForm.classList.contains('d-none')) {
+          chatBackToTop.style.display = '';
+        }
+      });
+      observer.observe(modalForm, { attributes: true, attributeFilter: ['class'] });
+    }
+  });
 });
 
 // Check if the user is signed in
