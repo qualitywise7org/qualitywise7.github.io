@@ -199,8 +199,17 @@
             <input type="text" id="jobTitle" required />
           </div>
           <div class="form-group">
-            <label>Company Name*</label>
-            <input type="text" id="company" required />
+            <label for="company">Company Name*</label>
+            <select id="company" required>
+              <option value="">Select a company</option>
+              <option value="tcs">TCS</option>
+              <option value="infosys">Infosys</option>
+              <option value="jobsdoor360">jobsdoor360</option>
+              <option value="accenture">Accenture</option>
+             <option value="capgemini">Thought Works</option>
+             <option value="others">Others</option>
+              <!-- Add more companies as needed -->
+            </select>
           </div>
           <div class="form-group">
             <label>Job Type*</label>
