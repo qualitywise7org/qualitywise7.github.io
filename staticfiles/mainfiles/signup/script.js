@@ -94,19 +94,26 @@ async function checkIfUserExists(email) {
         throw new Error("Failed to check user existence: " + error.message);
     }
 }
-
-// Handle Google sign up
+// Google signup button event listener
+const googleSignUpButton = document.getElementById("google-signup-btn");
 googleSignUpButton.addEventListener("click", async () => {
     try {
-    const provider = new GoogleAuthProvider();
-    const result = await signInWithPopup(auth, provider);
-    const user = result.user;
-    // console.log(user.email);
+        const provider = new GoogleAuthProvider();
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
 
-    // Check if the email is already registered
-    const userExists = await checkIfUserExists(user.email);
-    if (userExists) {
-      window.location.href = "/login ";
+        // Check if the email is already registered
+        const userExists = await checkIfUserExists(user.email);
+        if (userExists) {
+            window.location.href = "/"; // Redirect if user already exists
+        } else {
+            window.location.href = "/login"; // Redirect to login if not registered
+        }
+    } catch (error) {
+        console.error("Google sign up error:", error);
+    }
+});
+
       return;
     }
 
