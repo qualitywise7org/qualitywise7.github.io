@@ -697,7 +697,7 @@ async function isUser() {
       // Set a slightly longer timeout to ensure DOM is fully rendered and ready
       setTimeout(() => {
         try {
-          console.log("Setting progress bars with timeout");
+          // console.log("Setting progress bars with timeout");
           // Store percentages in localStorage for persistence
           localStorage.setItem("profile1Percent", personalProfilePercent);
           localStorage.setItem("profile2Percent", jobProfilePercent);
@@ -708,10 +708,10 @@ async function isUser() {
             progressBar1.style.width = personalProfilePercent + "%";
             document.getElementById("text-1").textContent =
               personalProfilePercent + "%";
-            console.log(
-              "Set progress-1 width to",
-              personalProfilePercent + "%"
-            );
+            // console.log(
+            //   "Set progress-1 width to",
+            //   personalProfilePercent + "%"
+            // );
           }
 
           const progressBar2 = document.getElementById("progress-2");

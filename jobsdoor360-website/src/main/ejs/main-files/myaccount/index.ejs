@@ -50,8 +50,9 @@
 
 .progress-bar-custom {
   background-color: #28a745 !important;
-  transition: width 0.6s ease;
+  transition: none; /* We'll control transitions with JavaScript */
   height: 100%;
+  width: 0%; /* Start at zero */
 }
 
 .toggle-label {
@@ -135,12 +136,11 @@
           <i class="bi bi-arrow-left-short fs-3 text-dark"></i>
           <h5 class="mb-0">My Account</h5>
           <span style="width: 24px;"></span> <!-- Spacer to balance arrow icon -->
-        </div>
-        <!-- Profile -->
+        </div>        <!-- Profile -->
         <div class="d-flex align-items-center mb-4">
-          <img src="https://i.pravatar.cc/150?img=3" alt="Profile" class="profile-img me-3" />
+          <img src="https://cdn-icons-png.flaticon.com/512/266/266033.png" alt="Profile" class="profile-img me-3" />
           <div>
-            <h5 class="mb-0">John Smith</h5>
+            <h5 class="mb-0" id="userName"></h5>
           </div>
         </div>
     
@@ -229,25 +229,70 @@
     </div>
       <br><br>    <!-- Footer -->
     <%- include('../../partials/footer.ejs') %>    <!-- Import scripts -->
+    <script type="module" src="/staticfiles/mainfiles/myaccount/script.js"></script>    <script src="/staticfiles/mainfiles/myaccount/progress.js"></script>
+    <script src="/staticfiles/mainfiles/myaccount/data-connector.js"></script>
     <script type="module" src="/staticfiles/mainfiles/myaccount/script.js"></script>
-    <script src="/staticfiles/mainfiles/myaccount/progress.js"></script>
-    <!-- Extra initialization to ensure progress bars render correctly -->    <script>
+    <!-- Bridge script to ensure progress bars update when user data is available -->
+    <script>
+      // This script helps bridge between authentication system and progress bars
       document.addEventListener('DOMContentLoaded', function() {
-        // Force a recalculation of progress bars after a delay
-        setTimeout(function() {
-          const bars = document.querySelectorAll('.progress-bar-custom');
-          bars.forEach(function(bar) {
-            const currentWidth = bar.style.width;
-            bar.style.width = '0%';
-            setTimeout(function() {
-              bar.style.width = currentWidth;
-            }, 50);
+        // If userData is set by the main script, update our progress bars
+        if (window.userData) {
+          console.log("User data already available, updating progress bars");
+          if (window.setUserData) {
+            window.setUserData(window.userData);
+          }
+        }
+        
+        // Create a MutationObserver to watch for changes to the user's name
+        // This is a backup method to detect when user data might be available
+        const userNameObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.target.id === "userName1" && window.userData) {
+              console.log("User name updated, syncing progress bars");
+              if (window.setUserData) {
+                window.setUserData(window.userData);
+              }
+              // Only need to react once
+              userNameObserver.disconnect();
+            }
           });
-        }, 200);
+        });
+        
+        // Start observing the document for user name changes
+        const userName1Element = document.getElementById("userName1");
+        if (userName1Element) {
+          userNameObserver.observe(userName1Element, { 
+            characterData: true,
+            childList: true,
+            subtree: true
+          });
+        }
+        
+        // Add a debug button (only in development)
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ||
+            window.location.search.includes('debug=true')) {
+          const debugBtn = document.createElement('button');
+          debugBtn.textContent = 'Debug Progress';
+          debugBtn.style.position = 'fixed';
+          debugBtn.style.bottom = '10px';
+          debugBtn.style.right = '10px';
+          debugBtn.style.zIndex = '9999';
+          debugBtn.style.padding = '5px 10px';
+          debugBtn.style.backgroundColor = '#28a745';
+          debugBtn.style.color = 'white';
+          debugBtn.style.border = 'none';
+          debugBtn.style.borderRadius = '4px';
+          debugBtn.style.cursor = 'pointer';
+          debugBtn.onclick = function() {
+            if (window.showProgressDebug) {
+              window.showProgressDebug();
+            }
+          };
+          document.body.appendChild(debugBtn);
+        }
       });
     </script>
-
-
   </div>
 
  
