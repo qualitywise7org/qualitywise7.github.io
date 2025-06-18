@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CV Upload</title>
-    <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/cv_upload/style.css">
+    <title>Cv upload</title>
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/myaccount/cv_upload/style.css"
+    />
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -15,7 +18,11 @@
   crossorigin="anonymous"
 />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -182,15 +189,18 @@
 <!-- End Google Tag Manager (noscript) -->
 
 
-    <div class="d-flex justify-content-center align-items-center flex-column gap-4" style="margin-block: 100px">
+    <div
+      class="d-flex justify-content-center align-items-center flex-column gap-4"
+      style="margin-block: 100px"
+    >
       <h2>UPLOAD YOUR RESUME</h2>
-      <form class="d-flex flex-column justify-content-center gap-3" onsubmit="return false;">
+      <form action="" class="d-flex flex-column justify-content-center gap-3">
         <div class="d-flex justify-content-center flex-column">
           <input
             id="cv"
             type="file"
             class="form-control cv"
-            accept=".pdf,.doc,.docx"
+            accept="cv/*"
             required
           />
           <span class="form-text"></span>
@@ -566,9 +576,13 @@
 
 
 
-
-    <!-- Firebase -->
-    <script type="module" src="/staticfiles/mainfiles/myaccount/cv_upload/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/cv_upload/script.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
   </body>
 </html>
