@@ -93,29 +93,27 @@ async function checkIfUserExists(email) {
 // Google signup button event listener
 const googleSignUp = document.getElementById("google-signup-btn");
 googleSignUp.addEventListener("click", async () => {
-    try {
-        const provider = new GoogleAuthProvider();
-        const result = await signInWithPopup(auth, provider);
-        const user = result.user;
+     try {
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+    // console.log(user.email);
 
-        // Check if the email is already registered
-        const userExists = await checkIfUserExists(user.email);
-        if (userExists) {
-            alert("This email is already registered with us. Signing in you.");
-            window.location.href = "/login";
-            return;
-        }
-
-        // Store user info in localStorage (consider security implications)
-        localStorage.setItem("uid", user.uid);
-        localStorage.setItem("email", user.email);
-
-        // Save user data to Firestore
-        await saveUserDataToFirestore(user.uid, user.displayName, user.email, user.phoneNumber);
-
-        // Redirect to account page
-        window.location.href = "/myaccount";
-    } catch (error) {
-        console.log("Error signing up with Google: ", error.message);
+    // Check if the email is already registered
+    const userExists = await checkIfUserExists(user.email);
+    if (userExists) {
+      window.location.href = "/";
+      return;
     }
+
+    // Store user info in localStorage (consider security implications)
+    localStorage.setItem("uid", user.uid);
+    localStorage.setItem("email", user.email);
+    localStorage.setItem("phonenumber", user.phoneNumber);
+
+    // Redirect to home page
+    window.location.href = "/";
+  } catch (error) {
+    console.log("Error Logging in  with Google: ", error.message);
+  }
 });
