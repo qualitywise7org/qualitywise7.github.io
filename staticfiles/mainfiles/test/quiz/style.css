@@ -8,7 +8,7 @@
 /* Body Styling */
 body {
   background: linear-gradient(135deg, #667eea, #764ba2);
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,8 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   max-width: 700px;
   width: 100%;
-  height: 60vh;
+  min-height: 60vh;
+  height: auto;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
 }
@@ -77,10 +78,19 @@ body {
   background-color: #667eea;
   padding: 10px;
   border-radius: 10px;
-  height: 85px;
+  min-height: 85px;
+  height: auto;
   display: flex;
- align-items: center;
+  align-items: center;
   text-align: left;
+  word-wrap: break-word;
+}
+
+/* Question Text Responsive Styling */
+#question-title p {
+  width: 100%;
+  word-wrap: break-word;
+  padding: 5px;
 }
 
 /* Question Container Styling */
@@ -93,8 +103,57 @@ body {
   text-align: left;
   animation: slideIn 1s ease-in-out;
   font-size: 1.2rem;
-  height: 150px;
-  
+  min-height: 150px;
+  height: auto;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Enhanced Answer Options Styling */
+.answer-options {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.answer-option {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.answer-option:hover {
+  background-color: #f0f4ff;
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.answer-option label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.answer-text {
+  margin-left: 10px;
+  word-wrap: break-word;
+  flex: 1;
+}
+
+/* Style for selected answer */
+input[type="radio"]:checked + .answer-text {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.answer-option:has(input[type="radio"]:checked) {
+  background-color: #eef1ff;
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
 }
 
 /* Button Group Styling */
@@ -139,6 +198,27 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
   animation: fadeIn 1s ease-in-out;
+  text-align: center;
+}
+
+#result-container h2 {
+  color: #667eea;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+#result-container p {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#score,
+#percentage,
+#unansweredDisplay {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1.3rem;
 }
 
 /* Timer Styling */
@@ -152,6 +232,26 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   margin-top: 5px;
   display: inline-block;
+}
+
+/* Home Button Styling */
+#home-btn {
+  margin: 20px auto;
+  width: 50%;
+  background-color: #667eea;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: none;
+}
+
+#home-btn:hover {
+  background-color: #5a67d8;
+  transform: scale(1.05);
 }
 
 /* Responsive Styling for Tablets (max-width: 1024px) */
@@ -179,7 +279,8 @@ body {
     padding: 20px;
   }
 
-  #quiz-title, #question-title {
+  #quiz-title,
+  #question-title {
     font-size: 1.8rem;
     padding: 8px;
   }
@@ -206,7 +307,8 @@ body {
     padding: 15px;
   }
 
-  #quiz-title, #question-title {
+  #quiz-title,
+  #question-title {
     font-size: 1.5rem;
     padding: 6px;
   }
@@ -238,7 +340,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.1);
   text-align: center;
-  padding: 20px; 
+  padding: 20px;
   color: #333;
   visibility: hidden;
   transition: transform 0.4s ease, visibility 0.4s ease;
@@ -247,7 +349,6 @@ body {
   max-height: 80vh; /* Limit the height */
   overflow-y: auto; /* Enable vertical scrolling */
   padding-right: 10px; /* Adjust padding if necessary for scrollbar */
-
 }
 
 /* Popup Open State */
@@ -265,7 +366,8 @@ body {
 }
 
 /* Popup Text */
-.popup p, .popup ul {
+.popup p,
+.popup ul {
   font-size: 1rem;
   text-align: left;
   margin-bottom: 15px;
@@ -318,9 +420,18 @@ body {
 
 /* Overlay Styling */
 #overlay {
-  display: block;
-  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
   z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.open-overlay {
+  display: block !important;
 }
 
 /* Responsive Styling for Popup on Mobile (max-width: 480px) */
@@ -334,12 +445,36 @@ body {
     font-size: 1.3rem;
   }
 
-  .popup p, .popup ul {
+  .popup p,
+  .popup ul {
     font-size: 0.9rem;
   }
 
   .popup button {
     font-size: 0.9rem;
     padding: 10px;
+  }
+}
+
+/* Animation for dynamic content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
