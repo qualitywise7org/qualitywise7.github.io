@@ -200,8 +200,12 @@
 // //   }
 // // });
 
-// 🧠 Prevent redirect loop when user already logged in
-// 🔁 Capture redirect_url from query parameter
+//  Prevent redirect loop when user already logged in
+// 
+// 
+// 
+// 
+//  Capture redirect_url from query parameter
 const urlParams = new URLSearchParams(window.location.search);
 const redirectParam = urlParams.get("redirect_url");
 
