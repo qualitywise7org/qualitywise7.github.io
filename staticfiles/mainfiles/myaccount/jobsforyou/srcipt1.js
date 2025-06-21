@@ -31,7 +31,9 @@ async function loadFirebaseJobs() {
 
   for (const docSnap of companySnapshots.docs) {
     const companyData = docSnap.data();
-    const companyJobs = companyData.jobs || [];
+    // const companyJobs = companyData.jobs || [];
+    const companyJobsMap = companyData.jobs || {};
+    const companyJobs = Object.values(companyJobsMap);
 
     // Tag each job with its companyCode (doc ID)
     const jobsWithCompany = companyJobs.map((job) => ({
@@ -265,13 +267,135 @@ applyButtons.forEach((btn) => {
   markAlreadyAppliedJobs();
   
 }
+// async function applyToJob(jobId, companyCode) {
+//   const userEmail = localStorage.getItem("email");
+//   const uid = localStorage.getItem("uid");
+//   const name = localStorage.getItem("userName") || "";
+//   const resumeUrl = localStorage.getItem("resumeUrl") || "";
+
+//   // if (!userEmail || !uid) {
+//   //   alert("You need to be logged in to apply.");
+//   //   return;
+//   // }
+//   const user = auth.currentUser;
+//   if (!user) {
+//   alert("You need to be logged in to apply.");
+//   return;
+// }
+
+//   try {
+//     const companyRef = doc(db, "jobs_company_wise", companyCode);
+//     const companySnap = await getDoc(companyRef);
+
+//     if (!companySnap.exists()) {
+//       console.error("Company not found:", companyCode);
+//       return;
+//     }
+
+//     const companyData = companySnap.data();
+//     // const jobs = companyData.jobs || [];
+
+//     // const jobIndex = jobs.findIndex((job) => job.jobId === jobId);
+//     // if (jobIndex === -1) {
+//     //   console.error("Job not found in company:", jobId);
+//     //   return;
+//     // }
+
+//     // const job = jobs[jobIndex];
+//     // const alreadyApplied = (job.applicants || []).some(
+//     //   (applicant) => applicant.uid === uid || applicant.email === userEmail
+//     // );
+
+//     // if (alreadyApplied) {
+//     //   alert("You've already applied to this job.");
+//     //   return;
+//     // }
+
+//     // // Add applicant to the job's applicants array
+//     // const newApplicant = {
+//     //   uid,
+//     //   email: userEmail,
+//     //   name,
+//     //   resumeUrl,
+//     //   appliedAt: new Date().toISOString(),
+//     // };
+
+//     // if (!job.applicants) job.applicants = [];
+//     // job.applicants.push(newApplicant);
+
+//     // // Update the job in the jobs array
+//     // jobs[jobIndex] = job;
+
+//     // // Update the company document with the new jobs array
+//     // await updateDoc(companyRef, {
+//     //   jobs: jobs,
+//     // });
+
+//     const jobs = companyData.jobs || {};
+
+// if (!jobs[jobId]) {
+//   console.error("Job not found in company:", jobId);
+//   return;
+// }
+
+// const job = jobs[jobId];
+// const alreadyApplied = (job.applicants || []).some(
+//   (applicant) => applicant.uid === uid || applicant.email === userEmail
+// );
+
+// if (alreadyApplied) {
+//   alert("You've already applied to this job.");
+//   return;
+// }
+
+// const newApplicant = {
+//   uid,
+//   email: userEmail,
+//   name,
+//   resumeUrl,
+//   appliedAt: new Date().toISOString(),
+// };
+
+// if (!job.applicants) job.applicants = [];
+// job.applicants.push(newApplicant);
+
+// jobs[jobId] = job;
+
+// await updateDoc(companyRef, {
+//   jobs: jobs,
+// });
+
+
+//     alert("Application submitted successfully.");
+//    const btn = document.querySelector(`[data-jobcode="${jobId}"]`);
+//     if (btn) {
+//       btn.innerText = "Applied";
+//       btn.disabled = true;
+//       btn.classList.remove("btn-primary");
+//       btn.classList.add("btn-success");
+//     }
+//   } catch (error) {
+//     console.error("Error applying to job:", error);
+//     alert("Something went wrong while applying.");
+//   }
+  
+
+//   recordCandidateApplication(userEmail, {
+//   jobId,
+//   title: job.title,
+//   company: job.company,
+//   companyCode: job.companyCode
+// });
+// }
+
 async function applyToJob(jobId, companyCode) {
   const userEmail = localStorage.getItem("email");
   const uid = localStorage.getItem("uid");
   const name = localStorage.getItem("userName") || "";
   const resumeUrl = localStorage.getItem("resumeUrl") || "";
 
-  if (!userEmail || !uid) {
+  const user = auth.currentUser;
+  if (!user) {
     alert("You need to be logged in to apply.");
     return;
   }
@@ -286,15 +410,14 @@ async function applyToJob(jobId, companyCode) {
     }
 
     const companyData = companySnap.data();
-    const jobs = companyData.jobs || [];
+    const jobs = companyData.jobs || {};
 
-    const jobIndex = jobs.findIndex((job) => job.jobId === jobId);
-    if (jobIndex === -1) {
+    if (!jobs[jobId]) {
       console.error("Job not found in company:", jobId);
       return;
     }
 
-    const job = jobs[jobIndex];
+    const job = jobs[jobId];
     const alreadyApplied = (job.applicants || []).some(
       (applicant) => applicant.uid === uid || applicant.email === userEmail
     );
@@ -304,7 +427,6 @@ async function applyToJob(jobId, companyCode) {
       return;
     }
 
-    // Add applicant to the job's applicants array
     const newApplicant = {
       uid,
       email: userEmail,
@@ -316,16 +438,23 @@ async function applyToJob(jobId, companyCode) {
     if (!job.applicants) job.applicants = [];
     job.applicants.push(newApplicant);
 
-    // Update the job in the jobs array
-    jobs[jobIndex] = job;
+    jobs[jobId] = job;
 
-    // Update the company document with the new jobs array
     await updateDoc(companyRef, {
       jobs: jobs,
     });
 
+    // ✅ Call record function with required job info
+    await recordCandidateApplication(userEmail, {
+      jobId: jobId,
+      title: job.title || "",
+      company: job.company || "",
+      companyCode: companyCode,
+      appliedAt: new Date(),
+    });
+
     alert("Application submitted successfully.");
-   const btn = document.querySelector(`[data-jobcode="${jobId}"]`);
+    const btn = document.querySelector(`[data-jobcode="${jobId}"]`);
     if (btn) {
       btn.innerText = "Applied";
       btn.disabled = true;
@@ -337,6 +466,40 @@ async function applyToJob(jobId, companyCode) {
     alert("Something went wrong while applying.");
   }
 }
+
+
+
+
+async function recordCandidateApplication(userEmail, job) {
+  const userAppRef = doc(db, "jobs_applied", userEmail);
+  const userAppSnap = await getDoc(userAppRef);
+
+  const newAppliedJob = {
+    jobId: job.jobId,
+    jobTitle: job.title,
+    company: job.company,
+    companyCode: job.companyCode,
+    appliedAt: new Date(),
+  };
+
+  if (userAppSnap.exists()) {
+    const existingData = userAppSnap.data();
+    const updatedJobs = existingData.appliedJobs || [];
+
+    // Avoid duplicates
+    const alreadyExists = updatedJobs.find(j => j.jobId === job.jobId);
+    if (!alreadyExists) {
+      updatedJobs.push(newAppliedJob);
+      await updateDoc(userAppRef, { appliedJobs: updatedJobs });
+    }
+  } else {
+    await setDoc(userAppRef, {
+      email: userEmail,
+      appliedJobs: [newAppliedJob],
+    });
+  }
+}
+
 
 async function markAlreadyAppliedJobs() {
   const uid = localStorage.getItem("uid");
@@ -351,22 +514,43 @@ async function markAlreadyAppliedJobs() {
     if (!jobCode) continue;
 
     try {
-      const jobDocRef = doc(db, "jobs", jobCode);
-      const jobDocSnap = await getDoc(jobDocRef);
+      // const jobDocRef = doc(db, "jobs", jobCode);
+      // const jobDocSnap = await getDoc(jobDocRef);
 
-      if (jobDocSnap.exists()) {
-        const applicants = jobDocSnap.data().applicants || [];
-        const alreadyApplied = applicants.some(
-          (applicant) => applicant.uid === uid || applicant.email === userEmail
-        );
+      // if (jobDocSnap.exists()) {
+      //   const applicants = jobDocSnap.data().applicants || [];
+      //   const alreadyApplied = applicants.some(
+      //     (applicant) => applicant.uid === uid || applicant.email === userEmail
+      //   );
 
-        if (alreadyApplied) {
-          btn.innerText = "Applied";
-          btn.disabled = true;
-          btn.classList.remove("btn-primary");
-          btn.classList.add("btn-success");
-        }
-      }
+      //   if (alreadyApplied) {
+      //     btn.innerText = "Applied";
+      //     btn.disabled = true;
+      //     btn.classList.remove("btn-primary");
+      //     btn.classList.add("btn-success");
+      //   }
+      // }
+      const companiesRef = collection(db, "jobs_company_wise");
+const companySnapshots = await getDocs(companiesRef);
+
+for (const docSnap of companySnapshots.docs) {
+  const companyJobs = docSnap.data().jobs || {};
+  const job = companyJobs[jobCode];
+  if (job) {
+    const applicants = job.applicants || [];
+    const alreadyApplied = applicants.some(
+      (applicant) => applicant.uid === uid || applicant.email === userEmail
+    );
+
+    if (alreadyApplied) {
+      btn.innerText = "Applied";
+      btn.disabled = true;
+      btn.classList.remove("btn-primary");
+      btn.classList.add("btn-success");
+      break;
+    }
+  }
+}
     } catch (e) {
       console.warn("Error checking applied status for job", jobCode, e);
     }
