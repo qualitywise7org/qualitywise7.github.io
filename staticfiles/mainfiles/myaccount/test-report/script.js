@@ -7,6 +7,10 @@ import {
   getFirestore,
   doc,
   getDoc,
+  collection,
+  query,
+  where,
+  getDocs,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
@@ -94,7 +98,9 @@ async function fetchAndDisplayResults(userId) {
         Array.isArray(resultsData.results) &&
         resultsData.results.length > 0
       ) {
-        displayResults(resultsData.results);
+        // Fetch user role for determining access permissions
+        const userRole = await getUserRole(userId);
+        displayResults(resultsData.results, userRole);
       } else {
         // console.log("No results found for user."); // Debug: Empty results case
         showNoResultsMessage();
@@ -148,7 +154,7 @@ function showNoResultsMessage() {
   }
 }
 
-function displayResults(results) {
+function displayResults(results, userRole = "user") {
   // console.log("Displaying results..."); // Debug: Display function called
   const reportContainer = document.getElementById("assessment-report");
   const noResultsMessage = document.getElementById("no-results-message");
@@ -219,6 +225,45 @@ function displayResults(results) {
     } else {
       performanceIndicator.classList.add("needs-improvement");
       performanceIndicator.textContent = "Needs Improvement";
+    }    // Add View Details button (only if we have a valid quiz code)
+    const detailsButton = document.createElement("a");
+    detailsButton.classList.add("btn-details");
+    detailsButton.textContent = "View Details";
+
+    // Debug logging
+    console.log("Processing result:", result);
+    console.log("Quiz Code:", result.quizCode);
+    console.log("User Role:", userRole);
+    console.log("User ID:", userId);
+    
+    // Only create link if we have a valid quiz code
+    if (
+      result.quizCode &&
+      result.quizCode.trim() !== "" &&
+      result.quizCode !== "undefined" &&
+      result.quizCode !== "null"
+    ) {
+      let detailsUrl = `/myaccount/test-report/test-details?test_code=${encodeURIComponent(
+        result.quizCode
+      )}`;
+
+      // For recruiters and master_admins, add email parameter if available
+      if ((userRole === "recruiter" || userRole === "master_admin") && userId) {
+        detailsUrl += `&email=${encodeURIComponent(userId)}`;
+      }
+
+      console.log("Generated Details URL:", detailsUrl);
+      detailsButton.href = detailsUrl;
+    } else {
+      // Disable button if no quiz code available
+      detailsButton.style.opacity = "0.5";
+      detailsButton.style.cursor = "not-allowed";
+      detailsButton.textContent = "Details Unavailable";
+      detailsButton.onclick = (e) => {
+        e.preventDefault();
+        alert("Detailed report is not available for this assessment.");
+      };
+      console.log("Quiz code missing for result:", result);
     }
 
     resultBox.appendChild(quizTitle);
@@ -226,9 +271,28 @@ function displayResults(results) {
     resultBox.appendChild(percentage);
     resultBox.appendChild(performanceIndicator);
     resultBox.appendChild(timestamp);
+    resultBox.appendChild(detailsButton);
 
     reportContainer.appendChild(resultBox);
   });
+}
+
+// Function to get user role for access control
+async function getUserRole(userEmail) {
+  try {
+    const userProfileRef = doc(db, "user_profile", userEmail);
+    const userProfileDoc = await getDoc(userProfileRef);
+
+    if (userProfileDoc.exists()) {
+      const userData = userProfileDoc.data();
+      return userData.role || "user"; // Default to 'user' if no role specified
+    }
+
+    return "user"; // Default role
+  } catch (error) {
+    console.error("Error fetching user role:", error);
+    return "user"; // Default role on error
+  }
 }
 
 // Debug function to check Firebase connection
