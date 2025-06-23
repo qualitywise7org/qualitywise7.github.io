@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Assessment Links</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        line-height: 1.6;
+      }
+      .test-link {
+        display: block;
+        padding: 10px;
+        margin: 10px 0;
+        background: #f0f8ff;
+        border: 1px solid #ccc;
+        text-decoration: none;
+        color: #333;
+        border-radius: 5px;
+      }
+      .test-link:hover {
+        background: #e0f0ff;
+      }
+      .explanation {
+        background: #fffacd;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Test Assessment Detail Links</h1>
+
+    <div class="explanation">
+      <h3>Test Description</h3>
+      <p>
+        This page provides test links to check if the assessment detail pages
+        work correctly with different test codes.
+      </p>
+      <p>
+        Click on any link below to test the assessment detail page
+        functionality.
+      </p>
+    </div>
+
+    <h2>Test Links</h2>
+
+    <a
+      href="/myaccount/test-report/test-details?test_code=javascript_basics"
+      class="test-link"
+    >
+      <strong>JavaScript Basics Test</strong><br />
+      URL: /myaccount/test-report/test-details?test_code=javascript_basics
+    </a>
+
+    <a
+      href="/myaccount/test-report/test-details?test_code=python_fundamentals"
+      class="test-link"
+    >
+      <strong>Python Fundamentals Test</strong><br />
+      URL: /myaccount/test-report/test-details?test_code=python_fundamentals
+    </a>
+
+    <a
+      href="/myaccount/test-report/test-details?test_code=web_development"
+      class="test-link"
+    >
+      <strong>Web Development Test</strong><br />
+      URL: /myaccount/test-report/test-details?test_code=web_development
+    </a>
+
+    <a
+      href="/myaccount/test-report/test-details?test_code=data_structures"
+      class="test-link"
+    >
+      <strong>Data Structures Test</strong><br />
+      URL: /myaccount/test-report/test-details?test_code=data_structures
+    </a>
+
+    <h2>Test Links with Email Parameter (for recruiters)</h2>
+
+    <a
+      href="/myaccount/test-report/test-details?test_code=javascript_basics&email=test@example.com"
+      class="test-link"
+    >
+      <strong>JavaScript Basics Test (with email)</strong><br />
+      URL:
+      /myaccount/test-report/test-details?test_code=javascript_basics&email=test@example.com
+    </a>
+
+    <h2>Test Invalid Links</h2>
+
+    <a href="/myaccount/test-report/test-details" class="test-link">
+      <strong>Missing Test Code (should show error)</strong><br />
+      URL: /myaccount/test-report/test-details
+    </a>
+
+    <a href="/myaccount/test-report/test-details?test_code=" class="test-link">
+      <strong>Empty Test Code (should show error)</strong><br />
+      URL: /myaccount/test-report/test-details?test_code=
+    </a>
+
+    <hr />
+    <p><a href="/myaccount/test-report/">← Back to Assessment Reports</a></p>
+  </body>
+</html>
