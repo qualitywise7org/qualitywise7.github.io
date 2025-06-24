@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment System Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .test-container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      .test-button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin: 10px;
+        font-size: 16px;
+      }
+      .test-button:hover {
+        background: #0056b3;
+      }
+      .status {
+        padding: 10px;
+        border-radius: 6px;
+        margin: 10px 0;
+      }
+      .success {
+        background: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #155724;
+      }
+      .error {
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #721c24;
+      }
+      .info {
+        background: #d1ecf1;
+        border: 1px solid #bee5eb;
+        color: #0c5460;
+      }
+      .warning {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        color: #856404;
+      }
+      pre {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 6px;
+        overflow-x: auto;
+        border: 1px solid #e9ecef;
+      }
+      .section {
+        margin: 30px 0;
+        padding: 20px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test-container">
+      <h1>🔧 Assessment System Test & Debug Tool</h1>
+      <p>Use this tool to test and debug the assessment reporting system.</p>
+
+      <div class="section">
+        <h2>🔍 System Status Check</h2>
+        <button class="test-button" onclick="checkSystemStatus()">
+          Check System Status
+        </button>
+        <div id="system-status"></div>
+      </div>
+
+      <div class="section">
+        <h2>📊 Database Collections Test</h2>
+        <button class="test-button" onclick="testCollections()">
+          Test Collections
+        </button>
+        <div id="collections-status"></div>
+      </div>
+      <div class="section">
+        <h2>🔗 Manual URL Builder</h2>
+        <p>Build a test details URL manually:</p>
+        <div style="margin: 15px 0">
+          <label
+            >Test Code:
+            <input
+              type="text"
+              id="manual-test-code"
+              placeholder="e.g., JS001"
+              style="
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-left: 10px;
+              "
+          /></label>
+        </div>
+        <div style="margin: 15px 0">
+          <label
+            >Email:
+            <input
+              type="text"
+              id="manual-email"
+              placeholder="e.g., user@example.com"
+              style="
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-left: 10px;
+              "
+          /></label>
+        </div>
+        <button class="test-button" onclick="buildManualURL()">
+          🔗 Build & Open URL
+        </button>
+        <div id="manual-url-result"></div>
+      </div>
+
+      <div class="section">
+        <h2>📝 Sample Assessment Links</h2>
+        <p>Use these links to test the assessment details page:</p>
+        <div id="sample-links">
+          <p class="info">
+            Sample links will be generated after testing collections...
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🐛 Debug Information</h2>
+        <button class="test-button" onclick="showDebugInfo()">
+          Show Debug Info
+        </button>
+        <div id="debug-info"></div>
+      </div>
+
+      <div class="section">
+        <h2>💡 Quick Actions</h2>
+        <button class="test-button" onclick="goToAssessments()">
+          Go to Assessments
+        </button>
+        <button class="test-button" onclick="goToReports()">
+          Go to Test Reports
+        </button>
+        <button class="test-button" onclick="clearStorage()">
+          Clear Local Storage
+        </button>
+      </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+        query,
+        limit,
+        doc,
+        getDoc,
+      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
+        authDomain: "jobsdoor360-39b87.firebaseapp.com",
+        databaseURL: "https://jobsdoor360-39b87-default-rtdb.firebaseio.com",
+        projectId: "jobsdoor360-39b87",
+        storageBucket: "jobsdoor360-39b87.appspot.com",
+        messagingSenderId: "326416618185",
+        appId: "1:326416618185:web:de19e90fe4f06006ef3318",
+        measurementId: "G-60RHEMJNM6",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+
+      let currentUser = null;
+
+      // Auth state listener
+      onAuthStateChanged(auth, (user) => {
+        currentUser = user;
+        updateAuthStatus();
+      });
+
+      function updateAuthStatus() {
+        const statusDiv = document.getElementById("system-status");
+        if (currentUser) {
+          statusDiv.innerHTML = `<div class="success">✅ User authenticated: ${currentUser.email}</div>`;
+        } else {
+          statusDiv.innerHTML = `<div class="warning">⚠️ User not authenticated. Please <a href="/login/">login</a> first.</div>`;
+        }
+      }
+
+      // Global functions for buttons
+      window.checkSystemStatus = function () {
+        const statusDiv = document.getElementById("system-status");
+        statusDiv.innerHTML =
+          '<div class="info">🔄 Checking system status...</div>';
+
+        let status = [];
+
+        // Check Firebase connection
+        try {
+          status.push(`✅ Firebase initialized successfully`);
+          status.push(`✅ Firestore connected`);
+          status.push(`✅ Auth initialized`);
+        } catch (error) {
+          status.push(`❌ Firebase error: ${error.message}`);
+        }
+
+        // Check user authentication
+        if (currentUser) {
+          status.push(`✅ User authenticated: ${currentUser.email}`);
+        } else {
+          status.push(`⚠️ User not authenticated`);
+        }
+
+        // Check URL
+        status.push(`📍 Current URL: ${window.location.href}`);
+
+        statusDiv.innerHTML =
+          '<div class="success">' + status.join("<br>") + "</div>";
+      };
+
+      window.testCollections = async function () {
+        const statusDiv = document.getElementById("collections-status");
+        statusDiv.innerHTML =
+          '<div class="info">🔄 Testing database collections...</div>';
+
+        const collections = ["assessment", "quiz", "test_questions", "results"];
+        let results = [];
+
+        for (const collectionName of collections) {
+          try {
+            const collectionRef = collection(db, collectionName);
+            const snapshot = await getDocs(query(collectionRef, limit(5)));
+
+            if (!snapshot.empty) {
+              results.push(
+                `✅ ${collectionName}: ${snapshot.size} documents found`
+              );
+
+              // Check first document structure
+              const firstDoc = snapshot.docs[0];
+              const data = firstDoc.data();
+
+              if (
+                collectionName === "assessment" ||
+                collectionName === "quiz"
+              ) {
+                if (data.questions) {
+                  results.push(
+                    `&nbsp;&nbsp;&nbsp;📝 Has questions: ${data.questions.length} questions`
+                  );
+                } else {
+                  results.push(`&nbsp;&nbsp;&nbsp;⚠️ No questions field found`);
+                }
+              }
+
+              if (collectionName === "results") {
+                if (data.answers) {
+                  results.push(
+                    `&nbsp;&nbsp;&nbsp;📊 Has answers: ${
+                      Object.keys(data.answers).length
+                    } answers`
+                  );
+                } else {
+                  results.push(`&nbsp;&nbsp;&nbsp;⚠️ No answers field found`);
+                }
+              }
+            } else {
+              results.push(`⚠️ ${collectionName}: No documents found`);
+            }
+          } catch (error) {
+            results.push(`❌ ${collectionName}: Error - ${error.message}`);
+          }
+        }
+
+        statusDiv.innerHTML =
+          '<div class="info">' + results.join("<br>") + "</div>";
+
+        // Generate sample links
+        generateSampleLinks();
+      };
+      async function generateSampleLinks() {
+        const linksDiv = document.getElementById("sample-links");
+        linksDiv.innerHTML =
+          '<div class="info">🔄 Generating sample links...</div>';
+
+        try {
+          // Get sample results
+          const resultsRef = collection(db, "results");
+          const resultsSnapshot = await getDocs(query(resultsRef, limit(5)));
+
+          if (!resultsSnapshot.empty) {
+            let links = ["<h4>📊 Sample Assessment Detail Links:</h4>"];
+
+            resultsSnapshot.docs.forEach((doc) => {
+              const data = doc.data();
+              const testCode = data.quizCode;
+              const email = data.email || "test@example.com";
+
+              const link = `/myaccount/test-report/test-details/?test_code=${testCode}&email=${email}`;
+              links.push(`<div style="margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 6px;">
+                            <strong>Test Code:</strong> ${testCode}<br>
+                            <strong>Email:</strong> ${email}<br>
+                            <strong>Link:</strong> <a href="${link}" target="_blank">${link}</a><br>
+                            <button onclick="window.open('${link}', '_blank')" style="background: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-top: 5px;">
+                                🔗 Open Link
+                            </button>
+                        </div>`);
+            });
+
+            linksDiv.innerHTML =
+              '<div class="success">' + links.join("") + "</div>";
+          } else {
+            linksDiv.innerHTML =
+              '<div class="warning">⚠️ No test results found to generate sample links</div>';
+          }
+
+          // Also try to get assessment links
+          try {
+            const assessmentRef = collection(db, "assessment");
+            const assessmentSnapshot = await getDocs(
+              query(assessmentRef, limit(3))
+            );
+
+            if (!assessmentSnapshot.empty) {
+              let assessmentLinks = ["<h4>📝 Available Assessments:</h4>"];
+
+              assessmentSnapshot.docs.forEach((doc) => {
+                const data = doc.data();
+                const assessmentId = doc.id;
+                const title = data.title || "Untitled Assessment";
+
+                const testLink = `/test/quiz/?quizcode=${assessmentId}`;
+                assessmentLinks.push(`<div style="margin: 10px 0; padding: 10px; background: #e8f4fd; border-radius: 6px;">
+                                <strong>Assessment:</strong> ${title}<br>
+                                <strong>ID:</strong> ${assessmentId}<br>
+                                <strong>Test Link:</strong> <a href="${testLink}" target="_blank">${testLink}</a><br>
+                                <button onclick="window.open('${testLink}', '_blank')" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-top: 5px;">
+                                    ▶️ Take Assessment
+                                </button>
+                            </div>`);
+              });
+
+              const currentContent = linksDiv.innerHTML;
+              linksDiv.innerHTML =
+                currentContent +
+                '<div class="info" style="margin-top: 20px;">' +
+                assessmentLinks.join("") +
+                "</div>";
+            }
+          } catch (error) {
+            console.log("Error fetching assessments:", error);
+          }
+        } catch (error) {
+          linksDiv.innerHTML =
+            '<div class="error">❌ Error generating links: ' +
+            error.message +
+            "</div>";
+        }
+      }
+
+      window.showDebugInfo = function () {
+        const debugDiv = document.getElementById("debug-info");
+
+        const info = {
+          "Current User": currentUser ? currentUser.email : "Not logged in",
+          "User UID": currentUser ? currentUser.uid : "N/A",
+          "Local Storage Items": Object.keys(localStorage).join(", ") || "None",
+          "User Agent": navigator.userAgent,
+          "Page URL": window.location.href,
+          Referrer: document.referrer || "Direct access",
+          "Screen Size": `${screen.width}x${screen.height}`,
+          "Viewport Size": `${window.innerWidth}x${window.innerHeight}`,
+          "Online Status": navigator.onLine ? "Online" : "Offline",
+          "Cookies Enabled": navigator.cookieEnabled ? "Yes" : "No",
+        };
+
+        let debugHtml = "<h4>🐛 Debug Information:</h4><pre>";
+        for (const [key, value] of Object.entries(info)) {
+          debugHtml += `${key}: ${value}\n`;
+        }
+        debugHtml += "</pre>";
+
+        debugDiv.innerHTML = '<div class="info">' + debugHtml + "</div>";
+      };
+
+      window.goToAssessments = function () {
+        window.open("/test/", "_blank");
+      };
+
+      window.goToReports = function () {
+        window.open("/myaccount/test-report/", "_blank");
+      };
+      window.buildManualURL = function () {
+        const testCode = document
+          .getElementById("manual-test-code")
+          .value.trim();
+        const email = document.getElementById("manual-email").value.trim();
+        const resultDiv = document.getElementById("manual-url-result");
+
+        if (!testCode) {
+          resultDiv.innerHTML =
+            '<div class="error">❌ Please enter a test code</div>';
+          return;
+        }
+
+        const baseUrl = "/myaccount/test-report/test-details/";
+        let url = `${baseUrl}?test_code=${encodeURIComponent(testCode)}`;
+
+        if (email) {
+          url += `&email=${encodeURIComponent(email)}`;
+        }
+
+        resultDiv.innerHTML = `
+                <div class="success" style="margin-top: 15px;">
+                    <h4>✅ Generated URL:</h4>
+                    <code style="background: #e9ecef; padding: 10px; border-radius: 4px; display: block; margin: 10px 0; word-break: break-all;">${url}</code>
+                    <button onclick="window.open('${url}', '_blank')" 
+                            style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin: 5px;">
+                        🚀 Open URL
+                    </button>
+                    <button onclick="navigator.clipboard.writeText('${url}').then(() => alert('URL copied to clipboard!'))" 
+                            style="background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin: 5px;">
+                        📋 Copy URL
+                    </button>
+                </div>
+            `;
+      };
+
+      window.clearStorage = function () {
+        localStorage.clear();
+        sessionStorage.clear();
+        alert("Local storage cleared! Please refresh the page.");
+      };
+
+      // Auto-run initial check
+      setTimeout(() => {
+        window.checkSystemStatus();
+      }, 1000);
+    </script>
+  </body>
+</html>

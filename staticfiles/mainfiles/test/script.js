@@ -16,7 +16,7 @@ import {
   setDoc,
   addDoc,
   updateDoc,
-  orderBy
+  orderBy,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
@@ -38,8 +38,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-
-
 let userId = null;
 let userData = {};
 
@@ -53,7 +51,10 @@ onAuthStateChanged(auth, (user) => {
 async function fetchAssessments() {
   try {
     console.log(`Fetching assessments`);
-    const assessmentsQuery = query(collection(db, "assessment"), orderBy("title", "asc"));
+    const assessmentsQuery = query(
+      collection(db, "assessment"),
+      orderBy("title", "asc")
+    );
     let querySnapshot = await getDocs(assessmentsQuery);
     console.log(`Assessments found`);
     displayCards(querySnapshot);
@@ -79,21 +80,23 @@ function displayCards(assessments) {
       </div>
     `);
   });
-  divCont.innerHTML = content.join('');
+  divCont.innerHTML = content.join("");
 
-setupSearch();
+  setupSearch();
 }
-
-
 
 function setupSearch() {
   const searchInput = document.getElementById("search-input");
-  const assessmentBoxes = Array.from(document.getElementsByClassName("assessment-box"));
+  const assessmentBoxes = Array.from(
+    document.getElementsByClassName("assessment-box")
+  );
 
   searchInput.addEventListener("input", () => {
     const searchValue = searchInput.value.toLowerCase();
-    assessmentBoxes.forEach(box => {
-      const title = box.querySelector(".assessment-title").textContent.toLowerCase();
+    assessmentBoxes.forEach((box) => {
+      const title = box
+        .querySelector(".assessment-title")
+        .textContent.toLowerCase();
       box.style.display = title.includes(searchValue) ? "flex" : "none";
     });
   });

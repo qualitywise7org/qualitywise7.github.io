@@ -1,198 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assessment Data Debugger</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .section { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
-        .debug-info { background: #f5f5f5; padding: 15px; font-family: monospace; white-space: pre-wrap; }
-        .error { color: red; }
-        .success { color: green; }
-        .warning { color: orange; }
-        button { padding: 10px 20px; margin: 5px; border: none; border-radius: 4px; cursor: pointer; }
-        .btn-primary { background: #007bff; color: white; }
-        .btn-secondary { background: #6c757d; color: white; }
-        input { padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin: 5px; }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .section {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+      .debug-info {
+        background: #f5f5f5;
+        padding: 15px;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+      .error {
+        color: red;
+      }
+      .success {
+        color: green;
+      }
+      .warning {
+        color: orange;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: #007bff;
+        color: white;
+      }
+      .btn-secondary {
+        background: #6c757d;
+        color: white;
+      }
+      input {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin: 5px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Assessment Data Debugger</h1>
-    
+
     <div class="section">
-        <h2>Test Assessment Data Structure</h2>
-        <p>Enter your test code and user email to debug the data structure:</p>
-        <input type="text" id="testCode" placeholder="Test Code (e.g., QUIZ123)" />
-        <input type="email" id="userEmail" placeholder="User Email" />
-        <button class="btn-primary" onclick="debugAssessmentData()">Debug Data</button>
-        <button class="btn-secondary" onclick="clearResults()">Clear</button>
+      <h2>Test Assessment Data Structure</h2>
+      <p>Enter your test code and user email to debug the data structure:</p>
+      <input
+        type="text"
+        id="testCode"
+        placeholder="Test Code (e.g., QUIZ123)"
+      />
+      <input type="email" id="userEmail" placeholder="User Email" />
+      <button class="btn-primary" onclick="debugAssessmentData()">
+        Debug Data
+      </button>
+      <button class="btn-secondary" onclick="clearResults()">Clear</button>
     </div>
-    
+
     <div class="section">
-        <h2>Results</h2>
-        <div id="results" class="debug-info">Click "Debug Data" to see results...</div>
+      <h2>Results</h2>
+      <div id="results" class="debug-info">
+        Click "Debug Data" to see results...
+      </div>
     </div>
-    
+
     <div class="section">
-        <h2>Common Issues & Solutions</h2>
-        <ul>
-            <li><strong>Questions not showing:</strong> Quiz data might not exist for the test code</li>
-            <li><strong>Answers not matching:</strong> Check if answer keys in user_assessment_results match question indexing</li>
-            <li><strong>Missing quiz data:</strong> Verify the test code exists in the "quiz" collection</li>
-            <li><strong>Authentication issues:</strong> Make sure user is logged in before accessing</li>
-        </ul>
+      <h2>Common Issues & Solutions</h2>
+      <ul>
+        <li>
+          <strong>Questions not showing:</strong> Quiz data might not exist for
+          the test code
+        </li>
+        <li>
+          <strong>Answers not matching:</strong> Check if answer keys in
+          user_assessment_results match question indexing
+        </li>
+        <li>
+          <strong>Missing quiz data:</strong> Verify the test code exists in the
+          "quiz" collection
+        </li>
+        <li>
+          <strong>Authentication issues:</strong> Make sure user is logged in
+          before accessing
+        </li>
+      </ul>
     </div>
 
     <script type="module">
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
-        import { getFirestore, doc, getDoc, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+        collection,
+        query,
+        where,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
-            authDomain: "jobsdoor360-39b87.firebaseapp.com",
-            databaseURL: "https://jobsdoor360-39b87-default-rtdb.firebaseio.com",
-            projectId: "jobsdoor360-39b87",
-            storageBucket: "jobsdoor360-39b87.appspot.com",
-            messagingSenderId: "326416618185",
-            appId: "1:326416618185:web:de19e90fe4f06006ef3318",
-            measurementId: "G-60RHEMJNM6",
-        };
+      const firebaseConfig = {
+        apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
+        authDomain: "jobsdoor360-39b87.firebaseapp.com",
+        databaseURL: "https://jobsdoor360-39b87-default-rtdb.firebaseio.com",
+        projectId: "jobsdoor360-39b87",
+        storageBucket: "jobsdoor360-39b87.appspot.com",
+        messagingSenderId: "326416618185",
+        appId: "1:326416618185:web:de19e90fe4f06006ef3318",
+        measurementId: "G-60RHEMJNM6",
+      };
 
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
 
-        let currentUser = null;
+      let currentUser = null;
 
-        onAuthStateChanged(auth, (user) => {
-            currentUser = user;
-            if (user) {
-                log(`✓ User authenticated: ${user.email}`, 'success');
-            } else {
-                log('✗ User not authenticated - please log in', 'error');
-            }
-        });
+      onAuthStateChanged(auth, (user) => {
+        currentUser = user;
+        if (user) {
+          log(`✓ User authenticated: ${user.email}`, "success");
+        } else {
+          log("✗ User not authenticated - please log in", "error");
+        }
+      });
 
-        function log(message, type = 'info') {
-            const results = document.getElementById('results');
-            const className = type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : '';
-            const timestamp = new Date().toLocaleTimeString();
-            results.innerHTML += `<span class="${className}">[${timestamp}] ${message}</span>\n`;
-            results.scrollTop = results.scrollHeight;
+      function log(message, type = "info") {
+        const results = document.getElementById("results");
+        const className =
+          type === "error"
+            ? "error"
+            : type === "success"
+            ? "success"
+            : type === "warning"
+            ? "warning"
+            : "";
+        const timestamp = new Date().toLocaleTimeString();
+        results.innerHTML += `<span class="${className}">[${timestamp}] ${message}</span>\n`;
+        results.scrollTop = results.scrollHeight;
+      }
+
+      window.debugAssessmentData = async function () {
+        const testCode = document.getElementById("testCode").value.trim();
+        const userEmail = document.getElementById("userEmail").value.trim();
+
+        if (!testCode) {
+          log("Please enter a test code", "error");
+          return;
         }
 
-        window.debugAssessmentData = async function() {
-            const testCode = document.getElementById('testCode').value.trim();
-            const userEmail = document.getElementById('userEmail').value.trim();
+        if (!currentUser) {
+          log("Please log in first", "error");
+          return;
+        }
 
-            if (!testCode) {
-                log('Please enter a test code', 'error');
-                return;
+        const email = userEmail || currentUser.email;
+        log(`\n=== DEBUGGING ASSESSMENT DATA ===`, "info");
+        log(`Test Code: ${testCode}`, "info");
+        log(`User Email: ${email}`, "info");
+
+        try {
+          // 1. Check user assessment results
+          log("\n1. Checking user assessment results...", "info");
+          const resultsRef = doc(db, "user_assessment_results", email);
+          const resultsDoc = await getDoc(resultsRef);
+
+          if (!resultsDoc.exists()) {
+            log("❌ No assessment results found for this user", "error");
+            return;
+          }
+
+          const resultsData = resultsDoc.data();
+          log(`✓ User assessment document found`, "success");
+          log(`Total results: ${resultsData.results?.length || 0}`, "info");
+
+          // Find the specific test result
+          const testResult = resultsData.results?.find(
+            (result) => result.quizCode === testCode
+          );
+          if (!testResult) {
+            log(`❌ No result found for test code: ${testCode}`, "error");
+            log(
+              `Available test codes: ${
+                resultsData.results?.map((r) => r.quizCode).join(", ") || "None"
+              }`,
+              "info"
+            );
+            return;
+          }
+
+          log(`✓ Test result found`, "success");
+          log(
+            `Score: ${testResult.score}, Percentage: ${testResult.percentage}%`,
+            "info"
+          );
+          log(`Answers structure:`, "info");
+          log(JSON.stringify(testResult.answers, null, 2), "info");
+
+          // 2. Check quiz questions
+          log("\n2. Checking quiz questions...", "info");
+
+          // Try by document ID first
+          const quizRef = doc(db, "quiz", testCode);
+          const quizDoc = await getDoc(quizRef);
+
+          let questionsData = null;
+
+          if (quizDoc.exists()) {
+            log(`✓ Quiz found by document ID`, "success");
+            questionsData = quizDoc.data();
+          } else {
+            log(
+              `Quiz not found by document ID, trying by code field...`,
+              "warning"
+            );
+
+            // Try query by code field
+            const quizQuery = query(
+              collection(db, "quiz"),
+              where("code", "==", testCode)
+            );
+            const querySnapshot = await getDocs(quizQuery);
+
+            if (!querySnapshot.empty) {
+              log(`✓ Quiz found by code field`, "success");
+              questionsData = querySnapshot.docs[0].data();
+            } else {
+              log(`❌ No quiz found for test code: ${testCode}`, "error");
+              return;
             }
+          }
 
-            if (!currentUser) {
-                log('Please log in first', 'error');
-                return;
-            }
+          log(`Quiz title: ${questionsData.title || "No title"}`, "info");
+          log(
+            `Questions count: ${questionsData.questions?.length || 0}`,
+            "info"
+          );
 
-            const email = userEmail || currentUser.email;
-            log(`\n=== DEBUGGING ASSESSMENT DATA ===`, 'info');
-            log(`Test Code: ${testCode}`, 'info');
-            log(`User Email: ${email}`, 'info');
+          if (
+            !questionsData.questions ||
+            questionsData.questions.length === 0
+          ) {
+            log(`❌ No questions found in quiz data`, "error");
+            return;
+          }
 
-            try {
-                // 1. Check user assessment results
-                log('\n1. Checking user assessment results...', 'info');
-                const resultsRef = doc(db, "user_assessment_results", email);
-                const resultsDoc = await getDoc(resultsRef);
+          // 3. Analyze question-answer mapping
+          log("\n3. Analyzing question-answer mapping...", "info");
+          const userAnswers = testResult.answers || {};
 
-                if (!resultsDoc.exists()) {
-                    log('❌ No assessment results found for this user', 'error');
-                    return;
-                }
+          questionsData.questions.forEach((question, index) => {
+            const questionNumber = index + 1;
+            const userAnswer1 = userAnswers[questionNumber];
+            const userAnswer2 = userAnswers[index];
+            const userAnswer3 = userAnswers[index + 1];
 
-                const resultsData = resultsDoc.data();
-                log(`✓ User assessment document found`, 'success');
-                log(`Total results: ${resultsData.results?.length || 0}`, 'info');
+            log(
+              `Q${questionNumber}: "${question.question?.substring(0, 50)}..."`,
+              "info"
+            );
+            log(`  Correct answer: ${question.correctAnswer}`, "info");
+            log(
+              `  User answers - [${questionNumber}]: ${userAnswer1}, [${index}]: ${userAnswer2}, [${
+                index + 1
+              }]: ${userAnswer3}`,
+              "info"
+            );
+            log(`  Options: ${question.options?.length || 0} options`, "info");
+          });
 
-                // Find the specific test result
-                const testResult = resultsData.results?.find(result => result.quizCode === testCode);
-                if (!testResult) {
-                    log(`❌ No result found for test code: ${testCode}`, 'error');
-                    log(`Available test codes: ${resultsData.results?.map(r => r.quizCode).join(', ') || 'None'}`, 'info');
-                    return;
-                }
+          log("\n✅ Debug complete - check the analysis above", "success");
+        } catch (error) {
+          log(`❌ Error during debugging: ${error.message}`, "error");
+          console.error(error);
+        }
+      };
 
-                log(`✓ Test result found`, 'success');
-                log(`Score: ${testResult.score}, Percentage: ${testResult.percentage}%`, 'info');
-                log(`Answers structure:`, 'info');
-                log(JSON.stringify(testResult.answers, null, 2), 'info');
-
-                // 2. Check quiz questions
-                log('\n2. Checking quiz questions...', 'info');
-                
-                // Try by document ID first
-                const quizRef = doc(db, "quiz", testCode);
-                const quizDoc = await getDoc(quizRef);
-                
-                let questionsData = null;
-                
-                if (quizDoc.exists()) {
-                    log(`✓ Quiz found by document ID`, 'success');
-                    questionsData = quizDoc.data();
-                } else {
-                    log(`Quiz not found by document ID, trying by code field...`, 'warning');
-                    
-                    // Try query by code field
-                    const quizQuery = query(collection(db, "quiz"), where("code", "==", testCode));
-                    const querySnapshot = await getDocs(quizQuery);
-                    
-                    if (!querySnapshot.empty) {
-                        log(`✓ Quiz found by code field`, 'success');
-                        questionsData = querySnapshot.docs[0].data();
-                    } else {
-                        log(`❌ No quiz found for test code: ${testCode}`, 'error');
-                        return;
-                    }
-                }
-
-                log(`Quiz title: ${questionsData.title || 'No title'}`, 'info');
-                log(`Questions count: ${questionsData.questions?.length || 0}`, 'info');
-
-                if (!questionsData.questions || questionsData.questions.length === 0) {
-                    log(`❌ No questions found in quiz data`, 'error');
-                    return;
-                }
-
-                // 3. Analyze question-answer mapping
-                log('\n3. Analyzing question-answer mapping...', 'info');
-                const userAnswers = testResult.answers || {};
-                
-                questionsData.questions.forEach((question, index) => {
-                    const questionNumber = index + 1;
-                    const userAnswer1 = userAnswers[questionNumber];
-                    const userAnswer2 = userAnswers[index];
-                    const userAnswer3 = userAnswers[index + 1];
-                    
-                    log(`Q${questionNumber}: "${question.question?.substring(0, 50)}..."`, 'info');
-                    log(`  Correct answer: ${question.correctAnswer}`, 'info');
-                    log(`  User answers - [${questionNumber}]: ${userAnswer1}, [${index}]: ${userAnswer2}, [${index + 1}]: ${userAnswer3}`, 'info');
-                    log(`  Options: ${question.options?.length || 0} options`, 'info');
-                });
-
-                log('\n✅ Debug complete - check the analysis above', 'success');
-
-            } catch (error) {
-                log(`❌ Error during debugging: ${error.message}`, 'error');
-                console.error(error);
-            }
-        };
-
-        window.clearResults = function() {
-            document.getElementById('results').innerHTML = 'Click "Debug Data" to see results...';
-        };
+      window.clearResults = function () {
+        document.getElementById("results").innerHTML =
+          'Click "Debug Data" to see results...';
+      };
     </script>
-</body>
+  </body>
 </html>

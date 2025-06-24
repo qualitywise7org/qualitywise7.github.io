@@ -225,7 +225,7 @@ function displayResults(results, userRole = "user") {
     } else {
       performanceIndicator.classList.add("needs-improvement");
       performanceIndicator.textContent = "Needs Improvement";
-    }    // Add View Details button (only if we have a valid quiz code)
+    } // Add View Details button (only if we have a valid quiz code)
     const detailsButton = document.createElement("a");
     detailsButton.classList.add("btn-details");
     detailsButton.textContent = "View Details";
@@ -235,7 +235,7 @@ function displayResults(results, userRole = "user") {
     console.log("Quiz Code:", result.quizCode);
     console.log("User Role:", userRole);
     console.log("User ID:", userId);
-    
+
     // Only create link if we have a valid quiz code
     if (
       result.quizCode &&
@@ -243,7 +243,7 @@ function displayResults(results, userRole = "user") {
       result.quizCode !== "undefined" &&
       result.quizCode !== "null"
     ) {
-      let detailsUrl = `/myaccount/test-report/test-details?test_code=${encodeURIComponent(
+      let detailsUrl = `/myaccount/test-report/test-details/?test_code=${encodeURIComponent(
         result.quizCode
       )}`;
 
