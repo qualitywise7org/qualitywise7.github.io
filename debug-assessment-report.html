@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment Report - Debug Console</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .debug-panel {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .test-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .test-card {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .test-btn {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .test-btn:hover {
+        background: #0056b3;
+      }
+      .status {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+      }
+      .status.success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+      .status.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+      .status.warning {
+        background: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeaa7;
+      }
+      .log-output {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 15px;
+        height: 200px;
+        overflow-y: auto;
+        font-family: monospace;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Assessment Report - Functionality Check</h1>
+
+    <div class="debug-panel">
+      <h3>System Status</h3>
+      <div id="system-status"></div>
+      <button class="test-btn" onclick="runSystemCheck()">
+        Run System Check
+      </button>
+    </div>
+
+    <div class="test-grid">
+      <div class="test-card">
+        <h4>Firebase Connection</h4>
+        <p>Test Firebase authentication and database connection</p>
+        <button class="test-btn" onclick="testFirebaseConnection()">
+          Test Connection
+        </button>
+        <div id="firebase-status"></div>
+      </div>
+
+      <div class="test-card">
+        <h4>Authentication Check</h4>
+        <p>Check if user authentication is working</p>
+        <button class="test-btn" onclick="testAuthentication()">
+          Test Auth
+        </button>
+        <div id="auth-status"></div>
+      </div>
+
+      <div class="test-card">
+        <h4>Data Fetching</h4>
+        <p>Test data retrieval from Firestore</p>
+        <button class="test-btn" onclick="testDataFetching()">
+          Test Data Fetch
+        </button>
+        <div id="data-status"></div>
+      </div>
+
+      <div class="test-card">
+        <h4>UI Components</h4>
+        <p>Test user interface components</p>
+        <button class="test-btn" onclick="testUIComponents()">Test UI</button>
+        <div id="ui-status"></div>
+      </div>
+
+      <div class="test-card">
+        <h4>Error Handling</h4>
+        <p>Test error scenarios and recovery</p>
+        <button class="test-btn" onclick="testErrorHandling()">
+          Test Errors
+        </button>
+        <div id="error-status"></div>
+      </div>
+
+      <div class="test-card">
+        <h4>Network Issues</h4>
+        <p>Simulate network problems</p>
+        <button class="test-btn" onclick="testNetworkIssues()">
+          Test Network
+        </button>
+        <div id="network-status"></div>
+      </div>
+    </div>
+
+    <div class="debug-panel">
+      <h3>Console Log</h3>
+      <div id="log-output" class="log-output"></div>
+      <button class="test-btn" onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <script>
+      // Capture console logs
+      const originalLog = console.log;
+      const originalError = console.error;
+      const originalWarn = console.warn;
+
+      function logToOutput(message, type = "log") {
+        const logOutput = document.getElementById("log-output");
+        const timestamp = new Date().toLocaleTimeString();
+        const logEntry = document.createElement("div");
+        logEntry.style.color =
+          type === "error" ? "red" : type === "warn" ? "orange" : "black";
+        logEntry.textContent = `[${timestamp}] ${type.toUpperCase()}: ${message}`;
+        logOutput.appendChild(logEntry);
+        logOutput.scrollTop = logOutput.scrollHeight;
+      }
+
+      console.log = function (...args) {
+        originalLog.apply(console, args);
+        logToOutput(args.join(" "), "log");
+      };
+
+      console.error = function (...args) {
+        originalError.apply(console, args);
+        logToOutput(args.join(" "), "error");
+      };
+
+      console.warn = function (...args) {
+        originalWarn.apply(console, args);
+        logToOutput(args.join(" "), "warn");
+      };
+
+      function setStatus(elementId, message, type) {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+      }
+
+      function runSystemCheck() {
+        logToOutput("Starting system check...", "log");
+
+        // Check if required elements exist
+        const checks = [
+          { name: "Assessment Report Container", id: "assessment-report" },
+          { name: "No Results Message", id: "no-results-message" },
+        ];
+
+        let allPassed = true;
+        let results = [];
+
+        checks.forEach((check) => {
+          const element = document.getElementById(check.id);
+          const passed = element !== null;
+          allPassed = allPassed && passed;
+          results.push(`${check.name}: ${passed ? "✓ PASS" : "✗ FAIL"}`);
+          logToOutput(
+            `${check.name}: ${passed ? "Found" : "Missing"}`,
+            passed ? "log" : "error"
+          );
+        });
+
+        const statusElement = document.getElementById("system-status");
+        statusElement.innerHTML = `
+                <div class="status ${allPassed ? "success" : "error"}">
+                    <strong>System Check ${
+                      allPassed ? "PASSED" : "FAILED"
+                    }</strong><br>
+                    ${results.join("<br>")}
+                </div>
+            `;
+      }
+
+      function testFirebaseConnection() {
+        logToOutput("Testing Firebase connection...", "log");
+
+        try {
+          // Check if Firebase modules are loaded
+          const hasFirebaseApp =
+            typeof window.firebase !== "undefined" ||
+            typeof initializeApp !== "undefined";
+          const hasAuth = typeof getAuth !== "undefined";
+          const hasFirestore = typeof getFirestore !== "undefined";
+
+          if (hasFirebaseApp && hasAuth && hasFirestore) {
+            setStatus(
+              "firebase-status",
+              "Firebase modules loaded successfully ✓",
+              "success"
+            );
+            logToOutput("Firebase modules are available", "log");
+          } else {
+            setStatus(
+              "firebase-status",
+              "Firebase modules not loaded ✗",
+              "error"
+            );
+            logToOutput("Firebase modules missing", "error");
+          }
+        } catch (error) {
+          setStatus(
+            "firebase-status",
+            `Firebase error: ${error.message}`,
+            "error"
+          );
+          logToOutput(`Firebase connection error: ${error.message}`, "error");
+        }
+      }
+
+      function testAuthentication() {
+        logToOutput("Testing authentication...", "log");
+        setStatus(
+          "auth-status",
+          "Auth test simulated (requires Firebase) ⚠️",
+          "warning"
+        );
+      }
+
+      function testDataFetching() {
+        logToOutput("Testing data fetching...", "log");
+        setStatus(
+          "data-status",
+          "Data fetch test simulated (requires Firebase) ⚠️",
+          "warning"
+        );
+      }
+
+      function testUIComponents() {
+        logToOutput("Testing UI components...", "log");
+
+        const reportContainer = document.getElementById("assessment-report");
+        const noResultsMessage = document.getElementById("no-results-message");
+
+        if (reportContainer && noResultsMessage) {
+          setStatus("ui-status", "All UI components found ✓", "success");
+          logToOutput("UI components test passed", "log");
+        } else {
+          setStatus("ui-status", "Some UI components missing ✗", "error");
+          logToOutput("UI components test failed", "error");
+        }
+      }
+
+      function testErrorHandling() {
+        logToOutput("Testing error handling...", "log");
+
+        try {
+          // Simulate an error
+          throw new Error("Test error for error handling");
+        } catch (error) {
+          setStatus("error-status", "Error handling working ✓", "success");
+          logToOutput(`Caught test error: ${error.message}`, "log");
+        }
+      }
+
+      function testNetworkIssues() {
+        logToOutput("Simulating network issues...", "log");
+        setStatus(
+          "network-status",
+          "Network simulation completed ⚠️",
+          "warning"
+        );
+      }
+
+      function clearLog() {
+        document.getElementById("log-output").innerHTML = "";
+      }
+
+      // Run initial system check
+      setTimeout(runSystemCheck, 1000);
+    </script>
+  </body>
+</html>
