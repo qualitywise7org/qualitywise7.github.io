@@ -617,7 +617,7 @@ async function isUser() {
         userEmailElement.textContent = userData.about.email;
       }
 
-      document.getElementById("view_cv").href = userData.about.cv || "#";
+      document.getElementById("btn-view-cv").href = userData.about.cv || "#";
 
       // Extract data from user profile
       let aboutData = userData.about || {};
@@ -856,3 +856,22 @@ async function isUser() {
   }
 }
 isUser();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const viewCV = document.getElementById("btn-view-cv");
+
+  if (viewCV) {
+    viewCV.addEventListener("click", function(event) {
+      event.stopPropagation(); // Prevent parent click handlers
+
+      const cvUrl = userData?.about?.cv;
+      if (cvUrl) {
+        window.open(cvUrl, "_blank"); // Open the PDF in a new tab
+      } else {
+        alert("No CV available to view.");
+      }
+
+      event.preventDefault(); // Prevent default link behavior (especially if href is "#")
+    });
+  }
+});

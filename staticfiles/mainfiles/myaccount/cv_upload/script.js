@@ -1,32 +1,9 @@
-import {
-  getAuth,
-  onAuthStateChanged
-} from "firebase/auth";
-
-import {
-  getFirestore,
-  doc,
-  getDoc,
-  setDoc,
-  updateDoc
-} from "firebase/firestore";
-
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL
-} from "firebase/storage";
-
-// Firebase initialization
-const auth = getAuth();
-const db = getFirestore();
-const storage = getStorage();
+// No import statements needed!
 
 let userEmail = null;
 
 // ✅ AUTH CHECK
-onAuthStateChanged(auth, (user) => {
+window.onAuthStateChanged(window.auth, (user) => {
   if (user) {
     userEmail = user.email;
   } else {
@@ -39,13 +16,14 @@ onAuthStateChanged(auth, (user) => {
 // ✅ UPLOAD CV TO STORAGE
 async function uploadCV(file) {
   const sanitizedFileName = file.name.replace(/[^a-zA-Z0-9_.-]/g, "_");
-  const storageRef = ref(storage, `user_cv/${userEmail}_${sanitizedFileName}`);
-  await uploadBytes(storageRef, file);
-  return await getDownloadURL(storageRef);
+  const storageRef = window.ref(window.storage, `user_cv/${userEmail}_${sanitizedFileName}`);
+  await window.uploadBytes(storageRef, file);
+  return await window.getDownloadURL(storageRef);
 }
 
 // ✅ SAVE CV URL TO FIRESTORE
 async function saveCVToDatabase() {
+  // ...rest of your code, but use window.doc, window.getDoc, etc...
   const uploadButton = document.getElementById("btn");
   const fileInput = document.getElementById("cv");
   const file = fileInput.files[0];
@@ -64,20 +42,20 @@ async function saveCVToDatabase() {
 
   try {
     const cvUrl = await uploadCV(file);
-    const userRef = doc(db, "user_profile", userEmail);
-    const userSnap = await getDoc(userRef);
+    const userRef = window.doc(window.db, "user_profile", userEmail);
+    const userSnap = await window.getDoc(userRef);
 
     if (!userSnap.exists()) {
-      await setDoc(userRef, { about: {} });
+      await window.setDoc(userRef, { about: {} });
     }
 
-    await updateDoc(userRef, {
+    await window.updateDoc(userRef, {
       "about.cv": cvUrl
     });
 
     Toastify({
       text: "CV Successfully Submitted",
-      duration: 3000,
+      duration: 2000,
       close: true,
       gravity: "top",
       position: "right",
@@ -89,7 +67,7 @@ async function saveCVToDatabase() {
 
     setTimeout(() => {
       window.location.href = "/myaccount/";
-    }, 3000);
+    }, 2000);
 
   } catch (err) {
     console.error("Upload failed:", err);
@@ -105,4 +83,9 @@ async function saveCVToDatabase() {
 }
 
 // ✅ HANDLE BUTTON CLICK
-document.getElementById("btn").addEventListener("click", saveCVToDatabase);
+document.addEventListener("DOMContentLoaded", () => {
+  const uploadBtn = document.getElementById("btn");
+  if (uploadBtn) {
+    uploadBtn.addEventListener("click", saveCVToDatabase);
+  }
+});
