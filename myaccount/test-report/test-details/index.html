@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  <title>Assessment Details - JobsDoor360</title>
-  <link rel="stylesheet" href="../../../../staticfiles/mainfiles/myaccount/test-report/test-details/style.css?v=2">
-  <link rel="stylesheet" href="style.css">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
-  <link rel="icon" href="/fevicon.ico" type="profile" />
-  <link rel="stylesheet" href="/staticfiles/style.css" />
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-    crossorigin="anonymous"
-  />
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <head>
+    <title>Test Details</title>
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/myaccount/test-report/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/myaccount/test-report/test-details.css"
+    />
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-adsense-account" content="ca-pub-2075086355753452" />
+<link rel="icon" href="/fevicon.ico" type="profile" />
+<link rel="stylesheet" href="/staticfiles/style.css" />
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+  crossorigin="anonymous"
+/>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="brand" href="/">
       <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
@@ -179,98 +187,67 @@
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- Main Content -->
-<div class="container">
-  <!-- Back button -->
-  <div class="back-button-container">
-    <a href="/myaccount/test-report/" class="back-button">
-      <i class="fas fa-arrow-left"></i> Back to Reports
-    </a>
-  </div>
 
-  <!-- Loading State -->
-  <div id="loading-state" class="loading-container">
-    <div class="loading-spinner"></div>
-    <p>Loading assessment details...</p>
-  </div>
 
-  <!-- Error State -->
-  <div id="error-state" class="error-container" style="display: none;">
-    <div class="error-icon">⚠️</div>
-    <h2>Access Denied</h2>
-    <p id="error-message">You don't have permission to view this assessment.</p>
-    <a href="/myaccount/test-report/" class="btn-back">Back to Reports</a>
-  </div>
-  <!-- Assessment Details -->
-  <div id="assessment-details" class="assessment-details-container" style="display: none;">
-    <!-- Assessment Header -->
-    <div class="assessment-header">
-      <div class="header-top">
-        <a href="/myaccount/test-report/" class="btn-back">← Back to Reports</a>
-        <h1 id="assessment-title">Assessment Details</h1>
+    <div class="container">
+      <a href="/myaccount/test-report/" class="back-btn"> ← Back to Reports </a>
+
+      <!-- Loading State -->
+      <div id="loading" class="loading">
+        <div class="loading-spinner"></div>
+        <h3>Loading Your Test Details</h3>
+        <p>Please wait while we fetch your assessment results...</p>
       </div>
-      <div class="assessment-meta">
-        <div class="meta-item">
-          <span class="meta-label">Test Code:</span>
-          <span id="test-code" class="meta-value">-</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Candidate:</span>
-          <span id="candidate-email" class="meta-value">-</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Date:</span>
-          <span id="test-date" class="meta-value">-</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Duration:</span>
-          <span id="test-duration" class="meta-value">-</span>
+
+      <!-- Error State -->
+      <div id="error" class="error" style="display: none">
+        <h3>Something went wrong</h3>
+        <p id="error-message"></p>
+      </div>
+
+      <!-- Test Summary Section -->
+      <div id="test-info" class="info-card fade-in" style="display: none">
+        <h2>Test Summary</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">Test Name</div>
+            <div class="info-value" id="test-name">-</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Date Taken</div>
+            <div class="info-value" id="test-date">-</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Total Questions</div>
+            <div class="info-value" id="total-questions">-</div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-label">Time Spent</div>
+            <div class="info-value" id="time-spent">-</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Correct Answers</div>
+            <div class="info-value" id="correct-answers">-</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Your Score</div>
+            <div id="score-container">
+              <span id="score-badge" class="score-badge">-</span>
+            </div>
+            myaccount/test-report/test-details/
+          </div>
         </div>
       </div>
+
+      <!-- Question Breakdown Section -->
+      <h3 class="section-title" id="questions-title" style="display: none">
+        Question Breakdown
+      </h3>
+      <div id="questions-container"></div>
     </div>
 
-    <!-- Summary Card -->
-    <div class="summary-card">
-      <h2>Test Summary</h2>
-      <div class="summary-stats">
-        <div class="stat-item">
-          <div class="stat-value" id="total-score">-</div>
-          <div class="stat-label">Score</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="total-percentage">-</div>
-          <div class="stat-label">Percentage</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="total-questions">-</div>
-          <div class="stat-label">Total Questions</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="correct-answers">-</div>
-          <div class="stat-label">Correct</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="incorrect-answers">-</div>
-          <div class="stat-label">Incorrect</div>
-        </div>
-      </div>
-      <div class="performance-badge" id="performance-badge">
-        <!-- Performance indicator will be inserted here -->
-      </div>
-    </div>
-
-    <!-- Questions and Answers -->
-    <div class="questions-section">
-      <h2>Questions and Answers</h2>
-      <div id="questions-container">
-        <!-- Questions will be loaded here -->
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
+    <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
   <div class="container">
     <div class="row" >
       <!-- Quick Links Section -->
@@ -415,30 +392,80 @@
     color: #fff !important;
   }
 </style>
-
 <!-- WhatsApp Chat Button -->
 <div class="chat-back-to-top">
-  <a href= "https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-   target="_blank"   style="font-size: 14px; font-weight: 500; color: black"
-      >Any question or complaint</a
-    > 
-    <div class="whatsapp-chat">
-      <a
-        href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-        target="_blank"
-      >
-        <i
-          class="fab fa-whatsapp"
-          style="font-size: 27px; margin-bottom: 13px"
-        ></i>
-         
-    </div>
-    <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
-      <i class="fa-solid fa-chevron-up"></i>
-    </button>
+  <!-- <button id="like-button">
+    <i class="fa-solid fa-thumbs-up"></i>
+  </button>
+  <button id="dislike-button">
+    <i class="fa-solid fa-thumbs-down"></i>
+  </button> -->
+  <!-- <span style="font-size: 15px">Any question or complaint</span> -->
+ <a href= "https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+ target="_blank"   style="font-size: 14px; font-weight: 500; color: black"
+    >Any question or complaint</a
+  > 
+  <div class="whatsapp-chat">
+    <a
+      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+      target="_blank"
+    >
+      <i
+        class="fab fa-whatsapp"
+        style="font-size: 27px; margin-bottom: 13px"
+      ></i>
+       
   </div>
+  <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</div>
 
-<!-- Scripts -->
+<!-- The Bootstrap Modal -->
+<div
+  class="modal fade"
+  id="myModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          What Can We Improve on Our Website?
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <textarea
+          id="feedback"
+          class="form-control"
+          placeholder="Your feedback..."
+        ></textarea>
+        <input
+          type="text"
+          id="phoneNumber"
+          class="form-control"
+          placeholder="Your phone number..."
+        />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button id="submitFeedback" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script type="module" src="/staticfiles/db/dbconfig.js"></script>
 <script type="module" src="/staticfiles/script.js"></script>
 <script type="module">
@@ -447,6 +474,8 @@
         const signupButton = document.getElementById('signup-button');
         const welcomeText = document.getElementById("welcome-text");
         const userMail = document.getElementById("user-mail");
+
+        
 
         if (user) {
             // Save email to localStorage
@@ -464,6 +493,7 @@
 
             // Retrieve the display name (username)
             let username = user.displayName;
+            // console.log(username) // For Google Sign-In or if saved during registration
 
             // If username is not available in displayName, fetch it from Firestore
             if (!username) {
@@ -481,6 +511,7 @@
 
             // Save username to localStorage for later use
             localStorage.setItem("username", username);
+            // console.log(username);
             // Update welcome text with the username
             if(name){
               welcomeText.innerHTML = `Hii, ${name}`;
@@ -492,6 +523,7 @@
             else{
               userMail.innerHTML = username; // Optionally update email 
             }
+              // display to username
         } else {
             const loginButton = document.getElementById("login-button");
             loginButton.addEventListener("click", () => {
@@ -499,9 +531,9 @@
                 if (email) {
                     localStorage.clear();
                 }
-                location.href = "/login";
+                location.href = "/login"; // Corrected 'location.location.href' to 'location.href'
             });
-            signupButton.style.display = "block";
+            signupButton.style.display = "block"; // Show the signup button when user is not signed in
         }
     });
 
@@ -544,7 +576,10 @@
     .addEventListener("click", scrollToTop);
 </script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
 <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
 <script>
@@ -556,8 +591,25 @@
 
   gtag("config", "G-1JQVXS3B5L");
 </script>
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-MFBK5637");
+</script>
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452" crossorigin="anonymous"></script>-->
 
-<!-- Test Details Script -->
-<script type="module" src="../../../../staticfiles/mainfiles/myaccount/test-report/test-details/script.js"></script>
-</body>
+
+
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/test-report/test-details.js"
+    ></script>
+  </body>
 </html>
