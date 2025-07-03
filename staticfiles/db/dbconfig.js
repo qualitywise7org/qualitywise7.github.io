@@ -124,4 +124,5 @@ Object.assign(window,obj);
 // Function to fetch user profile from Firebase
 
 
+export { db };
 export default obj;
