@@ -83,9 +83,41 @@ async function saveCVToDatabase() {
 }
 
 // ✅ HANDLE BUTTON CLICK
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async function () {
   const uploadBtn = document.getElementById("btn");
   if (uploadBtn) {
     uploadBtn.addEventListener("click", saveCVToDatabase);
   }
+
+  // Parse all query params and auto-fill matching input fields by name or id
+  const urlParams = new URLSearchParams(window.location.search);
+  let hasRelevantParam = false;
+
+  urlParams.forEach((value, key) => {
+    if (key === "email") {
+      const si = document.getElementById("searchInput");
+      if (si) {
+        si.value = value;
+        hasRelevantParam = true;
+      }
+      return;
+    }
+    // Try to find input by id or name
+    let input = document.getElementById(key) || document.querySelector(`[name='${key}']`);
+    if (input) {
+      input.value = value;
+      hasRelevantParam = true;
+    }
+  });
+
+  // If any relevant param is present, trigger search
+  if (hasRelevantParam) {
+    await updateTable();
+  }
+
+  await isUser();
+
+  document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+  });
 });

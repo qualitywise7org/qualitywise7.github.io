@@ -1,11 +1,9 @@
-const email = localStorage.getItem("email");
-// console.log(email);
-var userRole;
-if (!email) {
+const loginEmail = localStorage.getItem("email");
+if (!loginEmail) {
   window.location.href = "/login/";
 }
 
-async function mainData(){
+async function mainData() {
   setDefaultDateFilters()
   document.getElementById("searchButton").addEventListener("click", filterByNameEmail);
   document.getElementById("genderDropdown").addEventListener("change", filterByNameEmail);
@@ -47,41 +45,112 @@ async function mainData(){
 
 async function isUser() {
   try {
-    const docRef = doc(db, "login_roles", email);
+    const docRef = doc(db, "login_roles", loginEmail);
     const docSnap = await getDoc(docRef);
-
     if (docSnap.exists()) {
       const userData = docSnap.data();
       const userRole = userData.role;
-
-      console.log("User Role from Firestore:", userRole);
-
       if (userRole === "master_admin" || userRole === "recruiter") {
         await mainData();
-        console.log("Admin access granted.");
       } else {
-        console.log("Access denied. Redirecting...");
         window.location.href = "/";
       }
     } else {
-      console.error("No user role found for email:", email);
-      window.location.href = "/login/"; // Redirect if no user data is found
+      window.location.href = "/login/";
     }
   } catch (error) {
-    console.error("Error getting user data from Firestore:", error);
-    window.location.href = "/"; // Redirect in case of error
+    window.location.href = "/";
   }
 }
 
+document.addEventListener("DOMContentLoaded", async function() {
+  const params = new URLSearchParams(window.location.search);
+  const searchInput = document.getElementById("searchInput");
+  const genderDropdown = document.getElementById("genderDropdown");
+  const startDateInput = document.getElementById("startDate");
+  const endDateInput = document.getElementById("endDate");
+  const ratingDropdown = document.getElementById("ratingDropdown");
+  const searchButton = document.getElementById("searchButton");
 
-// console.log(userRole);
-document.addEventListener("DOMContentLoaded", async function () {
+  if (params.has("email") && searchInput) searchInput.value = params.get("email");
+  if (params.has("gender") && genderDropdown) genderDropdown.value = params.get("gender");
+  if (params.has("startDate") && startDateInput) startDateInput.value = params.get("startDate");
+  if (params.has("endDate") && endDateInput) endDateInput.value = params.get("endDate");
+  if (params.has("rating") && ratingDropdown) ratingDropdown.value = params.get("rating");
+
+  function updateURLWithFilters() {
+    const newParams = new URLSearchParams();
+    if (searchInput && searchInput.value.trim()) newParams.set("email", searchInput.value.trim());
+    if (genderDropdown && genderDropdown.value && genderDropdown.value !== "all") newParams.set("gender", genderDropdown.value);
+    if (startDateInput && startDateInput.value) newParams.set("startDate", startDateInput.value);
+    if (endDateInput && endDateInput.value) newParams.set("endDate", endDateInput.value);
+    if (ratingDropdown && ratingDropdown.value && ratingDropdown.value !== "all") newParams.set("rating", ratingDropdown.value);
+    history.replaceState(null, "", "?" + newParams.toString());
+  }
+
+  if (searchButton) {
+    searchButton.addEventListener("click", function() {
+      updateURLWithFilters();
+      updateTable();
+    });
+  }
+  if (searchInput) {
+    searchInput.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (searchButton) searchButton.click();
+      }
+    });
+  }
+  if (genderDropdown) {
+    genderDropdown.addEventListener("change", function() {
+      updateURLWithFilters();
+      updateTable();
+    });
+  }
+  if (startDateInput) {
+    startDateInput.addEventListener("change", function() {
+      updateURLWithFilters();
+      updateTable();
+      updateDateDisplay("startDate", "startDateDisplay");
+    });
+  }
+  if (endDateInput) {
+    endDateInput.addEventListener("change", function() {
+      updateURLWithFilters();
+      updateTable();
+      updateDateDisplay("endDate", "endDateDisplay");
+    });
+  }
+  if (ratingDropdown) {
+    ratingDropdown.addEventListener("change", function() {
+      updateURLWithFilters();
+      updateTable();
+    });
+  }
+  function updateDateDisplay(inputId, displayId) {
+    const input = document.getElementById(inputId);
+    const display = document.getElementById(displayId);
+    if (input && display) {
+      display.textContent = input.value ? formatDisplayDate(input.value) : '';
+    }
+  }
+  updateDateDisplay("startDate", "startDateDisplay");
+  updateDateDisplay("endDate", "endDateDisplay");
+
+  let hasRelevantParam = false;
+  if ((params.has("email") && searchInput && searchInput.value) ||
+      (params.has("gender") && genderDropdown && genderDropdown.value !== "all") ||
+      (params.has("startDate") && startDateInput && startDateInput.value) ||
+      (params.has("endDate") && endDateInput && endDateInput.value) ||
+      (params.has("rating") && ratingDropdown && ratingDropdown.value !== "all")) {
+    hasRelevantParam = true;
+  }
+  if (hasRelevantParam) {
+    updateTable();
+  }
   await isUser();
-  // console.log(userRole);
-  // populateUserProfilesTable();
 });
-
-
 
 //Function to add consultancy feedback (stored as an array)
 
@@ -180,23 +249,13 @@ function setDefaultDateFilters() {
 
   if (!startDateInput || !endDateInput) return;
 
-  const today = new Date();
-  const fiveDaysAgo = new Date();
-  fiveDaysAgo.setDate(today.getDate() - 5);
+  // Clear date filters by default
+  startDateInput.value = "";
+  endDateInput.value = "";
 
-  // Format date as YYYY-MM-DD for <input type="date">
-  const formatForInput = (date) => date.toISOString().split("T")[0];
+  console.log("Default Dates Cleared: showing all data");
 
-  // Set default values in the date inputs
-  startDateInput.value = formatForInput(fiveDaysAgo);
-  endDateInput.value = formatForInput(today);
-
-  console.log("Default Dates Set: ", {
-    from: startDateInput.value,
-    to: endDateInput.value,
-  });
-
-  // Call the filtering function after setting the dates
+  // Call the filtering function after clearing the dates
   filterByNameEmail();
 }
 
@@ -208,32 +267,30 @@ window.filterByNameEmail = async function filterByNameEmail() {
   const searchInput = document.getElementById("searchInput").value.trim();
   let { selectedGender, startDate, endDate } = getCommonFilter();
 
-
   try {
     const usersRef = collection(db, "user_profile");
     let filters = [];
 
-    // If no dates are selected, apply the default (last 5 days)
-    if (!startDate || !endDate) {
-      const today = new Date();
-      const fiveDaysAgo = new Date();
-      fiveDaysAgo.setDate(today.getDate() - 5);
-
-      startDate = Timestamp.fromDate(fiveDaysAgo);
-      endDate = Timestamp.fromDate(today);
-    }
-
-    //gender filter (if selected)
-    if (selectedGender && selectedGender !== "all") {
-      filters.push(where("about.gender", "==", selectedGender));
-    }
-    // date filter if both start and end dates are selected
+    // Only add date filters if both are selected
     if (startDate && endDate) {
       filters.push(where("audit_fields.updatedAt", ">=", startDate));
       filters.push(where("audit_fields.updatedAt", "<=", endDate));
     }
+    // gender filter (if selected)
+    if (selectedGender && selectedGender !== "all") {
+      filters.push(where("about.gender", "==", selectedGender));
+    }
 
     let q;
+
+    // If no filters at all, show all users
+    if (!searchInput && (!startDate || !endDate) && (!selectedGender || selectedGender === "all")) {
+      q = query(usersRef);
+      const querySnapshot = await getDocs(q);
+      let users = querySnapshot.docs.map(doc => doc.data());
+      console.log("All Users:", users);
+      return users;
+    }
 
     //Case 1: Filter by Date, Gender, and Name/Email
     if (startDate && endDate && selectedGender !== "all" && searchInput) {
@@ -251,17 +308,14 @@ window.filterByNameEmail = async function filterByNameEmail() {
 
         return userGender === selectedGenderValue;
       });
-      // // Apply Name/Email Filtering in JavaScript
       users = users.filter(user => {
         const email = user?.about?.email || "";
         const firstName = user?.about?.firstName || "";
         const lowerSearch = searchInput.toLowerCase();
-      
         return searchInput.includes("@")
           ? email.toLowerCase().startsWith(lowerSearch)
           : firstName.toLowerCase().startsWith(lowerSearch);
       });
-
       console.log("Filtered Users (Date, Gender & Name/Email):", users);
       return users;
     }
@@ -287,18 +341,14 @@ window.filterByNameEmail = async function filterByNameEmail() {
       const dateQuery = query(usersRef, ...filters);
       const dateSnapshot = await getDocs(dateQuery);
       let users = dateSnapshot.docs.map(doc => doc.data());
-
-      // Apply search filtering in JavaScript
       users = users.filter(user => {
         const email = user?.about?.email || "";
         const firstName = user?.about?.firstName || "";
         const lowerSearch = searchInput.toLowerCase();
-      
         return searchInput.includes("@")
           ? email.toLowerCase().startsWith(lowerSearch)
           : firstName.toLowerCase().startsWith(lowerSearch);
       });
-
       console.log("Filtered Users (Date & Name/Email):", users);
       return users;
     }
@@ -306,10 +356,7 @@ window.filterByNameEmail = async function filterByNameEmail() {
     if (searchInput && selectedGender !== "all") {
       const genderQuery = query(usersRef, ...filters);
       const genderSnapshot = await getDocs(genderQuery);
-
       let users = genderSnapshot.docs.map(doc => doc.data());
-
-      // Apply search filtering in JavaScript
       users = users.filter(user => {
         const email = (user?.about?.email || "");
         const firstName = (user?.about?.firstName || "");
@@ -317,7 +364,6 @@ window.filterByNameEmail = async function filterByNameEmail() {
           ? email.startsWith(searchInput)
           : firstName.startsWith(searchInput);
       });
-
       console.log("Filtered Users (gender / name):", users);
       return users;
     }
@@ -336,24 +382,19 @@ window.filterByNameEmail = async function filterByNameEmail() {
           where("about.firstName", "<=", searchInput + "\uf8ff")
         );
       }
-      // Fetch users from Firebase
       const querySnapshot = await getDocs(q);
       let users = querySnapshot.docs.map(doc => doc.data());
-    
-      // Perform case-insensitive filtering in JavaScript
       const lowerSearch = searchInput.toLowerCase();
       users = users.filter(user => {
         const email = user?.about?.email?.toLowerCase() || "";
         const firstName = user?.about?.firstName?.toLowerCase() || "";
-    
         return searchInput.includes("@")
           ? email.startsWith(lowerSearch)
           : firstName.startsWith(lowerSearch);
-    });
+      });
       console.log("Filtered Users (name):", users);
       return users;
-  }
-
+    }
     //  Case 6: Only Gender is selected 
     else if (selectedGender && selectedGender !== "all") {
       q = query(usersRef, ...filters);
@@ -362,12 +403,9 @@ window.filterByNameEmail = async function filterByNameEmail() {
     else if (startDate && endDate) {
       q = query(usersRef, ...filters);
     }
-
     if (!q) return [];
-
     const querySnapshot = await getDocs(q);
     let users = querySnapshot.docs.map(doc => doc.data());
-
     console.log("Filtered Users (Name / email):", users);
     return users;
   } catch (error) {
@@ -524,7 +562,7 @@ async function populateUserProfilesTable(data) {
 
   try {
     let selectedRating = document.getElementById("ratingDropdown").value; // Get selected rating
-     const globalSearchValue = document.getElementById("globalSearch").value.toLowerCase().trim();
+    const globalSearchValue = document.getElementById("globalSearch").value.toLowerCase().trim();
     let filteredUsers = [];
 
     if (selectedRating && selectedRating !== "all") {
@@ -532,12 +570,9 @@ async function populateUserProfilesTable(data) {
     } else {
       filteredUsers = data ? data : await filterByNameEmail(); // Default: fetch by name/email
     }
-    
-    console.log("Selected Rating:", selectedRating);
-console.log("Filtered Users:", filteredUsers);
 
-     //  calculating experience
-        function calculateExperience(start, end) {
+    //  calculating experience
+    function calculateExperience(start, end) {
       const startDate = new Date(start);
       const endDate = new Date(end);
       if (isNaN(startDate) || isNaN(endDate)) return "Invalid dates";
@@ -551,7 +586,7 @@ console.log("Filtered Users:", filteredUsers);
       const remMonths = months % 12;
       return `${years} year${years > 1 ? "s" : ""}${remMonths ? ` ${remMonths} months` : ""}`;
     }
-     //  Apply Global Search Filtering (after all other filters)
+    //  Apply Global Search Filtering (after all other filters)
     if (globalSearchValue) {
       filteredUsers = filteredUsers.filter(user => {
         const values = [
@@ -568,7 +603,7 @@ console.log("Filtered Users:", filteredUsers);
           user.social?.instagram,
           user.social?.linkedin,
           user.social?.leetcode,
-           ...(user.experience || []).map(exp => {
+          ...(user.experience || []).map(exp => {
             const duration = calculateExperience(exp.startDate, exp.endDate);
             return `${exp.companyName} ${duration}`;
           }),
@@ -582,10 +617,10 @@ console.log("Filtered Users:", filteredUsers);
           user.address?.permanent?.zip,
           user.rating?.toString(),
           user.interview?.feedback || ""
-      ]; 
-      return values.filter(Boolean).some(field =>
-  typeof field === "string" && field.toLowerCase().includes(globalSearchValue)
-);
+        ];
+        return values.filter(Boolean).some(field =>
+          typeof field === "string" && field.toLowerCase().includes(globalSearchValue)
+        );
 
 
         // Check if any field includes the search term
@@ -595,7 +630,7 @@ console.log("Filtered Users:", filteredUsers);
       });
     }
 
-    if (!Array.isArray(filteredUsers)||filteredUsers.length === 0) {
+    if (!Array.isArray(filteredUsers) || filteredUsers.length === 0) {
       tableBody.innerHTML = "<tr><td colspan='14'>No users found</td></tr>";
       updatePaginationControls(0);
       return;
@@ -606,7 +641,6 @@ console.log("Filtered Users:", filteredUsers);
 
     paginatedUsers.forEach((user, index) => {
       const row = document.createElement("tr");
-
       // Serial Number
       row.innerHTML = `
         <td>${index + 1}</td>
@@ -623,13 +657,12 @@ console.log("Filtered Users:", filteredUsers);
         <td>${user.education?.[0]?.school || "N/A"}</td>
         <td>${user.education?.[0]?.degree || "N/A"}</td>
         <td>
-          ${
-            user.about?.cv
-              ? `<a href="${user.about.cv}" target="_blank" rel="noopener noreferrer">View CV</a>`
-              : "N/A"
-          }
+          ${user.about?.cv
+          ? `<a href="${user.about.cv}" target="_blank" rel="noopener noreferrer">View CV</a>`
+          : "N/A"
+        }
         </td>
-        <td>${user.education?.[0]?.graduation_date || "N/A"}</td>
+        <td>${formatDisplayDate(user.education?.[0]?.graduation_date) || "N/A"}</td>
         <td>${user.about?.dob ? calculateAge(user.about.dob) + " years" : "N/A"}</td>
         <td>${user.skills?.join(", ") || "N/A"}</td>
       <td>
@@ -640,9 +673,9 @@ console.log("Filtered Users:", filteredUsers);
     </td>
     <td>
       ${user.experience?.map(exp => {
-        const duration = calculateExperience(exp.startDate, exp.endDate);
-        return `<div><strong>${exp.companyName}</strong>: ${duration}</div>`;
-      }).join("") || "N/A"}
+          const duration = calculateExperience(exp.startDate, exp.endDate);
+          return `<div><strong>${exp.companyName}</strong>: ${formatDisplayDate(exp.startDate)} - ${formatDisplayDate(exp.endDate)} (${duration})</div>`;
+        }).join("") || "N/A"}
     </td>
     <td>
       <strong>Present:</strong><br>
@@ -653,7 +686,7 @@ console.log("Filtered Users:", filteredUsers);
 
      `;
 
-   
+
 
       // Rating Dropdown
       // const ratingCell = document.createElement("td");
@@ -677,8 +710,8 @@ console.log("Filtered Users:", filteredUsers);
 
 
       const ratingCell = document.createElement("td");
-ratingCell.textContent = user.rating != null ? user.rating : "N/A";
-row.appendChild(ratingCell);
+      ratingCell.textContent = user.rating != null ? user.rating : "N/A";
+      row.appendChild(ratingCell);
 
       // Action Buttons (Edit, Show Remarks, Submit)
       const actionCell = document.createElement("td");
@@ -689,7 +722,7 @@ row.appendChild(ratingCell);
         window.open("remarks/?user=" + encodeURIComponent(user.about.email), "_blank");
       });
 
-     
+
       actionCell.appendChild(reviewButton);
       row.appendChild(actionCell);
 
@@ -743,6 +776,17 @@ function calculateAge(dob) {
     age--;
   }
   return age;
+}
+
+// Helper to format date as 'D Month YYYY'
+function formatDisplayDate(dateStr) {
+  if (!dateStr) return "N/A";
+  const date = new Date(dateStr);
+  if (isNaN(date)) return dateStr;
+  const day = date.getDate();
+  const month = date.toLocaleString('default', { month: 'long' });
+  const year = date.getFullYear();
+  return `${day} ${month} ${year}`;
 }
 
 // Function to update user rating in Firestore
@@ -799,7 +843,9 @@ function updatePaginationControls(totalRows) {
 // Ensure table updates when filters change
 async function updateTable() {
   let selectedRating = document.getElementById("ratingDropdown").value;
-  let filteredData = selectedRating && selectedRating !== "all" ? await filterByRating() : await filterByNameEmail();
+  let filteredData = selectedRating && selectedRating !== "all" 
+    ? await filterByRating() 
+    : await filterByNameEmail();
   populateUserProfilesTable(filteredData);
 }
 
