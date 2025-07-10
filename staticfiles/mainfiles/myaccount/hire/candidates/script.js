@@ -50,6 +50,7 @@ async function isUser() {
     if (docSnap.exists()) {
       const userData = docSnap.data();
       const userRole = userData.role;
+      localStorage.setItem("userRole", userRole);
       if (userRole === "master_admin" || userRole === "recruiter") {
         await mainData();
       } else {
@@ -713,17 +714,47 @@ async function populateUserProfilesTable(data) {
       ratingCell.textContent = user.rating != null ? user.rating : "N/A";
       row.appendChild(ratingCell);
 
+      
+      const buttonStyle = `
+        // padding: 0.5px;
+        font-size: 12px;
+        background-color: #007BFF; 
+        color: white;
+        border: none;
+        border-radius: 4px;
+        min-width: 120px;
+        cursor: pointer;
+        
+      `;
+
       // Action Buttons (Edit, Show Remarks, Submit)
       const actionCell = document.createElement("td");
 
       const reviewButton = document.createElement("button");
       reviewButton.textContent = "Show Remarks";
+      reviewButton.style.cssText = buttonStyle;
       reviewButton.addEventListener("click", () => {
         window.open("remarks/?user=" + encodeURIComponent(user.about.email), "_blank");
       });
-
-
       actionCell.appendChild(reviewButton);
+
+
+      // Show Assessments Button
+      const showAssessmentsButton = document.createElement("button");
+      showAssessmentsButton.textContent = "Show Assessments";
+      showAssessmentsButton.style.cssText = buttonStyle;
+      showAssessmentsButton.style.marginTop = "8px";
+      showAssessmentsButton.addEventListener("click", () => {
+        // Get userRole from localStorage (set in isUser)
+        const userRole = localStorage.getItem("userRole");
+        if (userRole === "recruiter" || userRole === "master_admin") {
+          window.open(`/myaccount/test-report/?email=${encodeURIComponent(user.about.email)}`, "_blank");
+        } else {
+          window.open("/myaccount/test-report/", "_blank");
+        }
+      });
+      actionCell.appendChild(showAssessmentsButton);
+
       row.appendChild(actionCell);
 
 
@@ -739,6 +770,7 @@ async function populateUserProfilesTable(data) {
 
       const interviewButton = document.createElement("button");
       interviewButton.textContent = "Add Interview Details";
+      interviewButton.style.cssText = buttonStyle;
       interviewButton.addEventListener("click", async () => {
         await addInterviewDetails(user.about.email, interviewTextarea.value.trim(), interviewDateInput.value);
         interviewTextarea.value = "";
