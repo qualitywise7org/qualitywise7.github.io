@@ -7,6 +7,36 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+function startWebcam() {
+  const video = document.getElementById("webcam");
+  if (!video) return;
+  video.style.display = "block";
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        video.srcObject = stream;
+        video.play();
+      })
+      .catch(function(err) {
+        alert("Could not access webcam: " + err.message);
+        video.style.display = "none";
+      });
+  } else {
+    alert("Webcam not supported in this browser.");
+  }
+}
+
+function stopWebcam() {
+  const video = document.getElementById("webcam");
+  if (video && video.srcObject) {
+    let tracks = video.srcObject.getTracks();
+    tracks.forEach(track => track.stop());
+    video.srcObject = null;
+    video.style.display = "none";
+  }
+}
+
+
 function showGuidelinePopup() {
   const guidelinePopup = document.getElementById("guidelinePopup");
   const overlay = document.getElementById("overlay");
@@ -14,7 +44,8 @@ function showGuidelinePopup() {
   overlay.classList.add("open-overlay");
   guidelinePopup.classList.add("open-popup");
   document.body.classList.add("blur"); // Add blur to the background
-
+ 
+  startWebcam();
   const startButton = document.getElementById("start-btn");
   startButton.addEventListener("click", () => {
     const agreeCheckbox = document.getElementById("agree-checkbox");
@@ -22,6 +53,7 @@ function showGuidelinePopup() {
       guidelinePopup.classList.remove("open-popup");
       overlay.classList.remove("open-overlay");
       document.body.classList.remove("blur"); // Remove blur
+       // <-- Start the webcam here!
       startQuizAfterPopup();
     } else {
       alert("Please agree to the guidelines before starting the quiz.");
@@ -208,6 +240,7 @@ async function startQuiz() {
     if (homeButton) homeButton.style.display = "block";
 
     stopTimer();
+    stopWebcam();
 
     const totalQuestions = currentSubject.questions.length;
     const percentage = Math.round((score / totalQuestions) * 100);

@@ -68,6 +68,19 @@ function displayCards(assessments) {
   const divCont = document.getElementById("assessment");
 
   let content = [];
+  
+  // Add Psychometric Test Card
+  content.push(`
+    <div class="assessment-box psychometric-box">
+      <h2 class="assessment-title">🧠 Psychometric Assessments</h2>
+      <p class="assessment-description">Personality, Cognitive, and Behavioral Tests</p>
+      <form action="/test/quiz/" method="get">
+        <input type="hidden" name="quizcode" value="psychometric">
+        <button type="submit" class="btn-start">Start Psychometric Test</button>
+      </form>
+    </div>
+  `);
+  
   assessments.forEach((doc) => {
     let assessment = doc.data();
     content.push(`
