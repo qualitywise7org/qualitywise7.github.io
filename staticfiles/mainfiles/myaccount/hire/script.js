@@ -1,5 +1,3 @@
-const firestore = getFirestore(app);
-
 const openBtn = document.getElementById("openModalBtn");
 const closeBtn = document.getElementById("closeModalBtn");
 const modal = document.getElementById("jobModal");
@@ -138,7 +136,7 @@ async function loadJobs(companyData, isMasterAdmin = false) {
   jobList.innerHTML = "";
 
   if (isMasterAdmin) {
-    const querySnapshot = await getDocs(collection(firestore, "jobs_company_wise"));
+    const querySnapshot = await getDocs(collection(db, "jobs_company_wise"));
     let allJobs = [];
     querySnapshot.forEach(docSnap => {
       const jobsObject = docSnap.data().jobs || {};
@@ -152,7 +150,7 @@ async function loadJobs(companyData, isMasterAdmin = false) {
     return;
   }
 
-  const companyRef = doc(firestore, "jobs_company_wise", companyData.code);
+  const companyRef = doc(db, "jobs_company_wise", companyData.code);
   const companySnap = await getDoc(companyRef);
 
   if (!companySnap.exists()) {
@@ -195,7 +193,7 @@ function fillFormWithJob(job) {
 }
 
 async function editJob(jobId, companyCode) {
-  const companyRef = doc(firestore, "jobs_company_wise", companyCode);
+  const companyRef = doc(db, "jobs_company_wise", companyCode);
   const companySnap = await getDoc(companyRef);
   const jobsObject = companySnap.data().jobs || {};
   const job = jobsObject[jobId];
@@ -216,7 +214,7 @@ async function editJob(jobId, companyCode) {
 async function deleteJob(jobId, companyCode) {
   if (!confirm("Are you sure you want to delete this job?")) return;
 
-  const companyRef = doc(firestore, "jobs_company_wise", companyCode);
+  const companyRef = doc(db, "jobs_company_wise", companyCode);
   const companySnap = await getDoc(companyRef);
   const companyData = companySnap.data();
   const jobsObject = companyData.jobs || {};
@@ -255,7 +253,7 @@ form.addEventListener("submit", async e => {
     applicants: editingJob?.applicants || []
   };
 
-  const companyRef = doc(firestore, "jobs_company_wise", selectedCompanyCode);
+  const companyRef = doc(db, "jobs_company_wise", selectedCompanyCode);
   const companySnap = await getDoc(companyRef);
   const existingJobs = companySnap.exists() ? companySnap.data().jobs : {};
 
@@ -290,7 +288,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let email = localStorage.getItem("email");
 
   if (!companyData && email) {
-    const roleDocRef = doc(firestore, "login_roles", email);
+    const roleDocRef = doc(db, "login_roles", email);
     const roleDocSnap = await getDoc(roleDocRef);
 
     if (roleDocSnap.exists()) {
