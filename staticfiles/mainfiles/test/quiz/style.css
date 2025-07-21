@@ -478,3 +478,26 @@ input[type="radio"]:checked + .answer-text {
     transform: translateX(0);
   }
 }
+
+#webcam {
+  position: fixed;
+  top: 35px;
+  right: 50px;
+  width: 160px;
+  height: 120px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #webcam {
+    top: 10px;
+    right: 10px;
+    width: 96px;
+    height: 72px;
+  }
+}
