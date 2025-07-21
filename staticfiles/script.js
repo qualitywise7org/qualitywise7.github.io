@@ -52,8 +52,8 @@ auth.onAuthStateChanged((user) => {
     myAccountLink2.href = "/login/";
     
     // Optionally update the profile section with a custom message
-    document.getElementById("profile").innerHTML =
-      "<a href='/login/?redirect_url=/myaccount/personalProfile'>Create your profile to get jobs</a>";
+    //document.getElementById("profile").innerHTML =
+     // "<a href='/login/?redirect_url=/myaccount/personalProfile'>Create your profile to get jobs</a>";
     
     // Optionally add a click listener for additional control
     myAccountLink.addEventListener("click", (event) => {
