@@ -1,18 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title>Candidates</title>
-  <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.2.0/dist/css/coreui.min.css" rel="stylesheet"
-    integrity="sha384-u3h5SFn5baVOWbh8UkOrAaLXttgSF0vXI15ODtCSxl0v/VKivnCN6iHCcvlyTL7L" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  
-  <link
+<html>
+  <head>
+    <title>Swami Vivekanand ji Biography(Struggle in life year wise with financial condition)</title>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/biographies/style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
-      href="/staticfiles/mainfiles/myaccount/hire/candidates/style.css"
     />
+    <style>
+      .clamp-text {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        max-height: 3em;
+      }
+      header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        font-size: 32px;
+        font-family: "Ysabeau SC";
+      }
 
-  <meta charset="utf-8" />
+      ol {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 750px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      li {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      .financial {
+        color: darkred;
+        font-weight: bold;
+      }
+    </style>
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
 <link rel="icon" href="/fevicon.ico" type="profile" />
@@ -24,110 +55,9 @@
   crossorigin="anonymous"
 />
 
-    <style>
-      .filter1 {
-        display: flex;
-        gap: 10px;
-        justify-content: end;
-        margin-bottom: 10px;
-      }
-
-      .pagination {
-        margin-top: 10px;
-      }
-
-      .pagination button {
-        margin: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
-      }
-
-      .pagination span {
-        margin: 0 10px;
-      }
-
-      #paginationControls {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
-      }
-
-      .pagination-btn {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background 0.3s ease;
-      }
-
-      .pagination-btn:disabled {
-        background-color: #ccc;
-        cursor: not-allowed;
-      }
-
-      .pagination-btn i {
-        font-size: 18px;
-      }
-
-      .pagination-info {
-        font-size: 16px;
-        font-weight: bold;
-        color: #333;
-      }
-      /* .green-checkbox {
-      background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 10px;
-    width: 30%;
-    max-width: 150px;
-}
-
- */
-
- #globalSearch {
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  /* border-radius: 6px; */
-  width: 250px;
-}
-
-#globalSearchBtn {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  font-size: 16px;
-  margin-left: 10px;
-  /* border-radius: 6px; */
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-#globalSearchBtn:hover {
-  background-color: #218838;
-}
-
-
-
-    </style>
-
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  </head>
+  <body class="bg-gradient-to-b from-indigo-200">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="brand" href="/">
       <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
@@ -291,98 +221,60 @@
 <!-- End Google Tag Manager (noscript) -->
 
 
+    <!-- Biographies Section -->
 
-    <!-- Search bar -->
-    <div class="search-container">
-      <div class="filter1">
-        <!-- Gender Filter -->
-        <label for="genderDropdown">Filter by Gender:</label>
-        <select id="genderDropdown">
-          <option value="all">All</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-        <!-- <button type="button" id="gender_button" onclick="">Search</button> -->
-        <!-- Date filter inputs -->
-        <div class="date-filter-container" id="dateFilterContainer">
-          <label for="startDate">From:</label>
-          <input type="date" id="startDate" placeholder="YYYY-MM-DD" />
+    <header>
+      <h1>Swami Vivekanand ji Biography (Struggle in life year wise with financial condition)</h1>
+    </header>
 
-          <label for="endDate">To:</label>
-          <input type="date" id="endDate" placeholder="YYYY-MM-DD" />
-        </div>
-
-      </div>
-
-
-      <input type="text" id="searchInput" name="email" placeholder="Search the name/email" />
-      <button type="button" id="searchButton" onclick="filterByNameEmail()">Search</button>
-
-      <label for="ratingDropdown">Filter by Rating:</label>
-      <select id="ratingDropdown">
-        <option value="all">All</option>
-        <option value="rated">Rated</option>
-        <option value="unrated">Unrated</option>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button type="button" id="filter_button" onclick="filterByRating()">Search</button>
-    <!-- <div class="form-check" style="display: flex; align-items: center; gap: 8px;">
-  <input class="form-check-input " type="checkbox" id="myCompanyCheckbox" />
-  <label class="form-check-label green-checkbox" for="myCompanyCheckbox">
-    My Company
-  </label>
-</div> -->
-
-<input type="text" id="globalSearch" placeholder="Search all fields..." />
-<button type="button" id="globalSearchBtn" onclick="handleGlobalSearch()">Search All Fields</button>
-
-
-
-    </div>
-    <!-- User profiles table -->
-  
-    <table id="userProfilesTable">
-      <thead>
-        <tr>
-          <th>S.No</th>
-          <th>Profile Photo</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Gender</th>
-          <th>School</th>
-          <th>Degree</th>
-          <th>Resume</th>
-          <th>Graduation Date</th>
-          <th>Age</th>
-          <th>Skills</th>
-          <th>Social Links</th>
-          <th>Experience</th>
-          <th>Address</th>
-          <th>Rating</th>
-          <!-- <th>Remarks</th> -->
-         
-          <th>Action</th>
-          <!-- <th>Consultancy Remark</th> -->
-          <th>Interview Form</th>
-        </tr>
-      </thead>
-      <tbody>      
-        <div id="paginationControls" class="pagination"></div>
-        <!-- User profiles dynamically inserted here -->
-      </tbody>
-    </table>
-    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.2.0/dist/js/coreui.bundle.min.js"
-      integrity="sha384-JdRP5GRWP6APhoVS1OM/pOKMWe7q9q8hpl+J2nhCfVJKoS+yzGtELC5REIYKrymn"
-      crossorigin="anonymous"></script>
-    <script type="module" src="/staticfiles/mainfiles/myaccount/hire/candidates/script.js"></script>
-
-
+    <section>
+      <ol>
+        <li>
+          <strong>1884:</strong> Swami Vivekananda's father died suddenly. He was only 21. His family became very poor and had no steady income.<br>
+          <span class="financial">Financial Condition:</span> Very bad – they often had no food to eat.
+        </li>
+    
+        <li>
+          <strong>1885:</strong> He started spending more time with his spiritual teacher, Ramakrishna, while trying to support his family.<br>
+          <span class="financial">Financial Condition:</span> Still very poor – struggled to manage both home and spiritual life.
+        </li>
+    
+        <li>
+          <strong>1886:</strong> Ramakrishna passed away. Vivekananda and other followers became monks. He left home and lived with very little.<br>
+          <span class="financial">Financial Condition:</span> Very poor – lived on small donations and food from others.
+        </li>
+    
+        <li>
+          <strong>1887:</strong> He started traveling across India to learn about the country and help people. He had no money and faced many hardships.<br>
+          <span class="financial">Financial Condition:</span> Almost nothing – lived like a wandering monk.
+        </li>
+    
+        <li>
+          <strong>1888–1892:</strong> Continued walking across India. He saw people suffering from poverty and became determined to help the nation.<br>
+          <span class="financial">Financial Condition:</span> Very poor – often slept on streets or in temples.
+        </li>
+    
+        <li>
+          <strong>1893:</strong> He went to America to speak at the Parliament of Religions in Chicago. He had no money for the journey but got help from kind people.<br>
+          <span class="financial">Financial Condition:</span> Poor – borrowed money and struggled when he arrived in the US.
+        </li>
+    
+        <li>
+          <strong>1894–1896:</strong> He became famous in the West and gave many lectures. He earned some money but lived simply to support his mission.<br>
+          <span class="financial">Financial Condition:</span> A little better – could manage basic needs.
+        </li>
+    
+        <li>
+          <strong>1897:</strong> Returned to India and started the Ramakrishna Mission to serve the poor and spread education.<br>
+          <span class="financial">Financial Condition:</span> Basic – used most of his funds for public service.
+        </li>
+    
+        <li>
+          <strong>1898–1902:</strong> Continued working hard, even though his health was weak. He focused on building the mission and training others.<br>
+          <span class="financial">Financial Condition:</span> Modest – managed enough to keep the mission running.
+        </li>
+      </ol>
+    </section>
     <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
   <div class="container">
     <div class="row" >
@@ -743,7 +635,5 @@
 
 
 
-</body>
-
+  </body>
 </html>
-
