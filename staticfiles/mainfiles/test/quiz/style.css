@@ -495,9 +495,9 @@ input[type="radio"]:checked + .answer-text {
 
 @media (max-width: 600px) {
   #webcam {
-    top: 10px;
-    right: 10px;
-    width: 96px;
-    height: 72px;
+    top: 2px;
+    right: 2px;
+    width: 55px;
+    height: 49px;
   }
 }
