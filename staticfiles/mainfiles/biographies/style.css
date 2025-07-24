@@ -4,6 +4,16 @@
     background: #eef2f5;
     font-size: 20px;
   }
+
+  header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 32px;
+    font-family: "Ysabeau SC";
+  }
+  
   h1, h2 {
     text-align: center;
     color: #2c3e50;
