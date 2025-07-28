@@ -610,7 +610,7 @@ console.log("Filtered Users:", filteredUsers);
       const editButton = document.createElement("button");
       editButton.textContent = "Applied_Job";
       editButton.addEventListener("click", () => {
-        window.open("/myaccount/jobs_applied/?user=" + encodeURIComponent(user.about.email), "_blank");
+       window.open("/myaccount/jobs_applied/?user=" + encodeURIComponent(user.about.email), "_blank");
       });
 
       const reviewButton = document.createElement("button");
