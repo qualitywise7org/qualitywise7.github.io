@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Log in</title>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/forgotpassword/style.css" />
+    <%- include('../../partials/head.ejs') %>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+
+  <body>
+    <%- include('../../partials/navbar.ejs') %>
+    <div class="forgot_parent">
+      <div class="forgot-container" style="text-align: center">
+        <a
+          class="logo"
+          style="
+            background-color: #e8f0fe;
+            border-radius: 10px;
+            text-align: center;
+          "
+          href="/"
+        >
+          <img
+            style="width: 50%; padding: 10px"
+            src="/assets/Jobsdoor360 -logos__black.png"
+            alt="logo"
+          />
+        </a>
+        <h2 class="forgot-head">Reset Password</h2>
+        <form id="forgot-form">
+          <input type="email" id="email" name="email" placeholder="Enter email" required />
+          <button type="submit" style="margin-top: 10px">Send Mail</button>
+        </form>
+      </div>
+    </div>
+    <%- include('../../partials/footer.ejs') %>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script type="module" src="/staticfiles/mainfiles/forgotpassword/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cv upload</title>
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/myaccount/cv_upload/style.css"
+    />
+    <%- include('../../../partials/head.ejs') %>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+  <body>
+    <%- include('../../../partials/navbar.ejs') %>
+    <div
+      class="d-flex justify-content-center align-items-center flex-column gap-4"
+      style="margin-block: 100px"
+    >
+      <h2>UPLOAD YOUR RESUME</h2>
+      <form action="" class="d-flex flex-column justify-content-center gap-3">
+        <div class="d-flex justify-content-center flex-column">
+          <input
+            id="cv"
+            type="file"
+            class="form-control cv"
+            accept="cv/*"
+            required
+          />
+          <span class="form-text"></span>
+        </div>
+        <button type="button" id="btn" class="print-btn btn btn-primary">
+          UPLOAD RESUME
+        </button>
+        <div class="px-1">
+          <a href="/myaccount/jobprofile/" class="text-decoration-none d-flex justify-content-end align-items-center gap-2">
+            <span>Skip</span>
+            <i class="fa-solid fa-arrow-right mt-1"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+    <%- include('../../../partials/footer.ejs') %>
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/cv_upload/script.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Software Development Training - Web development, FullStack, Backend, Java,
+      Reactjs
+    </title>
+    <meta
+      name="description"
+      content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!"
+    />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/style.css" />
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px 15px;
+    }
+
+    .card-section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .profile-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .toggle-label {
+      font-size: 1rem;
+      color: #4b5563;
+      font-weight: 500;
+    }
+
+    .progress-bar-custom {
+      background-color: #28a745 !important;
+      transition: none;
+      height: 100%;
+      width: 0%;
+    }
+
+    .progress {
+      height: 6px;
+      background-color: #e9ecef;
+      margin-bottom: 5px;
+    }
+
+    .btn-view-cv {
+      padding: 3px 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      background-color: rgba(40, 167, 69, 0.08);
+    }
+
+    .btn-view-cv:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .btn-arrow {
+      padding: 5px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      color: #6c757d;
+    }
+
+    .btn-arrow:hover {
+      background-color: rgba(108, 117, 125, 0.1);
+      color: #28a745;
+      transform: translateX(2px);
+    }
+
+    .card-style {
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .progress-bar {
+      transition: width 0.4s ease;
+    }
+
+    @media (max-width: 576px) {
+      .profile-img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .card-section {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-adsense-account" content="ca-pub-2075086355753452" />
+<link rel="icon" href="/fevicon.ico" type="profile" />
+<link rel="stylesheet" href="/staticfiles/style.css" /> <!--global css-->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+  crossorigin="anonymous"
+/>
+
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="brand" href="/">
+      <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNavDropdown"
+      style="transition: height 1s ease"
+    >
+      <ul class="navbar-nav flex items-center">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="/page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about/">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/apply/">Apply</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+          Career Options
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="/careeroptions">Career Options</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/careeroptions/job-options/">Job Options</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/careeroptions/business-options/">Business Options</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/jobs_analysis/">Job Analysis</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+            Blogs
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="/businessplans">Business Plans</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/biographies">Biographies</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/motivation">Motivation</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/healthy-diet">Healthy Diet</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/blog/wealthy-healthy-and-satisfactory-life/">Wealthy Healthy satisfactory Life</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/test/">Assessments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="myaccount-2" href="/myaccount/">My account</a>
+        </li>
+        <li class="nav-item login-btn">
+          <a class="nav-link" id="login-button" href="/login">Login</a>
+        </li>
+        <li class="nav-item signup-btn" id="signup-button">
+          <a class="nav-link" href="/signup">Sign up</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Custom breakpoint for 1240px */
+  @media (max-width: 1240px) {
+    .navbar-expand-lg {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    /*  */
+    .navbar-collapse.show {
+      display: block; /* Show when toggled */
+    }
+
+  }
+  
+  
+.navbar-toggler.collapsed .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+} 
+  </style>
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+  "
+>
+  <span style="font-weight: 500; margin-bottom: 8px" id="welcome-text"></span>
+  <span
+    id="user-mail"
+    style="
+      color: #586ba6;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    "
+  ><a class="nav-link" id="myaccount-1" href="/myaccount/">My Account</a></span>
+  </span>
+</div>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript
+  ><iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
+    height="0"
+    width="0"
+    style="display: none; visibility: hidden"
+  ></iframe
+></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+    <div class="container mt-1">
+      <div class="card-section">
+        <div class="bg-white px-3 py-3 d-flex align-items-center justify-content-between ">
+          <i class="bi bi-arrow-left-short fs-3 text-dark"></i>
+          <h5 class="mb-0">My Account</h5>
+          <span style="width: 24px;"></span> <!-- Spacer to balance arrow icon -->
+        </div>        <!-- Profile -->
+        <div class="d-flex align-items-center mb-4">
+          <img src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg" alt="Profile" class="profile-img me-3" />
+          <div>
+            <h5 class="mb-0"></h5>
+          </div>
+        </div>
+    
+        <!-- Personal Profile -->
+        <a href="personalprofile/" class="text-decoration-none text-dark">
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bi bi-person-circle me-2"></i>Personal Profile
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="text-success" id="text-1">0%</span>
+                <i class="bi bi-chevron-right text-muted"></i>
+              </div>
+            </div>            <div class="progress mt-1">
+              <div class="progress-bar progress-bar-custom" id="progress-1" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+          </div>
+        </a>
+    
+        <!-- Job Profile -->
+        <a href="/myaccount/jobprofile/" class="text-decoration-none text-dark">
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bi bi-briefcase-fill me-2"></i>Job Profile
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="text-success" id="text-2">0%</span>
+                <i class="bi bi-chevron-right text-muted"></i>
+              </div>
+            </div>            <div class="progress mt-1">
+              <div class="progress-bar progress-bar-custom" id="progress-2" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+          </div>
+        </a>
+
+    
+        <!-- Assessment Progress -->
+        <a href="/myaccount/test-report/" class="text-decoration-none text-dark">
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bi bi-clipboard-check me-2"></i>Assessment Completed
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="text-success" id="text-3">0%</span>
+                <i class="bi bi-chevron-right text-muted"></i>
+              </div>
+            </div>            <div class="progress mt-1">
+              <div class="progress-bar progress-bar-custom" id="progress-3" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+            <p id="progress-count" class="text-muted small mt-1">0/0</p>
+          </div>
+        </a>        <!-- Updating CV -->
+        <div class="mb-4 d-flex align-items-center justify-content-between">
+          <span><i class="bi bi-file-earmark-arrow-up me-2"></i>Updating CV</span>
+          <div class="d-flex align-items-center">
+            <a href="#" id="btn-view-cv" class="text-decoration-none text-success me-2 btn-view-cv">View</a>
+            <a href="/myaccount/cv_upload/" class="text-decoration-none text-success me-2 btn-view-cv">
+              Update
+            </a>
+          </div>
+        </div>        <!-- Explore Jobs -->
+       <div class="mb-4 d-flex align-items-center justify-content-between">
+          <span><i class="bi bi-search me-2"></i>Explore Jobs</span>
+          <a href="/myaccount/jobsforyou/" class="text-decoration-none text-success me-2 btn-view-cv">
+            <!-- <i class="bi bi-chevron-right btn-arrow"></i> -->
+             Explore
+          </a>
+        </div>
+        <!-- jobs applied -->
+          <div class="mb-4 d-flex align-items-center justify-content-between">
+          <span><i class="bi bi-search me-2"></i>JobsApplied</span>
+          <a href="/myaccount/jobs_applied/" class="text-decoration-none text-success me-2 btn-view-cv">
+            <!-- <i class="bi bi-chevron-right btn-arrow"></i> -->
+             Visit
+          </a>
+        </div>
+
+        <!-- Switches -->
+        <!-- Looking for Internship -->          <div class="d-flex justify-content-between align-items-center py-1">
+    <label class="form-check-label toggle-label mb-0" for="internSwitch">Looking for Internship</label>
+    <div class="form-check form-switch m-0">
+      <input class="form-check-input" type="checkbox" role="switch" id="internSwitch" value="internship" onchange="updateSelection(this)" />
+    </div>
+  </div>
+  
+  <!-- Looking for Job -->
+  <div class="d-flex justify-content-between align-items-center py-1">
+    <label class="form-check-label toggle-label mb-0" for="jobSwitch">Looking for Job</label>
+    <div class="form-check form-switch m-0">
+      <input class="form-check-input" type="checkbox" role="switch" id="jobSwitch" value="job" onchange="updateSelection(this)" />
+    </div>
+  </div>      </div>
+    </div>
+      <br><br>    <!-- Footer -->
+    <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
+  <div class="container">
+    <div class="row" >
+      <!-- Quick Links Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Quick Links</h5>
+        <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">
+          <li><a href="/" class="footer-link">Home</a></li>
+          <li><a href="/about/" class="footer-link">About Us</a></li>
+          <li><a href="/demo/" class="footer-link">Demo</a></li>
+          <li><a href="/results/" class="footer-link">Our Results</a></li>
+          <li><a href="/membership/" class="footer-link">Memberships</a></li>
+          <li><a href="/campaign/workshop/registration/" class="footer-link">Workshop</a></li>
+          <li><a href="/apply/" class="footer-link">Apply</a></li>
+          <li><a href="/socialwork/donatebook/" class="footer-link">Donate Books</a></li>
+          <li><a href="/contactus/" class="footer-link">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Products Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Products</h5>
+        <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+          <li><a href="/myaccount/jobsforyou/" class="footer-link">Jobs For You</a></li>
+          <li><a href="/myaccount/jobprofile/" class="footer-link">Job Profile</a></li>
+          <li><a href="/careeroptions/profileanalyzer/" class="footer-link">Profile Analyzer</a></li>
+          <li><a href="/hirewithus/" class="footer-link">Hire With Us</a></li>
+          <li><a href="/test/" class="footer-link">Test Yourself</a></li>
+        </ul>
+      </div>
+
+      <!-- Other Links Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Other Links</h5>
+        <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+          <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund" target="_blank" class="footer-link">Cancellation & Refund Policy</a></li>
+          <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms" target="_blank" class="footer-link">Terms and Conditions</a></li>
+          <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping" target="_blank" class="footer-link">Shipping & Delivery Policy</a></li>
+          <li><a href="/privacy/" class="footer-link">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Follow Us</h5>
+        <div class="d-flex justify-content-center justify-content-md-start">
+          <a
+  href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+  target="_blank"
+  class="fb-icon"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px"
+    y="0px"
+    width="35"
+    height="35"
+    viewBox="0 0 48 48"
+  ><path
+  fill="#fff"
+  d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
+></path>
+<path
+  fill="#fff"
+  d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
+></path>
+<path
+  fill="#cfd8dc"
+  d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
+></path>
+<path
+  fill="#40c351"
+  d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
+></path>
+<path
+  fill="#fff"
+  fill-rule="evenodd"
+  d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+  clip-rule="evenodd"
+></path>
+</svg>
+</a>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100093276582711" target="_blank" class="social-icon mr-3">
+            <img src="https://img.icons8.com/color/48/facebook-new.png" width="30" height="30" />
+          </a>
+          <a href="https://www.instagram.com/jobsdoor360/" target="_blank" class="social-icon mr-3">
+            <img src="https://img.icons8.com/color/48/instagram-new--v1.png" width="30" height="30" />
+          </a>
+          <a href="https://www.linkedin.com/in/qualitywise-b05857275/" target="_blank" class="social-icon mr-3">
+            <img src="https://img.icons8.com/color/48/linkedin.png" width="30" height="30" />
+          </a>
+          <a href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ" target="_blank" class="social-icon">
+            <img src="https://img.icons8.com/color/48/youtube-play.png" width="30" height="30" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="row text-center mt-1">
+      <div class="col-md-12">
+        <p class="small mb-0">Copyright Jobsdoor360 © 2025. All rights reserved</p>
+        <p class="small">
+          <strong class="fs-6">Vinay Kumar</strong><br>
+          AIEEE AIR 10630, State Rank 602, BTech + MTech from ABV-IIITM Gwalior<br>
+          <strong>10 years experience in IT companies</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .row ul li a{
+    text-decoration: none;
+    color: white;
+  }
+  .footer-link {
+    display: block;
+    padding: 2px 0;
+    transition: color 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: #40c351;
+  }
+
+  .social-icon {
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .bg-gradient-to-r {
+    background: linear-gradient(to right, #1E3A8A, #3B82F6);
+  }
+
+  .text-white {
+    color: #fff !important;
+  }
+</style>
+<!-- WhatsApp Chat Button -->
+<div class="chat-back-to-top">
+  <!-- <button id="like-button">
+    <i class="fa-solid fa-thumbs-up"></i>
+  </button>
+  <button id="dislike-button">
+    <i class="fa-solid fa-thumbs-down"></i>
+  </button> -->
+  <!-- <span style="font-size: 15px">Any question or complaint</span> -->
+ <a href= "https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+ target="_blank"   style="font-size: 14px; font-weight: 500; color: black"
+    >Any question or complaint</a
+  > 
+  <div class="whatsapp-chat">
+    <a
+      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+      target="_blank"
+    >
+      <i
+        class="fab fa-whatsapp"
+        style="font-size: 27px; margin-bottom: 13px"
+      ></i>
+       
+  </div>
+  <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</div>
+
+<!-- The Bootstrap Modal -->
+<div
+  class="modal fade"
+  id="myModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          What Can We Improve on Our Website?
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <textarea
+          id="feedback"
+          class="form-control"
+          placeholder="Your feedback..."
+        ></textarea>
+        <input
+          type="text"
+          id="phoneNumber"
+          class="form-control"
+          placeholder="Your phone number..."
+        />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button id="submitFeedback" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="module" src="/staticfiles/db/dbconfig.js"></script>
+<script type="module" src="/staticfiles/script.js"></script>
+<script type="module">
+ // Check if the user is signed in
+ window.auth.onAuthStateChanged(async (user) => {
+        const signupButton = document.getElementById('signup-button');
+        const welcomeText = document.getElementById("welcome-text");
+        const userMail = document.getElementById("user-mail");
+
+        
+
+        if (user) {
+            // Save email to localStorage
+            localStorage.setItem("email", user.email);
+            const userProfileRef = doc(db, "user_profile", user.email);
+  const docSnap = await getDoc(userProfileRef);
+  let name = "";
+  if(docSnap.exists()){
+    name = docSnap.data().about.firstName + " " + docSnap.data().about.lastName || "";
+  }
+
+            // Hide the signup button and show "Logout"
+            document.getElementById("login-button").innerHTML = "Logout";
+            signupButton.style.display = "none";
+
+            // Retrieve the display name (username)
+            let username = user.displayName;
+            // console.log(username) // For Google Sign-In or if saved during registration
+
+            // If username is not available in displayName, fetch it from Firestore
+            if (!username) {
+                const docRef = doc(db, "lead", user.email);
+                try {
+                    const docSnap = await getDoc(docRef);
+                    if (docSnap.exists()) {
+                        username = docSnap.data().full_name || user.email; // Fallback to email if full_name is missing
+                    }
+                } catch (error) {
+                    console.error("Error fetching username:", error);
+                    username = user.email; // Fallback
+                }
+            }
+
+            // Save username to localStorage for later use
+            localStorage.setItem("username", username);
+            // console.log(username);
+            // Update welcome text with the username
+            if(name){
+              welcomeText.innerHTML = `Hii, ${name}`;
+            }
+          else if(username)
+            welcomeText.innerHTML = `Hii, ${username}`;
+          
+            
+            else{
+              userMail.innerHTML = username; // Optionally update email 
+            }
+              // display to username
+        } else {
+            const loginButton = document.getElementById("login-button");
+            loginButton.addEventListener("click", () => {
+                const email = localStorage.getItem("email");
+                if (email) {
+                    localStorage.clear();
+                }
+                location.href = "/login"; // Corrected 'location.location.href' to 'location.href'
+            });
+            signupButton.style.display = "block"; // Show the signup button when user is not signed in
+        }
+    });
+
+    // Logout logic
+    document.getElementById("login-button").addEventListener("click", function () {
+        const email = localStorage.getItem("email");
+        if (email) {
+            localStorage.clear();
+            auth.signOut()
+                .then(() => {
+                    window.location.href = "/login/";
+                })
+                .catch((error) => {
+                    console.error("Error signing out:", error);
+                });
+        }
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+  crossorigin="anonymous"></script>
+
+<script>
+  window.addEventListener("scroll", () => {
+    let scrollVal = window.scrollY;
+    if (scrollVal > 2000) {
+    document.getElementById("backToTopBtn").style.display = "block";
+    } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+    }
+  });
+
+  function scrollToTop() {
+    document.documentElement.scrollTop = 0;
+  }
+
+  document
+    .getElementById("backToTopBtn")
+    .addEventListener("click", scrollToTop);
+</script>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+<script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-1JQVXS3B5L");
+</script>
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-MFBK5637");
+</script>
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452" crossorigin="anonymous"></script>-->
+
+
+    <!-- Import scripts -->
+    <script type="module" src="/staticfiles/mainfiles/myaccount/script.js"></script>    <script src="/staticfiles/mainfiles/myaccount/progress.js"></script>
+    <script src="/staticfiles/mainfiles/myaccount/data-connector.js"></script>
+    <script type="module" src="/staticfiles/mainfiles/myaccount/script.js"></script>
+    <!-- Bridge script to ensure progress bars update when user data is available -->
+    <script>
+      // This script helps bridge between authentication system and progress bars
+      document.addEventListener('DOMContentLoaded', function() {
+        // If userData is set by the main script, update our progress bars
+        if (window.userData) {
+          console.log("User data already available, updating progress bars");
+          if (window.setUserData) {
+            window.setUserData(window.userData);
+          }
+        }
+        
+        // Create a MutationObserver to watch for changes to the user's name
+        // This is a backup method to detect when user data might be available
+        const userNameObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.target.id === "userName1" && window.userData) {
+              console.log("User name updated, syncing progress bars");
+              if (window.setUserData) {
+                window.setUserData(window.userData);
+              }
+              // Only need to react once
+              userNameObserver.disconnect();
+            }
+          });
+        });
+        
+        // Start observing the document for user name changes
+        const userName1Element = document.getElementById("userName1");
+        if (userName1Element) {
+          userNameObserver.observe(userName1Element, { 
+            characterData: true,
+            childList: true,
+            subtree: true
+          });
+        }
+        
+        // Add a debug button (only in development)
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ||
+            window.location.search.includes('debug=true')) {
+          const debugBtn = document.createElement('button');
+          debugBtn.textContent = 'Debug Progress';
+          debugBtn.style.position = 'fixed';
+          debugBtn.style.bottom = '10px';
+          debugBtn.style.right = '10px';
+          debugBtn.style.zIndex = '9999';
+          debugBtn.style.padding = '5px 10px';
+          debugBtn.style.backgroundColor = '#28a745';
+          debugBtn.style.color = 'white';
+          debugBtn.style.border = 'none';
+          debugBtn.style.borderRadius = '4px';
+          debugBtn.style.cursor = 'pointer';
+          debugBtn.onclick = function() {
+            if (window.showProgressDebug) {
+              window.showProgressDebug();
+            }
+          };
+          document.body.appendChild(debugBtn);
+        }
+      });
+    </script>
+  </div>  
+    
+    
+    <script>
+    
+      $(document).ready(function () {
+        $(document).on("click", function (event) {
+          if (!$(event.target).closest(".accordion").length) {
+            $(".accordion-collapse").collapse("hide");
+          }
+        });
+
+        $(".accordion").on("click", function (event) {
+          event.stopPropagation();
+        });
+      });
+
+
+      
+
+    </script>
+
+<script
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/script.js"
+    ></script>
+
+    
+    <!-- jobsdoor360 -->
+    <ins
+      class="adsbygoogle"
+      style="display: block"
+      data-ad-client="ca-pub-2075086355753452"
+      data-ad-slot="7339269701"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </body>
+</html>

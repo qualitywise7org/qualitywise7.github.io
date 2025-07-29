@@ -1,0 +1,112 @@
+// rules_version = '2';
+
+// service cloud.firestore {
+//   match /databases/{database}/documents {
+    
+//     // Helper function to check authentication
+//     function isAuthenticated() {
+//       return request.auth != null;
+//     }
+
+//     // Helper function to check if the user is the master admin
+//     function isMasterAdmin() {
+//       return get(/databases/$(database)/documents/login_roles/$(request.auth.token.email)).data.role == "master_admin";
+//     }
+
+//     // Helper function to check if the user owns the document
+//     function isResourceOwner(userId) {
+//       return isAuthenticated() && request.auth.token.email == userId;
+//     }
+
+    
+
+//     // User profile rules
+    
+//     // match /user_profile/{document=**} {
+//     //   allow list : if isAuthenticated();
+//     // }
+//     match /user_profile/{userId} {
+//       allow read: if true;
+//       allow write: if true;
+//     }
+    
+//     //recruiter role check
+//     match /login_roles/{email} {
+//   allow get: if request.auth != null && request.auth.token.email == email;
+// }
+
+
+// 		// recruiter post job
+// 		match /jobs/{jobId} {
+//   // allow write: if request.auth != null && 
+//   //               get(/databases/$(database)/documents/login_roles/$(request.auth.token.email)).data.role == "recruiter";
+//   allow read: if true;
+//   allow write: if true;
+// }
+
+
+//     // User consultancies
+//     match /user_consultancies/{userId} {
+//       allow read, write: if true;
+//     }
+
+//     // User interviews
+//     match /user_interviews/{userId} {
+//       allow read, write: if true;
+//     }
+
+//     // Hiring rules
+//     match /hiring/{document=**} {
+//       allow read: if true;
+//       allow write: if isAuthenticated();
+//     }
+
+//     // Jobs applied rules
+//     match /jobsapplied/{userId} {
+//       allow read, write: if isResourceOwner(userId);
+//     }
+
+//     // Login roles rules
+//     // match /login_roles/{document=**} {
+//     //   allow read, write: if false; // Disable access in production
+//     // }
+
+//     // Leads
+//     match /lead/{document} {
+//       allow read: if true;
+//       allow write: if true;
+//     }
+
+//     // Assessment rules
+//     match /assessment/{document=**} {
+//       allow read: if true;
+//       allow write: if false; // Prevent writes in production
+//     }
+
+//     // User assessment results
+//     match /user_assessment_results/{document} {
+//       allow read, write: if isAuthenticated();
+//     }
+//     // General rules
+//     match /{document=**} {
+//       // Master admin can access all
+//       allow read, write: if isMasterAdmin();
+//     }
+//     match /company_profile/{docId} {
+//   	allow read: if isAuthenticated() &&
+//     (get(/databases/$(database)/documents/login_roles/$(request.auth.token.email)).data.role == "recruiter" ||
+//      get(/databases/$(database)/documents/login_roles/$(request.auth.token.email)).data.role == "master_admin");
+// }
+
+// 		match /jobs_company_wise/{companyId} {
+//     allow read: if true;
+//   	allow  write: if isAuthenticated() &&
+//     (get(/databases/$(database)/documents/login_roles/$(request.auth.token.email)).data.role in ["recruiter", "master_admin"]);
+// }
+// 		match /jobs_company_wise/{companyId}/jobs/{jobId} {
+//     allow read: if true;
+//   allow  write: if isAuthenticated() &&
+//     (get(/databases/$(database)/documents/login_roles/$(request.auth.token.email)).data.role in ["recruiter", "master_admin"]);
+// 		}
+//   }
+// }

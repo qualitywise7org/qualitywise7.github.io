@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Summaries</title>
+   <link rel="stylesheet" href="/staticfiles/mainfiles/careeroptions/career-guide-by-big-people/style.css">
+   <%- include('../../../partials/head.ejs') %>
+</head>
+<body> 
+    <%- include('../../../partials/navbar.ejs') %>
+    <h1>Career Guidance</h1>
+    <div id="summaries">
+      <% for (let i = 0; i < career_guide_by_big_people_data.career_guide_by_big_people_data.length; i++) { %>
+        <div id="summaries">
+          <h2><%= career_guide_by_big_people_data.career_guide_by_big_people_data[i].title %></h2>
+          <p><%= career_guide_by_big_people_data.career_guide_by_big_people_data[i].summary %></p>
+          <a href="<%= career_guide_by_big_people_data.career_guide_by_big_people_data[i].link %>">Watch Video</a>
+        </div>
+      <% } %>
+    </div>
+    
+    <%- include('../../../partials/footer.ejs') %>
+<!-- <script src="/staticfiles/mainfiles/careeroptions/career-guide-by-big-people/script.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/signup/style.css" />
+    <%- include('../../partials/head.ejs') %>
+  </head>
+
+  <body>
+    <%- include('../../partials/navbar.ejs') %>
+    <div class="main_container_signup">
+      <div class="signup-container">
+        <h2 class="signup-head">Sign Up to jobsdoor360</h2>
+        <form id="signup-form">
+          <label for="full_name">Full Name:</label>
+          <input
+            type="text"
+            id="username"
+            name="full_name"
+            required
+            autocomplete="name"
+          />
+
+          <label for="phone">Phone:</label>
+          <input
+            type="text"
+            id="phoneNo"
+            name="phone"
+            required
+            autocomplete="phone"
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+          />
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            autocomplete="current-password"
+          />
+
+          <button type="submit" id="signup-btn" style="margin-top: 20px">
+            Sign Up
+          </button>
+        </form>
+        <button
+          id="google-signup-btn"
+          class="google-button"
+          style="
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+          "
+        >
+          <i class="fab fa-google"></i><span>Signup with Google</span>
+        </button>
+
+        <div class="lines-text">
+          <span>OR</span>
+        </div>
+
+        <p class="bottom-heading">
+          Already have an account?
+          <span>
+            <a href="/login/">log In</a>
+          </span>
+        </p>
+      </div>
+    </div>
+    <%- include('../../partials/footer.ejs') %>
+
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/signup/script.js"
+    ></script>
+  </body>
+</html>

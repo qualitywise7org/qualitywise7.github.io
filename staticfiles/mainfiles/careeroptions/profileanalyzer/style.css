@@ -1,0 +1,246 @@
+/* .profile_analyzer {
+  padding: 2rem;
+}
+
+.profileForm {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+} */
+
+/* form start */
+/* .main-user-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+} */
+/* .user-input-box:nth-child{
+    justify-content: end;
+} */
+
+/* .user-input-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  padding-bottom: 15px;
+}
+.user-input-box label {
+  width: 95%;
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 5px 0;
+}
+.user-input-box select {
+  height: 40px;
+  width: 95%;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid grey;
+  padding: 0 10px;
+}
+.form-submit-btn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-submit-btn input {
+  width: 30%;
+  margin-top: 10px;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #007bff;
+}
+.form-submit-btn input:hover {
+  background-color: #0056b3;
+  color: #333;
+} */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffffff, #cae1ef);
+}
+.form-group {
+  margin-bottom: 30px;
+}
+.bg{
+  background: linear-gradient(100deg, #3a5bed, #33aad9);
+  padding: 5px;
+  color: white;
+}
+label {
+  font-weight: 600;
+  color: #000;
+}
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #188bdd;
+  box-shadow: 0 0 10px rgba(118, 75, 162, 0.3);
+}
+.buttn {
+  background: linear-gradient(135deg, #3a5bed, #42b0db);
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease;
+}
+.buttn:hover {
+  box-shadow: 0 0 20px rgba(215, 238, 239, 0.5);
+}
+.buttn i {
+  margin-right: 8px;
+}
+/* .input-group-append-text {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+} */
+
+/*form end */
+
+.container {
+  margin-top: 50px;
+}
+
+/* section {
+  display: flex;
+  flex-direction: column;
+} */
+
+.job-head {
+  display: flex;
+  justify-content: center;
+}
+
+.jobs-header {
+  font-size: 24px;
+  color: black;
+  border-bottom: 2px solid;
+  font-family: math;
+  width: 100vw;
+  padding: 0.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loading {
+  display: block;
+  font-size: 2rem;
+  font-family: "Ysabeau SC";
+  text-align: center;
+  margin: 10rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-title {
+  font-size: 18px;
+  margin: 0;
+  background: #504387;
+  color: white !important;
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* @media only screen and (max-width: 600px) {
+  .loading {
+    display: block;
+    font-size: 1rem;
+    font-family: "Ysabeau SC";
+    text-align: center;
+    margin: 8rem;
+  }
+  .user-input-box {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  .user-input-box:nth-child {
+    justify-content: space-between;
+  }
+  .form-submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+} */
+
+/* .results {
+    display: none;
+}
+
+.results-visible {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 6px 23px rgb(0 0 0 / 14%);
+    text-align: center;
+}
+
+.result-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+p {
+    color: #555;
+} */

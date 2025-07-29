@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CV Upload</title>
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/apply/cv_upload/style.css"
+    />
+    <%- include('../../../partials/head.ejs') %>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+  <body>
+    <%- include('../../../partials/navbar.ejs') %>
+    <div
+      class="d-flex justify-content-center align-items-center flex-column gap-0.5"
+      style="margin-block: 100px"
+    >
+      <div>UPLOAD YOUR RESUME</div>
+      <form
+        action=""
+        class="d-flex flex-column justify-content-center gap-2"
+        id="resumeForm"
+      >
+        <div class="d-flex justify-content-center flex-column">
+          <input
+            id="cv"
+            type="file"
+            class="form-control cv"
+            accept=".pdf, .doc, .docx"
+            required
+          />
+          <span class="form-text"></span>
+        </div>
+
+        <div class="form-group text-center">
+          <label for="college">COLLEGE NAME</label>
+          <textarea
+            id="college"
+            name="college"
+            class="form-control"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group text-center">
+          <label for="skills">ENTER YOUR SKILLS:</label>
+          <textarea
+            id="skills"
+            name="skills"
+            type="text"
+            class="form-control"
+            placeholder="For example : html, css, js, Reactjs, express, nodejs, content writer, hr, blogger, seo, digital marketing, MySQL,  database
+          "
+            list="skill-list"
+          ></textarea>
+
+          <small class="form-text text-muted"></small>
+        </div>
+        <div class="center-button-container">
+          <button type="button" id="btn" class="print-btn btn btn-primary">
+            SUBMIT
+          </button>
+          <!-- <span id="loading" class="loading">Loading...</span> -->
+        </div>
+        <div
+          class="px-1 mt-2 d-flex justify-content-center align-items-center gap-2"
+        >
+          <a
+            href="/apply/thanks/"
+            class="text-decoration-none d-flex justify-content-end align-items-center gap-2"
+          >
+            <span>Skip</span>
+            <i class="fa-solid fa-arrow-right mt-1"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+    <%- include('../../../partials/footer.ejs') %>
+    <!-- <script
+      type="module"
+      src="/staticfiles/mainfiles/apply/cv_upload/script.js"
+    ></script> -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include Firebase -->
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/apply/cv_upload/script.js"
+    ></script>
+  </body>
+</html>

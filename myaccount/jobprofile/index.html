@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Professional Profile - JobsDoor360</title>
+    <!-- TailwindCSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      #edit-modal-education {
+        z-index: 10;
+      }
+
+      /* Add loading indicator styles */
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        display: none;
+      }
+
+      /* Improved toast notifications */
+      .status-alert {
+        transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+      }
+
+      .toast-header {
+        border-bottom: none !important;
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+      }
+
+      /* Animation for toast messages */
+      @keyframes slideInRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideOutRight {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+      }
+
+      .status-alert.show {
+        animation: slideInRight 0.3s forwards;
+      }
+
+      .status-alert.hide {
+        animation: slideOutRight 0.3s forwards;
+      }
+
+      /* Mobile responsiveness for modals */
+      @media (max-width: 576px) {
+        .modal-dialog {
+          margin: 0.5rem;
+          max-width: calc(100% - 1rem);
+        }
+
+        /* Adjust toast position on mobile */
+        .status-alert {
+          max-width: 90% !important;
+          right: 5% !important;
+        }
+
+        .modal-content {
+          padding: 1rem;
+        }
+
+        .modal-header {
+          padding: 0.75rem 1rem;
+        }
+
+        .modal-body {
+          padding: 1rem 0.75rem;
+        }
+
+        .modal-footer {
+          padding: 0.75rem 1rem;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .modal-footer .btn {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+
+      /* Accessibility improvements */
+      :focus-visible {
+        outline: 3px solid #007bff;
+        outline-offset: 2px;
+      }
+
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        transition: outline-color 0.2s ease;
+      }
+      .btn:focus,
+      .form-control:focus {
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      }
+
+      /* Form validation styling */
+      .form-control.is-invalid {
+        background-image: none;
+        padding-right: 0.75rem;
+        border-color: #dc3545;
+      }
+
+      .form-control.is-valid {
+        background-image: none;
+        padding-right: 0.75rem;
+        border-color: #198754;
+      }
+
+      .invalid-feedback {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 0.875rem;
+        color: #dc3545;
+      }
+      /* Animation for validation feedback */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .invalid-feedback {
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      /* Validation summary styling */
+      #validation-summary {
+        background-color: #f8f9fa;
+        border-left: 5px solid #6c757d;
+        animation: fadeIn 0.4s ease-out;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease;
+      }
+
+      #validation-summary:not(.d-none) {
+        max-height: 300px;
+        padding: 1rem;
+      }
+
+      #validation-summary .alert {
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 1rem;
+      }
+
+      #validation-summary .alert:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Enhanced input group styling */
+      .input-group-text {
+        background-color: #f8f9fa;
+        border-right: none;
+      }
+
+      .input-group .form-control {
+        border-left: none;
+      }
+
+      .input-group.is-invalid .input-group-text {
+        border-color: #dc3545;
+        color: #dc3545;
+      }
+
+      .input-group.is-valid .input-group-text {
+        border-color: #198754;
+        color: #198754;
+      }
+    </style>
+
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-adsense-account" content="ca-pub-2075086355753452" />
+<link rel="icon" href="/fevicon.ico" type="profile" />
+<link rel="stylesheet" href="/staticfiles/style.css" /> <!--global css-->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+  crossorigin="anonymous"
+/>
+
+  </head>
+  <body>
+    <!-- Loading overlay for operations -->
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="brand" href="/">
+      <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNavDropdown"
+      style="transition: height 1s ease"
+    >
+      <ul class="navbar-nav flex items-center">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="/page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about/">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/apply/">Apply</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+          Career Options
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="/careeroptions">Career Options</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/careeroptions/job-options/">Job Options</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/careeroptions/business-options/">Business Options</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/jobs_analysis/">Job Analysis</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+            Blogs
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="/businessplans">Business Plans</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/biographies">Biographies</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/motivation">Motivation</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/healthy-diet">Healthy Diet</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/blog/wealthy-healthy-and-satisfactory-life/">Wealthy Healthy satisfactory Life</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/test/">Assessments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="myaccount-2" href="/myaccount/">My account</a>
+        </li>
+        <li class="nav-item login-btn">
+          <a class="nav-link" id="login-button" href="/login">Login</a>
+        </li>
+        <li class="nav-item signup-btn" id="signup-button">
+          <a class="nav-link" href="/signup">Sign up</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Custom breakpoint for 1240px */
+  @media (max-width: 1240px) {
+    .navbar-expand-lg {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    /*  */
+    .navbar-collapse.show {
+      display: block; /* Show when toggled */
+    }
+
+  }
+  
+  
+.navbar-toggler.collapsed .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+} 
+  </style>
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+  "
+>
+  <span style="font-weight: 500; margin-bottom: 8px" id="welcome-text"></span>
+  <span
+    id="user-mail"
+    style="
+      color: #586ba6;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    "
+  ><a class="nav-link" id="myaccount-1" href="/myaccount/">My Account</a></span>
+  </span>
+</div>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript
+  ><iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637"
+    height="0"
+    width="0"
+    style="display: none; visibility: hidden"
+  ></iframe
+></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+    <!-- Edit social link -->
+    <div
+      id="edit-form-social"
+      class="d-none position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-50 d-flex justify-content-center align-items-center z-3"
+    >
+      <!-- Form Container -->
+      <div class="bg-white p-4 rounded shadow-lg col-md-6 col-10">
+        <h2 class="h4 mb-4 text-center">Edit Social Links</h2>
+        <form>
+          <div class="mb-3">
+            <label for="edit-github" class="form-label">
+             </i> GitHub Profile:
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"
+                ><i class="fab fa-github"></i
+              ></span>
+              <input
+                type="text"
+                id="edit-github"
+                name="egithub"
+                class="form-control"
+                placeholder="e.g., https://github.com/username"
+                aria-describedby="githubHelp"
+                pattern="https?://(www\.)?github\.com/.*"
+              />            </div>
+            <small id="githubHelp" class="form-text text-muted">
+              Enter your GitHub profile URL or leave blank
+            </small>
+          </div>
+          <div class="mb-3">
+            <label for="edit-linkedin" class="form-label">
+              </i> LinkedIn Profile:
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"
+                ><i class="fab fa-linkedin"></i
+              ></span>
+              <input
+                type="text"
+                id="edit-linkedin"
+                name="elinkedin"
+                class="form-control"
+                placeholder="e.g., https://linkedin.com/in/username"
+                aria-describedby="linkedinHelp"
+                pattern="https?://(www\.)?linkedin\.com/.*"
+              />            </div>
+            <small id="linkedinHelp" class="form-text text-muted">
+              Enter your LinkedIn profile URL or leave blank
+            </small>
+          </div>
+          <div class="mb-3">
+            <label for="edit-leetcode" class="form-label">
+              </i> LeetCode Profile:
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-code"></i></span>
+              <input
+                type="text"
+                id="edit-leetcode"
+                name="eleetcode"
+                class="form-control"
+                placeholder="e.g., https://leetcode.com/username"
+                aria-describedby="leetcodeHelp"
+                pattern="https?://(www\.)?leetcode\.com/.*"
+              />            </div>
+            <small id="leetcodeHelp" class="form-text text-muted">
+              Enter your LeetCode profile URL or leave blank
+            </small>
+          </div>
+          <div class="mb-3">
+            <label for="edit-instagram" class="form-label">
+              </i> Instagram Profile:
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"
+                ><i class="fab fa-instagram"></i
+              ></span>
+              <input
+                type="text"
+                id="edit-instagram"
+                name="einstagram"
+                class="form-control"
+                placeholder="e.g., https://instagram.com/username"
+                aria-describedby="instagramHelp"
+                pattern="https?://(www\.)?instagram\.com/.*"
+              />            </div>
+            <small id="instagramHelp" class="form-text text-muted">
+              Enter your Instagram profile URL or leave blank
+            </small>
+          </div>
+          <div id="validation-summary" class="mb-3 p-3 rounded d-none">
+            <div class="validation-summary-content"></div>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <button
+              type="button"
+              id="cancel-button-social"
+              class="btn btn-secondary"
+            >
+              <i class="fas fa-times me-1"></i> Cancel
+            </button>
+            <button id="save-button-social" class="btn btn-primary">
+              <i class="fas fa-save me-1"></i> Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Edit Skills Modal -->
+
+    <div
+      id="edit-skill-modal"
+      class="d-none position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-50 d-flex justify-content-center align-items-center z-3"
+    >
+      <!-- Modal Container -->
+      <div class="bg-white p-4 rounded shadow-lg col-md-6 col-10">
+        <h2 class="h5 mb-4 text-center">Add New Skills</h2>
+        <form id="edit-skill-form">
+          <div class="mb-3">
+            <label for="skill-name" class="form-label">Skill Name:</label>
+            <input
+              type="text"
+              id="skill-name"
+              class="form-control"
+              placeholder="e.g., JavaScript, Java, Python"
+              required
+            />
+          </div>
+          <div class="d-flex justify-content-between">
+            <button
+              type="button"
+              id="cancel-button-skills"
+              class="btn btn-secondary"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Address modal  -->
+
+    <div
+      id="edit-modal-address"
+      class="modal fade"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center w-100">Edit Address</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="edit-address-form">
+              <!-- Address Fields -->
+              <div class="mb-3">
+                <label for="address-input" class="form-label">Address</label>
+                <input
+                  type="text"
+                  id="address-input"
+                  class="form-control"
+                  placeholder="Enter your address"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="city-input" class="form-label">City</label>
+                <input
+                  type="text"
+                  id="city-input"
+                  class="form-control"
+                  placeholder="Enter your city"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="state-input" class="form-label">State</label>
+                <input
+                  type="text"
+                  id="state-input"
+                  class="form-control"
+                  placeholder="Enter your state"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="zip-input" class="form-label">Pin Code</label>
+                <input
+                  type="text"
+                  id="zip-input"
+                  class="form-control"
+                  placeholder="Enter your pin code"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="saveEditedAddress()"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--education Modal -->
+    <!-- Education Modal -->
+    <div
+      id="edit-modal-education"
+      class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center"
+    >
+      <div
+        class="bg-white rounded p-4 shadow-lg"
+        style="max-width: 400px; width: 100%"
+      >
+        <h2 class="h4 text-center fw-bold text-dark mb-3">
+          Add / Edit Education
+        </h2>
+        <form id="edit-form-education">
+          <!-- Degree Input -->
+          <div class="mb-3">
+            <label for="edit-degree" class="form-label">Degree</label>
+            <input
+              id="edit-degree"
+              type="text"
+              class="form-control"
+              placeholder="Enter your degree"
+              required
+            />
+          </div>
+          <!-- Institution Input -->
+          <div class="mb-3">
+            <label for="edit-institution" class="form-label">Institution</label>
+            <input
+              id="edit-institution"
+              type="text"
+              class="form-control"
+              placeholder="Enter institution name"
+              required
+            />
+          </div>
+          <!-- Year Input -->
+          <div class="mb-3">
+            <label for="edit-year" class="form-label">Year</label>
+            <input
+              id="edit-year"
+              type="text"
+              class="form-control"
+              placeholder="Enter graduation year"
+              required
+            />
+          </div>
+          <!-- Action Buttons -->
+          <div class="d-flex justify-content-between">
+            <button
+              type="button"
+              id="cancel-button-education"
+              class="btn btn-secondary"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add Experience  -->
+    <div
+      id="edit-modal-experience"
+      class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center z-3"
+    >
+      <div
+        class="bg-white rounded p-4 shadow-lg"
+        style="
+          max-width: 500px;
+          width: 100%;
+          max-height: 90vh;
+          overflow-y: auto;
+        "
+      >
+        <h2 class="h4 fw-bold text-center text-dark mb-4">
+          Add / Edit Job Experience
+        </h2>
+        <form id="edit-form-experience">
+          <!-- Job Title -->
+          <div class="mb-3">
+            <label for="job-title" class="form-label">Job Title</label>
+            <input
+              type="text"
+              id="job-title"
+              name="job-title"
+              class="form-control"
+              placeholder="Enter Job Title"
+              required
+            />
+          </div>
+
+          <!-- Company Name -->
+          <div class="mb-3">
+            <label for="company-name" class="form-label">Company Name</label>
+            <input
+              type="text"
+              id="company-name"
+              name="company-name"
+              class="form-control"
+              placeholder="Enter Company Name"
+              required
+            />
+          </div>
+
+          <!-- Start Date -->
+          <div class="mb-3">
+            <label for="start-date" class="form-label">Start Date</label>
+            <input
+              type="date"
+              id="start-date"
+              name="start-date"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <!-- End Date -->
+          <div class="mb-3">
+            <label for="end-date" class="form-label">End Date</label>
+            <input
+              type="date"
+              id="end-date"
+              name="end-date"
+              class="form-control"
+            />
+          </div>
+
+          <!-- Job Description -->
+          <div class="mb-3">
+            <label for="job-description" class="form-label"
+              >Job Description</label
+            >
+            <textarea
+              id="job-description"
+              name="description"
+              class="form-control"
+              rows="4"
+              placeholder="Describe your responsibilities"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Buttons -->
+          <div class="d-flex justify-content-end gap-2">
+            <button
+              type="button"
+              id="cancel-button-experience"
+              class="btn btn-secondary"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- profile -->
+    <section class="pt-5 pb-5 bg-light">
+      <div class="container">
+        <!-- Profile Section -->
+        <div
+          class="d-flex flex-column justify-content-center align-items-center mb-5 flex-md-row text-center text-md-center gx-2 gx-md-0"
+        >
+          <!-- Profile Image -->
+          <div class="d-flex justify-content-center mb-3 mb-md-0">
+            <img
+              src="https://www.pngall.com/wp-content/uploads/5/Profile.png"
+              alt="user-avatar-image"
+              class="border border-white rounded-circle shadow-lg img-fluid"
+              style="width: 150px; height: 150px"
+              id="show_image"
+            />
+          </div>
+
+          <!-- Welcome Text -->
+          <div class="d-flex align-items-center justify-content-center ms-md-3">
+            <h1 class="text-primary fw-bold mb-2">Welcome to My Profile</h1>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="text-center">
+          <ul class="nav nav-pills justify-content-center flex-wrap mb-4">
+            <li class="nav-item">
+              <a
+                href="#social-link"
+                class="btn btn-primary rounded-pill me-2 mb-2"
+                >Social</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#skills" class="btn btn-primary rounded-pill me-2 mb-2"
+                >Skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#address" class="btn btn-primary rounded-pill me-2 mb-2"
+                >Address</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="#education"
+                class="btn btn-primary rounded-pill me-2 mb-2"
+                >Education</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="#experience"
+                class="btn btn-primary rounded-pill me-2 mb-2"
+                >Experience</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div id="social-link" class="py-5">
+          <h2 class="text-center text-dark mb-4">Social Links</h2>
+          <p class="text-muted text-center mb-4">
+            Connect with me on these platforms:
+          </p>
+          <div
+            class="d-flex justify-content-center flex-wrap gap-3"
+            id="social-profile"
+          ></div>
+          <div class="text-center mt-4">
+            <button
+              id="edit-social-button"
+              class="btn btn-primary rounded-pill"
+            >
+              Edit Links
+            </button>
+          </div>
+        </div>
+        <hr
+          class="w-50 mx-auto my-4 border-0"
+          style="height: 1px; background-color: #e2e2e2"
+        />
+
+        <!-- Skills Section -->
+        <div id="skills" class="py-5">
+          <h2 class="text-center text-dark mb-4">My Skills</h2>
+          <p class="text-muted text-center mb-4">
+            Discover my technical expertise
+          </p>
+          <div
+            id="skills-container"
+            class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 p-4"
+          >
+            <!-- Dynamically loaded skills will appear here -->
+          </div>
+
+          <div class="text-center mt-4">
+            <button id="add-skill-button" class="btn btn-primary rounded-pill">
+              Add Skill
+            </button>
+          </div>
+        </div>
+        <hr
+          class="mx-auto my-4 border-0"
+          style="width: 80%; height: 1px; background-color: #e2e2e2"
+        />
+
+        <!-- Address Section -->
+        <div id="address" class="py-5">
+          <h2 class="text-center text-dark mb-4">Address</h2>
+          <p class="text-muted text-center mb-4">
+            View and edit your current and permanent address:
+          </p>
+          <div class="row g-4">
+            <!-- Present Address -->
+            <div class="col-md-6">
+              <div class="card shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Current Address</h5>
+                  <p>
+                    <strong>Address:</strong>
+                    <span id="present-address-text"></span>
+                  </p>
+                  <p>
+                    <strong>City:</strong> <span id="present-city-text"></span>
+                  </p>
+                  <p>
+                    <strong>State:</strong>
+                    <span id="present-state-text"></span>
+                  </p>
+                  <p>
+                    <strong>Pin Code:</strong>
+                    <span id="present-zip-text"></span>
+                  </p>
+                  <button
+                    class="btn btn-primary btn-sm"
+                    onclick="openEditModal('present')"
+                  >
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Permanent Address -->
+            <div class="col-md-6">
+              <div class="card shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Permanent Address</h5>
+                  <p>
+                    <strong>Address:</strong>
+                    <span id="permanent-address-text"></span>
+                  </p>
+                  <p>
+                    <strong>City:</strong>
+                    <span id="permanent-city-text"></span>
+                  </p>
+                  <p>
+                    <strong>State:</strong>
+                    <span id="permanent-state-text"></span>
+                  </p>
+                  <p>
+                    <strong>Pin Code:</strong>
+                    <span id="permanent-zip-text"></span>
+                  </p>
+                  <button
+                    class="btn btn-primary btn-sm"
+                    onclick="openEditModal('permanent')"
+                  >
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center mb-3">
+            <input
+              type="checkbox"
+              id="copy-address-checkbox"
+              class="form-check-input me-2"
+              onchange="toggleCopyAddress()"
+            />
+            <label for="copy-address-checkbox" class="form-check-label">
+              Use the same address for Permanent Address
+            </label>
+          </div>
+
+          <!-- Overall Edit Button -->
+          <!-- <div class="text-center mt-4">
+            <button
+              id="save-button-both"
+              class="btn btn-primary px-5 py-2"
+              onclick="saveAddresses()"
+            >
+              Save Addresses
+            </button>
+          </div> -->
+        </div>
+        <hr
+          class="w-50 mx-auto my-4 border-0"
+          style="height: 1px; background-color: #e2e2e2"
+        />
+
+        <!-- Education Section -->
+        <div id="education" class="py-5">
+          <h2 class="text-center text-dark mb-4">Education</h2>
+          <p class="text-muted text-center mb-4">
+            Manage your educational qualifications:
+          </p>
+          <div
+            id="education-list"
+            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
+          >
+            <!-- Education details dynamically loaded -->
+          </div>
+
+          <div class="text-center mt-4">
+            <button id="addEducation" class="btn btn-primary rounded-pill">
+              Add Education
+            </button>
+          </div>
+        </div>
+        <hr
+          class="w-50 mx-auto my-4 border-0"
+          style="height: 1px; background-color: #e2e2e2"
+        />
+
+        <!-- Experience Section -->
+        <div id="experience" class="py-5">
+          <h2 class="text-center text-dark mb-4">Experience</h2>
+          <p class="text-muted text-center mb-4">
+            Manage your professional experiences:
+          </p>
+          <div id="experience-list" class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- Experience details dynamically loaded -->
+          </div>
+          <div class="text-center mt-4">
+            <button id="addExperience" class="btn btn-primary rounded-pill">
+              Add Experience
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
+  <div class="container">
+    <div class="row" >
+      <!-- Quick Links Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Quick Links</h5>
+        <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">
+          <li><a href="/" class="footer-link">Home</a></li>
+          <li><a href="/about/" class="footer-link">About Us</a></li>
+          <li><a href="/demo/" class="footer-link">Demo</a></li>
+          <li><a href="/results/" class="footer-link">Our Results</a></li>
+          <li><a href="/membership/" class="footer-link">Memberships</a></li>
+          <li><a href="/campaign/workshop/registration/" class="footer-link">Workshop</a></li>
+          <li><a href="/apply/" class="footer-link">Apply</a></li>
+          <li><a href="/socialwork/donatebook/" class="footer-link">Donate Books</a></li>
+          <li><a href="/contactus/" class="footer-link">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Products Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Products</h5>
+        <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+          <li><a href="/myaccount/jobsforyou/" class="footer-link">Jobs For You</a></li>
+          <li><a href="/myaccount/jobprofile/" class="footer-link">Job Profile</a></li>
+          <li><a href="/careeroptions/profileanalyzer/" class="footer-link">Profile Analyzer</a></li>
+          <li><a href="/hirewithus/" class="footer-link">Hire With Us</a></li>
+          <li><a href="/test/" class="footer-link">Test Yourself</a></li>
+        </ul>
+      </div>
+
+      <!-- Other Links Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Other Links</h5>
+        <ul class="list-unstyled" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+          <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/refund" target="_blank" class="footer-link">Cancellation & Refund Policy</a></li>
+          <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/terms" target="_blank" class="footer-link">Terms and Conditions</a></li>
+          <li><a href="https://merchant.razorpay.com/policy/N3NZSsFvMtVEFN/shipping" target="_blank" class="footer-link">Shipping & Delivery Policy</a></li>
+          <li><a href="/privacy/" class="footer-link">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media Section -->
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase font-weight-bold">Follow Us</h5>
+        <div class="d-flex justify-content-center justify-content-md-start">
+          <a
+  href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+  target="_blank"
+  class="fb-icon"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px"
+    y="0px"
+    width="35"
+    height="35"
+    viewBox="0 0 48 48"
+  ><path
+  fill="#fff"
+  d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
+></path>
+<path
+  fill="#fff"
+  d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
+></path>
+<path
+  fill="#cfd8dc"
+  d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
+></path>
+<path
+  fill="#40c351"
+  d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
+></path>
+<path
+  fill="#fff"
+  fill-rule="evenodd"
+  d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+  clip-rule="evenodd"
+></path>
+</svg>
+</a>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100093276582711" target="_blank" class="social-icon mr-3">
+            <img src="https://img.icons8.com/color/48/facebook-new.png" width="30" height="30" />
+          </a>
+          <a href="https://www.instagram.com/jobsdoor360/" target="_blank" class="social-icon mr-3">
+            <img src="https://img.icons8.com/color/48/instagram-new--v1.png" width="30" height="30" />
+          </a>
+          <a href="https://www.linkedin.com/in/qualitywise-b05857275/" target="_blank" class="social-icon mr-3">
+            <img src="https://img.icons8.com/color/48/linkedin.png" width="30" height="30" />
+          </a>
+          <a href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ" target="_blank" class="social-icon">
+            <img src="https://img.icons8.com/color/48/youtube-play.png" width="30" height="30" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="row text-center mt-1">
+      <div class="col-md-12">
+        <p class="small mb-0">Copyright Jobsdoor360 © 2025. All rights reserved</p>
+        <p class="small">
+          <strong class="fs-6">Vinay Kumar</strong><br>
+          AIEEE AIR 10630, State Rank 602, BTech + MTech from ABV-IIITM Gwalior<br>
+          <strong>10 years experience in IT companies</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .row ul li a{
+    text-decoration: none;
+    color: white;
+  }
+  .footer-link {
+    display: block;
+    padding: 2px 0;
+    transition: color 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: #40c351;
+  }
+
+  .social-icon {
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .bg-gradient-to-r {
+    background: linear-gradient(to right, #1E3A8A, #3B82F6);
+  }
+
+  .text-white {
+    color: #fff !important;
+  }
+</style>
+<!-- WhatsApp Chat Button -->
+<div class="chat-back-to-top">
+  <!-- <button id="like-button">
+    <i class="fa-solid fa-thumbs-up"></i>
+  </button>
+  <button id="dislike-button">
+    <i class="fa-solid fa-thumbs-down"></i>
+  </button> -->
+  <!-- <span style="font-size: 15px">Any question or complaint</span> -->
+ <a href= "https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+ target="_blank"   style="font-size: 14px; font-weight: 500; color: black"
+    >Any question or complaint</a
+  > 
+  <div class="whatsapp-chat">
+    <a
+      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
+      target="_blank"
+    >
+      <i
+        class="fab fa-whatsapp"
+        style="font-size: 27px; margin-bottom: 13px"
+      ></i>
+       
+  </div>
+  <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</div>
+
+<!-- The Bootstrap Modal -->
+<div
+  class="modal fade"
+  id="myModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          What Can We Improve on Our Website?
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <textarea
+          id="feedback"
+          class="form-control"
+          placeholder="Your feedback..."
+        ></textarea>
+        <input
+          type="text"
+          id="phoneNumber"
+          class="form-control"
+          placeholder="Your phone number..."
+        />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button id="submitFeedback" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="module" src="/staticfiles/db/dbconfig.js"></script>
+<script type="module" src="/staticfiles/script.js"></script>
+<script type="module">
+ // Check if the user is signed in
+ window.auth.onAuthStateChanged(async (user) => {
+        const signupButton = document.getElementById('signup-button');
+        const welcomeText = document.getElementById("welcome-text");
+        const userMail = document.getElementById("user-mail");
+
+        
+
+        if (user) {
+            // Save email to localStorage
+            localStorage.setItem("email", user.email);
+            const userProfileRef = doc(db, "user_profile", user.email);
+  const docSnap = await getDoc(userProfileRef);
+  let name = "";
+  if(docSnap.exists()){
+    name = docSnap.data().about.firstName + " " + docSnap.data().about.lastName || "";
+  }
+
+            // Hide the signup button and show "Logout"
+            document.getElementById("login-button").innerHTML = "Logout";
+            signupButton.style.display = "none";
+
+            // Retrieve the display name (username)
+            let username = user.displayName;
+            // console.log(username) // For Google Sign-In or if saved during registration
+
+            // If username is not available in displayName, fetch it from Firestore
+            if (!username) {
+                const docRef = doc(db, "lead", user.email);
+                try {
+                    const docSnap = await getDoc(docRef);
+                    if (docSnap.exists()) {
+                        username = docSnap.data().full_name || user.email; // Fallback to email if full_name is missing
+                    }
+                } catch (error) {
+                    console.error("Error fetching username:", error);
+                    username = user.email; // Fallback
+                }
+            }
+
+            // Save username to localStorage for later use
+            localStorage.setItem("username", username);
+            // console.log(username);
+            // Update welcome text with the username
+            if(name){
+              welcomeText.innerHTML = `Hii, ${name}`;
+            }
+          else if(username)
+            welcomeText.innerHTML = `Hii, ${username}`;
+          
+            
+            else{
+              userMail.innerHTML = username; // Optionally update email 
+            }
+              // display to username
+        } else {
+            const loginButton = document.getElementById("login-button");
+            loginButton.addEventListener("click", () => {
+                const email = localStorage.getItem("email");
+                if (email) {
+                    localStorage.clear();
+                }
+                location.href = "/login"; // Corrected 'location.location.href' to 'location.href'
+            });
+            signupButton.style.display = "block"; // Show the signup button when user is not signed in
+        }
+    });
+
+    // Logout logic
+    document.getElementById("login-button").addEventListener("click", function () {
+        const email = localStorage.getItem("email");
+        if (email) {
+            localStorage.clear();
+            auth.signOut()
+                .then(() => {
+                    window.location.href = "/login/";
+                })
+                .catch((error) => {
+                    console.error("Error signing out:", error);
+                });
+        }
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+  crossorigin="anonymous"></script>
+
+<script>
+  window.addEventListener("scroll", () => {
+    let scrollVal = window.scrollY;
+    if (scrollVal > 2000) {
+    document.getElementById("backToTopBtn").style.display = "block";
+    } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+    }
+  });
+
+  function scrollToTop() {
+    document.documentElement.scrollTop = 0;
+  }
+
+  document
+    .getElementById("backToTopBtn")
+    .addEventListener("click", scrollToTop);
+</script>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+<script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-1JQVXS3B5L");
+</script>
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-MFBK5637");
+</script>
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452" crossorigin="anonymous"></script>-->
+
+
+
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/jobprofile/script.js"
+    ></script>
+  </body>
+</html>

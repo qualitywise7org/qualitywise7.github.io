@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Jdmasterpanel</title>
+  <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.2.0/dist/css/coreui.min.css" rel="stylesheet"
+    integrity="sha384-u3h5SFn5baVOWbh8UkOrAaLXttgSF0vXI15ODtCSxl0v/VKivnCN6iHCcvlyTL7L" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/jdmasterpanel/users-record/script.css"
+    />
+
+  <%- include('../../../../partials/head.ejs') %>
+    <style>
+      .filter1 {
+        display: flex;
+        gap: 10px;
+        justify-content: end;
+        margin-bottom: 10px;
+      }
+
+      .pagination {
+        margin-top: 10px;
+      }
+
+      .pagination button {
+        margin: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .pagination span {
+        margin: 0 10px;
+      }
+
+      #paginationControls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .pagination-btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s ease;
+      }
+
+      .pagination-btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+
+      .pagination-btn i {
+        font-size: 18px;
+      }
+
+      .pagination-info {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+
+</head>
+
+<body>
+  <%- include('../../../../partials/navbar.ejs') %>
+
+    <!-- Search bar -->
+    <div class="search-container">
+      <div class="filter1">
+        <!-- Gender Filter -->
+        <label for="genderDropdown">Filter by Gender:</label>
+        <select id="genderDropdown">
+          <option value="all">All</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <!-- <button type="button" id="gender_button" onclick="">Search</button> -->
+        <!-- Date filter inputs -->
+        <div class="date-filter-container" id="dateFilterContainer">
+          <label for="startDate">From:</label>
+          <input type="date" id="startDate" placeholder="YYYY-MM-DD" />
+
+          <label for="endDate">To:</label>
+          <input type="date" id="endDate" placeholder="YYYY-MM-DD" />
+        </div>
+
+      </div>
+
+
+      <input type="text" id="searchInput" placeholder="Search the name/email" />
+      <button type="button" id="searchButton" onclick="filterByNameEmail()">Search</button>
+
+      <label for="ratingDropdown">Filter by Rating:</label>
+      <select id="ratingDropdown">
+        <option value="all">All</option>
+        <option value="rated">Rated</option>
+        <option value="unrated">Unrated</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button type="button" id="filter_button" onclick="filterByRating()">Search</button>
+
+
+    </div>
+    <!-- User profiles table -->
+    <table id="userProfilesTable">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Profile Photo</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>School</th>
+          <th>Degree</th>
+          <th>Graduation Date</th>
+          <th>Skills</th>
+          <th>Rating</th>
+          <th>Remarks</th>
+          <th>Action</th>
+          <th>Consultancy Remark</th>
+          <th>Interview Form</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div id="paginationControls" class="pagination"></div>
+        <!-- User profiles dynamically inserted here -->
+      </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.2.0/dist/js/coreui.bundle.min.js"
+      integrity="sha384-JdRP5GRWP6APhoVS1OM/pOKMWe7q9q8hpl+J2nhCfVJKoS+yzGtELC5REIYKrymn"
+      crossorigin="anonymous"></script>
+    <script type="module" src="/staticfiles/mainfiles/jdmasterpanel/users-record/script.js"></script>
+
+
+    <%- include('../../../../partials/footer.ejs') %>
+</body>
+
+</html>

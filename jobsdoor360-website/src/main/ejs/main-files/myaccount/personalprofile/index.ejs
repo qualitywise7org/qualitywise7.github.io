@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <%- include('../../../partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../../../partials/navbar.ejs') %>
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      aria-labelledby="editModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="edit-profile-form">
+              <div class="mb-3">
+                <label for="edit-name" class="form-label">Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="edit-name"
+                  name="ename"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="edit-email" class="form-label">Email:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="edit-email"
+                  name="eemail"
+                  placeholder="xyz@gmail.com"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="edit-phone" class="form-label">Phone No:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="edit-phone"
+                  name="ephone"
+                  placeholder="1234567890"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Gender:</label>
+                <div class="d-flex gap-4">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gender-option"
+                      id="gender-male"
+                      value="Male"
+                      required
+                    />
+                    <label class="form-check-label" for="gender-male">
+                      Male
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gender-option"
+                      id="gender-female"
+                      value="Female"
+                    />
+                    <label class="form-check-label" for="gender-female">
+                      Female
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gender-option"
+                      id="gender-other"
+                      value="Other"
+                    />
+                    <label class="form-check-label" for="gender-other">
+                      Other
+                    </label>
+                  </div>
+                </div>
+                <input type="hidden" id="edit-gender" name="egender" value="" />
+              </div>
+              <div class="mb-3">
+                <label for="edit-dob" class="form-label">Date of Birth:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="edit-dob"
+                  name="edob"
+                  placeholder="2003-01-01"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="file-input" class="form-label"
+                  >Upload Profile</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="file-input"
+                  accept="image/*"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              id="cancel-button"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" id="save-button">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="pt-5 pb-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Image Section -->
+          <div class="col-12 col-md-3 text-center mb-4 mb-md-0">
+            <img
+              src="https://www.pngall.com/wp-content/uploads/5/Profile.png"
+              alt="user-avatar-image"
+              class="border rounded-circle img-fluid shadow-sm"
+              style="height: 120px; width: 120px"
+              id="show_image"
+            />
+          </div>
+
+          <!-- User Details Section -->
+          <div class="col-12 col-md-9">
+            <div class="row">
+              <div class="col-12 col-sm-6 mb-2">
+                <h6 class="fw-bold">Name:</h6>
+                <p class="fw-normal text-muted mb-0" id="fullname">John Doe</p>
+              </div>
+              <div class="col-12 col-sm-6 mb-2">
+                <h6 class="fw-bold">Email:</h6>
+                <p class="fw-normal text-muted mb-0" id="email">
+                  john.doe@example.com
+                </p>
+              </div>
+              <div class="col-12 col-sm-6 mb-2">
+                <h6 class="fw-bold">DOB:</h6>
+                <p class="fw-normal text-muted mb-0" id="dob">2000-01-01</p>
+              </div>
+              <div class="col-12 col-sm-6 mb-2">
+                <h6 class="fw-bold">Gender:</h6>
+                <p class="fw-normal text-muted mb-0" id="gender">Male</p>
+              </div>
+              <div class="col-12 col-sm-6 mb-2">
+                <h6 class="fw-bold">Phone No:</h6>
+                <p class="fw-normal text-muted mb-0" id="mob">1234567890</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Edit Button -->
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <button class="btn btn-primary" id="edit-button">
+              <i class="bi bi-pencil"></i> Edit Profile
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include('../../../partials/footer.ejs') %>
+    <script
+      type="module"
+      src="/staticfiles/mainfiles/myaccount/personalprofile/script.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5; /* Light gray background */
+  font-family: "Roboto", Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.center {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%; /* Full width of the container */
+  height: auto;
+}
+
+/* Assessment Grid and Boxes */
+.assessment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Updated to 4 columns */
+  gap: 20px; /* Reduced gap between cards */
+  margin-bottom: 20px;
+  
+}
+
+.assessment-box {
+  background-color: #ffffff;
+  padding: 20px; /* Reduced padding */
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.assessment-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.assessment-title {
+  font-size: 1.5rem; /* Adjusted font size */
+  color: #343a40;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.btn-start {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  margin-top: auto; /* Align button at the bottom */
+  
+}
+
+.btn-start:hover {
+  background-color: #0056b2;
+}
+
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 992px) {
+  .assessment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query for phones and smaller screens */
+@media (max-width: 576px) {
+  .assessment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .assessment-box {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+
+  .assessment-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-start {
+    padding: 10px 20px;
+  }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 400px) {
+  .assessment-title {
+    font-size: 1.2rem;
+  }
+
+  .btn-start {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-box {
+  padding: 10px;
+  width: 60%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-search {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-search:hover {
+  background-color: #0056b3;
+}

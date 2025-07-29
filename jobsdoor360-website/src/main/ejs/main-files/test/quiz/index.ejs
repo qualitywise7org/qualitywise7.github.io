@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+  <link rel="stylesheet" href="/staticfiles/mainfiles/test/quiz/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <section class="content">
+      <div class="quiz-header">
+        <div id="quiz-title"></div>
+        <div id="timer">30:00</div>
+      </div>
+      <div id="question-title">
+        <!-- Heading will be injected here -->
+      </div>
+      <div id="quiz-container">
+        <div id="quiz">
+          <div id="question-container">
+            <!-- Question content will be injected here -->
+          </div>
+          <div class="button-group">
+            <button id="pre-btn" class="btn"><i class="fas fa-arrow-left"></i> Previous</button>
+            <button id="next-btn" class="btn">Next <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div id="result-container">
+            <h2>Quiz Completed!</h2>
+            <p>Your score: <span id="score"></span></p>
+            <p>unanswered : <span id="unansweredDisplay"></span></p>
+            <p>Percentage correct: <span id="percentage"></span>%</p>
+          </div>
+          <button id="home-btn" class="btn"c><i class="fas fa-home"></i> Home</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Popup structure here -->
+  <div class="popup" id="guidelinePopup">
+    <h3>Assessment Guidelines</h3>
+    <p>Please read the following guidelines before starting the test:</p>
+    <div>
+      <ul>
+        <li><b>Total Number of Questions:</b> Approximately 50</li>
+        <li><b>Time Limit:</b> 30 minutes</li>
+        <li><b>Preparation:</b> Ensure you have a stable and reliable internet connection throughout the duration of the assessment.</li>
+        <li><b>Prohibited Actions:</b>
+          Do not use external resources such as books, the internet, or assistance from others.
+          Refrain from refreshing the page during the test.<br>
+        Switching the tab is not allowed.</li>
+        <li><b>Completion Instructions:</b>
+          Read each question carefully before answering.
+          Answer all questions to the best of your ability, focusing on clarity and accuracy.</li>
+        <li>Upon completion, submit your results to the designated WhatsApp group as instructed.</li>
+        <li>Do not refresh the page during the test.</li>
+        <li>Upon completion, submit your results to the designated WhatsApp group as instructed.</li>
+        <li>Answer all questions to the best of your ability.</li>
+        <li>Focus: Minimize distractions to ensure you are fully concentrated on the assessment for its entire duration.</li>
+      </ul>
+    <label>
+      <input type="checkbox" id="agree-checkbox">
+      I agree to the guidelines.
+    </label>
+    <button id="start-btn" class="btn-submit">Start</button>
+  </div>
+</div>
+
+  <!-- Overlay -->
+<div id="overlay" style="display: none;"></div>
+
+  <!-- Include Firebase config file -->
+  <script type="module" src="/staticfiles/db/dbconfig.js"></script>
+  <script type="module" src="/staticfiles/mainfiles/test/quiz/script.js"></script>
+</body>
+</html>

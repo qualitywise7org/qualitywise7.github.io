@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assessment</title>
+  <link rel="stylesheet" href="/staticfiles/mainfiles/test/style.css">
+  <%- include('../../partials/head.ejs') %>
+</head>
+<body>
+  <%- include('../../partials/navbar.ejs') %>
+  <section class="content">
+    <h1 class="center">Master Your Skills: Assessments & Challenges</h1>
+    <div class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        class="search-box"
+        placeholder="Search Assessments..."
+      />
+      <button id="search-button" class="btn-search">Search</button>
+    </div>
+    <div class="assessment-grid" id="assessment">
+      Fetching Assessments ...!
+    </div>
+  </section>
+  <%- include('../../partials/footer.ejs') %>
+  <script type="module" src="/staticfiles/mainfiles/test/script.js"></script>
+</body>
+</html>

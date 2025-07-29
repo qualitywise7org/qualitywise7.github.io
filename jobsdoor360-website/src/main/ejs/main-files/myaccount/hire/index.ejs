@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hire</title>
+    <link
+      rel="stylesheet"
+      href="/staticfiles/mainfiles/myaccount/hire/style.css"
+    />
+    <%- include('../../../partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../../../partials/navbar.ejs') %>
+   <h1>Job Postings</h1>
+    <button class="button" id="openModalBtn">+ Post New Job</button>
+
+    <div id="jobList" class="job-list-container"></div>
+
+    <!-- Modal Form -->
+    <div class="modal" id="jobModal">
+      <div class="modal-content">
+        <h2 id="modalTitle">Post a New Job</h2>
+        <form id="jobForm">
+          <div class="form-group">
+            <label>Job Title*</label>
+            <input type="text" id="jobTitle" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name*</label>
+            <select id="company" required>
+              <option value="">Select a company</option>
+              <option value="tcs">TCS</option>
+              <option value="infosys">Infosys</option>
+              <option value="jobsdoor360">jobsdoor360</option>
+              <option value="accenture">Accenture</option>
+             <option value="capgemini">Thought Works</option>
+             <option value="others">Others</option>
+              <!-- Add more companies as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Job Type*</label>
+            <select id="jobType" required>
+              <option value="Full-time">Full-time</option>
+              <option value="Part-time">Part-time</option>
+              <option value="Internship">Internship</option>
+              <option value="Contract">Contract</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Location*</label>
+            <input type="text" id="location" required />
+          </div>
+          <div class="form-group">
+            <label>Qualification Eligibility*</label>
+            <input type="text" id="qualification" required />
+          </div>
+          <div class="form-group">
+            <label>Education Board</label>
+            <input type="text" id="board" />
+          </div>
+          <div class="form-group">
+            <label>Minimum Age</label>
+            <input type="number" id="minAge" />
+          </div>
+          <div class="form-group">
+            <label>Maximum Age</label>
+            <input type="number" id="maxAge" />
+          </div>
+          <div class="form-group">
+            <label>Application Deadline*</label>
+            <input type="date" id="deadline" required />
+          </div>
+          <div class="form-group">
+            <label>Profile Code (for filtering)</label>
+            <input type="text" id="profile" />
+          </div>
+          <div class="form-group">
+            <label>Job Description*</label>
+            <textarea id="description" required></textarea>
+          </div>
+          <button type="submit" class="button">Submit</button>
+          <button type="button" class="button" style="background:#6b7280" id="closeModalBtn">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+
+    <%- include('../../../partials/footer.ejs') %>
+    <script type="module" src="/staticfiles/mainfiles/myaccount/hire/checkRecruiter.js"></script>
+    <script type="module" 
+    src="/staticfiles/mainfiles/myaccount/hire/script.js"
+    ></script>
+  </body>
+</html>
+
+
