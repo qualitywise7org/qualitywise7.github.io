@@ -31,49 +31,51 @@
         <p id="error-message"></p>
       </div>
 
-      <!-- Test Summary Section -->
-      <div id="test-info" class="info-card fade-in" style="display: none">
-        <h2>Test Summary</h2>
-        <div class="info-grid">
-          <div class="info-item">
-            <div class="info-label">Test Name</div>
-            <div class="info-value" id="test-name">-</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label">Date Taken</div>
-            <div class="info-value" id="test-date">-</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label">Total Questions</div>
-            <div class="info-value" id="total-questions">-</div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-label">Time Spent</div>
-            <div class="info-value" id="time-spent">-</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label">Correct Answers</div>
-            <div class="info-value" id="correct-answers">-</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label">Your Score</div>
-            <div id="score-container">
-              <span id="score-badge" class="score-badge">-</span>
+      <!-- ✅ Added missing #content wrapper -->
+      <div id="content" style="display: none">
+        <!-- Test Summary Section -->
+        <div id="test-info" class="info-card fade-in">
+          <h2>Test Summary</h2>
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="info-label">Test Name</div>
+              <div class="info-value" id="test-name">-</div>
             </div>
-            myaccount/test-report/test-details/
+            <div class="info-item">
+              <div class="info-label">Date Taken</div>
+              <div class="info-value" id="test-date">-</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Total Questions</div>
+              <div class="info-value" id="total-questions">-</div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-label">Time Spent</div>
+              <div class="info-value" id="time-spent">-</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Correct Answers</div>
+              <div class="info-value" id="correct-answers">-</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Your Score</div>
+              <div id="score-container">
+                <span id="score-badge" class="score-badge">-</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Question Breakdown Section -->
-      <h3 class="section-title" id="questions-title" style="display: none">
-        Question Breakdown
-      </h3>
-      <div id="questions-container"></div>
+        <!-- Question Breakdown Section -->
+        <h3 class="section-title" id="questions-title">Question Breakdown</h3>
+        <div id="questions-container"></div>
+      </div>
+      <!-- ✅ End of #content -->
     </div>
 
     <%- include('../../../../partials/footer.ejs') %>
+
     <script
       type="module"
       src="/staticfiles/mainfiles/myaccount/test-report/test-details.js"
