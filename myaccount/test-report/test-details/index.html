@@ -190,62 +190,67 @@
 
 
     <div class="container">
-      <a href="/myaccount/test-report/" class="back-btn"> ← Back to Reports </a>
+  <a href="/myaccount/test-report/" class="back-btn"> ← Back to Reports </a>
 
-      <!-- Loading State -->
-      <div id="loading" class="loading">
-        <div class="loading-spinner"></div>
-        <h3>Loading Your Test Details</h3>
-        <p>Please wait while we fetch your assessment results...</p>
+  <!-- Loading State -->
+  <div id="loading" class="loading">
+    <div class="loading-spinner"></div>
+    <h3>Loading Your Test Details</h3>
+    <p>Please wait while we fetch your assessment results...</p>
+  </div>
+
+  <!-- Error State -->
+  <div id="error" class="error" style="display: none">
+    <h3>Something went wrong</h3>
+    <p id="error-text"></p> <!-- ✅ Fixed ID -->
+  </div>
+
+  <!-- ✅ Content Wrapper -->
+<div id="content" style="display: none">
+  <div id="test-info" class="info-card fade-in">
+    <h2>Test Summary</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">Test Name</div>
+        <div class="info-value" id="test-name">-</div>
       </div>
-
-      <!-- Error State -->
-      <div id="error" class="error" style="display: none">
-        <h3>Something went wrong</h3>
-        <p id="error-message"></p>
+      <div class="info-item">
+        <div class="info-label">Date Taken</div>
+        <div class="info-value" id="test-date">-</div>
       </div>
-
-      <!-- Test Summary Section -->
-      <div id="test-info" class="info-card fade-in" style="display: none">
-        <h2>Test Summary</h2>
-        <div class="info-grid">
-          <div class="info-item">
-            <div class="info-label">Test Name</div>
-            <div class="info-value" id="test-name">-</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label">Date Taken</div>
-            <div class="info-value" id="test-date">-</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label">Total Questions</div>
-            <div class="info-value" id="total-questions">-</div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-label">Time Spent</div>
-            <div class="info-value" id="time-spent">-</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label">Correct Answers</div>
-            <div class="info-value" id="correct-answers">-</div>
-          </div>
-          <div class="info-item">
-            <div class="info-label">Your Score</div>
-            <div id="score-container">
-              <span id="score-badge" class="score-badge">-</span>
-            </div>
-            myaccount/test-report/test-details/
-          </div>
+      <div class="info-item">
+        <div class="info-label">Total Questions</div>
+        <div class="info-value" id="total-questions">-</div>
+      </div>
+      <!--<div class="info-item">
+        <div class="info-label">Time Spent</div>
+        <div class="info-value" id="time-spent">-</div>
+        </div>-->
+      <div class="info-item">
+        <div class="info-label">Correct Answers</div>
+        <div class="info-value" id="correct-answers">-</div>
+        </div>
+      <div class="info-item">
+        <div class="info-label">Your Score</div>
+        <div class="info-value">
+          <span id="percentage-badge" class="score-badge">-</span>
         </div>
       </div>
-
-      <!-- Question Breakdown Section -->
-      <h3 class="section-title" id="questions-title" style="display: none">
-        Question Breakdown
-      </h3>
-      <div id="questions-container"></div>
     </div>
+
+    <div style="display: none">
+      <div id="test-title"></div>
+      <div id="test-code"></div>
+      <div id="percentage-badge"></div>
+      <div id="score"></div>
+    </div>
+  </div>
+
+  <h3 class="section-title" id="questions-title">Question Breakdown</h3>
+  <div id="questions-container"></div>
+</div>
+</div>
+
 
     <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
   <div class="container">
@@ -604,6 +609,7 @@
   })(window, document, "script", "dataLayer", "GTM-MFBK5637");
 </script>
 <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452" crossorigin="anonymous"></script>-->
+
 
 
 
