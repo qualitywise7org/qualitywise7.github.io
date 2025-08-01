@@ -2,6 +2,23 @@
 <html lang="en">
 <head>
   <title>Assessment Report</title>
+  <!-- Loading Spinner -->
+<div id="loading" style="text-align: center; margin: 40px auto; display: none;">
+  <h5>⏳ Loading assessment results...</h5>
+</div>
+
+<!-- Error Message Box -->
+<div id="error" style="display: none; margin: 30px auto; background-color: #fdecea; border: 1px solid #f5c6cb; padding: 20px; color: #b71c1c; border-radius: 6px;">
+  <strong>❌ Unable to load report:</strong>
+  <p id="error-text" style="margin: 0; font-weight: 500;"></p>
+</div>
+
+<!-- Optional Debug Info -->
+<div id="debug-info" style="display: none;">
+  <strong>Debug Log:</strong>
+  <div id="debug-text"></div>
+</div>
+
   <link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/test-report/style.css">
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
