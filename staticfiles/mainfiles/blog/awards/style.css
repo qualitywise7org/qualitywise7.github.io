@@ -1,0 +1,108 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #f7f9fc;
+  color: #1a1a1a;
+  line-height: 1.7;
+}
+
+/* Header Styling */
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-title {
+  font-size: 2.3rem;
+  font-weight: normal;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.header-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: normal;
+}
+
+/* Main Content */
+.main-content {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.awards-content {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.award-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.award-title {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  text-align: center;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.award-description {
+  font-size: 1.05rem;
+  color: #444;
+  text-align: left;
+  line-height: 1.8;
+  font-weight: normal;
+}
+
+/* Footer Styling */
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  color: #999;
+  background-color: #ffffff;
+  margin-top: 40px;
+}
+
+.footer-text {
+  font-weight: normal;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+  .header-title {
+    font-size: 1.8rem;
+  }
+
+  .award-title {
+    font-size: 1.3rem;
+  }
+
+  .award-description {
+    font-size: 1rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}
