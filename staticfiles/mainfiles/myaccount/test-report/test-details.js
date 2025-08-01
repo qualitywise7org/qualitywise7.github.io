@@ -24,7 +24,10 @@ function showContent() {
   console.log("Showing content");
   updateDebug("Showing content successfully");
   document.getElementById("loading").style.display = "none";
-  document.getElementById("content").style.display = "block";
+  console.log("workingjek-");
+  const contentElem = document.getElementById("feedback-modal");
+  document.getElementById("feedback-modal").style.display = "block";
+  console.log("content ", contentElem );
 }
 
 function calculateCorrectAnswers(testResult, quizData) {
@@ -279,7 +282,25 @@ function setupAuth() {
   if (auth.currentUser) loadTestDetails();
 
   onAuthStateChanged(auth, (user) => {
+   feature/blogs
+    updateDebug(`🔐 Auth state: ${user?.email || "not logged in"}`);
+    console.log("Auth state changed:", user?.email);
+
+    // Only call loadTestDetails if we haven't already loaded
+    const contentElem = document.getElementById("feedback-modal");
+    if (!contentElem) {
+      console.warn("[Test Details] #content element not found in DOM. Test details will not load.");
+      updateDebug("[WARN] #content element not found in DOM. Test details will not load.");
+      return;
+    }
+    console.log("content ", contentElem );
+    if (
+      user &&
+      !contentElem.style.display.includes("block")
+    ) {
+
     if (user && !document.getElementById("content").style.display.includes("block")) {
+ main
       loadTestDetails();
     }
   });
