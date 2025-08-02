@@ -9,14 +9,14 @@ window.onAuthStateChanged(window.auth, (user) => {
   } else {
     console.log("No user is signed in");
     const currentUrl = encodeURIComponent(window.location.href);
-    window.location.href = `/login/?redirect_url=${currentUrl}`;
+    window.location.href = /login/?redirect_url=${currentUrl};
   }
 });
 
 // ✅ UPLOAD CV TO STORAGE
 async function uploadCV(file) {
   const sanitizedFileName = file.name.replace(/[^a-zA-Z0-9_.-]/g, "_");
-  const storageRef = window.ref(window.storage, `user_cv/${userEmail}_${sanitizedFileName}`);
+  const storageRef = window.ref(window.storage, user_cv/${userEmail}_${sanitizedFileName});
   await window.uploadBytes(storageRef, file);
   return await window.getDownloadURL(storageRef);
 }
@@ -26,7 +26,7 @@ async function saveCVToDatabase() {
   // ...rest of your code, but use window.doc, window.getDoc, etc...
   const uploadButton = document.getElementById("btn");
   const fileInput = document.getElementById("cv");
-  const file = fileInput && fileInput.files ? fileInput.files[0] : null;
+  const file = fileInput.files[0];
 
   if (!file) {
     Toastify({
@@ -43,11 +43,10 @@ async function saveCVToDatabase() {
   try {
     const cvUrl = await uploadCV(file);
     const userRef = window.doc(window.db, "user_profile", userEmail);
-    let userSnap = await window.getDoc(userRef);
+    const userSnap = await window.getDoc(userRef);
 
     if (!userSnap.exists()) {
       await window.setDoc(userRef, { about: {} });
-      userSnap = await window.getDoc(userRef);
     }
 
     await window.updateDoc(userRef, {
@@ -77,10 +76,10 @@ async function saveCVToDatabase() {
       duration: 3000,
       style: { background: "red" }
     }).showToast();
-  } finally {
-    uploadButton.disabled = false;
-    uploadButton.innerText = "UPLOAD RESUME";
   }
+
+  uploadButton.disabled = false;
+  uploadButton.innerText = "UPLOAD RESUME";
 }
 
 // ✅ HANDLE BUTTON CLICK
