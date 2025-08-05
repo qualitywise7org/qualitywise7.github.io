@@ -129,3 +129,119 @@ body {
     max-width: none; /* No max-width on smaller screens */
   }
 }
+
+/* Ranking Styles */
+.ranking-top {
+  background-color: #ffd700;
+  color: #000;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.ranking-excellent {
+  background-color: #90EE90;
+  color: #000;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.ranking-good {
+  background-color: #87CEEB;
+  color: #000;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.ranking-average {
+  background-color: #FFB6C1;
+  color: #000;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.ranking-below-average {
+  background-color: #FFA07A;
+  color: #000;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.ranking-none {
+  background-color: #f0f0f0;
+  color: #666;
+  font-style: italic;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Ranking filter button */
+#ranking_filter_button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#ranking_filter_button:hover {
+  background-color: #218838;
+}
+
+/* Submit status styling */
+.submit-status {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.submit-status small {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+/* Ranking badge styles */
+.ranking-top {
+  background-color: #ffd700 !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.ranking-excellent {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+.ranking-good {
+  background-color: #17a2b8 !important;
+  color: white !important;
+}
+
+.ranking-average {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.ranking-below-average {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.ranking-none {
+  background-color: #6c757d !important;
+  color: white !important;
+}
