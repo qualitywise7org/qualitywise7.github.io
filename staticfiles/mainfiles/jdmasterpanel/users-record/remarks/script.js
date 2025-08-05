@@ -39,11 +39,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
-// Fetch consultancy remarks and interview feedback
+// Fetch consultancy remarks, interview feedback, and user remarks
 async function getAllData() {
   try {
     const consultanciesSnapshot = await getDocs(collection(db, "user_consultancies"));
     const interviewsSnapshot = await getDocs(collection(db, "user_interviews"));
+    const userRemarksSnapshot = await getDocs(collection(db, "user_remarks"));
 
     const usersData = {};
 
@@ -53,7 +54,8 @@ async function getAllData() {
       usersData[data.email] = {
         email: data.email,
         remarks: data.remarks || [],
-        feedbacks: [] // Default empty array to avoid undefined errors
+        feedbacks: [], // Default empty array to avoid undefined errors
+        userRemarks: [] // Default empty array for user remarks
       };
     });
 
@@ -66,7 +68,23 @@ async function getAllData() {
         usersData[data.email] = {
           email: data.email,
           remarks: [],
-          feedbacks: data.feedbacks || []
+          feedbacks: data.feedbacks || [],
+          userRemarks: []
+        };
+      }
+    });
+
+    // Process user remarks (from Submit button)
+    userRemarksSnapshot.forEach((doc) => {
+      const data = doc.data();
+      if (usersData[data.email]) {
+        usersData[data.email].userRemarks = [data]; // Store the user remark
+      } else {
+        usersData[data.email] = {
+          email: data.email,
+          remarks: [],
+          feedbacks: [],
+          userRemarks: [data]
         };
       }
     });
@@ -88,7 +106,7 @@ function displayData(groupedData) {
 
   const rows = groupedData
     .map((group, index) => {
-      const maxRows = Math.max(group.remarks.length, group.feedbacks.length, 1);
+      const maxRows = Math.max(group.remarks.length, group.feedbacks.length, group.userRemarks.length, 1);
 
       let rowHTML = "";
 
@@ -99,6 +117,14 @@ function displayData(groupedData) {
         if (i === 0) {
           rowHTML += `<td rowspan="${maxRows}">${index + 1}</td>`;
           rowHTML += `<td rowspan="${maxRows}">${group.email}</td>`;
+        }
+
+        // User Remarks (from Submit button)
+        if (i < group.userRemarks.length) {
+          rowHTML += `<td>${group.userRemarks[i].remark}</td>`;
+          rowHTML += `<td>${formatDate(group.userRemarks[i].submittedAt)}</td>`;
+        } else {
+          rowHTML += `<td>N/A</td><td>N/A</td>`;
         }
 
         // Consultancy Remarks
@@ -125,12 +151,14 @@ function displayData(groupedData) {
     .join("");
 
   userDetailsContainer.innerHTML = `
-    <h2>Grouped Consultancy Remarks and Interview Feedback</h2>
+    <h2>All User Remarks and Feedback</h2>
     <table border="1" cellpadding="10" cellspacing="0">
       <thead>
         <tr>
           <th>S.No</th>
           <th>Email</th>
+          <th>User Remarks</th>
+          <th>Submitted Date</th>
           <th>Consultancy Remarks</th>
           <th>Date</th>
           <th>Interview Feedback</th>

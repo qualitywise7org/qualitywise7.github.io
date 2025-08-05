@@ -16,6 +16,39 @@
   integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
   crossorigin="anonymous"
 />
+<style>
+/* Ranking badge styles */
+.ranking-top {
+  background-color: #ffd700 !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.ranking-excellent {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+.ranking-good {
+  background-color: #17a2b8 !important;
+  color: white !important;
+}
+
+.ranking-average {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.ranking-below-average {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.ranking-none {
+  background-color: #6c757d !important;
+  color: white !important;
+}
+</style>
 
   </head>
   <body>
@@ -368,6 +401,10 @@
               <div class="col-12 col-sm-6 mb-2">
                 <h6 class="fw-bold">Phone No:</h6>
                 <p class="fw-normal text-muted mb-0" id="mob">1234567890</p>
+              </div>
+              <div class="col-12 col-sm-6 mb-2">
+                <h6 class="fw-bold">Assessment Rank:</h6>
+                <p class="fw-normal text-muted mb-0" id="user-rank">Loading...</p>
               </div>
             </div>
           </div>

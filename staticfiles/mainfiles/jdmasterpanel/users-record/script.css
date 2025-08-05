@@ -199,3 +199,49 @@ body {
 #ranking_filter_button:hover {
   background-color: #218838;
 }
+
+/* Submit status styling */
+.submit-status {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.submit-status small {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+/* Ranking badge styles */
+.ranking-top {
+  background-color: #ffd700 !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.ranking-excellent {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+.ranking-good {
+  background-color: #17a2b8 !important;
+  color: white !important;
+}
+
+.ranking-average {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.ranking-below-average {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.ranking-none {
+  background-color: #6c757d !important;
+  color: white !important;
+}

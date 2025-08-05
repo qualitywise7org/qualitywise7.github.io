@@ -48,7 +48,7 @@ async function fetchFromLeadCollection() {
   }
 }
 
-function populateForm(userData) {
+async function populateForm(userData) {
   // console.log(userData.about)
   if (userData.full_name) {
     console.log("fullname");
@@ -98,6 +98,9 @@ function populateForm(userData) {
   }
 
   imageUrl = userData.about?.image || "";
+  
+  // Fetch and display user rank
+  await displayUserRank();
   // cvUrl = userData.about?.cv || "";
 
   const profileImage = document.getElementById("show_image");
@@ -287,3 +290,64 @@ async function saveFormDataToDatabase(event) {
 document
   .getElementById("save-button")
   .addEventListener("click", saveFormDataToDatabase);
+
+// Function to display user rank
+async function displayUserRank() {
+  try {
+    const email = localStorage.getItem("email");
+    if (!email) {
+      return;
+    }
+
+    const rankingRef = doc(db, "user_rankings", "assessment_rankings");
+    const rankingDoc = await getDoc(rankingRef);
+    
+    if (rankingDoc.exists()) {
+      const data = rankingDoc.data();
+      const userRanking = data.rankings.find(user => user.email === email);
+      
+      if (userRanking) {
+        const rankText = userRanking.rank <= 10 ? `#${userRanking.rank}` : `Rank ${userRanking.rank}`;
+        const scoreText = `${userRanking.weightedScore}%`;
+        const attemptsText = `${userRanking.totalAttempts} test${userRanking.totalAttempts > 1 ? 's' : ''}`;
+        
+        const rankingClass = await getRankingClass(email);
+        document.getElementById("user-rank").innerHTML = `
+          <span class="badge ${rankingClass}">${rankText} (${scoreText}, ${attemptsText})</span>
+        `;
+      } else {
+        document.getElementById("user-rank").innerText = "No Assessment Completed";
+      }
+    } else {
+      document.getElementById("user-rank").innerText = "No Rankings Available";
+    }
+  } catch (error) {
+    console.error("Error fetching user rank:", error);
+    document.getElementById("user-rank").innerText = "Error Loading Rank";
+  }
+}
+
+// Function to get ranking class for styling
+async function getRankingClass(userEmail) {
+  try {
+    const rankingRef = doc(db, "user_rankings", "assessment_rankings");
+    const rankingDoc = await getDoc(rankingRef);
+    
+    if (rankingDoc.exists()) {
+      const data = rankingDoc.data();
+      const userRanking = data.rankings.find(user => user.email === userEmail);
+      
+      if (!userRanking) return "ranking-none";
+      
+      if (userRanking.rank <= 3) return "ranking-top";
+      if (userRanking.rank <= 10) return "ranking-excellent";
+      if (userRanking.rank <= 25) return "ranking-good";
+      if (userRanking.rank <= 50) return "ranking-average";
+      return "ranking-below-average";
+    }
+    return "ranking-none";
+  } catch (error) {
+    console.error("Error getting ranking class:", error);
+    return "ranking-none";
+  }
+}

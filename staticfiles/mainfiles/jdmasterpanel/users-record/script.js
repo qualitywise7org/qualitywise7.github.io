@@ -217,16 +217,7 @@ async function populateUserProfilesTable(data) {
     const about = user.about || {};
     const userEmail = about.email;
     const userRanking = rankingData[userEmail];
-    // Rank badge
-    let rankHtml = '-';
-    if (userRanking) {
-      let badgeClass = 'bg-secondary';
-      if (userRanking.rank === 1) badgeClass = 'rank-badge top1';
-      else if (userRanking.rank === 2) badgeClass = 'rank-badge top2';
-      else if (userRanking.rank === 3) badgeClass = 'rank-badge top3';
-      else badgeClass = 'badge bg-info text-dark';
-      rankHtml = `<span class="${badgeClass}" title="Rank: ${userRanking.rank}\nAvg: ${userRanking.weightedScore}%\nAttempts: ${userRanking.totalAttempts}">${userRanking.rank}</span>`;
-    }
+    
     // Rating stars
     let ratingHtml = '-';
     if (typeof user.rating === 'number') {
@@ -236,6 +227,7 @@ async function populateUserProfilesTable(data) {
       }
       ratingHtml += ` <span class="text-muted">(${user.rating})</span>`;
     }
+    
     // Skills as badges (max 4, then +N more with tooltip)
     let skillsHtml = '-';
     if (Array.isArray(user.skills) && user.skills.length > 0) {
@@ -248,52 +240,81 @@ async function populateUserProfilesTable(data) {
         skillsHtml += `<span class='badge bg-secondary ms-1 mb-1' title='${allSkills}'>+${rest.length} more</span>`;
       }
     }
-    // Social icons
-    let socialHtml = '';
-    const social = user.social || {};
-    if (social.github) socialHtml += `<a href='${social.github}' target='_blank' class='me-1' title='GitHub'><i class='fab fa-github fa-lg'></i></a>`;
-    if (social.linkedin) socialHtml += `<a href='${social.linkedin}' target='_blank' class='me-1' title='LinkedIn'><i class='fab fa-linkedin fa-lg'></i></a>`;
-    if (social.leetcode) socialHtml += `<a href='${social.leetcode}' target='_blank' class='me-1' title='LeetCode'><i class='fa-solid fa-code fa-lg'></i></a>`;
-    if (social.instagram) socialHtml += `<a href='${social.instagram}' target='_blank' class='me-1' title='Instagram'><i class='fab fa-instagram fa-lg'></i></a>`;
-    if (!socialHtml) socialHtml = '-';
-    // CV button
-    let cvHtml = '-';
-    if (about.cv) {
-      cvHtml = `<a href='${about.cv}' target='_blank' class='btn btn-sm btn-outline-success' title='View CV'><i class='fas fa-file-arrow-down'></i></a>`;
-    }
-    // Phone
-    let phoneHtml = about.phoneNo || '-';
-    // Preferences as badges
-    let prefHtml = '-';
-    if (Array.isArray(user.preferences) && user.preferences.length > 0) {
-      prefHtml = user.preferences.map(p => `<span class='badge bg-info text-dark me-1 mb-1' title='${p}'>${p}</span>`).join(' ');
-    }
-    // Education as degree + institution + year
-    let eduHtml = '-';
+    
+    // Education details
+    let schoolHtml = 'N/A';
+    let degreeHtml = 'N/A';
+    let graduationDateHtml = 'N/A';
     if (Array.isArray(user.education) && user.education.length > 0) {
       const edu = user.education[0];
-      eduHtml = `${edu.degree || ''} @ ${edu.institution || ''} (${edu.year || ''})`;
+      schoolHtml = edu.institution || 'N/A';
+      degreeHtml = edu.degree || 'N/A';
+      graduationDateHtml = edu.year || 'N/A';
     }
-    row.innerHTML = `
-      <td>${startIndex + index + 1}</td>
-      <td><img src="${about.image || 'https://th.bing.com/th/id/OIP.yYUwl3GDU07Q5J5ttyW9fQHaHa?rs=1&pid=ImgDetMain'}" class="profile-img" /></td>
-      <td><span class="fw-bold">${about.firstName || 'N/A'} ${about.lastName || ''}</span></td>
-      <td><span class="text-muted small">${about.email || 'N/A'}</span></td>
-      <td>${phoneHtml}</td>
-      <td>${about.gender || 'N/A'}</td>
-      <td>${eduHtml}</td>
-      <td>${prefHtml}</td>
-      <td>${skillsHtml}</td>
-      <td>${socialHtml}</td>
-      <td>${cvHtml}</td>
-      <td>${rankHtml}</td>
-      <td>${ratingHtml}</td>
-      <td><textarea rows="2" class="form-control" style="min-width:120px;">${user.remarks || ''}</textarea></td>
-      <td>
-        <button class="btn btn-sm btn-outline-primary mb-1" onclick="window.open('/myaccount/jobs_applied/?user=${encodeURIComponent(about.email)}','_blank')" title="Applied Jobs"><i class="fas fa-briefcase"></i></button>
-        <button class="btn btn-sm btn-outline-secondary mb-1" onclick="window.open('remarks/?user=${encodeURIComponent(about.email)}','_blank')" title="Show Remarks"><i class="fas fa-comments"></i></button>
-      </td>
+    
+    // Action buttons
+    const actionButtons = `
+      <div class="action-buttons">
+        <button class="btn btn-sm btn-outline-primary mb-1" onclick="window.open('/myaccount/jobs_applied/?user=${encodeURIComponent(about.email)}','_blank')" title="Applied Jobs">Applied_Job</button>
+        <button class="btn btn-sm btn-outline-secondary mb-1" onclick="handleSubmitClick('${about.email}', this)" title="Submit Remarks">Submit</button>
+        <div id="submit-status-${about.email.replace(/[^a-zA-Z0-9]/g, '')}" class="submit-status" style="display: none;">
+          <small class="text-success fw-bold">✓ Submitted</small>
+        </div>
+      </div>
     `;
+    
+    // Consultancy Remark section
+    const consultancyRemarkHtml = `
+      <div class="consultancy-section mb-2">
+        <textarea id="consultancy-textarea-${about.email.replace(/[^a-zA-Z0-9]/g, '')}" rows="2" class="form-control" placeholder="Enter consultancy remark..." style="min-width:120px;">${user.consultancyRemark || ''}</textarea>
+        <div class="mt-1">
+          <small class="text-muted">${user.consultancyDate || '05-08-2025'}</small>
+          <button class="btn btn-sm btn-outline-success ms-2" onclick="handleConsultancyRemark('${about.email}', document.getElementById('consultancy-textarea-${about.email.replace(/[^a-zA-Z0-9]/g, '')}').value, '${user.consultancyDate || '05-08-2025'}', this)">Add Remark</button>
+          <div id="consultancy-status-${about.email.replace(/[^a-zA-Z0-9]/g, '')}" class="submit-status" style="display: none;">
+            <small class="text-success fw-bold">✓ Submitted</small>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    // Interview Form section
+    const interviewFormHtml = `
+      <div class="interview-section mb-2">
+        <textarea id="interview-textarea-${about.email.replace(/[^a-zA-Z0-9]/g, '')}" rows="2" class="form-control" placeholder="Enter interview feedback..." style="min-width:120px;">${user.interviewFeedback || ''}</textarea>
+        <div class="mt-1">
+          <small class="text-muted">${user.interviewDate || '05-08-2025'}</small>
+          <button class="btn btn-sm btn-outline-info ms-2" onclick="handleInterviewDetails('${about.email}', document.getElementById('interview-textarea-${about.email.replace(/[^a-zA-Z0-9]/g, '')}').value, '${user.interviewDate || '05-08-2025'}', this)">Add Interview Details</button>
+          <div id="interview-status-${about.email.replace(/[^a-zA-Z0-9]/g, '')}" class="submit-status" style="display: none;">
+            <small class="text-success fw-bold">✓ Submitted</small>
+          </div>
+        </div>
+      </div>
+    `;
+    
+         // Ranking display
+     let rankHtml = 'N/A';
+     if (userRanking) {
+       const rankClass = getRankingClass(userEmail);
+       rankHtml = `<span class="badge ${rankClass}">${getRankingDisplay(userEmail)}</span>`;
+     }
+     
+     row.innerHTML = `
+       <td>${startIndex + index + 1}</td>
+       <td><img src="${about.image || 'https://th.bing.com/th/id/OIP.yYUwl3GDU07Q5J5ttyW9fQHaHa?rs=1&pid=ImgDetMain'}" class="profile-img" /></td>
+       <td><span class="fw-bold">${about.firstName || 'N/A'} ${about.lastName || ''}</span></td>
+       <td><span class="text-muted small">${about.email || 'N/A'}</span></td>
+       <td>${about.gender || 'N/A'}</td>
+       <td>${schoolHtml}</td>
+       <td>${degreeHtml}</td>
+       <td>${graduationDateHtml}</td>
+       <td>${skillsHtml}</td>
+       <td>${rankHtml}</td>
+       <td>${ratingHtml}</td>
+       <td><textarea rows="2" class="form-control" placeholder="Enter remarks..." style="min-width:120px;">${user.remarks || ''}</textarea></td>
+       <td>${actionButtons}</td>
+       <td>${consultancyRemarkHtml}</td>
+       <td>${interviewFormHtml}</td>
+     `;
     tableBody.appendChild(row);
   });
   updatePaginationControls(filteredUsers.length);
@@ -327,6 +348,8 @@ function updatePaginationControls(totalRows) {
 }
 
 async function updateTable() {
+  // Ensure rankings are loaded before populating table
+  await getUserRankings();
   // You can add filter logic here if needed
   const data = await filterByNameEmail();
   populateUserProfilesTable(data);
@@ -338,8 +361,7 @@ document.addEventListener('DOMContentLoaded', mainData);
 
 
 //Function to add consultancy feedback (stored as an array)
-
-async function addConsultancyRemark(email, remark, date) {
+window.addConsultancyRemark = async function addConsultancyRemark(email, remark, date) {
   if (!email || !remark || !date) {
     alert("Please enter a remark and select a valid date.");
     return;
@@ -384,8 +406,7 @@ async function addConsultancyRemark(email, remark, date) {
 }
 
 //Function to add interview feedback (stored as an array)
-
-async function addInterviewDetails(email, feedback, interviewDate) {
+window.addInterviewDetails = async function addInterviewDetails(email, feedback, interviewDate) {
   if (!email || !feedback || !interviewDate) {
     alert("Please enter feedback and select a valid date.");
     return;
@@ -421,6 +442,160 @@ async function addInterviewDetails(email, feedback, interviewDate) {
     }
 
     alert("Interview details added successfully!");
+  } catch (error) {
+    console.error("Error adding interview details:", error, error.stack || "");
+    alert("Failed to add interview details. Please try again.");
+  }
+}
+
+//Function to handle submit button click and show green indication
+window.handleSubmitClick = async function handleSubmitClick(email, buttonElement) {
+  try {
+         // Get the remarks textarea from the same row
+     const row = buttonElement.closest('tr');
+     const remarksTextarea = row.querySelector('td:nth-child(12) textarea'); // Remarks column (updated index)
+    
+    if (!remarksTextarea || !remarksTextarea.value.trim()) {
+      alert("Please enter remarks before submitting.");
+      return;
+    }
+
+    // Store the remarks in Firebase
+    const remarksRef = doc(db, "user_remarks", email);
+    await setDoc(remarksRef, {
+      email: email,
+      remark: remarksTextarea.value.trim(),
+      submittedAt: Timestamp.now(),
+      createdAt: Timestamp.now(),
+      updatedAt: Timestamp.now()
+    });
+
+    // Show green "Submitted" indication
+    const statusElement = document.getElementById(`submit-status-${email.replace(/[^a-zA-Z0-9]/g, '')}`);
+    if (statusElement) {
+      statusElement.style.display = 'block';
+      buttonElement.disabled = true;
+      buttonElement.textContent = 'Submitted';
+      buttonElement.className = 'btn btn-sm btn-success mb-1';
+    }
+
+    // Clear the textarea
+    remarksTextarea.value = '';
+
+    console.log("Remarks submitted successfully for:", email);
+  } catch (error) {
+    console.error("Error submitting remarks:", error, error.stack || "");
+    alert("Failed to submit remarks. Please try again.");
+  }
+}
+
+//Function to handle consultancy remark with green indication
+window.handleConsultancyRemark = async function handleConsultancyRemark(email, remark, date, buttonElement) {
+  if (!email || !remark || !date) {
+    alert("Please enter a remark and select a valid date.");
+    return;
+  }
+
+  try {
+    const userRef = doc(db, "user_consultancies", email);
+    const userDoc = await getDoc(userRef);
+
+    if (userDoc.exists()) {
+      await updateDoc(userRef, {
+        remarks: arrayUnion({
+          text: remark,
+          date: Timestamp.fromDate(new Date(date)),
+          createdAt: Timestamp.now()
+        }),
+        updatedAt: Timestamp.now()
+      });
+    } else {
+      await setDoc(userRef, {
+        email: email,
+        remarks: [
+          {
+            text: remark,
+            date: Timestamp.fromDate(new Date(date)),
+            createdAt: Timestamp.now()
+          }
+        ],
+        createdAt: Timestamp.now(),
+        updatedAt: Timestamp.now()
+      });
+    }
+
+    // Show green "Submitted" indication
+    const statusElement = document.getElementById(`consultancy-status-${email.replace(/[^a-zA-Z0-9]/g, '')}`);
+    if (statusElement) {
+      statusElement.style.display = 'block';
+      buttonElement.disabled = true;
+      buttonElement.textContent = 'Submitted';
+      buttonElement.className = 'btn btn-sm btn-success ms-2';
+    }
+
+    // Clear the textarea
+    const textarea = document.getElementById(`consultancy-textarea-${email.replace(/[^a-zA-Z0-9]/g, '')}`);
+    if (textarea) {
+      textarea.value = '';
+    }
+
+    console.log("Consultancy remark submitted successfully for:", email);
+  } catch (error) {
+    console.error("Error adding consultancy remark:", error, error.stack || "");
+    alert("Failed to add remark. Please try again.");
+  }
+}
+
+//Function to handle interview details with green indication
+window.handleInterviewDetails = async function handleInterviewDetails(email, feedback, interviewDate, buttonElement) {
+  if (!email || !feedback || !interviewDate) {
+    alert("Please enter feedback and select a valid date.");
+    return;
+  }
+  try {
+    const interviewRef = doc(db, "user_interviews", email);
+    const interviewDoc = await getDoc(interviewRef);
+
+    if (interviewDoc.exists()) {
+      await updateDoc(interviewRef, {
+        feedbacks: arrayUnion({
+          text: feedback,
+          interviewDate: Timestamp.fromDate(new Date(interviewDate)),
+          createdAt: Timestamp.now()
+        }),
+        updatedAt: Timestamp.now()
+      });
+    } else {
+      await setDoc(interviewRef, {
+        email: email,
+        feedbacks: [
+          {
+            text: feedback,
+            interviewDate: Timestamp.fromDate(new Date(interviewDate)),
+            createdAt: Timestamp.now()
+          }
+        ],
+        createdAt: Timestamp.now(),
+        updatedAt: Timestamp.now()
+      });
+    }
+
+    // Show green "Submitted" indication
+    const statusElement = document.getElementById(`interview-status-${email.replace(/[^a-zA-Z0-9]/g, '')}`);
+    if (statusElement) {
+      statusElement.style.display = 'block';
+      buttonElement.disabled = true;
+      buttonElement.textContent = 'Submitted';
+      buttonElement.className = 'btn btn-sm btn-success ms-2';
+    }
+
+    // Clear the textarea
+    const textarea = document.getElementById(`interview-textarea-${email.replace(/[^a-zA-Z0-9]/g, '')}`);
+    if (textarea) {
+      textarea.value = '';
+    }
+
+    console.log("Interview details submitted successfully for:", email);
   } catch (error) {
     console.error("Error adding interview details:", error, error.stack || "");
     alert("Failed to add interview details. Please try again.");
