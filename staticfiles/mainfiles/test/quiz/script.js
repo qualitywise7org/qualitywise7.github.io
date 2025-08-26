@@ -1,3 +1,74 @@
+// Function to update user rankings based on assessment results
+async function updateUserRankings() {
+  try {
+    console.log("Updating user rankings...");
+    
+    // Get all user assessment results
+    const userResultsQuery = query(collection(db, "user_assessment_results"));
+    const userResultsSnapshot = await getDocs(userResultsQuery);
+    
+    const rankingScores = {};
+    
+    userResultsSnapshot.forEach((doc) => {
+      const userEmail = doc.id;
+      const userData = doc.data();
+      
+      if (userData.results && Array.isArray(userData.results)) {
+        let totalScore = 0;
+        let totalAttempts = 0;
+        let bestScore = 0;
+        
+        // Calculate average score and best score across all assessments
+        userData.results.forEach((attempt) => {
+          if (attempt.percentage !== undefined) {
+            totalScore += attempt.percentage;
+            totalAttempts++;
+            if (attempt.percentage > bestScore) {
+              bestScore = attempt.percentage;
+            }
+          }
+        });
+        
+        if (totalAttempts > 0) {
+          const averageScore = totalScore / totalAttempts;
+          // Weight: 70% best score + 30% average score
+          const weightedScore = averageScore;
+          
+          rankingScores[userEmail] = {
+            averageScore: Math.round(averageScore * 100) / 100,
+            bestScore: bestScore,
+            weightedScore: Math.round(weightedScore * 100) / 100,
+            totalAttempts: totalAttempts,
+            lastAssessmentDate: userData.results[userData.results.length - 1]?.timestamp || null
+          };
+        }
+      }
+    });
+    
+    // Sort users by weighted score (descending)
+    const sortedUsers = Object.entries(rankingScores)
+      .sort(([,a], [,b]) => b.weightedScore - a.weightedScore)
+      .map(([email, data], index) => ({
+        email,
+        rank: index + 1,
+        ...data
+      }));
+    
+    // Store rankings in database
+    const rankingRef = doc(db, "user_rankings", "assessment_rankings");
+    await setDoc(rankingRef, {
+      rankings: sortedUsers,
+      lastUpdated: new Date(),
+      totalUsers: sortedUsers.length
+    });
+    
+    console.log("User rankings updated successfully");
+    
+  } catch (error) {
+    console.error("Error updating user rankings:", error);
+  }
+}
+
 onAuthStateChanged(auth, (user) => {
   if (!user) {
     alert("Please log in to attempt an assessment");
@@ -298,6 +369,10 @@ async function startQuiz() {
         }
 
         console.log("Quiz attempt saved successfully.");
+        
+        // Update user rankings after saving results
+        await updateUserRankings();
+        
       } else {
         console.error("No authenticated user found.");
       }

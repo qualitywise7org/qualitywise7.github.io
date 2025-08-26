@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculate Rankings - JD Master Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.2.0/dist/css/coreui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/fevicon.ico" type="profile" />
+  <link rel="stylesheet" href="/staticfiles/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    .ranking-stats {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    
+    .ranking-stats h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .stat-card {
+      background: white;
+      padding: 15px;
+      border-radius: 6px;
+      border-left: 4px solid #007bff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .stat-card h4 {
+      margin: 0;
+      color: #007bff;
+      font-size: 1.5rem;
+    }
+    
+    .stat-card p {
+      margin: 5px 0 0 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .btn-calculate {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .btn-calculate:hover {
+      background: #218838;
+    }
+    
+    .btn-calculate:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+    }
+    
+    .progress-container {
+      margin: 20px 0;
+      display: none;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background: #e9ecef;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: #007bff;
+      width: 0%;
+      transition: width 0.3s;
+    }
+    
+    .status-message {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+    
+    .status-success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .status-error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="brand" href="/">
+        <img src="/assets/Jobsdoor360 -logos__black.png" alt="logo" />
+      </a>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 5px;">
+        <span style="font-weight: 500; margin-bottom: 8px" id="welcome-text"></span>
+        <span id="user-mail" style="color: #586ba6; font-weight: 600; font-size: 1.1rem; margin-bottom: 8px;">
+          <a class="nav-link" id="myaccount-1" href="/myaccount/">My Account</a>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="mb-4">Assessment Ranking Calculator</h1>
+        
+        <div class="ranking-stats">
+          <h3>Current Ranking Statistics</h3>
+          <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+              <h4 id="totalUsers">-</h4>
+              <p>Total Users with Assessments</p>
+            </div>
+            <div class="stat-card">
+              <h4 id="lastUpdated">-</h4>
+              <p>Last Updated</p>
+            </div>
+            <div class="stat-card">
+              <h4 id="topPerformers">-</h4>
+              <p>Top 10 Performers</p>
+            </div>
+            <div class="stat-card">
+              <h4 id="avgScore">-</h4>
+              <p>Average Score</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Calculate Rankings</h5>
+            <p class="card-text">
+              This will recalculate all user rankings based on their assessment results. 
+              The ranking algorithm uses a average score.
+            </p>
+            
+            <button id="calculateBtn" class="btn-calculate">
+              <i class="fas fa-calculator"></i> Calculate Rankings
+            </button>
+            
+            <div class="progress-container" id="progressContainer">
+              <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+              </div>
+              <p id="progressText">Calculating rankings...</p>
+            </div>
+            
+            <div class="status-message" id="statusMessage"></div>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <a href="/myaccount/jdmasterpanel/users-record/" class="btn btn-primary">
+            <i class="fas fa-arrow-left"></i> Back to User Records
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/staticfiles/db/dbconfig.js"></script>
+  <script type="module">
+    import dbconfig from '/staticfiles/db/dbconfig.js';
+    const { doc, getDoc, setDoc, collection, getDocs, query, orderBy, db } = dbconfig;
+    
+    const email = localStorage.getItem("email");
+    if (!email) {
+      window.location.href = "/login/";
+    }
+
+    // Check if user is admin
+    async function checkAdminAccess() {
+      try {
+        const docRef = doc(db, "login_roles", email);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          const userRole = userData.role;
+
+          if (userRole !== "master_admin") {
+            alert("Access denied. Only master admins can access this page.");
+            window.location.href = "/";
+          }
+        } else {
+          alert("Access denied. Redirecting...");
+          window.location.href = "/login/";
+        }
+      } catch (error) {
+        console.error("Error checking admin access:", error);
+        window.location.href = "/";
+      }
+    }
+
+    // Load current ranking statistics
+    async function loadRankingStats() {
+      try {
+        const rankingRef = doc(db, "user_rankings", "assessment_rankings");
+        const rankingDoc = await getDoc(rankingRef);
+        
+        if (rankingDoc.exists()) {
+          const data = rankingDoc.data();
+          document.getElementById("totalUsers").textContent = data.totalUsers || 0;
+          document.getElementById("lastUpdated").textContent = data.lastUpdated ? 
+            new Date(data.lastUpdated.toDate()).toLocaleString() : "Never";
+          
+          // Calculate top performers
+          const top10 = data.rankings ? data.rankings.filter(u => u.rank <= 10).length : 0;
+          document.getElementById("topPerformers").textContent = top10;
+          
+          // Calculate average score
+          if (data.rankings && data.rankings.length > 0) {
+            const avgScore = data.rankings.reduce((sum, user) => sum + user.weightedScore, 0) / data.rankings.length;
+            document.getElementById("avgScore").textContent = avgScore.toFixed(1) + "%";
+          } else {
+            document.getElementById("avgScore").textContent = "0%";
+          }
+        } else {
+          document.getElementById("totalUsers").textContent = "0";
+          document.getElementById("lastUpdated").textContent = "Never";
+          document.getElementById("topPerformers").textContent = "0";
+          document.getElementById("avgScore").textContent = "0%";
+        }
+      } catch (error) {
+        console.error("Error loading ranking stats:", error);
+      }
+    }
+
+    // Calculate and update rankings
+    async function calculateRankings() {
+      const calculateBtn = document.getElementById("calculateBtn");
+      const progressContainer = document.getElementById("progressContainer");
+      const progressFill = document.getElementById("progressFill");
+      const progressText = document.getElementById("progressText");
+      const statusMessage = document.getElementById("statusMessage");
+
+      try {
+        calculateBtn.disabled = true;
+        progressContainer.style.display = "block";
+        statusMessage.style.display = "none";
+        
+        progressText.textContent = "Fetching assessment results...";
+        progressFill.style.width = "20%";
+
+        // Get all user assessment results
+        const userResultsQuery = query(collection(db, "user_assessment_results"));
+        const userResultsSnapshot = await getDocs(userResultsQuery);
+        
+        progressText.textContent = "Processing user data...";
+        progressFill.style.width = "40%";
+        
+        const rankingScores = {};
+        
+        userResultsSnapshot.forEach((doc) => {
+          const userEmail = doc.id;
+          const userData = doc.data();
+          
+          if (userData.results && Array.isArray(userData.results)) {
+            let totalScore = 0;
+            let totalAttempts = 0;
+            let bestScore = 0;
+            
+            userData.results.forEach((attempt) => {
+              if (attempt.percentage !== undefined) {
+                totalScore += attempt.percentage;
+                totalAttempts++;
+                if (attempt.percentage > bestScore) {
+                  bestScore = attempt.percentage;
+                }
+              }
+            });
+            
+            if (totalAttempts > 0) {
+              const averageScore = totalScore / totalAttempts;
+              const weightedScore = averageScore;
+              
+              rankingScores[userEmail] = {
+                averageScore: Math.round(averageScore * 100) / 100,
+                bestScore: bestScore,
+                weightedScore: Math.round(weightedScore * 100) / 100,
+                totalAttempts: totalAttempts,
+                lastAssessmentDate: userData.results[userData.results.length - 1]?.timestamp || null
+              };
+            }
+          }
+        });
+        
+        progressText.textContent = "Calculating rankings...";
+        progressFill.style.width = "60%";
+        
+        // Sort users by weighted score (descending)
+        const sortedUsers = Object.entries(rankingScores)
+          .sort(([,a], [,b]) => b.weightedScore - a.weightedScore)
+          .map(([email, data], index) => ({
+            email,
+            rank: index + 1,
+            ...data
+          }));
+        
+        progressText.textContent = "Saving to database...";
+        progressFill.style.width = "80%";
+        
+        // Store rankings in database
+        const rankingRef = doc(db, "user_rankings", "assessment_rankings");
+        await setDoc(rankingRef, {
+          rankings: sortedUsers,
+          lastUpdated: new Date(),
+          totalUsers: sortedUsers.length
+        });
+        
+        progressText.textContent = "Complete!";
+        progressFill.style.width = "100%";
+        
+        // Show success message
+        statusMessage.textContent = `Successfully calculated rankings for ${sortedUsers.length} users!`;
+        statusMessage.className = "status-message status-success";
+        statusMessage.style.display = "block";
+        
+        // Reload stats
+        await loadRankingStats();
+        
+      } catch (error) {
+        console.error("Error calculating rankings:", error);
+        statusMessage.textContent = "Error calculating rankings: " + error.message;
+        statusMessage.className = "status-message status-error";
+        statusMessage.style.display = "block";
+      } finally {
+        calculateBtn.disabled = false;
+        setTimeout(() => {
+          progressContainer.style.display = "none";
+        }, 2000);
+      }
+    }
+
+    // Initialize page
+    document.addEventListener("DOMContentLoaded", async function() {
+      await checkAdminAccess();
+      await loadRankingStats();
+      
+      document.getElementById("calculateBtn").addEventListener("click", calculateRankings);
+    });
+  </script>
+</body>
+</html> 
