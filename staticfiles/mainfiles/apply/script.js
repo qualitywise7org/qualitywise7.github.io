@@ -48,7 +48,7 @@ signupForm.addEventListener("submit", async (e) => {
         console.log("UserData being saved to Firestore:", userData);
         await setDoc(docRef,userData)
         Toastify({
-            text: 'Thanks for applying, redirecting to CV upload page.',
+            text: 'Thanks for applying, redirecting to Login, CV upload page.',
             duration: 5000,
             newWindow: true,
             close: true,
