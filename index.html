@@ -243,7 +243,7 @@
             <style>
                 .dsa-poster {
                     max-width: 1080px;
-                    margin: 20px auto;
+                    margin: 20px;
                     padding: 40px 30px;
                     background: linear-gradient(180deg, #0b335a, #06233d);
                     color: #ffffff;
@@ -320,6 +320,26 @@
                     word-break: break-all;
                 }
 
+                /* ----- SUBTITLE ROW ----- */
+                .subtitle-row {
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    flex-wrap: nowrap; /* Desktop: single row */
+                    margin-bottom: 30px;
+                }
+
+                .subtitle-row .subtitle {
+                    font-size: 1.3rem;
+                    opacity: 0.95;
+                    margin: 0;
+
+                    flex: 1 1 auto; 
+                    min-width: 150px; /* ensures wrapping on mobile */
+                    text-align: center;
+                }
+
+
                 /* -------- MOBILE RESPONSIVE -------- */
                 @media (max-width: 768px) {
                     .dsa-items {
@@ -335,11 +355,24 @@
                         font-size: 1.15rem;
                     }
                 }
+
+                @media (max-width: 768px) {
+                    .subtitle-row {
+                        flex-wrap: wrap; /* allow multiple lines */
+                    }
+                    .subtitle-row .subtitle {
+                        font-size: 1.15rem;
+                    }
+                }
             </style>
 
             <h1>🚀 MASTER <span class="highlight">DSA</span> IN 1 MONTH</h1>
-            <p class="subtitle">Get Certified • Get Interview-Ready • Get Hired</p>
-
+            <div class="subtitle-row">
+                <p class="subtitle">• Get Certified</p>
+                <p class="subtitle">• Get Interview-Ready</p>
+                <p class="subtitle">• Get Hired</p>
+            </div>
+            
             <div class="dsa-items">
                 <div class="dsa-item">📅 Live Classes Every Saturday</div>
                 <div class="dsa-item">🎯 Placement-Focused Training</div>
@@ -437,6 +470,7 @@
       </div>
     </section>
 
+    <!-- result section-->
     <div
       id="carouselExampleSlidesOnly"
       class="carousel"
