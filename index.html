@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <title>
-      Internship, Interview prep, placement classes, cv making, DSA, Web development, FullStack, Backend, Java, Reactjs
+      DSA certification program
     </title>
     <meta
       name="description"
-      content="Unlock Your Career Potential with JobsDoor360: Expert Development Programs & Job Opportunities. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV. Join Now for a Spring Demo!"
+      content="Unlock Your Career Potential with JobsDoor360: Expert DSA Programs & Internships. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV"
     />
     <link rel="stylesheet" href="/staticfiles/mainfiles/style.css" />
     
@@ -46,6 +46,7 @@
         background-color: #128c7e;
       }
     </style>
+
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -166,7 +167,7 @@
           <a class="nav-link" id="myaccount-2" href="/myaccount/">My account</a>
         </li>
         <li class="nav-item login-btn">
-          <a class="nav-link" id="login-button" href="/login">Login</a>
+          <a class="nav-link" id="login-button" href="/login">Login </a>
         </li>
         <li class="nav-item signup-btn" id="signup-button">
           <a class="nav-link" href="/signup">Sign up</a>
@@ -237,1426 +238,290 @@
 
 
    
-    
+    <section>
+        <div class="dsa-poster">
+            <style>
+                .dsa-poster {
+                    max-width: 1080px;
+                    margin: 20px auto;
+                    padding: 40px 30px;
+                    background: linear-gradient(180deg, #0b335a, #06233d);
+                    color: #ffffff;
+                    border-radius: 18px;
+                    font-family: 'Poppins', Arial, sans-serif;
+                    text-align: center;
+                    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+                }
 
-      <!-- <h1
-        style="
-          text-align: center;
-          width: 100%;
-          font-size: x-large;
-          margin-block: 20px;
-        "
-      >
-        Job Oriented Courses
-      </h1> -->
-      <section>
-        <div class="testimonial" style="width: 100%; margin-bottom: 10px; ">
-        
+                /* -------- TITLE -------- */
+                .dsa-poster h1 {
+                    font-size: 2.8rem;
+                    font-weight: 800;
+                    margin: 0 0 15px;
+                    white-space: nowrap; /* ensures one line */
+                }
+                .dsa-poster .highlight {
+                    color: #FFC936;
+                }
 
-          <div id="landing-page" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 0 4rem 2rem 4rem; font-family: Arial, sans-serif; margin: 0 auto; max-width: 1350px; ">
-            <!-- Left Section: Texts and Demo Class -->
-            <div style="flex: 1; min-width: 300px; margin-right: 20px; padding: 0 10px;">
-              <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 15px; font-weight: 800; line-height: 1.2;">
-                Your Skills, Our Mentorship, Infinite Possibilities!
-              </h1>
-              <p style="font-size: clamp(0.8rem, 3vw, 1.2rem); margin-bottom: 10px; line-height: 1.5;">
-                Unlock Your Future: Register for Jobs, Internships, and Our Placement Assistance Program
-              </p>
-              <button class="completeProfile" style="padding: 10px 20px; background-color: #2b3990; color: white; border: none; border-radius: 2rem; cursor: pointer; font-size: clamp(0.5rem, 2.5vw, 1.2rem);  ">
-                <a href="/myaccount/cv_upload/" style="color: #fff; text-decoration: none; " >
-                  Complete your profile to get jobs</a>
-              </button>
+                /* -------- SUBTITLE -------- */
+                .dsa-poster .subtitle {
+                    font-size: 1.3rem;
+                    opacity: 0.95;
+                    margin-bottom: 30px;
+                }
+
+                /* -------- GRID -------- */
+                .dsa-items {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 15px;
+                    max-width: 800px;
+                    margin: 0 auto 35px;
+                }
+
+                .dsa-item {
+                    font-size: 1.1rem;
+                    padding: 14px 18px;
+                    background: rgba(255,255,255,0.12);
+                    border-radius: 10px;
+                }
+
+                /* -------- BOTTOM SECTION -------- */
+                .dsa-poster .bottom {
+                    font-size: 1.1rem;
+                    margin-bottom: 30px;
+                }
+
+                /* -------- CTA BUTTON -------- */
+                .dsa-poster .cta-btn {
+                    display: inline-block;
+                    padding: 14px 35px;
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    background: #FFC936;
+                    color: #000;
+                    border-radius: 50px;
+                    text-decoration: none;
+                    transition: 0.2s ease-in-out;
+                }
+                .dsa-poster .cta-btn:hover {
+                    transform: scale(1.05);
+                    filter: brightness(1.1);
+                }
+
+                .apply-link {
+                    margin-top: 15px;
+                    display: block;
+                    font-size: 1rem;
+                    opacity: 0.9;
+                    color: #FFC936;
+                    text-decoration: none;
+                    word-break: break-all;
+                }
+
+                /* -------- MOBILE RESPONSIVE -------- */
+                @media (max-width: 768px) {
+                    .dsa-items {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .dsa-poster h1 {
+                        font-size: 2.2rem;
+                        white-space: normal; /* allow wrap on small screens */
+                    }
+
+                    .dsa-poster .subtitle {
+                        font-size: 1.15rem;
+                    }
+                }
+            </style>
+
+            <h1>🚀 MASTER <span class="highlight">DSA</span> IN 1 MONTH</h1>
+            <p class="subtitle">Get Certified • Get Interview-Ready • Get Hired</p>
+
+            <div class="dsa-items">
+                <div class="dsa-item">📅 Live Classes Every Saturday</div>
+                <div class="dsa-item">🎯 Placement-Focused Training</div>
+                <div class="dsa-item">💼 Suitable for Students & Job Seekers</div>
+                <div class="dsa-item">📜 Certification Included</div>
             </div>
-          
-            <!-- Right Section: Numbers and Search Bar -->
-            <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 30px; padding: 20px 20px;">
-              <!-- Boxes Section -->
-              <!-- clamp(minimum, preferred value, maximum)  -->
-              <div id= "greyBox"style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: space-between; width: 100%;">
-                <div style="background-color: #ecf0f3; padding: 30px; border-radius: 30px; box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px; text-align: center; flex: 1; min-width: 150px; max-width: 48%;">
-                  <strong class="fs-2 counter" id="counter1" style="font-size: clamp(1.5rem, 4vw, 2rem);">60</strong>
-                  <span style="font-size: clamp(1.5rem, 4vw, 2rem);">+</span>
-                  <p style="margin: 0; font-size: clamp(0.8rem, 2vw, 1rem);">Total placement class conducted</p>
-                </div>
-                <div style="background-color: #ecf0f3; padding: 30px; border-radius: 30px; box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px; text-align: center; flex: 1; min-width: 150px; max-width: 48%;">
-                  <strong class="fs-2 counter" id="counter2" style="font-size: clamp(1.5rem, 4vw, 2rem);">80</strong>
-                  <span style="font-size: clamp(1.5rem, 4vw, 2rem);">+</span>
-                  <p style="margin: 0; font-size: clamp(0.8rem, 2vw, 1rem);">Total consultancy provided</p>
-                </div>
-              </div>
-          
-              <!-- Search Bar Section -->
-              <a href="/myaccount/jobsforyou/" style="text-decoration: none; display: inline-block; width: 100%; max-width: 500px;">
-                <div
-                  style="display: flex; align-items: center; width: 100%; background-color: #f8f9fa; border-radius: 30px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; border: 2px solid #2b3990; cursor: pointer;"
-                >
-                  <span
-                    style="flex: 1; padding: 10px; font-size: clamp(0.8rem, 2vw, 1rem); color: #6c757d; display: flex; align-items: center;"
-                  >
-                    Search Jobs here
-                  </span>
-                  <div
-                    style="background-color: #2b3990; color: white; padding: 10px 20px; border-radius: 0 30px 30px 0; display: flex; align-items: center; justify-content: center; height: 50px;"
-                  >
-                    <i class="fas fa-search"></i>
-                  </div>
-                </div>
-              </a>
-              
+
+            <div class="bottom">
+                <p><strong>DSA = Core Skill for Tech Placements</strong></p>
+                <p>Build strong fundamentals & crack top interviews</p>
             </div>
-          </div>
 
+            <a class="cta-btn" href="https://jobsdoor360.in/apply/" target="_blank">Apply Now</a>
+        </div>
+    </section>
+     
 
-          <!-- <div class="resultbox">
-            <div class="grid-container">
-             
-              <div class="grid-item">
-                <h3>Title 1</h3>
-                <p>Details about item 1.</p>
-              </div>
-              <div class="grid-item">
-                <h3>Title 2</h3>
-                <p>Details about item 2.</p>
-              </div>
-              <div class="grid-item">
-                <h3>Title 3</h3>
-                <p>Details about item 3.</p>
-              </div>
-              <div class="grid-item">
-                <h3>Title 4</h3>
-                <p>Details about item 4.</p>
-              </div>
-              <div class="grid-item">
-                <h3>Title 5</h3>
-                <p>Details about item 5.</p>
+    <!-- Testimonials Section -->
+    <section>
+      <div class="testimonial">
+        <div
+          id="carouselExampleSlidesOnly"
+          class="carousel fade-carousel"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+              <div class="d-flex w-100" style="padding: 20px">
+                <div class="quote">
+                  <img
+                    class="left-quote"
+                    src="./assets/left-quotes.png"
+                    alt="left-quote"
+                  />
+                  <h2>
+                    Thanks to Jobsdoor360, I now possess the communication
+                    skills and IT expertise to excel in my dream career.
+                  </h2>
+                  <img
+                    class="right-quote"
+                    src="./assets/right-quotes.png"
+                    alt="right-quote"
+                  />
+                </div>
+
+                <h3 class="name">Shivam</h3>
               </div>
             </div>
-          </div> -->
-          
-          <!-- <style>
-            .resultbox {
-              width: 100%;
-              height: 30vh;
-              background-color: #1a73e8; /* Professional blue color */
-              overflow-x: auto; /* Enable horizontal scrolling */
-              white-space: nowrap; /* Prevent wrapping */
-              display: flex; /* Flex container to enable horizontal flow */
-              align-items: center;
-              padding: 10px;
-              box-sizing: border-box;
-            }
-          
-            .grid-container {
-              display: flex; /* Horizontal layout */
-              gap: 10px; /* Space between items */
-            }
-          
-            .grid-item {
-              background: white; /* Card-like look */
-              color: black;
-              min-width: 200px; /* Minimum size for grid item */
-              height: 100%; /* Stretch to parent height */
-              border-radius: 8px; /* Rounded corners */
-              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-              padding: 10px; /* Inner padding */
-              display: flex;
-              flex-direction: column; /* Stack content vertically */
-              justify-content: center;
-              align-items: center;
-              text-align: center;
-            }
-          
-            .grid-item:hover {
-              transform: scale(1.05); /* Zoom effect on hover */
-              transition: transform 0.3s ease;
-            }
-          </style> -->
-          
-
-
-
-           <!-- <div
-            id="carouselExampleSlidesOnly"
-            class="carousel"
-            data-bs-ride="carousel"
-            style="width: 100%; margin: 30px 0 30px 0; "
-          >
-            <div class="carousel-inner" style="width: 100%">
-              <div
-                class="carousel-item active"
-                data-bs-interval=" 3000"
-                style="width: 100%"
-              >
-                <div class="d-block" style="width: 100% ;">
-                  <div class="container" style="width: 100%">
-                    <div class="content" style="width: 100%">
-                      <a href="/results/" style="width: 100%">
-                        <img
-                          src="assets/image_result.png"
-                          alt=""
-                          class="full-width-image img"
-                        />
-                        <img
-                          src="assets/image_result.png"
-                          alt=""
-                          class="full-width-image img1"
-                        />
-                      </a>
-                    </div>
-                  </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="d-flex w-100" style="padding: 20px">
+                <div class="quote">
+                  <img
+                    class="left-quote"
+                    src="./assets/left-quotes.png"
+                    alt="left-quote"
+                  />
+                  <h2>
+                    With Jobsdoor360 by my side, I confidently embarked on
+                    a successful journey into web development and beyond.
+                  </h2>
+                  <img
+                    class="right-quote"
+                    src="./assets/right-quotes.png"
+                    alt="right-quote"
+                  />
                 </div>
+
+                <h3 class="name">Yash</h3>
               </div>
-
-              <div
-                class="carousel-item"
-                data-bs-interval="3000"
-                style="width: 100%"
-              >
-                <div class="d-block" style="width: 100%">
-                  <div class="container" style="width: 100%">
-                    <div class="content" style="width: 100%">
-                      <a href="/results/" style="width: 100%">
-                        <img
-                          src="assets/new_poster1.png"
-                          alt=""
-                          class="full-width-image img"
-                        />
-                        <img
-                          src="assets/new_poster1.png"
-                          alt=""
-                          class="full-width-image img1"
-                        />
-                      </a>
-                    </div>
-                  </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="d-flex w-100" style="padding: 20px">
+                <div class="quote">
+                  <img
+                    class="left-quote"
+                    src="./assets/left-quotes.png"
+                    alt="left-quote"
+                  />
+                  <h2>
+                    If you want to ace your job search and master the art
+                    of communication, Jobsdoor360 is the place to be!
+                  </h2>
+                  <img
+                    class="right-quote"
+                    src="./assets/right-quotes.png"
+                    alt="right-quote"
+                  />
                 </div>
+
+                <h3 class="name">Jatin</h3>
               </div>
-
-              <div
-                class="carousel-item"
-                data-bs-interval="3000"
-                style="width: 100%"
-              >
-                <div class="d-block" style="width: 100%">
-                  <div class="container" style="width: 100%">
-                    <div class="content" style="width: 100%">
-                      <a href="/results/" style="width: 100%">
-                        <img
-                          src="assets/new_poster2.png"
-                          alt=""
-                          class="full-width-image img"
-                        />
-                        <img
-                          src="assets/new_poster2.png"
-                          alt=""
-                          class="full-width-image img1"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>    
             </div>
           </div>
-           -->
-          
-          
-        
-
-
-          <div class="hero-section"  id="home">
-            <!--left accordion -->
-
-            <div class="my-4 mx-2">
-              <h4
-                class="p-3 text-center shadow-lg text-white"
-                style="background-color: rgb(39, 37, 37) !important"
-              >
-                For Students
-              </h4>
-              <div class="accordion shadow-lg" id="accordionExample">
-                <!-- Placement Classes -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="false"
-                      aria-controls="collapseOne"
-                    >
-                      Placement Assistance
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseOne"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Boost your skills and prepare for interviews with our
-                      specialized Placement Classes. Our experienced instructors
-                      provide comprehensive training, covering both technical
-                      and soft skills.
-                      <br />
-                      <div class="d-flex">
-                        <a
-                          href="/placement/"
-                          class="mt-2 btn btn-outline-info mx-2"
-                          >View</a
-                        >
-                        <a href="/register/" class="btn btn-outline-info mt-2"
-                          >Apply free</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- interview classes -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo1">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo1"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo1"
-                    >
-                      Interview Assistance
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseTwo1"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingTwo1"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      "Gain confidence, expertise, and a competitive edge in
-                      interviews. Our classes offer personalized strategies and
-                      real-world insights to help you secure your dream job."
-                      <br />
-                      <div class="d-flex">
-                        <a
-                          href="/pricing/"
-                          class="btn btn-outline-info mt-2 mx-2"
-                          >View</a
-                        >
-                        <a href="/register/" class="btn btn-outline-info mt-2"
-                          >Apply free</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Jobs for You -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
-                    >
-                      Jobs for You
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseTwo"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Find job opportunities tailored for you based on your
-                      skills and preferences. Our platform matches you with
-                      companies that align with your career goals.
-                      <br />
-                      <div class="d-flex">
-                        <a
-                          href="/myaccount/jobsforyou/"
-                          class="btn btn-outline-info mt-2 mx-2"
-                          >View</a
-                        >
-                        <a href="/register/" class="btn btn-outline-info mt-2"
-                          >Apply free</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Profile Analyser -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingThree">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree"
-                      aria-expanded="false"
-                      aria-controls="collapseThree"
-                    >
-                      Profile Analyser
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseThree"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Get insights into your profile strengths and areas for
-                      improvement with our Profile Analyser. Analyze your resume
-                      and LinkedIn profile to optimize your job search strategy.
-                      <br />
-                      <div class="d-flex">
-                        <a
-                          href="/careeroptions/profileanalyzer/"
-                          class="btn mt-2 btn-outline-info mx-2"
-                          >View</a
-                        >
-                        <a href="/register/" class="btn btn-outline-info mt-2"
-                          >Apply free</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Hiring portal -->
-                <!-- <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingFour">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour"
-                      aria-expanded="false"
-                      aria-controls="collapseFour"
-                    >
-                      Hiring portal
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseFour"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingFour"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Create and manage your professional profile to stand out
-                      to employers. Showcase your skills, experience, and
-                      achievements to attract potential employers.
-                      <br />
-                      <div class="d-flex">
-                        <a
-                          href="/hiring/"
-                          class="btn btn-outline-info mt-2 mx-2"
-                          >View</a
-                        >
-                        <a href="/register/" class="btn btn-outline-info mt-2"
-                          >Apply free</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-
-                <!-- Career consultancy -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingFive">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFive"
-                      aria-expanded="false"
-                      aria-controls="collapseFive"
-                    >
-                      Career consultancy
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseFive"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingFive"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Get personalized career guidance from industry experts.
-                      Understand the latest trends and get advice on navigating
-                      your career path effectively.
-                      <br /><br />
-                      <div class="d-flex, justify-content">
-                        <a
-                          href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                          class="whatsapp-chat-btn"
-                        >
-                          <span
-                            >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                          ></span>
-                        </a>
-                        <a
-                          href="/careeroptions/"
-                          class="btn btn-outline-info"
-                          style="margin-top: -5px"
-                          >Career Options</a
-                        >
-                        <a
-                          href="/register/"
-                          class="btn btn-outline-info"
-                          style="margin-top: -5px"
-                          >Apply free</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- CV Creation -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingSix">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseSix"
-                      aria-expanded="false"
-                      aria-controls="collapseSix"
-                    >
-                      CV Creation
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseSix"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingSix"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Craft a compelling CV that highlights your skills and
-                      experiences effectively. Get templates and tips to create
-                      an impactful CV.
-                      <br />
-                      <div class="d-flex justify-content">
-                        <a
-                          href="/cv_creation/"
-                          class="btn btn-outline-info mt-2 mx-2"
-                          >View</a
-                        >
-                        <a href="/register/" class="btn btn-outline-info mt-2"
-                          >Apply free</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Internships -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingSeven">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseSeven"
-                      aria-expanded="false"
-                      aria-controls="collapseSeven"
-                    >
-                      Internships
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseSeven"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingSeven"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Find internship opportunities that offer valuable
-                      experience and insights. Enhance your skills and build
-                      your professional network.
-                      <br />
-                      <div class="d-sm-flex">
-                        <a
-                          href="/details/?productcode=freeinternship"
-                          class="btn btn-outline-info mt-2"
-                          >Unpaid</a
-                        >
-                        <a
-                          href="/details/?productcode=paidinternship"
-                          class="btn btn-outline-info mx-2 mt-2"
-                          >Paid</a
-                        >
-                        <a
-                          href="/details/?productcode=chargeableinternship"
-                          class="btn btn-outline-info mt-2"
-                          >Chargeable</a
-                        >
-                        <a
-                          href="/register/"
-                          type="submit"
-                          class="btn btn-outline-info mx-2 mt-2"
-                          >Apply free</a
-                        >
-                        <a
-                          href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                          class="whatsapp-chat-btn mt-2"
-                        >
-                          <span
-                            >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                          ></span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- English speaking -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingEight">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseEight"
-                      aria-expanded="false"
-                      aria-controls="collapseEight"
-                    >
-                      English speaking
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseEight"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingEight"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Enhance your English communication skills with our
-                      specialized courses. Improve your fluency, vocabulary, and
-                      pronunciation.
-                      <br />
-                      <div class="d-sm-flex">
-                        <a
-                          href="/details/?productcode=english"
-                          class="btn btn-outline-info mt-2"
-                          >View</a
-                        >
-                        <a
-                          href="/register/"
-                          type="submit"
-                          class="btn btn-outline-info mx-2 mt-2"
-                          >Apply free</a
-                        >
-                        <a
-                          href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                          class="whatsapp-chat-btn mt-2"
-                        >
-                          <span
-                            >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                          ></span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Major Projects -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingNine">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseNine"
-                      aria-expanded="false"
-                      aria-controls="collapseNine"
-                    >
-                      Major Projects
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseNine"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingNine"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Showcase your major projects and collaborate with peers.
-                      Gain hands-on experience and contribute to impactful
-                      projects.
-                      <br /><br />
-                      <div class="d-flex">
-                        <a
-                          href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                          class="whatsapp-chat-btn mx-2"
-                        >
-                          <span
-                            >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                          ></span>
-                        </a>
-                        <a href="/register/" class="btn btn-outline-info"
-                          >Apply free</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Buy projects -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTen">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTen"
-                      aria-expanded="false"
-                      aria-controls="collapseTen"
-                    >
-                      Buy Projects
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseTen"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingTen"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Unlock opportunities and expand your portfolio with our
-                      range of projects available for purchase. Explore
-                      innovative solutions tailored to propel your ambitions
-                      forward.
-                      <br />
-                      <br />
-                      <div class="d-flex">
-                        <a href="/buyproject" class="btn btn-outline-info"
-                          >Buy now</a
-                        >
-                        <a
-                          href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                          class="whatsapp-chat-btn mx-2"
-                        >
-                          <span
-                            >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                          ></span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Mock Interviews  -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading11th">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse11th"
-                      aria-expanded="false"
-                      aria-controls="collapse11th"
-                    >
-                      Mock Interviews
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse11th"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading11th"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Our platform offers comprehensive mock interviews with
-                      expert feedback to help you ace your next job interview.
-                      Schedule a session today to practice and refine your
-                      skills in a realistic interview setting.
-                      <br />
-                      <br />
-                      <div class="d-flex">
-                        <a
-                          href="/details/?productcode=mockinterview"
-                          class="btn btn-outline-info"
-                          >View</a
-                        >
-                        <a
-                          href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                          class="whatsapp-chat-btn mx-2"
-                        >
-                          <span
-                            >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                          ></span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Math, Aptitude & Reasoning -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading12th">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse12th"
-                      aria-expanded="false"
-                      aria-controls="collapse12th"
-                    >
-                      Math, Aptitude & Reasoning
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse12th"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading12th"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Enhance your skills with our extensive resources for Math,
-                      Aptitude, and Reasoning. Access practice tests, tutorials,
-                      and expert tips to boost your problem-solving abilities
-                      and excel in competitive exams.
-                      <br />
-                      <br />
-                      <div class="d-flex">
-                        <a
-                          href="/details/?productcode=math"
-                          class="btn btn-outline-info"
-                          >View</a
-                        >
-                        <!-- <a
-                      href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                      class="whatsapp-chat-btn mx-2"
-                    >
-                      <span
-                        >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                      ></span>
-                    </a> -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Business plan making -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading13th">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse13th"
-                      aria-expanded="false"
-                      aria-controls="collapse13th"
-                    >
-                      Business plan making
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse13th"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading13th"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Create a winning business plan with our step-by-step
-                      guidance and expert templates. Turn your vision into a
-                      structured strategy that attracts investors and drives
-                      success.
-                      <br />
-                      <br />
-                      <div class="d-flex">
-                        <a href="/businessplans/" class="btn btn-outline-info"
-                          >View</a
-                        >
-                        <a
-                          href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                          class="whatsapp-chat-btn mx-2"
-                        >
-                          <span
-                            >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                          ></span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Marketing Classes -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading14th">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse14th"
-                      aria-expanded="false"
-                      aria-controls="collapse14th"
-                    >
-                      Marketing Classes
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse14th"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading14th"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Boost your marketing skills with our interactive classes
-                      covering the latest strategies and tools. Learn from
-                      industry experts and apply real-world techniques to grow
-                      your brand effectively.
-                      <br />
-                      <br />
-                      <div class="d-flex">
-                        <!-- <a
-                      href="/details/?productcode=mockinterview"
-                      class="btn btn-outline-info"
-                      >View</a
-                    > -->
-                        <a
-                          href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                          class="whatsapp-chat-btn mx-2"
-                        >
-                          <span
-                            >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                          ></span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- right accordion -->
-
-            <div class="my-4 mx-2 ">
-              <h4
-                class="p-3 text-center shadow-lg text-white"
-                style="background-color: rgb(39, 37, 37) !important"
-              >
-                Business Services
-              </h4>
-              <div class="accordion shadow-lg" id="accordionExample">
-                <!-- Hire with us -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingFirst">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFirst"
-                      aria-expanded="false"
-                      aria-controls="collapseFirst"
-                    >
-                      Hire with us
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseFirst"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingFirst"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Discover our specialized Placement Classes tailored to
-                      enhance both technical and soft skills. Prepare
-                      effectively for interviews with our experienced
-                      instructors.
-                      <br />
-                      <a href="/hirewithus/" class="mt-2 btn btn-outline-info"
-                        >View</a
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Hire using our portal -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingSecond">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseSecond"
-                      aria-expanded="false"
-                      aria-controls="collapseSecond"
-                    >
-                      Hire using our portal
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseSecond"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingSecond"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Choose our portal for access to top-tier talent, vetted
-                      for skills and cultural fit. Our streamlined platform
-                      simplifies hiring, connecting you with candidates that
-                      exceed expectations.
-                      <br /><br />
-                      <a
-                        href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                        class="whatsapp-chat-btn"
-                      >
-                        <span
-                          >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                        ></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Outsourcing Interns -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingthird">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapsethird"
-                      aria-expanded="false"
-                      aria-controls="collapsethird"
-                    >
-                      Outsource Interns
-                    </button>
-                  </h2>
-                  <div
-                    id="collapsthird"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingthird"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      "Experience excellence with our outsourced intern service.
-                      We provide a seamless solution for companies seeking
-                      top-tier interns. From talent sourcing to onboarding, we
-                      handle it all, ensuring a hassle-free experience. Elevate
-                      your team with skilled interns ready to make an impact
-                      from day one."
-                      <br /><br />
-                      <a
-                        href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                        class="whatsapp-chat-btn"
-                      >
-                        <span
-                          >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                        ></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Software Estimation or Quotation -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingfour">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapsefour"
-                      aria-expanded="false"
-                      aria-controls="collapsefour"
-                    >
-                      Software Estimation or Quotation
-                    </button>
-                  </h2>
-                  <div
-                    id="collapsfour"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingfour"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      "Streamline your software project planning with our expert
-                      Estimation and Quotation service. We offer precise
-                      assessments and detailed quotes tailored to your project's
-                      needs, ensuring clarity, transparency, and accuracy every
-                      step of the way. Trust us to provide the insights and
-                      guidance you need to kickstart your software development
-                      journey with confidence."
-                      <br /><br />
-                      <a
-                        href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                        class="whatsapp-chat-btn"
-                      >
-                        <span
-                          >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                        ></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- SEO -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingThird">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThird"
-                      aria-expanded="false"
-                      aria-controls="collapseThird"
-                    >
-                      SEO
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseThird"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingThird"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Boost your online visibility with our tailored SEO
-                      strategies. Stay ahead with our team of experts adapting
-                      to the latest algorithms and trends, driving organic
-                      traffic and conversions.
-                      <br /><br />
-                      <a
-                        href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                        class="whatsapp-chat-btn"
-                      >
-                        <span
-                          >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                        ></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Digital Marketing -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingFourth">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFourth"
-                      aria-expanded="false"
-                      aria-controls="collapseFourth"
-                    >
-                      Digital Marketing
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseFourth"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingFourth"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Craft meaningful connections with our comprehensive
-                      digital marketing services. Our data-driven campaigns
-                      resonate with your audience, enhancing engagement and
-                      driving growth.
-                      <br /><br />
-                      <a
-                        href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                        class="whatsapp-chat-btn"
-                      >
-                        <span
-                          >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                        ></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Web Development -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingFifth">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFifth"
-                      aria-expanded="false"
-                      aria-controls="collapseFifth"
-                    >
-                      Web Development
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseFifth"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingFifth"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Get a visually stunning, mobile-responsive website that
-                      performs seamlessly. Our team uses the latest technologies
-                      to create a powerful marketing tool that attracts and
-                      converts visitors.
-                      <br /><br />
-                      <a
-                        href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                        class="whatsapp-chat-btn"
-                      >
-                        <span
-                          >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                        ></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Software Development -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingseven">
-                    <button
-                      class="accordion-button collapsed fs-5"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseseven"
-                      aria-expanded="false"
-                      aria-controls="collapseseven"
-                    >
-                      Software Development
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseseven"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingseven"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Gain a competitive edge with our custom software
-                      solutions. We deliver high-quality, scalable software
-                      tailored to your unique business needs, driving efficiency
-                      and innovation.
-                      <br /><br />
-                      <a
-                        href="https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!"
-                        class="whatsapp-chat-btn"
-                      >
-                        <span
-                          >Chat on <i class="fa-brands fa-whatsapp fs-5"></i
-                        ></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-        
-
-       
+        </div>
       </div>
     </section>
 
-
-<!-- results -->
-  
-          
-            
-
-    <!-- promotion  -->
-    <!-- <div
-      class="container-fluid text-center py-4"
-      style="background-color: rgba(0, 0, 0); "
+    <div
+      id="carouselExampleSlidesOnly"
+      class="carousel"
+      data-bs-ride="carousel"
+      style="width: 100%; margin: 30px 0 30px 0; "
     >
-      
-          <div class="col-md-6 my-3 text-white">
-            <strong class="fs-3"> Vinay Kumar</strong>
-            <p
-              style="text-align: center; font-size: 18px; margin-top: 8px"
-              class="px-3"
-            >
-              with ranks and qualification AIEEE(now JEE mains) AIR 10630, state
-              level rank 602, PET rank 126, Btech + Mtech from ABV- IIITM
-              Gwalior(top college of India),
-              <br />
-              <strong>10 year experience in IT companies</strong>
-            </p>
+      <div class="carousel-inner" style="width: 100%">
+        <div
+          class="carousel-item active"
+          data-bs-interval=" 3000"
+          style="width: 100%"
+        >
+          <div class="d-block" style="width: 100% ;">
+            <div class="container" style="width: 100%">
+              <div class="content" style="width: 100%">
+                <a href="/results/" style="width: 100%">
+                  <img
+                    src="assets/image_result.png"
+                    alt=""
+                    class="full-width-image img"
+                  />
+                  <img
+                    src="assets/image_result.png"
+                    alt=""
+                    class="full-width-image img1"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
-        </div> -->
+        </div>
+
+        <div
+          class="carousel-item"
+          data-bs-interval="3000"
+          style="width: 100%"
+        >
+          <div class="d-block" style="width: 100%">
+            <div class="container" style="width: 100%">
+              <div class="content" style="width: 100%">
+                <a href="/results/" style="width: 100%">
+                  <img
+                    src="assets/new_poster1.png"
+                    alt=""
+                    class="full-width-image img"
+                  />
+                  <img
+                    src="assets/new_poster1.png"
+                    alt=""
+                    class="full-width-image img1"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="carousel-item"
+          data-bs-interval="3000"
+          style="width: 100%"
+        >
+          <div class="d-block" style="width: 100%">
+            <div class="container" style="width: 100%">
+              <div class="content" style="width: 100%">
+                <a href="/results/" style="width: 100%">
+                  <img
+                    src="assets/new_poster2.png"
+                    alt=""
+                    class="full-width-image img"
+                  />
+                  <img
+                    src="assets/new_poster2.png"
+                    alt=""
+                    class="full-width-image img1"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>    
       </div>
     </div>
 
-          <!-- Testimonials Section -->
-          <section>
-            <div class="testimonial">
-              <div
-                id="carouselExampleSlidesOnly"
-                class="carousel fade-carousel"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
-                    <div class="d-flex w-100" style="padding: 20px">
-                      <div class="quote">
-                        <img
-                          class="left-quote"
-                          src="./assets/left-quotes.png"
-                          alt="left-quote"
-                        />
-                        <h2>
-                          Thanks to Jobsdoor360, I now possess the communication
-                          skills and IT expertise to excel in my dream career.
-                        </h2>
-                        <img
-                          class="right-quote"
-                          src="./assets/right-quotes.png"
-                          alt="right-quote"
-                        />
-                      </div>
-
-                      <h3 class="name">Shivam</h3>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <div class="d-flex w-100" style="padding: 20px">
-                      <div class="quote">
-                        <img
-                          class="left-quote"
-                          src="./assets/left-quotes.png"
-                          alt="left-quote"
-                        />
-                        <h2>
-                          With Jobsdoor360 by my side, I confidently embarked on
-                          a successful journey into web development and beyond.
-                        </h2>
-                        <img
-                          class="right-quote"
-                          src="./assets/right-quotes.png"
-                          alt="right-quote"
-                        />
-                      </div>
-
-                      <h3 class="name">Yash</h3>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <div class="d-flex w-100" style="padding: 20px">
-                      <div class="quote">
-                        <img
-                          class="left-quote"
-                          src="./assets/left-quotes.png"
-                          alt="left-quote"
-                        />
-                        <h2>
-                          If you want to ace your job search and master the art
-                          of communication, Jobsdoor360 is the place to be!
-                        </h2>
-                        <img
-                          class="right-quote"
-                          src="./assets/right-quotes.png"
-                          alt="right-quote"
-                        />
-                      </div>
-
-                      <h3 class="name">Jatin</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <div
-            id="carouselExampleSlidesOnly"
-            class="carousel"
-            data-bs-ride="carousel"
-            style="width: 100%; margin: 30px 0 30px 0; "
-          >
-            <div class="carousel-inner" style="width: 100%">
-              <div
-                class="carousel-item active"
-                data-bs-interval=" 3000"
-                style="width: 100%"
-              >
-                <div class="d-block" style="width: 100% ;">
-                  <div class="container" style="width: 100%">
-                    <div class="content" style="width: 100%">
-                      <a href="/results/" style="width: 100%">
-                        <img
-                          src="assets/image_result.png"
-                          alt=""
-                          class="full-width-image img"
-                        />
-                        <img
-                          src="assets/image_result.png"
-                          alt=""
-                          class="full-width-image img1"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="carousel-item"
-                data-bs-interval="3000"
-                style="width: 100%"
-              >
-                <div class="d-block" style="width: 100%">
-                  <div class="container" style="width: 100%">
-                    <div class="content" style="width: 100%">
-                      <a href="/results/" style="width: 100%">
-                        <img
-                          src="assets/new_poster1.png"
-                          alt=""
-                          class="full-width-image img"
-                        />
-                        <img
-                          src="assets/new_poster1.png"
-                          alt=""
-                          class="full-width-image img1"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="carousel-item"
-                data-bs-interval="3000"
-                style="width: 100%"
-              >
-                <div class="d-block" style="width: 100%">
-                  <div class="container" style="width: 100%">
-                    <div class="content" style="width: 100%">
-                      <a href="/results/" style="width: 100%">
-                        <img
-                          src="assets/new_poster2.png"
-                          alt=""
-                          class="full-width-image img"
-                        />
-                        <img
-                          src="assets/new_poster2.png"
-                          alt=""
-                          class="full-width-image img1"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>    
-            </div>
-          </div>
-
-          <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
+    <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
   <div class="container">
     <div class="row" >
       <!-- Quick Links Section -->
@@ -1898,7 +763,7 @@
 
             // Hide the signup button and show "Logout"
             document.getElementById("login-button").innerHTML = "Logout";
-            signupButton.style.display = "none";
+            signupButton.style.visibility = "hidden";
 
             // Retrieve the display name (username)
             let username = user.displayName;
@@ -2013,7 +878,6 @@
   })(window, document, "script", "dataLayer", "GTM-MFBK5637");
 </script>
 <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075086355753452" crossorigin="anonymous"></script>-->
-
 
 
 

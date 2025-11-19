@@ -235,7 +235,7 @@
           <a class="nav-link" id="myaccount-2" href="/myaccount/">My account</a>
         </li>
         <li class="nav-item login-btn">
-          <a class="nav-link" id="login-button" href="/login">Login</a>
+          <a class="nav-link" id="login-button" href="/login">Login </a>
         </li>
         <li class="nav-item signup-btn" id="signup-button">
           <a class="nav-link" href="/signup">Sign up</a>
@@ -655,7 +655,7 @@
 
             // Hide the signup button and show "Logout"
             document.getElementById("login-button").innerHTML = "Logout";
-            signupButton.style.display = "none";
+            signupButton.style.visibility = "hidden";
 
             // Retrieve the display name (username)
             let username = user.displayName;
