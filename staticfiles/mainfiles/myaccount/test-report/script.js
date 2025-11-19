@@ -231,6 +231,7 @@ function displayResults(results, userRole = "user") {
       };
       console.log("Quiz code missing for result:", result);
     }
+    detailsButton.style.display = "none";
 
     resultBox.appendChild(quizTitle);
     resultBox.appendChild(score);

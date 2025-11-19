@@ -441,7 +441,7 @@ async function startQuiz() {
 
   nextButton.addEventListener("click", nextQuestion);
   previousButton.addEventListener("click", previousQuestion);
-  homeButton.addEventListener("click", () => (location.href = "/"));
+  homeButton.addEventListener("click", () => (location.href = "/myaccount/test-report/"));
 
   // Assuming you have a way to get the assessmentKey from URL or some other method
   const urlParams = new URLSearchParams(window.location.search);
