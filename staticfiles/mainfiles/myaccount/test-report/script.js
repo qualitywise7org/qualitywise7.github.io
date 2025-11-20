@@ -152,7 +152,7 @@ function displayResults(results, userRole = "user") {
     return timeB - timeA;
   });
 
-  sortedResults.forEach((result, index) => {
+  sortedResults.forEach(async (result, index) => {
     const resultBox = document.createElement("div");
     resultBox.classList.add("assessment-box");
 
@@ -191,7 +191,9 @@ function displayResults(results, userRole = "user") {
     } else {
       performanceIndicator.classList.add("needs-improvement");
       performanceIndicator.textContent = "Needs Improvement";
-    } // Add View Details button (only if we have a valid quiz code)
+    } 
+    
+    // Add View Details button (only if we have a valid quiz code) - to list Questions and answers given by user
     const detailsButton = document.createElement("a");
     detailsButton.classList.add("btn-details");
     detailsButton.textContent = "View Details";
@@ -231,14 +233,21 @@ function displayResults(results, userRole = "user") {
       };
       console.log("Quiz code missing for result:", result);
     }
-    detailsButton.style.display = "none";
+
+    //certificate button
+    const certificateButton = document.createElement("a");
+    certificateButton.classList.add("btn-details");
+    certificateButton.textContent = "Download Certificate";
+    let encryptedData = await encryptData(JSON.stringify({userId:userId, course: result.quizCode}));
+    certificateButton.href = "/myaccount/certificate/?data="+encryptedData;
 
     resultBox.appendChild(quizTitle);
     resultBox.appendChild(score);
     resultBox.appendChild(percentage);
     resultBox.appendChild(performanceIndicator);
     resultBox.appendChild(timestamp);
-    resultBox.appendChild(detailsButton);
+    //resultBox.appendChild(detailsButton); // a button which leads on a screen where we show questions and answers given by user
+    resultBox.appendChild(certificateButton);
 
     reportContainer.appendChild(resultBox);
   });

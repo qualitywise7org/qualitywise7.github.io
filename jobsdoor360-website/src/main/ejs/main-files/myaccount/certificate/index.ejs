@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Certificate</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #pdfContent {
+      width: 800px; /* set a fixed width for consistent rendering */
+      background: white;
+      padding: 24px;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 6px rgba(0,0,0,0.04);
+    }
+    .section { margin-bottom: 18px; }
+    .btn { display:inline-block; padding:10px 14px; background:#007bff; color:#fff; border-radius:6px; text-decoration:none; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+  <h2>Demo: Generate multi-page PDF on client-side</h2>
+
+  <div id="pdfContent">
+    <h1>Demo document</h1>
+    <p class="section">This is some sample content to show client-side PDF generation. Add your dynamic HTML here before generating the PDF.</p>
+
+    <!-- Generate long content for testing multi-page behavior -->
+    <div id="long">
+      <script>
+        // create a lot of text to force multi-page
+        let html = "";
+        for (let i=1; i<=60; i++) {
+          html += `<h3>Heading ${i}</h3><p>This is paragraph ${i}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>`;
+        }
+        document.write(html);
+      </script>
+    </div>
+  </div>
+
+  <br>
+  <button id="btn" class="btn">Generate & Download PDF</button>
+
+  <%- include('../../../partials/footer.ejs') %>
+  
+  <!-- libs -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    async function getData() {
+        const params = new URLSearchParams(window.location.search);
+        let data = await decryptData(params.get('data'));
+        return JSON.parse(data);
+    }
+
+    getData().then(data => {
+        let name = getLoggedInUserName();
+
+        console.log(data, name);
+    });
+
+    
+  document.getElementById('btn').addEventListener('click', async () => {
+    const { jsPDF } = window.jspdf;
+
+    const element = document.getElementById('pdfContent');
+
+    // Ensure element is fully visible/rendered
+    element.style.background = 'white';
+
+    // 1) Render element to canvas with html2canvas
+    const canvas = await html2canvas(element, {
+      scale: 2,              // increase for better quality
+      useCORS: true,         // allow cross-origin images if served with CORS
+      allowTaint: false,
+      logging: false
+    });
+
+    // 2) Prepare jsPDF A4
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const pdfWidthMM = pdf.internal.pageSize.getWidth();
+    const pdfHeightMM = pdf.internal.pageSize.getHeight();
+
+    // Convert canvas size into PDF units
+    const imgWidthPx = canvas.width;
+    const imgHeightPx = canvas.height;
+    const pxPerMm = imgWidthPx / pdfWidthMM;          // number of canvas px per mm of PDF width
+    const pageHeightPx = Math.floor(pdfHeightMM * pxPerMm); // page height in canvas px
+
+    // 3) Slice the canvas into page-sized chunks
+    let y = 0;
+    while (y < imgHeightPx) {
+      const canvasSlice = document.createElement('canvas');
+      canvasSlice.width = imgWidthPx;
+      // sliceHeightPx: remaining or pageHeightPx
+      const sliceHeightPx = Math.min(pageHeightPx, imgHeightPx - y);
+      canvasSlice.height = sliceHeightPx;
+
+      const ctx = canvasSlice.getContext('2d');
+      // draw the slice from the original canvas into the temp canvas
+      ctx.drawImage(canvas, 0, y, imgWidthPx, sliceHeightPx, 0, 0, imgWidthPx, sliceHeightPx);
+
+      // convert slice to image data
+      const imgData = canvasSlice.toDataURL('image/png');
+
+      // compute slice height in mm for jsPDF
+      const sliceHeightMM = sliceHeightPx / pxPerMm;
+
+      // Add image to PDF — full width, computed height
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidthMM, sliceHeightMM, undefined, 'FAST');
+
+      y += sliceHeightPx;
+      if (y < imgHeightPx) pdf.addPage();
+    }
+
+    // 4) Save the PDF
+    pdf.save('generated_document.pdf');
+  });
+  </script>
+</body>
+</html>
