@@ -6,7 +6,7 @@
       name="description"
       content="Certificate by JobsDoor360:  Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <!--<link rel="stylesheet" href="/staticfiles/mainfiles/myaccount/certificate/style.css" />-->
     <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
@@ -24,6 +24,140 @@
   crossorigin="anonymous"
 />
 
+    <style>
+      #certificate {
+        width: 1100px;               /* good width for A4 landscape cropping */
+        max-width: 95%;
+        background: linear-gradient(180deg, #ffffff 0%, #fffdf8 100%);
+        border-radius: 12px;
+        padding: 40px 60px;
+        box-shadow: 0 10px 30px rgba(20,20,40,0.08);
+        border: 6px solid #f1e7d6;   /* subtle frame */
+        position: relative;
+        margin: 10px auto;
+      }
+
+      /* decorative ribbon / badge */
+      .badge {
+        position: absolute;
+        right: 48px;
+        top: -26px;
+        background: linear-gradient(180deg,#ffd57a,#ffb84d);
+        color: #4a2b00;
+        padding: 12px 18px;
+        border-radius: 8px;
+        font-weight: 700;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      }
+
+      .title {
+        text-align: center;
+        color: #2b2b2b;
+        margin-bottom: 12px;
+      }
+      .title h1 {
+        margin: 0;
+        font-size: 34px;
+        letter-spacing: 0.6px;
+      }
+      .title p {
+        margin: 6px 0 0;
+        color: #6b6b6b;
+        font-size: 14px;
+      }
+
+      .content {
+        margin-top: 28px;
+        text-align: center;
+      }
+    .recipient {
+      font-size: 44px;
+      margin: 10px 0;
+      font-weight: 700;
+      color: #0f1724;
+      letter-spacing: 0.4px;
+    }
+    .desc {
+      font-size: 18px;
+      color: #3b3b3b;
+      margin-bottom: 28px;
+    }
+
+    .meta {
+      display:flex;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 28px;
+      flex-wrap:wrap;
+    }
+    .meta .box {
+      background: rgba(15,23,36,0.03);
+      border-radius: 8px;
+      padding: 12px 16px;
+      min-width: 180px;
+      text-align: left;
+    }
+    .meta .box label {
+      display:block;
+      font-size: 12px;
+      color: #6b6b6b;
+    }
+    .meta .box .value {
+      font-weight: 700;
+      font-size: 16px;
+      color: #111827;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;   /* center horizontally */
+      align-items: center;       /* align vertically */
+      gap: 40px;                 /* space between issuer and signature */
+      margin-top: 30px;
+      flex-wrap: wrap;           /* allows stacking on small screens */
+    }
+
+    .issuer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .signatures {
+      display: flex;
+      gap: 20px;
+    }
+
+    .sign {
+      text-align: center;
+    }
+
+    .sign .name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .sign .role {
+      font-size: 12px;
+      color: #666;
+    }
+
+
+    /* small screens */
+    @media (max-width:720px) {
+      #certificate { padding: 24px; }
+      .recipient { font-size:28px; }
+      .title h1 { font-size:22px; }
+      .meta { gap:12px; justify-content:center; }
+    }
+
+    #btn {
+      display: block;
+      margin: 2px auto;
+      background-color: #e0e0e0;
+    }
+
+    </style>
   </head>
 
   <body>
@@ -205,9 +339,9 @@
     <button id="btn" class="btn">Download Certificate</button>
     <br>
 
-    <div id="pdfContent">
+    <div id="pdfContent" style="padding-top:50px">
       <div id="certificate" role="document" aria-label="Certificate of Completion">
-        <div class="badge">DSA QUIZ</div>
+        <div class="badge">JobsDoor360</div>
 
         <div class="title">
           <h1>Certificate of Completion</h1>
@@ -215,56 +349,51 @@
         </div>
 
         <div class="content">
-          <div class="recipient" id="cert-name">[Participant Name]</div>
+          <div class="recipient" id="cert-name"></div>
           <div class="desc" id="cert-desc">
-            For successfully passing the <strong>Data Structures & Algorithms (DSA)</strong> quiz with outstanding performance.
+            For successfully passing the <strong><span id="course"></span></strong> quiz with outstanding performance.
           </div>
 
           <div class="meta" aria-hidden="false">
             <div class="box">
               <label>Score</label>
-              <div class="value" id="cert-score">95%</div>
+              <div class="value" id="cert-score"></div>
             </div>
 
             <div class="box">
               <label>Quiz</label>
-              <div class="value" id="cert-quiz">DSA Fundamentals — Quiz #3</div>
+              <div class="value" id="cert-quiz"></div>
             </div>
 
             <div class="box">
               <label>Date</label>
-              <div class="value" id="cert-date">Nov 20, 2025</div>
+              <div class="value" id="cert-date"></div>
             </div>
 
             <div class="box">
               <label>Duration</label>
-              <div class="value" id="cert-duration">30 minutes</div>
+              <div class="value" id="cert-duration"></div>
             </div>
           </div>
 
           <div class="footer">
             <div class="issuer">
-              <img src="https://via.placeholder.com/56x56.png?text=Logo" alt="Issuer logo" />
+              <img src="/assets/Jobsdoor360%20-logos__black.png" alt="Jobsdoor360 logo" />
               <div class="info">
-                <div class="org">Jobsdoor360 Academy</div>
-                <div class="small">Verified by the DSA assessment team</div>
+                <div class="org" style="visibility: hidden;">Jobsdoor360</div>
               </div>
             </div>
 
             <div class="signatures" aria-hidden="true">
               <div class="sign">
-                <div class="line"></div>
-                <div class="name">Shivpriya Gaur</div>
-                <div class="role">Course Lead</div>
-              </div>
-
-              <div class="sign">
-                <div class="line"></div>
                 <div class="name">Vinod Gaur</div>
-                <div class="role">Head — Assessments</div>
+                <div class="role">Course Lead</div>
               </div>
             </div>
           </div>
+
+
+
         </div>
       </div>
     </div>
@@ -718,8 +847,27 @@
       getData().then(data => {
           let name = getLoggedInUserName();
 
-          console.log(data, name);
+          fillCertificate(name, data.percentage, data.course)
       });
+
+      function fillCertificate(name, percentage, course) {
+          // sample data — replace with your real data or get from query params
+          const sample = {
+            name: name,
+            score: percentage+" %",
+            quiz: course,
+            date: new Date().toLocaleDateString(),
+            duration: "25 minutes"
+          };
+
+          document.getElementById('course').textContent = sample.quiz.toUpperCase();
+
+          document.getElementById('cert-name').textContent = sample.name;
+          document.getElementById('cert-score').textContent = sample.score;
+          document.getElementById('cert-quiz').textContent = sample.quiz.toUpperCase();
+          document.getElementById('cert-date').textContent = sample.date;
+          document.getElementById('cert-duration').textContent = sample.duration;
+      }
 
       
     document.getElementById('btn').addEventListener('click', async () => {

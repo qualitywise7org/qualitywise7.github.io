@@ -238,7 +238,7 @@ function displayResults(results, userRole = "user") {
     const certificateButton = document.createElement("a");
     certificateButton.classList.add("btn-details");
     certificateButton.textContent = "Download Certificate";
-    let encryptedData = await encryptData(JSON.stringify({userId:userId, course: result.quizCode}));
+    let encryptedData = await encryptData(JSON.stringify({userId:userId, course: result.quizCode, percentage: result.percentage}));
     certificateButton.href = "/myaccount/certificate/?data="+encryptedData;
 
     resultBox.appendChild(quizTitle);
