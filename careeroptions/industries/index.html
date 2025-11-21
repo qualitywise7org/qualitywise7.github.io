@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hire</title>
-    <link
-      rel="stylesheet"
-      href="/staticfiles/mainfiles/myaccount/hire/style.css"
-    />
+    <title>Business Options</title>
+    <meta name="description" content="Business options"/>
+    <link rel="stylesheet" href="/staticfiles/mainfiles/careeroptions/business-options/style.css">
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
@@ -194,81 +192,385 @@
 <!-- End Google Tag Manager (noscript) -->
 
 
-   <h1>Job Postings</h1>
-    <button class="button" id="openModalBtn">+ Post New Job</button>
-
-    <div id="jobList" class="job-list-container"></div>
-
-    <!-- Modal Form -->
-    <div class="modal" id="jobModal">
-      <div class="modal-content">
-        <h2 id="modalTitle">Post a New Job</h2>
-        <form id="jobForm">
-          <div class="form-group">
-            <label>Job Title*</label>
-            <input type="text" id="jobTitle" required />
-          </div>
-          <div class="form-group">
-            <label for="company">Company Name*</label>
-            <select id="company" required>
-              <option value="">Select a company</option>
-              <option value="tcs">TCS</option>
-              <option value="infosys">Infosys</option>
-              <option value="jobsdoor360">jobsdoor360</option>
-              <option value="accenture">Accenture</option>
-             <option value="capgemini">Thought Works</option>
-             <option value="others">Others</option>
-              <!-- Add more companies as needed -->
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Job Type*</label>
-            <select id="jobType" required>
-              <option value="Full-time">Full-time</option>
-              <option value="Part-time">Part-time</option>
-              <option value="Internship">Internship</option>
-              <option value="Contract">Contract</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Location*</label>
-            <input type="text" id="location" required />
-          </div>
-          <div class="form-group">
-            <label>Qualification Eligibility*</label>
-            <input type="text" id="qualification" required />
-          </div>
-          <div class="form-group">
-            <label>Education Board</label>
-            <input type="text" id="board" />
-          </div>
-          <div class="form-group">
-            <label>Minimum Age</label>
-            <input type="number" id="minAge" />
-          </div>
-          <div class="form-group">
-            <label>Maximum Age</label>
-            <input type="number" id="maxAge" />
-          </div>
-          <div class="form-group">
-            <label>Application Deadline*</label>
-            <input type="date" id="deadline" required />
-          </div>
-          <div class="form-group">
-            <label>Profile Code (for filtering)</label>
-            <input type="text" id="profile" />
-          </div>
-          <div class="form-group">
-            <label>Job Description*</label>
-            <textarea id="description" required></textarea>
-          </div>
-          <button type="submit" class="button">Submit</button>
-          <button type="button" class="button" style="background:#6b7280" id="closeModalBtn">Cancel</button>
-        </form>
-      </div>
+    <h1>All Industries and Sectors</h1>
+    <div id="data-container"> 
+      
+        <h2>Technology</h2>
+        
+          <ul>
+            
+              <li>Software Development</li>
+            
+              <li>Hardware Manufacturing</li>
+            
+              <li>IT Services</li>
+            
+              <li>Electronics</li>
+            
+          </ul>
+        
+      
+        <h2>Finance</h2>
+        
+          <ul>
+            
+              <li>Banking</li>
+            
+              <li>Investment Services</li>
+            
+              <li>Insurance</li>
+            
+              <li>Accounting</li>
+            
+          </ul>
+        
+      
+        <h2>Healthcare</h2>
+        
+          <ul>
+            
+              <li>Hospitals and Clinics</li>
+            
+              <li>Pharmaceutical Manufacturing</li>
+            
+              <li>Biotechnology</li>
+            
+              <li>Health Insurance</li>
+            
+          </ul>
+        
+      
+        <h2>Retail</h2>
+        
+          <ul>
+            
+              <li>Brick-and-Mortar Stores</li>
+            
+              <li>E-commerce</li>
+            
+              <li>Consumer Electronics</li>
+            
+              <li>Fashion and Apparel</li>
+            
+          </ul>
+        
+      
+        <h2>Manufacturing</h2>
+        
+          <ul>
+            
+              <li>Automotive</li>
+            
+              <li>Aerospace</li>
+            
+              <li>Food and Beverage</li>
+            
+              <li>Textiles</li>
+            
+          </ul>
+        
+      
+        <h2>Hospitality and Tourism</h2>
+        
+          <ul>
+            
+              <li>Hotels and Resorts</li>
+            
+              <li>Restaurants and Food Services</li>
+            
+              <li>Travel Agencies</li>
+            
+              <li>Event Management</li>
+            
+          </ul>
+        
+      
+        <h2>Real Estate</h2>
+        
+          <ul>
+            
+              <li>Residential Real Estate</li>
+            
+              <li>Commercial Real Estate</li>
+            
+              <li>Property Development</li>
+            
+              <li>Property Management</li>
+            
+          </ul>
+        
+      
+        <h2>Energy</h2>
+        
+          <ul>
+            
+              <li>Oil and Gas</li>
+            
+              <li>Renewable Energy</li>
+            
+              <li>Utilities</li>
+            
+              <li>Energy Trading</li>
+            
+          </ul>
+        
+      
+        <h2>Transportation and Logistics</h2>
+        
+          <ul>
+            
+              <li>Shipping and Freight</li>
+            
+              <li>Airlines</li>
+            
+              <li>Rail Transportation</li>
+            
+              <li>Logistics and Supply Chain Management</li>
+            
+          </ul>
+        
+      
+        <h2>Telecommunications</h2>
+        
+          <ul>
+            
+              <li>Mobile Network Operators</li>
+            
+              <li>Internet Service Providers</li>
+            
+              <li>Telecommunications Equipment Manufacturing</li>
+            
+              <li>Satellite Communications</li>
+            
+          </ul>
+        
+      
+        <h2>Entertainment and Media</h2>
+        
+          <ul>
+            
+              <li>Film and Television Production</li>
+            
+              <li>Music Industry</li>
+            
+              <li>Publishing</li>
+            
+              <li>Digital Media</li>
+            
+          </ul>
+        
+      
+        <h2>Consumer Goods</h2>
+        
+          <ul>
+            
+              <li>FMCG (Fast-Moving Consumer Goods)</li>
+            
+              <li>Personal Care Products</li>
+            
+              <li>Household Goods</li>
+            
+              <li>Food and Beverage</li>
+            
+          </ul>
+        
+      
+        <h2>Automotive</h2>
+        
+          <ul>
+            
+              <li>Vehicle Manufacturing</li>
+            
+              <li>Automotive Parts and Accessories</li>
+            
+              <li>Dealerships and Sales</li>
+            
+              <li>Automotive Services</li>
+            
+          </ul>
+        
+      
+        <h2>Agriculture</h2>
+        
+          <ul>
+            
+              <li>Crop Production</li>
+            
+              <li>Livestock Farming</li>
+            
+              <li>Agribusiness</li>
+            
+              <li>Agricultural Equipment Manufacturing</li>
+            
+          </ul>
+        
+      
+        <h2>Education</h2>
+        
+          <ul>
+            
+              <li>Schools and Universities</li>
+            
+              <li>Educational Technology (EdTech)</li>
+            
+              <li>Training and Development</li>
+            
+              <li>Publishing and Educational Materials</li>
+            
+          </ul>
+        
+      
+        <h2>Construction</h2>
+        
+          <ul>
+            
+              <li>Residential Construction</li>
+            
+              <li>Commercial Construction</li>
+            
+              <li>Civil Engineering</li>
+            
+              <li>Building Materials</li>
+            
+          </ul>
+        
+      
+        <h2>Professional Services</h2>
+        
+          <ul>
+            
+              <li>Legal Services</li>
+            
+              <li>Accounting and Auditing</li>
+            
+              <li>Marketing and Advertising Agencies</li>
+            
+              <li>Recruitment and HR Services</li>
+            
+          </ul>
+        
+      
+        <h2>Government and Public Administration</h2>
+        
+          <ul>
+            
+              <li>Public Administration</li>
+            
+              <li>Defense and Military</li>
+            
+              <li>Government Services</li>
+            
+              <li>Public Policy and Governance</li>
+            
+          </ul>
+        
+      
+        <h2>Nonprofit and Social Services</h2>
+        
+          <ul>
+            
+              <li>Charitable Organizations</li>
+            
+              <li>NGOs (Non-Governmental Organizations)</li>
+            
+              <li>Social Advocacy Groups</li>
+            
+              <li>Foundations and Philanthropy</li>
+            
+          </ul>
+        
+      
+        <h2>Legal Services</h2>
+        
+          <ul>
+            
+              <li>Law Firms</li>
+            
+              <li>Legal Consulting</li>
+            
+              <li>Legal Tech</li>
+            
+              <li>Alternative Dispute Resolution</li>
+            
+          </ul>
+        
+      
+        <h2>Environmental Services</h2>
+        
+          <ul>
+            
+              <li>Environmental Consulting</li>
+            
+              <li>Waste Management</li>
+            
+              <li>Renewable Energy Development</li>
+            
+              <li>Environmental Remediation</li>
+            
+          </ul>
+        
+      
+        <h2>Fitness and Wellness</h2>
+        
+          <ul>
+            
+              <li>Gyms and Fitness Centers</li>
+            
+              <li>Wellness Coaching</li>
+            
+              <li>Sports Equipment Manufacturing</li>
+            
+              <li>Health Food Products</li>
+            
+          </ul>
+        
+      
+        <h2>Gaming</h2>
+        
+          <ul>
+            
+              <li>Video Game Development</li>
+            
+              <li>Gaming Platforms</li>
+            
+              <li>Esports</li>
+            
+              <li>Gaming Accessories and Merchandise</li>
+            
+          </ul>
+        
+      
+        <h2>Security and Surveillance</h2>
+        
+          <ul>
+            
+              <li>Security Services</li>
+            
+              <li>Cybersecurity</li>
+            
+              <li>Surveillance Technology</li>
+            
+              <li>Private Investigation</li>
+            
+          </ul>
+        
+      
+        <h2>Animal Husbandry, Dairying and Fisheries</h2>
+        
+          <p></p>
+        
+      
+        <h2>Chemicals and Fertilizers</h2>
+        
+          <p></p>
+        
+      
+        <h2>Civil Aviation</h2>
+        
+          <p></p>
+        
+      
     </div>
-
-
     <footer class="container-fluid text-white py-4" style="background-color: #1d2559;">
   <div class="container">
     <div class="row" >
@@ -703,11 +1005,6 @@
 
 
 
-    <script type="module" src="/staticfiles/mainfiles/myaccount/hire/checkRecruiter.js"></script>
-    <script type="module" 
-    src="/staticfiles/mainfiles/myaccount/hire/script.js"
-    ></script>
+    <!-- <script src="/staticfiles/mainfiles/careeroptions/business-options/script.js"></script> -->
   </body>
 </html>
-
-
