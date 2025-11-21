@@ -53,35 +53,25 @@
         <li class="nav-item">
           <a class="nav-link" href="/about/">About Us</a>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
           <a class="nav-link" href="/apply/">Apply</a>
+        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="/test/">Certifications</a>
         </li>
-        <!--<li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Career Options
+        <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+            Career
           </a>
           <ul class="dropdown-menu">
-          
             <li>
-              <a class="dropdown-item" href="/careeroptions">Career Options</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/careeroptions/job-options/">Job Options</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/careeroptions/business-options/">Business Options</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/jobs_analysis/">Job Analysis</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+              <a class="dropdown-item" href="/careeroptions/">Career and jobs after 10th, 12th, Graduation, Post-Graduation</a>
             </li>
           </ul>
         </li>
@@ -96,6 +86,21 @@
             Blogs
           </a>
           <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="/careeroptions/">Career and jobs after 10th, 12th, Graduation, Post-Graduation</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/careeroptions/job-options/">Job Options</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/careeroptions/business-options/">Business Options</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/jobs_analysis/">Job Analysis</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/careeroptions/profileanalyzer/">Profile Analyzer</a>
+            </li>
             <li>
               <a class="dropdown-item" href="/blog/govt-policies">Government Policies</a>
             </li>
@@ -121,13 +126,10 @@
               <a class="dropdown-item" href="/blog/awards">Awards</a>
             </li>
           </ul>
-        </li>-->
-        <li class="nav-item">
-          <a class="nav-link" href="/test/">Certifications</a>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
           <a class="nav-link" id="myaccount-2" href="/myaccount/">My account</a>
-        </li>
+        </li>-->
         <li class="nav-item login-btn">
           <a class="nav-link" id="login-button" href="/login">Login </a>
         </li>
@@ -200,15 +202,200 @@
 
 
     <section>
-      <header>
-        <h1>Career Options</h1>
-      </header>  
-      <!-- <a href="\careeroptions\business-options\index.html" target="_blank">Business Options</a> -->
-      <!-- <p><a href="./job-options/index.html">Job Options</a></p>
-      <p><a href="./career-guide-by-big-people/index.html">Career Guide By Big People</a></p>
-      <p><a href="./government-department-which-provide-jobs/index.html">Government Department Which Provide Jobs</a></p>
-      <p><a href="./societies/index.html"></a>Societies</p> -->
-       
+      <section>
+        <div id="careerTreeContainer">
+
+          <style>
+            /* ------- SCOPED CSS: will affect only inside #careerTreeContainer ------- */
+            #careerTreeContainer {
+              max-width: 900px;
+              margin: 20px auto;
+              font-family: Arial, sans-serif;
+            }
+
+            #careerTreeContainer .header {
+              text-align: center;
+              font-weight: bold;
+              font-size: 20px;
+              margin-bottom: 10px;
+            }
+
+            #careerTreeContainer .controls {
+              text-align: center;
+              margin: 10px 0 18px;
+            }
+
+            #careerTreeContainer .controls button {
+              padding: 6px 12px;
+              margin: 0 6px;
+              border-radius: 6px;
+              border: 1px solid #ccc;
+              cursor: pointer;
+              background: white;
+            }
+
+            #careerTreeContainer .tree-box {
+              border: 1px solid #ddd;
+              padding: 14px;
+              border-radius: 10px;
+              background: #fff;
+            }
+
+            #careerTreeContainer details summary {
+              cursor: pointer;
+              padding: 8px 10px;
+              margin: 6px 0;
+              font-weight: bold;
+              background: #e9f6ff;
+              border-radius: 6px;
+            }
+
+            #careerTreeContainer details .node {
+              margin-left: 16px;
+              border-left: 2px dashed #d2d2d2;
+              padding-left: 10px;
+              margin-top: 5px;
+            }
+
+            #careerTreeContainer .leaf {
+              padding: 5px 10px;
+              background: #f6f6f6;
+              border-radius: 6px;
+              margin: 5px 0;
+              font-size: 14px;
+              font-weight: 600;
+            }
+          </style>
+
+          <div class="header">Career & Job Options After 10th, 12th, Graduation, Post-Graduation</div>
+
+          <div class="controls">
+            <button onclick="expandCareerTree(true)">Expand All</button>
+            <button onclick="expandCareerTree(false)">Collapse All</button>
+          </div>
+
+          <div class="tree-box" id="careerTree">
+            <details>
+              <summary>After 10th</summary>
+              <div class="node">
+
+                <details>
+                  <summary>1. Choose Stream</summary>
+                  <div class="node">
+                    <div class="leaf">Science</div>
+                    <div class="leaf">Commerce</div>
+                    <div class="leaf">Arts / Humanities</div>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>2. Subject Combinations</summary>
+                  <div class="node">
+                    <details>
+                      <summary>Science</summary>
+                      <div class="node">
+                        <div class="leaf">PCM / PCB / PCMB</div>
+                        <div class="leaf">Computer Science / Electronics / IT</div>
+                      </div>
+                    </details>
+
+                    <details>
+                      <summary>Commerce</summary>
+                      <div class="node">
+                        <div class="leaf">With Maths</div>
+                        <div class="leaf">Without Maths</div>
+                      </div>
+                    </details>
+
+                    <details>
+                      <summary>Arts</summary>
+                      <div class="node">
+                        <div class="leaf">Humanities / Sociology / Psychology</div>
+                      </div>
+                    </details>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>3. Courses After 12th</summary>
+                  <div class="node">
+                    <div class="leaf">Engineering / Medical / Pharmacy / Nursing</div>
+                    <div class="leaf">BBA / B.Com / CA / CS</div>
+                    <div class="leaf">BA / Mass Communication / Law (LLB)</div>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>4. Without 12th / Skill Courses</summary>
+                  <div class="node">
+                    <div class="leaf">ITI / Diploma</div>
+                    <div class="leaf">Animation / Graphic Design</div>
+                    <div class="leaf">Government Group-D Jobs</div>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>5. Higher Studies</summary>
+                  <div class="node">
+                    <div class="leaf">MBA / M.Tech / MCA / M.Sc</div>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>6. Job Types</summary>
+                  <div class="node">
+                    <div class="leaf">Private Jobs / Government Jobs</div>
+                    <div class="leaf">Freelancing / Startup</div>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>7. Industries</summary>
+                  <div class="node">
+                    <div class="leaf">IT / Finance / Healthcare / Engineering</div>
+                    <div class="leaf">Media / Education / Defence</div>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>8. Job Roles</summary>
+                  <div class="node">
+                    <div class="leaf">Software Engineer / Data Analyst / Doctor / CA</div>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>9. Salary Levels</summary>
+                  <div class="node">
+                    <div class="leaf">Entry → Mid → Senior → Manager → Director → CXO</div>
+                  </div>
+                </details>
+
+                <details>
+                  <summary>10. Long-Term Goals</summary>
+                  <div class="node">
+                    <div class="leaf">IAS / IPS / Entrepreneur / Research / International Jobs</div>
+                  </div>
+                </details>
+
+              </div>
+            </details>
+          </div>
+
+          <script>
+            // -------- SCOPED JS: Expand / Collapse all details only inside this div --------
+            const details = document.querySelectorAll('#careerTreeContainer details')[0];
+            details.open = true;
+
+            function expandCareerTree(open) {
+              const details = document.querySelectorAll('#careerTreeContainer details');
+              details.forEach(d => d.open = open);
+            }
+          </script>
+
+        </div>
+
+      </section>
       <main>
           
           <p><a href="\careeroptions\business-options" target="_blank">Business Options</a></p>
