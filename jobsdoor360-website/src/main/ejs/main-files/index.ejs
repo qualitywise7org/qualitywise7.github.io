@@ -287,89 +287,259 @@
     </section>
 
     <!-- result section-->
-    <div
-      id="carouselExampleSlidesOnly"
-      class="carousel"
-      data-bs-ride="carousel"
-      style="width: 100%; margin: 30px 0 30px 0; "
-    >
-      <div class="carousel-inner" style="width: 100%">
-        <div
-          class="carousel-item active"
-          data-bs-interval=" 3000"
-          style="width: 100%"
-        >
-          <div class="d-block" style="width: 100% ;">
-            <div class="container" style="width: 100%">
-              <div class="content" style="width: 100%">
-                <a href="/results/" style="width: 100%">
-                  <img
-                    src="assets/image_result.png"
-                    alt=""
-                    class="full-width-image img"
-                  />
-                  <img
-                    src="assets/image_result.png"
-                    alt=""
-                    class="full-width-image img1"
-                  />
-                </a>
-              </div>
-            </div>
+    <style>
+    .results-carousel {
+      width: 100%;
+      padding: 50px 0;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .carousel-container {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .card {
+      flex: 0 0 300px;
+      margin: 0 12px;
+      background: #fff;
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 10px;   /* Centers horizontally */
+      display: block;       /* Required to allow auto margin centering */
+    }
+
+    .card h3 {
+      margin: 6px 0;
+      font-size: 22px;
+      color: #222;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 6px;
+      line-height: 1.4;         /* line height */
+      min-height: calc(1.4em * 3); /* always space for 3 lines */
+    }
+
+    .linkedin-btn {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #0a66c2;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 14px;
+      text-decoration: none;
+      margin-top: 8px;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 22px;
+      padding: 10px 16px;
+      background: #212121;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 5;
+      opacity: 0.6;
+    }
+
+    .carousel-btn:hover {
+      opacity: 1;
+    }
+
+    .prev { left: 0px; }
+    .next { right: 0px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+      gap: 8px;
+    }
+
+    .carousel-dots span {
+      width: 10px;
+      height: 10px;
+      background: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .carousel-dots .active {
+      background: #333;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .card {
+        flex: 0 0 80%;
+      }
+      .prev, .next {
+        top: 90%;
+      }
+    }
+
+    </style>
+    <section class="results-carousel">
+      <h2 class="section-title">Success Stories</h2>
+
+      <div class="carousel-container">
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <div class="carousel-track">
+          <!-- CARD 1 -->
+          <div class="card">
+            <img src="/staticfiles/mainfiles/results/public/rohitgupta.jpg" alt="Rohit Gupta">
+            <h3>Rohit Gupta</h3>
+            <p>Learnt Full Stack Development as Internship</p>
+            <p><strong>Placement:</strong> Currently in Final Year</p>
+            <a href="https://www.linkedin.com/in/rohit-gupta-21088b226/" class="linkedin-btn" target="_blank">LinkedIn Profile</a>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="card">
+            <img src="/staticfiles/mainfiles/results/public/shivam.jpg" alt="Student Name">
+            <h3>Shivam Dhakad</h3>
+            <p>Learnt back-end development in python, frontend, DSA, problem solving</p>
+            <p><strong>Placement:</strong> Muthoot Bank</p>
+            <a href="https://www.linkedin.com/in/shiv597166/" class="linkedin-btn" target="_blank">LinkedIn Profile</a>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="card">
+            <img src="/staticfiles/mainfiles/results/public/jatin.jpg" alt="Student Photo">
+            <h3>Jatin Kushwah</h3>
+            <p>Learnt DSA, full stack development as internship</p>
+            <p><strong>Placement:</strong> https://Skillops.ai</p>
+            <a href="https://www.linkedin.com/in/jatin-kushwah-1b6694255/" class="linkedin-btn" target="_blank">LinkedIn</a>
+          </div>
+
+          <div class="card">
+            <img src="/staticfiles/mainfiles/results/public/aditya.jpg" alt="Student Photo">
+            <h3>Aditya jain</h3>
+            <p>Learnt DSA, full stack development and product management as internship</p>
+            <p><strong>Placement:</strong> Got placed(company name not disclosed)</p>
+            <a href="https://www.linkedin.com/in/aditya-jain-98606a266/" class="linkedin-btn" target="_blank">LinkedIn</a>
+          </div>
+
+          <div class="card">
+            <img src="/staticfiles/mainfiles/results/public/ayush.jpg" alt="Student Photo">
+            <h3>Ayush Meena</h3>
+            <p>Learnt DSA, full stack development as internship</p>
+            <p><strong>Placement:</strong> </p>
+            <a href="https://www.linkedin.com/in/ayush-meena-ba4211251/" class="linkedin-btn" target="_blank">LinkedIn</a>
+          </div>
+
+          <div class="card">
+            <img src="/staticfiles/mainfiles/results/public/narayan.jpg" alt="Student Photo">
+            <h3>Narayan Raghuwanshi</h3>
+            <p>Developer who specializes in creating high-performance applications using the latest version of Next.js</p>
+            <p><strong>Placement:</strong> Final year student</p>
+            <a href="https://www.linkedin.com/in/narayan-raghuwanshi-4589b4290/" class="linkedin-btn" target="_blank">LinkedIn</a>
+          </div>
+
+          <div class="card">
+            <img src="/staticfiles/mainfiles/results/public/devraj.jpg" alt="Student Photo">
+            <h3>Devraj Pun</h3>
+            <p>Learning Full stack and DSA as internship</p>
+            <p><strong>Placement:</strong> Final year student</p>
+            <a href="https://www.linkedin.com/in/devraj-pun-0019jb/" class="linkedin-btn" target="_blank">LinkedIn</a>
+          </div>
+
+          <div class="card">
+            <img src="/staticfiles/mainfiles/results/public/nivesh.jpg" alt="Student Photo">
+            <h3>Nivesh Garg</h3>
+            <p>Learnt Product Manager as internship<br></p>
+            <p><strong>Placement:</strong> Final year student</p>
+            <a href="https://www.linkedin.com/in/nivesh-garg-865767229" class="linkedin-btn" target="_blank">LinkedIn</a>
           </div>
         </div>
 
-        <div
-          class="carousel-item"
-          data-bs-interval="3000"
-          style="width: 100%"
-        >
-          <div class="d-block" style="width: 100%">
-            <div class="container" style="width: 100%">
-              <div class="content" style="width: 100%">
-                <a href="/results/" style="width: 100%">
-                  <img
-                    src="assets/new_poster1.png"
-                    alt=""
-                    class="full-width-image img"
-                  />
-                  <img
-                    src="assets/new_poster1.png"
-                    alt=""
-                    class="full-width-image img1"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="carousel-item"
-          data-bs-interval="3000"
-          style="width: 100%"
-        >
-          <div class="d-block" style="width: 100%">
-            <div class="container" style="width: 100%">
-              <div class="content" style="width: 100%">
-                <a href="/results/" style="width: 100%">
-                  <img
-                    src="assets/new_poster2.png"
-                    alt=""
-                    class="full-width-image img"
-                  />
-                  <img
-                    src="assets/new_poster2.png"
-                    alt=""
-                    class="full-width-image img1"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>    
+        <button class="carousel-btn next">&#10095;</button>
       </div>
-    </div>
+
+      <div class="carousel-dots"></div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+      const track = document.querySelector(".carousel-track");
+      const cards = Array.from(track.children);
+      const nextBtn = document.querySelector(".next");
+      const prevBtn = document.querySelector(".prev");
+      const dotsContainer = document.querySelector(".carousel-dots");
+
+      let currentIndex = 0;
+      const cardWidth = cards[0].getBoundingClientRect().width + 24;
+
+      // Create dot indicators
+      cards.forEach((_, i) => {
+        const dot = document.createElement("span");
+        if (i === 0) dot.classList.add("active");
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[currentIndex].classList.add("active");
+      }
+
+      nextBtn.onclick = () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCarousel();
+      };
+
+      prevBtn.onclick = () => {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        updateCarousel();
+      };
+
+      // Dot click switch
+      dots.forEach((dot, index) => {
+        dot.onclick = () => {
+          currentIndex = index;
+          updateCarousel();
+        };
+      });
+
+      // Auto-rotation
+      setInterval(() => nextBtn.click(), 4000);
+    });
+
+    </script>
 
     <%- include('../partials/footer.ejs') %>
 
