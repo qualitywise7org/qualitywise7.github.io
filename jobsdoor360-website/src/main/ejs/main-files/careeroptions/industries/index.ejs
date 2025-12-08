@@ -11,769 +11,1395 @@
     <h1>All industries/sectors and it's work profiles</h1>
     <div id="data-container"> 
 
-<!-- ===== COMPLETE INDUSTRIES & WORK PROFILES (Responsive Component - Option A: Expanded Grid) ===== -->
-<style>
-  .all-industries {
-    font-family: Arial, sans-serif;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 16px;
-    background: #f7f9fb;
-  }
+      <!-- ===== COMPLETE INDUSTRIES & WORK PROFILES (Responsive Component - Option A: Expanded Grid) ===== -->
+      <style>
+        .all-industries {
+          font-family: Arial, sans-serif;
+          width: 100%;
+          box-sizing: border-box;
+          margin: 0 auto;
+          padding: 16px;
+          background: #f7f9fb;
+        }
 
-  .all-industries .header {
-    max-width: 1200px;
-    margin: 0 auto 18px auto;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+        .all-industries .header {
+          max-width: 1200px;
+          margin: 0 auto 18px auto;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
 
-  .all-industries h2 {
-    margin: 0;
-    font-size: 20px;
-    color: #0f2747;
-  }
+        .all-industries h2 {
+          margin: 0;
+          font-size: 20px;
+          color: #0f2747;
+        }
 
-  .industry-list {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
+        .industry-list {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
 
-  .industry-card {
-    display: grid;
-    grid-template-columns: 32% 1fr;
-    gap: 18px;
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 18px;
-    box-shadow: 0 2px 6px rgba(15, 39, 71, 0.06);
-    align-items: start;
-    border: 1px solid #e6eef8;
-  }
+        .industry-card {
+          display: grid;
+          grid-template-columns: 32% 1fr;
+          gap: 18px;
+          background: #ffffff;
+          border-radius: 10px;
+          padding: 18px;
+          box-shadow: 0 2px 6px rgba(15, 39, 71, 0.06);
+          align-items: start;
+          border: 1px solid #e6eef8;
+        }
 
-  .industry-left {
-    background: #f1f6fb;
-    padding: 12px 14px;
-    border-radius: 8px;
-    font-weight: 700;
-    color: #05386b;
-    display: flex;
-    align-items: center;
-    min-height: 72px;
-  }
+        .industry-left {
+          background: #f1f6fb;
+          padding: 12px 14px;
+          border-radius: 8px;
+          font-weight: 700;
+          color: #05386b;
+          display: flex;
+          align-items: center;
+          min-height: 72px;
+        }
 
-  .industry-left .title {
-    font-size: 15px;
-    line-height: 1.2;
-  }
+        .industry-left .title {
+          font-size: 15px;
+          line-height: 1.2;
+        }
 
-  .industry-right {
-    padding: 4px 2px;
-  }
+        .industry-right {
+          padding: 4px 2px;
+        }
 
-  .industry-right ul {
-    margin: 0;
-    padding-left: 18px;
-    color: #243447;
-  }
+        .industry-right ul {
+          margin: 0;
+          padding-left: 18px;
+          color: #243447;
+        }
 
-  .industry-right ul li {
-    margin-bottom: 6px;
-    font-size: 14px;
-    line-height: 1.35;
-  }
+        .industry-right ul li {
+          margin-bottom: 6px;
+          font-size: 14px;
+          line-height: 1.35;
+        }
 
-  /* responsive: stack on small screens */
-  @media (max-width: 880px) {
-    .industry-card {
-      grid-template-columns: 1fr;
-    }
-    .industry-left {
-      min-height: auto;
-      padding: 10px 12px;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
+        /* responsive: stack on small screens */
+        @media (max-width: 880px) {
+          .industry-card {
+            grid-template-columns: 1fr;
+          }
+          .industry-left {
+            min-height: auto;
+            padding: 10px 12px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
 
-  /* smaller phones - slightly larger text for left */
-  @media (max-width: 420px) {
-    .industry-left .title { font-size: 16px; }
-    .industry-right ul li { font-size: 15px; }
-    .all-industries { padding: 12px; }
-  }
-</style>
+        /* smaller phones - slightly larger text for left */
+        @media (max-width: 420px) {
+          .industry-left .title { font-size: 16px; }
+          .industry-right ul li { font-size: 15px; }
+          .all-industries { padding: 12px; }
+        }
+      </style>
 
-<div class="all-industries" aria-label="Industries and Work Profiles">
+      <div class="all-industries" aria-label="Industries and Work Profiles">
 
-  <div class="industry-list">
+        <div class="industry-list">
 
-    <!-- 1 Information Technology -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🏭 Information Technology (IT) &amp; Software</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Software Developer / Java Developer / Python Developer</li>
-          <li>Full-Stack Developer</li>
-          <li>Frontend Developer (React, Angular)</li>
-          <li>Backend Developer</li>
-          <li>Mobile App Developer (Android / iOS)</li>
-          <li>QA Engineer / Automation Tester</li>
-          <li>DevOps Engineer</li>
-          <li>Cloud Engineer</li>
-          <li>Data Engineer</li>
-          <li>Data Scientist</li>
-          <li>ML / AI Engineer</li>
-          <li>Cyber Security Analyst</li>
-          <li>UI / UX Designer</li>
-          <li>Product Manager / Product Owner</li>
-          <li>Technical Program Manager</li>
-          <li>Business Analyst</li>
-          <li>IT Support / System Admin</li>
-          <li>Database Administrator</li>
-        </ul>
+          <!-- 1 Information Technology -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🏭 Information Technology (IT) &amp; Software</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Software Developer / Java Developer / Python Developer</li>
+                <li>Full-Stack Developer</li>
+                <li>Frontend Developer (React, Angular)</li>
+                <li>Backend Developer</li>
+                <li>Mobile App Developer (Android / iOS)</li>
+                <li>QA Engineer / Automation Tester</li>
+                <li>DevOps Engineer</li>
+                <li>Cloud Engineer</li>
+                <li>Data Engineer</li>
+                <li>Data Scientist</li>
+                <li>ML / AI Engineer</li>
+                <li>Cyber Security Analyst</li>
+                <li>UI / UX Designer</li>
+                <li>Product Manager / Product Owner</li>
+                <li>Technical Program Manager</li>
+                <li>Business Analyst</li>
+                <li>IT Support / System Admin</li>
+                <li>Database Administrator</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2 BPO -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🏢 BPO / BPM / Customer Support</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Customer Support Executive</li>
+                <li>Technical Support</li>
+                <li>Telecaller / Call Center Agent</li>
+                <li>Quality Analyst</li>
+                <li>Process Trainer</li>
+                <li>Team Leader</li>
+                <li>MIS Executive</li>
+                <li>Workforce Management (WFM)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3 Finance -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">💼 Finance &amp; Banking</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Financial Analyst</li>
+                <li>Investment Banking Analyst</li>
+                <li>Risk Analyst</li>
+                <li>Credit Analyst</li>
+                <li>Accountant</li>
+                <li>Tax Consultant</li>
+                <li>Auditor</li>
+                <li>Banking Operations</li>
+                <li>Loan Officer</li>
+                <li>Insurance Advisor</li>
+                <li>Wealth Manager</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4 Real Estate -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🏚 Real Estate</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Sales Executive</li>
+                <li>Property Consultant</li>
+                <li>Real Estate Agent</li>
+                <li>CRM Executive</li>
+                <li>Site Engineer</li>
+                <li>Project Manager</li>
+                <li>Legal Executive</li>
+                <li>Marketing Executive</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 5 E-commerce -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🛍 E-commerce &amp; Retail</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Category Manager</li>
+                <li>Product Manager</li>
+                <li>Supply Chain Executive</li>
+                <li>Warehouse Manager</li>
+                <li>Operations Associate</li>
+                <li>Customer Service Executive</li>
+                <li>Digital Marketing Specialist</li>
+                <li>Logistic Coordinator</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 6 Healthcare -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🧪 Healthcare / Pharma / Biotech</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Nurse</li>
+                <li>Doctor</li>
+                <li>Lab Technician</li>
+                <li>Pharmacist</li>
+                <li>Medical Representative (MR)</li>
+                <li>Clinical Research Associate</li>
+                <li>Healthcare Data Analyst</li>
+                <li>Hospital Administrator</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 7 Manufacturing -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🏭 Manufacturing &amp; Production</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Production Engineer</li>
+                <li>Quality Engineer</li>
+                <li>Maintenance Engineer</li>
+                <li>Safety Engineer</li>
+                <li>Process Engineer</li>
+                <li>Machine Operator</li>
+                <li>Supply Chain / Procurement Executive</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 8 Automobile -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🚗 Automobile Industry</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Mechanical Engineer</li>
+                <li>Automotive Designer</li>
+                <li>Service Advisor</li>
+                <li>Production Manager</li>
+                <li>R&amp;D Engineer</li>
+                <li>Quality Inspector</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 9 Telecom -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🛰 Telecom</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Network Engineer</li>
+                <li>RF Engineer</li>
+                <li>Telecom Technician</li>
+                <li>Tower Engineer</li>
+                <li>NOC Engineer</li>
+                <li>Field Engineer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 10 Education -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🎓 Education &amp; Training</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Teacher</li>
+                <li>Lecturer / Professor</li>
+                <li>Trainer (Technical, Soft Skills)</li>
+                <li>Educational Counselor</li>
+                <li>Curriculum Designer</li>
+                <li>Instructional Designer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 11 Media -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🎨 Media, Advertising &amp; Marketing</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Digital Marketing Specialist</li>
+                <li>SEO Executive</li>
+                <li>Content Writer</li>
+                <li>Social Media Manager</li>
+                <li>Graphic Designer</li>
+                <li>Video Editor</li>
+                <li>Brand Manager</li>
+                <li>Copywriter</li>
+                <li>PR Executive</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 12 Travel -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🧳 Travel &amp; Hospitality</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Travel Consultant</li>
+                <li>Hotel Manager</li>
+                <li>Front Desk Executive</li>
+                <li>Guest Service Associate</li>
+                <li>Chef</li>
+                <li>Tour Guide</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 13 Government -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🏛 Government / PSU</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Civil Services</li>
+                <li>Police / Defense</li>
+                <li>Clerk / LDC</li>
+                <li>Engineer (Civil, Mechanical, Electrical)</li>
+                <li>Finance / Accounts Officer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 14 Core Engineering -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">⚙ Engineering (Core)</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Mechanical Engineer</li>
+                <li>Electrical Engineer</li>
+                <li>Civil Engineer</li>
+                <li>Electronics Engineer</li>
+                <li>Instrumentation Engineer</li>
+                <li>CAD Designer</li>
+                <li>Structural Engineer</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🧪 Chemical Industry</div></div>
+            <div class="industry-right">
+              <ul>
+                  <li>Chemical Engineer</li>
+                  <li>Process Engineer</li>
+                  <li>Lab Chemist</li>
+                  <li>Quality Control Analyst</li>
+                  <li>Production Supervisor</li>
+                  <li>Plant Operator</li>
+                  <li>Safety Officer</li>
+                  <li>R&amp;D Scientist</li>
+                  <li>Environmental Compliance Officer</li>
+              </ul>
+            </div>
+          </div>
+
+
+          <!-- 15 Logistics -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🚚 Logistics &amp; Supply Chain</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Supply Chain Analyst</li>
+                <li>Inventory Manager</li>
+                <li>Warehouse Executive</li>
+                <li>Fleet Manager</li>
+                <li>Procurement Executive</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 16 Beauty -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">💄 Beauty, Wellness &amp; Lifestyle</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Beautician</li>
+                <li>Fitness Trainer</li>
+                <li>Dietician</li>
+                <li>Salon Manager</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 17 Gaming -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🎮 Gaming &amp; Animation</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Game Developer</li>
+                <li>3D Animator</li>
+                <li>Game Designer</li>
+                <li>VFX Artist</li>
+                <li>Unity Developer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 18 Energy -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">💡 Energy &amp; Utilities</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Power Plant Engineer</li>
+                <li>Solar Engineer</li>
+                <li>Electrical Technician</li>
+                <li>Energy Analyst</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 19 Consulting -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🌐 Consulting</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Strategy Consultant</li>
+                <li>Business Analyst</li>
+                <li>Management Consultant</li>
+                <li>Technology Consultant</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 20 Startups -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">📦 Startups</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Product Manager</li>
+                <li>Growth Manager</li>
+                <li>Operations Manager</li>
+                <li>Founding Engineer</li>
+                <li>Community Manager</li>
+                <li>Business Development Executive</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 21 Textile (added earlier) -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🧵 Textile / Apparel / Fashion Industry</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Textile Engineer</li>
+                <li>Fabric Technologist</li>
+                <li>Garment Technologist</li>
+                <li>Fashion Designer</li>
+                <li>Pattern Master</li>
+                <li>Merchandiser</li>
+                <li>Quality Checker (QC)</li>
+                <li>Cutting &amp; Stitching Supervisor</li>
+                <li>Production Manager (Textile)</li>
+                <li>Dyeing &amp; Printing Technician</li>
+                <li>Export Coordinator</li>
+                <li>Sampling Coordinator</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== Missing industries list (additional) ===== -->
+
+          <!-- Agriculture & Food Processing -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🌾 Agriculture &amp; Food Processing</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Agronomist</li>
+                <li>Farm Manager</li>
+                <li>Food Technologist</li>
+                <li>Dairy Technologist</li>
+                <li>Agricultural Scientist</li>
+                <li>Field Officer</li>
+                <li>Quality Controller (Food)</li>
+                <li>Packaging Specialist</li>
+                <li>Agri Supply Chain Executive</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Construction & Infrastructure -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🏗 Construction &amp; Infrastructure</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Site Supervisor</li>
+                <li>Construction Manager</li>
+                <li>Quantity Surveyor</li>
+                <li>Structural Draftsman</li>
+                <li>Architect</li>
+                <li>Planning Engineer</li>
+                <li>Land Surveyor</li>
+                <li>Safety Supervisor</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Aviation & Aerospace -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">✈️ Aviation &amp; Aerospace</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Cabin Crew / Air Hostess</li>
+                <li>Airport Ground Staff</li>
+                <li>Aircraft Maintenance Engineer (AME)</li>
+                <li>Pilot</li>
+                <li>Air Traffic Controller</li>
+                <li>Aeronautical Engineer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Railways / Metro / Transport -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🚆 Railways / Metro / Transport Services</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Loco Pilot</li>
+                <li>Station Controller</li>
+                <li>Ticketing / Booking Executive</li>
+                <li>Track Engineer</li>
+                <li>Operations Controller (Metro)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Oil & Gas / Petroleum -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🛢 Oil &amp; Gas / Petroleum</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Drilling Engineer</li>
+                <li>Petroleum Engineer</li>
+                <li>Refinery Operator</li>
+                <li>HSE Officer</li>
+                <li>Geologist / Geophysicist</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mining & Metals -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">⛏ Mining &amp; Metals</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Mining Engineer</li>
+                <li>Metallurgist</li>
+                <li>Mineral Processing Engineer</li>
+                <li>Surveyor</li>
+                <li>Safety Officer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Shipping / Marine -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🚢 Shipping / Marine</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Marine Engineer</li>
+                <li>Seafarer / Deck Cadet</li>
+                <li>Naval Architect</li>
+                <li>Port Operations Executive</li>
+                <li>Logistics Coordinator (Marine)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Print & Publishing -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🖨 Print &amp; Publishing</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Editor</li>
+                <li>Proofreader</li>
+                <li>Illustrator</li>
+                <li>Book Designer</li>
+                <li>Publishing Manager</li>
+                <li>Printing Machine Operator</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- NGO / Social Sector -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🤝 NGO / Social Sector</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Social Worker</li>
+                <li>Program Coordinator</li>
+                <li>Field Officer</li>
+                <li>Fundraising Executive</li>
+                <li>CSR Manager</li>
+                <li>Community Development Officer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Sports & Fitness -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🏅 Sports &amp; Fitness</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Sports Coach</li>
+                <li>Physiotherapist</li>
+                <li>Fitness Trainer</li>
+                <li>Sports Manager</li>
+                <li>Yoga Instructor</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Entertainment / Film / Music -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🎬 Entertainment / Film / Music</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Actor</li>
+                <li>Music Producer</li>
+                <li>Sound Engineer</li>
+                <li>Cinematographer</li>
+                <li>Director / Assistant Director</li>
+                <li>Producer</li>
+                <li>DOP</li>
+                <li>Casting Director</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Legal Services -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">⚖️ Legal Services</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Lawyer</li>
+                <li>Legal Advisor</li>
+                <li>Paralegal</li>
+                <li>Compliance Officer</li>
+                <li>Contract Specialist</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- HR & Recruitment -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🧾 HR &amp; Recruitment</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>HR Executive</li>
+                <li>Talent Acquisition Specialist</li>
+                <li>Payroll Executive</li>
+                <li>HR Manager</li>
+                <li>Learning &amp; Development Trainer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Food & Beverage (F&B) / Hospitality Sub-segment -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🍽 Food &amp; Beverage (F&amp;B)</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Restaurant Manager</li>
+                <li>Barista</li>
+                <li>Bartender</li>
+                <li>F&amp;B Manager</li>
+                <li>Kitchen Staff</li>
+                <li>Steward</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Security & Facility Management -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🔒 Security &amp; Facility Management</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Security Guard</li>
+                <li>Facility Manager</li>
+                <li>CCTV Operator</li>
+                <li>Housekeeping Supervisor</li>
+                <li>Fire &amp; Safety Officer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Insurance -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🛡 Insurance</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Insurance Sales Officer</li>
+                <li>Underwriter</li>
+                <li>Claims Manager</li>
+                <li>Actuary</li>
+                <li>Policy Advisor</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Event Management -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🎟 Event Management</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Event Planner</li>
+                <li>Wedding Planner</li>
+                <li>Event Coordinator</li>
+                <li>Stage Manager</li>
+                <li>Production Assistant</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Biotechnology Research -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🧬 Biotechnology Research</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Bioinformatics Specialist</li>
+                <li>Research Scientist</li>
+                <li>Lab Analyst</li>
+                <li>Genetic Engineer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Interior Design & Architecture -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🏡 Interior Design &amp; Architecture</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Interior Designer</li>
+                <li>3D Visualizer</li>
+                <li>Architect</li>
+                <li>Draftsman</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Armed Forces -->
+          <div class="industry-card">
+            <div class="industry-left"><div class="title">🎖 Armed Forces</div></div>
+            <div class="industry-right">
+              <ul>
+                <li>Army Officer</li>
+                <li>Navy Officer</li>
+                <li>Air Force Officer</li>
+                <li>JCO / NCO</li>
+                <li>Technical Officer</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
+      <!-- ===== END OF COMPONENT ===== -->
 
-    <!-- 2 BPO -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🏢 BPO / BPM / Customer Support</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Customer Support Executive</li>
-          <li>Technical Support</li>
-          <li>Telecaller / Call Center Agent</li>
-          <li>Quality Analyst</li>
-          <li>Process Trainer</li>
-          <li>Team Leader</li>
-          <li>MIS Executive</li>
-          <li>Workforce Management (WFM)</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 3 Finance -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">💼 Finance &amp; Banking</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Financial Analyst</li>
-          <li>Investment Banking Analyst</li>
-          <li>Risk Analyst</li>
-          <li>Credit Analyst</li>
-          <li>Accountant</li>
-          <li>Tax Consultant</li>
-          <li>Auditor</li>
-          <li>Banking Operations</li>
-          <li>Loan Officer</li>
-          <li>Insurance Advisor</li>
-          <li>Wealth Manager</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 4 Real Estate -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🏚 Real Estate</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Sales Executive</li>
-          <li>Property Consultant</li>
-          <li>Real Estate Agent</li>
-          <li>CRM Executive</li>
-          <li>Site Engineer</li>
-          <li>Project Manager</li>
-          <li>Legal Executive</li>
-          <li>Marketing Executive</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 5 E-commerce -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🛍 E-commerce &amp; Retail</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Category Manager</li>
-          <li>Product Manager</li>
-          <li>Supply Chain Executive</li>
-          <li>Warehouse Manager</li>
-          <li>Operations Associate</li>
-          <li>Customer Service Executive</li>
-          <li>Digital Marketing Specialist</li>
-          <li>Logistic Coordinator</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 6 Healthcare -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🧪 Healthcare / Pharma / Biotech</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Nurse</li>
-          <li>Doctor</li>
-          <li>Lab Technician</li>
-          <li>Pharmacist</li>
-          <li>Medical Representative (MR)</li>
-          <li>Clinical Research Associate</li>
-          <li>Healthcare Data Analyst</li>
-          <li>Hospital Administrator</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 7 Manufacturing -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🏭 Manufacturing &amp; Production</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Production Engineer</li>
-          <li>Quality Engineer</li>
-          <li>Maintenance Engineer</li>
-          <li>Safety Engineer</li>
-          <li>Process Engineer</li>
-          <li>Machine Operator</li>
-          <li>Supply Chain / Procurement Executive</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 8 Automobile -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🚗 Automobile Industry</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Mechanical Engineer</li>
-          <li>Automotive Designer</li>
-          <li>Service Advisor</li>
-          <li>Production Manager</li>
-          <li>R&amp;D Engineer</li>
-          <li>Quality Inspector</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 9 Telecom -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🛰 Telecom</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Network Engineer</li>
-          <li>RF Engineer</li>
-          <li>Telecom Technician</li>
-          <li>Tower Engineer</li>
-          <li>NOC Engineer</li>
-          <li>Field Engineer</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 10 Education -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🎓 Education &amp; Training</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Teacher</li>
-          <li>Lecturer / Professor</li>
-          <li>Trainer (Technical, Soft Skills)</li>
-          <li>Educational Counselor</li>
-          <li>Curriculum Designer</li>
-          <li>Instructional Designer</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 11 Media -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🎨 Media, Advertising &amp; Marketing</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Digital Marketing Specialist</li>
-          <li>SEO Executive</li>
-          <li>Content Writer</li>
-          <li>Social Media Manager</li>
-          <li>Graphic Designer</li>
-          <li>Video Editor</li>
-          <li>Brand Manager</li>
-          <li>Copywriter</li>
-          <li>PR Executive</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 12 Travel -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🧳 Travel &amp; Hospitality</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Travel Consultant</li>
-          <li>Hotel Manager</li>
-          <li>Front Desk Executive</li>
-          <li>Guest Service Associate</li>
-          <li>Chef</li>
-          <li>Tour Guide</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 13 Government -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🏛 Government / PSU</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Civil Services</li>
-          <li>Police / Defense</li>
-          <li>Clerk / LDC</li>
-          <li>Engineer (Civil, Mechanical, Electrical)</li>
-          <li>Finance / Accounts Officer</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 14 Core Engineering -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">⚙ Engineering (Core)</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Mechanical Engineer</li>
-          <li>Electrical Engineer</li>
-          <li>Civil Engineer</li>
-          <li>Electronics Engineer</li>
-          <li>Instrumentation Engineer</li>
-          <li>CAD Designer</li>
-          <li>Structural Engineer</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🧪 Chemical Industry</div></div>
-      <div class="industry-right">
-        <ul>
-            <li>Chemical Engineer</li>
-            <li>Process Engineer</li>
-            <li>Lab Chemist</li>
-            <li>Quality Control Analyst</li>
-            <li>Production Supervisor</li>
-            <li>Plant Operator</li>
-            <li>Safety Officer</li>
-            <li>R&amp;D Scientist</li>
-            <li>Environmental Compliance Officer</li>
-        </ul>
-      </div>
-    </div>
-
-
-    <!-- 15 Logistics -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🚚 Logistics &amp; Supply Chain</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Supply Chain Analyst</li>
-          <li>Inventory Manager</li>
-          <li>Warehouse Executive</li>
-          <li>Fleet Manager</li>
-          <li>Procurement Executive</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 16 Beauty -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">💄 Beauty, Wellness &amp; Lifestyle</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Beautician</li>
-          <li>Fitness Trainer</li>
-          <li>Dietician</li>
-          <li>Salon Manager</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 17 Gaming -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🎮 Gaming &amp; Animation</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Game Developer</li>
-          <li>3D Animator</li>
-          <li>Game Designer</li>
-          <li>VFX Artist</li>
-          <li>Unity Developer</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 18 Energy -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">💡 Energy &amp; Utilities</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Power Plant Engineer</li>
-          <li>Solar Engineer</li>
-          <li>Electrical Technician</li>
-          <li>Energy Analyst</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 19 Consulting -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🌐 Consulting</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Strategy Consultant</li>
-          <li>Business Analyst</li>
-          <li>Management Consultant</li>
-          <li>Technology Consultant</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 20 Startups -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">📦 Startups</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Product Manager</li>
-          <li>Growth Manager</li>
-          <li>Operations Manager</li>
-          <li>Founding Engineer</li>
-          <li>Community Manager</li>
-          <li>Business Development Executive</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 21 Textile (added earlier) -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🧵 Textile / Apparel / Fashion Industry</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Textile Engineer</li>
-          <li>Fabric Technologist</li>
-          <li>Garment Technologist</li>
-          <li>Fashion Designer</li>
-          <li>Pattern Master</li>
-          <li>Merchandiser</li>
-          <li>Quality Checker (QC)</li>
-          <li>Cutting &amp; Stitching Supervisor</li>
-          <li>Production Manager (Textile)</li>
-          <li>Dyeing &amp; Printing Technician</li>
-          <li>Export Coordinator</li>
-          <li>Sampling Coordinator</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- ===== Missing industries list (additional) ===== -->
-
-    <!-- Agriculture & Food Processing -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🌾 Agriculture &amp; Food Processing</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Agronomist</li>
-          <li>Farm Manager</li>
-          <li>Food Technologist</li>
-          <li>Dairy Technologist</li>
-          <li>Agricultural Scientist</li>
-          <li>Field Officer</li>
-          <li>Quality Controller (Food)</li>
-          <li>Packaging Specialist</li>
-          <li>Agri Supply Chain Executive</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Construction & Infrastructure -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🏗 Construction &amp; Infrastructure</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Site Supervisor</li>
-          <li>Construction Manager</li>
-          <li>Quantity Surveyor</li>
-          <li>Structural Draftsman</li>
-          <li>Architect</li>
-          <li>Planning Engineer</li>
-          <li>Land Surveyor</li>
-          <li>Safety Supervisor</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Aviation & Aerospace -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">✈️ Aviation &amp; Aerospace</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Cabin Crew / Air Hostess</li>
-          <li>Airport Ground Staff</li>
-          <li>Aircraft Maintenance Engineer (AME)</li>
-          <li>Pilot</li>
-          <li>Air Traffic Controller</li>
-          <li>Aeronautical Engineer</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Railways / Metro / Transport -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🚆 Railways / Metro / Transport Services</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Loco Pilot</li>
-          <li>Station Controller</li>
-          <li>Ticketing / Booking Executive</li>
-          <li>Track Engineer</li>
-          <li>Operations Controller (Metro)</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Oil & Gas / Petroleum -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🛢 Oil &amp; Gas / Petroleum</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Drilling Engineer</li>
-          <li>Petroleum Engineer</li>
-          <li>Refinery Operator</li>
-          <li>HSE Officer</li>
-          <li>Geologist / Geophysicist</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Mining & Metals -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">⛏ Mining &amp; Metals</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Mining Engineer</li>
-          <li>Metallurgist</li>
-          <li>Mineral Processing Engineer</li>
-          <li>Surveyor</li>
-          <li>Safety Officer</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Shipping / Marine -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🚢 Shipping / Marine</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Marine Engineer</li>
-          <li>Seafarer / Deck Cadet</li>
-          <li>Naval Architect</li>
-          <li>Port Operations Executive</li>
-          <li>Logistics Coordinator (Marine)</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Print & Publishing -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🖨 Print &amp; Publishing</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Editor</li>
-          <li>Proofreader</li>
-          <li>Illustrator</li>
-          <li>Book Designer</li>
-          <li>Publishing Manager</li>
-          <li>Printing Machine Operator</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- NGO / Social Sector -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🤝 NGO / Social Sector</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Social Worker</li>
-          <li>Program Coordinator</li>
-          <li>Field Officer</li>
-          <li>Fundraising Executive</li>
-          <li>CSR Manager</li>
-          <li>Community Development Officer</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Sports & Fitness -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🏅 Sports &amp; Fitness</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Sports Coach</li>
-          <li>Physiotherapist</li>
-          <li>Fitness Trainer</li>
-          <li>Sports Manager</li>
-          <li>Yoga Instructor</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Entertainment / Film / Music -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🎬 Entertainment / Film / Music</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Actor</li>
-          <li>Music Producer</li>
-          <li>Sound Engineer</li>
-          <li>Cinematographer</li>
-          <li>Director / Assistant Director</li>
-          <li>Producer</li>
-          <li>DOP</li>
-          <li>Casting Director</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Legal Services -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">⚖️ Legal Services</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Lawyer</li>
-          <li>Legal Advisor</li>
-          <li>Paralegal</li>
-          <li>Compliance Officer</li>
-          <li>Contract Specialist</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- HR & Recruitment -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🧾 HR &amp; Recruitment</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>HR Executive</li>
-          <li>Talent Acquisition Specialist</li>
-          <li>Payroll Executive</li>
-          <li>HR Manager</li>
-          <li>Learning &amp; Development Trainer</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Food & Beverage (F&B) / Hospitality Sub-segment -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🍽 Food &amp; Beverage (F&amp;B)</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Restaurant Manager</li>
-          <li>Barista</li>
-          <li>Bartender</li>
-          <li>F&amp;B Manager</li>
-          <li>Kitchen Staff</li>
-          <li>Steward</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Security & Facility Management -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🔒 Security &amp; Facility Management</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Security Guard</li>
-          <li>Facility Manager</li>
-          <li>CCTV Operator</li>
-          <li>Housekeeping Supervisor</li>
-          <li>Fire &amp; Safety Officer</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Insurance -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🛡 Insurance</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Insurance Sales Officer</li>
-          <li>Underwriter</li>
-          <li>Claims Manager</li>
-          <li>Actuary</li>
-          <li>Policy Advisor</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Event Management -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🎟 Event Management</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Event Planner</li>
-          <li>Wedding Planner</li>
-          <li>Event Coordinator</li>
-          <li>Stage Manager</li>
-          <li>Production Assistant</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Biotechnology Research -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🧬 Biotechnology Research</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Bioinformatics Specialist</li>
-          <li>Research Scientist</li>
-          <li>Lab Analyst</li>
-          <li>Genetic Engineer</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Interior Design & Architecture -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🏡 Interior Design &amp; Architecture</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Interior Designer</li>
-          <li>3D Visualizer</li>
-          <li>Architect</li>
-          <li>Draftsman</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Armed Forces -->
-    <div class="industry-card">
-      <div class="industry-left"><div class="title">🎖 Armed Forces</div></div>
-      <div class="industry-right">
-        <ul>
-          <li>Army Officer</li>
-          <li>Navy Officer</li>
-          <li>Air Force Officer</li>
-          <li>JCO / NCO</li>
-          <li>Technical Officer</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</div>
-<!-- ===== END OF COMPONENT ===== -->
-
+      <div id="industryTree"></div>
 
     </div>
     <%- include('../../../partials/footer.ejs') %>
     <!-- <script src="/staticfiles/mainfiles/careeroptions/business-options/script.js"></script> -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+// =======================
+// INDUSTRY → WORK PROFILE DATA
+// =======================
+const treeData = {
+  name: "Industries",
+  children: [
+    {
+      name: "🏭 Information Technology (IT) & Software",
+      children: [
+        { name: "Software Developer / Java Developer / Python Developer" },
+        { name: "Full-Stack Developer" },
+        { name: "Frontend Developer (React, Angular)" },
+        { name: "Backend Developer" },
+        { name: "Mobile App Developer (Android / iOS)" },
+        { name: "QA Engineer / Automation Tester" },
+        { name: "DevOps Engineer" },
+        { name: "Cloud Engineer" },
+        { name: "Data Engineer" },
+        { name: "Data Scientist" },
+        { name: "ML / AI Engineer" },
+        { name: "Cyber Security Analyst" },
+        { name: "UI / UX Designer" },
+        { name: "Product Manager / Product Owner" },
+        { name: "Technical Program Manager" },
+        { name: "Business Analyst" },
+        { name: "IT Support / System Admin" },
+        { name: "Database Administrator" }
+      ]
+    },
+    {
+      name: "🏢 BPO / BPM / Customer Support",
+      children: [
+        { name: "Customer Support Executive" },
+        { name: "Technical Support" },
+        { name: "Telecaller / Call Center Agent" },
+        { name: "Quality Analyst" },
+        { name: "Process Trainer" },
+        { name: "Team Leader" },
+        { name: "MIS Executive" },
+        { name: "Workforce Management (WFM)" }
+      ]
+    },
+    {
+      name: "💼 Finance & Banking",
+      children: [
+        { name: "Financial Analyst" },
+        { name: "Investment Banking Analyst" },
+        { name: "Risk Analyst" },
+        { name: "Credit Analyst" },
+        { name: "Accountant" },
+        { name: "Tax Consultant" },
+        { name: "Auditor" },
+        { name: "Banking Operations" },
+        { name: "Loan Officer" },
+        { name: "Insurance Advisor" },
+        { name: "Wealth Manager" }
+      ]
+    },
+    {
+      name: "🏚 Real Estate",
+      children: [
+        { name: "Sales Executive" },
+        { name: "Property Consultant" },
+        { name: "Real Estate Agent" },
+        { name: "CRM Executive" },
+        { name: "Site Engineer" },
+        { name: "Project Manager" },
+        { name: "Legal Executive" },
+        { name: "Marketing Executive" }
+      ]
+    },
+    {
+      name: "🛍 E-commerce & Retail",
+      children: [
+        { name: "Category Manager" },
+        { name: "Product Manager" },
+        { name: "Supply Chain Executive" },
+        { name: "Warehouse Manager" },
+        { name: "Operations Associate" },
+        { name: "Customer Service Executive" },
+        { name: "Digital Marketing Specialist" },
+        { name: "Logistic Coordinator" }
+      ]
+    },
+    {
+      name: "🧪 Healthcare / Pharma / Biotech",
+      children: [
+        { name: "Nurse" },
+        { name: "Doctor" },
+        { name: "Lab Technician" },
+        { name: "Pharmacist" },
+        { name: "Medical Representative (MR)" },
+        { name: "Clinical Research Associate" },
+        { name: "Healthcare Data Analyst" },
+        { name: "Hospital Administrator" }
+      ]
+    },
+    {
+      name: "🏭 Manufacturing & Production",
+      children: [
+        { name: "Production Engineer" },
+        { name: "Quality Engineer" },
+        { name: "Maintenance Engineer" },
+        { name: "Safety Engineer" },
+        { name: "Process Engineer" },
+        { name: "Machine Operator" },
+        { name: "Supply Chain / Procurement Executive" }
+      ]
+    },
+    {
+      name: "🚗 Automobile Industry",
+      children: [
+        { name: "Mechanical Engineer" },
+        { name: "Automotive Designer" },
+        { name: "Service Advisor" },
+        { name: "Production Manager" },
+        { name: "R&D Engineer" },
+        { name: "Quality Inspector" }
+      ]
+    },
+    {
+      name: "🛰 Telecom",
+      children: [
+        { name: "Network Engineer" },
+        { name: "RF Engineer" },
+        { name: "Telecom Technician" },
+        { name: "Tower Engineer" },
+        { name: "NOC Engineer" },
+        { name: "Field Engineer" }
+      ]
+    },
+    {
+      name: "🎓 Education & Training",
+      children: [
+        { name: "Teacher" },
+        { name: "Lecturer / Professor" },
+        { name: "Trainer (Technical, Soft Skills)" },
+        { name: "Educational Counselor" },
+        { name: "Curriculum Designer" },
+        { name: "Instructional Designer" }
+      ]
+    },
+    {
+      name: "🎨 Media, Advertising & Marketing",
+      children: [
+        { name: "Digital Marketing Specialist" },
+        { name: "SEO Executive" },
+        { name: "Content Writer" },
+        { name: "Social Media Manager" },
+        { name: "Graphic Designer" },
+        { name: "Video Editor" },
+        { name: "Brand Manager" },
+        { name: "Copywriter" },
+        { name: "PR Executive" }
+      ]
+    },
+    {
+      name: "🧳 Travel & Hospitality",
+      children: [
+        { name: "Travel Consultant" },
+        { name: "Hotel Manager" },
+        { name: "Front Desk Executive" },
+        { name: "Guest Service Associate" },
+        { name: "Chef" },
+        { name: "Tour Guide" }
+      ]
+    },
+    {
+      name: "🏛 Government / PSU",
+      children: [
+        { name: "Civil Services" },
+        { name: "Police / Defense" },
+        { name: "Clerk / LDC" },
+        { name: "Engineer (Civil, Mechanical, Electrical)" },
+        { name: "Finance / Accounts Officer" }
+      ]
+    },
+    {
+      name: "⚙ Engineering (Core)",
+      children: [
+        { name: "Mechanical Engineer" },
+        { name: "Electrical Engineer" },
+        { name: "Civil Engineer" },
+        { name: "Electronics Engineer" },
+        { name: "Instrumentation Engineer" },
+        { name: "CAD Designer" },
+        { name: "Structural Engineer" }
+      ]
+    },
+    {
+      name: "🧪 Chemical Industry",
+      children: [
+        { name: "Chemical Engineer" },
+        { name: "Process Engineer" },
+        { name: "Lab Chemist" },
+        { name: "Quality Control Analyst" },
+        { name: "Production Supervisor" },
+        { name: "Plant Operator" },
+        { name: "Safety Officer" },
+        { name: "R&D Scientist" },
+        { name: "Environmental Compliance Officer" }
+      ]
+    },
+    {
+      name: "🚚 Logistics & Supply Chain",
+      children: [
+        { name: "Supply Chain Analyst" },
+        { name: "Inventory Manager" },
+        { name: "Warehouse Executive" },
+        { name: "Fleet Manager" },
+        { name: "Procurement Executive" }
+      ]
+    },
+    {
+      name: "💄 Beauty, Wellness & Lifestyle",
+      children: [
+        { name: "Beautician" },
+        { name: "Fitness Trainer" },
+        { name: "Dietician" },
+        { name: "Salon Manager" }
+      ]
+    },
+    {
+      name: "🎮 Gaming & Animation",
+      children: [
+        { name: "Game Developer" },
+        { name: "3D Animator" },
+        { name: "Game Designer" },
+        { name: "VFX Artist" },
+        { name: "Unity Developer" }
+      ]
+    },
+    {
+      name: "💡 Energy & Utilities",
+      children: [
+        { name: "Power Plant Engineer" },
+        { name: "Solar Engineer" },
+        { name: "Electrical Technician" },
+        { name: "Energy Analyst" }
+      ]
+    },
+    {
+      name: "🌐 Consulting",
+      children: [
+        { name: "Strategy Consultant" },
+        { name: "Business Analyst" },
+        { name: "Management Consultant" },
+        { name: "Technology Consultant" }
+      ]
+    },
+    {
+      name: "📦 Startups",
+      children: [
+        { name: "Product Manager" },
+        { name: "Growth Manager" },
+        { name: "Operations Manager" },
+        { name: "Founding Engineer" },
+        { name: "Community Manager" },
+        { name: "Business Development Executive" }
+      ]
+    },
+    {
+      name: "🧵 Textile / Apparel / Fashion Industry",
+      children: [
+        { name: "Textile Engineer" },
+        { name: "Fabric Technologist" },
+        { name: "Garment Technologist" },
+        { name: "Fashion Designer" },
+        { name: "Pattern Master" },
+        { name: "Merchandiser" },
+        { name: "Quality Checker (QC)" },
+        { name: "Cutting & Stitching Supervisor" },
+        { name: "Production Manager (Textile)" },
+        { name: "Dyeing & Printing Technician" },
+        { name: "Export Coordinator" },
+        { name: "Sampling Coordinator" }
+      ]
+    },
+    {
+      name: "🌾 Agriculture & Food Processing",
+      children: [
+        { name: "Agronomist" },
+        { name: "Farm Manager" },
+        { name: "Food Technologist" },
+        { name: "Dairy Technologist" },
+        { name: "Agricultural Scientist" },
+        { name: "Field Officer" },
+        { name: "Quality Controller (Food)" },
+        { name: "Packaging Specialist" },
+        { name: "Agri Supply Chain Executive" }
+      ]
+    },
+    {
+      name: "🏗 Construction & Infrastructure",
+      children: [
+        { name: "Site Supervisor" },
+        { name: "Construction Manager" },
+        { name: "Quantity Surveyor" },
+        { name: "Structural Draftsman" },
+        { name: "Architect" },
+        { name: "Planning Engineer" },
+        { name: "Land Surveyor" },
+        { name: "Safety Supervisor" }
+      ]
+    },
+    {
+      name: "✈️ Aviation & Aerospace",
+      children: [
+        { name: "Cabin Crew / Air Hostess" },
+        { name: "Airport Ground Staff" },
+        { name: "Aircraft Maintenance Engineer (AME)" },
+        { name: "Pilot" },
+        { name: "Air Traffic Controller" },
+        { name: "Aeronautical Engineer" }
+      ]
+    },
+    {
+      name: "🚆 Railways / Metro / Transport Services",
+      children: [
+        { name: "Loco Pilot" },
+        { name: "Station Controller" },
+        { name: "Ticketing / Booking Executive" },
+        { name: "Track Engineer" },
+        { name: "Operations Controller (Metro)" }
+      ]
+    },
+    {
+      name: "🛢 Oil & Gas / Petroleum",
+      children: [
+        { name: "Drilling Engineer" },
+        { name: "Petroleum Engineer" },
+        { name: "Refinery Operator" },
+        { name: "HSE Officer" },
+        { name: "Geologist / Geophysicist" }
+      ]
+    },
+    {
+      name: "⛏ Mining & Metals",
+      children: [
+        { name: "Mining Engineer" },
+        { name: "Metallurgist" },
+        { name: "Mineral Processing Engineer" },
+        { name: "Surveyor" },
+        { name: "Safety Officer" }
+      ]
+    },
+    {
+      name: "🚢 Shipping / Marine",
+      children: [
+        { name: "Marine Engineer" },
+        { name: "Seafarer / Deck Cadet" },
+        { name: "Naval Architect" },
+        { name: "Port Operations Executive" },
+        { name: "Logistics Coordinator (Marine)" }
+      ]
+    },
+    {
+      name: "🖨 Print & Publishing",
+      children: [
+        { name: "Editor" },
+        { name: "Proofreader" },
+        { name: "Illustrator" },
+        { name: "Book Designer" },
+        { name: "Publishing Manager" },
+        { name: "Printing Machine Operator" }
+      ]
+    },
+    {
+      name: "🤝 NGO / Social Sector",
+      children: [
+        { name: "Social Worker" },
+        { name: "Program Coordinator" },
+        { name: "Field Officer" },
+        { name: "Fundraising Executive" },
+        { name: "CSR Manager" },
+        { name: "Community Development Officer" }
+      ]
+    },
+    {
+      name: "🏅 Sports & Fitness",
+      children: [
+        { name: "Sports Coach" },
+        { name: "Physiotherapist" },
+        { name: "Fitness Trainer" },
+        { name: "Sports Manager" },
+        { name: "Yoga Instructor" }
+      ]
+    },
+    {
+      name: "🎬 Entertainment / Film / Music",
+      children: [
+        { name: "Actor" },
+        { name: "Music Producer" },
+        { name: "Sound Engineer" },
+        { name: "Cinematographer" },
+        { name: "Director / Assistant Director" },
+        { name: "Producer" },
+        { name: "DOP" },
+        { name: "Casting Director" }
+      ]
+    },
+    {
+      name: "⚖️ Legal Services",
+      children: [
+        { name: "Lawyer" },
+        { name: "Legal Advisor" },
+        { name: "Paralegal" },
+        { name: "Compliance Officer" },
+        { name: "Contract Specialist" }
+      ]
+    },
+    {
+      name: "🧾 HR & Recruitment",
+      children: [
+        { name: "HR Executive" },
+        { name: "Talent Acquisition Specialist" },
+        { name: "Payroll Executive" },
+        { name: "HR Manager" },
+        { name: "Learning & Development Trainer" }
+      ]
+    },
+    {
+      name: "🍽 Food & Beverage (F&B)",
+      children: [
+        { name: "Restaurant Manager" },
+        { name: "Barista" },
+        { name: "Bartender" },
+        { name: "F&B Manager" },
+        { name: "Kitchen Staff" },
+        { name: "Steward" }
+      ]
+    },
+    {
+      name: "🔒 Security & Facility Management",
+      children: [
+        { name: "Security Guard" },
+        { name: "Facility Manager" },
+        { name: "CCTV Operator" },
+        { name: "Housekeeping Supervisor" },
+        { name: "Fire & Safety Officer" }
+      ]
+    },
+    {
+      name: "🛡 Insurance",
+      children: [
+        { name: "Insurance Sales Officer" },
+        { name: "Underwriter" },
+        { name: "Claims Manager" },
+        { name: "Actuary" },
+        { name: "Policy Advisor" }
+      ]
+    },
+    {
+      name: "🎟 Event Management",
+      children: [
+        { name: "Event Planner" },
+        { name: "Wedding Planner" },
+        { name: "Event Coordinator" },
+        { name: "Stage Manager" },
+        { name: "Production Assistant" }
+      ]
+    },
+    {
+      name: "🧬 Biotechnology Research",
+      children: [
+        { name: "Bioinformatics Specialist" },
+        { name: "Research Scientist" },
+        { name: "Lab Analyst" },
+        { name: "Genetic Engineer" }
+      ]
+    },
+    {
+      name: "🏡 Interior Design & Architecture",
+      children: [
+        { name: "Interior Designer" },
+        { name: "3D Visualizer" },
+        { name: "Architect" },
+        { name: "Draftsman" }
+      ]
+    },
+    {
+      name: "🎖 Armed Forces",
+      children: [
+        { name: "Army Officer" },
+        { name: "Navy Officer" },
+        { name: "Air Force Officer" },
+        { name: "JCO / NCO" },
+        { name: "Technical Officer" }
+      ]
+    }
+  ]
+};
+
+
+// =======================
+// D3 COLLAPSIBLE TREE
+// =======================
+const width = window.innerWidth * 0.95;
+const height = 900;
+
+const svg = d3.select("#industryTree")
+  .append("svg")
+  .attr("width", "100%")
+  .attr("height", height)
+  .append("g")
+  .attr("transform", "translate(50,50)");
+
+const treeLayout = d3.tree().size([height - 100, width - 400]);
+
+let root = d3.hierarchy(treeData);
+root.x0 = height / 2;
+root.y0 = 0;
+
+root.children.forEach(collapse);
+
+update(root);
+
+// collapse node
+function collapse(d) {
+  if (d.children) {
+    d._children = d.children;
+    d._children.forEach(collapse);
+    d.children = null;
+  }
+}
+
+// update chart
+function update(source) {
+  const tree = treeLayout(root);
+  const nodes = tree.descendants();
+  const links = tree.links();
+
+  nodes.forEach(d => d.y = d.depth * 200);
+
+  let i = 0;
+
+  // --- NODES ---
+  const node = svg.selectAll("g.node").data(nodes, d => d.id || (d.id = ++i));
+
+  const enterNode = node.enter()
+    .append("g")
+    .attr("class", "node")
+    .attr("transform", d => `translate(${source.y0},${source.x0})`)
+    .on("click", click);
+
+  enterNode.append("circle")
+    .attr("r", 1e-6)
+    .style("fill", d => d._children ? "#007bff" : "#fff")
+    .style("stroke", "#007bff")
+    .style("stroke-width", "2");
+
+  enterNode.append("text")
+    .attr("dy", ".35em")
+    .attr("x", d => d.children || d._children ? -15 : 15)
+    .attr("text-anchor", d => d.children || d._children ? "end" : "start")
+    .text(d => d.data.name)
+    .style("font-size", "14px");
+
+  const updateNode = enterNode.merge(node);
+
+  updateNode.transition()
+    .duration(400)
+    .attr("transform", d => `translate(${d.y},${d.x})`);
+
+  updateNode.select("circle")
+    .attr("r", 8)
+    .style("fill", d => d._children ? "#007bff" : "#fff");
+
+  node.exit().transition()
+    .duration(400)
+    .attr("transform", d => `translate(${source.y},${source.x})`)
+    .remove();
+
+
+  // --- LINKS ---
+  const link = svg.selectAll("path.link").data(links, d => d.target.id);
+
+  link.enter()
+    .insert("path", "g")
+    .attr("class", "link")
+    .style("stroke", "#ccc")
+    .style("fill", "none")
+    .attr("d", d => diagonal({ source: source, target: source }))
+    .merge(link)
+    .transition()
+    .duration(400)
+    .attr("d", diagonal);
+
+  link.exit().transition()
+    .duration(400)
+    .attr("d", d => diagonal({ source: source, target: source }))
+    .remove();
+
+
+  nodes.forEach(d => {
+    d.x0 = d.x;
+    d.y0 = d.y;
+  });
+}
+
+let i = 0;
+function click(event, d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+  update(d);
+}
+
+// path shape
+function diagonal(d) {
+  return `
+    M ${d.source.y},${d.source.x}
+    C ${(d.source.y + d.target.y) / 2},${d.source.x}
+      ${(d.source.y + d.target.y) / 2},${d.target.x}
+      ${d.target.y},${d.target.x}
+  `;
+}
+</script>
+
   </body>
 </html>
