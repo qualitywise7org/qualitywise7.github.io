@@ -1285,7 +1285,7 @@ const svg = d3.select("#industryTree")
   .append("g")
   .attr("transform", "translate(50,50)");
 
-const treeLayout = d3.tree().size([height - 100, width - 400]);
+const treeLayout = d3.tree().size([height - 100, width - 300]);
 
 let root = d3.hierarchy(treeData);
 root.x0 = height / 2;
@@ -1310,7 +1310,7 @@ function update(source) {
   const nodes = tree.descendants();
   const links = tree.links();
 
-  nodes.forEach(d => d.y = d.depth * 200);
+  nodes.forEach(d => d.y = d.depth * 250);
 
   let i = 0;
 
@@ -1378,7 +1378,6 @@ function update(source) {
   });
 }
 
-let i = 0;
 function click(event, d) {
   if (d.children) {
     d._children = d.children;
