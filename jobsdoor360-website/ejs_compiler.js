@@ -5,8 +5,8 @@ const path = require("path");
 const destPath = "../"; // use ../ or target instead of target to generate in root folder
 
 const data = {
-  job_options_data: require("../staticfiles/mainfiles/careeroptions/job-options/job_options_data.json"),
-  business_options_data: require("../staticfiles/mainfiles/careeroptions/business-options/business_options_data.json"),
+  //job_options_data: require("../staticfiles/mainfiles/careeroptions/job-options/job_options_data.json"),
+ // business_options_data: require("../staticfiles/mainfiles/careeroptions/business-options/business_options_data.json"),
   career_guide_by_big_people_data: require("../staticfiles/mainfiles/careeroptions/career-guide-by-big-people/career_guide_by_big_people_data.json"),
   societies_data: require("../staticfiles/mainfiles/careeroptions/societies/societies_data.json"),
   government_department_which_provide_jobs_data: require("../staticfiles/mainfiles/careeroptions/government-department-which-provide-jobs/government_department_which_provide_jobs_data.json"),
