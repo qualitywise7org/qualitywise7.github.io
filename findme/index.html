@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Findme: a free 5-minute quiz to find where to start | JobsDoor360</title>
+    <meta name="description" content="Not sure what you need help with? Answer five easy questions about what you enjoy and we'll point you to the right place to start. Free, no sign-up." />
+    <link rel="canonical" href="https://jobsdoor360.in/findme/" />
+    <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
+    <link rel="icon" href="/fevicon.ico" type="profile" />
+    <link rel="stylesheet" href="/staticfiles/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/style.css?v=20261001" />
+    <!-- Google Analytics (same property as the rest of the site) + Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-1JQVXS3B5L");
+    </script>
+    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GTM-MFBK5637");</script>
+    <!-- Sends a GA event for every button and link click -->
+    <script src="/staticfiles/mainfiles/platform/ga.js?v=20261001" defer></script>
+  </head>
+  <body class="sd-body" data-ga-module="findme">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <a class="visually-hidden-focusable" href="#main" data-ga-name="skip_to_content">Skip to content</a>
+    <div id="jd-navbar-slot"></div>
+
+    <main id="main">
+      <header class="sd-hero" data-ga-section="hero">
+        <div class="sd-wrap">
+          <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Findme</span></nav>
+          <span class="sd-pill">FREE · NO SIGN-UP · 5 QUESTIONS</span>
+          <h1>Not sure where to start?</h1>
+          <p>Five easy questions about what you enjoy. Nothing about money or marks. At the end we'll point you to the best place to begin.</p>
+        </div>
+      </header>
+      <div class="sd-wrap sd-section">
+        <section class="sd-panel" id="sd-quiz-card" data-ga-section="quiz">
+          <div class="sd-progress" aria-hidden="true"><span id="sd-progress-bar"></span></div>
+          <p class="sd-step" id="sd-step"></p>
+          <h2 class="sd-q" id="sd-question" tabindex="-1">Loading…</h2>
+          <div class="sd-options" id="sd-options" role="group" aria-labelledby="sd-question"></div>
+          <div class="sd-btn-row">
+            <button type="button" class="sd-btn sd-btn-ghost" id="sd-prev" style="visibility: hidden" data-ga-name="quiz_back">Back</button>
+            <button type="button" class="sd-btn sd-btn-primary" id="sd-next" disabled data-ga-name="quiz_next">Next</button>
+          </div>
+        </section>
+        <section class="sd-panel sd-hidden" id="sd-result-card" data-ga-section="result" aria-live="polite">
+          <div class="sd-result-head">
+            <span class="sd-badge">Where to start</span>
+            <h2 class="sd-section-title" id="sd-result-title" tabindex="-1">Here's where we'd begin</h2>
+            <p class="sd-section-sub">Based on your answers. You can explore anything else whenever you like.</p>
+          </div>
+          <div id="sd-recos"></div>
+          <div class="sd-handoff sd-hidden" id="sd-signin-hint" data-ga-section="signup_prompt">
+            Want us to remember this so every page fits you better?
+            <a id="sd-signin-link" href="/login/" data-ga-event="signup_prompt_click" data-ga-name="findme_signup_prompt">Create a free profile →</a>
+          </div>
+          <div class="sd-btn-row" style="justify-content: center">
+            <button type="button" class="sd-btn sd-btn-ghost" id="sd-restart" data-ga-name="quiz_retake">Retake the quiz</button>
+            <a class="sd-btn sd-btn-primary" href="/smart-decisions/" data-ga-name="see_all_smart_decisions">See all Smart Decisions</a>
+          </div>
+          <p class="sd-note">Findme is always free. It's here to help you start, not to sell you anything.</p>
+        </section>
+      </div>
+    </main>
+
+    <div id="jd-footer-slot"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
+    <script type="module" src="/staticfiles/mainfiles/platform/layout.js?v=20261001"></script>
+    <script type="module" src="/staticfiles/db/dbconfig.js"></script>
+    <script type="module" src="/staticfiles/mainfiles/platform/findme.js?v=20261001"></script>
+  </body>
+</html>
