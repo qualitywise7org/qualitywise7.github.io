@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../../partials/platform/head.ejs', {
+      title: "Merge PDF: combine PDF files for free | JobsDoor360",
+      description: "Combine two or more PDF files into one PDF in your browser. Drag to set the order, then download. Nothing is uploaded.",
+      canonical: "https://jobsdoor360.in/tools/merge-pdf/",
+      styles: ["/staticfiles/mainfiles/tools/style.css"],
+    }) -%>
+  </head>
+  <body class="sd-body jd-tool-page jd-c-mpdf" data-ga-module="merge-pdf" data-tool="merge-pdf">
+    <%- include('../../../partials/platform/navbar.ejs', { path: "/tools/merge-pdf/" }) -%>
+    <main id="main">
+      <header class="jd-tool-hero" data-ga-section="tool_hero">
+        <div class="sd-wrap">
+          <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><a href="/tools/" data-ga-event="nav_click" data-ga-name="breadcrumb_utility_tools">Utility Tools</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Merge PDF</span></nav>
+          <h1>Merge PDF</h1>
+          <p>Combine several PDF files into one, in the order you choose.</p>
+        </div>
+      </header>
+      <div class="sd-wrap" style="padding-bottom: 0" data-ga-section="tool_intro">
+        <p class="sd-note" style="text-align:center;margin:0">Drag PDF files into the right order before you merge them.</p>
+      </div>
+      <section data-ga-section="tool_workspace">
+        <div id="jd-tool" aria-live="polite"></div>
+      </section>
+    </main>
+    <%- include('../../../partials/platform/footer.ejs') -%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" integrity="sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" integrity="sha384-weMABwrltA6jWR8DDe9Jp5blk+tZQh7ugpCsF3JwSA53WZM9/14PjS5LAJNHNjAI" crossorigin="anonymous"></script>
+    <script src="/staticfiles/mainfiles/tools/common.js?v=<%= platform_version %>"></script>
+    <script src="/staticfiles/mainfiles/tools/merge-pdf/script.js?v=<%= platform_version %>"></script>
+    <script src="/staticfiles/mainfiles/tools/script.js?v=<%= platform_version %>"></script>
+  </body>
+</html>

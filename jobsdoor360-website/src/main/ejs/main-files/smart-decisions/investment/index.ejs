@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../../partials/platform/head.ejs', {
+      title: "Smart Investment: property price check before you buy | JobsDoor360",
+      description: "Buying your first flat? Get a free, broker-neutral price snapshot for your city and budget, then a detailed price-trend report if you want one.",
+      canonical: "https://jobsdoor360.in/smart-decisions/investment/",
+    }) -%>
+  </head>
+  <body class="sd-body" data-ga-module="smart_investment">
+    <%- include('../../../partials/platform/navbar.ejs', { path: "/smart-decisions/investment/" }) -%>
+    <main id="main">
+      <header class="sd-hero" data-ga-section="hero">
+        <div class="sd-wrap">
+          <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><a href="/smart-decisions/" data-ga-event="nav_click" data-ga-name="breadcrumb_smart_decisions">Smart Decisions</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Property investment</span></nav>
+          <span class="sd-pill">FREE SNAPSHOT · NO BROKER PUSHING YOU</span>
+          <h1>Is that flat priced fairly?</h1>
+          <p>Before you put lakhs into a flat, it helps to know what the area is really worth. Tell us your city and budget and we'll give you a quick, honest picture, with no agent trying to close a deal.</p>
+        </div>
+      </header>
+      <div class="sd-wrap sd-section">
+        <section class="sd-panel" id="sd-form-card" data-ga-section="form">
+          <h2 class="sd-section-title">Where are you looking?</h2>
+          <p class="sd-section-sub">Takes half a minute. The snapshot is free.</p>
+          <form id="sd-inv-form" novalidate>
+            <div class="sd-field">
+              <label for="f_city">City</label>
+              <select id="f_city" required>
+                <option value="" disabled selected>Pick your city</option>
+                <option>Pune</option><option>Bengaluru</option><option>Mumbai</option>
+                <option>Delhi</option><option>Hyderabad</option><option value="Other">Somewhere else</option>
+              </select>
+            </div>
+            <div class="sd-field">
+              <label for="f_budget">Rough budget</label>
+              <select id="f_budget" required>
+                <option value="" disabled selected>How much are you planning to spend?</option>
+                <option>Under ₹40L</option><option>₹40L to ₹70L</option><option>₹70L to ₹1.2Cr</option><option>Above ₹1.2Cr</option>
+              </select>
+            </div>
+            <div class="sd-field">
+              <label for="f_purpose">Are you buying to live in it or as an investment?</label>
+              <select id="f_purpose" required>
+                <option value="" disabled selected>Choose one</option>
+                <option value="self">To live in</option>
+                <option value="invest">As an investment</option>
+              </select>
+            </div>
+            <p class="sd-note sd-hidden" id="sd-form-error" role="alert" style="color:#b42318;text-align:left">Please fill in all three so we can show you something useful.</p>
+            <div class="sd-btn-row" style="justify-content: flex-end">
+              <button class="sd-btn sd-btn-primary" type="submit" data-ga-name="investment_submit">Show the snapshot</button>
+            </div>
+          </form>
+        </section>
+        <section class="sd-panel sd-hidden" id="sd-result-card" data-ga-section="result" aria-live="polite">
+          <div class="sd-result-head">
+            <span class="sd-badge">Your free snapshot</span>
+            <h2 class="sd-section-title" id="sd-result-title" tabindex="-1">Here's the quick picture</h2>
+            <p class="sd-section-sub">Rough, indicative numbers to help you get your bearings. Not live market data.</p>
+          </div>
+          <div id="sd-recos"></div>
+          <div class="sd-upsell" data-ga-section="upsell">
+            <h3>Want the full price-trend report?</h3>
+            <p>A three-year price trend for your localities, a fair-price range for your budget, and the questions to ask before you sign anything.</p>
+            <div class="sd-price">₹500 – ₹1,000</div>
+            <a class="sd-btn sd-btn-green" href="/contactus/" data-ga-event="upsell_click" data-ga-name="property_report_cta" data-ga-product="property_report" data-ga-price="500-1000">Get the detailed report</a>
+            <small>One report, one payment. We can also put you in touch with a listed broker if you want.</small>
+          </div>
+          <div class="sd-handoff" data-ga-section="next_step">Buying a home? It's worth protecting too. <a href="/smart-decisions/insurance/" data-ga-name="investment_to_insurance">See what insurance you'd need →</a></div>
+          <div class="sd-handoff sd-hidden" id="sd-signin-hint" data-ga-section="signup_prompt">
+            Want a nudge when prices move in your area?
+            <a id="sd-signin-link" href="/login/" data-ga-event="signup_prompt_click" data-ga-name="investment_signup_prompt">Create a free profile →</a>
+          </div>
+          <div class="sd-btn-row" style="justify-content: center">
+            <button type="button" class="sd-btn sd-btn-ghost" id="sd-restart" data-ga-name="form_start_over">Check another area</button>
+            <a class="sd-btn sd-btn-primary" href="/smart-decisions/" data-ga-name="see_all_smart_decisions">See all Smart Decisions</a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <%- include('../../../partials/platform/footer.ejs') -%>
+    <script type="module" src="/staticfiles/db/dbconfig.js"></script>
+    <script type="module" src="/staticfiles/mainfiles/smart-decisions/investment/script.js?v=<%= platform_version %>"></script>
+  </body>
+</html>
