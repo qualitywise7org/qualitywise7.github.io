@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/platform/head.ejs', {
+      title: "Utility Tools: free PDF, image and Word tools | JobsDoor360",
+      description: "Free browser-based tools: image to PDF, merge PDFs, merge images, Word to PDF, and PDF to Word. Add multiple files, reorder them, and download. Nothing is uploaded.",
+      canonical: "https://jobsdoor360.in/tools/",
+    }) -%>
+  </head>
+  <body class="sd-body" data-ga-module="utility_tools">
+    <%- include('../../partials/platform/navbar.ejs', { path: "/tools/" }) -%>
+    <main id="main">
+      <header class="sd-hero" data-ga-section="hero">
+        <div class="sd-wrap">
+          <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Utility Tools</span></nav>
+          <span class="sd-pill">FREE · NO SIGN-UP · YOUR FILES STAY ON YOUR DEVICE</span>
+          <h1>Utility Tools</h1>
+          <p>Quick file jobs that shouldn't cost you anything. Pick a tool, add your files, and download the result. We don't upload your files anywhere.</p>
+        </div>
+      </header>
+      <section class="sd-wrap sd-section" data-ga-section="tool_directory">
+        <div class="jd-tool-grid">
+          <a class="jd-tool-card jd-c-img" href="/tools/image-to-pdf/" data-ga-name="tools_hub_image_to_pdf">
+            <div class="jd-tool-ico"><i class="fa-solid fa-file-image" aria-hidden="true"></i></div>
+            <h2>Image to PDF</h2><p>Turn JPG, PNG or WEBP images into one PDF.</p>
+          </a>
+          <a class="jd-tool-card jd-c-mpdf" href="/tools/merge-pdf/" data-ga-name="tools_hub_merge_pdf">
+            <div class="jd-tool-ico"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+            <h2>Merge PDF</h2><p>Combine several PDF files into one, in the order you choose.</p>
+          </a>
+          <a class="jd-tool-card jd-c-mimg" href="/tools/merge-images/" data-ga-name="tools_hub_merge_images">
+            <div class="jd-tool-ico"><i class="fa-solid fa-images" aria-hidden="true"></i></div>
+            <h2>Merge images</h2><p>Join two or more images into one picture.</p>
+          </a>
+          <a class="jd-tool-card jd-c-w2p" href="/tools/word-to-pdf/" data-ga-name="tools_hub_word_to_pdf">
+            <div class="jd-tool-ico"><i class="fa-solid fa-file-word" aria-hidden="true"></i></div>
+            <h2>Word to PDF</h2><p>Turn Word (.docx) documents into PDFs.</p>
+          </a>
+          <a class="jd-tool-card jd-c-p2w" href="/tools/pdf-to-word/" data-ga-name="tools_hub_pdf_to_word">
+            <div class="jd-tool-ico"><i class="fa-solid fa-file-pen" aria-hidden="true"></i></div>
+            <h2>PDF to Word</h2><p>Get editable text from a PDF in a Word file.</p>
+          </a>
+        </div>
+        <p class="sd-note"><i class="fa-solid fa-lock" aria-hidden="true"></i> Processing happens in your browser. A large file may take a few moments.</p>
+      </section>
+    </main>
+    <%- include('../../partials/platform/footer.ejs') -%>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/platform/head.ejs', {
+      title: "Findme: a free 5-minute quiz to find where to start | JobsDoor360",
+      description: "Not sure what you need help with? Answer five easy questions about what you enjoy and we'll point you to the right place to start. Free, no sign-up.",
+      canonical: "https://jobsdoor360.in/findme/",
+    }) -%>
+  </head>
+  <body class="sd-body" data-ga-module="findme">
+    <%- include('../../partials/platform/navbar.ejs', { path: "/findme/" }) -%>
+    <main id="main">
+      <header class="sd-hero" data-ga-section="hero">
+        <div class="sd-wrap">
+          <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Findme</span></nav>
+          <span class="sd-pill">FREE · NO SIGN-UP · 5 QUESTIONS</span>
+          <h1>Not sure where to start?</h1>
+          <p>Five easy questions about what you enjoy. Nothing about money or marks. At the end we'll point you to the best place to begin.</p>
+        </div>
+      </header>
+      <div class="sd-wrap sd-section">
+        <section class="sd-panel" id="sd-quiz-card" data-ga-section="quiz">
+          <div class="sd-progress" aria-hidden="true"><span id="sd-progress-bar"></span></div>
+          <p class="sd-step" id="sd-step"></p>
+          <h2 class="sd-q" id="sd-question" tabindex="-1">Loading…</h2>
+          <div class="sd-options" id="sd-options" role="group" aria-labelledby="sd-question"></div>
+          <div class="sd-btn-row">
+            <button type="button" class="sd-btn sd-btn-ghost" id="sd-prev" style="visibility: hidden" data-ga-name="quiz_back">Back</button>
+            <button type="button" class="sd-btn sd-btn-primary" id="sd-next" disabled data-ga-name="quiz_next">Next</button>
+          </div>
+        </section>
+        <section class="sd-panel sd-hidden" id="sd-result-card" data-ga-section="result" aria-live="polite">
+          <div class="sd-result-head">
+            <span class="sd-badge">Where to start</span>
+            <h2 class="sd-section-title" id="sd-result-title" tabindex="-1">Here's where we'd begin</h2>
+            <p class="sd-section-sub">Based on your answers. You can explore anything else whenever you like.</p>
+          </div>
+          <div id="sd-recos"></div>
+          <div class="sd-handoff sd-hidden" id="sd-signin-hint" data-ga-section="signup_prompt">
+            Want us to remember this so every page fits you better?
+            <a id="sd-signin-link" href="/login/" data-ga-event="signup_prompt_click" data-ga-name="findme_signup_prompt">Create a free profile →</a>
+          </div>
+          <div class="sd-btn-row" style="justify-content: center">
+            <button type="button" class="sd-btn sd-btn-ghost" id="sd-restart" data-ga-name="quiz_retake">Retake the quiz</button>
+            <a class="sd-btn sd-btn-primary" href="/smart-decisions/" data-ga-name="see_all_smart_decisions">See all Smart Decisions</a>
+          </div>
+          <p class="sd-note">Findme is always free. It's here to help you start, not to sell you anything.</p>
+        </section>
+      </div>
+    </main>
+    <%- include('../../partials/platform/footer.ejs') -%>
+    <script type="module" src="/staticfiles/db/dbconfig.js"></script>
+    <script type="module" src="/staticfiles/mainfiles/findme/script.js?v=<%= platform_version %>"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+/* Utility Tools pages (/tools/<tool>/) only: tool page hero, file workspace,
+   progress, downloads, and the off-screen Word-to-PDF layout area.
+   Loaded after /staticfiles/mainfiles/platform/style.css (shared). */
+.jd-tool-page { background: #f4f5f9; }
+.jd-tool-hero { text-align: center; padding: 34px 16px 8px; }
+.jd-tool-hero .sd-crumbs a { color: var(--sd-brand); }
+.jd-tool-hero .sd-crumbs span { color: var(--sd-muted); }
+.jd-tool-hero h1 { font-weight: 800; color: var(--sd-navy); font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 8px; }
+.jd-tool-hero p { color: var(--sd-muted); font-size: 1.08rem; max-width: 640px; margin: 0 auto; }
+#jd-tool { max-width: 1120px; margin: 0 auto; padding: 18px 16px 40px; }
+
+.jd-file-input { position: fixed; width: 1px; height: 1px; opacity: 0; pointer-events: none; left: -9999px; top: -9999px; }
+.jd-upload { text-align: center; padding: 26px 16px 10px; }
+.jd-pick-btn {
+  display: inline-flex; align-items: center; gap: 10px; cursor: pointer; margin: 0;
+  background: var(--tool, var(--sd-brand)); color: #fff; font-weight: 700; font-size: 1.2rem;
+  padding: 18px 42px; border-radius: 14px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.jd-pick-btn:hover { transform: translateY(-2px); filter: brightness(1.07); }
+.jd-pick-btn:focus-within { outline: 3px solid var(--sd-focus); outline-offset: 3px; }
+.jd-pick-btn input, .jd-add-card input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.jd-upload .jd-drop-hint { color: var(--sd-muted); margin-top: 14px; }
+.jd-upload .jd-tool-fine { color: var(--sd-muted); font-size: 0.86rem; max-width: 560px; margin: 12px auto 0; }
+
+.jd-dropzone-overlay {
+  position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center;
+  background: rgba(29, 37, 89, 0.55); backdrop-filter: blur(2px);
+}
+.jd-dropzone-overlay.on { display: flex; }
+.jd-dropzone-overlay div { background: #fff; border: 3px dashed var(--tool, var(--sd-brand)); border-radius: 18px; padding: 42px 56px; font-size: 1.3rem; font-weight: 700; color: var(--sd-navy); }
+
+.jd-work { display: grid; grid-template-columns: 1fr 320px; gap: 22px; align-items: start; }
+@media (max-width: 900px) { .jd-work { grid-template-columns: 1fr; } }
+.jd-files { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+.jd-file {
+  position: relative; background: #fff; border: 1px solid var(--sd-border); border-radius: 12px; padding: 12px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: grab; user-select: none;
+  box-shadow: 0 2px 8px rgba(29, 37, 89, 0.06);
+}
+.jd-file.dragging { opacity: 0.45; }
+.jd-file.drop-before { box-shadow: -4px 0 0 0 var(--tool, var(--sd-brand)); }
+.jd-file.drop-after { box-shadow: 4px 0 0 0 var(--tool, var(--sd-brand)); }
+.jd-thumb { width: 100%; height: 150px; border-radius: 8px; background: #f1f3f8; display: grid; place-items: center; overflow: hidden; }
+.jd-thumb img, .jd-thumb canvas { max-width: 100%; max-height: 150px; object-fit: contain; display: block; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); background: #fff; }
+.jd-thumb i { font-size: 3rem; color: var(--tool, var(--sd-brand)); }
+.jd-fname { font-size: 0.84rem; color: var(--sd-ink); width: 100%; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.jd-fmeta { font-size: 0.76rem; color: var(--sd-muted); }
+.jd-fnum { position: absolute; top: 8px; left: 8px; background: var(--sd-navy); color: #fff; font-size: 0.72rem; font-weight: 700; border-radius: 999px; padding: 2px 8px; }
+.jd-factions { position: absolute; top: 6px; right: 6px; display: flex; gap: 4px; opacity: 0; transition: opacity 0.15s ease; }
+.jd-file:hover .jd-factions, .jd-file:focus-within .jd-factions { opacity: 1; }
+@media (hover: none) { .jd-factions { opacity: 1; } }
+.jd-factions button {
+  width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--sd-border); background: #fff; color: var(--sd-ink);
+  display: grid; place-items: center; cursor: pointer; font-size: 0.85rem; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+.jd-factions button:hover:not(:disabled) { color: #fff; background: var(--tool, var(--sd-brand)); border-color: transparent; }
+.jd-factions button:disabled { opacity: 0.35; cursor: default; }
+.jd-add-card {
+  position: relative; border: 2px dashed #c7cde0; border-radius: 12px; min-height: 212px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px; color: var(--sd-muted); cursor: pointer; background: #fafbfe; margin: 0;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.jd-add-card:hover, .jd-add-card:focus-within { border-color: var(--tool, var(--sd-brand)); color: var(--tool, var(--sd-brand)); }
+.jd-add-card i { font-size: 2rem; }
+
+.jd-side { background: #fff; border: 1px solid var(--sd-border); border-radius: 14px; padding: 20px; position: sticky; top: 16px; }
+.jd-side h2 { font-size: 1.15rem; font-weight: 800; color: var(--sd-navy); margin-bottom: 4px; }
+.jd-side .jd-side-sub { color: var(--sd-muted); font-size: 0.9rem; margin-bottom: 14px; }
+.jd-optgroup { border: none; padding: 0; margin: 0 0 16px; }
+.jd-optgroup legend { font-size: 0.86rem; font-weight: 700; color: var(--sd-navy); margin-bottom: 8px; float: none; width: auto; padding: 0; }
+.jd-optgroup.disabled { opacity: 0.45; pointer-events: none; }
+.jd-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.jd-opt { position: relative; margin: 0; }
+.jd-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.jd-opt span { display: inline-block; border: 1.5px solid var(--sd-border); border-radius: 10px; padding: 7px 12px; font-size: 0.88rem; cursor: pointer; background: #fff; }
+.jd-opt input:checked + span { border-color: var(--tool, var(--sd-brand)); background: color-mix(in srgb, var(--tool, var(--sd-brand)) 10%, #fff); color: var(--sd-navy); font-weight: 600; }
+.jd-opt input:focus-visible + span { outline: 3px solid var(--sd-focus); outline-offset: 2px; }
+.jd-action {
+  width: 100%; border: none; border-radius: 12px; padding: 16px; font-size: 1.12rem; font-weight: 800; color: #fff; cursor: pointer;
+  background: var(--tool, var(--sd-brand)); display: flex; align-items: center; justify-content: center; gap: 10px;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+.jd-action:hover:not(:disabled) { filter: brightness(1.07); transform: translateY(-1px); }
+.jd-action:disabled { opacity: 0.5; cursor: not-allowed; }
+.jd-side .jd-need { font-size: 0.85rem; color: var(--sd-muted); margin-top: 10px; text-align: center; }
+.jd-side .jd-clear { background: none; border: none; color: #b42318; font-weight: 600; font-size: 0.88rem; cursor: pointer; padding: 0; margin-top: 12px; display: block; margin-inline: auto; }
+
+.jd-notice { border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; font-size: 0.93rem; }
+.jd-notice.warn { background: #fff4e5; color: #8a4b00; border: 1px solid #ffd8a8; }
+.jd-notice.err { background: #fdecea; color: #a93226; border: 1px solid #f5c2bd; }
+
+.jd-busy, .jd-done { max-width: 640px; margin: 20px auto; background: #fff; border: 1px solid var(--sd-border); border-radius: 16px; padding: 34px 26px; text-align: center; }
+.jd-spinner { width: 54px; height: 54px; border-radius: 50%; border: 5px solid #e5e8f0; border-top-color: var(--tool, var(--sd-brand)); margin: 0 auto 18px; animation: jd-spin 0.9s linear infinite; }
+@keyframes jd-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .jd-spinner { animation-duration: 3s; } }
+.jd-busy h2, .jd-done h2 { font-size: 1.45rem; font-weight: 800; color: var(--sd-navy); margin-bottom: 6px; }
+.jd-busy p { color: var(--sd-muted); margin-bottom: 16px; }
+.jd-bar { height: 8px; background: #eef0f5; border-radius: 999px; overflow: hidden; }
+.jd-bar span { display: block; height: 100%; width: 0; background: var(--tool, var(--sd-brand)); transition: width 0.25s ease; }
+.jd-done .jd-done-ico { font-size: 2.6rem; color: var(--sd-green); margin-bottom: 8px; }
+.jd-done p { color: var(--sd-muted); }
+.jd-dl-main {
+  display: inline-flex; align-items: center; gap: 10px; background: var(--tool, var(--sd-brand)); color: #fff; font-weight: 800; font-size: 1.15rem;
+  padding: 16px 34px; border-radius: 14px; text-decoration: none; margin: 10px 0 6px; border: none; cursor: pointer;
+}
+.jd-dl-main:hover { color: #fff; filter: brightness(1.07); }
+.jd-dl-list { display: grid; gap: 8px; text-align: left; margin: 14px 0; }
+.jd-dl-item { display: flex; align-items: center; gap: 10px; padding: 11px 14px; border: 1px solid var(--sd-border); border-radius: 10px; text-decoration: none; color: var(--sd-navy); font-weight: 600; }
+.jd-dl-item:hover { border-color: var(--tool, var(--sd-brand)); color: var(--sd-navy); }
+.jd-dl-item span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jd-dl-item small { color: var(--sd-muted); font-weight: 500; }
+.jd-done-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+.jd-link-btn { background: none; border: none; color: var(--sd-brand); font-weight: 700; cursor: pointer; padding: 6px 8px; }
+.jd-link-btn:hover { text-decoration: underline; }
+.jd-errs { text-align: left; background: #fdecea; color: #a93226; border-radius: 10px; padding: 12px 14px; font-size: 0.9rem; margin-top: 14px; }
+.jd-next { margin-top: 26px; text-align: left; }
+.jd-next h3 { font-size: 0.95rem; font-weight: 700; color: var(--sd-navy); margin-bottom: 10px; }
+.jd-privacy { text-align: center; color: var(--sd-muted); font-size: 0.85rem; margin-top: 18px; }
+
+/* Off-screen area where Word files are laid out before they become PDF pages */
+.jd-render-host { position: absolute; left: -10000px; top: 0; width: 794px; }
+.docx-page {
+  width: 794px; min-height: 1123px; padding: 72px; box-sizing: border-box; background: #fff; color: #111; margin-bottom: 24px;
+  font-family: Calibri, Carlito, "Helvetica Neue", Arial, sans-serif; font-size: 15px; line-height: 1.45;
+}
+.docx-inner { display: flow-root; }
+.jd-render-host p { margin: 0 0 10px; }
+.docx-page h1 { font-size: 26px; font-weight: 700; margin: 0 0 12px; }
+.docx-page h2 { font-size: 21px; font-weight: 700; margin: 14px 0 10px; }
+.docx-page h3, .docx-page h4 { font-size: 17px; font-weight: 700; margin: 12px 0 8px; }
+.docx-page img { max-width: 100%; height: auto; }
+.docx-page table { border-collapse: collapse; width: 100%; margin: 0 0 12px; }
+.docx-page td, .docx-page th { border: 1px solid #9aa0ab; padding: 5px 7px; vertical-align: top; }
+.docx-page ul, .docx-page ol { margin: 0 0 10px; padding-left: 26px; }
+.docx-page a { color: #1d4ed8; }
+
+@media (max-width: 600px) {
+  .jd-pick-btn { padding: 16px 28px; font-size: 1.08rem; }
+  .jd-files { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}

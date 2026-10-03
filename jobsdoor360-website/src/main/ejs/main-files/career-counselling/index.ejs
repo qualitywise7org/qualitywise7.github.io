@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/platform/head.ejs', {
+      title: "Career counselling for Class 10 to 12 students and parents | JobsDoor360",
+      description: "Career guidance at every budget: start with a free quiz, get a detailed self-serve report, or book a one-to-one session with a career counsellor.",
+      canonical: "https://jobsdoor360.in/career-counselling/",
+      styles: ["/staticfiles/mainfiles/career-counselling/style.css"],
+    }) -%>
+  </head>
+  <body class="sd-body" data-ga-module="career_counselling">
+    <%- include('../../partials/platform/navbar.ejs', { path: "/career-counselling/" }) -%>
+    <main id="main">
+      <header class="sd-hero" data-ga-section="hero">
+        <div class="sd-wrap">
+          <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Career Counselling</span></nav>
+          <span class="sd-pill">PICK YOUR OWN DEPTH · NO FIXED PACKAGE</span>
+          <h1>Career counselling that fits your budget</h1>
+          <p>Most coaching centres push one expensive package on every family. We don't. Start free, and only go deeper if you want to: a detailed report, or a proper conversation with a counsellor.</p>
+        </div>
+      </header>
+      <div class="sd-wrap sd-section" data-ga-section="plans">
+        <div class="sd-tiers">
+          <div class="sd-tier">
+            <h2 class="h3" style="font-weight:800;color:var(--sd-navy);font-size:1.25rem;margin-bottom:4px">Free quiz</h2>
+            <div class="price">₹0</div>
+            <ul><li>A direction in about three minutes</li><li>Your likely stream or career area</li><li>No sign-up to try it</li></ul>
+            <a class="sd-btn sd-btn-ghost" href="/smart-decisions/career/" data-tier="free" data-ga-event="cta_click" data-ga-name="counselling_free" data-ga-product="career_quiz" data-ga-price="0">Take the free quiz</a>
+          </div>
+          <div class="sd-tier featured">
+            <span class="best">Most popular</span><h2 class="h3" style="font-weight:800;color:var(--sd-navy);font-size:1.25rem;margin-bottom:4px">Self-serve report</h2>
+            <div class="price">₹199 – ₹499</div>
+            <ul><li>A detailed stream-fit breakdown</li><li>Entrance exams to aim for</li><li>A shortlist of colleges to look at</li><li>Ready straight away, no waiting</li></ul>
+            <a class="sd-btn sd-btn-primary" href="/contactus/" data-tier="report" data-ga-event="upsell_click" data-ga-name="counselling_report" data-ga-product="counselling_report" data-ga-price="199-499">Get the report</a>
+          </div>
+          <div class="sd-tier">
+            <h2 class="h3" style="font-weight:800;color:var(--sd-navy);font-size:1.25rem;margin-bottom:4px">One-to-one session</h2>
+            <div class="price">₹499 – ₹1,999</div>
+            <ul><li>A video or phone call with a counsellor</li><li>Goes through marks, interests and options</li><li>Ends with a written plan you can follow</li></ul>
+            <a class="sd-btn sd-btn-green" href="/contactus/" data-tier="session" data-ga-event="upsell_click" data-ga-name="counselling_session" data-ga-product="counselling_session" data-ga-price="499-1999">Book a session</a>
+          </div>
+        </div>
+        <div class="sd-upsell" data-ga-section="upsell">
+          <h3>Add our guide book to the report</h3>
+          <p>Get the report together with our stream-selection guide at a lower combined price. Handy for parents who like something to read at their own pace.</p>
+          <a class="sd-btn sd-btn-light" href="/contactus/" data-tier="bundle" data-ga-event="upsell_click" data-ga-name="counselling_bundle" data-ga-product="book_report_bundle">See the book and report bundle</a>
+        </div>
+        <div class="sd-handoff" data-ga-section="next_step">
+          Not sure yet? <a href="/smart-decisions/career/" data-ga-name="counselling_to_career_quiz">Start with the free career quiz →</a><br>
+          Running a school? We also run career workshops for whole classes. <a href="/contactus/" data-ga-name="counselling_schools_contact">Talk to us →</a>
+        </div>
+        <p class="sd-note">Every family gets something useful here, even for free. You only pay if you want more depth.</p>
+      </div>
+    </main>
+    <%- include('../../partials/platform/footer.ejs') -%>
+    <script type="module" src="/staticfiles/db/dbconfig.js"></script>
+    <script type="module" src="/staticfiles/mainfiles/career-counselling/script.js?v=<%= platform_version %>"></script>
+  </body>
+</html>

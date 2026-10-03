@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../../partials/platform/head.ejs', {
+      title: "Smart Career: free stream and career quiz | JobsDoor360",
+      description: "Not sure which stream or career to pick? Answer five quick questions and get a direction in about three minutes. Free, no sign-up needed.",
+      canonical: "https://jobsdoor360.in/smart-decisions/career/",
+    }) -%>
+  </head>
+  <body class="sd-body" data-ga-module="smart_career">
+    <%- include('../../../partials/platform/navbar.ejs', { path: "/smart-decisions/career/" }) -%>
+    <main id="main">
+      <header class="sd-hero" data-ga-section="hero">
+        <div class="sd-wrap">
+          <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><a href="/smart-decisions/" data-ga-event="nav_click" data-ga-name="breadcrumb_smart_decisions">Smart Decisions</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Career</span></nav>
+          <span class="sd-pill">FREE · ABOUT 3 MINUTES · NO SIGN-UP</span>
+          <h1>Which stream or career suits you?</h1>
+          <p>Getting time with a counsellor can take weeks. This takes about three minutes. Answer five questions and you'll have a direction to start from.</p>
+        </div>
+      </header>
+      <div class="sd-wrap sd-section">
+        <section class="sd-panel" id="sd-quiz-card" data-ga-section="quiz">
+          <div class="sd-progress" aria-hidden="true"><span id="sd-progress-bar"></span></div>
+          <p class="sd-step" id="sd-step"></p>
+          <h2 class="sd-q" id="sd-question" tabindex="-1">Loading…</h2>
+          <div class="sd-options" id="sd-options" role="group" aria-labelledby="sd-question"></div>
+          <div class="sd-btn-row">
+            <button type="button" class="sd-btn sd-btn-ghost" id="sd-prev" style="visibility: hidden" data-ga-name="quiz_back">Back</button>
+            <button type="button" class="sd-btn sd-btn-primary" id="sd-next" disabled data-ga-name="quiz_next">Next</button>
+          </div>
+        </section>
+        <section class="sd-panel sd-hidden" id="sd-result-card" data-ga-section="result" aria-live="polite">
+          <div class="sd-result-head">
+            <span class="sd-badge">Your free result</span>
+            <h2 class="sd-section-title" id="sd-result-title" tabindex="-1">Here's the direction that fits you best</h2>
+            <p class="sd-section-sub">A starting point based on your answers, not a final verdict.</p>
+          </div>
+          <div id="sd-recos"></div>
+          <div class="sd-handoff" id="sd-handoff-next" data-ga-section="next_step"></div>
+          <div class="sd-upsell" data-ga-section="upsell">
+            <h3>Want the full picture?</h3>
+            <p>The detailed report covers how well each subject suits you, which entrance exams to aim for, job demand for your options, and a shortlist of colleges.</p>
+            <div class="sd-price">₹149 – ₹299</div>
+            <a class="sd-btn sd-btn-green" href="/contactus/" data-ga-event="upsell_click" data-ga-name="career_detailed_report_cta" data-ga-product="career_detailed_report" data-ga-price="149-299">Get the detailed report</a>
+            <small>One-time payment. No waiting for a counsellor.</small>
+          </div>
+          <div class="sd-handoff" data-ga-section="next_step">Rather talk it through with a person? <a href="/career-counselling/" data-ga-name="career_to_counselling">See career counselling →</a><br>Ready to build skills? <a href="/pricing/" data-ga-name="career_to_courses">Browse our courses →</a></div>
+          <div class="sd-handoff sd-hidden" id="sd-signin-hint" data-ga-section="signup_prompt">
+            Want to keep this result and get suggestions that match it?
+            <a id="sd-signin-link" href="/login/" data-ga-event="signup_prompt_click" data-ga-name="career_signup_prompt">Create a free profile →</a>
+          </div>
+          <div class="sd-btn-row" style="justify-content: center">
+            <button type="button" class="sd-btn sd-btn-ghost" id="sd-restart" data-ga-name="quiz_retake">Retake the quiz</button>
+            <a class="sd-btn sd-btn-primary" href="/smart-decisions/" data-ga-name="see_all_smart_decisions">See all Smart Decisions</a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <%- include('../../../partials/platform/footer.ejs') -%>
+    <script type="module" src="/staticfiles/db/dbconfig.js"></script>
+    <script type="module" src="/staticfiles/mainfiles/smart-decisions/career/script.js?v=<%= platform_version %>"></script>
+  </body>
+</html>

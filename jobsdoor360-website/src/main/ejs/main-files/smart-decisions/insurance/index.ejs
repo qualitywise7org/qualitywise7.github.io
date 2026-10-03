@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../../partials/platform/head.ejs', {
+      title: "Smart Insurance: find out what cover you actually need | JobsDoor360",
+      description: "Answer six quick questions and see which insurance you need (health, term or motor) and why. Free, and nobody will call you.",
+      canonical: "https://jobsdoor360.in/smart-decisions/insurance/",
+    }) -%>
+  </head>
+  <body class="sd-body" data-ga-module="smart_insurance">
+    <%- include('../../../partials/platform/navbar.ejs', { path: "/smart-decisions/insurance/" }) -%>
+    <main id="main">
+      <header class="sd-hero" data-ga-section="hero">
+        <div class="sd-wrap">
+          <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><a href="/smart-decisions/" data-ga-event="nav_click" data-ga-name="breadcrumb_smart_decisions">Smart Decisions</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Insurance</span></nav>
+          <span class="sd-pill">FREE · NO SALES CALLS · ABOUT 1 MINUTE</span>
+          <h1>What insurance do you actually need?</h1>
+          <p>Most agents pitch a policy before they understand you. We do it the other way round. Tell us about your situation and we'll tell you which cover matters, and why.</p>
+        </div>
+      </header>
+      <div class="sd-wrap sd-section">
+        <section class="sd-panel" id="sd-form-card" data-ga-section="form">
+          <h2 class="sd-section-title">Your free needs check</h2>
+          <p class="sd-section-sub">Takes about a minute. We don't ask for your name or number.</p>
+          <form id="sd-insurance-form" novalidate>
+            <div id="sd-insurance-fields"></div>
+            <p class="sd-note sd-hidden" id="sd-form-error" role="alert" style="color:#b42318;text-align:left">Please answer every question so we can give you a proper answer.</p>
+            <div class="sd-btn-row" style="justify-content: flex-end">
+              <button class="sd-btn sd-btn-primary" type="submit" data-ga-name="insurance_submit">Show what I need</button>
+            </div>
+          </form>
+        </section>
+        <section class="sd-panel sd-hidden" id="sd-result-card" data-ga-section="result" aria-live="polite">
+          <div class="sd-result-head">
+            <span class="sd-badge">Your needs check</span>
+            <h2 class="sd-section-title" id="sd-result-title" tabindex="-1">Here's the cover that fits your situation</h2>
+            <p class="sd-section-sub">General guidance based on your answers. We're not selling you a policy.</p>
+          </div>
+          <div id="sd-recos"></div>
+          <div class="sd-upsell" data-ga-section="upsell">
+            <h3>Compare real policies side by side</h3>
+            <p>Claim settlement ratios, exclusions, waiting periods and complaint history for the plans that match you.</p>
+            <div class="sd-price">₹99 – ₹199</div>
+            <a class="sd-btn sd-btn-green" href="/contactus/" data-ga-event="upsell_click" data-ga-name="insurance_comparison_cta" data-ga-product="insurance_comparison" data-ga-price="99-199">Unlock the detailed comparison</a>
+            <small>One-time unlock.</small>
+            <a class="sd-upsell-alt" href="/contactus/" data-ga-event="upsell_click" data-ga-name="insurance_expert_call_cta" data-ga-product="insurance_expert_call" data-ga-price="499-999">Or talk to an insurance adviser (₹499 – ₹999 per session) →</a>
+          </div>
+          <div class="sd-handoff" data-ga-section="next_step">Buying a home soon? <a href="/smart-decisions/investment/" data-ga-name="insurance_to_investment">Check property prices first →</a></div>
+          <div class="sd-handoff sd-hidden" id="sd-signin-hint" data-ga-section="signup_prompt">
+            Want a reminder when it's time to renew?
+            <a id="sd-signin-link" href="/login/" data-ga-event="signup_prompt_click" data-ga-name="insurance_signup_prompt">Create a free profile →</a>
+          </div>
+          <div class="sd-btn-row" style="justify-content: center">
+            <button type="button" class="sd-btn sd-btn-ghost" id="sd-restart" data-ga-name="form_start_over">Start over</button>
+            <a class="sd-btn sd-btn-primary" href="/smart-decisions/" data-ga-name="see_all_smart_decisions">See all Smart Decisions</a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <%- include('../../../partials/platform/footer.ejs') -%>
+    <script type="module" src="/staticfiles/db/dbconfig.js"></script>
+    <script type="module" src="/staticfiles/mainfiles/smart-decisions/insurance/script.js?v=<%= platform_version %>"></script>
+  </body>
+</html>
