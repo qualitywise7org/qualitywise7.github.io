@@ -4,7 +4,7 @@ import {
   getCurrentUser,
   saveSmartProfile,
   track,
-  loginUrlBack,
+  // loginUrlBack, // used by the sign-in prompt, which is switched off
 } from "/staticfiles/mainfiles/platform/common.js?v=20261001";
 
 // Small indicative sample so the free snapshot is useful. Clearly
@@ -58,10 +58,11 @@ function submit(e) {
   (async () => {
     const user = await getCurrentUser();
     await saveSmartProfile(user?.email, { investment: { city, budget, purpose, at: new Date().toISOString() } });
-    if (!user) {
-      $("sd-signin-hint").classList.remove("sd-hidden");
-      $("sd-signin-link").href = loginUrlBack();
-    }
+    // Sign-in prompt switched OFF (see the commented block in this page's index.ejs):
+    // if (!user) {
+    //   $("sd-signin-hint").classList.remove("sd-hidden");
+    //   $("sd-signin-link").href = loginUrlBack();
+    // }
   })();
 }
 

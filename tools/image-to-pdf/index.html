@@ -10,8 +10,9 @@
     <link rel="icon" href="/fevicon.ico" type="profile" />
     <link rel="stylesheet" href="/staticfiles/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/style.css?v=20261001" />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/tools/style.css?v=20261001" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/layout.css?v=20261004" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/style.css?v=20261004" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/tools/style.css?v=20261004" />
     <!-- Google Analytics (same property as the rest of the site) + Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
     <script>
@@ -22,55 +23,74 @@
     </script>
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GTM-MFBK5637");</script>
     <!-- Sends a GA event for every button and link click -->
-    <script src="/staticfiles/mainfiles/platform/ga.js?v=20261001" defer></script>
+    <script src="/staticfiles/mainfiles/platform/ga.js?v=20261004" defer></script>
   </head>
   <body class="sd-body jd-tool-page jd-c-img" data-ga-module="image-to-pdf" data-tool="image-to-pdf">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
     <a class="visually-hidden-focusable" href="#main" data-ga-name="skip_to_content">Skip to content</a>
     <div id="jd-navbar-slot">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary jd-nav" aria-label="Main">
-        <div class="container-fluid">
-          <a class="brand" href="/" data-ga-name="nav_logo"><img src="/assets/Jobsdoor360 -logos__black.png" alt="JobsDoor360 home" /></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#jdNavMenu" aria-controls="jdNavMenu" aria-expanded="false" aria-label="Open menu" data-ga-name="nav_menu_toggle"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="jdNavMenu">
-            <ul class="navbar-nav align-items-lg-center">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="jd-dd-smart_decisions" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-ga-name="nav_smart_decisions">Smart Decisions</a>
-                <ul class="dropdown-menu" aria-labelledby="jd-dd-smart_decisions">
-                  <li><a class="dropdown-item" href="/smart-decisions/career/" data-ga-name="nav_smart_career"><span class="jd-mi-t">Career decisions</span><span class="jd-mi-d">Which stream or career fits you</span></a></li>
-                  <li><a class="dropdown-item" href="/smart-decisions/insurance/" data-ga-name="nav_smart_insurance"><span class="jd-mi-t">Insurance</span><span class="jd-mi-d">The cover you actually need</span></a></li>
-                  <li><a class="dropdown-item" href="/smart-decisions/investment/" data-ga-name="nav_smart_investment"><span class="jd-mi-t">Property investment</span><span class="jd-mi-d">Price check before you buy</span></a></li>
-                  <li><a class="dropdown-item" href="/smart-decisions/it-help/" data-ga-name="nav_smart_it_help"><span class="jd-mi-t">IT help</span><span class="jd-mi-d">Which tech expert to hire</span></a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item jd-mi-all" href="/smart-decisions/" data-ga-name="nav_smart_all">All Smart Decisions →</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="jd-dd-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-ga-name="nav_courses">Courses</a>
-                <ul class="dropdown-menu" aria-labelledby="jd-dd-courses">
-                  <li><a class="dropdown-item" href="/pricing/" data-ga-name="nav_courses_pricing"><span class="jd-mi-t">Courses &amp; fees</span><span class="jd-mi-d">Programming courses and internships</span></a></li>
-                  <li><a class="dropdown-item" href="/placement/" data-ga-name="nav_courses_placement"><span class="jd-mi-t">Placement classes</span><span class="jd-mi-d">Interview and placement prep</span></a></li>
-                  <li><a class="dropdown-item" href="/test/" data-ga-name="nav_courses_certifications"><span class="jd-mi-t">Free certifications</span><span class="jd-mi-d">Take a test, get certified</span></a></li>
-                </ul>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="/career-counselling/" data-ga-name="nav_career_counselling">Career Counselling</a></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="#" id="jd-dd-utility_tools" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-ga-name="nav_utility_tools">Utility Tools</a>
-                <ul class="dropdown-menu" aria-labelledby="jd-dd-utility_tools">
-                  <li><a class="dropdown-item active" href="/tools/image-to-pdf/" data-ga-name="nav_tool_image_to_pdf" aria-current="page"><span class="jd-mi-t">Image to PDF</span><span class="jd-mi-d">JPG, PNG or WEBP into a PDF</span></a></li>
-                  <li><a class="dropdown-item" href="/tools/merge-pdf/" data-ga-name="nav_tool_merge_pdf"><span class="jd-mi-t">Merge PDF</span><span class="jd-mi-d">Join several PDFs into one</span></a></li>
-                  <li><a class="dropdown-item" href="/tools/word-to-pdf/" data-ga-name="nav_tool_word_to_pdf"><span class="jd-mi-t">Word to PDF</span><span class="jd-mi-d">Turn .docx files into PDFs</span></a></li>
-                  <li><a class="dropdown-item" href="/tools/pdf-to-word/" data-ga-name="nav_tool_pdf_to_word"><span class="jd-mi-t">PDF to Word</span><span class="jd-mi-d">Get editable text from a PDF</span></a></li>
-                  <li><a class="dropdown-item" href="/tools/merge-images/" data-ga-name="nav_tool_merge_images"><span class="jd-mi-t">Merge images</span><span class="jd-mi-d">Join images into one picture</span></a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item jd-mi-all" href="/tools/" data-ga-name="nav_tools_all">All tools →</a></li>
-                </ul>
-              </li>
-              <li class="nav-item jd-nav-cta"><a class="nav-link" href="/findme/" data-ga-event="cta_click" data-ga-name="nav_cta_findme">Take the free quiz</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+<nav class="navbar navbar-expand-lg bg-body-tertiary jd-nav" aria-label="Main">
+  <div class="container-fluid">
+    <a class="brand" href="/" data-ga-name="nav_logo"><img src="/assets/Jobsdoor360 -logos__black.png" alt="JobsDoor360 home" /></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#jdNavMenu" aria-controls="jdNavMenu" aria-expanded="false" aria-label="Open menu" data-ga-name="nav_menu_toggle"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="jdNavMenu">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="jd-dd-smart_decisions" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-ga-name="nav_smart_decisions">Smart Decisions</a>
+          <ul class="dropdown-menu" aria-labelledby="jd-dd-smart_decisions">
+            <li><a class="dropdown-item" href="/smart-decisions/career/" data-ga-name="nav_smart_career"><span class="jd-mi-t">Career decisions</span><span class="jd-mi-d">Which stream or career fits you</span></a></li>
+            <li><a class="dropdown-item" href="/smart-decisions/insurance/" data-ga-name="nav_smart_insurance"><span class="jd-mi-t">Insurance</span><span class="jd-mi-d">The cover you actually need</span></a></li>
+            <li><a class="dropdown-item" href="/smart-decisions/investment/" data-ga-name="nav_smart_investment"><span class="jd-mi-t">Property investment</span><span class="jd-mi-d">Price check before you buy</span></a></li>
+            <li><a class="dropdown-item" href="/smart-decisions/it-help/" data-ga-name="nav_smart_it_help"><span class="jd-mi-t">IT help</span><span class="jd-mi-d">Which tech expert to hire</span></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item jd-mi-all" href="/smart-decisions/" data-ga-name="nav_smart_all">All Smart Decisions →</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="jd-dd-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-ga-name="nav_courses">Courses</a>
+          <ul class="dropdown-menu" aria-labelledby="jd-dd-courses">
+            <li><a class="dropdown-item" href="/pricing/" data-ga-name="nav_courses_pricing"><span class="jd-mi-t">Courses &amp; fees</span><span class="jd-mi-d">Programming courses and internships</span></a></li>
+            <li><a class="dropdown-item" href="/placement/" data-ga-name="nav_courses_placement"><span class="jd-mi-t">Placement classes</span><span class="jd-mi-d">Interview and placement prep</span></a></li>
+            <li><a class="dropdown-item" href="/test/" data-ga-name="nav_courses_certifications"><span class="jd-mi-t">Free certifications</span><span class="jd-mi-d">Take a test, get certified</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/career-counselling/" data-ga-name="nav_career_counselling">Career Counselling</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="jd-dd-utility_tools" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-ga-name="nav_utility_tools">Utility Tools</a>
+          <ul class="dropdown-menu" aria-labelledby="jd-dd-utility_tools">
+            <li><a class="dropdown-item active" href="/tools/image-to-pdf/" data-ga-name="nav_tool_image_to_pdf" aria-current="page"><span class="jd-mi-t">Image to PDF</span><span class="jd-mi-d">JPG, PNG or WEBP into a PDF</span></a></li>
+            <li><a class="dropdown-item" href="/tools/merge-pdf/" data-ga-name="nav_tool_merge_pdf"><span class="jd-mi-t">Merge PDF</span><span class="jd-mi-d">Join several PDFs into one</span></a></li>
+            <li><a class="dropdown-item" href="/tools/word-to-pdf/" data-ga-name="nav_tool_word_to_pdf"><span class="jd-mi-t">Word to PDF</span><span class="jd-mi-d">Turn .docx files into PDFs</span></a></li>
+            <li><a class="dropdown-item" href="/tools/pdf-to-word/" data-ga-name="nav_tool_pdf_to_word"><span class="jd-mi-t">PDF to Word</span><span class="jd-mi-d">Get editable text from a PDF</span></a></li>
+            <li><a class="dropdown-item" href="/tools/merge-images/" data-ga-name="nav_tool_merge_images"><span class="jd-mi-t">Merge images</span><span class="jd-mi-d">Join images into one picture</span></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item jd-mi-all" href="/tools/" data-ga-name="nav_tools_all">All tools →</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="jd-dd-resources" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-ga-name="nav_resources">Resources</a>
+          <ul class="dropdown-menu" aria-labelledby="jd-dd-resources">
+            <li><a class="dropdown-item" href="/careeroptions/" data-ga-name="nav_res_careeroptions"><span class="jd-mi-t">Careers after 10th &amp; 12th</span><span class="jd-mi-d">Options after school and college</span></a></li>
+            <li><a class="dropdown-item" href="/careeroptions/industries/" data-ga-name="nav_res_industries"><span class="jd-mi-t">Industries &amp; sectors</span><span class="jd-mi-d">Every industry and its jobs</span></a></li>
+            <li><a class="dropdown-item" href="/blog/career-guide-by-big-people/" data-ga-name="nav_res_career_guide"><span class="jd-mi-t">Career advice from leaders</span></a></li>
+            <li><a class="dropdown-item" href="/biographies/" data-ga-name="nav_res_biographies"><span class="jd-mi-t">Biographies</span></a></li>
+            <li><a class="dropdown-item" href="/blog/businessplans/" data-ga-name="nav_res_businessplans"><span class="jd-mi-t">Business plans</span></a></li>
+            <li><a class="dropdown-item" href="/blog/govt-policies/" data-ga-name="nav_res_govt_policies"><span class="jd-mi-t">Government policies</span></a></li>
+            <li><a class="dropdown-item" href="/blog/ministries/" data-ga-name="nav_res_ministries"><span class="jd-mi-t">Ministries</span></a></li>
+            <li><a class="dropdown-item" href="/blog/societies/" data-ga-name="nav_res_societies"><span class="jd-mi-t">Societies</span></a></li>
+            <li><a class="dropdown-item" href="/motivation/" data-ga-name="nav_res_motivation"><span class="jd-mi-t">Motivation</span></a></li>
+            <li><a class="dropdown-item" href="/healthy-diet/" data-ga-name="nav_res_healthy_diet"><span class="jd-mi-t">Healthy diet</span></a></li>
+            <li><a class="dropdown-item" href="/blog/wealthy-healthy-and-satisfactory-life/" data-ga-name="nav_res_wealthy_life"><span class="jd-mi-t">Wealthy, healthy &amp; satisfying life</span></a></li>
+            <li><a class="dropdown-item" href="/blog/cricket-career/" data-ga-name="nav_res_cricket"><span class="jd-mi-t">Cricket career</span></a></li>
+            <li><a class="dropdown-item" href="/blog/awards/" data-ga-name="nav_res_awards"><span class="jd-mi-t">Awards</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-item jd-nav-cta"><a class="nav-link" href="/findme/" data-ga-event="cta_click" data-ga-name="nav_cta_findme">Take the free quiz</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
     </div>
     <main id="main">
       <header class="jd-tool-hero" data-ga-section="tool_hero">
@@ -88,85 +108,87 @@
       </section>
     </main>
     <div id="jd-footer-slot">
-      <footer class="jd-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-6 col-md-4 col-lg">
-              <h2>Smart Decisions</h2>
-              <ul>
-                <li><a class="jd-fl" href="/smart-decisions/career/">Career decisions</a></li>
-                <li><a class="jd-fl" href="/smart-decisions/insurance/">Insurance</a></li>
-                <li><a class="jd-fl" href="/smart-decisions/investment/">Property investment</a></li>
-                <li><a class="jd-fl" href="/smart-decisions/it-help/">IT help</a></li>
-                <li><a class="jd-fl" href="/findme/">Findme quiz</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg">
-              <h2>Learn &amp; grow</h2>
-              <ul>
-                <li><a class="jd-fl" href="/pricing/">Courses &amp; fees</a></li>
-                <li><a class="jd-fl" href="/placement/">Placement classes</a></li>
-                <li><a class="jd-fl" href="/test/">Free certifications</a></li>
-                <li><a class="jd-fl" href="/career-counselling/">Career counselling</a></li>
-                <li><a class="jd-fl" href="/apply/">Apply for a course</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg">
-              <h2>Utility Tools</h2>
-              <ul>
-                <li><a class="jd-fl" href="/tools/image-to-pdf/">Image to PDF</a></li>
-                <li><a class="jd-fl" href="/tools/merge-pdf/">Merge PDF</a></li>
-                <li><a class="jd-fl" href="/tools/word-to-pdf/">Word to PDF</a></li>
-                <li><a class="jd-fl" href="/tools/pdf-to-word/">PDF to Word</a></li>
-                <li><a class="jd-fl" href="/tools/merge-images/">Merge images</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg">
-              <h2>Career resources</h2>
-              <ul>
-                <li><a class="jd-fl" href="/careeroptions/">Careers after 10th &amp; 12th</a></li>
-                <li><a class="jd-fl" href="/careeroptions/industries/">Industries &amp; sectors</a></li>
-                <li><a class="jd-fl" href="/blog/career-guide-by-big-people/">Career advice from leaders</a></li>
-                <li><a class="jd-fl" href="/biographies/">Biographies</a></li>
-                <li><a class="jd-fl" href="/blog/businessplans/">Business plans</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg">
-              <h2>Company</h2>
-              <ul>
-                <li><a class="jd-fl" href="/about/">About us</a></li>
-                <li><a class="jd-fl" href="/results/">Our results</a></li>
-                <li><a class="jd-fl" href="/contactus/">Contact us</a></li>
-                <li><a class="jd-fl" href="/privacy/">Privacy policy</a></li>
-                <li><a class="jd-fl" href="/socialwork/donatebook/">Donate books</a></li>
-                <li><a class="jd-fl" href="/myaccount/">My account</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-1">
-            <div class="jd-social">
-              <a href="https://www.facebook.com/profile.php?id=100093276582711" target="_blank" rel="noopener" data-ga-name="social_facebook" aria-label="JobsDoor360 on Facebook"><img src="https://img.icons8.com/color/48/facebook-new.png" width="30" height="30" alt="" /></a>
-              <a href="https://www.instagram.com/jobsdoor360/" target="_blank" rel="noopener" data-ga-name="social_instagram" aria-label="JobsDoor360 on Instagram"><img src="https://img.icons8.com/color/48/instagram-new--v1.png" width="30" height="30" alt="" /></a>
-              <a href="https://www.linkedin.com/in/qualitywise-b05857275/" target="_blank" rel="noopener" data-ga-name="social_linkedin" aria-label="JobsDoor360 on LinkedIn"><img src="https://img.icons8.com/color/48/linkedin.png" width="30" height="30" alt="" /></a>
-              <a href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ" target="_blank" rel="noopener" data-ga-name="social_youtube" aria-label="JobsDoor360 on YouTube"><img src="https://img.icons8.com/color/48/youtube-play.png" width="30" height="30" alt="" /></a>
-            </div>
-            <a class="jd-fl" href="https://api.whatsapp.com/send?phone=918319349660&amp;text=I want to know more!" target="_blank" rel="noopener" data-ga-name="footer_whatsapp">Questions? Chat with us on WhatsApp</a>
-          </div>
-          <div class="jd-foot-bottom">
-            <p class="mb-1">Copyright JobsDoor360 © 2025. All rights reserved</p>
-            <p class="mb-0"><strong>Vinod</strong> · AIEEE AIR 10630, State Rank 602, BTech + MTech from ABV-IIITM Gwalior · <strong>12 years in IT companies</strong></p>
-          </div>
-        </div>
-      </footer>
-      <div class="chat-back-to-top" data-ga-section="whatsapp_widget"><a href="https://api.whatsapp.com/send?phone=918319349660&amp;text=I want to know more!" target="_blank" rel="noopener" style="font-size:14px;font-weight:500;color:black" data-ga-name="whatsapp_widget_text">Any question or complaint</a><div class="whatsapp-chat"><a href="https://api.whatsapp.com/send?phone=918319349660&amp;text=I want to know more!" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" data-ga-name="whatsapp_widget_icon"><i class="fab fa-whatsapp" style="font-size:27px;margin-bottom:13px" aria-hidden="true"></i></a></div><button id="backToTopBtn" class="back-to-top-btn" type="button" aria-label="Back to top" data-ga-name="back_to_top" style="display: none;"><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button></div>
+<footer class="jd-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-4 col-lg">
+        <h2>Smart Decisions</h2>
+        <ul>
+          <li><a class="jd-fl" href="/smart-decisions/career/">Career decisions</a></li>
+          <li><a class="jd-fl" href="/smart-decisions/insurance/">Insurance</a></li>
+          <li><a class="jd-fl" href="/smart-decisions/investment/">Property investment</a></li>
+          <li><a class="jd-fl" href="/smart-decisions/it-help/">IT help</a></li>
+          <li><a class="jd-fl" href="/findme/">Findme quiz</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4 col-lg">
+        <h2>Learn &amp; grow</h2>
+        <ul>
+          <li><a class="jd-fl" href="/pricing/">Courses &amp; fees</a></li>
+          <li><a class="jd-fl" href="/placement/">Placement classes</a></li>
+          <li><a class="jd-fl" href="/test/">Free certifications</a></li>
+          <li><a class="jd-fl" href="/career-counselling/">Career counselling</a></li>
+          <li><a class="jd-fl" href="/apply/">Apply for a course</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4 col-lg">
+        <h2>Utility Tools</h2>
+        <ul>
+          <li><a class="jd-fl" href="/tools/image-to-pdf/">Image to PDF</a></li>
+          <li><a class="jd-fl" href="/tools/merge-pdf/">Merge PDF</a></li>
+          <li><a class="jd-fl" href="/tools/word-to-pdf/">Word to PDF</a></li>
+          <li><a class="jd-fl" href="/tools/pdf-to-word/">PDF to Word</a></li>
+          <li><a class="jd-fl" href="/tools/merge-images/">Merge images</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4 col-lg">
+        <h2>Career resources</h2>
+        <ul>
+          <li><a class="jd-fl" href="/careeroptions/">Careers after 10th &amp; 12th</a></li>
+          <li><a class="jd-fl" href="/careeroptions/industries/">Industries &amp; sectors</a></li>
+          <li><a class="jd-fl" href="/blog/career-guide-by-big-people/">Career advice from leaders</a></li>
+          <li><a class="jd-fl" href="/biographies/">Biographies</a></li>
+          <li><a class="jd-fl" href="/blog/businessplans/">Business plans</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4 col-lg">
+        <h2>Company</h2>
+        <ul>
+          <li><a class="jd-fl" href="/about/">About us</a></li>
+          <li><a class="jd-fl" href="/results/">Our results</a></li>
+          <li><a class="jd-fl" href="/contactus/">Contact us</a></li>
+          <li><a class="jd-fl" href="/privacy/">Privacy policy</a></li>
+          <li><a class="jd-fl" href="/socialwork/donatebook/">Donate books</a></li>
+          <li><a class="jd-fl" href="/myaccount/">My account</a></li>
+          <li id="jd-logout-item" hidden><a class="jd-fl" href="/login/" id="jd-logout" data-ga-name="footer_logout">Log out</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-1">
+      <div class="jd-social">
+        <a href="https://www.facebook.com/profile.php?id=100093276582711" target="_blank" rel="noopener" data-ga-name="social_facebook" aria-label="JobsDoor360 on Facebook"><img src="https://img.icons8.com/color/48/facebook-new.png" width="30" height="30" alt="" /></a>
+        <a href="https://www.instagram.com/jobsdoor360/" target="_blank" rel="noopener" data-ga-name="social_instagram" aria-label="JobsDoor360 on Instagram"><img src="https://img.icons8.com/color/48/instagram-new--v1.png" width="30" height="30" alt="" /></a>
+        <a href="https://www.linkedin.com/in/qualitywise-b05857275/" target="_blank" rel="noopener" data-ga-name="social_linkedin" aria-label="JobsDoor360 on LinkedIn"><img src="https://img.icons8.com/color/48/linkedin.png" width="30" height="30" alt="" /></a>
+        <a href="https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ" target="_blank" rel="noopener" data-ga-name="social_youtube" aria-label="JobsDoor360 on YouTube"><img src="https://img.icons8.com/color/48/youtube-play.png" width="30" height="30" alt="" /></a>
+      </div>
+      <a class="jd-fl" href="https://api.whatsapp.com/send?phone=918319349660&amp;text=I want to know more!" target="_blank" rel="noopener" data-ga-name="footer_whatsapp">Questions? Chat with us on WhatsApp</a>
+    </div>
+    <div class="jd-foot-bottom">
+      <p class="mb-1">Copyright JobsDoor360 © 2025. All rights reserved</p>
+      <p class="mb-0"><strong>Vinod</strong> · AIEEE AIR 10630, State Rank 602, BTech + MTech from ABV-IIITM Gwalior · <strong>12 years in IT companies</strong></p>
+    </div>
+  </div>
+</footer>
+<div class="chat-back-to-top jd-widget" data-ga-section="whatsapp_widget"><a href="https://api.whatsapp.com/send?phone=918319349660&amp;text=I want to know more!" target="_blank" rel="noopener" style="font-size:14px;font-weight:500;color:black" data-ga-name="whatsapp_widget_text">Any question or complaint</a><div class="whatsapp-chat"><a href="https://api.whatsapp.com/send?phone=918319349660&amp;text=I want to know more!" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" data-ga-name="whatsapp_widget_icon"><i class="fab fa-whatsapp" style="font-size:27px;margin-bottom:13px" aria-hidden="true"></i></a></div><button id="backToTopBtn" class="back-to-top-btn" type="button" aria-label="Back to top" data-ga-name="back_to_top" style="display: none;"><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button></div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
-    <!-- back-to-top button behaviour (markup above) -->
-    <script type="module" src="/staticfiles/mainfiles/platform/layout.js?v=20261001"></script>
+    <!-- back-to-top button + footer "Log out" link (markup above) -->
+    <script type="module" src="/staticfiles/mainfiles/platform/layout.js?v=20261004"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk" crossorigin="anonymous"></script>
-    <script src="/staticfiles/mainfiles/tools/common.js?v=20261001"></script>
-    <script src="/staticfiles/mainfiles/tools/image-to-pdf/script.js?v=20261001"></script>
-    <script src="/staticfiles/mainfiles/tools/script.js?v=20261001"></script>
+    <script src="/staticfiles/mainfiles/tools/common.js?v=20261004"></script>
+    <script src="/staticfiles/mainfiles/tools/image-to-pdf/script.js?v=20261004"></script>
+    <script src="/staticfiles/mainfiles/tools/script.js?v=20261004"></script>
   </body>
 </html>

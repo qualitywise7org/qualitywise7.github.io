@@ -41,15 +41,20 @@
             <h3>Compare real policies side by side</h3>
             <p>Claim settlement ratios, exclusions, waiting periods and complaint history for the plans that match you.</p>
             <div class="sd-price">₹99 – ₹199</div>
-            <a class="sd-btn sd-btn-green" href="/contactus/" data-ga-event="upsell_click" data-ga-name="insurance_comparison_cta" data-ga-product="insurance_comparison" data-ga-price="99-199">Unlock the detailed comparison</a>
+            <a class="sd-btn sd-btn-green" href="/request-received/?for=insurance_comparison" data-ga-event="upsell_click" data-ga-name="insurance_comparison_cta" data-ga-product="insurance_comparison" data-ga-price="99-199">Unlock the detailed comparison</a>
             <small>One-time unlock.</small>
-            <a class="sd-upsell-alt" href="/contactus/" data-ga-event="upsell_click" data-ga-name="insurance_expert_call_cta" data-ga-product="insurance_expert_call" data-ga-price="499-999">Or talk to an insurance adviser (₹499 – ₹999 per session) →</a>
+            <a class="sd-upsell-alt" href="/request-received/?for=insurance_expert_call" data-ga-event="upsell_click" data-ga-name="insurance_expert_call_cta" data-ga-product="insurance_expert_call" data-ga-price="499-999">Or talk to an insurance adviser (₹499 – ₹999 per session) →</a>
           </div>
           <div class="sd-handoff" data-ga-section="next_step">Buying a home soon? <a href="/smart-decisions/investment/" data-ga-name="insurance_to_investment">Check property prices first →</a></div>
+          <%# Sign-in prompt switched OFF: results pages no longer send people to
+              the login page. To bring it back, move the block below out of this
+              comment and uncomment the matching lines in the page's script.js.
+
           <div class="sd-handoff sd-hidden" id="sd-signin-hint" data-ga-section="signup_prompt">
             Want a reminder when it's time to renew?
             <a id="sd-signin-link" href="/login/" data-ga-event="signup_prompt_click" data-ga-name="insurance_signup_prompt">Create a free profile →</a>
           </div>
+          -%>
           <div class="sd-btn-row" style="justify-content: center">
             <button type="button" class="sd-btn sd-btn-ghost" id="sd-restart" data-ga-name="form_start_over">Start over</button>
             <a class="sd-btn sd-btn-primary" href="/smart-decisions/" data-ga-name="see_all_smart_decisions">See all Smart Decisions</a>

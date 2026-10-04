@@ -1,106 +1,16 @@
 <%#
-  Shared bottom of <body> for the platform pages: footer, WhatsApp /
-  back-to-top widget, and the scripts every platform page needs.
-  Change the footer HERE and run `node compile.js`.
+  Bottom of <body> for the platform pages: the site footer + widget
+  (partials/layout/site-footer.ejs, shared with every other page) and the
+  scripts every platform page needs.
 
   Usage, after </main>:
     include('<relative path>/partials/platform/footer.ejs')
     ...then the page's own <script> tags.
 -%>
-<%_
-  const FOOTER = [
-    {
-      title: "Smart Decisions",
-      links: [
-        ["/smart-decisions/career/", "Career decisions"],
-        ["/smart-decisions/insurance/", "Insurance"],
-        ["/smart-decisions/investment/", "Property investment"],
-        ["/smart-decisions/it-help/", "IT help"],
-        ["/findme/", "Findme quiz"],
-      ],
-    },
-    {
-      title: "Learn & grow",
-      links: [
-        ["/pricing/", "Courses & fees"],
-        ["/placement/", "Placement classes"],
-        ["/test/", "Free certifications"],
-        ["/career-counselling/", "Career counselling"],
-        ["/apply/", "Apply for a course"],
-      ],
-    },
-    {
-      title: "Utility Tools",
-      links: [
-        ["/tools/image-to-pdf/", "Image to PDF"],
-        ["/tools/merge-pdf/", "Merge PDF"],
-        ["/tools/word-to-pdf/", "Word to PDF"],
-        ["/tools/pdf-to-word/", "PDF to Word"],
-        ["/tools/merge-images/", "Merge images"],
-      ],
-    },
-    {
-      title: "Career resources",
-      links: [
-        ["/careeroptions/", "Careers after 10th & 12th"],
-        ["/careeroptions/industries/", "Industries & sectors"],
-        ["/blog/career-guide-by-big-people/", "Career advice from leaders"],
-        ["/biographies/", "Biographies"],
-        ["/blog/businessplans/", "Business plans"],
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        ["/about/", "About us"],
-        ["/results/", "Our results"],
-        ["/contactus/", "Contact us"],
-        ["/privacy/", "Privacy policy"],
-        ["/socialwork/donatebook/", "Donate books"],
-        ["/myaccount/", "My account"],
-      ],
-    },
-  ];
-  const SOCIAL = [
-    ["https://www.facebook.com/profile.php?id=100093276582711", "https://img.icons8.com/color/48/facebook-new.png", "Facebook"],
-    ["https://www.instagram.com/jobsdoor360/", "https://img.icons8.com/color/48/instagram-new--v1.png", "Instagram"],
-    ["https://www.linkedin.com/in/qualitywise-b05857275/", "https://img.icons8.com/color/48/linkedin.png", "LinkedIn"],
-    ["https://www.youtube.com/channel/UCKs2I2QtwuMG4jKDycq6ZKQ", "https://img.icons8.com/color/48/youtube-play.png", "YouTube"],
-  ];
-  const WHATSAPP = "https://api.whatsapp.com/send?phone=918319349660&text=I want to know more!";
-_%>
 <div id="jd-footer-slot">
-      <footer class="jd-footer">
-        <div class="container">
-          <div class="row">
-<%_ FOOTER.forEach((c) => { _%>
-            <div class="col-6 col-md-4 col-lg">
-              <h2><%= c.title %></h2>
-              <ul>
-<%_   c.links.forEach(([href, label]) => { _%>
-                <li><a class="jd-fl" href="<%= href %>"><%= label %></a></li>
-<%_   }) _%>
-              </ul>
-            </div>
-<%_ }) _%>
-          </div>
-          <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mt-1">
-            <div class="jd-social">
-<%_ SOCIAL.forEach(([href, img, name]) => { _%>
-              <a href="<%= href %>" target="_blank" rel="noopener" data-ga-name="social_<%= name.toLowerCase() %>" aria-label="JobsDoor360 on <%= name %>"><img src="<%= img %>" width="30" height="30" alt="" /></a>
-<%_ }) _%>
-            </div>
-            <a class="jd-fl" href="<%= WHATSAPP %>" target="_blank" rel="noopener" data-ga-name="footer_whatsapp">Questions? Chat with us on WhatsApp</a>
-          </div>
-          <div class="jd-foot-bottom">
-            <p class="mb-1">Copyright JobsDoor360 © 2025. All rights reserved</p>
-            <p class="mb-0"><strong>Vinod</strong> · AIEEE AIR 10630, State Rank 602, BTech + MTech from ABV-IIITM Gwalior · <strong>12 years in IT companies</strong></p>
-          </div>
-        </div>
-      </footer>
-      <div class="chat-back-to-top" data-ga-section="whatsapp_widget"><a href="<%= WHATSAPP %>" target="_blank" rel="noopener" style="font-size:14px;font-weight:500;color:black" data-ga-name="whatsapp_widget_text">Any question or complaint</a><div class="whatsapp-chat"><a href="<%= WHATSAPP %>" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" data-ga-name="whatsapp_widget_icon"><i class="fab fa-whatsapp" style="font-size:27px;margin-bottom:13px" aria-hidden="true"></i></a></div><button id="backToTopBtn" class="back-to-top-btn" type="button" aria-label="Back to top" data-ga-name="back_to_top" style="display: none;"><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button></div>
+<%- include('../layout/site-footer.ejs') %>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
-    <!-- back-to-top button behaviour (markup above) -->
+    <!-- back-to-top button + footer "Log out" link (markup above) -->
     <script type="module" src="/staticfiles/mainfiles/platform/layout.js?v=<%= platform_version %>"></script>

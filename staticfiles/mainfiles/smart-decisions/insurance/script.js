@@ -5,7 +5,7 @@ import {
   getCurrentUser,
   saveSmartProfile,
   track,
-  loginUrlBack,
+  // loginUrlBack, // used by the sign-in prompt, which is switched off
 } from "/staticfiles/mainfiles/platform/common.js?v=20261001";
 
 const FORM_FIELDS = [
@@ -110,10 +110,11 @@ function submit(e) {
     await saveSmartProfile(user?.email, {
       insurance: { answers: a, recommended: recos.map((r) => r.type), completedAt: new Date().toISOString() },
     });
-    if (!user) {
-      $("sd-signin-hint").classList.remove("sd-hidden");
-      $("sd-signin-link").href = loginUrlBack();
-    }
+    // Sign-in prompt switched OFF (see the commented block in this page's index.ejs):
+    // if (!user) {
+    //   $("sd-signin-hint").classList.remove("sd-hidden");
+    //   $("sd-signin-link").href = loginUrlBack();
+    // }
   })();
 }
 

@@ -36,10 +36,15 @@
             <p class="sd-section-sub">Based on your answers. You can explore anything else whenever you like.</p>
           </div>
           <div id="sd-recos"></div>
+          <%# Sign-in prompt switched OFF: results pages no longer send people to
+              the login page. To bring it back, move the block below out of this
+              comment and uncomment the matching lines in the page's script.js.
+
           <div class="sd-handoff sd-hidden" id="sd-signin-hint" data-ga-section="signup_prompt">
             Want us to remember this so every page fits you better?
             <a id="sd-signin-link" href="/login/" data-ga-event="signup_prompt_click" data-ga-name="findme_signup_prompt">Create a free profile →</a>
           </div>
+          -%>
           <div class="sd-btn-row" style="justify-content: center">
             <button type="button" class="sd-btn sd-btn-ghost" id="sd-restart" data-ga-name="quiz_retake">Retake the quiz</button>
             <a class="sd-btn sd-btn-primary" href="/smart-decisions/" data-ga-name="see_all_smart_decisions">See all Smart Decisions</a>

@@ -9,7 +9,7 @@ import {
   getCurrentUser,
   saveSmartProfile,
   track,
-  loginUrlBack,
+  // loginUrlBack, // used by the sign-in prompt, which is switched off
   createQuiz,
   scoreAnswers,
 } from "/staticfiles/mainfiles/platform/common.js?v=20261001";
@@ -145,10 +145,11 @@ function showResult(answers) {
       career: { stream: top, confidence, scores: score, completedAt: new Date().toISOString() },
     });
     await saveAttemptToExistingReport(user?.email, answers, { matched: score[top], confidence });
-    if (!user) {
-      $("sd-signin-hint").classList.remove("sd-hidden");
-      $("sd-signin-link").href = loginUrlBack();
-    }
+    // Sign-in prompt switched OFF (see the commented block in this page's index.ejs):
+    // if (!user) {
+    //   $("sd-signin-hint").classList.remove("sd-hidden");
+    //   $("sd-signin-link").href = loginUrlBack();
+    // }
   })();
 }
 

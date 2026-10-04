@@ -1,8 +1,7 @@
 /* ============================================================
    JobsDoor360 platform styles SHARED by every platform page
    (homepage, Smart Decisions, Findme, Career Counselling, Utility
-   Tools): colours, navbar, footer, hero, cards, quiz, buttons,
-   results, tool cards.
+   Tools): hero, cards, quiz, buttons, results, tool cards.
    Page-only styles live next to each page's script:
      /staticfiles/mainfiles/home/style.css
      /staticfiles/mainfiles/career-counselling/style.css
@@ -11,20 +10,9 @@
    existing site CSS. Palette matches the existing site:
      navy #1d2559 / #2b3990 / #1e3a8a, blue #3b82f6, green #28a745
    ============================================================ */
-:root {
-  --sd-navy: #1d2559;
-  --sd-brand: #2b3990;
-  --sd-blue: #1e3a8a;
-  --sd-blue-light: #3b82f6;
-  --sd-green: #1e7e34;
-  --sd-green-light: #40c351;
-  --sd-ink: #23262f;
-  --sd-muted: #5f6675;
-  --sd-bg: #f5f7fb;
-  --sd-card: #ffffff;
-  --sd-border: #e5e8f0;
-  --sd-focus: #2563eb;
-}
+/* Colours (:root), navbar, footer and the WhatsApp widget live in
+   /staticfiles/mainfiles/platform/layout.css, loaded on every page. */
+
 
 body.sd-body {
   background: var(--sd-bg);
@@ -38,60 +26,6 @@ body.sd-body {
   outline: 3px solid var(--sd-focus);
   outline-offset: 2px;
 }
-
-/* ================= Navbar (shared) ================= */
-#jd-navbar-slot { min-height: 82px; }            /* reserve space: no jump when the nav loads */
-.jd-nav .dropdown-menu { border-radius: 12px; border: 1px solid var(--sd-border); box-shadow: 0 12px 32px rgba(29, 37, 89, 0.14); padding: 8px; min-width: 270px; }
-.jd-nav .dropdown-item { border-radius: 8px; padding: 8px 12px; white-space: normal; }
-.jd-nav .dropdown-item:hover, .jd-nav .dropdown-item:focus { background: #eef2ff; transform: none !important; }
-.jd-nav .dropdown-item.active, .jd-nav .dropdown-item:active { background: #e0e7ff; color: var(--sd-navy); }
-.jd-nav .jd-mi-t { display: block; font-weight: 600; color: var(--sd-navy); font-size: 0.98rem; }
-.jd-nav .jd-mi-d { display: block; color: var(--sd-muted); font-size: 0.82rem; margin-top: 1px; }
-.jd-nav .dropdown-item.jd-mi-all { font-weight: 600; color: var(--sd-brand); font-size: 0.92rem; }
-.jd-nav .nav-link.active { color: var(--sd-brand); }
-.jd-nav .jd-nav-cta .nav-link {
-  background: var(--sd-brand);
-  color: #fff !important;
-  border: 1px solid var(--sd-brand);
-  border-radius: 1.5rem;
-  padding: 0.35rem 1.1rem !important;
-  white-space: nowrap;
-}
-.jd-nav .jd-nav-cta .nav-link:hover { background: #fff; color: var(--sd-brand) !important; }
-@media (max-width: 991.98px) {
-  .jd-nav .navbar-nav { gap: 0.25rem !important; padding-top: 10px; }
-  .jd-nav .dropdown-menu { box-shadow: none; border: none; padding-left: 10px; }
-  .jd-nav .jd-nav-cta { margin-top: 8px; }
-  .jd-nav .jd-nav-cta .nav-link { display: inline-block; }
-}
-
-/* ================= Footer (shared) ================= */
-.jd-footer { background: #1d2559; color: #fff; padding: 40px 0 22px; }
-.jd-footer h2 { font-size: 0.86rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px; color: #fff; }
-.jd-footer ul { list-style: none; padding: 0; margin: 0 0 18px; }
-.jd-footer li { margin-bottom: 6px; }
-.jd-footer a.jd-fl { color: #dfe3f5; text-decoration: none; font-size: 0.93rem; transition: color 0.2s ease; }
-.jd-footer a.jd-fl:hover { color: #40c351; }
-.jd-footer .jd-social { display: flex; gap: 14px; margin-top: 4px; }
-.jd-footer .jd-social a { transition: transform 0.2s ease; display: inline-block; }
-.jd-footer .jd-social a:hover { transform: scale(1.1); }
-.jd-footer .jd-foot-bottom { border-top: 1px solid rgba(255, 255, 255, 0.14); margin-top: 10px; padding-top: 16px; text-align: center; font-size: 0.84rem; color: #c9cfe8; }
-.jd-footer .jd-foot-bottom strong { color: #fff; }
-
-/* The legacy site widget is a wide purple pill. Keep WhatsApp available
-   on the new product pages without letting it cover cards or CTAs. */
-.sd-body .chat-back-to-top {
-  bottom: 18px;
-  right: 18px;
-  padding: 0;
-  gap: 8px;
-  background: transparent;
-  border-radius: 0;
-  z-index: 1050;
-}
-.sd-body .chat-back-to-top > a:first-child { display: none !important; }
-.sd-body .chat-back-to-top .whatsapp-chat { width: 46px; height: 46px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
-.sd-body .chat-back-to-top .back-to-top-btn { width: 36px; height: 36px; }
 
 /* ================= Page hero ================= */
 .sd-hero {

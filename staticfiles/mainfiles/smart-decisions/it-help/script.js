@@ -4,7 +4,7 @@ import {
   getCurrentUser,
   saveSmartProfile,
   track,
-  loginUrlBack,
+  // loginUrlBack, // used by the sign-in prompt, which is switched off
   createQuiz,
   scoreAnswers,
 } from "/staticfiles/mainfiles/platform/common.js?v=20261001";
@@ -80,10 +80,11 @@ function showResult(answers) {
   (async () => {
     const user = await getCurrentUser();
     await saveSmartProfile(user?.email, { it: { need: key, at: new Date().toISOString() } });
-    if (!user) {
-      $("sd-signin-hint").classList.remove("sd-hidden");
-      $("sd-signin-link").href = loginUrlBack();
-    }
+    // Sign-in prompt switched OFF (see the commented block in this page's index.ejs):
+    // if (!user) {
+    //   $("sd-signin-hint").classList.remove("sd-hidden");
+    //   $("sd-signin-link").href = loginUrlBack();
+    // }
   })();
 }
 
