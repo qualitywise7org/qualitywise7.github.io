@@ -11,7 +11,10 @@ const data = {
   societies_data: require("../staticfiles/mainfiles/careeroptions/societies/societies_data.json"),
   government_department_which_provide_jobs_data: require("../staticfiles/mainfiles/careeroptions/government-department-which-provide-jobs/government_department_which_provide_jobs_data.json"),
   ministry_data: require("../staticfiles/mainfiles/careeroptions/ministries/ministry_data.json"),
-  master_data: require('../website_data/website_masterdata.js')
+  master_data: require('../website_data/website_masterdata.js'),
+  // cache-busting version for the platform pages' CSS/JS (?v=...);
+  // bump it when you change files in staticfiles/mainfiles/platform etc.
+  platform_version: "20261004",
 };
 
 function readFolder(dir) {
@@ -36,7 +39,13 @@ function ejsCompile(filePath, data) {
   //let finalPath = filePath;//path.join(__dirname,filePath);
   console.log("ejs file = " + filePath);
 
-  ejs.renderFile(filePath, data, function (err, data) {
+  // page_path = the page's URL, e.g. "/tools/merge-pdf/" or "/biographies/BillGates.html".
+  // The shared header (partials/layout/site-navbar.ejs) uses it to mark the current page.
+  const rel = filePath.split("main-files")[1].split(path.sep).join("/");
+  const page_path = rel.endsWith("/index.ejs") ? rel.slice(0, -"index.ejs".length) : rel.replace(/\.ejs$/, ".html");
+  const pageData = Object.assign({}, data, { page_path });
+
+  ejs.renderFile(filePath, pageData, function (err, data) {
     if (err) console.log(err);
     writeOutput(filePath, data);
   });

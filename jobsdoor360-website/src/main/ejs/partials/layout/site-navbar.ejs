@@ -1,0 +1,119 @@
+<%#
+  THE site header, used on every page (old and new):
+    partials/navbar.ejs           (older pages)
+    partials/platform/navbar.ejs  (platform pages)
+  both include this file. Change the menu HERE and run `node compile.js`.
+  Styles: /staticfiles/mainfiles/platform/layout.css
+
+  The current page comes from `path` if the page passes it, otherwise from
+  `page_path`, which ejs_compiler.js sets for every page. It marks the
+  current page and its menu group as active.
+
+  Menu groups:
+    Smart Decisions    - the 4 decision helpers (career, insurance, property, IT)
+    Courses            - course, placement and certification pages
+    Career Counselling
+    Utility Tools      - PDF / image tools
+    Resources          - career guides and blog pages (the old Career + Blogs menus)
+    CTA                - Findme quiz ("not sure where to start?")
+-%>
+<%_
+  const NAV = [
+    {
+      label: "Smart Decisions", ga: "nav_smart_decisions", base: "/smart-decisions/",
+      items: [
+        { href: "/smart-decisions/career/", title: "Career decisions", desc: "Which stream or career fits you", ga: "nav_smart_career" },
+        { href: "/smart-decisions/insurance/", title: "Insurance", desc: "The cover you actually need", ga: "nav_smart_insurance" },
+        { href: "/smart-decisions/investment/", title: "Property investment", desc: "Price check before you buy", ga: "nav_smart_investment" },
+        { href: "/smart-decisions/it-help/", title: "IT help", desc: "Which tech expert to hire", ga: "nav_smart_it_help" },
+      ],
+      all: { href: "/smart-decisions/", title: "All Smart Decisions", ga: "nav_smart_all" },
+    },
+    {
+      label: "Courses", ga: "nav_courses", base: null,
+      items: [
+        { href: "/pricing/", title: "Courses & fees", desc: "Programming courses and internships", ga: "nav_courses_pricing" },
+        { href: "/placement/", title: "Placement classes", desc: "Interview and placement prep", ga: "nav_courses_placement" },
+        { href: "/test/", title: "Free certifications", desc: "Take a test, get certified", ga: "nav_courses_certifications" },
+      ],
+    },
+    { label: "Career Counselling", href: "/career-counselling/", ga: "nav_career_counselling" },
+    {
+      label: "Utility Tools", ga: "nav_utility_tools", base: "/tools/",
+      items: [
+        { href: "/tools/image-to-pdf/", title: "Image to PDF", desc: "JPG, PNG or WEBP into a PDF", ga: "nav_tool_image_to_pdf" },
+        { href: "/tools/merge-pdf/", title: "Merge PDF", desc: "Join several PDFs into one", ga: "nav_tool_merge_pdf" },
+        { href: "/tools/word-to-pdf/", title: "Word to PDF", desc: "Turn .docx files into PDFs", ga: "nav_tool_word_to_pdf" },
+        { href: "/tools/pdf-to-word/", title: "PDF to Word", desc: "Get editable text from a PDF", ga: "nav_tool_pdf_to_word" },
+        { href: "/tools/merge-images/", title: "Merge images", desc: "Join images into one picture", ga: "nav_tool_merge_images" },
+      ],
+      all: { href: "/tools/", title: "All tools", ga: "nav_tools_all" },
+    },
+    {
+      label: "Resources", ga: "nav_resources", base: null,
+      items: [
+        { href: "/careeroptions/", title: "Careers after 10th & 12th", desc: "Options after school and college", ga: "nav_res_careeroptions" },
+        { href: "/careeroptions/industries/", title: "Industries & sectors", desc: "Every industry and its jobs", ga: "nav_res_industries" },
+        { href: "/blog/career-guide-by-big-people/", title: "Career advice from leaders", ga: "nav_res_career_guide" },
+        { href: "/biographies/", title: "Biographies", ga: "nav_res_biographies" },
+        { href: "/blog/businessplans/", title: "Business plans", ga: "nav_res_businessplans" },
+        { href: "/blog/govt-policies/", title: "Government policies", ga: "nav_res_govt_policies" },
+        { href: "/blog/ministries/", title: "Ministries", ga: "nav_res_ministries" },
+        { href: "/blog/societies/", title: "Societies", ga: "nav_res_societies" },
+        { href: "/motivation/", title: "Motivation", ga: "nav_res_motivation" },
+        { href: "/healthy-diet/", title: "Healthy diet", ga: "nav_res_healthy_diet" },
+        { href: "/blog/wealthy-healthy-and-satisfactory-life/", title: "Wealthy, healthy & satisfying life", ga: "nav_res_wealthy_life" },
+        { href: "/blog/cricket-career/", title: "Cricket career", ga: "nav_res_cricket" },
+        { href: "/blog/awards/", title: "Awards", ga: "nav_res_awards" },
+      ],
+    },
+  ];
+  const NAV_CTA = { href: "/findme/", label: "Take the free quiz", ga: "nav_cta_findme" };
+
+  const raw = (typeof locals.path === "string" && locals.path) || locals.page_path || "/";
+  const here = raw.endsWith("/") || raw.endsWith(".html") ? raw : raw + "/";
+  const slugOf = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+  const active = (on) => (on ? " active" : "");
+  const current = (href) => (href === here ? ' aria-current="page"' : "");
+_%>
+<nav class="navbar navbar-expand-lg bg-body-tertiary jd-nav" aria-label="Main">
+  <div class="container-fluid">
+    <a class="brand" href="/" data-ga-name="nav_logo"><img src="/assets/Jobsdoor360 -logos__black.png" alt="JobsDoor360 home" /></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#jdNavMenu" aria-controls="jdNavMenu" aria-expanded="false" aria-label="Open menu" data-ga-name="nav_menu_toggle"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="jdNavMenu">
+      <ul class="navbar-nav align-items-lg-center">
+<%_ NAV.forEach((g) => { _%>
+<%_   if (!g.items) { _%>
+        <li class="nav-item"><a class="nav-link<%= active(here === g.href) %>" href="<%= g.href %>" data-ga-name="<%= g.ga %>"<%- current(g.href) %>><%= g.label %></a></li>
+<%_   } else { _%>
+<%_     const inGroup = g.base ? here.startsWith(g.base) : g.items.some((it) => it.href === here); _%>
+<%_     const id = "jd-dd-" + slugOf(g.label); _%>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle<%= active(inGroup) %>" href="#" id="<%= id %>" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-ga-name="<%= g.ga %>"><%= g.label %></a>
+          <ul class="dropdown-menu" aria-labelledby="<%= id %>">
+<%_     g.items.forEach((it) => { _%>
+            <li><a class="dropdown-item<%= active(it.href === here) %>" href="<%= it.href %>" data-ga-name="<%= it.ga %>"<%- current(it.href) %>><span class="jd-mi-t"><%= it.title %></span><% if (it.desc) { %><span class="jd-mi-d"><%= it.desc %></span><% } %></a></li>
+<%_     }) _%>
+<%_     if (g.all) { _%>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item jd-mi-all<%= active(g.all.href === here) %>" href="<%= g.all.href %>" data-ga-name="<%= g.all.ga %>"<%- current(g.all.href) %>><%= g.all.title %> →</a></li>
+<%_     } _%>
+          </ul>
+        </li>
+<%_   } _%>
+<%_ }) _%>
+        <li class="nav-item jd-nav-cta"><a class="nav-link" href="<%= NAV_CTA.href %>" data-ga-event="cta_click" data-ga-name="<%= NAV_CTA.ga %>"><%= NAV_CTA.label %></a></li>
+<%#
+  Login / Sign up are switched OFF for now, so the header never sends people
+  to the login page. To switch them back on, move these two lines out of
+  this comment:
+
+        <li class="nav-item"><a class="nav-link" href="/login/" data-ga-name="nav_login">Login</a></li>
+        <li class="nav-item jd-nav-cta"><a class="nav-link" href="/signup/" data-ga-name="nav_signup">Sign up</a></li>
+
+  Signed-in users can still open "My account" and "Log out" from the footer.
+-%>
+      </ul>
+    </div>
+  </div>
+</nav>

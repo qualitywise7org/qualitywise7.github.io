@@ -1,549 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>
-      DSA certification program
-    </title>
-    <meta
-      name="description"
-      content="Unlock Your Career Potential with JobsDoor360: Expert DSA Programs & Internships. Learn Full Stack, Java, and Web Development. Advance Your Career with Industry Professionals. Gain In-Demand Skills for Software Jobs. Practice Interviews and Perfect Your CV"
-    />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/style.css" />
-    
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <style>
-      .forward_link {
-        color: #3d3b40;
-      }
-      .goal_div:hover {
-        background-color: lightgray;
-      }
-      .goal_div {
-        border-bottom: 1px solid gray;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        padding-inline: 40px;
-        padding-block: 14px;
-      }
-
-      .whatsapp-chat-btn {
-        display: inline-block;
-        background-color: #25d366;
-        color: #fff;
-        padding: 5px 5px;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-      }
-
-      .whatsapp-chat-btn:hover {
-        background-color: #128c7e;
-      }
-    </style>
-
-    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/platform/head.ejs', {
+      title: "JobsDoor360 | Clear next steps for careers, learning and everyday work",
+      description: "JobsDoor360 helps students, parents and working people make clearer decisions about careers, learning, insurance, property and tech. Start free with a quiz or a practical tool.",
+      canonical: "https://jobsdoor360.in/",
+      styles: ["/staticfiles/mainfiles/home/style.css"],
+    }) -%>
   </head>
-
-  <body>
-    <!-- Navbar -->
-    <%- include('../partials/navbar.ejs') %>
-   
-    <section>
-        <div class="dsa-poster">
-            <style>
-                .dsa-poster {
-                    margin: 20px;
-                    padding: 40px 30px;
-                    background: linear-gradient(180deg, #0b335a, #06233d);
-                    color: #ffffff;
-                    border-radius: 18px;
-                    font-family: 'Poppins', Arial, sans-serif;
-                    text-align: center;
-                    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-                }
-
-                /* -------- TITLE -------- */
-                .dsa-poster h1 {
-                    font-size: 2.8rem;
-                    font-weight: 800;
-                    margin: 0 0 15px;
-                    white-space: nowrap; /* ensures one line */
-                }
-                .dsa-poster .highlight {
-                    color: #FFC936;
-                }
-
-                /* -------- SUBTITLE -------- */
-                .dsa-poster .subtitle {
-                    font-size: 1.3rem;
-                    opacity: 0.95;
-                    margin-bottom: 30px;
-                }
-
-                /* -------- GRID -------- */
-                .dsa-items {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 15px;
-                    max-width: 800px;
-                    margin: 0 auto 35px;
-                }
-
-                .dsa-item {
-                    font-size: 1.1rem;
-                    padding: 14px 18px;
-                    background: rgba(255,255,255,0.12);
-                    border-radius: 10px;
-                }
-
-                /* -------- BOTTOM SECTION -------- */
-                .dsa-poster .bottom {
-                    font-size: 1.1rem;
-                    margin-bottom: 30px;
-                }
-
-                /* -------- CTA BUTTON -------- */
-                .dsa-poster .cta-btn {
-                    display: inline-block;
-                    padding: 14px 35px;
-                    font-size: 1.3rem;
-                    font-weight: bold;
-                    background: #FFC936;
-                    color: #000;
-                    border-radius: 50px;
-                    text-decoration: none;
-                    transition: 0.2s ease-in-out;
-                }
-                .dsa-poster .cta-btn:hover {
-                    transform: scale(1.05);
-                    filter: brightness(1.1);
-                }
-
-                .apply-link {
-                    margin-top: 15px;
-                    display: block;
-                    font-size: 1rem;
-                    opacity: 0.9;
-                    color: #FFC936;
-                    text-decoration: none;
-                    word-break: break-all;
-                }
-
-                /* ----- SUBTITLE ROW ----- */
-                .subtitle-row {
-                    max-width: 600px;
-                    display: flex;
-                    justify-content: center;
-                    gap: 10px;
-                    flex-wrap: nowrap; /* Desktop: single row */
-                    margin: 0 auto 35px;
-                }
-
-                .subtitle-row .subtitle {
-                    font-size: 1.3rem;
-                    opacity: 0.95;
-                    margin: 0;
-
-                    flex: 1 1 auto; 
-                    min-width: 150px; /* ensures wrapping on mobile */
-                    text-align: center;
-                }
-
-
-                /* -------- MOBILE RESPONSIVE -------- */
-                @media (max-width: 768px) {
-                    .dsa-items {
-                        grid-template-columns: 1fr;
-                    }
-
-                    .dsa-poster h1 {
-                        font-size: 2.2rem;
-                        white-space: normal; /* allow wrap on small screens */
-                    }
-
-                    .dsa-poster .subtitle {
-                        font-size: 1.15rem;
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .subtitle-row {
-                        flex-wrap: wrap; /* allow multiple lines */
-                    }
-                    .subtitle-row .subtitle {
-                        font-size: 1.15rem;
-                    }
-                }
-            </style>
-
-            <h1>🚀 MASTER <span class="highlight">DSA</span> IN 1 MONTH</h1>
-            <div class="subtitle-row">
-                <p class="subtitle">• Get Certified</p>
-                <p class="subtitle">• Get Interview-Ready</p>
-                <p class="subtitle">• Get Hired</p>
-            </div>
-            
-            <div class="dsa-items">
-                <div class="dsa-item">📅 Live Classes Every Saturday</div>
-                <div class="dsa-item">🎯 Placement-Focused Training</div>
-                <div class="dsa-item">💼 Suitable for Students & Job Seekers</div>
-                <div class="dsa-item">📜 Certification Included</div>
-            </div>
-
-            <div class="bottom">
-                <p><strong>DSA = Core Skill for Tech Placements</strong></p>
-                <p>Build strong fundamentals & crack top interviews</p>
-            </div>
-
-            <a class="cta-btn" href="https://jobsdoor360.in/apply/" target="_blank">Apply Now</a>
+  <body class="jd-home sd-body" data-ga-module="homepage">
+    <%- include('../partials/platform/navbar.ejs', { path: "/" }) -%>
+    <main id="main">
+      <header class="jd-home-hero" data-ga-section="hero">
+        <h1>Clear next steps for your career, money and work.</h1>
+        <p>Start with a free quiz when you need direction, learn a practical skill when you are ready, or use a quick tool and get on with your day.</p>
+        <div class="jd-cta-row">
+          <a class="sd-btn sd-btn-light" href="/findme/" data-ga-event="cta_click" data-ga-name="homepage_findme">I don't know where to start</a>
+          <a class="sd-btn sd-btn-outline-light" href="/tools/" data-ga-event="cta_click" data-ga-name="homepage_tools">Open Utility Tools</a>
         </div>
-    </section>
-     
+        <p class="jd-hero-note">Free to start. No account needed for the quizzes or tools.</p>
+      </header>
 
-    <!-- Testimonials Section -->
-    <section>
-      <div class="testimonial">
-        <div
-          id="carouselExampleSlidesOnly"
-          class="carousel fade-carousel"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="3000">
-              <div class="d-flex w-100" style="padding: 20px">
-                <div class="quote">
-                  <img
-                    class="left-quote"
-                    src="./assets/left-quotes.png"
-                    alt="left-quote"
-                  />
-                  <h2>
-                    Thanks to Jobsdoor360, I now possess the DSA
-                    skills and IT expertise to excel in my dream career.
-                  </h2>
-                  <img
-                    class="right-quote"
-                    src="./assets/right-quotes.png"
-                    alt="right-quote"
-                  />
-                </div>
-
-                <h3 class="name">Shivam</h3>
-              </div>
+      <div class="sd-wrap">
+        <section class="jd-home-block" data-ga-section="smart_decisions">
+          <div class="jd-home-head">
+            <div>
+              <h2>Make a decision</h2>
+              <p>Get a plain answer before you spend money, pick a stream or hire someone.</p>
             </div>
-            <div class="carousel-item" data-bs-interval="3000">
-              <div class="d-flex w-100" style="padding: 20px">
-                <div class="quote">
-                  <img
-                    class="left-quote"
-                    src="./assets/left-quotes.png"
-                    alt="left-quote"
-                  />
-                  <h2>
-                    With Jobsdoor360 by my side, I confidently embarked on
-                    a successful journey into web development and beyond.
-                  </h2>
-                  <img
-                    class="right-quote"
-                    src="./assets/right-quotes.png"
-                    alt="right-quote"
-                  />
-                </div>
+            <a class="jd-see-all" href="/smart-decisions/" data-ga-name="homepage_all_smart_decisions">See all Smart Decisions →</a>
+          </div>
+          <div class="sd-grid">
+            <a class="sd-card" href="/smart-decisions/career/" data-ga-name="homepage_smart_career">
+              <div class="sd-ico"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+              <span class="sd-tag free">Free quiz · 3 min</span>
+              <h3>Career decisions</h3>
+              <p>Not sure about a stream or career? Get a direction to start from.</p>
+              <span class="sd-go">Find my direction →</span>
+            </a>
+            <a class="sd-card" href="/smart-decisions/insurance/" data-ga-name="homepage_smart_insurance">
+              <div class="sd-ico"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></div>
+              <span class="sd-tag free">Free needs check</span>
+              <h3>Insurance</h3>
+              <p>See which cover matters for your situation before anyone pitches a policy.</p>
+              <span class="sd-go">Check what I need →</span>
+            </a>
+            <a class="sd-card" href="/smart-decisions/investment/" data-ga-name="homepage_smart_investment">
+              <div class="sd-ico"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+              <span class="sd-tag free">Free snapshot</span>
+              <h3>Property investment</h3>
+              <p>Get a quick price picture for your city before you put money into a flat.</p>
+              <span class="sd-go">Check property prices →</span>
+            </a>
+            <a class="sd-card" href="/smart-decisions/it-help/" data-ga-name="homepage_smart_it_help">
+              <div class="sd-ico"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
+              <span class="sd-tag free">Free · 4 questions</span>
+              <h3>IT help</h3>
+              <p>Website broken or building something? Work out the kind of expert you need.</p>
+              <span class="sd-go">Find out who I need →</span>
+            </a>
+          </div>
+        </section>
 
-                <h3 class="name">Yash</h3>
-              </div>
+        <section class="jd-home-block" data-ga-section="learning">
+          <div class="jd-home-head">
+            <div>
+              <h2>Learn and build your career</h2>
+              <p>Courses, placement preparation and guidance for students and parents.</p>
             </div>
-            <div class="carousel-item" data-bs-interval="3000">
-              <div class="d-flex w-100" style="padding: 20px">
-                <div class="quote">
-                  <img
-                    class="left-quote"
-                    src="./assets/left-quotes.png"
-                    alt="left-quote"
-                  />
-                  <h2>
-                    If you want to ace your placement and master the art
-                    of cracking job interviews, Jobsdoor360 is the place to be!
-                  </h2>
-                  <img
-                    class="right-quote"
-                    src="./assets/right-quotes.png"
-                    alt="right-quote"
-                  />
-                </div>
+            <a class="jd-see-all" href="/pricing/" data-ga-name="homepage_courses_fees">Courses and fees →</a>
+          </div>
+          <div class="sd-grid">
+            <a class="sd-card" href="/pricing/" data-ga-name="homepage_courses">
+              <div class="sd-ico"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+              <span class="sd-tag">Courses</span>
+              <h3>Programming courses</h3>
+              <p>Focused learning in DSA, full stack development, Java and more.</p>
+              <span class="sd-go">See courses and fees →</span>
+            </a>
+            <a class="sd-card" href="/placement/" data-ga-name="homepage_placement">
+              <div class="sd-ico"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div>
+              <span class="sd-tag">Placement prep</span>
+              <h3>Placement classes</h3>
+              <p>Prepare for interviews, internships and job applications with a proper plan.</p>
+              <span class="sd-go">Explore placement prep →</span>
+            </a>
+            <a class="sd-card" href="/test/" data-ga-name="homepage_certifications">
+              <div class="sd-ico"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+              <span class="sd-tag free">Free to try</span>
+              <h3>Certifications</h3>
+              <p>Test what you know and build a record of the skills you have worked on.</p>
+              <span class="sd-go">Take a certification test →</span>
+            </a>
+            <a class="sd-card" href="/career-counselling/" data-ga-name="homepage_counselling">
+              <div class="sd-ico"><i class="fa-solid fa-people-arrows" aria-hidden="true"></i></div>
+              <span class="sd-tag">Students and parents</span>
+              <h3>Career counselling</h3>
+              <p>Start free, buy a report when you need one, or speak to a counsellor.</p>
+              <span class="sd-go">See the options →</span>
+            </a>
+          </div>
+        </section>
 
-                <h3 class="name">Jatin</h3>
-              </div>
+        <section class="jd-home-block" data-ga-section="utility_tools">
+          <div class="jd-home-head">
+            <div>
+              <h2>Utility Tools</h2>
+              <p>Free file tools. Add your files, choose what you need, download the result.</p>
+            </div>
+            <a class="jd-see-all" href="/tools/" data-ga-name="homepage_all_tools">See all tools →</a>
+          </div>
+          <div class="jd-tool-grid">
+            <a class="jd-tool-card jd-c-img" href="/tools/image-to-pdf/" data-ga-name="homepage_tool_image_to_pdf">
+              <div class="jd-tool-ico"><i class="fa-solid fa-file-image" aria-hidden="true"></i></div><h3>Image to PDF</h3><p>Turn JPG, PNG or WEBP images into one PDF.</p>
+            </a>
+            <a class="jd-tool-card jd-c-mpdf" href="/tools/merge-pdf/" data-ga-name="homepage_tool_merge_pdf">
+              <div class="jd-tool-ico"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div><h3>Merge PDF</h3><p>Put multiple PDFs together in the order you choose.</p>
+            </a>
+            <a class="jd-tool-card jd-c-w2p" href="/tools/word-to-pdf/" data-ga-name="homepage_tool_word_to_pdf">
+              <div class="jd-tool-ico"><i class="fa-solid fa-file-word" aria-hidden="true"></i></div><h3>Word to PDF</h3><p>Convert modern Word .docx files into PDFs.</p>
+            </a>
+            <a class="jd-tool-card jd-c-p2w" href="/tools/pdf-to-word/" data-ga-name="homepage_tool_pdf_to_word">
+              <div class="jd-tool-ico"><i class="fa-solid fa-file-pen" aria-hidden="true"></i></div><h3>PDF to Word</h3><p>Pull editable text out of a normal PDF.</p>
+            </a>
+            <a class="jd-tool-card jd-c-mimg" href="/tools/merge-images/" data-ga-name="homepage_tool_merge_images">
+              <div class="jd-tool-ico"><i class="fa-solid fa-images" aria-hidden="true"></i></div><h3>Merge images</h3><p>Join several images into one picture.</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="jd-home-bottom" data-ga-section="how_it_works">
+          <div class="jd-home-head">
+            <div>
+              <h2>How JobsDoor360 works</h2>
+              <p>Use what helps. Go deeper only when it is useful.</p>
             </div>
           </div>
-        </div>
+          <div class="jd-steps">
+            <div class="jd-step"><h3>Start free</h3><p>Take a quiz, get a price snapshot or use a tool without making an account first.</p></div>
+            <div class="jd-step"><h3>Get something useful</h3><p>A direction, a recommendation, a report, a converted file, or a practical next step.</p></div>
+            <div class="jd-step"><h3>Choose your depth</h3><p>Use the free result, buy a detailed report, join a course or speak to an expert. The choice stays with you.</p></div>
+          </div>
+        </section>
       </div>
-    </section>
-
-    <!-- result section-->
-    <style>
-    .results-carousel {
-      width: 100%;
-      padding: 50px 0;
-      background: #ffffff;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: #222;
-    }
-
-    .carousel-container {
-      position: relative;
-      max-width: 1100px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .card {
-      flex: 0 0 300px;
-      margin: 0 12px;
-      background: #fff;
-      padding: 22px;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-      text-align: center;
-    }
-
-    .card img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 10px;   /* Centers horizontally */
-      display: block;       /* Required to allow auto margin centering */
-    }
-
-    .card h3 {
-      margin: 6px 0;
-      font-size: 22px;
-      color: #222;
-    }
-
-    .card p {
-      font-size: 15px;
-      color: #444;
-      margin-bottom: 6px;
-      line-height: 1.4;         /* line height */
-      min-height: calc(1.4em * 3); /* always space for 3 lines */
-    }
-
-    .linkedin-btn {
-      display: inline-block;
-      padding: 8px 14px;
-      background: #0a66c2;
-      color: #fff;
-      border-radius: 6px;
-      font-size: 14px;
-      text-decoration: none;
-      margin-top: 8px;
-    }
-
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 22px;
-      padding: 10px 16px;
-      background: #212121;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 5;
-      opacity: 0.6;
-    }
-
-    .carousel-btn:hover {
-      opacity: 1;
-    }
-
-    .prev { left: 0px; }
-    .next { right: 0px; }
-
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      margin-top: 16px;
-      gap: 8px;
-    }
-
-    .carousel-dots span {
-      width: 10px;
-      height: 10px;
-      background: #ccc;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    .carousel-dots .active {
-      background: #333;
-    }
-
-    /* Mobile responsive */
-    @media (max-width: 768px) {
-      .card {
-        flex: 0 0 80%;
-      }
-      .prev, .next {
-        top: 90%;
-      }
-    }
-
-    </style>
-    <section class="results-carousel">
-      <h2 class="section-title">Success Stories</h2>
-
-      <div class="carousel-container">
-        <button class="carousel-btn prev">&#10094;</button>
-
-        <div class="carousel-track">
-          <!-- CARD 1 -->
-          <div class="card">
-            <img src="/staticfiles/mainfiles/results/public/rohitgupta.jpg" alt="Rohit Gupta">
-            <h3>Rohit Gupta</h3>
-            <p>Learnt Full Stack Development as Internship</p>
-            <p><strong>Placement:</strong> Currently in Final Year</p>
-            <a href="https://www.linkedin.com/in/rohit-gupta-21088b226/" class="linkedin-btn" target="_blank">LinkedIn Profile</a>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="card">
-            <img src="/staticfiles/mainfiles/results/public/shivam.jpg" alt="Student Name">
-            <h3>Shivam Dhakad</h3>
-            <p>Learnt back-end development in python, frontend, DSA, problem solving</p>
-            <p><strong>Placement:</strong> Muthoot Bank</p>
-            <a href="https://www.linkedin.com/in/shiv597166/" class="linkedin-btn" target="_blank">LinkedIn Profile</a>
-          </div>
-
-          <!-- CARD 3 -->
-          <div class="card">
-            <img src="/staticfiles/mainfiles/results/public/jatin.jpg" alt="Student Photo">
-            <h3>Jatin Kushwah</h3>
-            <p>Learnt DSA, full stack development as internship</p>
-            <p><strong>Placement:</strong> https://Skillops.ai</p>
-            <a href="https://www.linkedin.com/in/jatin-kushwah-1b6694255/" class="linkedin-btn" target="_blank">LinkedIn</a>
-          </div>
-
-          <div class="card">
-            <img src="/staticfiles/mainfiles/results/public/aditya.jpg" alt="Student Photo">
-            <h3>Aditya jain</h3>
-            <p>Learnt DSA, full stack development and product management as internship</p>
-            <p><strong>Placement:</strong> Got placed(company name not disclosed)</p>
-            <a href="https://www.linkedin.com/in/aditya-jain-98606a266/" class="linkedin-btn" target="_blank">LinkedIn</a>
-          </div>
-
-          <div class="card">
-            <img src="/staticfiles/mainfiles/results/public/ayush.jpg" alt="Student Photo">
-            <h3>Ayush Meena</h3>
-            <p>Learnt DSA, full stack development as internship</p>
-            <p><strong>Placement:</strong> </p>
-            <a href="https://www.linkedin.com/in/ayush-meena-ba4211251/" class="linkedin-btn" target="_blank">LinkedIn</a>
-          </div>
-
-          <div class="card">
-            <img src="/staticfiles/mainfiles/results/public/narayan.jpg" alt="Student Photo">
-            <h3>Narayan Raghuwanshi</h3>
-            <p>Developer who specializes in creating high-performance applications using the latest version of Next.js</p>
-            <p><strong>Placement:</strong> Final year student</p>
-            <a href="https://www.linkedin.com/in/narayan-raghuwanshi-4589b4290/" class="linkedin-btn" target="_blank">LinkedIn</a>
-          </div>
-
-          <div class="card">
-            <img src="/staticfiles/mainfiles/results/public/devraj.jpg" alt="Student Photo">
-            <h3>Devraj Pun</h3>
-            <p>Learning Full stack and DSA as internship</p>
-            <p><strong>Placement:</strong> Final year student</p>
-            <a href="https://www.linkedin.com/in/devraj-pun-0019jb/" class="linkedin-btn" target="_blank">LinkedIn</a>
-          </div>
-
-          <div class="card">
-            <img src="/staticfiles/mainfiles/results/public/nivesh.jpg" alt="Student Photo">
-            <h3>Nivesh Garg</h3>
-            <p>Learnt Product Manager as internship<br></p>
-            <p><strong>Placement:</strong> Final year student</p>
-            <a href="https://www.linkedin.com/in/nivesh-garg-865767229" class="linkedin-btn" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-
-        <button class="carousel-btn next">&#10095;</button>
-      </div>
-
-      <div class="carousel-dots"></div>
-    </section>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-      const track = document.querySelector(".carousel-track");
-      const cards = Array.from(track.children);
-      const nextBtn = document.querySelector(".next");
-      const prevBtn = document.querySelector(".prev");
-      const dotsContainer = document.querySelector(".carousel-dots");
-
-      let currentIndex = 0;
-      const cardWidth = cards[0].getBoundingClientRect().width + 24;
-
-      // Create dot indicators
-      cards.forEach((_, i) => {
-        const dot = document.createElement("span");
-        if (i === 0) dot.classList.add("active");
-        dotsContainer.appendChild(dot);
-      });
-
-      const dots = Array.from(dotsContainer.children);
-
-      function updateCarousel() {
-        track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
-        dots.forEach(dot => dot.classList.remove("active"));
-        dots[currentIndex].classList.add("active");
-      }
-
-      nextBtn.onclick = () => {
-        currentIndex = (currentIndex + 1) % cards.length;
-        updateCarousel();
-      };
-
-      prevBtn.onclick = () => {
-        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-        updateCarousel();
-      };
-
-      // Dot click switch
-      dots.forEach((dot, index) => {
-        dot.onclick = () => {
-          currentIndex = index;
-          updateCarousel();
-        };
-      });
-
-      // Auto-rotation
-      setInterval(() => nextBtn.click(), 4000);
-    });
-
-    </script>
-
-    <%- include('../partials/footer.ejs') %>
-
-    <script type="module" src="/staticfiles/script.js"></script>
-   
+    </main>
+    <%- include('../partials/platform/footer.ejs') -%>
   </body>
 </html>

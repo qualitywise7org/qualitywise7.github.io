@@ -46,22 +46,24 @@ auth.onAuthStateChanged((user) => {
     console.log("No user is signed in");
     
     // Update the href of "My Account" link to redirect to the login page
+    // (the old header's "My Account" links; the shared header no longer has
+    // them, so only touch them if a page still does)
     const myAccountLink = document.getElementById("myaccount-1");
-    myAccountLink.href = "/login/";
     const myAccountLink2 = document.getElementById("myaccount-2");
-    myAccountLink2.href = "/login/";
+    if (myAccountLink) myAccountLink.href = "/login/";
+    if (myAccountLink2) myAccountLink2.href = "/login/";
     
     // Optionally update the profile section with a custom message
     //document.getElementById("profile").innerHTML =
      // "<a href='/login/?redirect_url=/myaccount/personalProfile'>Create your profile to get jobs</a>";
     
     // Optionally add a click listener for additional control
-    myAccountLink.addEventListener("click", (event) => {
+    myAccountLink?.addEventListener("click", (event) => {
       // Prevent default behavior and redirect to login
       event.preventDefault();
       window.location.href = "/login/";
     });
-    myAccountLink2.addEventListener("click", (event) => {
+    myAccountLink2?.addEventListener("click", (event) => {
       // Prevent default behavior and redirect to login
       event.preventDefault();
       window.location.href = "/login/";

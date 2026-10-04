@@ -1,0 +1,11 @@
+/* Career Counselling (/career-counselling/) only: the price tiers.
+   Loaded after /staticfiles/mainfiles/platform/style.css (shared). */
+/* Counselling tiers */
+.sd-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.sd-tier { background: #fff; border: 1.5px solid var(--sd-border); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; box-shadow: 0 6px 22px rgba(29, 37, 89, 0.07); }
+.sd-tier.featured { border-color: var(--sd-blue-light); box-shadow: 0 14px 34px rgba(29, 37, 89, 0.14); }
+.sd-tier h3 { font-weight: 800; color: var(--sd-navy); margin-bottom: 4px; font-size: 1.25rem; }
+.sd-tier .price { font-size: 1.6rem; font-weight: 800; color: var(--sd-blue); margin: 6px 0 14px; }
+.sd-tier ul { list-style: none; padding: 0; margin: 0 0 20px; flex: 1; }
+.sd-tier li { padding: 7px 0; color: #3a3f4b; border-bottom: 1px dashed #eef0f5; font-size: 0.95rem; }
+.sd-tier .best { align-self: flex-start; background: #eef2ff; color: var(--sd-blue); font-weight: 700; font-size: 0.7rem; letter-spacing: 0.4px; padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }

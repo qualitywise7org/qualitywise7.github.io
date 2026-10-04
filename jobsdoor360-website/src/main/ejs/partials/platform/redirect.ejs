@@ -1,0 +1,5 @@
+<%#
+  Tiny page that sends an old URL to its new home (used by /smart/*).
+  Usage: include('<relative path>/partials/platform/redirect.ejs', { to: "/tools/", title: "Utility Tools" })
+-%>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=<%= to %>"><link rel="canonical" href="https://jobsdoor360.in<%= to %>"><title>Moved to <%= title %> | JobsDoor360</title><script>location.replace('<%= to %>');</script></head><body><p>This page moved to <a href="<%= to %>"><%= title %></a>.</p></body></html>

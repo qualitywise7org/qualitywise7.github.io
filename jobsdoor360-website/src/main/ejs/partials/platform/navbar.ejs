@@ -1,0 +1,14 @@
+<%#
+  Top of <body> for the platform pages: GTM noscript, skip link and the
+  site header. The header itself is partials/layout/site-navbar.ejs (shared
+  with every other page), so change the menu THERE.
+
+  Usage, first thing inside <body>:
+    include('<relative path>/partials/platform/navbar.ejs', { path: "/tools/merge-pdf/" })
+  `path` is optional; ejs_compiler.js already passes each page's URL.
+-%>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <a class="visually-hidden-focusable" href="#main" data-ga-name="skip_to_content">Skip to content</a>
+    <div id="jd-navbar-slot">
+<%- include('../layout/site-navbar.ejs') %>
+    </div>

@@ -1,0 +1,120 @@
+/* ============================================================
+   JobsDoor360 site header + footer (EVERY page).
+   Markup: jobsdoor360-website/src/main/ejs/partials/layout/
+     site-navbar.ejs, site-footer.ejs
+   Loaded by both head partials (partials/head.ejs for the older
+   pages, partials/platform/head.ejs for the platform pages), so
+   the header and footer look the same across the whole site.
+
+   Every rule is scoped to the #jd-navbar-slot / #jd-footer-slot
+   wrappers. The ID makes these rules stronger than the page
+   stylesheets, which often style bare li, p, img, button, footer
+   or .container and would otherwise reshape the header/footer.
+   ============================================================ */
+:root {
+  --sd-navy: #1d2559;
+  --sd-brand: #2b3990;
+  --sd-blue: #1e3a8a;
+  --sd-blue-light: #3b82f6;
+  --sd-green: #1e7e34;
+  --sd-green-light: #40c351;
+  --sd-ink: #23262f;
+  --sd-muted: #5f6675;
+  --sd-bg: #f5f7fb;
+  --sd-card: #ffffff;
+  --sd-border: #e5e8f0;
+  --sd-focus: #2563eb;
+}
+
+/* ================= Shield from page styles ================= */
+/* Values below are what Bootstrap gives these elements; the rules after
+   this block add the real header/footer design on top. */
+#jd-navbar-slot li, #jd-footer-slot li { margin: 0; line-height: inherit; }
+#jd-navbar-slot img, #jd-footer-slot img { display: inline; }
+#jd-footer-slot p { margin: 0; line-height: inherit; font-size: inherit; }
+#jd-footer-slot .jd-footer { margin: 0; text-align: start; }
+#jd-footer-slot .jd-footer .container { width: 100%; max-width: none; margin: 0 auto; padding: 0 12px; }
+@media (min-width: 576px) { #jd-footer-slot .jd-footer .container { max-width: 540px; } }
+@media (min-width: 768px) { #jd-footer-slot .jd-footer .container { max-width: 720px; } }
+@media (min-width: 992px) { #jd-footer-slot .jd-footer .container { max-width: 960px; } }
+@media (min-width: 1200px) { #jd-footer-slot .jd-footer .container { max-width: 1140px; } }
+@media (min-width: 1400px) { #jd-footer-slot .jd-footer .container { max-width: 1320px; } }
+#jd-footer-slot .jd-footer .container { background: none; box-shadow: none; border-radius: 0; }
+#jd-navbar-slot ul, #jd-footer-slot ul { margin: 0; padding: 0; list-style: none; }
+#jd-footer-slot h2 { margin: 0; padding: 0; border: 0; text-align: start; }
+#jd-navbar-slot .brand, #jd-footer-slot .jd-social a, #jd-footer-slot .jd-widget a { text-decoration: none; }
+#jd-navbar-slot .navbar-toggler {
+  display: inline-block; padding: 0.25rem 0.75rem; font-size: 1.25rem; font-weight: 400; line-height: 1;
+  color: var(--bs-navbar-color); background-color: transparent;
+  border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color); border-radius: var(--bs-navbar-toggler-border-radius);
+}
+@media (min-width: 992px) { #jd-navbar-slot .navbar-expand-lg .navbar-toggler { display: none; } }
+#jd-footer-slot .jd-footer a.jd-fl { font-weight: 400; }
+#jd-footer-slot .chat-back-to-top.jd-widget .whatsapp-chat a { display: block; width: auto; height: auto; background: none; border-radius: 0; box-shadow: none; }
+#jd-footer-slot .chat-back-to-top.jd-widget .whatsapp-chat i { display: inline-block; }
+#jd-footer-slot .chat-back-to-top.jd-widget .back-to-top-btn { color: #000; padding: 0; margin: 0; font-weight: 400; font-size: 1rem; line-height: 1.5; box-shadow: none; }
+
+/* Full width even on pages whose <body> has side padding. --jd-sbw is the
+   desktop scrollbar width, set by layout.js (0 on phones). */
+#jd-navbar-slot, #jd-footer-slot { margin-inline: calc(50% - 50vw + var(--jd-sbw, 0px) / 2); }
+
+/* ================= Navbar (shared) ================= */
+#jd-navbar-slot { min-height: 82px; }            /* reserve space: no jump when the nav loads */
+/* Same type everywhere, whatever font the page itself uses. */
+#jd-navbar-slot .jd-nav, #jd-footer-slot .jd-footer, #jd-footer-slot .chat-back-to-top.jd-widget { font-family: "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif; font-size: 1rem; line-height: 1.5; color: var(--sd-ink); }
+#jd-footer-slot .jd-footer { color: #fff; }
+#jd-navbar-slot .jd-nav .dropdown-menu { border-radius: 12px; border: 1px solid var(--sd-border); box-shadow: 0 12px 32px rgba(29, 37, 89, 0.14); padding: 8px; min-width: 270px; }
+#jd-navbar-slot .jd-nav .dropdown-item { border-radius: 8px; padding: 8px 12px; white-space: normal; }
+#jd-navbar-slot .jd-nav .dropdown-item:hover, #jd-navbar-slot .jd-nav .dropdown-item:focus { background: #eef2ff; transform: none !important; }
+#jd-navbar-slot .jd-nav .dropdown-item.active, #jd-navbar-slot .jd-nav .dropdown-item:active { background: #e0e7ff; color: var(--sd-navy); }
+#jd-navbar-slot .jd-nav .jd-mi-t { display: block; font-weight: 600; color: var(--sd-navy); font-size: 0.98rem; }
+#jd-navbar-slot .jd-nav .jd-mi-d { display: block; color: var(--sd-muted); font-size: 0.82rem; margin-top: 1px; }
+#jd-navbar-slot .jd-nav .dropdown-item.jd-mi-all { font-weight: 600; color: var(--sd-brand); font-size: 0.92rem; }
+#jd-navbar-slot .jd-nav .nav-link.active { color: var(--sd-brand); }
+#jd-navbar-slot .jd-nav .jd-nav-cta .nav-link {
+  background: var(--sd-brand);
+  color: #fff !important;
+  border: 1px solid var(--sd-brand);
+  border-radius: 1.5rem;
+  padding: 0.35rem 1.1rem !important;
+  white-space: nowrap;
+}
+#jd-navbar-slot .jd-nav .jd-nav-cta .nav-link:hover { background: #fff; color: var(--sd-brand) !important; }
+@media (min-width: 992px) {
+  /* long menus (Resources) scroll instead of running off short screens */
+  #jd-navbar-slot .jd-nav .dropdown-menu { max-height: calc(100vh - 110px); overflow-y: auto; }
+}
+@media (max-width: 991.98px) {
+  #jd-navbar-slot .jd-nav .navbar-nav { gap: 0.25rem !important; padding-top: 10px; }
+  #jd-navbar-slot .jd-nav .dropdown-menu { box-shadow: none; border: none; padding-left: 10px; }
+  #jd-navbar-slot .jd-nav .jd-nav-cta { margin-top: 8px; }
+  #jd-navbar-slot .jd-nav .jd-nav-cta .nav-link { display: inline-block; }
+}
+
+/* ================= Footer (shared) ================= */
+#jd-footer-slot .jd-footer { background: #1d2559; color: #fff; padding: 40px 0 22px; }
+#jd-footer-slot .jd-footer h2 { font-size: 0.86rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px; color: #fff; }
+#jd-footer-slot .jd-footer ul { list-style: none; padding: 0; margin: 0 0 18px; }
+#jd-footer-slot .jd-footer li { margin-bottom: 6px; }
+#jd-footer-slot .jd-footer a.jd-fl { color: #dfe3f5; text-decoration: none; font-size: 0.93rem; transition: color 0.2s ease; }
+#jd-footer-slot .jd-footer a.jd-fl:hover { color: #40c351; }
+#jd-footer-slot .jd-footer .jd-social { display: flex; gap: 14px; margin-top: 4px; }
+#jd-footer-slot .jd-footer .jd-social a { transition: transform 0.2s ease; display: inline-block; }
+#jd-footer-slot .jd-footer .jd-social a:hover { transform: scale(1.1); }
+#jd-footer-slot .jd-footer .jd-foot-bottom { border-top: 1px solid rgba(255, 255, 255, 0.14); margin-top: 10px; padding-top: 16px; text-align: center; font-size: 0.84rem; color: #c9cfe8; }
+#jd-footer-slot .jd-footer .jd-foot-bottom strong { color: #fff; }
+
+/* WhatsApp + back-to-top widget. The legacy widget is a wide pill that can
+   cover cards and buttons; this compact version is used on every page. */
+#jd-footer-slot .chat-back-to-top.jd-widget {
+  bottom: 18px;
+  right: 18px;
+  padding: 0;
+  gap: 8px;
+  background: transparent;
+  border-radius: 0;
+  z-index: 1050;
+}
+#jd-footer-slot .chat-back-to-top.jd-widget > a:first-child { display: none !important; }
+#jd-footer-slot .chat-back-to-top.jd-widget .whatsapp-chat { width: 46px; height: 46px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
+#jd-footer-slot .chat-back-to-top.jd-widget .back-to-top-btn { width: 36px; height: 36px; }

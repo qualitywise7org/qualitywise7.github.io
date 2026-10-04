@@ -1,0 +1,180 @@
+/* ============================================================
+   JobsDoor360 platform styles SHARED by every platform page
+   (homepage, Smart Decisions, Findme, Career Counselling, Utility
+   Tools): hero, cards, quiz, buttons, results, tool cards.
+   Page-only styles live next to each page's script:
+     /staticfiles/mainfiles/home/style.css
+     /staticfiles/mainfiles/career-counselling/style.css
+     /staticfiles/mainfiles/tools/style.css
+   Everything is prefixed (sd- / jd-) so it can't clash with the
+   existing site CSS. Palette matches the existing site:
+     navy #1d2559 / #2b3990 / #1e3a8a, blue #3b82f6, green #28a745
+   ============================================================ */
+/* Colours (:root), navbar, footer and the WhatsApp widget live in
+   /staticfiles/mainfiles/platform/layout.css, loaded on every page. */
+
+
+body.sd-body {
+  background: var(--sd-bg);
+  color: var(--sd-ink);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+}
+
+.sd-hidden { display: none !important; }
+
+:where(.sd-body, .jd-home) :is(a, button, input, select, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--sd-focus);
+  outline-offset: 2px;
+}
+
+/* ================= Page hero ================= */
+.sd-hero {
+  background: linear-gradient(135deg, var(--sd-navy), var(--sd-blue-light));
+  color: #fff;
+  padding: 52px 16px 60px;
+  text-align: center;
+}
+.sd-hero h1 { font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 12px; }
+.sd-hero p { max-width: 720px; margin: 0 auto; font-size: 1.07rem; opacity: 0.94; }
+.sd-hero .sd-pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.sd-crumbs { font-size: 0.86rem; margin-bottom: 12px; }
+.sd-crumbs a { color: #dbe4ff; text-decoration: none; }
+.sd-crumbs a:hover { text-decoration: underline; }
+.sd-crumbs span { opacity: 0.75; margin: 0 6px; }
+
+/* ================= Layout ================= */
+.sd-wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.sd-section { padding: 44px 0; }
+.sd-section-title { font-weight: 800; color: var(--sd-navy); margin-bottom: 6px; font-size: 1.6rem; }
+.sd-section-sub { color: var(--sd-muted); margin-bottom: 26px; }
+
+/* ================= Cards (hubs + homepage) ================= */
+.sd-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+.sd-grid.sd-lift { margin-top: -48px; position: relative; z-index: 2; }
+.sd-card {
+  background: var(--sd-card);
+  border: 1px solid var(--sd-border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 22px rgba(29, 37, 89, 0.07);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+.sd-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(29, 37, 89, 0.14); color: inherit; }
+.sd-card .sd-ico {
+  font-size: 1.6rem; width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--sd-blue), var(--sd-blue-light)); color: #fff; margin-bottom: 14px;
+}
+.sd-card h3 { font-size: 1.12rem; font-weight: 700; color: var(--sd-navy); margin-bottom: 6px; }
+.sd-card p { color: var(--sd-muted); font-size: 0.94rem; margin-bottom: 14px; flex: 1; }
+.sd-card .sd-go { font-weight: 700; color: var(--sd-brand); }
+.sd-tag {
+  align-self: flex-start; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 999px; background: #eef2ff; color: var(--sd-blue); margin-bottom: 10px;
+}
+.sd-tag.free { background: #e3f6e8; color: var(--sd-green); }
+
+/* ================= Quiz / questionnaire ================= */
+.sd-panel {
+  background: var(--sd-card); border: 1px solid var(--sd-border); border-radius: 16px; padding: 28px;
+  box-shadow: 0 6px 22px rgba(29, 37, 89, 0.06); max-width: 760px; margin: 0 auto;
+}
+.sd-progress { height: 8px; border-radius: 999px; background: #e9edf6; overflow: hidden; margin-bottom: 8px; }
+.sd-progress > span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--sd-blue), var(--sd-green-light)); transition: width 0.3s ease; }
+.sd-step { font-size: 0.85rem; color: var(--sd-muted); margin-bottom: 16px; }
+.sd-q { font-size: 1.22rem; font-weight: 700; color: var(--sd-navy); margin-bottom: 18px; }
+.sd-options { display: grid; gap: 12px; }
+.sd-opt {
+  display: block; width: 100%; text-align: left; font: inherit; color: inherit;
+  border: 1.5px solid var(--sd-border); border-radius: 12px; padding: 14px 16px; cursor: pointer;
+  font-weight: 500; transition: border-color 0.15s ease, background 0.15s ease; background: #fff;
+}
+.sd-opt:hover { border-color: var(--sd-blue-light); background: #f4f8ff; }
+.sd-opt.selected, .sd-opt[aria-pressed="true"] { border-color: var(--sd-blue); background: #eef4ff; box-shadow: inset 0 0 0 1px var(--sd-blue); }
+.sd-field { margin-bottom: 18px; }
+.sd-field label { display: block; font-weight: 600; color: var(--sd-navy); margin-bottom: 6px; }
+.sd-field input, .sd-field select { width: 100%; padding: 11px 13px; border: 1.5px solid var(--sd-border); border-radius: 10px; font-size: 1rem; background: #fff; }
+.sd-field input:focus, .sd-field select:focus { outline: none; border-color: var(--sd-blue-light); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+
+/* ================= Buttons ================= */
+.sd-btn {
+  display: inline-block; border: none; cursor: pointer; font-weight: 700; border-radius: 10px;
+  padding: 12px 24px; font-size: 1rem; text-decoration: none; text-align: center;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+.sd-btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.sd-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; filter: none; }
+.sd-btn-primary { background: linear-gradient(90deg, var(--sd-blue), #2f5fd8); color: #fff; }
+.sd-btn-primary:hover { color: #fff; }
+.sd-btn-green { background: var(--sd-green); color: #fff; }
+.sd-btn-green:hover { color: #fff; }
+.sd-btn-ghost { background: #fff; color: var(--sd-blue); border: 1.5px solid var(--sd-border); }
+.sd-btn-light { background: #fff; color: var(--sd-navy); }
+.sd-btn-outline-light { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.7); }
+.sd-btn-outline-light:hover { color: #fff; background: rgba(255, 255, 255, 0.12); }
+.sd-btn-row { display: flex; gap: 12px; justify-content: space-between; margin-top: 24px; flex-wrap: wrap; }
+
+/* ================= Results ================= */
+.sd-result-head { text-align: center; margin-bottom: 22px; }
+.sd-result-head .sd-badge { display: inline-block; background: #e3f6e8; color: var(--sd-green); font-weight: 700; padding: 6px 16px; border-radius: 999px; margin-bottom: 12px; }
+.sd-reco { display: block; border: 1.5px solid var(--sd-border); border-left: 5px solid var(--sd-blue-light); border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; background: #fff; color: inherit; text-decoration: none; }
+a.sd-reco:hover { border-color: var(--sd-blue-light); color: inherit; }
+.sd-reco h3, .sd-reco h4 { font-weight: 700; color: var(--sd-navy); margin-bottom: 6px; font-size: 1.1rem; }
+.sd-reco .sd-why { color: var(--sd-muted); font-size: 0.95rem; }
+.sd-reco .sd-cover { display: inline-block; background: #eef2ff; color: var(--sd-blue); font-weight: 700; font-size: 0.85rem; padding: 2px 10px; border-radius: 8px; margin-top: 8px; }
+
+.sd-upsell { margin-top: 26px; border-radius: 14px; padding: 22px; background: linear-gradient(135deg, #101a3a, #26346f); color: #fff; text-align: center; }
+.sd-upsell h3, .sd-upsell h4 { font-weight: 800; margin-bottom: 8px; font-size: 1.3rem; color: #fff; }
+.sd-upsell .sd-upsell-alt { display: block; margin-top: 14px; color: #dbe4ff; font-weight: 600; }
+.sd-upsell .sd-upsell-alt:hover { color: #fff; }
+.visually-hidden-h { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.sd-upsell .sd-price { font-size: 1.5rem; font-weight: 800; color: #ffd76a; margin: 6px 0 14px; }
+.sd-upsell small { display: block; opacity: 0.78; margin-top: 10px; }
+
+.sd-handoff { margin-top: 22px; background: #eef4ff; border: 1px dashed var(--sd-blue-light); border-radius: 12px; padding: 16px 18px; font-size: 0.95rem; }
+.sd-handoff a { font-weight: 700; color: var(--sd-blue); }
+.sd-note { font-size: 0.84rem; color: var(--sd-muted); text-align: center; margin-top: 14px; }
+
+/* ================= How-it-works steps (homepage + Smart Decisions hub) ================= */
+.jd-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; counter-reset: step; }
+.jd-step { background: #fff; border: 1px solid var(--sd-border); border-radius: 14px; padding: 20px; }
+.jd-step::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #eef2ff; color: var(--sd-brand); font-weight: 800; margin-bottom: 10px; }
+.jd-step h3 { font-size: 1.05rem; font-weight: 700; color: var(--sd-navy); margin-bottom: 4px; }
+.jd-step p { color: var(--sd-muted); font-size: 0.93rem; margin: 0; }
+
+/* ================= Utility Tools ================= */
+.jd-tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.jd-tool-card {
+  background: #fff; border: 1px solid var(--sd-border); border-radius: 14px; padding: 20px; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; gap: 6px; transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+.jd-tool-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(29, 37, 89, 0.13); border-color: transparent; color: inherit; }
+.jd-tool-card .jd-tool-ico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; color: #fff; font-size: 1.35rem; margin-bottom: 8px; }
+.jd-tool-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--sd-navy); margin: 0; }
+.jd-tool-card p { color: var(--sd-muted); font-size: 0.9rem; margin: 0; }
+
+.jd-c-img { --tool: #b45309; }
+.jd-c-mpdf { --tool: #dc2626; }
+.jd-c-mimg { --tool: #7c3aed; }
+.jd-c-w2p { --tool: #2563eb; }
+.jd-c-p2w { --tool: #0369a1; }
+.jd-tool-ico { background: var(--tool, var(--sd-brand)); }
+
+@media (max-width: 600px) {
+  .sd-grid.sd-lift { margin-top: 20px; }
+  .sd-panel { padding: 20px; }
+}

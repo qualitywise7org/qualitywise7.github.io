@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/platform/head.ejs', {
+      title: "Thanks, we'll get back to you soon | JobsDoor360",
+      description: "We've received your request. The JobsDoor360 team will get back to you soon.",
+      canonical: "https://jobsdoor360.in/request-received/",
+      noindex: true,
+    }) -%>
+  </head>
+  <body class="sd-body" data-ga-module="request_received">
+    <%- include('../../partials/platform/navbar.ejs') -%>
+    <main id="main">
+      <%#
+        Where the paid options (detailed reports, expert calls, counselling
+        sessions, school workshops) send people instead of the Contact page.
+        The link says what was asked for: /request-received/?for=<product>
+        (the same name as the button's data-ga-product). script.js turns that
+        into a readable line and pre-fills the WhatsApp message.
+      -%>
+      <header class="sd-hero" data-ga-section="hero">
+        <div class="sd-wrap">
+          <span class="sd-pill">REQUEST RECEIVED</span>
+          <h1>Thanks, we'll get back to you soon</h1>
+          <p id="jd-rr-line">We've noted your request. Someone from our team will get back to you soon.</p>
+        </div>
+      </header>
+      <div class="sd-wrap sd-section" data-ga-section="next_step">
+        <section class="sd-panel" style="text-align: center">
+          <h2 class="sd-section-title">Need an answer sooner?</h2>
+          <p class="sd-section-sub">Send us a message on WhatsApp and we'll pick it up from there.</p>
+          <div class="sd-btn-row" style="justify-content: center">
+            <a class="sd-btn sd-btn-green" id="jd-rr-whatsapp" href="https://api.whatsapp.com/send?phone=918319349660&amp;text=Hi%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" data-ga-event="cta_click" data-ga-name="request_received_whatsapp">Message us on WhatsApp</a>
+            <a class="sd-btn sd-btn-ghost" id="jd-rr-back" href="/smart-decisions/" data-ga-name="request_received_back">Go back</a>
+          </div>
+          <p class="sd-note">The free quizzes and tools stay free. <a href="/findme/" data-ga-name="request_received_findme">Try Findme</a> or the <a href="/tools/" data-ga-name="request_received_tools">Utility Tools</a> while you wait.</p>
+        </section>
+      </div>
+    </main>
+    <%- include('../../partials/platform/footer.ejs') -%>
+    <script type="module" src="/staticfiles/mainfiles/request-received/script.js?v=<%= platform_version %>"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../../partials/platform/head.ejs', {
+      title: "Image to PDF: turn JPG and PNG images into a PDF | JobsDoor360",
+      description: "Turn JPG, PNG or WEBP images into one PDF in your browser. Add multiple files, change the order, and download. Nothing is uploaded.",
+      canonical: "https://jobsdoor360.in/tools/image-to-pdf/",
+      styles: ["/staticfiles/mainfiles/tools/style.css"],
+    }) -%>
+  </head>
+  <body class="sd-body jd-tool-page jd-c-img" data-ga-module="image-to-pdf" data-tool="image-to-pdf">
+    <%- include('../../../partials/platform/navbar.ejs', { path: "/tools/image-to-pdf/" }) -%>
+    <main id="main">
+      <header class="jd-tool-hero" data-ga-section="tool_hero">
+        <div class="sd-wrap">
+          <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><a href="/tools/" data-ga-event="nav_click" data-ga-name="breadcrumb_utility_tools">Utility Tools</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Image to PDF</span></nav>
+          <h1>Image to PDF</h1>
+          <p>Turn JPG, PNG or WEBP images into one PDF.</p>
+        </div>
+      </header>
+      <div class="sd-wrap" style="padding-bottom: 0" data-ga-section="tool_intro">
+        <p class="sd-note" style="text-align:center;margin:0">One image per PDF page. Add multiple images and put them in any order.</p>
+      </div>
+      <section data-ga-section="tool_workspace">
+        <div id="jd-tool" aria-live="polite"></div>
+      </section>
+    </main>
+    <%- include('../../../partials/platform/footer.ejs') -%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk" crossorigin="anonymous"></script>
+    <script src="/staticfiles/mainfiles/tools/common.js?v=<%= platform_version %>"></script>
+    <script src="/staticfiles/mainfiles/tools/image-to-pdf/script.js?v=<%= platform_version %>"></script>
+    <script src="/staticfiles/mainfiles/tools/script.js?v=<%= platform_version %>"></script>
+  </body>
+</html>
