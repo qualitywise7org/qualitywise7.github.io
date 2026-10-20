@@ -76,6 +76,16 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://jobsdoor360.in/tools/pdf-to-image/</loc>
+  <lastmod>2026-10-20T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/tools/crop-image/</loc>
+  <lastmod>2026-10-20T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://jobsdoor360.in/curriculum/</loc>
   <lastmod>2023-07-25T05:26:58+00:00</lastmod>
   <priority>0.80</priority>
@@ -86,8 +96,13 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://jobsdoor360.in/pricing/</loc>
+  <loc>https://jobsdoor360.in/courses/</loc>
   <lastmod>2023-07-25T05:26:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jobsdoor360.in/courses/placement/</loc>
+  <lastmod>2026-10-20T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -106,7 +121,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://jobsdoor360.in/biographies/</loc>
+  <loc>https://jobsdoor360.in/blog/biographies/</loc>
   <lastmod>2023-07-25T05:26:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -116,12 +131,12 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://jobsdoor360.in/careeroptions/</loc>
+  <loc>https://jobsdoor360.in/blog/careers-after-10th-and-12th/</loc>
   <lastmod>2023-07-25T05:26:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://jobsdoor360.in/motivation/</loc>
+  <loc>https://jobsdoor360.in/blog/motivation/</loc>
   <lastmod>2023-07-25T05:26:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>

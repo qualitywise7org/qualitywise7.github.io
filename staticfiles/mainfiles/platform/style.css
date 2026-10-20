@@ -172,6 +172,8 @@ a.sd-reco:hover { border-color: var(--sd-blue-light); color: inherit; }
 .jd-c-mimg { --tool: #7c3aed; }
 .jd-c-w2p { --tool: #2563eb; }
 .jd-c-p2w { --tool: #0369a1; }
+.jd-c-p2i { --tool: #0f766e; }
+.jd-c-crop { --tool: #be185d; }
 .jd-tool-ico { background: var(--tool, var(--sd-brand)); }
 
 @media (max-width: 600px) {

@@ -75,19 +75,19 @@ const STREAMS = {
     label: "Science (PCB): medical and life sciences",
     line: "You lean towards biology and helping people: medicine, pharmacy, biotech and allied health.",
     next: "See career options after 12th science",
-    nextHref: "/careeroptions/",
+    nextHref: "/blog/careers-after-10th-and-12th/",
   },
   commerce: {
     label: "Commerce: business and finance",
     line: "Money, markets and business pull you in: commerce, CA, finance and running your own thing.",
     next: "Browse business and finance careers",
-    nextHref: "/careeroptions/",
+    nextHref: "/blog/careers-after-10th-and-12th/",
   },
   arts: {
     label: "Arts and humanities: creative and civil",
     line: "You care about expression, people and meaning: humanities, design, media and civil services.",
     next: "Explore humanities and creative careers",
-    nextHref: "/careeroptions/",
+    nextHref: "/blog/careers-after-10th-and-12th/",
   },
 };
 
