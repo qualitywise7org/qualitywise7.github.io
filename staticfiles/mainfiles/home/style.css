@@ -16,3 +16,7 @@
 .jd-home-head a.jd-see-all { font-weight: 700; color: var(--sd-brand); text-decoration: none; white-space: nowrap; }
 .jd-home-head a.jd-see-all:hover { text-decoration: underline; }
 .jd-home-bottom { padding: 44px 0 56px; }
+/* Study material card: one chip per class / subject (open the learning site) */
+.jd-sl-card .jd-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.jd-sl-card .jd-chip { padding: 3px 10px; border: 1px solid var(--sd-border); border-radius: 999px; font-size: 0.82rem; font-weight: 600; color: var(--sd-brand); text-decoration: none; }
+.jd-sl-card .jd-chip:hover { background: #eef2ff; border-color: var(--sd-blue-light); }

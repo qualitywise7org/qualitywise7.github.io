@@ -180,3 +180,10 @@ a.sd-reco:hover { border-color: var(--sd-blue-light); color: inherit; }
   .sd-grid.sd-lift { margin-top: 20px; }
   .sd-panel { padding: 20px; }
 }
+
+/* ================= Content blocks + FAQ (career, counselling) ================= */
+.sd-block { margin-top: 44px; }
+.sd-text { color: #3a3f4b; font-size: 0.98rem; line-height: 1.65; max-width: 860px; }
+.sd-faq { background: #fff; border: 1px solid var(--sd-border); border-radius: 12px; padding: 0 18px; margin-bottom: 10px; }
+.sd-faq summary { cursor: pointer; font-weight: 700; color: var(--sd-navy); padding: 14px 0; list-style-position: inside; }
+.sd-faq p { color: #3a3f4b; margin: 0 0 14px; line-height: 1.6; }

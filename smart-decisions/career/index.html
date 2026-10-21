@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Smart Career: free stream and career quiz | JobsDoor360</title>
-    <meta name="description" content="Not sure which stream or career to pick? Answer five quick questions and get a direction in about three minutes. Free, no sign-up needed." />
+    <title>Smart Career: free career assessment for students and professionals | JobsDoor360</title>
+    <meta name="description" content="Answer 13 questions about your interests, strengths, working style and values. Get your top 3 career areas with what to study, entrance exams, example careers, skills and a 30-day plan. Free, no sign-up." />
     <link rel="canonical" href="https://jobsdoor360.in/smart-decisions/career/" />
     <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
     <link rel="icon" href="/fevicon.ico" type="profile" />
     <link rel="stylesheet" href="/staticfiles/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/layout.css?v=20261020" />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/style.css?v=20261020" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/layout.css?v=20261021" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/style.css?v=20261021" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/smart-decisions/career/style.css?v=20261021" />
     <!-- Google Analytics (same property as the rest of the site) + Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
     <script>
@@ -22,7 +23,7 @@
     </script>
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GTM-MFBK5637");</script>
     <!-- Sends a GA event for every button and link click -->
-    <script src="/staticfiles/mainfiles/platform/ga.js?v=20261020" defer></script>
+    <script src="/staticfiles/mainfiles/platform/ga.js?v=20261021" defer></script>
   </head>
   <body class="sd-body" data-ga-module="smart_career">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
@@ -47,10 +48,11 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="jd-dd-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-ga-name="nav_courses">Courses</a>
-          <ul class="dropdown-menu" aria-labelledby="jd-dd-courses">
-            <li><a class="dropdown-item" href="https://allizwell.jobsdoor360.in/" data-ga-name="nav_sl_learning_site"><span class="jd-mi-t">Study material &amp; stream awareness</span><span class="jd-mi-d">Topic-wise material on our learning site</span></a></li>
+          <ul class="dropdown-menu jd-dd-wide" aria-labelledby="jd-dd-courses">
+            <li class="jd-mi-chips"><span class="jd-mi-t">Study material: School</span><span class="jd-chips"><a class="jd-chip" href="https://allizwell.jobsdoor360.in/class-5/" data-ga-name="nav_sl_school_class_5">Class 5</a><a class="jd-chip" href="https://allizwell.jobsdoor360.in/class-6/" data-ga-name="nav_sl_school_class_6">Class 6</a><a class="jd-chip" href="https://allizwell.jobsdoor360.in/class-7/" data-ga-name="nav_sl_school_class_7">Class 7</a><a class="jd-chip" href="https://allizwell.jobsdoor360.in/class-8/" data-ga-name="nav_sl_school_class_8">Class 8</a><a class="jd-chip" href="https://allizwell.jobsdoor360.in/class-9/" data-ga-name="nav_sl_school_class_9">Class 9</a><a class="jd-chip" href="https://allizwell.jobsdoor360.in/class-10/" data-ga-name="nav_sl_school_class_10">Class 10</a><a class="jd-chip" href="https://allizwell.jobsdoor360.in/class-11/" data-ga-name="nav_sl_school_class_11">Class 11</a><a class="jd-chip" href="https://allizwell.jobsdoor360.in/class-12/" data-ga-name="nav_sl_school_class_12">Class 12</a></span></li>
+            <li class="jd-mi-chips"><span class="jd-mi-t">Study material: College</span><span class="jd-chips"><a class="jd-chip" href="https://allizwell.jobsdoor360.in/dsa/" data-ga-name="nav_sl_college_dsa">DSA</a><a class="jd-chip" href="https://allizwell.jobsdoor360.in/java/" data-ga-name="nav_sl_college_java">Java</a><a class="jd-chip" href="https://allizwell.jobsdoor360.in/machine-learning/" data-ga-name="nav_sl_college_machine_learning">Machine Learning</a><a class="jd-chip" href="https://allizwell.jobsdoor360.in/system-design/" data-ga-name="nav_sl_college_system_design">System Design</a></span></li>
             <li><a class="dropdown-item" href="/courses/" data-ga-name="nav_courses_pricing"><span class="jd-mi-t">Courses &amp; fees</span><span class="jd-mi-d">Programming courses and internships</span></a></li>
-            <li><a class="dropdown-item" href="/courses/placement/" data-ga-name="nav_courses_placement"><span class="jd-mi-t">Placement classes</span><span class="jd-mi-d">Interview and placement prep</span></a></li>
+            <li><a class="dropdown-item" href="https://allizwell.jobsdoor360.in/placement-classes/" data-ga-name="nav_courses_placement"><span class="jd-mi-t">Placement classes</span><span class="jd-mi-d">Interview and placement prep</span></a></li>
             <li><a class="dropdown-item" href="/test/" data-ga-name="nav_courses_certifications"><span class="jd-mi-t">Free certifications</span><span class="jd-mi-d">Take a test, get certified</span></a></li>
           </ul>
         </li>
@@ -81,12 +83,22 @@
       <header class="sd-hero" data-ga-section="hero">
         <div class="sd-wrap">
           <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><a href="/smart-decisions/" data-ga-event="nav_click" data-ga-name="breadcrumb_smart_decisions">Smart Decisions</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Career</span></nav>
-          <span class="sd-pill">FREE · ABOUT 3 MINUTES · NO SIGN-UP</span>
-          <h1>Which stream or career suits you?</h1>
-          <p>Getting time with a counsellor can take weeks. This takes about three minutes. Answer five questions and you'll have a direction to start from.</p>
+          <span class="sd-pill">FREE · ABOUT 6 MINUTES · NO SIGN-UP</span>
+          <h1>Find the career that fits you</h1>
+          <p>Not a 5-question guess. Answer 13 questions about your interests, strengths, working style and values, and get your top 3 career areas with what to study, which exams to take and what to do next.</p>
         </div>
       </header>
       <div class="sd-wrap sd-section">
+        <section class="cr-intro" aria-labelledby="cr-get" data-ga-section="what_you_get">
+          <h2 class="sd-section-title" id="cr-get">What you'll get</h2>
+          <ul class="cr-gets">
+            <li><i class="fa-solid fa-ranking-star" aria-hidden="true"></i><strong>Your top 3 career areas</strong>, each with a match score and why it fits you</li>
+            <li><i class="fa-solid fa-book" aria-hidden="true"></i><strong>What to study</strong>: the stream or degree for each, based on where you are now</li>
+            <li><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i><strong>Entrance exams</strong> to aim for, and example careers</li>
+            <li><i class="fa-solid fa-route" aria-hidden="true"></i><strong>A 30-day plan</strong> and skills to start right away</li>
+          </ul>
+        </section>
+
         <section class="sd-panel" id="sd-quiz-card" data-ga-section="quiz">
           <div class="sd-progress" aria-hidden="true"><span id="sd-progress-bar"></span></div>
           <p class="sd-step" id="sd-step"></p>
@@ -96,27 +108,63 @@
             <button type="button" class="sd-btn sd-btn-ghost" id="sd-prev" style="visibility: hidden" data-ga-name="quiz_back">Back</button>
             <button type="button" class="sd-btn sd-btn-primary" id="sd-next" disabled data-ga-name="quiz_next">Next</button>
           </div>
+          <p class="sd-note">There are no right or wrong answers. Pick what's most true for you, not what sounds best.</p>
         </section>
-        <section class="sd-panel sd-hidden" id="sd-result-card" data-ga-section="result" aria-live="polite">
+
+        <section class="sd-panel cr-result sd-hidden" id="sd-result-card" data-ga-section="result" aria-live="polite">
           <div class="sd-result-head">
             <span class="sd-badge">Your free result</span>
-            <h2 class="sd-section-title" id="sd-result-title" tabindex="-1">Here's the direction that fits you best</h2>
-            <p class="sd-section-sub">A starting point based on your answers, not a final verdict.</p>
+            <h2 class="sd-section-title" id="sd-result-title" tabindex="-1">Your top 3 career areas</h2>
+            <p class="sd-section-sub">A strong starting point based on your answers, not a final verdict. Use it to explore, talk to people and decide.</p>
           </div>
           <div id="sd-recos"></div>
           <div class="sd-handoff" id="sd-handoff-next" data-ga-section="next_step"></div>
           <div class="sd-upsell" data-ga-section="upsell">
             <h3>Want the full picture?</h3>
-            <p>The detailed report covers how well each subject suits you, which entrance exams to aim for, job demand for your options, and a shortlist of colleges.</p>
+            <p>The detailed report adds how well each subject suits you, colleges to shortlist, fees and cut-offs, job demand for each option, and a year-by-year plan.</p>
             <div class="sd-price">₹149 – ₹299</div>
             <a class="sd-btn sd-btn-green" href="/request-received/?for=career_detailed_report" data-ga-event="upsell_click" data-ga-name="career_detailed_report_cta" data-ga-product="career_detailed_report" data-ga-price="149-299">Get the detailed report</a>
             <small>One-time payment. No waiting for a counsellor.</small>
           </div>
           <div class="sd-handoff" data-ga-section="next_step">Rather talk it through with a person? <a href="/career-counselling/" data-ga-name="career_to_counselling">See career counselling →</a><br>Ready to build skills? <a href="/courses/" data-ga-name="career_to_courses">Browse our courses →</a></div>
-                    <div class="sd-btn-row" style="justify-content: center">
-            <button type="button" class="sd-btn sd-btn-ghost" id="sd-restart" data-ga-name="quiz_retake">Retake the quiz</button>
+                    <div class="sd-btn-row cr-actions" style="justify-content: center">
+            <button type="button" class="sd-btn sd-btn-ghost" id="sd-restart" data-ga-name="quiz_retake">Retake the assessment</button>
+            <button type="button" class="sd-btn sd-btn-ghost" id="cr-print" data-ga-name="career_print">Print or save as PDF</button>
             <a class="sd-btn sd-btn-primary" href="/smart-decisions/" data-ga-name="see_all_smart_decisions">See all Smart Decisions</a>
           </div>
+        </section>
+
+        <section class="sd-block" aria-labelledby="cr-how" data-ga-section="how_it_works">
+          <h2 class="sd-section-title" id="cr-how">How the assessment works</h2>
+          <div class="cr-dims">
+            <div><h3>Interests</h3><p>What you'd do even if nobody asked you to.</p></div>
+            <div><h3>Strengths</h3><p>What you're naturally good at, and how you handle long study.</p></div>
+            <div><h3>Working style</h3><p>Where and how you like to work: alone, in a team, with people.</p></div>
+            <div><h3>Values</h3><p>Money, respect, security, freedom or impact: what matters most to you.</p></div>
+          </div>
+          <p class="sd-text">Your answers are scored against 8 career areas. Each answer counts towards the areas it points to, and the match score shows how much of each area's possible points you reached.</p>
+        </section>
+
+        <section class="sd-block" aria-labelledby="cr-areas" data-ga-section="career_areas">
+          <h2 class="sd-section-title" id="cr-areas">The 8 career areas</h2>
+          <div class="cr-area-grid">
+            <div class="cr-area-tile"><i class="fa-solid fa-microchip" aria-hidden="true"></i><h3>Engineering &amp; technology</h3><p>Software, AI, electronics, mechanical, civil and data careers.</p></div>
+            <div class="cr-area-tile"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i><h3>Medicine &amp; health</h3><p>Doctor, dentist, pharmacy, nursing, physiotherapy and allied health.</p></div>
+            <div class="cr-area-tile"><i class="fa-solid fa-flask" aria-hidden="true"></i><h3>Science &amp; research</h3><p>Physics, chemistry, biology, maths and research careers.</p></div>
+            <div class="cr-area-tile"><i class="fa-solid fa-calculator" aria-hidden="true"></i><h3>Finance &amp; accounting</h3><p>CA, CS, banking, investment and financial analysis.</p></div>
+            <div class="cr-area-tile"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><h3>Business, management &amp; startups</h3><p>Entrepreneurship, marketing, product, sales and consulting.</p></div>
+            <div class="cr-area-tile"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i><h3>Law, civil services &amp; public policy</h3><p>Lawyer, judge, IAS / IPS, policy and legal work.</p></div>
+            <div class="cr-area-tile"><i class="fa-solid fa-palette" aria-hidden="true"></i><h3>Design, media &amp; creative work</h3><p>UX and graphic design, architecture, journalism, film and content.</p></div>
+            <div class="cr-area-tile"><i class="fa-solid fa-people-group" aria-hidden="true"></i><h3>Teaching, psychology &amp; social impact</h3><p>Teaching, counselling, psychology, social work and NGOs.</p></div>
+          </div>
+        </section>
+
+        <section class="sd-block" aria-labelledby="cr-faq" data-ga-section="faq">
+          <h2 class="sd-section-title" id="cr-faq">Questions</h2>
+          <details class="sd-faq"><summary>Is this a psychometric test?</summary><p>It&#39;s a short guided assessment built around four things career counsellors look at: interests, strengths, working style and values. It gives you a well-reasoned starting point. For a full psychometric report and a conversation about your marks, family situation and budget, see career counselling.</p></details>
+          <details class="sd-faq"><summary>I&#39;m already in college or working. Is this useful for me?</summary><p>Yes. The first question asks where you are, and the next steps and 30-day plan change to fit: choosing a stream, choosing a course, building skills in college, or switching careers.</p></details>
+          <details class="sd-faq"><summary>What if my top matches are very close?</summary><p>That&#39;s common and fine. It means more than one area suits you. Read all three, talk to people in each, and use the 30-day plan to test them before you decide.</p></details>
+          <details class="sd-faq"><summary>Do you save my answers?</summary><p>Only to show you your result. If you&#39;re signed in, the result is also added to your account so you can see it again in My account. Your answers are not sent to analytics.</p></details>
         </section>
       </div>
     </main>
@@ -138,7 +186,7 @@
         <h2>Courses</h2>
         <ul>
           <li><a class="jd-fl" href="/courses/">Courses &amp; fees</a></li>
-          <li><a class="jd-fl" href="/courses/placement/">Placement classes</a></li>
+          <li><a class="jd-fl" href="https://allizwell.jobsdoor360.in/placement-classes/">Placement classes</a></li>
           <li><a class="jd-fl" href="/test/">Free certifications</a></li>
           <li><a class="jd-fl" href="/career-counselling/">Career counselling</a></li>
           <li><a class="jd-fl" href="https://allizwell.jobsdoor360.in/">Study material</a></li>
@@ -189,8 +237,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
 <!-- back-to-top button + footer "Log out" link (markup above) -->
-<script type="module" src="/staticfiles/mainfiles/platform/layout.js?v=20261020"></script>
+<script type="module" src="/staticfiles/mainfiles/platform/layout.js?v=20261021"></script>
     <script type="module" src="/staticfiles/db/dbconfig.js"></script>
-    <script type="module" src="/staticfiles/mainfiles/smart-decisions/career/script.js?v=20261020"></script>
+    <script type="module" src="/staticfiles/mainfiles/smart-decisions/career/script.js?v=20261021"></script>
   </body>
 </html>
