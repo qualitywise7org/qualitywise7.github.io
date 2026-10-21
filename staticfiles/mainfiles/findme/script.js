@@ -74,7 +74,7 @@ const ROUTES = {
   skills: {
     label: "Courses & certifications",
     line: "Building job-ready skills looks like your best next step. Try a free certification test first.",
-    href: "/pricing/",
+    href: "/courses/",
     icon: "fa-laptop-code",
   },
   explore: {

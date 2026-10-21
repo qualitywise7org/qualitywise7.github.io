@@ -1,10 +1,8 @@
 /* ============================================================
    JobsDoor360 site header + footer (EVERY page).
-   Markup: jobsdoor360-website/src/main/ejs/partials/layout/
-     site-navbar.ejs, site-footer.ejs
-   Loaded by both head partials (partials/head.ejs for the older
-   pages, partials/platform/head.ejs for the platform pages), so
-   the header and footer look the same across the whole site.
+   Markup: jobsdoor360-website/src/main/ejs/partials/navbar.ejs
+     and partials/footer.ejs. Loaded by partials/head.ejs on every
+   page, so the header and footer look the same across the site.
 
    Every rule is scoped to the #jd-navbar-slot / #jd-footer-slot
    wrappers. The ID makes these rules stronger than the page
@@ -80,11 +78,39 @@
   white-space: nowrap;
 }
 #jd-navbar-slot .jd-nav .jd-nav-cta .nav-link:hover { background: #fff; color: var(--sd-brand) !important; }
+/* Sign up: outlined, so "Findme" stays the main button */
+#jd-navbar-slot .jd-nav .jd-nav-signup .nav-link { border: 1px solid var(--sd-brand); border-radius: 1.5rem; padding: 0.3rem 1rem !important; color: var(--sd-brand); white-space: nowrap; }
+#jd-navbar-slot .jd-nav .jd-nav-signup .nav-link:hover { background: var(--sd-brand); color: #fff !important; }
+#jd-navbar-slot .jd-nav .jd-nav-auth .nav-link { white-space: nowrap; }
+/* Menu labels stay on one line; spacing tightens on laptop-width screens
+   so all groups + the CTA fit without wrapping or touching the edge. */
+#jd-navbar-slot .jd-nav .nav-link { white-space: nowrap; }
+@media (min-width: 992px) and (max-width: 1499.98px) {
+  #jd-navbar-slot .jd-nav .container-fluid { padding-inline: 1rem; }
+  #jd-navbar-slot .jd-nav .brand { padding-left: 0; }
+  #jd-navbar-slot .jd-nav .brand img { width: 160px; }
+  #jd-navbar-slot .jd-nav .navbar-nav { gap: 0.9rem; }
+  #jd-navbar-slot .jd-nav .navbar-nav .nav-item a.nav-link { font-size: 1rem; }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #jd-navbar-slot .jd-nav .brand img { width: 130px; }
+  #jd-navbar-slot .jd-nav .navbar-nav { gap: 0.35rem; }
+  #jd-navbar-slot .jd-nav .navbar-nav .nav-item a.nav-link { font-size: 0.9rem; }
+  #jd-navbar-slot .jd-nav .jd-nav-cta .nav-link { padding: 0.3rem 0.8rem !important; }
+}
+@media (min-width: 992px) and (max-width: 1079.98px) {
+  /* narrowest desktop widths: the longer "Smart & Holistic Learning" label still fits */
+  #jd-navbar-slot .jd-nav .container-fluid { padding-inline: 0.5rem; }
+  #jd-navbar-slot .jd-nav .brand img { width: 118px; }
+  #jd-navbar-slot .jd-nav .navbar-nav .nav-item a.nav-link { font-size: 0.86rem; }
+}
 @media (min-width: 992px) {
   /* long menus (Resources) scroll instead of running off short screens */
   #jd-navbar-slot .jd-nav .dropdown-menu { max-height: calc(100vh - 110px); overflow-y: auto; }
 }
 @media (max-width: 991.98px) {
+  /* the old site's hover zoom (staticfiles/style.css) makes a tapped menu item wider than a phone screen */
+  #jd-navbar-slot .jd-nav .navbar-nav .nav-item a:hover { transform: none; }
   #jd-navbar-slot .jd-nav .navbar-nav { gap: 0.25rem !important; padding-top: 10px; }
   #jd-navbar-slot .jd-nav .dropdown-menu { box-shadow: none; border: none; padding-left: 10px; }
   #jd-navbar-slot .jd-nav .jd-nav-cta { margin-top: 8px; }

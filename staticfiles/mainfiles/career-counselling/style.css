@@ -9,3 +9,21 @@
 .sd-tier ul { list-style: none; padding: 0; margin: 0 0 20px; flex: 1; }
 .sd-tier li { padding: 7px 0; color: #3a3f4b; border-bottom: 1px dashed #eef0f5; font-size: 0.95rem; }
 .sd-tier .best { align-self: flex-start; background: #eef2ff; color: var(--sd-blue); font-weight: 700; font-size: 0.7rem; letter-spacing: 0.4px; padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
+.cc-tier-title { font-weight: 800; color: var(--sd-navy); font-size: 1.25rem; margin-bottom: 4px; }
+
+/* Who it's for / what we cover / how it works */
+.cc-who { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.cc-who div { background: #fff; border: 1px solid var(--sd-border); border-radius: 14px; padding: 18px; }
+.cc-who i { font-size: 1.4rem; color: var(--sd-blue-light); margin-bottom: 8px; }
+.cc-who h3 { font-size: 1.02rem; font-weight: 800; color: var(--sd-navy); margin: 0 0 4px; }
+.cc-who p { color: var(--sd-muted); font-size: 0.9rem; margin: 0; }
+.cc-covers { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px 20px; }
+.cc-covers li { color: #3a3f4b; font-size: 0.96rem; display: flex; gap: 10px; align-items: baseline; }
+.cc-covers i { color: var(--sd-green); }
+.cc-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; counter-reset: cc; }
+.cc-steps li { background: #fff; border: 1px solid var(--sd-border); border-radius: 14px; padding: 18px; counter-increment: cc; }
+.cc-steps li::before { content: counter(cc); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #eef2ff; color: var(--sd-brand); font-weight: 800; margin-bottom: 10px; }
+.cc-steps h3 { font-size: 1.02rem; font-weight: 800; color: var(--sd-navy); margin: 0 0 4px; }
+.cc-steps p { color: var(--sd-muted); font-size: 0.9rem; margin: 0; }
+.cc-school { background: #fff; border: 1px solid var(--sd-border); border-radius: 16px; padding: 24px; }
+#cc-plans { scroll-margin-top: 16px; }

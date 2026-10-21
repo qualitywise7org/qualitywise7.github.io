@@ -77,6 +77,8 @@
     "merge-images": { title: "Merge images", desc: "Join images into one picture.", icon: "fa-images", color: "jd-c-mimg" },
     "word-to-pdf": { title: "Word to PDF", desc: "Turn Word (.docx) files into PDFs.", icon: "fa-file-word", color: "jd-c-w2p" },
     "pdf-to-word": { title: "PDF to Word", desc: "Get editable text out of a PDF.", icon: "fa-file-pen", color: "jd-c-p2w" },
+    "pdf-to-image": { title: "PDF to image", desc: "Save every PDF page as a JPG or PNG.", icon: "fa-file-export", color: "jd-c-p2i" },
+    "crop-image": { title: "Crop image", desc: "Crop to square, passport, 16:9 and more.", icon: "fa-crop-simple", color: "jd-c-crop" },
   };
 
   // Each tool's script.js calls register() with its settings + converter.
