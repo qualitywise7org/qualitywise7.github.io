@@ -67,12 +67,6 @@
 #jd-navbar-slot .jd-nav .dropdown-item.active, #jd-navbar-slot .jd-nav .dropdown-item:active { background: #e0e7ff; color: var(--sd-navy); }
 #jd-navbar-slot .jd-nav .jd-mi-t { display: block; font-weight: 600; color: var(--sd-navy); font-size: 0.98rem; }
 #jd-navbar-slot .jd-nav .jd-mi-d { display: block; color: var(--sd-muted); font-size: 0.82rem; margin-top: 1px; }
-/* Study material chips inside the Courses menu (one link per class / subject) */
-@media (min-width: 992px) { #jd-navbar-slot .jd-nav .dropdown-menu.jd-dd-wide { min-width: 360px; } }
-#jd-navbar-slot .jd-nav .jd-mi-chips { padding: 8px 12px; }
-#jd-navbar-slot .jd-nav .jd-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
-#jd-navbar-slot .jd-nav .jd-chip { display: inline-block; padding: 3px 10px; border: 1px solid var(--sd-border); border-radius: 999px; font-size: 0.85rem; font-weight: 600; color: var(--sd-brand); text-decoration: none; background: #fff; white-space: nowrap; }
-#jd-navbar-slot .jd-nav .jd-chip:hover, #jd-navbar-slot .jd-nav .jd-chip:focus { background: #eef2ff; border-color: var(--sd-blue-light); transform: none; }
 #jd-navbar-slot .jd-nav .dropdown-item.jd-mi-all { font-weight: 600; color: var(--sd-brand); font-size: 0.92rem; }
 #jd-navbar-slot .jd-nav .nav-link.active { color: var(--sd-brand); }
 #jd-navbar-slot .jd-nav .jd-nav-cta .nav-link {
