@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Findme: a free 5-minute quiz to find where to start | JobsDoor360</title>
-    <meta name="description" content="Not sure what you need help with? Answer five easy questions about what you enjoy and we&#39;ll point you to the right place to start. Free, no sign-up." />
+    <title>Findme: what do you want to become? Free career discovery quiz | JobsDoor360</title>
+    <meta name="description" content="A free, adaptive career discovery quiz for Indian students. 15 to 25 fun questions about your interests, personality and values, then a detailed report: top career areas, roles, exams, skills and a 30-60-90 day plan." />
     <link rel="canonical" href="https://jobsdoor360.in/findme/" />
     <meta name="google-adsense-account" content="ca-pub-2075086355753452" />
     <link rel="icon" href="/fevicon.ico" type="profile" />
     <link rel="stylesheet" href="/staticfiles/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/layout.css?v=20261022" />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/style.css?v=20261022" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/layout.css?v=20261023" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/style.css?v=20261023" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/findme/style.css?v=20261023" />
     <!-- Google Analytics (same property as the rest of the site) + Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
     <script>
@@ -22,9 +23,9 @@
     </script>
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GTM-MFBK5637");</script>
     <!-- Sends a GA event for every button and link click -->
-    <script src="/staticfiles/mainfiles/platform/ga.js?v=20261022" defer></script>
+    <script src="/staticfiles/mainfiles/platform/ga.js?v=20261023" defer></script>
   </head>
-  <body class="sd-body" data-ga-module="findme">
+  <body class="sd-body fm-body" data-ga-module="findme">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
     <a class="visually-hidden-focusable" href="#main" data-ga-name="skip_to_content">Skip to content</a>
     <div id="jd-navbar-slot">
@@ -78,38 +79,79 @@
 </nav>
     </div>
     <main id="main">
-      <header class="sd-hero" data-ga-section="hero">
+      <header class="sd-hero fm-hero" data-ga-section="hero">
         <div class="sd-wrap">
           <nav class="sd-crumbs" aria-label="Breadcrumb" data-ga-section="breadcrumb"><a href="/" data-ga-event="nav_click" data-ga-name="breadcrumb_home">Home</a><span>/</span><span aria-current="page" style="opacity:1;margin:0">Findme</span></nav>
-          <span class="sd-pill">FREE · NO SIGN-UP · 5 QUESTIONS</span>
-          <h1>Not sure where to start?</h1>
-          <p>Five easy questions about what you enjoy. Nothing about money or marks. At the end we'll point you to the best place to begin.</p>
+          <span class="sd-pill" data-i18n="pill">FREE · NO SIGN-UP · ABOUT 8 MINUTES</span>
+          <h1 data-i18n="h1">What do you want to become?</h1>
+          <p data-i18n="hero">Engineer, doctor, dancer, designer, founder, officer, creator... Answer fun questions about what you enjoy. Each answer changes the next question, and at the end you get your own career report.</p>
         </div>
       </header>
-      <div class="sd-wrap sd-section">
-        <section class="sd-panel" id="sd-quiz-card" data-ga-section="quiz">
-          <div class="sd-progress" aria-hidden="true"><span id="sd-progress-bar"></span></div>
-          <p class="sd-step" id="sd-step"></p>
-          <h2 class="sd-q" id="sd-question" tabindex="-1">Loading…</h2>
-          <div class="sd-options" id="sd-options" role="group" aria-labelledby="sd-question"></div>
-          <div class="sd-btn-row">
-            <button type="button" class="sd-btn sd-btn-ghost" id="sd-prev" style="visibility: hidden" data-ga-name="quiz_back">Back</button>
-            <button type="button" class="sd-btn sd-btn-primary" id="sd-next" disabled data-ga-name="quiz_next">Next</button>
+
+      <div class="sd-wrap sd-section fm-wrap">
+        <!-- Start screen -->
+        <section class="sd-panel fm-panel" id="fm-start" data-ga-section="start" aria-labelledby="fm-start-title">
+          <div class="fm-lang" role="group" aria-label="Language">
+            <button type="button" class="fm-lang-btn" data-lang="en" aria-pressed="true" data-ga-name="findme_lang_en">English</button>
+            <button type="button" class="fm-lang-btn" data-lang="hi" aria-pressed="false" data-ga-name="findme_lang_hi">Hinglish</button>
+          </div>
+          <h2 class="sd-section-title" id="fm-start-title" data-i18n="startTitle">Let's find what fits you</h2>
+          <ul class="fm-how">
+            <li><span aria-hidden="true">🎯</span> <span data-i18n="how1">15 to 25 quick questions. No right or wrong answers.</span></li>
+            <li><span aria-hidden="true">🔀</span> <span data-i18n="how2">The quiz adapts to you, so no two people get the same questions.</span></li>
+            <li><span aria-hidden="true">📄</span> <span data-i18n="how3">Get a report with careers, exams, skills and a 90-day plan. Share it or save it as a PDF.</span></li>
+          </ul>
+          <fieldset class="fm-stage">
+            <legend data-i18n="stageQ">Where are you right now?</legend>
+            <div class="fm-stage-grid">
+              <label><input type="radio" name="fm-stage" value="school_8_10" /><span data-i18n="st_school_8_10">Class 8 to 10</span></label>
+              <label><input type="radio" name="fm-stage" value="school_11_12" /><span data-i18n="st_school_11_12">Class 11 or 12</span></label>
+              <label><input type="radio" name="fm-stage" value="college" /><span data-i18n="st_college">In college</span></label>
+              <label><input type="radio" name="fm-stage" value="graduate" /><span data-i18n="st_graduate">Graduated or working</span></label>
+            </div>
+          </fieldset>
+          <button type="button" class="sd-btn sd-btn-ghost sd-hidden fm-resume-row" id="fm-resume" data-ga-name="findme_resume" data-i18n="resume">Resume where you left off</button>
+          <div class="fm-modes">
+            <button type="button" class="fm-mode-card" id="fm-quick" data-ga-event="cta_click" data-ga-name="findme_quick">
+              <span class="fm-mode-ico" aria-hidden="true">⚡</span>
+              <span class="fm-mode-title" data-i18n="quickTitle">Quick Findme</span>
+              <span class="fm-mode-desc" data-i18n="quickDesc">No questions. We read your JobsDoor360 profile and give you an instant estimate.</span>
+              <span class="fm-mode-go" data-i18n="quickGo">Get my instant result →</span>
+            </button>
+            <button type="button" class="fm-mode-card fm-mode-primary" id="fm-begin" data-ga-event="cta_click" data-ga-name="findme_begin">
+              <span class="fm-mode-ico" aria-hidden="true">🧭</span>
+              <span class="fm-mode-title" data-i18n="detailedTitle">Detailed Findme</span>
+              <span class="fm-mode-desc" data-i18n="detailedDesc">15 to 25 adaptive questions that look at every angle. The most accurate result.</span>
+              <span class="fm-mode-go" data-i18n="detailedGo">Start the full quiz →</span>
+            </button>
+          </div>
+          <p class="fm-hint" id="fm-stage-hint" role="alert" hidden data-i18n="stageHint">Pick where you are right now so we can suggest the right exams and courses.</p>
+          <div class="fm-quick-status" id="fm-quick-status" role="status" aria-live="polite" hidden></div>
+          <p class="fm-load-error" id="fm-load-error" role="alert" hidden>Sorry, the quiz didn't load. Please check your connection and refresh the page.</p>
+          <p class="sd-note" data-i18n="privacy">No name or phone number needed. We save your answers to improve Findme, but never the words you type.</p>
+          <p class="fm-sd-link"><span data-i18n="sdLink">Here for insurance, property or tech help?</span> <a href="/smart-decisions/" data-ga-event="cta_click" data-ga-name="findme_start_smart_decisions" data-i18n="sdLinkA">Go to Smart Decisions</a></p>
+        </section>
+
+        <!-- Question screen -->
+        <section class="sd-panel fm-panel sd-hidden" id="fm-quiz" data-ga-section="quiz" aria-labelledby="fm-q">
+          <div class="fm-top">
+            <button type="button" class="fm-back" id="fm-back" data-ga-name="findme_back"><span aria-hidden="true">←</span> <span data-i18n="back">Back</span></button>
+            <span class="fm-phase" id="fm-phase"></span>
+            <button type="button" class="fm-lang-mini" id="fm-lang-mini" data-ga-name="findme_lang_toggle" aria-label="Switch language"></button>
+          </div>
+          <div class="sd-progress fm-progress" aria-hidden="true"><span id="fm-progress-bar"></span></div>
+          <div class="fm-stage-area">
+            <div class="fm-card" id="fm-card"></div>
+          </div>
+          <div class="fm-toast" id="fm-toast" role="status" aria-live="polite"></div>
+          <div class="fm-controls">
+            <button type="button" class="fm-skip" id="fm-skip" data-ga-name="findme_skip" data-i18n="skip">Skip this one</button>
+            <button type="button" class="sd-btn sd-btn-primary" id="fm-next" data-ga-name="findme_next" data-i18n="next">Next</button>
           </div>
         </section>
-        <section class="sd-panel sd-hidden" id="sd-result-card" data-ga-section="result" aria-live="polite">
-          <div class="sd-result-head">
-            <span class="sd-badge">Where to start</span>
-            <h2 class="sd-section-title" id="sd-result-title" tabindex="-1">Here's where we'd begin</h2>
-            <p class="sd-section-sub">Based on your answers. You can explore anything else whenever you like.</p>
-          </div>
-          <div id="sd-recos"></div>
-                    <div class="sd-btn-row" style="justify-content: center">
-            <button type="button" class="sd-btn sd-btn-ghost" id="sd-restart" data-ga-name="quiz_retake">Retake the quiz</button>
-            <a class="sd-btn sd-btn-primary" href="/smart-decisions/" data-ga-name="see_all_smart_decisions">See all Smart Decisions</a>
-          </div>
-          <p class="sd-note">Findme is always free. It's here to help you start, not to sell you anything.</p>
-        </section>
+
+        <!-- Report -->
+        <div id="fm-result" class="sd-hidden" data-ga-section="result" aria-live="polite"></div>
       </div>
     </main>
     <div id="jd-footer-slot">
@@ -181,8 +223,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
 <!-- back-to-top button + footer "Log out" link (markup above) -->
-<script type="module" src="/staticfiles/mainfiles/platform/layout.js?v=20261022"></script>
+<script type="module" src="/staticfiles/mainfiles/platform/layout.js?v=20261023"></script>
     <script type="module" src="/staticfiles/db/dbconfig.js"></script>
-    <script type="module" src="/staticfiles/mainfiles/findme/script.js?v=20261022"></script>
+    <script type="module" src="/staticfiles/mainfiles/findme/findme-app.js?v=20261023"></script>
   </body>
 </html>
