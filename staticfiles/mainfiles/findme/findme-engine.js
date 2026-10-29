@@ -53,6 +53,10 @@
 import { CLUSTERS, CLUSTER_KEYS, DIMS, DIM_GROUPS, dimGroup } from "./findme-clusters.js";
 
 export const LIMITS = { minAnswers: 15, maxAnswers: 25, maxScreens: 30, phase1: 5, phase3After: 12, phase3Force: 18 };
+// Quick Findme: the same adaptive engine, cut short (about 6 to 8 answers).
+export const QUICK_LIMITS = { minAnswers: 6, maxAnswers: 8, maxScreens: 12, phase1: 4, phase3After: 5, phase3Force: 6 };
+// A session can carry its own limits (Quick Findme); otherwise the defaults.
+const limitsOf = (session) => (session && session.limits ? { ...LIMITS, ...session.limits } : LIMITS);
 const T = 0.12; // softmax temperature
 const BETA = 0.6; // option-choice sharpness for p(o | cluster)
 const SINGLE = ["scenario", "this_or_that", "image_choice"];
@@ -261,6 +265,7 @@ export function replay(bank, session) {
     answered: 0, screens: 0, phase3Answered: 0,
     maxPos: {}, maxNeg: {}, contradictions: [], tieBroken: new Set(),
     topHistory: [], phase: 1, phaseLog: [{ phase: 1, atQuestion: 1 }], cites: [],
+    limits: limitsOf(session),
   };
   let score = scoreFrom(s.sum, s.exp);
   for (const r of session.responses) {
@@ -308,18 +313,21 @@ function topStable(s, n = 3) {
 
 function phaseFor(s) {
   if (s.phase === 3) return 3; // sticky
-  if (s.answered < LIMITS.phase1) return 1;
-  if (s.answered >= LIMITS.phase3Force) return 3;
-  if (s.answered >= LIMITS.phase3After && topStable(s)) return 3;
+  const L = s.limits || LIMITS;
+  if (s.answered < L.phase1) return 1;
+  if (s.answered >= L.phase3Force) return 3;
+  if (s.answered >= L.phase3After && topStable(s)) return 3;
   return 2;
 }
 
 // ---- public session API (immutable: every call returns a new session) ------------
-export function createSession({ id, stage = null, lang = "en", bankVersion = null, now = Date.now() } = {}) {
-  return {
+export function createSession({ id, stage = null, lang = "en", bankVersion = null, mode = "detailed", now = Date.now() } = {}) {
+  const session = {
     id: id || "fm_" + now.toString(36) + "_" + Math.random().toString(36).slice(2, 8),
-    stage, lang, bankVersion, startedAt: now, responses: [],
+    stage, lang, bankVersion, mode, startedAt: now, responses: [],
   };
+  if (mode === "quick") session.limits = { ...QUICK_LIMITS };
+  return session;
 }
 
 export function answer(bank, session, qid, value, atMs = Date.now()) {
@@ -362,8 +370,8 @@ export function getProgress(bank, session) {
   const [a, b] = s.score.order;
   const ratio = s.score.P[b] > 0 ? s.score.P[a] / s.score.P[b] : 1;
   const certainty = Math.min(1, Math.max(0, (ratio - 1) / 0.6));
-  const confidence = Math.min(1, 0.6 * Math.min(1, s.answered / LIMITS.minAnswers) + 0.4 * certainty * Math.min(1, s.answered / 10));
-  const fill = Math.min(0.97, 0.7 * (s.answered / LIMITS.maxAnswers) + 0.3 * confidence + (s.phase === 3 ? 0.1 : 0));
+  const confidence = Math.min(1, 0.6 * Math.min(1, s.answered / s.limits.minAnswers) + 0.4 * certainty * Math.min(1, s.answered / 10));
+  const fill = Math.min(0.97, 0.7 * (s.answered / s.limits.maxAnswers) + 0.3 * confidence + (s.phase === 3 ? 0.1 : 0));
   const label = { 1: "Getting to know you", 2: "Going deeper", 3: "Almost there" }[s.phase];
   const label_hi = { 1: "Tumhe jaan rahe hain", 2: "Aur gehrai mein", 3: "Bas thoda aur" }[s.phase];
   return { phase: s.phase, label, label_hi, fill, confidence };
@@ -371,8 +379,9 @@ export function getProgress(bank, session) {
 
 export function shouldStop(bank, session) {
   const s = replay(bank, session);
-  if (s.answered >= LIMITS.maxAnswers || s.screens >= LIMITS.maxScreens) return true;
-  if (s.answered >= LIMITS.minAnswers && s.phase === 3 && s.phase3Answered >= 2 && topStable(s)) {
+  const L = s.limits;
+  if (s.answered >= L.maxAnswers || s.screens >= L.maxScreens) return true;
+  if (s.answered >= L.minAnswers && s.phase === 3 && s.phase3Answered >= 2 && topStable(s)) {
     const [a, b] = s.score.order;
     const clear = s.score.P[a] / s.score.P[b] >= 1.25 || s.score.sims[a] - s.score.sims[b] >= 0.05;
     if (clear) return true;
@@ -387,7 +396,8 @@ function candidates(bank, s) {
   const banned = lastTwo.length === 2 && lastTwo[0] === lastTwo[1] ? lastTwo[0] : null;
   // open text: at most 3 per session, never within 4 screens of another
   const openCount = s.types.filter((t) => t === "open_short").length;
-  const openBlocked = openCount >= 3 || s.types.slice(-4).includes("open_short") || s.screens === 0;
+  // (the short Quick Findme run has no typed answers, to stay about a minute)
+  const openBlocked = openCount >= 3 || s.types.slice(-4).includes("open_short") || s.screens === 0 || s.limits.maxAnswers <= 10;
   const allowed = (q) => {
     if (s.seen.has(q.id)) return false;
     if (q.type === "open_short" && openBlocked) return false;

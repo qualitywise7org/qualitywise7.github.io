@@ -110,3 +110,31 @@
 // 		}
 //   }
 // }
+
+// ============================================================
+// Findme (added 2026-10). Add these inside
+//   match /databases/{database}/documents { ... }
+// in Firebase Console > Firestore > Rules, then Publish.
+// Also turn on Authentication > Sign-in method > Anonymous (for
+// findme_sessions) and Google (for the report login, if not already on).
+// ============================================================
+// // Anonymous / logged-in quiz sessions (answers only, no free text)
+// match /findme_sessions/{sessionId} {
+//   allow create: if request.auth != null && request.resource.data.uid == request.auth.uid;
+//   allow update: if request.auth != null && resource.data.uid == request.auth.uid
+//                 && request.resource.data.uid == request.auth.uid;
+//   allow read, delete: if false;
+// }
+// // The person who unlocked a report: details, consent, counters
+// match /findme_users/{uid} {
+//   allow read: if request.auth != null && request.auth.uid == uid;
+//   allow create, update: if request.auth != null && request.auth.uid == uid
+//                         && request.resource.data.uid == uid
+//                         && request.resource.data.email == request.auth.token.email;
+//   allow delete: if false;
+// }
+// // One document per report generated (for analytics); write-only from the site
+// match /findme_reports/{reportId} {
+//   allow create: if request.auth != null && request.resource.data.uid == request.auth.uid;
+//   allow read, update, delete: if false;
+// }

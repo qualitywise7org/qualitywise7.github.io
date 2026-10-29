@@ -13,6 +13,12 @@ import { CLUSTERS } from "./findme-clusters.js";
 import { buildReport, buildQuickReport, renderReportHTML, resultSummary, drawShareCard } from "./findme-report.js";
 import { syncSession, finishSession, loadLocal, clearLocal, ensureUser } from "./findme-store.js";
 import { loadProfile, profileToEvidence, inferStage, hasEnoughSignal } from "./findme-profile.js";
+import {
+  currentUser, loadDetails, isComplete, mountGate, saveUnlock, pending, profileHints, flushUnsynced, captureUtm,
+} from "./findme-gate.js";
+
+// Site switches from site_features.js, put on the page by findme/index.ejs.
+const FEATURES = window.JD_FEATURES || {};
 
 const VERSION = new URL(import.meta.url).searchParams.get("v") || "dev";
 const LANG_KEY = "findme_lang";
@@ -21,7 +27,7 @@ const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").mat
 
 const UI = {
   en: {
-    pill: "FREE · NO SIGN-UP · ABOUT 8 MINUTES",
+    pill: "FREE · QUICK OR DETAILED · LOG IN TO SEE THE FULL REPORT",
     h1: "What do you want to become?",
     hero: "Engineer, doctor, dancer, designer, founder, officer, creator... Answer fun questions about what you enjoy. Each answer changes the next question, and at the end you get your own career report.",
     startTitle: "Let's find what fits you",
@@ -32,7 +38,7 @@ const UI = {
     st_school_8_10: "Class 8 to 10", st_school_11_12: "Class 11 or 12", st_college: "In college", st_graduate: "Graduated or working",
     resume: "Resume where you left off", begin: "Let's begin", seeReport: "See my last report",
     stageHint: "Pick where you are right now so we can suggest the right exams and courses.",
-    privacy: "No name or phone number needed. We save your answers to improve Findme, but never the words you type.",
+    privacy: "Try it without an account. To see the full report, log in and add a few details. We never keep the words you type in answers.",
     sdLink: "Here for insurance, property or tech help?", sdLinkA: "Go to Smart Decisions",
     back: "Back", skip: "Skip this one", next: "Next", seeResult: "See my report",
     pickOne: "Pick one", pickUpTo: (n) => `Pick up to ${n}`, picked: (k, n) => `${k} of ${n} picked`,
@@ -40,14 +46,14 @@ const UI = {
     sliderHint: "Slide to where you'd honestly be.", openHint: "Stays on your device. We only keep the topic, not your words.",
     or: "or", building: "Building your report…",
     shared: "Card ready!", downloaded: "Card downloaded.",
-    quickTitle: "Quick Findme", quickDesc: "No questions. We read your JobsDoor360 profile and give you an instant estimate.", quickGo: "Get my instant result →",
-    detailedTitle: "Detailed Findme", detailedDesc: "15 to 25 adaptive questions that look at every angle. The most accurate result.", detailedGo: "Start the full quiz →",
-    quickReading: "Reading your profile…",
+    quickTitle: "Quick Findme", quickDesc: "About a minute. If you are logged in with a filled profile, no questions at all; otherwise 6 to 8 quick ones.", quickGo: "Get my quick result →",
+    detailedTitle: "Detailed Findme", detailedDesc: "15 to 25 adaptive questions that look at every angle. The most accurate result, and half the report is free to see.", detailedGo: "Start the full quiz →",
+    quickReading: "Getting things ready…",
     quickNeedLogin: "Quick Findme uses your saved profile. Please log in first, or take the Detailed Findme (no login needed).",
     quickLoginBtn: "Log in", quickThin: "There isn't enough in your profile yet for a good estimate. The Detailed Findme (15 to 25 questions) will give you a real result.",
   },
   hi: {
-    pill: "FREE · SIGN-UP NAHI · LAGBHAG 8 MINUTE",
+    pill: "FREE · QUICK YA DETAILED · POORI REPORT LOGIN KE BAAD",
     h1: "Tum kya banna chahte ho?",
     hero: "Engineer, doctor, dancer, designer, founder, officer, creator... Apni pasand ke mazedaar sawaalon ke jawab do. Har jawab agla sawaal badalta hai, aur end mein tumhari apni career report milegi.",
     startTitle: "Chalo dekhte hain tumhe kya suit karta hai",
@@ -58,7 +64,7 @@ const UI = {
     st_school_8_10: "Class 8 se 10", st_school_11_12: "Class 11 ya 12", st_college: "College mein", st_graduate: "Graduate / job mein",
     resume: "Jahan chhoda tha wahan se shuru", begin: "Shuru karein", seeReport: "Meri pichhli report dekho",
     stageHint: "Pehle batao tum abhi kahan ho, taaki sahi exams aur courses suggest kar sakein.",
-    privacy: "Naam ya phone number nahi chahiye. Hum Findme behtar karne ke liye jawab save karte hain, lekin tumhare type kiye shabd kabhi nahi.",
+    privacy: "Bina account ke try karo. Poori report ke liye login karke kuch details do. Tumhare type kiye jawab hum kabhi save nahi karte.",
     sdLink: "Insurance, property ya tech mein madad chahiye?", sdLinkA: "Smart Decisions pe jao",
     back: "Peeche", skip: "Ye skip karo", next: "Aage", seeResult: "Meri report dikhao",
     pickOne: "Ek chuno", pickUpTo: (n) => `${n} tak chuno`, picked: (k, n) => `${n} mein se ${k} chune`,
@@ -66,9 +72,9 @@ const UI = {
     sliderHint: "Imaandari se jahan ho wahan slide karo.", openHint: "Ye tumhare device pe hi rehta hai. Hum sirf topic rakhte hain, shabd nahi.",
     or: "ya", building: "Report ban rahi hai…",
     shared: "Card tayyar!", downloaded: "Card download ho gaya.",
-    quickTitle: "Quick Findme", quickDesc: "Koi sawaal nahi. Hum tumhari JobsDoor360 profile se turant estimate dete hain.", quickGo: "Turant result do →",
-    detailedTitle: "Detailed Findme", detailedDesc: "15 se 25 adaptive sawaal jo har angle dekhte hain. Sabse sahi result.", detailedGo: "Poora quiz shuru karo →",
-    quickReading: "Tumhari profile padh rahe hain…",
+    quickTitle: "Quick Findme", quickDesc: "Lagbhag ek minute. Login aur profile ho to koi sawaal nahi; warna 6 se 8 chhote sawaal.", quickGo: "Quick result do →",
+    detailedTitle: "Detailed Findme", detailedDesc: "15 se 25 adaptive sawaal jo har angle dekhte hain. Sabse sahi result, aur aadhi report free mein dikhegi.", detailedGo: "Poora quiz shuru karo →",
+    quickReading: "Taiyaari ho rahi hai…",
     quickNeedLogin: "Quick Findme tumhari saved profile use karta hai. Pehle log in karo, ya Detailed Findme karo (login nahi chahiye).",
     quickLoginBtn: "Log in", quickThin: "Abhi tumhari profile mein itna nahi hai ki achha estimate ban sake. Detailed Findme (15 se 25 sawaal) se asli result milega.",
   },
@@ -117,15 +123,8 @@ function setLang(l) {
   }
   applyLang();
   if (current && !$("fm-quiz").classList.contains("sd-hidden")) renderQuestion(current, { keepDraft: true, animate: false });
-  // re-render the report in the new language. Detailed rebuilds from the
-  // session; quick keeps its last report object (just re-renders it).
-  if (lastReport && !$("fm-result").classList.contains("sd-hidden")) {
-    if (lastMode === "detailed" && session) showReport();
-    else if (lastMode === "quick" && quickInputs) {
-      lastReport = buildQuickReport({ ...quickInputs, lang });
-      renderReportInto(lastReport);
-    } else renderReportInto(lastReport);
-  }
+  // re-render the report (and the gate, if it's showing) in the new language
+  if (lastReport && !$("fm-result").classList.contains("sd-hidden")) presentReport(rebuildReport(null));
 }
 
 // ---------------------------------------------------------------- screens
@@ -148,38 +147,66 @@ function selectedStage() {
   return document.querySelector('input[name="fm-stage"]:checked')?.value || null;
 }
 
+// ---------------------------------------------------------------- access (login gate)
+// The full report needs a logged-in account AND the Findme details.
+// Until then Quick Findme shows a preview (top match) and Detailed Findme
+// shows the first half. The gate itself lives in findme-gate.js.
+let authUser = null; // real (non-anonymous) Firebase user, or null
+let userDetails = null; // this user's saved Findme details, or null
+let gateShownAt = 0;
+let reportSource = "quiz"; // "quiz" | "profile"
+let accessReady = null; // first auth check, started at boot
+const utm = captureUtm(location.search, window.localStorage);
+const device = window.matchMedia?.("(max-width: 767px)").matches ? "mobile" : "desktop";
+
+async function refreshAccess() {
+  authUser = await currentUser();
+  userDetails = authUser ? await loadDetails(authUser) : null;
+  return accessFor({ mode: "detailed" });
+}
+const hasAccess = () => !!authUser && isComplete(userDetails);
+function accessFor(report) {
+  if (hasAccess()) return "full";
+  return report.mode === "quick" ? "preview" : "half";
+}
+
+// ---------------------------------------------------------------- start
 function begin() {
-  const stage = selectedStage();
-  if (!stage) {
+  startQuiz("detailed");
+}
+
+function startQuiz(mode) {
+  const stage = mode === "detailed" ? selectedStage() : null;
+  if (mode === "detailed" && !stage) {
     $("fm-stage-hint").hidden = false;
     document.querySelector('input[name="fm-stage"]').focus();
     return;
   }
   $("fm-stage-hint").hidden = true;
-  session = createSession({ stage, lang, bankVersion: bank.version });
+  $("fm-quick-status").hidden = true;
+  session = createSession({ stage, lang, bankVersion: bank.version, mode });
+  quickInputs = null;
+  reportSource = "quiz";
   restoreFrom = null;
   lastReport = null;
-  lastMode = "detailed";
-  track("quiz_start", { quiz_name: "findme", mode: "detailed" });
-  ensureUser(); // start anonymous sign-in early, in the background
+  lastMode = mode;
+  gateShownAt = 0;
+  track("quiz_start", { quiz_name: "findme", mode });
+  ensureUser(); // anonymous sign-in in the background, so answers can be saved
   syncSession(session, { bankVersion: bank.version });
   show("fm-quiz");
   advance();
 }
 
 // ---------------------------------------------------------------- Quick Findme
-function quickStatus(html, { showLogin = false, showDetailed = false } = {}) {
+function quickStatus(html) {
   const el = $("fm-quick-status");
   el.hidden = false;
-  el.innerHTML =
-    `<p>${html}</p>` +
-    `<div class="fm-quick-actions">` +
-    (showLogin ? `<a class="sd-btn sd-btn-primary" href="/login/?redirect_url=${encodeURIComponent(location.pathname)}" data-ga-name="findme_quick_login">${t("quickLoginBtn")}</a>` : "") +
-    (showDetailed ? `<button type="button" class="sd-btn sd-btn-ghost" id="fm-quick-detailed" data-ga-name="findme_quick_detailed">${t("detailedTitle")} →</button>` : "") +
-    `</div>`;
-  if (showDetailed) $("fm-quick-detailed").addEventListener("click", () => { el.hidden = true; begin(); });
+  el.innerHTML = `<p>${html}</p>`;
 }
 
+// Logged in with a filled profile -> instant result from the account, no
+// questions. Otherwise -> a short version of the quiz (about a minute).
 async function quickFindme() {
   if (busy) return;
   busy = true;
@@ -187,48 +214,46 @@ async function quickFindme() {
   btn.classList.add("fm-busy");
   $("fm-stage-hint").hidden = true;
   quickStatus(t("quickReading"));
-  track("quiz_start", { quiz_name: "findme", mode: "quick" });
-  let res;
-  try {
-    res = await loadProfile();
-  } catch (_) {
-    res = { signedIn: false, reason: "error" };
+  await (accessReady || refreshAccess());
+  let res = null;
+  if (authUser) {
+    try {
+      res = await loadProfile();
+    } catch (_) {
+      res = null;
+    }
   }
   busy = false;
   btn.classList.remove("fm-busy");
-
-  if (!res.signedIn) {
-    quickStatus(t("quickNeedLogin"), { showLogin: true, showDetailed: true });
-    track("findme_quick_blocked", { reason: res.reason || "no_user" });
-    return;
-  }
-  const ev = profileToEvidence(res.data);
-  if (!hasEnoughSignal(ev, res.data)) {
-    quickStatus(t("quickThin"), { showDetailed: true });
-    track("findme_quick_thin", {});
-    return;
-  }
-  // a previous detailed result gives each of its clusters a direct boost
-  if (res.data.prior && Array.isArray(res.data.prior.top)) {
-    res.data.prior.top.forEach((tc, i) => {
-      const boost = Math.max(0.5, 2 - i * 0.5);
-      for (const [d, val] of Object.entries(clusterSeed(tc.key))) {
-        ev.sum[d] = (ev.sum[d] || 0) + val * boost;
-        ev.exp[d] = (ev.exp[d] || 0) + Math.abs(val) * boost;
-      }
-    });
-  }
-  const score = scoreDims(ev.sum, ev.exp);
-  const stage = inferStage(res.data);
-  quickInputs = { score, ranking: score.ranking, stage, facts: ev.facts, priorTop: res.data.prior?.top || null };
-  const report = buildQuickReport({ ...quickInputs, lang });
   $("fm-quick-status").hidden = true;
-  lastReport = report;
-  lastMode = "quick";
-  track("quiz_complete", { quiz_name: "findme", mode: "quick", result: report.clusters[0]?.key });
-  renderReportInto(report);
-  // save the quick result too (reuses the same store)
-  if (report.ok) finishSession({ id: "fmq_" + Date.now().toString(36), lang, stage, startedAt: Date.now(), responses: [], mode: "quick" }, resultSummary(report), { bankVersion: bank.version }).catch(() => {});
+  if (res && res.signedIn) {
+    const ev = profileToEvidence(res.data);
+    if (hasEnoughSignal(ev, res.data)) {
+      // a previous detailed result gives each of its clusters a direct boost
+      if (res.data.prior && Array.isArray(res.data.prior.top)) {
+        res.data.prior.top.forEach((tc, i) => {
+          const boost = Math.max(0.5, 2 - i * 0.5);
+          for (const [d, val] of Object.entries(clusterSeed(tc.key))) {
+            ev.sum[d] = (ev.sum[d] || 0) + val * boost;
+            ev.exp[d] = (ev.exp[d] || 0) + Math.abs(val) * boost;
+          }
+        });
+      }
+      const score = scoreDims(ev.sum, ev.exp);
+      const stage = (userDetails && userDetails.stage) || inferStage(res.data);
+      quickInputs = { id: "fmqp_" + Date.now().toString(36), score, ranking: score.ranking, stage, facts: ev.facts, priorTop: res.data.prior?.top || null };
+      session = null;
+      reportSource = "profile";
+      lastMode = "quick";
+      gateShownAt = 0;
+      const report = buildQuickReport({ ...quickInputs, lang });
+      track("quiz_start", { quiz_name: "findme", mode: "quick", source: "profile" });
+      track("quiz_complete", { quiz_name: "findme", mode: "quick", source: "profile", result: report.clusters[0]?.key });
+      presentReport(report);
+      return;
+    }
+  }
+  startQuiz("quick");
 }
 
 // A prior detailed result nudges the dims that define that cluster.
@@ -240,10 +265,12 @@ function resume() {
   const saved = loadLocal();
   if (!saved) return;
   session = { ...saved.session, lang };
+  quickInputs = null;
+  reportSource = "quiz";
   restoreFrom = null;
   const radio = document.querySelector(`input[name="fm-stage"][value="${session.stage}"]`);
   if (radio) radio.checked = true;
-  track("quiz_resume", { quiz_name: "findme" });
+  track("quiz_resume", { quiz_name: "findme", mode: session.mode || "detailed" });
   if (saved.finished) return finish({ alreadySaved: true });
   show("fm-quiz");
   advance();
@@ -303,28 +330,132 @@ function goBack() {
 async function finish({ alreadySaved = false } = {}) {
   current = null;
   $("fm-progress-bar").style.width = "100%";
-  const report = showReport();
+  const report = buildReport(bank, session, { lang });
+  lastMode = report.mode;
+  presentReport(report);
   if (report.ok) {
-    track("quiz_complete", { quiz_name: "findme", result: report.clusters[0].key, questions: report.answered });
+    track("quiz_complete", { quiz_name: "findme", mode: report.mode, result: report.clusters[0].key, questions: report.answered });
     if (!alreadySaved) finishSession(session, resultSummary(report), { bankVersion: bank.version });
   }
 }
 
-function showReport() {
-  const report = buildReport(bank, session, { lang });
-  lastReport = report;
-  lastMode = "detailed";
-  renderReportInto(report);
-  return report;
+// Rebuild the current report (new language, or the stage from the details).
+function rebuildReport(stage) {
+  if (quickInputs) {
+    if (stage) quickInputs = { ...quickInputs, stage };
+    return buildQuickReport({ ...quickInputs, lang });
+  }
+  if (session) {
+    if (stage) session = { ...session, stage };
+    return buildReport(bank, session, { lang });
+  }
+  return lastReport;
 }
 
-// Paint a report (quick or detailed) into the result box and focus it.
-function renderReportInto(report) {
+// One findme_reports entry per report generated: a key per quiz session (or
+// per Quick-from-profile run), so re-renders don't count twice.
+const loggedReports = new Set();
+const reportKey = (report) => `${report.mode}:${(session && session.id) || (quickInputs && quickInputs.id) || "none"}`;
+
+// Already unlocked (logged in + details on file): save this report too.
+function logReport(report) {
+  const key = reportKey(report);
+  if (!report.ok || !authUser || !userDetails || loggedReports.has(key)) return;
+  loggedReports.add(key);
+  saveUnlock({
+    user: authUser, details: userDetails, report, session, mode: report.mode, source: reportSource, accessBefore: "full",
+    gateShownAtMs: 0, utm, lang, bankVersion: bank.version, device,
+  }).then((res) => track("findme_report_saved", { mode: report.mode, saved_to: res.savedTo }));
+}
+
+// Show a report with the access the visitor has, and the gate if needed.
+function presentReport(report) {
+  lastReport = report;
+  const access = report.ok ? accessFor(report) : "full";
+  renderReportInto(report, access);
+  if (access === "full") logReport(report);
+  if (access !== "full") mountGateFor(report, access);
+  // the first auth check may still be running: re-render once it answers
+  if (access !== "full" && accessReady) {
+    accessReady.then(() => {
+      if (lastReport === report && accessFor(report) === "full") presentReport(rebuildReport(userDetails && userDetails.stage));
+    });
+  }
+}
+
+// Paint a report into the result box and focus it.
+function renderReportInto(report, access = "full") {
   const box = $("fm-result");
-  box.innerHTML = renderReportHTML(report);
+  box.innerHTML = renderReportHTML(report, { access, features: FEATURES });
   show("fm-result");
   window.scrollTo({ top: box.getBoundingClientRect().top + window.scrollY - 80, behavior: reduceMotion ? "auto" : "smooth" });
   $("fm-report-title")?.focus({ preventScroll: true });
+}
+
+function mountGateFor(report, access) {
+  const slot = $("fm-gate-slot");
+  if (!slot) return;
+  if (!gateShownAt) gateShownAt = Date.now();
+  const waiting = pending.get();
+  const defaults = {
+    stage: (session && session.stage) || (quickInputs && quickInputs.stage) || null,
+    ...(userDetails || {}),
+    ...((waiting && waiting.details) || {}),
+  };
+  const gate = mountGate(slot, {
+    lang,
+    mode: report.mode,
+    user: authUser,
+    defaults,
+    track,
+    onUnlock: (details, user) => unlock(details, user, access),
+  });
+  track("findme_gate_view", { mode: report.mode, access, logged_in: !!authUser });
+  if (authUser && !userDetails) {
+    profileHints(authUser).then((h) => {
+      const fill = (id, v) => {
+        const el = document.getElementById(id);
+        if (el && !el.value && v) el.value = v;
+      };
+      fill("fm-g-name", h.name);
+      fill("fm-g-mobile", h.mobile);
+    });
+  }
+  return gate;
+}
+
+async function unlock(details, user, accessBefore) {
+  authUser = user;
+  userDetails = details;
+  const report = rebuildReport(details.stage);
+  loggedReports.add(reportKey(report)); // saved right here, not again by presentReport
+  const res = await saveUnlock({
+    user, details, report, session, mode: report.mode, source: reportSource, accessBefore,
+    gateShownAtMs: gateShownAt, utm, lang, bankVersion: bank.version, device,
+  });
+  pending.clear();
+  gateShownAt = 0;
+  track("findme_unlock_done", { mode: report.mode, saved_to: res.savedTo });
+  presentReport(report);
+}
+
+// Back from /login/ or /signup/ (?unlock=1): finish the unlock with the
+// details the visitor filled before leaving.
+async function resumeUnlock() {
+  const waiting = pending.get();
+  const saved = loadLocal();
+  if (!saved || !saved.session || !saved.session.responses.length) return false;
+  session = { ...saved.session, lang };
+  quickInputs = null;
+  reportSource = "quiz";
+  await accessReady;
+  const report = buildReport(bank, session, { lang });
+  if (!report.ok) return false;
+  lastMode = report.mode;
+  if (authUser && waiting && waiting.details) {
+    await unlock(waiting.details, authUser, report.mode === "quick" ? "preview" : "half");
+  } else presentReport(report); // not logged in after all: show the gate again
+  return true;
 }
 
 // ---------------------------------------------------------------- feedback
@@ -717,6 +848,8 @@ function restart() {
   current = null;
   lastReport = null;
   quickInputs = null;
+  gateShownAt = 0;
+  pending.clear();
   $("fm-result").innerHTML = "";
   if ($("fm-quick-status")) $("fm-quick-status").hidden = true;
   updateResumeButton();
@@ -762,8 +895,7 @@ async function boot() {
     if (action === "restart") restart();
     if (action === "detailed") {
       track("findme_quick_to_detailed", {});
-      $("fm-result").innerHTML = "";
-      begin();
+      goDetailed();
     }
   });
   // PDF: open every "Next steps" panel while printing, then restore
@@ -774,6 +906,33 @@ async function boot() {
   });
   window.addEventListener("afterprint", () => closed.forEach((d) => (d.open = false)));
   updateResumeButton();
+
+  // who is logged in (and their details); retry anything saved offline
+  accessReady = refreshAccess().then((a) => {
+    if (authUser) flushUnsynced(authUser).catch(() => {});
+    return a;
+  });
+
+  // links: /findme/?mode=quick | detailed, and /findme/?unlock=1 after login
+  const params = new URLSearchParams(location.search);
+  if (params.get("unlock") === "1") {
+    history.replaceState(null, "", location.pathname);
+    if (await resumeUnlock()) return;
+  }
+  if (params.get("mode") === "quick") quickFindme();
+  else if (params.get("mode") === "detailed") goDetailed();
+}
+
+// Detailed Findme starts with the stage question on the start screen.
+function goDetailed() {
+  $("fm-result").innerHTML = "";
+  show("fm-start");
+  if (selectedStage()) return startQuiz("detailed");
+  const stage = document.querySelector(".fm-stage");
+  stage.classList.add("fm-stage-focus");
+  stage.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+  document.querySelector('input[name="fm-stage"]').focus({ preventScroll: true });
+  setTimeout(() => stage.classList.remove("fm-stage-focus"), 2400);
 }
 
 boot();

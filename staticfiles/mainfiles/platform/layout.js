@@ -51,7 +51,10 @@ async function authLinks() {
   const login = document.getElementById("jd-login");
   const signup = document.getElementById("jd-signup");
   let signedIn = false;
-  window.onAuthStateChanged(auth, (user) => {
+  window.onAuthStateChanged(auth, (anyUser) => {
+    // Findme signs visitors in anonymously to save quiz answers; that is not
+    // a real account, so keep showing Login / Sign up for them.
+    const user = anyUser && !anyUser.isAnonymous ? anyUser : null;
     signedIn = !!user;
     if (footItem) footItem.hidden = !user;
     if (login) {

@@ -144,3 +144,13 @@
 #jd-footer-slot .chat-back-to-top.jd-widget > a:first-child { display: none !important; }
 #jd-footer-slot .chat-back-to-top.jd-widget .whatsapp-chat { width: 46px; height: 46px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
 #jd-footer-slot .chat-back-to-top.jd-widget .back-to-top-btn { width: 36px; height: 36px; }
+
+/* Utility Tools menu: two columns of tools on desktop (12+ items) */
+@media (min-width: 992px) {
+  #jd-navbar-slot .jd-nav .dropdown-menu.jd-dd-cols { display: none; min-width: 560px; }
+  #jd-navbar-slot .jd-nav .dropdown-menu.jd-dd-cols.show { display: grid; grid-template-columns: 1fr 1fr; column-gap: 4px; }
+  #jd-navbar-slot .jd-nav .dropdown-menu.jd-dd-cols > li.jd-dd-span { grid-column: 1 / -1; }
+}
+/* Footer: the tool list in two columns */
+#jd-footer-slot ul.jd-foot-2col { columns: 2; column-gap: 24px; }
+#jd-footer-slot ul.jd-foot-2col li { break-inside: avoid; }

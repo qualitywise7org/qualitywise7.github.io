@@ -34,6 +34,11 @@ const T = {
     insufficient: "We need a few more answers to build your report.",
     quickBadge: "Quick estimate", quickNote: "This is a fast read based only on what's already in your profile. For a result that looks at every angle, take the full Detailed Findme.",
     goDetailed: "Take the Detailed Findme", quickReasonsHead: "Based on your profile",
+    previewTitle: "Your Findme preview", halfTitle: "Your Findme report (first half)", previewTop: "Your top match",
+    moreMatches: (n) => `${n} more career ${n === 1 ? "match is" : "matches are"} in your full report.`,
+    lockedTitle: "In your full report",
+    lockedPreview: ["All your top career matches, with reasons", "Your personality, strengths and values", "Roles to explore, including new-age careers", "Exams, courses and skills for India", "Your 30-60-90 day plan"],
+    lockedHalf: ["Roles to explore for each career area", "Exams, courses and skills for India", "Your ikigai snapshot", "Your 30-60-90 day plan", "Surprising matches to also consider", "Share card and PDF"],
   },
   hi: {
     title: "Tumhari Findme report", top: "Tumhare top career areas", why: "Ye tumhe kyun suit karta hai", roles: "Explore karne layak roles",
@@ -48,6 +53,11 @@ const T = {
     insufficient: "Report banane ke liye thode aur jawab chahiye.",
     quickBadge: "Quick estimate", quickNote: "Ye sirf tumhari profile se banaya gaya jaldi wala result hai. Har angle dekhne wale result ke liye poora Detailed Findme karo.",
     goDetailed: "Detailed Findme karo", quickReasonsHead: "Tumhari profile se",
+    previewTitle: "Tumhara Findme preview", halfTitle: "Tumhari Findme report (pehla hissa)", previewTop: "Tumhara top match",
+    moreMatches: (n) => `${n} aur career match tumhari poori report mein hain.`,
+    lockedTitle: "Poori report mein",
+    lockedPreview: ["Saare top career matches, wajah ke saath", "Tumhari personality, strengths aur values", "Explore karne layak roles, naye careers bhi", "India ke exams, courses aur skills", "Tumhara 30-60-90 din ka plan"],
+    lockedHalf: ["Har career area ke roles", "India ke exams, courses aur skills", "Tumhara ikigai snapshot", "Tumhara 30-60-90 din ka plan", "Ye bhi socho: surprising matches", "Share card aur PDF"],
   },
 };
 export const strings = (lang) => T[lang === "hi" ? "hi" : "en"];
@@ -179,10 +189,10 @@ export function buildReport(bank, session, { lang = session.lang || "en", now = 
   const ranking = getRanking(bank, session);
   const stage = session.stage || null;
   if (state.answered < MIN_FOR_REPORT) {
-    return { ok: false, answered: state.answered, lang, mode: "detailed", caveat: lang === "hi" ? CAVEAT_HI : CAVEAT };
+    return { ok: false, answered: state.answered, lang, mode: session.mode === "quick" ? "quick" : "detailed", caveat: lang === "hi" ? CAVEAT_HI : CAVEAT };
   }
   return assemble({
-    mode: "detailed", lang, now, stage,
+    mode: session.mode === "quick" ? "quick" : "detailed", lang, now, stage,
     score: state.score, ranking, answered: state.answered,
     contradictions: state.contradictions,
     reasonsFor: (key, others, used) => reasonsFor(bank, state, key, others, used, lang),
@@ -301,12 +311,24 @@ export function resultSummary(report) {
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const list = (items) => `<ul>${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
 
-export function renderReportHTML(report) {
+// access: "full"    everything (after login + details)
+//         "half"    Detailed Findme before unlocking: summary, top career areas
+//                   (match + why), personality, values and work style. The rest
+//                   is listed as locked.
+//         "preview" Quick Findme before unlocking: the #1 match only.
+// Locked sections are NOT rendered (only their titles), so they can't be
+// revealed from the page source. The gate form is mounted into #fm-gate-slot.
+// features: the site switches (smartDecisions, findmeProducts).
+export function renderReportHTML(report, { access = "full", features = {} } = {}) {
   const t = strings(report.lang);
   if (!report.ok) {
     return `<section class="fm-report" aria-labelledby="fm-report-title"><h2 id="fm-report-title" tabindex="-1">${esc(t.title)}</h2><p>${esc(t.insufficient)}</p><div class="fm-actions"><button type="button" class="sd-btn sd-btn-primary" data-fm-action="restart" data-ga-name="findme_restart">${esc(t.restart)}</button></div></section>`;
   }
-  const clusterCard = (c) => `
+  const full = access === "full";
+  const preview = access === "preview";
+  const on = (flag) => features[flag] !== false;
+
+  const clusterCard = (c, { details = true, maxReasons = 3 } = {}) => `
     <article class="fm-cluster" id="fm-c-${esc(c.key)}" data-rank="${c.rank}">
       <header class="fm-cluster-head">
         <span class="fm-cluster-emoji" aria-hidden="true">${esc(c.emoji)}</span>
@@ -314,7 +336,8 @@ export function renderReportHTML(report) {
         <div class="fm-match" aria-label="${c.match}% match"><span>${c.match}%</span><small>match</small></div>
       </header>
       <div class="fm-meter" aria-hidden="true"><span style="width:${c.match}%"></span></div>
-      ${c.reasons.length ? `<h5>${esc(t.why)}</h5><ul class="fm-reasons">${c.reasons.map((r) => `<li>${esc(r.said)}</li>`).join("")}</ul>` : ""}
+      ${c.reasons.length ? `<h5>${esc(t.why)}</h5><ul class="fm-reasons">${c.reasons.slice(0, maxReasons).map((r) => `<li>${esc(r.said)}</li>`).join("")}</ul>` : ""}
+      ${details ? `
       <h5>${esc(t.roles)}</h5>
       <ul class="fm-roles">${c.roles.map((r) => `<li${r.nontraditional ? ' class="fm-nontrad"' : ""}><strong>${esc(r.title)}</strong>: ${esc(r.note)}${r.nontraditional ? ` <span class="fm-chip">${esc(t.nonTrad)}</span>` : ""}</li>`).join("")}</ul>
       <details class="fm-steps"${c.rank === 1 ? " open" : ""}>
@@ -324,10 +347,11 @@ export function renderReportHTML(report) {
           <div><h6>${esc(t.courses)}</h6>${list(c.courses)}</div>
           <div><h6>${esc(t.skills)}</h6>${list(c.skills)}</div>
         </div>
-      </details>
+      </details>` : ""}
     </article>`;
 
-  const products = report.products.length ? `
+  const showProducts = on("findmeProducts");
+  const products = !showProducts ? "" : report.products.length ? `
     <section class="fm-block fm-products" aria-labelledby="fm-h-products">
       <h3 id="fm-h-products">${esc(t.products)}</h3>
       <div class="fm-product-grid">${report.products.map((p) => `
@@ -340,30 +364,13 @@ export function renderReportHTML(report) {
     <p class="fm-soft">Want to talk it through with someone? <a href="/career-counselling/" data-ga-event="cta_click" data-ga-name="findme_soft_counselling">Career counselling</a> is there whenever you need it.</p>`;
 
   const quick = report.mode === "quick";
-  const quickBanner = quick ? `
+  const quickBanner = quick && full ? `
     <div class="fm-quick-note" data-ga-section="quick_note">
       <p>${esc(t.quickNote)}</p>
       <button type="button" class="sd-btn sd-btn-primary" data-fm-action="detailed" data-ga-name="findme_quick_to_detailed">${esc(t.goDetailed)} →</button>
     </div>` : "";
 
-  return `
-  <section class="fm-report${quick ? " fm-report-quick" : ""}" aria-labelledby="fm-report-title" data-fm-mode="${esc(report.mode)}">
-    <header class="fm-report-head">
-      <span class="sd-badge">${quick ? esc(t.quickBadge) + " · " : ""}${esc(report.riasec.code)}</span>
-      <h2 id="fm-report-title" tabindex="-1">${esc(t.title)}</h2>
-      <p class="fm-summary">${esc(report.summary)}</p>
-      <div class="fm-actions no-print">
-        <button type="button" class="sd-btn sd-btn-primary" data-fm-action="share" data-ga-name="findme_share">${esc(t.share)}</button>
-        <button type="button" class="sd-btn sd-btn-ghost" data-fm-action="pdf" data-ga-name="findme_pdf">${esc(t.pdf)}</button>
-      </div>
-    </header>
-    ${quickBanner}
-
-    <section class="fm-block" aria-labelledby="fm-h-top">
-      <h3 id="fm-h-top">${esc(t.top)}</h3>
-      ${report.clusters.map(clusterCard).join("")}
-    </section>
-
+  const personality = `
     <section class="fm-block" aria-labelledby="fm-h-personality">
       <h3 id="fm-h-personality">${esc(t.personality)}</h3>
       <div class="fm-two">
@@ -376,8 +383,9 @@ export function renderReportHTML(report) {
           ${report.talents.length ? `<h4>${esc(t.talents)}</h4><ul class="fm-plain">${report.talents.map((x) => `<li><strong>${esc(x.label)}</strong>: ${esc(x.plain)}</li>`).join("")}</ul>` : ""}
         </div>
       </div>
-    </section>
+    </section>`;
 
+  const values = `
     <section class="fm-block" aria-labelledby="fm-h-values">
       <h3 id="fm-h-values">${esc(t.values)}</h3>
       ${report.values.length ? `<ul class="fm-chips">${report.values.map((v) => `<li title="${esc(v.plain)}">${esc(v.label)}</li>`).join("")}</ul>` : ""}
@@ -388,8 +396,9 @@ export function renderReportHTML(report) {
           <div class="fm-axis-track" role="img" aria-label="${esc(ax.label)}"><span style="left:${ax.position}%"></span></div>
         </div>`).join("")}
       </div>
-    </section>
+    </section>`;
 
+  const ikigai = `
     <section class="fm-block fm-ikigai" aria-labelledby="fm-h-ikigai">
       <h3 id="fm-h-ikigai">${esc(t.ikigai)}</h3>
       <div class="fm-ikigai-grid">
@@ -398,8 +407,9 @@ export function renderReportHTML(report) {
         <div><h6>${esc(t.needs)}</h6><p>${esc(report.ikigai.needs.join(", ") || "Still discovering")}</p></div>
         <div><h6>${esc(t.paid)}</h6><p>${esc(report.ikigai.paid.join(", "))}</p></div>
       </div>
-    </section>
+    </section>`;
 
+  const plan = `
     <section class="fm-block" aria-labelledby="fm-h-plan">
       <h3 id="fm-h-plan">${esc(t.plan)} <small>(${esc(report.planFor)})</small></h3>
       <ol class="fm-plan">
@@ -407,31 +417,93 @@ export function renderReportHTML(report) {
         <li><h6>${esc(t.d60)}</h6>${list(report.plan.d60)}</li>
         <li><h6>${esc(t.d90)}</h6>${list(report.plan.d90)}</li>
       </ol>
-    </section>
+    </section>`;
 
-    ${report.also.length ? `
+  const also = report.also.length ? `
     <section class="fm-block" aria-labelledby="fm-h-also">
       <h3 id="fm-h-also">${esc(t.also)}</h3>
       <ul class="fm-also">${report.also.map((x) => `<li><span aria-hidden="true">${esc(x.emoji)}</span> <strong>${esc(x.label)}</strong> (${x.match}%): your ${esc(x.viaLabel.toLowerCase())} points here too.${x.roles.length ? ` Think ${esc(x.roles.map((r) => r.title).join(" or "))}.` : ""}</li>`).join("")}</ul>
-    </section>` : ""}
+    </section>` : "";
 
-    ${products}
-
-    ${report.mixedSignals.length ? `
+  const mixed = report.mixedSignals.length ? `
     <section class="fm-block fm-mixed" aria-labelledby="fm-h-mixed">
       <h3 id="fm-h-mixed">${esc(t.mixed)}</h3>
       <p>You gave different answers about <strong>${esc(report.mixedSignals.map((m) => m.label.toLowerCase()).join(", "))}</strong>. That's normal: it often depends on the situation. Notice when it shows up for you.</p>
-    </section>` : ""}
+    </section>` : "";
 
+  const caveat = `
     <section class="fm-block fm-caveat" aria-labelledby="fm-h-caveat">
       <h3 id="fm-h-caveat">${esc(t.caveat)}</h3>
       <p>${esc(report.caveat)}</p>
-    </section>
+    </section>`;
 
+  // What the locked part contains (titles only, no content)
+  const lockedList = (items) => `
+    <section class="fm-block fm-locked" aria-labelledby="fm-h-locked">
+      <h3 id="fm-h-locked"><i class="fa-solid fa-lock" aria-hidden="true"></i> ${esc(t.lockedTitle)}</h3>
+      <ul class="fm-locked-list">${items.map((x) => `<li><span class="fm-locked-name">${esc(x)}</span><span class="fm-skel" aria-hidden="true"></span><span class="fm-skel fm-skel-s" aria-hidden="true"></span></li>`).join("")}</ul>
+    </section>`;
+
+  const head = `
+    <header class="fm-report-head">
+      <span class="sd-badge">${quick ? esc(t.quickBadge) + " · " : ""}${esc(report.riasec.code)}</span>
+      <h2 id="fm-report-title" tabindex="-1">${esc(full ? t.title : preview ? t.previewTitle : t.halfTitle)}</h2>
+      <p class="fm-summary">${esc(report.summary)}</p>
+      ${full ? `<div class="fm-actions no-print">
+        <button type="button" class="sd-btn sd-btn-primary" data-fm-action="share" data-ga-name="findme_share">${esc(t.share)}</button>
+        <button type="button" class="sd-btn sd-btn-ghost" data-fm-action="pdf" data-ga-name="findme_pdf">${esc(t.pdf)}</button>
+      </div>` : ""}
+    </header>`;
+
+  const gateSlot = `<div id="fm-gate-slot" class="no-print" data-ga-section="report_gate"></div>`;
+  const tail = `
     <div class="fm-actions no-print">
       <button type="button" class="sd-btn sd-btn-ghost" data-fm-action="restart" data-ga-name="findme_restart">${esc(t.restart)}</button>
     </div>
-    <p class="sd-note no-print">${esc(t.smart)} <a href="/smart-decisions/" data-ga-event="cta_click" data-ga-name="findme_report_smart_decisions">${esc(t.smartLink)} →</a></p>
+    ${on("smartDecisions") ? `<p class="sd-note no-print">${esc(t.smart)} <a href="/smart-decisions/" data-ga-event="cta_click" data-ga-name="findme_report_smart_decisions">${esc(t.smartLink)} →</a></p>` : ""}`;
+  const open = `<section class="fm-report${quick ? " fm-report-quick" : ""}" aria-labelledby="fm-report-title" data-fm-mode="${esc(report.mode)}" data-fm-access="${esc(access)}">`;
+
+  if (preview) {
+    const first = report.clusters[0];
+    const more = report.clusters.length - 1;
+    return `${open}${head}
+    <section class="fm-block" aria-labelledby="fm-h-top">
+      <h3 id="fm-h-top">${esc(t.previewTop)}</h3>
+      ${clusterCard(first, { details: false, maxReasons: 1 })}
+      ${more > 0 ? `<p class="fm-more-locked"><i class="fa-solid fa-lock" aria-hidden="true"></i> ${esc(t.moreMatches(more))}</p>` : ""}
+    </section>
+    ${gateSlot}
+    ${lockedList(t.lockedPreview)}
+    ${caveat}${tail}
+  </section>`;
+  }
+  if (access === "half") {
+    return `${open}${head}
+    <section class="fm-block" aria-labelledby="fm-h-top">
+      <h3 id="fm-h-top">${esc(t.top)}</h3>
+      ${report.clusters.map((c) => clusterCard(c, { details: false })).join("")}
+    </section>
+    ${personality}
+    ${values}
+    ${gateSlot}
+    ${lockedList(t.lockedHalf)}
+    ${caveat}${tail}
+  </section>`;
+  }
+  return `${open}${head}
+    ${quickBanner}
+    <section class="fm-block" aria-labelledby="fm-h-top">
+      <h3 id="fm-h-top">${esc(t.top)}</h3>
+      ${report.clusters.map((c) => clusterCard(c)).join("")}
+    </section>
+    ${personality}
+    ${values}
+    ${ikigai}
+    ${plan}
+    ${also}
+    ${products}
+    ${mixed}
+    ${caveat}${tail}
   </section>`;
 }
 

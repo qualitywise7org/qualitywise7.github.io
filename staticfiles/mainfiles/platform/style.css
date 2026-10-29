@@ -174,7 +174,14 @@ a.sd-reco:hover { border-color: var(--sd-blue-light); color: inherit; }
 .jd-c-p2w { --tool: #0369a1; }
 .jd-c-p2i { --tool: #0f766e; }
 .jd-c-crop { --tool: #be185d; }
+.jd-c-rkb { --tool: #0e7490; }
+.jd-c-cpdf { --tool: #b91c1c; }
+.jd-c-age { --tool: #c2410c; }
+.jd-c-wc { --tool: #4338ca; }
+.jd-c-qr { --tool: #15803d; }
 .jd-tool-ico { background: var(--tool, var(--sd-brand)); }
+.jd-tool-card[hidden] { display: none !important; }
+.jd-new-tag { display: inline-block; vertical-align: middle; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; background: #e3f6e8; color: var(--sd-green); border-radius: 999px; padding: 2px 8px; margin-left: 4px; }
 
 @media (max-width: 600px) {
   .sd-grid.sd-lift { margin-top: 20px; }

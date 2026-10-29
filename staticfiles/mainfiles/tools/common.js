@@ -79,6 +79,11 @@
     "pdf-to-word": { title: "PDF to Word", desc: "Get editable text out of a PDF.", icon: "fa-file-pen", color: "jd-c-p2w" },
     "pdf-to-image": { title: "PDF to image", desc: "Save every PDF page as a JPG or PNG.", icon: "fa-file-export", color: "jd-c-p2i" },
     "crop-image": { title: "Crop image", desc: "Crop to square, passport, 16:9 and more.", icon: "fa-crop-simple", color: "jd-c-crop" },
+    "resize-image-kb": { title: "Resize image to KB", desc: "Photo or signature under a size limit.", icon: "fa-compress", color: "jd-c-rkb" },
+    "compress-pdf": { title: "Compress PDF", desc: "Make a PDF smaller for uploads.", icon: "fa-file-zipper", color: "jd-c-cpdf" },
+    "age-calculator": { title: "Age calculator", desc: "Exact age on any date.", icon: "fa-cake-candles", color: "jd-c-age" },
+    "word-counter": { title: "Word counter", desc: "Words, characters and reading time.", icon: "fa-align-left", color: "jd-c-wc" },
+    "qr-code": { title: "QR code generator", desc: "Links, WhatsApp, UPI and Wi-Fi.", icon: "fa-qrcode", color: "jd-c-qr" },
   };
 
   // Each tool's script.js calls register() with its settings + converter.
