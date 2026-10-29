@@ -34,9 +34,11 @@ const features = {
 };
 
 // Every utility tool, in the order the hub, header, footer and homepage show
-// them. `group` sets the section on /tools/; `popular` marks the homepage picks.
-// `added` tools get a "New" tag on the hub.
-const tools = [
+// them. `group` sets the section; `popular` marks the homepage card chips;
+// `added` tools get a "New" tag.
+// off: true = switched off: left out of every list and its page sends
+// visitors to /tools/. The code stays; delete `off: true` to bring it back.
+const allTools = [
   { key: "resize-image-kb", title: "Resize image to KB", desc: "Photo or signature under 20, 50 or 100 KB for exam and job forms", icon: "fa-compress", color: "jd-c-rkb", group: "photos", popular: true, added: true },
   { key: "crop-image", title: "Crop image", desc: "Square, passport photo, 16:9 and more", icon: "fa-crop-simple", color: "jd-c-crop", group: "photos", popular: true },
   { key: "merge-images", title: "Merge images", desc: "Join several images into one picture", icon: "fa-images", color: "jd-c-mimg", group: "photos" },
@@ -46,15 +48,17 @@ const tools = [
   { key: "word-to-pdf", title: "Word to PDF", desc: "Turn Word (.docx) files into PDFs", icon: "fa-file-word", color: "jd-c-w2p", group: "pdf" },
   { key: "pdf-to-word", title: "PDF to Word", desc: "Get editable text out of a PDF", icon: "fa-file-pen", color: "jd-c-p2w", group: "pdf" },
   { key: "pdf-to-image", title: "PDF to image", desc: "Save every PDF page as a JPG or PNG", icon: "fa-file-export", color: "jd-c-p2i", group: "pdf" },
-  { key: "age-calculator", title: "Age calculator", desc: "Exact age on any date, and an exam age-limit check", icon: "fa-cake-candles", color: "jd-c-age", group: "everyday", popular: true, added: true },
+  { key: "age-calculator", title: "Age calculator", desc: "Exact age on any date, and an exam age-limit check", icon: "fa-cake-candles", color: "jd-c-age", group: "everyday", added: true, off: true },
   { key: "word-counter", title: "Word counter", desc: "Words, characters and reading time for essays and forms", icon: "fa-align-left", color: "jd-c-wc", group: "everyday", added: true },
   { key: "qr-code", title: "QR code generator", desc: "QR codes for links, WhatsApp, UPI payments and Wi-Fi", icon: "fa-qrcode", color: "jd-c-qr", group: "everyday", added: true },
 ];
+// the tools that are switched on (what every page lists)
+const tools = allTools.filter((t) => !t.off);
 
 const toolGroups = [
   { key: "photos", title: "Photos for exam and job forms", desc: "Get photos and signatures to the size and shape a form asks for." },
   { key: "pdf", title: "PDF and documents", desc: "Convert, join and shrink documents." },
-  { key: "everyday", title: "Everyday helpers", desc: "Quick calculators and generators." },
+  { key: "everyday", title: "Everyday helpers", desc: "Count words and make QR codes." },
 ];
 
-module.exports = { features, tools, toolGroups };
+module.exports = { features, tools, allTools, toolGroups };

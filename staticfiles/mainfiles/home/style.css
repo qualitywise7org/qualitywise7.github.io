@@ -91,3 +91,21 @@
   .jd-h2-btn { transition: none; }
   .jd-h2-btn:hover { transform: none; }
 }
+
+/* Findme card: the two modes as equal buttons */
+.jd-h2-modes { display: grid; gap: 10px; }
+.jd-h2-mode {
+  display: flex; flex-direction: column; gap: 2px; background: #fff; color: var(--sd-navy); text-decoration: none;
+  border-radius: 12px; padding: 12px 16px; transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.jd-h2-mode:hover { color: var(--sd-navy); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); }
+.jd-h2-mode:focus-visible { outline: 3px solid #facc15; outline-offset: 2px; }
+.jd-h2-mode-t { font-weight: 800; font-size: 1.02rem; }
+.jd-h2-mode-t i { color: var(--sd-brand); margin-right: 4px; }
+.jd-h2-mode-d { font-size: 0.85rem; color: var(--sd-muted); }
+@media (min-width: 520px) { .jd-h2-modes { grid-template-columns: 1fr 1fr; } }
+@media (prefers-reduced-motion: reduce) { .jd-h2-mode { transition: none; } .jd-h2-mode:hover { transform: none; } }
+
+/* All tools on the homepage, grouped */
+.jd-h2-group { font-size: 1.05rem; font-weight: 800; color: var(--sd-navy); margin: 20px 0 10px; }
+.jd-h2-block .jd-home-head + .jd-h2-group { margin-top: 4px; }

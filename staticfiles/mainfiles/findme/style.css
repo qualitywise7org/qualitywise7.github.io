@@ -298,3 +298,9 @@
 @media print {
   .fm-body .fm-locked, .fm-body #fm-gate-slot { display: none !important; }
 }
+
+/* gate: login is step 1, details step 2 */
+.fm-gate-status.fm-gate-status-err { color: #b42318; }
+.fm-gate-status:empty { display: none; }
+.fm-g-submit { margin-top: 16px; }
+#fm-gate-form.fm-gate-waiting .fm-g-submit { background: #8e9bc4; }

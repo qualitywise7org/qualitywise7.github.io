@@ -10,9 +10,9 @@
     <link rel="icon" href="/fevicon.ico" type="profile" />
     <link rel="stylesheet" href="/staticfiles/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/layout.css?v=20261024" />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/style.css?v=20261024" />
-    <link rel="stylesheet" href="/staticfiles/mainfiles/findme/style.css?v=20261024" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/layout.css?v=20261025" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/platform/style.css?v=20261025" />
+    <link rel="stylesheet" href="/staticfiles/mainfiles/findme/style.css?v=20261025" />
     <!-- Google Analytics (same property as the rest of the site) + Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JQVXS3B5L"></script>
     <script>
@@ -23,7 +23,19 @@
     </script>
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "GTM-MFBK5637");</script>
     <!-- Sends a GA event for every button and link click -->
-    <script src="/staticfiles/mainfiles/platform/ga.js?v=20261024" defer></script>
+    <script src="/staticfiles/mainfiles/platform/ga.js?v=20261025" defer></script>
+        <script type="importmap">
+      {
+        "imports": {
+          "/staticfiles/mainfiles/findme/findme-engine.js": "/staticfiles/mainfiles/findme/findme-engine.js?v=20261025",
+          "/staticfiles/mainfiles/findme/findme-clusters.js": "/staticfiles/mainfiles/findme/findme-clusters.js?v=20261025",
+          "/staticfiles/mainfiles/findme/findme-report.js": "/staticfiles/mainfiles/findme/findme-report.js?v=20261025",
+          "/staticfiles/mainfiles/findme/findme-store.js": "/staticfiles/mainfiles/findme/findme-store.js?v=20261025",
+          "/staticfiles/mainfiles/findme/findme-profile.js": "/staticfiles/mainfiles/findme/findme-profile.js?v=20261025",
+          "/staticfiles/mainfiles/findme/findme-gate.js": "/staticfiles/mainfiles/findme/findme-gate.js?v=20261025"
+        }
+      }
+    </script>
   </head>
   <body class="sd-body fm-body" data-ga-module="findme">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFBK5637" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
@@ -47,7 +59,6 @@
             <li><a class="dropdown-item" href="/tools/word-to-pdf/" data-ga-name="nav_tool_word_to_pdf"><span class="jd-mi-t">Word to PDF</span><span class="jd-mi-d">Turn Word (.docx) files into PDFs</span></a></li>
             <li><a class="dropdown-item" href="/tools/pdf-to-word/" data-ga-name="nav_tool_pdf_to_word"><span class="jd-mi-t">PDF to Word</span><span class="jd-mi-d">Get editable text out of a PDF</span></a></li>
             <li><a class="dropdown-item" href="/tools/pdf-to-image/" data-ga-name="nav_tool_pdf_to_image"><span class="jd-mi-t">PDF to image</span><span class="jd-mi-d">Save every PDF page as a JPG or PNG</span></a></li>
-            <li><a class="dropdown-item" href="/tools/age-calculator/" data-ga-name="nav_tool_age_calculator"><span class="jd-mi-t">Age calculator</span><span class="jd-mi-d">Exact age on any date, and an exam age-limit check</span></a></li>
             <li><a class="dropdown-item" href="/tools/word-counter/" data-ga-name="nav_tool_word_counter"><span class="jd-mi-t">Word counter</span><span class="jd-mi-d">Words, characters and reading time for essays and forms</span></a></li>
             <li><a class="dropdown-item" href="/tools/qr-code/" data-ga-name="nav_tool_qr_code"><span class="jd-mi-t">QR code generator</span><span class="jd-mi-d">QR codes for links, WhatsApp, UPI payments and Wi-Fi</span></a></li>
             <li class="jd-dd-span"><hr class="dropdown-divider"></li>
@@ -81,8 +92,8 @@
           </div>
           <h2 class="sd-section-title" id="fm-start-title" data-i18n="startTitle">Let's find what fits you</h2>
           <ul class="fm-how">
-            <li><span aria-hidden="true">🎯</span> <span data-i18n="how1">15 to 25 quick questions. No right or wrong answers.</span></li>
-            <li><span aria-hidden="true">🔀</span> <span data-i18n="how2">The quiz adapts to you, so no two people get the same questions.</span></li>
+            <li><span aria-hidden="true">🎯</span> <span data-i18n="how1">Questions come from a bank of 105, built on career psychology: RIASEC interests, Big Five personality, strengths and values.</span></li>
+            <li><span aria-hidden="true">🔀</span> <span data-i18n="how2">Each answer changes the next question, so no two people get the same quiz. No right or wrong answers.</span></li>
             <li><span aria-hidden="true">📄</span> <span data-i18n="how3">Get a report with careers, exams, skills and a 90-day plan. Share it or save it as a PDF.</span></li>
           </ul>
           <fieldset class="fm-stage">
@@ -99,13 +110,13 @@
             <button type="button" class="fm-mode-card" id="fm-quick" data-ga-event="cta_click" data-ga-name="findme_quick">
               <span class="fm-mode-ico" aria-hidden="true">⚡</span>
               <span class="fm-mode-title" data-i18n="quickTitle">Quick Findme</span>
-              <span class="fm-mode-desc" data-i18n="quickDesc">About a minute. If you are logged in with a filled profile, no questions at all; otherwise 6 to 8 quick ones.</span>
+              <span class="fm-mode-desc" data-i18n="quickDesc">6 to 8 adaptive questions, about a minute. Logged in with a filled profile? We can use that instead.</span>
               <span class="fm-mode-go" data-i18n="quickGo">Get my instant result →</span>
             </button>
             <button type="button" class="fm-mode-card fm-mode-primary" id="fm-begin" data-ga-event="cta_click" data-ga-name="findme_begin">
               <span class="fm-mode-ico" aria-hidden="true">🧭</span>
               <span class="fm-mode-title" data-i18n="detailedTitle">Detailed Findme</span>
-              <span class="fm-mode-desc" data-i18n="detailedDesc">15 to 25 adaptive questions that look at every angle. The most accurate result, and half the report is free to see.</span>
+              <span class="fm-mode-desc" data-i18n="detailedDesc">15 to 25 adaptive questions from the full bank. The most accurate result, and half the report is free to see.</span>
               <span class="fm-mode-go" data-i18n="detailedGo">Start the full quiz →</span>
             </button>
           </div>
@@ -161,7 +172,6 @@
           <li><a class="jd-fl" href="/tools/word-to-pdf/">Word to PDF</a></li>
           <li><a class="jd-fl" href="/tools/pdf-to-word/">PDF to Word</a></li>
           <li><a class="jd-fl" href="/tools/pdf-to-image/">PDF to image</a></li>
-          <li><a class="jd-fl" href="/tools/age-calculator/">Age calculator</a></li>
           <li><a class="jd-fl" href="/tools/word-counter/">Word counter</a></li>
           <li><a class="jd-fl" href="/tools/qr-code/">QR code generator</a></li>
           <li><a class="jd-fl" href="/tools/">All tools →</a></li>
@@ -197,9 +207,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f6b356be29.js" crossorigin="anonymous"></script>
 <!-- back-to-top button + footer "Log out" link (markup above) -->
-<script type="module" src="/staticfiles/mainfiles/platform/layout.js?v=20261024"></script>
+<script type="module" src="/staticfiles/mainfiles/platform/layout.js?v=20261025"></script>
         <script>window.JD_FEATURES = {"findme":true,"utilityTools":true,"smartDecisions":false,"courses":false,"careerCounselling":false,"blog":false,"results":false,"donateBooks":false,"homeClassic":false,"findmeProducts":true};</script>
     <script type="module" src="/staticfiles/db/dbconfig.js"></script>
-    <script type="module" src="/staticfiles/mainfiles/findme/findme-app.js?v=20261024"></script>
+    <script type="module" src="/staticfiles/mainfiles/findme/findme-app.js?v=20261025"></script>
   </body>
 </html>

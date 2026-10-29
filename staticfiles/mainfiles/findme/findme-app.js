@@ -14,7 +14,7 @@ import { buildReport, buildQuickReport, renderReportHTML, resultSummary, drawSha
 import { syncSession, finishSession, loadLocal, clearLocal, ensureUser } from "./findme-store.js";
 import { loadProfile, profileToEvidence, inferStage, hasEnoughSignal } from "./findme-profile.js";
 import {
-  currentUser, loadDetails, isComplete, mountGate, saveUnlock, pending, profileHints, flushUnsynced, captureUtm,
+  currentUser, loadDetails, isComplete, mountGate, saveUnlock, pending, profileHints, flushUnsynced, captureUtm, validateDetails,
 } from "./findme-gate.js";
 
 // Site switches from site_features.js, put on the page by findme/index.ejs.
@@ -31,10 +31,11 @@ const UI = {
     h1: "What do you want to become?",
     hero: "Engineer, doctor, dancer, designer, founder, officer, creator... Answer fun questions about what you enjoy. Each answer changes the next question, and at the end you get your own career report.",
     startTitle: "Let's find what fits you",
-    how1: "15 to 25 quick questions. No right or wrong answers.",
-    how2: "The quiz adapts to you, so no two people get the same questions.",
+    how1: "Questions come from a bank of 105, built on career psychology: RIASEC interests, Big Five personality, strengths and values.",
+    how2: "Each answer changes the next question, so no two people get the same quiz. No right or wrong answers.",
     how3: "Get a report with careers, exams, skills and a 90-day plan. Share it or save it as a PDF.",
     stageQ: "Where are you right now?",
+    stageFirst: "First, where are you right now?", stageWhy: "We use this to suggest the right exams, courses and next steps.",
     st_school_8_10: "Class 8 to 10", st_school_11_12: "Class 11 or 12", st_college: "In college", st_graduate: "Graduated or working",
     resume: "Resume where you left off", begin: "Let's begin", seeReport: "See my last report",
     stageHint: "Pick where you are right now so we can suggest the right exams and courses.",
@@ -46,8 +47,8 @@ const UI = {
     sliderHint: "Slide to where you'd honestly be.", openHint: "Stays on your device. We only keep the topic, not your words.",
     or: "or", building: "Building your report…",
     shared: "Card ready!", downloaded: "Card downloaded.",
-    quickTitle: "Quick Findme", quickDesc: "About a minute. If you are logged in with a filled profile, no questions at all; otherwise 6 to 8 quick ones.", quickGo: "Get my quick result →",
-    detailedTitle: "Detailed Findme", detailedDesc: "15 to 25 adaptive questions that look at every angle. The most accurate result, and half the report is free to see.", detailedGo: "Start the full quiz →",
+    quickTitle: "Quick Findme", quickDesc: "6 to 8 adaptive questions, about a minute. Logged in with a filled profile? We can use that instead.", quickGo: "Get my quick result →",
+    detailedTitle: "Detailed Findme", detailedDesc: "15 to 25 adaptive questions from the full bank. The most accurate result, and half the report is free to see.", detailedGo: "Start the full quiz →",
     quickReading: "Getting things ready…",
     quickNeedLogin: "Quick Findme uses your saved profile. Please log in first, or take the Detailed Findme (no login needed).",
     quickLoginBtn: "Log in", quickThin: "There isn't enough in your profile yet for a good estimate. The Detailed Findme (15 to 25 questions) will give you a real result.",
@@ -57,10 +58,11 @@ const UI = {
     h1: "Tum kya banna chahte ho?",
     hero: "Engineer, doctor, dancer, designer, founder, officer, creator... Apni pasand ke mazedaar sawaalon ke jawab do. Har jawab agla sawaal badalta hai, aur end mein tumhari apni career report milegi.",
     startTitle: "Chalo dekhte hain tumhe kya suit karta hai",
-    how1: "15 se 25 chhote sawaal. Koi sahi ya galat jawab nahi.",
-    how2: "Quiz tumhare hisaab se badalta hai, isliye sabko alag sawaal milte hain.",
+    how1: "Sawaal 105 sawaalon ke bank se aate hain, jo career psychology par bane hain: RIASEC interests, Big Five personality, strengths aur values.",
+    how2: "Har jawab agla sawaal badalta hai, isliye sabka quiz alag hota hai. Koi sahi ya galat jawab nahi.",
     how3: "Careers, exams, skills aur 90 din ke plan wali report. Share karo ya PDF save karo.",
     stageQ: "Tum abhi kahan ho?",
+    stageFirst: "Pehle batao, tum abhi kahan ho?", stageWhy: "Isse hum sahi exams, courses aur agle kadam bata paate hain.",
     st_school_8_10: "Class 8 se 10", st_school_11_12: "Class 11 ya 12", st_college: "College mein", st_graduate: "Graduate / job mein",
     resume: "Jahan chhoda tha wahan se shuru", begin: "Shuru karein", seeReport: "Meri pichhli report dekho",
     stageHint: "Pehle batao tum abhi kahan ho, taaki sahi exams aur courses suggest kar sakein.",
@@ -72,8 +74,8 @@ const UI = {
     sliderHint: "Imaandari se jahan ho wahan slide karo.", openHint: "Ye tumhare device pe hi rehta hai. Hum sirf topic rakhte hain, shabd nahi.",
     or: "ya", building: "Report ban rahi hai…",
     shared: "Card tayyar!", downloaded: "Card download ho gaya.",
-    quickTitle: "Quick Findme", quickDesc: "Lagbhag ek minute. Login aur profile ho to koi sawaal nahi; warna 6 se 8 chhote sawaal.", quickGo: "Quick result do →",
-    detailedTitle: "Detailed Findme", detailedDesc: "15 se 25 adaptive sawaal jo har angle dekhte hain. Sabse sahi result, aur aadhi report free mein dikhegi.", detailedGo: "Poora quiz shuru karo →",
+    quickTitle: "Quick Findme", quickDesc: "6 se 8 adaptive sawaal, lagbhag ek minute. Login aur profile bhari ho to usi se result.", quickGo: "Quick result do →",
+    detailedTitle: "Detailed Findme", detailedDesc: "Poore bank se 15 se 25 adaptive sawaal. Sabse sahi result, aur aadhi report free mein dikhegi.", detailedGo: "Poora quiz shuru karo →",
     quickReading: "Taiyaari ho rahi hai…",
     quickNeedLogin: "Quick Findme tumhari saved profile use karta hai. Pehle log in karo, ya Detailed Findme karo (login nahi chahiye).",
     quickLoginBtn: "Log in", quickThin: "Abhi tumhari profile mein itna nahi hai ki achha estimate ban sake. Detailed Findme (15 se 25 sawaal) se asli result milega.",
@@ -122,7 +124,8 @@ function setLang(l) {
     session = { ...session, lang };
   }
   applyLang();
-  if (current && !$("fm-quiz").classList.contains("sd-hidden")) renderQuestion(current, { keepDraft: true, animate: false });
+  if (stageStep && !$("fm-quiz").classList.contains("sd-hidden")) showStageStep();
+  else if (current && !$("fm-quiz").classList.contains("sd-hidden")) renderQuestion(current, { keepDraft: true, animate: false });
   // re-render the report (and the gate, if it's showing) in the new language
   if (lastReport && !$("fm-result").classList.contains("sd-hidden")) presentReport(rebuildReport(null));
 }
@@ -177,11 +180,8 @@ function begin() {
 
 function startQuiz(mode) {
   const stage = mode === "detailed" ? selectedStage() : null;
-  if (mode === "detailed" && !stage) {
-    $("fm-stage-hint").hidden = false;
-    document.querySelector('input[name="fm-stage"]').focus();
-    return;
-  }
+  if (mode === "detailed" && !stage) return showStageStep();
+  stageStep = false;
   $("fm-stage-hint").hidden = true;
   $("fm-quick-status").hidden = true;
   session = createSession({ stage, lang, bankVersion: bank.version, mode });
@@ -195,6 +195,7 @@ function startQuiz(mode) {
   ensureUser(); // anonymous sign-in in the background, so answers can be saved
   syncSession(session, { bankVersion: bank.version });
   show("fm-quiz");
+  scrollToPanel("fm-quiz");
   advance();
 }
 
@@ -314,7 +315,18 @@ function doSkip() {
 
 function goBack() {
   if (busy) return;
+  if (stageStep || !session) {
+    stageStep = false;
+    current = null;
+    $("fm-skip").hidden = false;
+    show("fm-start");
+    return;
+  }
   if (!session.responses.length) {
+    if (session.mode === "detailed") {
+      showStageStep();
+      return;
+    }
     show("fm-start");
     current = null;
     return;
@@ -397,10 +409,13 @@ function mountGateFor(report, access) {
   if (!slot) return;
   if (!gateShownAt) gateShownAt = Date.now();
   const waiting = pending.get();
+  // prefill: stage from the quiz, then saved details, then what was typed
+  // before an email login (empty values don't overwrite)
+  const typed = Object.fromEntries(Object.entries((waiting && waiting.details) || {}).filter(([, v]) => v !== "" && v != null && v !== false));
   const defaults = {
     stage: (session && session.stage) || (quickInputs && quickInputs.stage) || null,
     ...(userDetails || {}),
-    ...((waiting && waiting.details) || {}),
+    ...typed,
   };
   const gate = mountGate(slot, {
     lang,
@@ -409,6 +424,24 @@ function mountGateFor(report, access) {
     defaults,
     track,
     onUnlock: (details, user) => unlock(details, user, access),
+    // after a Google login: if this person's details are on file, unlock now
+    onLogin: async (user) => {
+      authUser = user;
+      userDetails = await loadDetails(user);
+      if (isComplete(userDetails)) {
+        await unlock(userDetails, user, access);
+        return true;
+      }
+      profileHints(user).then((h) => {
+        const fill = (id, v) => {
+          const el = document.getElementById(id);
+          if (el && !el.value && v) el.value = v;
+        };
+        fill("fm-g-name", h.name);
+        fill("fm-g-mobile", h.mobile);
+      });
+      return false;
+    },
   });
   track("findme_gate_view", { mode: report.mode, access, logged_in: !!authUser });
   if (authUser && !userDetails) {
@@ -452,9 +485,12 @@ async function resumeUnlock() {
   const report = buildReport(bank, session, { lang });
   if (!report.ok) return false;
   lastMode = report.mode;
-  if (authUser && waiting && waiting.details) {
-    await unlock(waiting.details, authUser, report.mode === "quick" ? "preview" : "half");
-  } else presentReport(report); // not logged in after all: show the gate again
+  const v = validateDetails((waiting && waiting.details) || {});
+  if (authUser && v.ok) {
+    await unlock(v.clean, authUser, report.mode === "quick" ? "preview" : "half");
+  } else if (authUser && isComplete(userDetails)) {
+    await unlock(userDetails, authUser, report.mode === "quick" ? "preview" : "half");
+  } else presentReport(report); // logged in but details missing, or not logged in: show the gate
   return true;
 }
 
@@ -485,6 +521,8 @@ function feedbackFor(q, value) {
 // ---------------------------------------------------------------- rendering
 function renderQuestion(q, { keepDraft = false, animate = true, direction = "fwd" } = {}) {
   current = q;
+  stageStep = false;
+  $("fm-skip").hidden = false;
   if (!keepDraft) draft = initialDraft(q);
   const progress = getProgress(bank, session);
   $("fm-phase").textContent = lang === "hi" ? progress.label_hi : progress.label;
@@ -926,13 +964,47 @@ async function boot() {
 // Detailed Findme starts with the stage question on the start screen.
 function goDetailed() {
   $("fm-result").innerHTML = "";
-  show("fm-start");
-  if (selectedStage()) return startQuiz("detailed");
-  const stage = document.querySelector(".fm-stage");
-  stage.classList.add("fm-stage-focus");
-  stage.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
-  document.querySelector('input[name="fm-stage"]').focus({ preventScroll: true });
-  setTimeout(() => stage.classList.remove("fm-stage-focus"), 2400);
+  startQuiz("detailed"); // asks the stage first if it wasn't picked
+}
+
+// Detailed Findme needs the stage (exams, courses and products depend on
+// it). If it wasn't picked on the start screen, it is the quiz's first screen.
+let stageStep = false;
+const STAGE_KEYS = ["school_8_10", "school_11_12", "college", "graduate"];
+function showStageStep() {
+  stageStep = true;
+  current = null;
+  $("fm-stage-hint").hidden = true;
+  $("fm-quick-status").hidden = true;
+  show("fm-quiz");
+  scrollToPanel("fm-quiz");
+  $("fm-phase").textContent = lang === "hi" ? "Tumhe jaan rahe hain" : "Getting to know you";
+  $("fm-progress-bar").style.width = "3%";
+  $("fm-skip").hidden = true;
+  $("fm-next").classList.add("sd-hidden");
+  toast("");
+  const card = $("fm-card");
+  card.dataset.type = "stage";
+  card.innerHTML =
+    `<h2 class="fm-q" id="fm-q" tabindex="-1">${t("stageFirst")}</h2>` +
+    `<p class="fm-qhint" id="fm-qhint">${t("stageWhy")}</p>` +
+    `<div class="fm-body-scenario" role="group" aria-labelledby="fm-q">` +
+    STAGE_KEYS.map((k) => `<button type="button" class="sd-opt fm-opt" data-stage="${k}" data-ga-name="findme_stage_${k}">${t("st_" + k)}</button>`).join("") +
+    `</div>`;
+  card.querySelectorAll("[data-stage]").forEach((b) =>
+    b.addEventListener("click", () => {
+      const radio = document.querySelector(`input[name="fm-stage"][value="${b.dataset.stage}"]`);
+      if (radio) radio.checked = true;
+      startQuiz("detailed");
+    })
+  );
+  $("fm-q").focus({ preventScroll: true });
+}
+
+function scrollToPanel(id) {
+  const el = $(id);
+  const top = el.getBoundingClientRect().top + window.scrollY - 80;
+  if (window.scrollY > top) window.scrollTo({ top, behavior: reduceMotion ? "auto" : "smooth" });
 }
 
 boot();
