@@ -38,28 +38,14 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js";
 
-// Initialize Firebase app
-const firebaseConfig = {
-  apiKey: "AIzaSyDzoJJ_325VL_axuuAFzDf3Bwt_ENzu2rM",
-  authDomain: "jobsdoor360-39b87.firebaseapp.com",
-  databaseURL: "https://jobsdoor360-39b87-default-rtdb.firebaseio.com",
-  projectId: "jobsdoor360-39b87",
-  storageBucket: "jobsdoor360-39b87.appspot.com",
-  messagingSenderId: "326416618185",
-  appId: "1:326416618185:web:de19e90fe4f06006ef3318",
-  measurementId: "G-60RHEMJNM6",
-};
+// Firebase web config. It is NOT kept in the source code any more:
+// `node build.js` generates ./firebase-config.js (next to this file, in
+// target/) from environment variables or firebase.config.json.
+// See jobsdoor360-website/firebase.config.example.json.
+// To use the testing project (jd360-testing) locally, put its values in
+// firebase.config.local.json.
+import firebaseConfig from "./firebase-config.js";
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyB50M8vFXcbkJ_SGNncFzzK0RHMLQpNIzU",
-//   authDomain: "jd360-testing.firebaseapp.com",
-//   databaseURL: "https://jd360-testing-default-rtdb.firebaseio.com",
-//   projectId: "jd360-testing",
-//   storageBucket: "jd360-testing.firebasestorage.app",
-//   messagingSenderId: "576496756828",
-//   appId: "1:576496756828:web:4482903b8db23a66285e99",
-//   measurementId: "G-GN8843MVDG"
-// };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);

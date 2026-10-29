@@ -215,7 +215,10 @@ if (redirectParam) {
 
 
 const email = localStorage.getItem("email");
-if (email && !redirect_url) {
+// `redirect_url` used to be read here but was never defined (it's commented
+// out above), so this line threw a ReferenceError for anyone with a saved
+// email and the login form stopped working. Use the query parameter instead.
+if (email && !redirectParam) {
   window.location.href = "/";
 }
 

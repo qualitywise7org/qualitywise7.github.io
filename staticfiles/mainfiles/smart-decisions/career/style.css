@@ -1,0 +1,45 @@
+/* Smart Career (/smart-decisions/career/) only.
+   Loaded after /staticfiles/mainfiles/platform/style.css (shared). */
+.cr-intro { max-width: 860px; margin: 0 auto 28px; }
+.cr-gets { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.cr-gets li { background: #fff; border: 1px solid var(--sd-border); border-radius: 12px; padding: 14px 16px; color: #3a3f4b; font-size: 0.94rem; }
+.cr-gets i { color: var(--sd-blue-light); margin-right: 6px; }
+.cr-gets strong { color: var(--sd-navy); }
+
+.cr-result { max-width: 900px; }
+.cr-area { border: 1.5px solid var(--sd-border); border-radius: 14px; padding: 18px 20px; margin-bottom: 16px; background: #fff; }
+.cr-area:first-child { border-color: var(--sd-blue-light); box-shadow: 0 10px 26px rgba(29, 37, 89, 0.1); }
+.cr-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.cr-head h3 { font-size: 1.15rem; font-weight: 800; color: var(--sd-navy); margin: 0; flex: 1; }
+.cr-rank { width: 30px; height: 30px; border-radius: 50%; background: var(--sd-brand); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 0.9rem; }
+.cr-pct { font-weight: 800; color: var(--sd-green); }
+.cr-bar { height: 8px; background: #eef0f5; border-radius: 999px; overflow: hidden; margin: 10px 0 12px; }
+.cr-bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--sd-blue), var(--sd-green-light)); }
+.cr-why { color: #3a3f4b; margin: 0 0 12px; }
+.cr-from { color: var(--sd-muted); }
+.cr-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin: 0; }
+.cr-facts div { background: #f5f7fb; border-radius: 10px; padding: 10px 12px; }
+.cr-facts dt { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: var(--sd-muted); }
+.cr-facts dd { margin: 3px 0 0; color: var(--sd-ink); font-size: 0.93rem; }
+.cr-learn { margin-top: 12px; font-size: 0.93rem; }
+.cr-learn a { font-weight: 700; color: var(--sd-blue); }
+.cr-profile, .cr-plan { border: 1px solid var(--sd-border); border-radius: 14px; padding: 18px 20px; margin-bottom: 16px; background: #fff; }
+.cr-profile h3, .cr-plan h3 { font-size: 1.05rem; font-weight: 800; color: var(--sd-navy); margin: 0 0 10px; }
+.cr-profile dl { margin: 0; display: grid; gap: 8px; }
+.cr-profile dt { font-weight: 700; color: var(--sd-navy); font-size: 0.88rem; }
+.cr-profile dd { margin: 0; color: #3a3f4b; font-size: 0.92rem; }
+.cr-plan ol { margin: 0; padding-left: 20px; color: #3a3f4b; }
+.cr-plan li { margin-bottom: 6px; }
+
+.cr-dims { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 14px; }
+.cr-dims div, .cr-area-tile { background: #fff; border: 1px solid var(--sd-border); border-radius: 12px; padding: 16px; }
+.cr-dims h3, .cr-area-tile h3 { font-size: 1rem; font-weight: 800; color: var(--sd-navy); margin: 0 0 4px; }
+.cr-dims p, .cr-area-tile p { color: var(--sd-muted); font-size: 0.9rem; margin: 0; }
+.cr-area-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+.cr-area-tile i { font-size: 1.4rem; color: var(--sd-blue-light); margin-bottom: 8px; }
+
+@media print {
+  #jd-navbar-slot, #jd-footer-slot, .sd-hero, .cr-intro, #sd-quiz-card, .sd-block, .sd-upsell, .sd-handoff, .cr-actions { display: none !important; }
+  .cr-result { box-shadow: none; border: none; max-width: none; }
+  .cr-area, .cr-profile, .cr-plan { break-inside: avoid; }
+}

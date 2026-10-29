@@ -172,9 +172,25 @@ a.sd-reco:hover { border-color: var(--sd-blue-light); color: inherit; }
 .jd-c-mimg { --tool: #7c3aed; }
 .jd-c-w2p { --tool: #2563eb; }
 .jd-c-p2w { --tool: #0369a1; }
+.jd-c-p2i { --tool: #0f766e; }
+.jd-c-crop { --tool: #be185d; }
+.jd-c-rkb { --tool: #0e7490; }
+.jd-c-cpdf { --tool: #b91c1c; }
+.jd-c-age { --tool: #c2410c; }
+.jd-c-wc { --tool: #4338ca; }
+.jd-c-qr { --tool: #15803d; }
 .jd-tool-ico { background: var(--tool, var(--sd-brand)); }
+.jd-tool-card[hidden] { display: none !important; }
+.jd-new-tag { display: inline-block; vertical-align: middle; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; background: #e3f6e8; color: var(--sd-green); border-radius: 999px; padding: 2px 8px; margin-left: 4px; }
 
 @media (max-width: 600px) {
   .sd-grid.sd-lift { margin-top: 20px; }
   .sd-panel { padding: 20px; }
 }
+
+/* ================= Content blocks + FAQ (career, counselling) ================= */
+.sd-block { margin-top: 44px; }
+.sd-text { color: #3a3f4b; font-size: 0.98rem; line-height: 1.65; max-width: 860px; }
+.sd-faq { background: #fff; border: 1px solid var(--sd-border); border-radius: 12px; padding: 0 18px; margin-bottom: 10px; }
+.sd-faq summary { cursor: pointer; font-weight: 700; color: var(--sd-navy); padding: 14px 0; list-style-position: inside; }
+.sd-faq p { color: #3a3f4b; margin: 0 0 14px; line-height: 1.6; }

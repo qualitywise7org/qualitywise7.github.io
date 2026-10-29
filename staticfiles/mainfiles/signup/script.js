@@ -4,7 +4,11 @@ onAuthStateChanged(auth, async (user) => {
   if (user) {
     await user.reload();
     if (user.emailVerified) {
-      window.location.href = "/";
+      localStorage.setItem("uid", user.uid);
+      localStorage.setItem("email", user.email);
+      const redirectUrl = localStorage.getItem("redirect_url");
+      localStorage.removeItem("redirect_url");
+      window.location.href = redirectUrl || "/";
     }
   }
 });
@@ -30,7 +34,8 @@ signupForm.addEventListener("submit", async (e) => {
     const userExists = await checkIfUserExists(email);
     if (userExists) {
       alert("User already registered. Redirecting to login page.");
-      window.location.href = "/login";
+      const redirectUrl = localStorage.getItem("redirect_url");
+      window.location.href = "/login/" + (redirectUrl ? "?redirect_url=" + encodeURIComponent(redirectUrl) : "");
       return;
     }
 

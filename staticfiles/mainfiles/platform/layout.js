@@ -2,15 +2,16 @@
 // Behaviour for the site footer + widget (every page).
 //
 // The header and footer MARKUP comes from the EJS partials
-//   jobsdoor360-website/src/main/ejs/partials/layout/site-navbar.ejs
-//   jobsdoor360-website/src/main/ejs/partials/layout/site-footer.ejs
-// and is compiled into each page by `node compile.js`.
+//   jobsdoor360-website/src/main/ejs/partials/navbar.ejs
+//   jobsdoor360-website/src/main/ejs/partials/footer.ejs
+// and is compiled into each page by `node build.js`.
 //
 // This file:
 //   - shows the back-to-top button after scrolling
-//   - shows "Log out" in the footer when someone is signed in, on pages
-//     that load Firebase (/staticfiles/db/dbconfig.js). On pages without
-//     Firebase the link simply stays hidden.
+//   - for signed-in users, on pages that load Firebase
+//     (/staticfiles/db/dbconfig.js): header "Login" becomes "My account",
+//     "Sign up" becomes "Log out", and "Log out" shows in the footer.
+//     Pages without Firebase always show Login / Sign up.
 // ============================================================
 function backToTop() {
   const top = document.getElementById("backToTopBtn");
@@ -32,26 +33,55 @@ function firebaseAuth(timeoutMs = 6000) {
   });
 }
 
-async function logoutLink() {
-  const item = document.getElementById("jd-logout-item");
-  const link = document.getElementById("jd-logout");
-  if (!item || !link) return;
+function signOut(auth) {
+  // same as the old header "Logout" button
+  localStorage.clear();
+  auth
+    .signOut()
+    .catch((err) => console.error("Error signing out:", err))
+    .finally(() => (window.location.href = "/login/"));
+}
+
+async function authLinks() {
   // Only pages that load Firebase can know who is signed in.
   if (!document.querySelector('script[src*="/staticfiles/db/dbconfig.js"]')) return;
   const auth = await firebaseAuth();
   if (!auth) return;
-  window.onAuthStateChanged(auth, (user) => {
-    item.hidden = !user;
+  const footItem = document.getElementById("jd-logout-item");
+  const login = document.getElementById("jd-login");
+  const signup = document.getElementById("jd-signup");
+  let signedIn = false;
+  window.onAuthStateChanged(auth, (anyUser) => {
+    // Findme signs visitors in anonymously to save quiz answers; that is not
+    // a real account, so keep showing Login / Sign up for them.
+    const user = anyUser && !anyUser.isAnonymous ? anyUser : null;
+    signedIn = !!user;
+    if (footItem) footItem.hidden = !user;
+    if (login) {
+      login.textContent = user ? "My account" : "Login";
+      login.href = user ? "/myaccount/" : "/login/";
+      login.dataset.gaName = user ? "nav_myaccount" : "nav_login";
+    }
+    if (signup) {
+      signup.textContent = user ? "Log out" : "Sign up";
+      signup.href = user ? "/login/" : "/signup/";
+      signup.dataset.gaName = user ? "nav_logout" : "nav_signup";
+    }
   });
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    // same as the old header "Logout" button
-    localStorage.clear();
-    auth
-      .signOut()
-      .catch((err) => console.error("Error signing out:", err))
-      .finally(() => (window.location.href = "/login/"));
-  });
+  if (signup) {
+    signup.addEventListener("click", (e) => {
+      if (!signedIn) return; // plain "Sign up" link
+      e.preventDefault();
+      signOut(auth);
+    });
+  }
+  const footLink = document.getElementById("jd-logout");
+  if (footLink) {
+    footLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      signOut(auth);
+    });
+  }
 }
 
 // Scrollbar width, used by layout.css to keep the header/footer full width
@@ -66,7 +96,7 @@ function scrollbarWidth() {
 function mount() {
   scrollbarWidth();
   backToTop();
-  logoutLink();
+  authLinks();
 }
 
 if (typeof document !== "undefined") {
