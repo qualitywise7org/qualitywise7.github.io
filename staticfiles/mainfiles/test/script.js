@@ -1,3 +1,11 @@
+// ============================================================
+// Test list page (/test/). Lists the available tests as cards.
+// Unified reader: pulls tests from the new `tests` collection (certificate
+// and mock types; Findme has its own page) AND the legacy `assessment`
+// collection, merges them by id, and renders a "Start" card for each.
+// Clicking a card opens /test/quiz/?quizcode=<id>.
+// Uses the Firebase window globals set by dbconfig.js (loaded in the footer).
+// ============================================================
 let userId = null;
 let userData = {};
 
@@ -9,19 +17,38 @@ onAuthStateChanged(auth, (user) => {
 });
 
 async function fetchAssessments() {
+  const byId = new Map(); // id -> { id, title }
+
+  // 1. unified `tests` collection (certificate + mock; findme has its own page)
   try {
-    console.log(`Fetching assessments`);
-    const assessmentsQuery = query(
-      collection(db, "assessment"),
-      orderBy("title", "asc")
-    );
-    let querySnapshot = await getDocs(assessmentsQuery);
-    console.log(`Assessments found`);
-    displayCards(querySnapshot);
+    const testsSnap = await getDocs(collection(db, "tests"));
+    testsSnap.forEach((d) => {
+      const t = d.data();
+      if (t.feature_type === "findme_tests") return;
+      if (t.isActive === false) return;
+      byId.set(d.id, { id: d.id, title: t.title || d.id });
+    });
+    console.log(`Loaded ${byId.size} test(s) from tests collection`);
+  } catch (error) {
+    console.warn("tests collection read failed (will still show assessments):", error);
+  }
+
+  // 2. legacy `assessment` collection (kept for backward compatibility).
+  //    Does not overwrite a unified test with the same id.
+  try {
+    const assessmentsQuery = query(collection(db, "assessment"), orderBy("title", "asc"));
+    const querySnapshot = await getDocs(assessmentsQuery);
+    querySnapshot.forEach((d) => {
+      if (!byId.has(d.id)) byId.set(d.id, { id: d.id, title: d.data().title || d.id });
+    });
   } catch (error) {
     console.error("Failed to fetch assessments:", error);
-    return null;
   }
+
+  const list = Array.from(byId.values()).sort((a, b) =>
+    (a.title || "").localeCompare(b.title || "")
+  );
+  displayCards(list);
 }
 
 function displayCards(assessments) {
@@ -41,13 +68,12 @@ function displayCards(assessments) {
     </div>
   `);
   
-  assessments.forEach((doc) => {
-    let assessment = doc.data();
+  assessments.forEach((item) => {
     content.push(`
       <div class="assessment-box">
-        <h2 class="assessment-title">${assessment.title}</h2>
+        <h2 class="assessment-title">${item.title}</h2>
         <form action="/test/quiz/" method="get">
-          <input type="hidden" name="quizcode" value="${doc.id}">
+          <input type="hidden" name="quizcode" value="${item.id}">
           <button type="submit" class="btn-start">Start Assessment</button>
         </form>
       </div>

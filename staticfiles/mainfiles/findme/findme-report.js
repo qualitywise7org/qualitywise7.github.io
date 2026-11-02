@@ -39,6 +39,8 @@ const T = {
     lockedTitle: "In your full report",
     lockedPreview: ["All your top career matches, with reasons", "Your personality, strengths and values", "Roles to explore, including new-age careers", "Exams, courses and skills for India", "Your 30-60-90 day plan"],
     lockedHalf: ["Roles to explore for each career area", "Exams, courses and skills for India", "Your ikigai snapshot", "Your 30-60-90 day plan", "Surprising matches to also consider", "Share card and PDF"],
+    lockedQuickTitle: "Your result is ready. Log in to see it.",
+    lockedQuickSummary: "You've answered enough. Log in and add a few details, and your full career report appears right here, free.",
   },
   hi: {
     title: "Tumhari Findme report", top: "Tumhare top career areas", why: "Ye tumhe kyun suit karta hai", roles: "Explore karne layak roles",
@@ -58,6 +60,8 @@ const T = {
     lockedTitle: "Poori report mein",
     lockedPreview: ["Saare top career matches, wajah ke saath", "Tumhari personality, strengths aur values", "Explore karne layak roles, naye careers bhi", "India ke exams, courses aur skills", "Tumhara 30-60-90 din ka plan"],
     lockedHalf: ["Har career area ke roles", "India ke exams, courses aur skills", "Tumhara ikigai snapshot", "Tumhara 30-60-90 din ka plan", "Ye bhi socho: surprising matches", "Share card aur PDF"],
+    lockedQuickTitle: "Tumhara result tayyar hai. Dekhne ke liye login karo.",
+    lockedQuickSummary: "Tumne kaafi jawab de diye. Login karke thodi details bharo, aur tumhari poori career report yahin dikh jayegi, bilkul free.",
   },
 };
 export const strings = (lang) => T[lang === "hi" ? "hi" : "en"];
@@ -462,6 +466,23 @@ export function renderReportHTML(report, { access = "full", features = {} } = {}
     </div>
     ${on("smartDecisions") ? `<p class="sd-note no-print">${esc(t.smart)} <a href="/smart-decisions/" data-ga-event="cta_click" data-ga-name="findme_report_smart_decisions">${esc(t.smartLink)} →</a></p>` : ""}`;
   const open = `<section class="fm-report${quick ? " fm-report-quick" : ""}" aria-labelledby="fm-report-title" data-fm-mode="${esc(report.mode)}" data-fm-access="${esc(access)}">`;
+
+  // Quick Findme requires a login before ANY result is shown. Render only a
+  // neutral header + the login gate + a teaser of what's inside. No cluster
+  // cards, no RIASEC code, no summary: nothing about the result leaks.
+  if (access === "locked") {
+    const lockedHead = `
+    <header class="fm-report-head">
+      <span class="sd-badge"><i class="fa-solid fa-lock" aria-hidden="true"></i> ${quick ? esc(t.quickBadge) : ""}</span>
+      <h2 id="fm-report-title" tabindex="-1">${esc(t.lockedQuickTitle)}</h2>
+      <p class="fm-summary">${esc(t.lockedQuickSummary)}</p>
+    </header>`;
+    return `${open}${lockedHead}
+    ${gateSlot}
+    ${lockedList(t.lockedPreview)}
+    ${tail}
+  </section>`;
+  }
 
   if (preview) {
     const first = report.clusters[0];

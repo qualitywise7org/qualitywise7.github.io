@@ -45,23 +45,166 @@
     const stream_masterdata = [
   {
     "code": "cs",
-    "name": "Computer Science"
+    "name": "Computer Science",
+    "findme_cluster": "engineering_tech"
   },
   {
     "code": "it",
-    "name": "Information Technology"
+    "name": "Information Technology",
+    "findme_cluster": "engineering_tech"
   },
   {
     "code": "civil",
-    "name": "Civil Engineering"
+    "name": "Civil Engineering",
+    "findme_cluster": "engineering_tech"
   },
   {
     "code": "electrical",
-    "name": "Electrical Engineering"
+    "name": "Electrical Engineering",
+    "findme_cluster": "engineering_tech"
   },
   {
     "code": "mechanical",
-    "name": "Mechanical Engineering"
+    "name": "Mechanical Engineering",
+    "findme_cluster": "engineering_tech"
+  },
+  {
+    "code": "engineering_tech",
+    "name": "Engineering and Technology",
+    "findme_cluster": "engineering_tech",
+    "group": "career_stream"
+  },
+  {
+    "code": "medicine_health",
+    "name": "Medicine and Health",
+    "findme_cluster": "medicine_health",
+    "group": "career_stream"
+  },
+  {
+    "code": "pure_science_research",
+    "name": "Science and Research",
+    "findme_cluster": "pure_science_research",
+    "group": "career_stream"
+  },
+  {
+    "code": "finance_business",
+    "name": "Finance and Business",
+    "findme_cluster": "finance_business",
+    "group": "career_stream"
+  },
+  {
+    "code": "entrepreneurship",
+    "name": "Entrepreneurship",
+    "findme_cluster": "entrepreneurship",
+    "group": "career_stream"
+  },
+  {
+    "code": "law_civil_services",
+    "name": "Law and Civil Services",
+    "findme_cluster": "law_civil_services",
+    "group": "career_stream"
+  },
+  {
+    "code": "design_visual",
+    "name": "Design and Visual Arts",
+    "findme_cluster": "design_visual",
+    "group": "career_stream"
+  },
+  {
+    "code": "performing_arts",
+    "name": "Performing Arts",
+    "findme_cluster": "performing_arts",
+    "group": "career_stream"
+  },
+  {
+    "code": "sports",
+    "name": "Sports and Fitness",
+    "findme_cluster": "sports",
+    "group": "career_stream"
+  },
+  {
+    "code": "content_media",
+    "name": "Content and Media",
+    "findme_cluster": "content_media",
+    "group": "career_stream"
+  },
+  {
+    "code": "social_education",
+    "name": "Social Impact and Education",
+    "findme_cluster": "social_education",
+    "group": "career_stream"
+  },
+  {
+    "code": "skilled_trades",
+    "name": "Skilled Trades",
+    "findme_cluster": "skilled_trades",
+    "group": "career_stream"
+  },
+  {
+    "code": "data_ai",
+    "name": "Data, AI and Analytics",
+    "findme_cluster": "data_ai",
+    "group": "career_stream"
+  },
+  {
+    "code": "architecture_planning",
+    "name": "Architecture, Design and Planning",
+    "findme_cluster": "architecture_planning",
+    "group": "career_stream"
+  },
+  {
+    "code": "agriculture_environment",
+    "name": "Agriculture, Environment and Life Sciences",
+    "findme_cluster": "agriculture_environment",
+    "group": "career_stream"
+  },
+  {
+    "code": "hospitality_tourism",
+    "name": "Hospitality, Travel and Events",
+    "findme_cluster": "hospitality_tourism",
+    "group": "career_stream"
+  },
+  {
+    "code": "defence_aviation",
+    "name": "Defence, Aviation and Maritime",
+    "findme_cluster": "defence_aviation",
+    "group": "career_stream"
+  },
+  {
+    "code": "commerce_accounting",
+    "name": "Commerce, Accounting and Economics",
+    "findme_cluster": "commerce_accounting",
+    "group": "career_stream"
+  },
+  {
+    "code": "biotech_pharma",
+    "name": "Biotech, Pharma and Healthcare Research",
+    "findme_cluster": "biotech_pharma",
+    "group": "career_stream"
+  },
+  {
+    "code": "logistics_supply_chain",
+    "name": "Logistics, Supply Chain and Operations",
+    "findme_cluster": "logistics_supply_chain",
+    "group": "career_stream"
+  },
+  {
+    "code": "fashion_textile",
+    "name": "Fashion, Textile and Product Design",
+    "findme_cluster": "fashion_textile",
+    "group": "career_stream"
+  },
+  {
+    "code": "psychology_wellbeing",
+    "name": "Psychology, Therapy and Wellbeing",
+    "findme_cluster": "psychology_wellbeing",
+    "group": "career_stream"
+  },
+  {
+    "code": "environment_sustainability",
+    "name": "Environment, Energy and Sustainability",
+    "findme_cluster": "environment_sustainability",
+    "group": "career_stream"
   }
 ];
 

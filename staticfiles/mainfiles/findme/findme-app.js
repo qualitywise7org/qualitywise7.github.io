@@ -170,7 +170,9 @@ async function refreshAccess() {
 const hasAccess = () => !!authUser && isComplete(userDetails);
 function accessFor(report) {
   if (hasAccess()) return "full";
-  return report.mode === "quick" ? "preview" : "half";
+  // Quick Findme now requires a login to see ANY result: show only the gate
+  // (no top-match preview). Detailed still shows the first half before login.
+  return report.mode === "quick" ? "locked" : "half";
 }
 
 // ---------------------------------------------------------------- start
@@ -896,6 +898,44 @@ function restart() {
   $("fm-quick").focus({ preventScroll: true });
 }
 
+// The question bank now lives in Firestore (tests/findme_career_v1, seeded
+// from the backoffice via /myaccount/seed-tests/). We read the `payload`
+// field, which is the whole bank in the original JSON shape. If the database
+// read fails or the test has not been seeded yet, we fall back to the bundled
+// findme-questions.json so Findme keeps working exactly as before.
+const FINDME_TEST_ID = "findme_career_v1";
+
+async function loadQuestionBank() {
+  // 1. Firestore (source of truth)
+  try {
+    if (window.db && window.doc && window.getDoc) {
+      const snap = await window.getDoc(window.doc(window.db, "tests", FINDME_TEST_ID));
+      if (snap.exists()) {
+        const data = snap.data();
+        const payload = data.payload || data;
+        if (payload && Array.isArray(payload.questions) && payload.questions.length) {
+          console.log(`Findme: loaded ${payload.questions.length} questions from Firestore (tests/${FINDME_TEST_ID})`);
+          return payload;
+        }
+        console.warn("Findme: tests doc has no usable questions, falling back to JSON");
+      }
+    }
+  } catch (err) {
+    console.warn("Findme: Firestore bank read failed, falling back to JSON", err);
+  }
+  // 2. bundled JSON (offline / not-seeded fallback)
+  try {
+    const res = await fetch(`/staticfiles/mainfiles/findme/findme-questions.json?v=${encodeURIComponent(VERSION)}`);
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const json = await res.json();
+    console.log("Findme: loaded question bank from bundled JSON (fallback)");
+    return json;
+  } catch (err) {
+    console.warn("Findme: question bank failed to load", err);
+    return null;
+  }
+}
+
 // ---------------------------------------------------------------- boot
 async function boot() {
   try {
@@ -906,12 +946,8 @@ async function boot() {
   $("fm-lang-mini").addEventListener("click", () => setLang(lang === "hi" ? "en" : "hi"));
   document.querySelectorAll('input[name="fm-stage"]').forEach((r) => r.addEventListener("change", () => ($("fm-stage-hint").hidden = true)));
   $("fm-begin").disabled = true;
-  try {
-    const res = await fetch(`/staticfiles/mainfiles/findme/findme-questions.json?v=${encodeURIComponent(VERSION)}`);
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    bank = await res.json();
-  } catch (err) {
-    console.warn("Findme: question bank failed to load", err);
+  bank = await loadQuestionBank();
+  if (!bank) {
     $("fm-load-error").hidden = false;
     return;
   }

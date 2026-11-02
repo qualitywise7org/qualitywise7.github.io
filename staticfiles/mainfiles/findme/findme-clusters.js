@@ -532,6 +532,343 @@ export const CLUSTERS = {
       { key: "counselling", maxRank: 2 },
     ],
   },
+
+  data_ai: {
+    label: "Data, AI and Analytics",
+    hi: "Data, AI aur Analytics",
+    emoji: "📊",
+    icon: "fa-chart-column",
+    tagline: "You love finding the story and the pattern hidden inside numbers.",
+    tagline_hi: "Numbers ke peeche chhupi kahani aur pattern dhoondhna tumhe pasand hai.",
+    vector: { I: 3, C: 2, E: 0.5, O: 2, C_big: 1.5, t_logic: 3, t_space: 1.5, t_word: 0.5, v_challenge: 2, v_money: 1.5, v_autonomy: 1 },
+    roles: [
+      { title: "Data analyst", note: "turns raw data into clear decisions for a business" },
+      { title: "Data scientist / ML engineer", note: "builds models that predict and recommend" },
+      { title: "Business / BI analyst", note: "dashboards and reports leaders actually use" },
+      { title: "AI engineer", note: "builds and ships AI-powered features" },
+      { title: "Statistician / actuary", note: "measures risk and uncertainty with maths" },
+      { title: "Data storyteller / analytics creator", note: "explains data to the public", nontraditional: true },
+      { title: "Freelance analytics consultant", note: "helps small firms use their own data", nontraditional: true },
+    ],
+    exams: ["JEE Main (for BTech CSE / Data Science)", "CUET (BSc Statistics / Data Science)", "ISI admission test (Indian Statistical Institute)", "GATE Data Science and AI (after graduation)"],
+    courses: ["BTech / BSc in Data Science or CS", "BSc Statistics or Mathematics", "Short courses: Python, SQL, Power BI / Tableau"],
+    skills: ["Spreadsheets then SQL", "One language (Python or R)", "Statistics and probability basics", "Telling a clear story with a chart"],
+    plan: {
+      d30: ["Learn spreadsheet formulas and make 3 small charts from real data", "Do a free Python-for-data or SQL intro"],
+      d60: ["Clean and analyse one public dataset end to end", "Build a simple dashboard and share the insight"],
+      d90: ["Put two data projects on GitHub with a short write-up", "Note your weak maths topics and shore them up"],
+    },
+    products: [
+      { key: "study_ml", stages: ["college", "graduate"], maxRank: 2 },
+      { key: "study_dsa", stages: ["school_11_12", "college", "graduate"], maxRank: 2 },
+      { key: "certifications", maxRank: 2 },
+      { key: "courses", stages: ["college", "graduate"], maxRank: 2 },
+    ],
+  },
+
+  architecture_planning: {
+    label: "Architecture, Design and Planning",
+    hi: "Architecture, Design aur Planning",
+    emoji: "📐",
+    icon: "fa-compass-drafting",
+    tagline: "You see spaces in your head and want to shape how people live in them.",
+    tagline_hi: "Tum spaces ko dimaag mein dekh lete ho aur unhe banana chahte ho.",
+    vector: { A: 2.5, I: 1.5, R: 1.5, C: 1, O: 2.5, t_space: 3, t_logic: 1.5, t_body: 0.5, v_creativity: 2.5, v_challenge: 1, v_autonomy: 1.5 },
+    roles: [
+      { title: "Architect", note: "designs homes, offices and public buildings" },
+      { title: "Urban / town planner", note: "shapes how cities grow" },
+      { title: "Interior designer", note: "designs the spaces people live and work in" },
+      { title: "Landscape architect", note: "designs parks, campuses and outdoor spaces" },
+      { title: "Civil / structural design engineer", note: "makes sure buildings stand safely" },
+      { title: "3D visualiser / BIM specialist", note: "models buildings before they are built", nontraditional: true },
+      { title: "Sustainable-design consultant", note: "green, low-energy buildings", nontraditional: true },
+    ],
+    exams: ["NATA (architecture)", "JEE Main Paper 2 (B.Arch)", "CEPT entrance", "State B.Planning / B.Arch entrances"],
+    courses: ["B.Arch (5 years)", "B.Planning", "B.Des or diploma in Interior Design"],
+    skills: ["Sketching and drawing by hand", "Spatial thinking and scale", "One design tool (SketchUp or AutoCAD)", "Observing how people use spaces"],
+    plan: {
+      d30: ["Sketch 10 buildings or rooms you like and note why", "Learn the basics of one free 3D or CAD tool"],
+      d60: ["Redesign your own room on paper to scale", "Visit 3 buildings and study how people move through them"],
+      d90: ["Make a small portfolio of sketches and one 3D model", "Prepare for NATA / JEE Paper 2 drawing sections"],
+    },
+    products: [
+      { key: "counselling", maxRank: 2 },
+      { key: "smart_career", stages: ["school_11_12"], maxRank: 2 },
+    ],
+  },
+
+  agriculture_environment: {
+    label: "Agriculture, Environment and Life Sciences",
+    hi: "Agriculture, Environment aur Life Sciences",
+    emoji: "🌱",
+    icon: "fa-seedling",
+    tagline: "You care about food, nature and keeping the planet healthy.",
+    tagline_hi: "Tumhe food, nature aur dharti ko healthy rakhna matter karta hai.",
+    vector: { R: 2, I: 2, S: 1, O: 1.5, t_nature: 3, t_logic: 1, t_body: 1, v_service: 1.5, v_impact: 2, v_security: 1, v_lifestyle: 1 },
+    roles: [
+      { title: "Agricultural scientist / agronomist", note: "improves crops and farming" },
+      { title: "Environmental scientist", note: "studies and protects air, water and soil" },
+      { title: "Food technologist", note: "makes food safe, tasty and long-lasting" },
+      { title: "Forestry / wildlife officer", note: "protects forests and wildlife" },
+      { title: "Agri-business or dairy manager", note: "runs the business side of farming" },
+      { title: "Agri-tech or drone-farming specialist", note: "uses sensors and drones on farms", nontraditional: true },
+      { title: "Organic farm or nursery owner", note: "runs your own green venture", nontraditional: true },
+    ],
+    exams: ["ICAR AIEEA (agriculture universities)", "CUET (BSc Agriculture, Environmental Science)", "State agriculture CETs", "IFS (Indian Forest Service, after graduation)"],
+    courses: ["BSc / B.Tech Agriculture", "BSc Environmental Science", "BSc Forestry or Horticulture", "B.Tech Food Technology"],
+    skills: ["Curiosity about plants, soil and weather", "Basic biology and chemistry", "Field observation and record-keeping", "Simple data and maps"],
+    plan: {
+      d30: ["Grow something and track it for a month", "Read about 3 green careers (agronomy, environment, forestry)"],
+      d60: ["Visit a farm, nursery or environmental NGO", "Do a free intro course in ecology or agriculture"],
+      d90: ["Run a small project (compost, kitchen garden, clean-up drive)", "Shortlist ICAR / CUET agriculture colleges"],
+    },
+    products: [
+      { key: "counselling", maxRank: 2 },
+    ],
+  },
+
+  hospitality_tourism: {
+    label: "Hospitality, Travel and Events",
+    hi: "Hospitality, Travel aur Events",
+    emoji: "🏨",
+    icon: "fa-concierge-bell",
+    tagline: "You light up when you host people and make an occasion feel special.",
+    tagline_hi: "Logon ka swagat karke aur mauke ko special banakar tumhe maza aata hai.",
+    vector: { S: 2.5, E: 2, A: 1, C: 1, E_big: 2.5, A_big: 2, t_people: 2.5, t_body: 0.5, v_service: 2, v_lifestyle: 1.5, v_money: 1, v_autonomy: 1 },
+    roles: [
+      { title: "Hotel manager", note: "runs hotels and guest experiences" },
+      { title: "Chef / F&B professional", note: "leads kitchens and restaurants" },
+      { title: "Event manager", note: "plans weddings, concerts and conferences" },
+      { title: "Travel / tourism consultant", note: "designs trips and experiences" },
+      { title: "Cabin crew / ground staff", note: "looks after travellers" },
+      { title: "Cloud-kitchen or café owner", note: "runs your own food business", nontraditional: true },
+      { title: "Travel content creator", note: "shares places and stays online", nontraditional: true },
+    ],
+    exams: ["NCHM JEE (hotel management)", "State hotel-management entrances", "CUET (BA Tourism)", "IHM / private institute tests"],
+    courses: ["BHM (Hotel Management)", "BA / BSc Hospitality and Tourism", "Diploma in Event Management or Culinary Arts"],
+    skills: ["Warmth and patience with people", "Staying calm when it's busy", "Clear speaking and some languages", "Planning and attention to detail"],
+    plan: {
+      d30: ["Help host one event or gathering and note what worked", "Learn table, kitchen or front-desk basics from videos"],
+      d60: ["Volunteer at a college fest, wedding or local event", "Spend a day watching a hotel or restaurant run"],
+      d90: ["Plan a small event end to end (budget, people, timeline)", "Look up NCHM JEE and hotel-management colleges"],
+    },
+    products: [
+      { key: "counselling", maxRank: 2 },
+    ],
+  },
+
+  defence_aviation: {
+    label: "Defence, Aviation and Maritime",
+    hi: "Defence, Aviation aur Maritime",
+    emoji: "✈️",
+    icon: "fa-shield-halved",
+    tagline: "You want discipline, duty and a life of action, not a desk.",
+    tagline_hi: "Tum discipline, desh-seva aur action wali zindagi chahte ho, desk nahi.",
+    vector: { R: 2.5, E: 2, C: 2, C_big: 2.5, E_big: 1.5, A_big: 0.5, N: -1.5, t_body: 2, t_space: 1.5, t_logic: 1, v_service: 2, v_security: 1.5, v_challenge: 2 },
+    roles: [
+      { title: "Armed forces officer", note: "Army, Navy or Air Force leadership" },
+      { title: "Pilot", note: "commercial or defence aviation" },
+      { title: "Merchant navy officer", note: "runs ships and cargo across the world" },
+      { title: "Aircraft maintenance engineer", note: "keeps aircraft safe to fly" },
+      { title: "Police / paramilitary officer", note: "security and public safety" },
+      { title: "Drone / UAV operator for security", note: "surveillance and rescue", nontraditional: true },
+      { title: "Adventure or expedition leader", note: "leads high-stakes outdoor work", nontraditional: true },
+    ],
+    exams: ["NDA (after Class 12)", "CDS (after graduation)", "AFCAT (Air Force)", "IMU CET (merchant navy)", "DGCA CPL (commercial pilot)"],
+    courses: ["NDA / academy training", "BSc / BTech (for technical entries)", "Pilot training (CPL)", "B.Tech Marine Engineering / Nautical Science"],
+    skills: ["Physical fitness and stamina", "Discipline and routine", "Staying calm under pressure", "Teamwork and quick decisions"],
+    plan: {
+      d30: ["Build a daily fitness and running routine", "Read about NDA, CDS, AFCAT and merchant navy routes"],
+      d60: ["Study current affairs and general knowledge daily", "Attempt one NDA / AFCAT mock test"],
+      d90: ["Reach the fitness standard for your chosen entry", "Make an exam timeline and start focused prep"],
+    },
+    products: [
+      { key: "counselling", maxRank: 2 },
+      { key: "certifications", maxRank: 2 },
+    ],
+  },
+
+  commerce_accounting: {
+    label: "Commerce, Accounting and Economics",
+    hi: "Commerce, Accounting aur Economics",
+    emoji: "🧾",
+    icon: "fa-calculator",
+    tagline: "You like money, rules and making the numbers add up exactly right.",
+    tagline_hi: "Tumhe paisa, rules aur numbers ko theek-theek milana pasand hai.",
+    vector: { C: 3, I: 1.5, E: 1, C_big: 2.5, A_big: 0.5, t_logic: 2.5, t_word: 0.5, v_security: 2.5, v_money: 2, v_challenge: 1 },
+    roles: [
+      { title: "Chartered Accountant (CA)", note: "audit, tax and company accounts" },
+      { title: "Company Secretary (CS)", note: "keeps companies legal and compliant" },
+      { title: "Cost and management accountant (CMA)", note: "costs, budgets and planning" },
+      { title: "Banker / financial officer", note: "banking, loans and operations" },
+      { title: "Economist / policy analyst", note: "studies markets and advises on policy" },
+      { title: "Tax or GST consultant", note: "helps people and firms with tax", nontraditional: true },
+      { title: "Finance content creator", note: "explains money and investing online", nontraditional: true },
+    ],
+    exams: ["CA Foundation (ICAI)", "CS Executive Entrance (ICSI)", "CMA Foundation (ICMAI)", "CUET (B.Com, BA Economics)", "IPMAT (integrated management)"],
+    courses: ["B.Com / B.Com (Hons)", "BA Economics", "CA / CS / CMA professional courses", "BBA with finance"],
+    skills: ["Comfort with numbers and accuracy", "Basic accounting and Excel", "Reading rules and applying them", "Discipline for long courses"],
+    plan: {
+      d30: ["Learn double-entry accounting basics", "Read about CA, CS and CMA and how they differ"],
+      d60: ["Keep a monthly budget and a simple ledger", "Attempt a CA Foundation / commerce sample paper"],
+      d90: ["Pick your track (CA / CS / CMA / B.Com + exams)", "Make a study timeline for the first exam"],
+    },
+    products: [
+      { key: "smart_investment", maxRank: 2 },
+      { key: "counselling", maxRank: 2 },
+    ],
+  },
+
+  biotech_pharma: {
+    label: "Biotech, Pharma and Healthcare Research",
+    hi: "Biotech, Pharma aur Healthcare Research",
+    emoji: "🧬",
+    icon: "fa-dna",
+    tagline: "You love biology and want to turn it into medicines and cures.",
+    tagline_hi: "Tumhe biology pasand hai aur usse dawaiyan aur ilaaj banana chahte ho.",
+    vector: { I: 3, R: 1, S: 0.5, O: 1.5, C: 1, t_nature: 2.5, t_logic: 2, v_service: 1.5, v_challenge: 1.5, v_impact: 1.5 },
+    roles: [
+      { title: "Biotechnologist", note: "works with cells, genes and living systems" },
+      { title: "Pharmacist / pharmacologist", note: "develops and dispenses medicines" },
+      { title: "Clinical research associate", note: "runs trials that test new treatments" },
+      { title: "Microbiologist / geneticist", note: "studies microbes and DNA" },
+      { title: "Biomedical engineer", note: "builds medical devices and diagnostics" },
+      { title: "Genomics or bioinformatics specialist", note: "mixes biology with data", nontraditional: true },
+      { title: "Lab-grown food or biotech startup founder", note: "builds a science venture", nontraditional: true },
+    ],
+    exams: ["NEET (for Pharm/allied, where needed)", "CUET (BSc Biotechnology, BPharm)", "GAT-B (biotech, after Class 12 / grad)", "GPAT (MPharm, after graduation)"],
+    courses: ["BSc / BTech Biotechnology", "B.Pharm", "BSc Microbiology / Genetics", "BTech Biomedical Engineering"],
+    skills: ["Strong biology and chemistry", "Careful lab technique", "Reading research papers", "Basic data and statistics"],
+    plan: {
+      d30: ["Revise cell biology and genetics basics", "Read about 3 biotech/pharma careers and what they do"],
+      d60: ["Do a simple home or school biology experiment and record it", "Take a free intro course in biotech or pharmacology"],
+      d90: ["Visit a lab, pharmacy or research centre", "Shortlist biotech/pharma courses and their entrance exams"],
+    },
+    products: [
+      { key: "counselling", maxRank: 2 },
+    ],
+  },
+
+  logistics_supply_chain: {
+    label: "Logistics, Supply Chain and Operations",
+    hi: "Logistics, Supply Chain aur Operations",
+    emoji: "🚚",
+    icon: "fa-truck-fast",
+    tagline: "You like making complex things run on time, smoothly and cheaply.",
+    tagline_hi: "Tumhe mushkil cheezon ko time par, smoothly aur sasta chalana pasand hai.",
+    vector: { E: 2, C: 2.5, I: 1, C_big: 2.5, E_big: 1, t_logic: 2, t_space: 1, t_people: 1, v_security: 1.5, v_money: 1.5, v_challenge: 1 },
+    roles: [
+      { title: "Supply chain manager", note: "moves goods from factory to customer" },
+      { title: "Operations manager", note: "keeps a business running efficiently" },
+      { title: "Logistics / warehouse manager", note: "runs storage and transport" },
+      { title: "Procurement / purchase officer", note: "buys what a company needs, at the right price" },
+      { title: "Project coordinator", note: "keeps teams, timelines and budgets on track" },
+      { title: "E-commerce fulfilment lead", note: "runs online-order delivery", nontraditional: true },
+      { title: "Quick-commerce operations founder", note: "builds fast-delivery systems", nontraditional: true },
+    ],
+    exams: ["CUET (BBA, B.Com)", "NMAT / CAT (MBA Operations, after graduation)", "CILT / institute certifications", "State management entrances"],
+    courses: ["BBA / B.Com (Operations)", "BBA Logistics and Supply Chain", "Diploma in Supply Chain or Operations"],
+    skills: ["Planning and scheduling", "Spreadsheets and basic data", "Negotiation and coordination", "Staying calm when plans change"],
+    plan: {
+      d30: ["Plan a real event or trip end to end (budget + timeline)", "Learn spreadsheet basics for tracking"],
+      d60: ["Study how one product reaches a shop or your door", "Read about operations and supply-chain roles"],
+      d90: ["Volunteer to coordinate a college fest or drive", "Look up BBA / supply-chain courses"],
+    },
+    products: [
+      { key: "counselling", maxRank: 2 },
+      { key: "placement", stages: ["college", "graduate"], maxRank: 2 },
+    ],
+  },
+
+  fashion_textile: {
+    label: "Fashion, Textile and Product Design",
+    hi: "Fashion, Textile aur Product Design",
+    emoji: "👗",
+    icon: "fa-shirt",
+    tagline: "You have an eye for style and love turning ideas into things people wear and use.",
+    tagline_hi: "Tumhari style par nazar hai aur ideas ko pehanne-use karne wali cheezon mein badalna pasand hai.",
+    vector: { A: 3, R: 1, E: 1, O: 2.5, t_space: 2, t_body: 1, t_music: 0.5, v_creativity: 3, v_autonomy: 1.5, v_money: 1 },
+    roles: [
+      { title: "Fashion designer", note: "designs clothing and collections" },
+      { title: "Textile / print designer", note: "creates fabrics, weaves and prints" },
+      { title: "Product / industrial designer", note: "designs everyday objects and gadgets" },
+      { title: "Accessory or jewellery designer", note: "designs bags, shoes and jewellery" },
+      { title: "Fashion stylist / merchandiser", note: "styles looks and plans what sells" },
+      { title: "Sustainable-fashion label founder", note: "builds an eco clothing brand", nontraditional: true },
+      { title: "Costume designer for film / theatre", note: "designs looks for the screen and stage", nontraditional: true },
+    ],
+    exams: ["NIFT entrance", "NID DAT (design)", "UCEED (for B.Des)", "Pearl / private design-school tests"],
+    courses: ["B.Des Fashion / Textile / Product Design", "BFTech (fashion technology)", "Diploma in Fashion or Interior / Product Design"],
+    skills: ["Sketching and colour sense", "Knowing fabrics and materials", "One design tool (Illustrator or CLO)", "Spotting trends"],
+    plan: {
+      d30: ["Keep a sketchbook; draw 3 outfits or products a week", "Study 3 designers or brands you love and why"],
+      d60: ["Redesign one everyday item or outfit on paper", "Learn basic sewing or a design app"],
+      d90: ["Make a small portfolio of your best 8 designs", "Prepare for NIFT / NID / UCEED"],
+    },
+    products: [
+      { key: "counselling", maxRank: 2 },
+    ],
+  },
+
+  psychology_wellbeing: {
+    label: "Psychology, Therapy and Wellbeing",
+    hi: "Psychology, Therapy aur Wellbeing",
+    emoji: "🧠",
+    icon: "fa-brain",
+    tagline: "You want to understand the mind and help people feel better.",
+    tagline_hi: "Tum mann ko samajhna aur logon ko behtar feel karana chahte ho.",
+    vector: { S: 2.5, I: 2, A: 0.5, O: 1.5, A_big: 2, t_people: 3, t_self: 2.5, t_word: 1, v_service: 2.5, v_impact: 1.5 },
+    roles: [
+      { title: "Clinical / counselling psychologist", note: "helps people with mental health (needs a master's)" },
+      { title: "Therapist / counsellor", note: "supports people through difficulties" },
+      { title: "School / career counsellor", note: "guides students' learning and choices" },
+      { title: "Psychiatrist", note: "a doctor who treats mental illness (via MBBS)" },
+      { title: "Organisational / HR psychologist", note: "makes workplaces healthier" },
+      { title: "Sports or performance psychologist", note: "helps athletes and performers", nontraditional: true },
+      { title: "Mental-health content creator", note: "shares wellbeing tools online", nontraditional: true },
+    ],
+    exams: ["CUET (BA / BSc Psychology)", "CUET-PG / university tests for MA Psychology (e.g. DU, TISS)", "NEET (only if you aim to be a psychiatrist, via MBBS)"],
+    courses: ["BA / BSc Psychology", "MA / MSc Clinical or Counselling Psychology (later)", "Diploma in Counselling or Guidance"],
+    skills: ["Listening without judging", "Patience and empathy", "Observing behaviour carefully", "Basic research and statistics"],
+    plan: {
+      d30: ["Read a beginner psychology book or free course", "Practise really listening to one person each week"],
+      d60: ["Volunteer on a helpline or with a support group", "Learn the main branches of psychology"],
+      d90: ["Shadow or interview a counsellor or psychologist", "Shortlist psychology colleges and the MA path"],
+    },
+    products: [
+      { key: "counselling", maxRank: 2 },
+    ],
+  },
+
+  environment_sustainability: {
+    label: "Environment, Energy and Sustainability",
+    hi: "Environment, Energy aur Sustainability",
+    emoji: "🌍",
+    icon: "fa-leaf",
+    tagline: "You want to protect the planet and build a cleaner, greener future.",
+    tagline_hi: "Tum dharti ko bachana aur ek saaf, hara-bhara future banana chahte ho.",
+    vector: { I: 2, R: 1.5, S: 1, O: 2, t_nature: 2.5, t_logic: 1.5, t_space: 0.5, v_impact: 3, v_service: 1.5, v_challenge: 1 },
+    roles: [
+      { title: "Environmental engineer", note: "cleans water, air and waste" },
+      { title: "Renewable-energy engineer", note: "solar, wind and EV systems" },
+      { title: "Climate / sustainability analyst", note: "helps firms cut emissions" },
+      { title: "Conservation scientist", note: "protects forests, rivers and wildlife" },
+      { title: "Urban sustainability planner", note: "designs greener cities" },
+      { title: "Green startup founder", note: "builds clean-tech or recycling ventures", nontraditional: true },
+      { title: "Environmental journalist / educator", note: "spreads climate awareness", nontraditional: true },
+    ],
+    exams: ["JEE Main (environmental / energy engineering)", "CUET (BSc Environmental Science)", "ICAR AIEEA (natural resources)", "IFS (Indian Forest Service, after graduation)"],
+    courses: ["BTech Environmental / Energy Engineering", "BSc Environmental Science", "BSc Forestry / Ecology", "Courses in renewable energy or sustainability"],
+    skills: ["Curiosity about nature and science", "Basic physics, chemistry and biology", "Data and mapping tools", "Communicating a cause clearly"],
+    plan: {
+      d30: ["Run a small green habit (segregating waste, saving energy) and track it", "Read about 3 green careers"],
+      d60: ["Join a clean-up, tree-planting or climate group", "Take a free course on climate or renewable energy"],
+      d90: ["Do one project (solar model, water-saving, awareness drive)", "Shortlist environment / energy courses"],
+    },
+    products: [
+      { key: "counselling", maxRank: 2 },
+    ],
+  },
 };
 
 export const CLUSTER_KEYS = Object.keys(CLUSTERS);
@@ -540,4 +877,41 @@ export const CLUSTER_KEYS = Object.keys(CLUSTERS);
 export function clusterVector(key) {
   const v = CLUSTERS[key].vector;
   return DIMS.map((d) => v[d] || 0);
+}
+
+// ---- Cluster -> career stream code ---------------------------------------
+// Findme's 12 clusters map onto the backoffice career-stream codes
+// (master-data/stream_masterdata.json, group "career_stream"). The codes are
+// kept identical to the cluster keys so Findme results, the unified `tests`
+// schema and the rest of the site speak the same stream language. If a stream
+// code ever diverges from a cluster key, change the value here only.
+export const CLUSTER_TO_STREAM = {
+  engineering_tech: "engineering_tech",
+  medicine_health: "medicine_health",
+  pure_science_research: "pure_science_research",
+  finance_business: "finance_business",
+  entrepreneurship: "entrepreneurship",
+  law_civil_services: "law_civil_services",
+  design_visual: "design_visual",
+  performing_arts: "performing_arts",
+  sports: "sports",
+  content_media: "content_media",
+  social_education: "social_education",
+  skilled_trades: "skilled_trades",
+  data_ai: "data_ai",
+  architecture_planning: "architecture_planning",
+  agriculture_environment: "agriculture_environment",
+  hospitality_tourism: "hospitality_tourism",
+  defence_aviation: "defence_aviation",
+  commerce_accounting: "commerce_accounting",
+  biotech_pharma: "biotech_pharma",
+  logistics_supply_chain: "logistics_supply_chain",
+  fashion_textile: "fashion_textile",
+  psychology_wellbeing: "psychology_wellbeing",
+  environment_sustainability: "environment_sustainability",
+};
+
+// Stream code for a cluster key (falls back to the key itself).
+export function streamForCluster(key) {
+  return CLUSTER_TO_STREAM[key] || key;
 }

@@ -1,3 +1,57 @@
+// ============================================================
+// Quiz runner (/test/quiz/?quizcode=<id>). Loads one test, shows the
+// questions, grades the attempt, shows the result and saves it.
+// Unified reader: fetchQuestions() tries the new `tests` collection first and
+// maps it to the legacy question shape, then falls back to the old
+// `assessment` collection, so both old and new tests run unchanged.
+// On finish it writes the attempt BOTH to the legacy user_assessment_results
+// (keeps test-report + rankings working) AND to the unified test_attempts
+// collection. Also includes the proctoring guards (webcam, tab-switch) and
+// the leaderboard update. Uses the Firebase window globals from dbconfig.js.
+// ============================================================
+
+// Write an attempt in the unified `test_attempts` shape. Additive alongside
+// the legacy user_assessment_results write, so nothing existing breaks.
+async function saveUnifiedAttempt(a) {
+  if (typeof addDoc !== "function" || typeof collection !== "function") {
+    console.warn("addDoc/collection unavailable; skipping unified attempt");
+    return;
+  }
+  const now = (typeof Timestamp !== "undefined" && Timestamp.now) ? Timestamp.now() : new Date();
+  const answers = (a.questions || []).map((q, index) => {
+    const selIdx = a.selectedAnswers[index];
+    const chosenText = selIdx !== undefined ? q.answers[selIdx] : null;
+    const isCorrect = selIdx !== undefined && selIdx === q.correctAnswer;
+    return {
+      questionId: q._questionId || ("q" + (index + 1)),
+      type: q._type || "single_select",
+      selectedOptionId: selIdx !== undefined ? String(selIdx) : null,
+      selectedOptionIds: selIdx !== undefined ? [String(selIdx)] : [],
+      numericValue: null,
+      textValue: chosenText,
+      isCorrect,
+    };
+  });
+  const passing = a.featureType === "certificate_tests";
+  const status = passing ? (a.percentage >= 60 ? "passed" : "failed") : "completed";
+  await addDoc(collection(db, "test_attempts"), {
+    uid: a.user.uid,
+    email: a.email,
+    testId: a.testId,
+    feature_type: a.featureType,
+    status,
+    score: a.score,
+    totalQuestions: a.totalQuestions,
+    percentage: a.percentage,
+    result: null,
+    answers,
+    startedAt: now,
+    completedAt: now,
+    bankVersion: a.bankVersion,
+  });
+  console.log("Unified attempt saved to test_attempts.");
+}
+
 // Function to update user rankings based on assessment results
 async function updateUserRankings() {
   try {
@@ -174,22 +228,62 @@ async function startQuiz() {
   const timerDisplay = document.getElementById("timer");
   const quizTitleElement = document.getElementById("quiz-title");
 
+  // Shape used by the rest of this file (unchanged):
+  //   { title, feature_type?, questions: [{ question, answers:[str], correctAnswer: idx }] }
+  // Unified reader: try the new `tests` collection first, then fall back to
+  // the old `assessment` collection. A unified test is mapped back to the
+  // legacy shape so none of the quiz UI code below has to change.
   async function fetchQuestions(assessmentKey) {
+    // 1. unified `tests` collection
     try {
-      console.log(`Fetching questions for subject: ${assessmentKey}`);
-      const docRef = doc(db, "assessment", assessmentKey);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        console.log(`Document found: ${assessmentKey}`);
-        return docSnap.data();
-      } else {
-        console.error("No such document!");
-        return null;
+      const unifiedSnap = await getDoc(doc(db, "tests", assessmentKey));
+      if (unifiedSnap.exists()) {
+        console.log(`Loaded test from tests/${assessmentKey}`);
+        return mapUnifiedToLegacy(unifiedSnap.data());
       }
+    } catch (error) {
+      console.warn("tests read failed, trying assessment:", error);
+    }
+    // 2. legacy `assessment` collection
+    try {
+      const docSnap = await getDoc(doc(db, "assessment", assessmentKey));
+      if (docSnap.exists()) {
+        console.log(`Loaded test from assessment/${assessmentKey}`);
+        const data = docSnap.data();
+        if (!data.feature_type) data.feature_type = "certificate_tests";
+        return data;
+      }
+      console.error("No such document in tests or assessment:", assessmentKey);
+      return null;
     } catch (error) {
       console.error("Failed to fetch questions:", error);
       return null;
     }
+  }
+
+  // Map a unified test document to the legacy quiz shape. Single/multi-select
+  // options with isCorrect become answers[] + correctAnswer (first correct
+  // index), so the existing single-answer quiz keeps working.
+  function mapUnifiedToLegacy(t) {
+    const questions = (t.questions || []).map((q) => {
+      const options = q.options || [];
+      const answers = options.map((o) => o.text);
+      let correctAnswer = options.findIndex((o) => o.isCorrect === true);
+      if (correctAnswer < 0) correctAnswer = 0;
+      return {
+        question: q.text != null ? q.text : q.question,
+        answers,
+        correctAnswer,
+        _questionId: q.id,
+        _type: q.type || "single_select",
+      };
+    });
+    return {
+      title: t.title || assessmentKey,
+      feature_type: t.feature_type || "certificate_tests",
+      bankVersion: t.bankVersion || null,
+      questions,
+    };
   }
 
   async function startQuiz(assessmentKey) {
@@ -369,7 +463,28 @@ async function startQuiz() {
         }
 
         console.log("Quiz attempt saved successfully.");
-        
+
+        // Also write the attempt in the unified shape (test_attempts). This is
+        // additive: the old user_assessment_results write above still happens,
+        // so test-report and rankings are unaffected. Failures here are
+        // non-fatal.
+        try {
+          await saveUnifiedAttempt({
+            user,
+            email,
+            testId: assessmentKey,
+            featureType: currentSubject.feature_type || "certificate_tests",
+            bankVersion: currentSubject.bankVersion || null,
+            score,
+            totalQuestions,
+            percentage,
+            selectedAnswers,
+            questions: currentSubject.questions,
+          });
+        } catch (e) {
+          console.warn("Unified test_attempts write failed (non-fatal):", e);
+        }
+
         // Update user rankings after saving results
         await updateUserRankings();
         

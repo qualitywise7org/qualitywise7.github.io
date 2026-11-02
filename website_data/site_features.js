@@ -39,18 +39,18 @@ const features = {
 // off: true = switched off: left out of every list and its page sends
 // visitors to /tools/. The code stays; delete `off: true` to bring it back.
 const allTools = [
-  { key: "resize-image-kb", title: "Resize image to KB", desc: "Photo or signature under 20, 50 or 100 KB for exam and job forms", icon: "fa-compress", color: "jd-c-rkb", group: "photos", popular: true, added: true },
+  { key: "resize-image-kb", title: "Resize image to KB", desc: "Photo or signature under 20, 50 or 100 KB for exam and job forms", icon: "fa-compress", color: "jd-c-rkb", group: "photos", popular: true },
   { key: "crop-image", title: "Crop image", desc: "Square, passport photo, 16:9 and more", icon: "fa-crop-simple", color: "jd-c-crop", group: "photos", popular: true },
   { key: "merge-images", title: "Merge images", desc: "Join several images into one picture", icon: "fa-images", color: "jd-c-mimg", group: "photos" },
-  { key: "compress-pdf", title: "Compress PDF", desc: "Make a PDF smaller to fit an upload limit", icon: "fa-file-zipper", color: "jd-c-cpdf", group: "pdf", popular: true, added: true },
+  { key: "compress-pdf", title: "Compress PDF", desc: "Make a PDF smaller to fit an upload limit", icon: "fa-file-zipper", color: "jd-c-cpdf", group: "pdf", popular: true },
   { key: "image-to-pdf", title: "Image to PDF", desc: "Turn JPG, PNG or WEBP images into one PDF", icon: "fa-file-image", color: "jd-c-img", group: "pdf", popular: true },
   { key: "merge-pdf", title: "Merge PDF", desc: "Join several PDFs into one, in your order", icon: "fa-layer-group", color: "jd-c-mpdf", group: "pdf", popular: true },
   { key: "word-to-pdf", title: "Word to PDF", desc: "Turn Word (.docx) files into PDFs", icon: "fa-file-word", color: "jd-c-w2p", group: "pdf" },
   { key: "pdf-to-word", title: "PDF to Word", desc: "Get editable text out of a PDF", icon: "fa-file-pen", color: "jd-c-p2w", group: "pdf" },
   { key: "pdf-to-image", title: "PDF to image", desc: "Save every PDF page as a JPG or PNG", icon: "fa-file-export", color: "jd-c-p2i", group: "pdf" },
-  { key: "age-calculator", title: "Age calculator", desc: "Exact age on any date, and an exam age-limit check", icon: "fa-cake-candles", color: "jd-c-age", group: "everyday", added: true, off: true },
-  { key: "word-counter", title: "Word counter", desc: "Words, characters and reading time for essays and forms", icon: "fa-align-left", color: "jd-c-wc", group: "everyday", added: true },
-  { key: "qr-code", title: "QR code generator", desc: "QR codes for links, WhatsApp, UPI payments and Wi-Fi", icon: "fa-qrcode", color: "jd-c-qr", group: "everyday", added: true },
+  { key: "age-calculator", title: "Age calculator", desc: "Exact age on any date, and an exam age-limit check", icon: "fa-cake-candles", color: "jd-c-age", group: "everyday", off: true },
+  { key: "word-counter", title: "Word counter", desc: "Words, characters and reading time for essays and forms", icon: "fa-align-left", color: "jd-c-wc", group: "everyday" },
+  { key: "qr-code", title: "QR code generator", desc: "QR codes for links, WhatsApp, UPI payments and Wi-Fi", icon: "fa-qrcode", color: "jd-c-qr", group: "everyday" },
 ];
 // the tools that are switched on (what every page lists)
 const tools = allTools.filter((t) => !t.off);

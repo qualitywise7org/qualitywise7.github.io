@@ -1,4 +1,42 @@
 // rules_version = '2';
+// ============================================================
+// Unified test schema (added 2026-11). Add these rules inside
+//   match /databases/{database}/documents { ... }
+// in Firebase Console > Firestore > Rules, then Publish.
+//
+// Collections:
+//   tests/{testId}            - question banks (findme/certificate/mock)
+//   test_attempts/{attemptId} - one document per attempt (any feature)
+//   user_certificates/{certId}- issued certificates
+//
+// Depends on the isMasterAdmin() helper documented below (login_roles role).
+// ============================================================
+// // Tests are world-readable so anyone can take one; only a master admin
+// // may create or change a test (protects questions and answer keys).
+// match /tests/{testId} {
+//   allow read: if true;
+//   allow write: if isMasterAdmin();
+// }
+// // A user may create and read their own attempts; master admin reads all.
+// match /test_attempts/{attemptId} {
+//   allow create: if request.auth != null
+//                 && request.resource.data.uid == request.auth.uid;
+//   allow read: if request.auth != null
+//               && (resource.data.uid == request.auth.uid || isMasterAdmin());
+//   allow update: if request.auth != null
+//                 && resource.data.uid == request.auth.uid
+//                 && request.resource.data.uid == request.auth.uid;
+//   allow delete: if false;
+// }
+// // Certificates: a user reads their own; writes come from a passed attempt
+// // (or a master admin). No deletes.
+// match /user_certificates/{certId} {
+//   allow read: if request.auth != null
+//               && (resource.data.uid == request.auth.uid || isMasterAdmin());
+//   allow create: if request.auth != null
+//                 && request.resource.data.uid == request.auth.uid;
+//   allow update, delete: if isMasterAdmin();
+// }
 
 // service cloud.firestore {
 //   match /databases/{database}/documents {
