@@ -3,8 +3,28 @@
 // it to HTML (a string, so Node tests can check it) and draws the share
 // card (browser only).
 // ============================================================
-import { CLUSTERS, DIM_INFO, DIM_GROUPS, PRODUCTS, STAGES, SCHOOL_STAGES } from "./findme-clusters.js";
+// Cluster/dimension DATA comes from the loaded bank (tests/findme_career_v1
+// payload): bank.clusters, bank.dim_groups, bank.dim_info, bank.products,
+// bank.stages, bank.school_stages. A small `dataOf(bank)` reader normalises
+// these into the shape this module uses, so no data is imported from a file.
 import { replay, getRanking, getQuestion, clusterAffinity } from "./findme-engine.js";
+
+// Pull the report's data tables out of the loaded bank.
+function dataOf(bank) {
+  const dg = bank.dim_groups || {};
+  return {
+    CLUSTERS: bank.clusters || {},
+    DIM_INFO: bank.dim_info || {},
+    DIM_GROUPS: dg,
+    PRODUCTS: bank.products || {},
+    STAGES: bank.stages || {},
+    SCHOOL_STAGES: bank.school_stages || [],
+    RIASEC: (dg.riasec && dg.riasec.dims) || [],
+    BIG5: (dg.big5 && dg.big5.dims) || [],
+    TALENTS: (dg.talent && dg.talent.dims) || [],
+    VALUES: (dg.values && dg.values.dims) || [],
+  };
+}
 
 // friendly names for open-text keyword groups (the raw text is never kept)
 const KEYWORD_LABELS = {
@@ -66,11 +86,6 @@ const T = {
 };
 export const strings = (lang) => T[lang === "hi" ? "hi" : "en"];
 
-const RIASEC = DIM_GROUPS.riasec.dims;
-const BIG5 = DIM_GROUPS.big5.dims;
-const TALENTS = DIM_GROUPS.talent.dims;
-const VALUES = DIM_GROUPS.values.dims;
-
 // ---- quoting the user's own answers --------------------------------------------
 function describeAnswer(bank, q, answer, lang) {
   const hi = lang === "hi";
@@ -110,8 +125,8 @@ function reasonsFor(bank, state, key, others, used, lang, max = 3) {
     return said ? { qid: c.qid, question: lang === "hi" ? q.text_hi : q.text, said } : null;
   };
   const scored = state.cites.map((c) => {
-    const a = clusterAffinity(c.delta, key);
-    const rival = Math.max(0, ...others.map((k) => clusterAffinity(c.delta, k)));
+    const a = clusterAffinity(bank, c.delta, key);
+    const rival = Math.max(0, ...others.map((k) => clusterAffinity(bank, c.delta, k)));
     return { c, a, specific: a - 0.8 * rival };
   });
   let picks = scored.filter((x) => x.a > 0.6 && x.specific > 0.2 && !used.has(x.c.qid)).sort((x, y) => y.specific - x.specific);
@@ -128,12 +143,14 @@ function reasonsFor(bank, state, key, others, used, lang, max = 3) {
 }
 
 // ---- personality / values / work style ---------------------------------------------
-function riasecCode(u) {
+function riasecCode(data, u) {
+  const { RIASEC, DIM_INFO } = data;
   const top = RIASEC.slice().sort((a, b) => u[b] - u[a] || RIASEC.indexOf(a) - RIASEC.indexOf(b)).slice(0, 3);
   return { code: top.join(""), letters: top.map((d) => ({ dim: d, label: DIM_INFO[d].label, hi: DIM_INFO[d].hi, plain: DIM_INFO[d].plain })) };
 }
 
-function bigFive(u, conf) {
+function bigFive(data, u, conf) {
+  const { BIG5, DIM_INFO } = data;
   return BIG5
     .filter((d) => conf[d] > 0.3 && Math.abs(u[d]) >= 0.2)
     .sort((a, b) => Math.abs(u[b]) - Math.abs(u[a]))
@@ -169,7 +186,8 @@ function workStyle(u) {
 }
 
 // ---- products (only when relevant) -------------------------------------------------
-function productsFor(top, stage, lowConfidence) {
+function productsFor(data, top, stage, lowConfidence) {
+  const { PRODUCTS, CLUSTERS, SCHOOL_STAGES } = data;
   const out = [];
   const add = (key, forCluster) => {
     if (out.some((p) => p.key === key)) return;
@@ -195,7 +213,7 @@ export function buildReport(bank, session, { lang = session.lang || "en", now = 
   if (state.answered < MIN_FOR_REPORT) {
     return { ok: false, answered: state.answered, lang, mode: session.mode === "quick" ? "quick" : "detailed", caveat: lang === "hi" ? CAVEAT_HI : CAVEAT };
   }
-  return assemble({
+  return assemble(dataOf(bank), {
     mode: session.mode === "quick" ? "quick" : "detailed", lang, now, stage,
     score: state.score, ranking, answered: state.answered,
     contradictions: state.contradictions,
@@ -204,11 +222,12 @@ export function buildReport(bank, session, { lang = session.lang || "en", now = 
 }
 
 // ---- quick report (from an account profile, no questions) --------------------------
-// `score` and `ranking` come from engine.scoreDims(sum, exp); `facts` and
-// `priorTop` come from findme-profile.js so we can still give reasons.
-export function buildQuickReport({ score, ranking, stage = null, facts = [], priorTop = null, lang = "en", now = Date.now() }) {
-  const reasonsFor = (key, others, used) => quickReasons(key, facts, used, lang);
-  return assemble({
+// `score` and `ranking` come from engine.scoreDims(bank, sum, exp); `facts` and
+// `priorTop` come from findme-profile.js so we can still give reasons. `bank`
+// is needed for the cluster data and for clusterAffinity.
+export function buildQuickReport({ bank, score, ranking, stage = null, facts = [], priorTop = null, lang = "en", now = Date.now() }) {
+  const reasonsFor = (key, others, used) => quickReasons(bank, key, facts, used, lang);
+  return assemble(dataOf(bank), {
     mode: "quick", lang, now, stage,
     score, ranking, answered: 0, contradictions: [],
     reasonsFor, priorTop,
@@ -217,10 +236,10 @@ export function buildQuickReport({ score, ranking, stage = null, facts = [], pri
 
 // Reasons for Quick Findme come from the profile facts whose weights point
 // at this cluster. `used` keeps each fact to one cluster.
-function quickReasons(key, facts, used, lang, max = 3) {
+function quickReasons(bank, key, facts, used, lang, max = 3) {
   const scored = facts
     .filter((f) => Object.keys(f.w || {}).length)
-    .map((f) => ({ f, a: clusterAffinity(f.w, key) }))
+    .map((f) => ({ f, a: clusterAffinity(bank, f.w, key) }))
     .filter((x) => x.a > 0.2 && !used.has(x.f.why))
     .sort((x, y) => y.a - x.a);
   const out = [];
@@ -233,7 +252,8 @@ function quickReasons(key, facts, used, lang, max = 3) {
 }
 
 // ---- shared assembly ---------------------------------------------------------------
-function assemble({ mode, lang, now, stage, score, ranking, answered, contradictions, reasonsFor, priorTop }) {
+function assemble(data, { mode, lang, now, stage, score, ranking, answered, contradictions, reasonsFor, priorTop }) {
+  const { CLUSTERS, DIM_INFO, STAGES, TALENTS, VALUES } = data;
   const { u, conf } = score;
 
   // top 3, plus #4/#5 only when they're close to #3
@@ -269,8 +289,8 @@ function assemble({ mode, lang, now, stage, score, ranking, answered, contradict
     .filter(Boolean)
     .slice(0, 2);
 
-  const riasec = riasecCode(u);
-  const traits = bigFive(u, conf);
+  const riasec = riasecCode(data, u);
+  const traits = bigFive(data, u, conf);
   const talents = topPositive(u, TALENTS, 3).map((d) => ({ dim: d, label: DIM_INFO[d].label, plain: DIM_INFO[d].plain }));
   const values = topPositive(u, VALUES, 3).map((d) => ({ dim: d, label: DIM_INFO[d].label, plain: DIM_INFO[d].plain }));
   const mixedSignals = (contradictions || []).map((d) => ({ dim: d, label: DIM_INFO[d].label }));
@@ -291,7 +311,7 @@ function assemble({ mode, lang, now, stage, score, ranking, answered, contradict
       needs: values.slice(0, 2).map((x) => x.label),
       paid: CLUSTERS[first.key].roles.slice(0, 2).map((r) => r.title),
     },
-    products: productsFor(clusters, stage, lowConfidence),
+    products: productsFor(data, clusters, stage, lowConfidence),
     mixedSignals,
     caveat: lang === "hi" ? CAVEAT_HI : CAVEAT,
   };

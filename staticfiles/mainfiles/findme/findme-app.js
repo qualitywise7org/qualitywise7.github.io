@@ -9,7 +9,7 @@ import {
   createSession, answer, skip, back, nextQuestion, getProgress, getQuestion, matchKeywords, replay,
 } from "./findme-engine.js";
 import { scoreDims } from "./findme-engine.js";
-import { CLUSTERS } from "./findme-clusters.js";
+import { dimsOf } from "./findme-dims.js";
 import { buildReport, buildQuickReport, renderReportHTML, resultSummary, drawShareCard } from "./findme-report.js";
 import { syncSession, finishSession, loadLocal, clearLocal, ensureUser } from "./findme-store.js";
 import { loadProfile, profileToEvidence, inferStage, hasEnoughSignal } from "./findme-profile.js";
@@ -231,7 +231,7 @@ async function quickFindme() {
   $("fm-quick-status").hidden = true;
   if (res && res.signedIn) {
     const ev = profileToEvidence(res.data);
-    if (hasEnoughSignal(ev, res.data)) {
+    if (hasEnoughSignal(dimsOf(bank.dim_groups), ev, res.data)) {
       // a previous detailed result gives each of its clusters a direct boost
       if (res.data.prior && Array.isArray(res.data.prior.top)) {
         res.data.prior.top.forEach((tc, i) => {
@@ -242,14 +242,14 @@ async function quickFindme() {
           }
         });
       }
-      const score = scoreDims(ev.sum, ev.exp);
+      const score = scoreDims(bank, ev.sum, ev.exp);
       const stage = (userDetails && userDetails.stage) || inferStage(res.data);
       quickInputs = { id: "fmqp_" + Date.now().toString(36), score, ranking: score.ranking, stage, facts: ev.facts, priorTop: res.data.prior?.top || null };
       session = null;
       reportSource = "profile";
       lastMode = "quick";
       gateShownAt = 0;
-      const report = buildQuickReport({ ...quickInputs, lang });
+      const report = buildQuickReport({ bank, ...quickInputs, lang });
       track("quiz_start", { quiz_name: "findme", mode: "quick", source: "profile" });
       track("quiz_complete", { quiz_name: "findme", mode: "quick", source: "profile", result: report.clusters[0]?.key });
       presentReport(report);
@@ -260,8 +260,9 @@ async function quickFindme() {
 }
 
 // A prior detailed result nudges the dims that define that cluster.
+// Cluster data comes from the loaded bank (DB), not an imported file.
 function clusterSeed(key) {
-  return CLUSTERS[key]?.vector || {};
+  return (bank && bank.clusters && bank.clusters[key] && bank.clusters[key].vector) || {};
 }
 
 function resume() {
@@ -357,7 +358,7 @@ async function finish({ alreadySaved = false } = {}) {
 function rebuildReport(stage) {
   if (quickInputs) {
     if (stage) quickInputs = { ...quickInputs, stage };
-    return buildQuickReport({ ...quickInputs, lang });
+    return buildQuickReport({ bank, ...quickInputs, lang });
   }
   if (session) {
     if (stage) session = { ...session, stage };
@@ -898,40 +899,44 @@ function restart() {
   $("fm-quick").focus({ preventScroll: true });
 }
 
-// The question bank now lives in Firestore (tests/findme_career_v1, seeded
-// from the backoffice via /myaccount/seed-tests/). We read the `payload`
-// field, which is the whole bank in the original JSON shape. If the database
-// read fails or the test has not been seeded yet, we fall back to the bundled
-// findme-questions.json so Findme keeps working exactly as before.
+// Load the question + cluster bank. We prefer the copy in Firestore
+// (tests/findme_career_v1) when it's there, and otherwise fall back to the
+// bundled findme-data.json that ships with the page, so the quiz always has
+// something to run on. The shape is the same either way: questions, keywords
+// and the cluster/dimension data the engine and report need.
 const FINDME_TEST_ID = "findme_career_v1";
 
+function usableBank(b) {
+  return b && Array.isArray(b.questions) && b.questions.length
+    && b.clusters && Object.keys(b.clusters).length
+    && b.dim_groups && Object.keys(b.dim_groups).length;
+}
+
 async function loadQuestionBank() {
-  // 1. Firestore (source of truth)
+  // Try Firestore first (if it's configured and the doc has been seeded).
   try {
     if (window.db && window.doc && window.getDoc) {
       const snap = await window.getDoc(window.doc(window.db, "tests", FINDME_TEST_ID));
       if (snap.exists()) {
         const data = snap.data();
         const payload = data.payload || data;
-        if (payload && Array.isArray(payload.questions) && payload.questions.length) {
-          console.log(`Findme: loaded ${payload.questions.length} questions from Firestore (tests/${FINDME_TEST_ID})`);
-          return payload;
-        }
-        console.warn("Findme: tests doc has no usable questions, falling back to JSON");
+        if (usableBank(payload)) return payload;
       }
     }
   } catch (err) {
-    console.warn("Findme: Firestore bank read failed, falling back to JSON", err);
+    console.warn("Findme: could not read the bank from Firestore, using the bundled copy", err);
   }
-  // 2. bundled JSON (offline / not-seeded fallback)
+
+  // Fall back to the bundled bank that ships with the site.
   try {
-    const res = await fetch(`/staticfiles/mainfiles/findme/findme-questions.json?v=${encodeURIComponent(VERSION)}`);
+    const res = await fetch(`/staticfiles/mainfiles/findme/findme-data.json?v=${encodeURIComponent(VERSION)}`);
     if (!res.ok) throw new Error("HTTP " + res.status);
-    const json = await res.json();
-    console.log("Findme: loaded question bank from bundled JSON (fallback)");
-    return json;
+    const bundled = await res.json();
+    if (usableBank(bundled)) return bundled;
+    console.warn("Findme: bundled bank is missing data");
+    return null;
   } catch (err) {
-    console.warn("Findme: question bank failed to load", err);
+    console.warn("Findme: could not load the question bank", err);
     return null;
   }
 }

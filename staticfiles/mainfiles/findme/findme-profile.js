@@ -11,7 +11,8 @@
 // Pure functions here (no Firestore, no DOM) so Node can test them.
 // The loader that actually hits Firestore is loadProfile() at the end.
 // ============================================================
-import { DIMS } from "./findme-clusters.js";
+// The dimension list now comes from the loaded bank (passed in), not a
+// frontend data file. hasEnoughSignal() takes `dims` as an argument.
 
 // ---- keyword -> dimension rules -------------------------------------------------------
 // Each rule: match terms (lowercase, whole-word) -> dim weights + a short
@@ -164,8 +165,8 @@ export async function loadProfile() {
 
 // How much usable signal did we get? Drives the "not enough in your
 // account" message vs a real quick report.
-export function hasEnoughSignal(evidence, data) {
+export function hasEnoughSignal(dims, evidence, data) {
   if (data?.prior && Array.isArray(data.prior.top) && data.prior.top.length) return true;
-  const measured = DIMS.filter((d) => (evidence.exp[d] || 0) > 0.5).length;
+  const measured = dims.filter((d) => (evidence.exp[d] || 0) > 0.5).length;
   return measured >= 4 && !!((data.skills?.length || 0) + (data.education?.length || 0));
 }

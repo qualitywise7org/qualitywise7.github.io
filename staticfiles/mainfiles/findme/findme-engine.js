@@ -50,7 +50,11 @@
 // Skips don't count toward the minimum of 15. Back = drop last response.
 // ============================================================
 
-import { CLUSTERS, CLUSTER_KEYS, DIMS, DIM_GROUPS, dimGroup } from "./findme-clusters.js";
+// Only pure dimension LOGIC is imported. The cluster/dimension DATA now comes
+// from the loaded bank (tests/findme_career_v1 payload): bank.dim_groups and
+// bank.clusters. The scoring tables (dims, clusterKeys, gw, centred) are built
+// per-bank and cached, so results are identical to the old module-load consts.
+import { dimsOf, dimGroupOf, clusterKeysOf } from "./findme-dims.js";
 
 export const LIMITS = { minAnswers: 15, maxAnswers: 25, maxScreens: 30, phase1: 5, phase3After: 12, phase3Force: 18 };
 // Quick Findme: the same adaptive engine, cut short (about 6 to 8 answers).
@@ -61,21 +65,26 @@ const T = 0.12; // softmax temperature
 const BETA = 0.6; // option-choice sharpness for p(o | cluster)
 const SINGLE = ["scenario", "this_or_that", "image_choice"];
 
-// ---- static precomputation ---------------------------------------------------
-const GW = Object.fromEntries(DIMS.map((d) => [d, DIM_GROUPS[dimGroup(d)].weight]));
-const CENTRED = (() => {
-  const mean = {};
-  for (const d of DIMS) mean[d] = CLUSTER_KEYS.reduce((s, k) => s + (CLUSTERS[k].vector[d] || 0), 0) / CLUSTER_KEYS.length;
-  const out = {};
-  for (const k of CLUSTER_KEYS) out[k] = Object.fromEntries(DIMS.map((d) => [d, (CLUSTERS[k].vector[d] || 0) - mean[d]]));
-  return out;
-})();
-
 const indexCache = new WeakMap();
 function index(bank) {
   let ix = indexCache.get(bank);
   if (!ix) {
-    ix = { byId: new Map(bank.questions.map((q) => [q.id, q])), meta: new Map() };
+    // ---- per-bank dimension / cluster tables (was module-load precompute) ----
+    const dimGroups = bank.dim_groups || {};
+    const clusters = bank.clusters || {};
+    const dims = dimsOf(dimGroups);
+    const clusterKeys = clusterKeysOf(clusters);
+    const gw = Object.fromEntries(dims.map((d) => [d, dimGroups[dimGroupOf(dimGroups, d)].weight]));
+    const centred = (() => {
+      const mean = {};
+      for (const d of dims) mean[d] = clusterKeys.reduce((s, k) => s + (clusters[k].vector[d] || 0), 0) / clusterKeys.length;
+      const out = {};
+      for (const k of clusterKeys) out[k] = Object.fromEntries(dims.map((d) => [d, (clusters[k].vector[d] || 0) - mean[d]]));
+      return out;
+    })();
+    const dd = { dims, clusterKeys, gw, centred };
+
+    ix = { byId: new Map(bank.questions.map((q) => [q.id, q])), meta: new Map(), dd };
     for (const q of bank.questions) {
       if (!q.options) continue;
       const mean = {};
@@ -174,10 +183,10 @@ export function evidence(bank, q, answer) {
 }
 
 // ---- scoring ----------------------------------------------------------------------
-function normalised(sum, exp) {
+function normalised(dd, sum, exp) {
   const u = {};
   const conf = {};
-  for (const d of DIMS) {
+  for (const d of dd.dims) {
     const e = exp[d] || 0;
     u[d] = (sum[d] || 0) / (e + 1);
     conf[d] = e / (e + 2);
@@ -185,16 +194,17 @@ function normalised(sum, exp) {
   return { u, conf };
 }
 
-function similarities(u, conf) {
+function similarities(dd, u, conf) {
+  const { dims, clusterKeys, gw, centred } = dd;
   const sims = {};
   let un = 0;
-  for (const d of DIMS) un += GW[d] * conf[d] * u[d] * u[d];
-  for (const k of CLUSTER_KEYS) {
-    const c = CENTRED[k];
+  for (const d of dims) un += gw[d] * conf[d] * u[d] * u[d];
+  for (const k of clusterKeys) {
+    const c = centred[k];
     let dot = 0;
     let cn = 0;
-    for (const d of DIMS) {
-      const w = GW[d] * conf[d];
+    for (const d of dims) {
+      const w = gw[d] * conf[d];
       if (w === 0) continue;
       dot += w * u[d] * c[d];
       cn += w * c[d] * c[d];
@@ -222,18 +232,19 @@ function rankOf(P) {
   return Object.keys(P).sort((a, b) => P[b] - P[a] || (a < b ? -1 : 1));
 }
 
-function scoreFrom(sum, exp) {
-  const { u, conf } = normalised(sum, exp);
-  const sims = similarities(u, conf);
+function scoreFrom(dd, sum, exp) {
+  const { u, conf } = normalised(dd, sum, exp);
+  const sims = similarities(dd, u, conf);
   const P = softmax(sims, T);
   return { u, conf, sims, P, order: rankOf(P) };
 }
 
 // How much one answer's evidence pushed towards a cluster (used by the
 // report to quote the user's own answers as reasons).
-export function clusterAffinity(delta, key) {
+export function clusterAffinity(bank, delta, key) {
+  const { gw, centred } = index(bank).dd;
   let a = 0;
-  for (const [d, v] of Object.entries(delta || {})) a += (GW[d] || 0) * v * (CENTRED[key]?.[d] || 0);
+  for (const [d, v] of Object.entries(delta || {})) a += (gw[d] || 0) * v * (centred[key]?.[d] || 0);
   return a;
 }
 
@@ -246,8 +257,8 @@ export function matchPercent(sim) {
 // responses. Used by Quick Findme, which maps an account profile to
 // { sum, exp } and then reuses the exact same scoring and ranking.
 // Returns the same shape a replayed session's score has.
-export function scoreDims(sum, exp) {
-  const score = scoreFrom(sum || {}, exp || {});
+export function scoreDims(bank, sum, exp) {
+  const score = scoreFrom(index(bank).dd, sum || {}, exp || {});
   return {
     ...score,
     ranking: score.order.map((key) => ({ key, sim: score.sims[key], p: score.P[key], match: matchPercent(score.sims[key]) })),
@@ -267,7 +278,8 @@ export function replay(bank, session) {
     topHistory: [], phase: 1, phaseLog: [{ phase: 1, atQuestion: 1 }], cites: [],
     limits: limitsOf(session),
   };
-  let score = scoreFrom(s.sum, s.exp);
+  const dd = index(bank).dd;
+  let score = scoreFrom(dd, s.sum, s.exp);
   for (const r of session.responses) {
     const q = getQuestion(bank, r.qid);
     if (!q) continue;
@@ -290,7 +302,7 @@ export function replay(bank, session) {
     s.answered++;
     if (q.phase === 3) s.phase3Answered++;
     s.cites.push({ qid: q.id, answer: r.answer, delta: ev.delta });
-    score = scoreFrom(s.sum, s.exp);
+    score = scoreFrom(dd, s.sum, s.exp);
     // stability = same #1 and same #2 (the #3 slot is often a noisy near-tie)
     s.topHistory.push(score.order.slice(0, 2).join(">"));
     const next = phaseFor(s);
@@ -438,14 +450,16 @@ function outcomes(bank, q) {
 function expectedGain(bank, q, s) {
   const outs = outcomes(bank, q);
   if (!outs.length) return 0;
+  const dd = index(bank).dd;
+  const { clusterKeys, gw, centred } = dd;
   const P = s.score.P;
   const H0 = entropy(P);
   // p(o | cluster): softmax over options of affinity(o, c)
   const pO = new Array(outs.length).fill(0);
-  for (const k of CLUSTER_KEYS) {
+  for (const k of clusterKeys) {
     const aff = outs.map((o) => {
       let a = 0;
-      for (const [d, v] of Object.entries(o.delta)) a += GW[d] * v * CENTRED[k][d];
+      for (const [d, v] of Object.entries(o.delta)) a += gw[d] * v * centred[k][d];
       return BETA * a;
     });
     const m = Math.max(...aff);
@@ -459,7 +473,7 @@ function expectedGain(bank, q, s) {
     const exp = { ...s.exp };
     for (const [d, v] of Object.entries(o.delta)) sum[d] = (sum[d] || 0) + v;
     for (const [d, v] of Object.entries(o.exposure)) exp[d] = (exp[d] || 0) + v;
-    EH += pO[i] * entropy(scoreFrom(sum, exp).P);
+    EH += pO[i] * entropy(scoreFrom(dd, sum, exp).P);
   });
   return H0 - EH;
 }
@@ -471,13 +485,14 @@ export function scoreCandidates(bank, session) {
   const recent = s.types.slice(-4);
   // a contradiction is resolved once a later answered question measured that dim
   const pendingTie = s.contradictions.filter((d) => !s.tieBroken.has(d));
+  const { gw } = index(bank).dd;
   return candidates(bank, s).map((q) => {
     const gain = expectedGain(bank, q, s);
     const tagHits = [...q.tags, ...(q.requires || [])].filter((t) => s.unlocked.has(t));
     const unlockBonus = Math.min(0.12, 0.04 * new Set(tagHits).size);
     let coverage = 0;
     // open text can't promise coverage (we don't know what they'll type)
-    if (q.type !== "open_short") for (const d of q.dims) if (s.score.conf[d] < 0.3) coverage += 0.012 * GW[d];
+    if (q.type !== "open_short") for (const d of q.dims) if (s.score.conf[d] < 0.3) coverage += 0.012 * gw[d];
     coverage = Math.min(0.06, coverage);
     const varietyBonus = recent.includes(q.type) ? 0 : 0.03;
     const tieBreakBonus = pendingTie.some((d) => q.dims.includes(d) && q.type !== "open_short") ? 0.3 : 0;
